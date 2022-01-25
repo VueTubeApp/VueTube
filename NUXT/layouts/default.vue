@@ -11,7 +11,7 @@
     </v-app-content>
 
     <v-bottom-navigation v-model="value" class="bottomNav rounded-0">
-      <v-btn v-for="(item, i) in tabs" :key="i">
+      <v-btn v-for="(item, i) in tabs" :key="i" class="navButton">
         <span v-text="item.name" />
 
         <v-icon v-text="item.icon" />
@@ -29,6 +29,9 @@
 .bottomNav {
   position: absolute;
   bottom: 0;
+}
+.navButton {
+  width: 20vw !important;
 }
 </style>
 
