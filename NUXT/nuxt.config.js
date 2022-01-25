@@ -1,9 +1,13 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  
+  //---   Bettertube Stuff   ---//
+  target: 'static',
+  buildDir: '../dist',
+  
+  //---   Default NUXT Stuff   ---//
   head: {
-    titleTemplate: '%s - BetterTube',
     title: 'BetterTube',
     htmlAttrs: {
       lang: 'en'
@@ -11,43 +15,27 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
+  css: [],
+  plugins: [],
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
-
-  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
+  modules: [],
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: true,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
+          primary: colors.red.darken2, //colors.blue.darken2
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
@@ -59,7 +47,7 @@ export default {
     }
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    buildDir: '../dist'
   }
 }

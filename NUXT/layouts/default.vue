@@ -1,8 +1,10 @@
 <template>
   <v-app dark>
 
-    <v-card v-model="value" class="topNav rounded-0">
-      <span>NotShitTube</span>
+    <v-card class="topNav rounded-0" style="display: flex;">
+      <img src="/icon.svg" height="40px" />
+      <v-spacer />
+      <v-text-field outlined dense label="Search" prepend-inner-icon="mdi-magnify" class="topNavSearch" />
     </v-card>
 
 
@@ -10,11 +12,12 @@
       <nuxt />
     </v-app-content>
 
-    <v-bottom-navigation v-model="value" class="bottomNav rounded-0">
+    <v-bottom-navigation v-model="tabSelection" class="bottomNav rounded-0">
       <v-btn v-for="(item, i) in tabs" :key="i" class="navButton">
+        
         <span v-text="item.name" />
+        <v-icon v-text="item.icon" :color="tabSelection == i ? 'primary' : 'white'" />
 
-        <v-icon v-text="item.icon" />
       </v-btn>
     </v-bottom-navigation>
 
@@ -33,12 +36,16 @@
 .navButton {
   width: 20vw !important;
 }
+.topNavSearch {
+  margin-bottom: -100em;
+  margin-left: 2em;
+}
 </style>
 
 <script>
   export default {
     data: () => ({
-      value: 0,
+      tabSelection: 0,
       tabs: [
         { name: "Home", icon: "mdi-home" },
         { name: "Shorts", icon: "mdi-lightning-bolt" },
