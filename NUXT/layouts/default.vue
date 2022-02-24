@@ -1,22 +1,23 @@
 <template>
-  <v-app dark>
+  <v-app>
 
-    <v-card class="topNav rounded-0" style="display: flex;">
-      <img src="/icon.svg" height="30px" />
+    <v-card class="topNav rounded-0" style="display: flex;" color="accent">
+      <h2>Home</h2>
       <v-spacer />
-      <v-text-field outlined dense label="Search" prepend-inner-icon="mdi-magnify" class="topNavSearch" />
+      <v-btn text><v-icon>mdi-magnify</v-icon></v-btn>
+      <v-btn text><v-icon>mdi-dots-vertical</v-icon></v-btn>
     </v-card>
 
 
-    <v-app-content>
+    <div>
       <nuxt />
-    </v-app-content>
+    </div>
 
     <v-bottom-navigation v-model="tabSelection" class="bottomNav rounded-0">
-      <v-btn v-for="(item, i) in tabs" :key="i" class="navButton">
-        
+      <v-btn v-for="(item, i) in tabs" :key="i" class="navButton" :to="item.link">
+
         <span v-text="item.name" />
-        <v-icon v-text="item.icon" :color="tabSelection == i ? 'primary' : 'white'" />
+        <v-icon v-text="item.icon" :color="tabSelection == i ? 'primary' : 'grey'" />
 
       </v-btn>
     </v-bottom-navigation>
@@ -24,6 +25,12 @@
 
   </v-app>
 </template>
+
+<style>
+* {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+</style>
 
 <style scoped>
 .topNav {
@@ -52,8 +59,8 @@
       tabSelection: 0,
       tabs: [
         { name: "Home", icon: "mdi-home", link: "/" },
-        { name: "Shorts", icon: "mdi-lightning-bolt", link: "/shorts" },
-        { name: "Upload", icon: "mdi-plus", link: "/upload" },
+        //{ name: "Shorts", icon: "mdi-lightning-bolt", link: "/shorts" },
+        //{ name: "Upload", icon: "mdi-plus", link: "/upload" },
         { name: "Subscriptions", icon: "mdi-youtube-subscription", link: "/subs" },
         { name: "Library", icon: "mdi-view-list", link: "/library" },
       ]

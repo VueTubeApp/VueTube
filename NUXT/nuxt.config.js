@@ -1,11 +1,21 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  
+
   //---   Bettertube Stuff   ---//
   target: 'static',
   buildDir: '../dist',
-  
+  plugins: [
+    { src: "~/plugins/youtubei", mode: "client" }
+  ],
+
+  //---   Bettertube Debugging   ---//
+  server: {
+    port: 80, // default: 3000
+    host: '0.0.0.0', // default: localhost,
+    timing: false
+  },
+
   //---   Default NUXT Stuff   ---//
   head: {
     title: 'BetterTube',
@@ -21,7 +31,6 @@ export default {
 
 
   css: [],
-  plugins: [],
   components: true,
 
   buildModules: [
@@ -32,8 +41,12 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
+        light: {
+          primary: colors.red.lighten1,
+          accent: "#E62117"
+        },
         dark: {
           primary: colors.red.darken2, //colors.blue.darken2
           accent: colors.grey.darken3,
