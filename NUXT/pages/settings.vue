@@ -2,12 +2,17 @@
   <div class="mainContainer">
 
 
-    <v-switch
-      v-model="$vuetify.theme.dark"
-      label="Dark Theme"
-      hint="Bravo Six, Going Dark."
-      inset persistent-hint
-    />
+    <v-card>
+      <v-card-title>Theme</v-card-title>
+      <section>
+        <v-switch
+          v-model="$vuetify.theme.dark"
+          label="Dark Theme"
+          hint="Bravo Six, Going Dark."
+          persistent-hint
+        />
+      </section>
+    </v-card>
 
 
   </div>
@@ -15,6 +20,9 @@
 
 <style scoped>
 .mainContainer {
-  padding-left: 1em;
+  padding: 1em;
+}
+section {
+  padding: 0 1em 1em 1em;
 }
 </style>

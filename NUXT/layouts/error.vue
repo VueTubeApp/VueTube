@@ -1,45 +1,30 @@
 <template>
-  <v-app dark>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
-    <h1 v-else>
-      {{ otherError }}
-    </h1>
-    <NuxtLink to="/">
-      Home page
-    </NuxtLink>
+  <v-app>
+    <center>
+    
+      <v-icon size="100">mdi-alert-circle</v-icon>
+      <h1 class="grey--text">An error occured!</h1>
+      <v-btn to="/">Reload Application</v-btn>
+
+
+      <div style="margin-top: 5em; color: #999; font-size: 0.75em;">
+        <div style="font-size: 1.4em;">Error Information</div>
+        <div>Code: {{ error.statusCode }}</div>
+        <div>Path: {{ this.$route.fullPath }}</div>
+      </div>
+    
+    </center>
   </v-app>
 </template>
 
 <script>
 export default {
-  name: 'EmptyLayout',
   layout: 'empty',
   props: {
     error: {
       type: Object,
       default: null
     }
-  },
-  data () {
-    return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
-    }
-  },
-  head () {
-    const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
-    return {
-      title
-    }
   }
 }
 </script>
-
-<style scoped>
-h1 {
-  font-size: 20px;
-}
-</style>

@@ -4,8 +4,22 @@
     <v-card class="topNav rounded-0" style="display: flex;" color="accent">
       <h2 v-text="page" />
       <v-spacer />
-      <v-btn text><v-icon>mdi-magnify</v-icon></v-btn>
-      <v-btn text><v-icon>mdi-dots-vertical</v-icon></v-btn>
+      <v-btn text class="toolbarAction"><v-icon>mdi-magnify</v-icon></v-btn>
+      
+
+      
+      <v-menu offset-y>
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn text class="toolbarAction" v-bind="attrs" v-on="on"><v-icon>mdi-dots-vertical</v-icon></v-btn>
+      </template>
+      <v-list>
+        <v-list-item v-for="(item, index) in dropdownMenu" :key="index">
+          <nuxt-link :to="item.link" style="text-decoration: none;" class="info--text">{{ item.title }}</nuxt-link>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+
+
     </v-card>
 
 
@@ -33,6 +47,10 @@
 </style>
 
 <style scoped>
+.toolbarAction {
+  min-width: 50px !important;
+}
+
 .topNav {
   padding: 1em;
 }
@@ -56,8 +74,6 @@
 <script>
   export default {
     data: () => ({
-      page: null,
-
       tabSelection: 0,
       tabs: [
         { name: "Home", icon: "mdi-home", link: "/" },
@@ -65,11 +81,21 @@
         //{ name: "Upload", icon: "mdi-plus", link: "/upload" },
         { name: "Subscriptions", icon: "mdi-youtube-subscription", link: "/subs" },
         { name: "Library", icon: "mdi-view-list", link: "/library" },
+      ],
+      dropdownMenu: [
+        { title: "Settings", link: "/settings" },
+        { title: "About", link: "/about" }
       ]
     }),
     mounted() {
-      const pageName = this.$route.path.split("/")[1];
-      this.page = pageName.charAt(0).toUpperCase() + pageName.slice(1);
+      
+    },
+    computed: {
+      page: function () {
+        let pageName = this.$route.path.split("/")[1];
+        pageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
+        return pageName || "Home";
+      }
     }
   }
 </script>
