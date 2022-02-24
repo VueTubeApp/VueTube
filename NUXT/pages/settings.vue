@@ -14,14 +14,23 @@
       </section>
     </v-card>
 
+    <v-card>
+      <v-card-title>Debug</v-card-title>
+      <section>
+        <div style="color: #999;">This is just a temporary section for messing with the tool while it's still being worked on :)</div>
+        <v-btn to="/watch">Open Watch Page</v-btn>
+      </section>
+    </v-card>
+
 
   </div>
 </template>
 
 <style scoped>
-.mainContainer {
-  padding: 1em;
+.v-card {
+  margin: 1em;
 }
+
 section {
   padding: 0 1em 1em 1em;
 }
