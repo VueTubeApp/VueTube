@@ -2,7 +2,7 @@
   <v-app>
 
     <v-card class="topNav rounded-0" style="display: flex;" color="accent">
-      <h2>Home</h2>
+      <h2 v-text="page" />
       <v-spacer />
       <v-btn text><v-icon>mdi-magnify</v-icon></v-btn>
       <v-btn text><v-icon>mdi-dots-vertical</v-icon></v-btn>
@@ -56,6 +56,8 @@
 <script>
   export default {
     data: () => ({
+      page: null,
+
       tabSelection: 0,
       tabs: [
         { name: "Home", icon: "mdi-home", link: "/" },
@@ -65,5 +67,9 @@
         { name: "Library", icon: "mdi-view-list", link: "/library" },
       ]
     }),
+    mounted() {
+      const pageName = this.$route.path.split("/")[1];
+      this.page = pageName.charAt(0).toUpperCase() + pageName.slice(1);
+    }
   }
 </script>
