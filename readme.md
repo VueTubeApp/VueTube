@@ -1,6 +1,6 @@
 # BetterTube
-An open source YouTube client
 <img src="https://github.com/Frontesque/BetterTube/raw/main/Icons/BetterTube.png" alt="BetterTube icon" width="200"/>
+An open source YouTube client
 
 
 ### Features
