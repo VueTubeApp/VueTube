@@ -47,8 +47,8 @@ export default {
       themes: {
         light: {
           background: "#ffffff",
-          primary: colors.red.lighten1,
-          accent: "#E62117",
+          primary: colors.red.lighten2,
+          accent: "#CD201F",
           info: "#000"
         },
         dark: {

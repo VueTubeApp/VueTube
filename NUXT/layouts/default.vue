@@ -11,9 +11,9 @@
           <v-btn text class="toolbarAction fill-height" v-bind="attrs" v-on="on" color="white"><v-icon>mdi-dots-vertical</v-icon></v-btn>
 
         </template>
-        <v-list style="min-width: 150px;">
+        <v-list style="min-width: 180px;">
           <v-list-item v-for="(item, index) in dropdownMenu" :key="index">
-            <nuxt-link :to="item.link" style="text-decoration: none; width: 100%;" class="info--text">{{ item.title }}</nuxt-link>
+            <v-btn text :to="item.link" style="text-decoration: none; width: 100%;" class="info--text">{{ item.title }}</v-btn>
           </v-list-item>
         </v-list>
       </v-menu>
