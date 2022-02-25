@@ -1,2 +1,8 @@
   name: Build Android App
-  uses: sparkfabrik/android-build-action@v1.0.0
+- uses: sparkfabrik/android-build-action@v1.0.0
+  with:
+    project-path: android
+    output-path: bettertube.apk
+    browserstack-upload: false
+    browserstack-username: ${{ secrets.BROWSERSTACK_USERNAME }}
+    browserstack-access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
