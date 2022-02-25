@@ -8,7 +8,7 @@
 
       <v-menu offset-y content-class="mt-8">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn text class="toolbarAction fill-height" v-bind="attrs" v-on="on" color="white" style="padding-right: 0 !important;"><v-icon>mdi-dots-vertical</v-icon></v-btn>
+          <v-btn text class="toolbarAction fill-height" v-bind="attrs" v-on="on" color="white"><v-icon>mdi-dots-vertical</v-icon></v-btn>
 
         </template>
         <v-list style="min-width: 150px;">
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <v-bottom-navigation v-model="tabSelection" shift class="bottomNav py-4 background" style="height: 5rem;">
+    <v-bottom-navigation v-model="tabSelection" shift class="bottomNav py-4" style="height: 5rem;">
       <v-btn v-for="(item, i) in tabs" :key="i" rounded class="navButton mx-2" style="height: 3rem; border-radius: 2rem;" :to="item.link">
 
         <span v-text="item.name" />
