@@ -4,7 +4,9 @@ export default {
 
   //---   Bettertube Stuff   ---//
   target: 'static',
-  buildDir: '../dist',
+  build: {
+    buildDir: '../dist'
+  },
   plugins: [
     { src: "~/plugins/youtubei", mode: "client" }
   ],
@@ -61,9 +63,5 @@ export default {
         }
       }
     }
-  },
-
-  build: {
-    buildDir: '../dist'
   }
 }
