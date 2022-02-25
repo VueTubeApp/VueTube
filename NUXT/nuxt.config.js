@@ -44,13 +44,13 @@ export default {
       dark: false,
       themes: {
         light: {
-          background: colors.white,
+          background: "#ffffff",
           primary: colors.red.lighten1,
           accent: "#E62117",
           info: "#000"
         },
         dark: {
-          background: colors.grey.darken9,
+          background: "#444444",
           primary: colors.red.darken2, //colors.blue.darken2
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
