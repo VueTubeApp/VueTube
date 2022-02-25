@@ -11,7 +11,7 @@
         </template>
         <v-list style="min-width: 150px;">
           <v-list-item v-for="(item, index) in dropdownMenu" :key="index">
-            <nuxt-link :to="item.link" style="text-decoration: none;" class="info--text">{{ item.title }}</nuxt-link>
+            <nuxt-link :to="item.link" style="text-decoration: none; width: 100%;" class="info--text">{{ item.title }}</nuxt-link>
           </v-list-item>
         </v-list>
       </v-menu>
