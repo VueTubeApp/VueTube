@@ -1,5 +1,5 @@
 <template>
-  <div class="mainContainer">
+  <div class="mainContainer pt-1">
 
 
     <v-card class="pb-5"> 
@@ -22,6 +22,14 @@
           }}
           <v-icon :size="this.$vuetify.theme.themes.dark.background === '#000000' ? '.5rem' : '.9rem'" class="ml-2">mdi-brightness-2</v-icon>
         </v-btn>
+        <v-btn v-else text tile class="white--text red" @click="nored" >
+          {{ 
+            this.$vuetify.theme.themes.light.accent === '#888'
+            ? 'RED' 
+            : 'EWW'
+          }}
+          <v-icon :size="this.$vuetify.theme.themes.light.accent === '#888' ? '.5rem' : '.9rem'" class="ml-2">mdi-brightness-1</v-icon>
+        </v-btn>
       </v-row>
     </v-card>
 
@@ -40,6 +48,13 @@
 <script>
 export default {
   methods: {
+    nored () {
+      this.$vuetify.theme.themes.light.accent === '#888' ? (
+        this.$vuetify.theme.themes.light.accent = '#e00'
+       ) : (
+        this.$vuetify.theme.themes.light.accent = '#888'
+      )
+    },
     amoled () {
       this.$vuetify.theme.themes.dark.background === '#000000' ? (
         this.$vuetify.theme.themes.dark.accent = '#444444',

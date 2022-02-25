@@ -1,13 +1,15 @@
 <template>
-  <v-app class="background">
-    <v-card class="topNav rounded-0" style="display: flex;" color="accent white--text">
+  <v-app>
+    <v-card class="topNav rounded-0" style="display: flex; box-shadow: none !important;" color="accent white--text">
       <h2 v-text="page" />
       <v-spacer />
-      <v-btn text class="toolbarAction" color="white" @click="search = !search"><v-icon>mdi-magnify</v-icon></v-btn>
 
-      <v-menu offset-y content-class="mt-4">
+      <v-btn text class="toolbarAction mr-2 fill-height" color="white" @click="search = !search"><v-icon>mdi-magnify</v-icon></v-btn>
+      
+      <v-menu offset-y content-class="mt-8">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn text class="toolbarAction" v-bind="attrs" v-on="on" color="white"><v-icon>mdi-dots-vertical</v-icon></v-btn>
+          <v-btn text class="toolbarAction fill-height" v-bind="attrs" v-on="on" color="white" style="padding-right: 0 !important;"><v-icon>mdi-dots-vertical</v-icon></v-btn>
+
         </template>
         <v-list style="min-width: 150px;">
           <v-list-item v-for="(item, index) in dropdownMenu" :key="index">
@@ -19,12 +21,14 @@
 
     <searchOverlay v-if="search" />
 
-    <div class="background" style="min-height: 100%">
-      <nuxt />
+    <div class="accent" style="height: 100%">
+      <div class="background" style="height: 100%; border-radius: 1rem 1rem 0 0;">
+        <nuxt />
+      </div>
     </div>
 
-    <v-bottom-navigation v-model="tabSelection" shift class="bottomNav background rounded-0">
-      <v-btn v-for="(item, i) in tabs" :key="i" class="navButton" :to="item.link">
+    <v-bottom-navigation v-model="tabSelection" shift class="bottomNav py-4 background" style="height: 5rem;">
+      <v-btn v-for="(item, i) in tabs" :key="i" rounded class="navButton mx-2" style="height: 3rem; border-radius: 2rem;" :to="item.link">
 
         <span v-text="item.name" />
         <v-icon v-text="item.icon" :color="tabSelection == i ? 'primary' : 'grey'" />
@@ -48,14 +52,15 @@
 }
 
 .topNav {
-  padding: 1em;
+  padding: 1rem;
 }
 .bottomNav {
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 .navButton {
-  width: 20vw !important;
+  width: 25vw !important;
+  font-size: .66rem !important;
 }
 .topNavSearch {
   margin-bottom: -10em;
