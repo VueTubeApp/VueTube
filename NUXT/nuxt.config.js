@@ -8,7 +8,7 @@ export default {
     buildDir: '../dist'
   },
   plugins: [
-    { src: "~/plugins/youtubei", mode: "client" }
+    { src: "~/plugins/youtube", mode: "client" }
   ],
 
   //---   Bettertube Debugging   ---//
