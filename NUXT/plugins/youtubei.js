@@ -1,7 +1,6 @@
 const module = {
   search(phrase, type, callback) {
-    const ytclient = require("youtubei").Client;
-    const youtube = new ytclient();
+    const youtube = new require("youtubei").Client();
 
     youtube.search(phrase, { type: "video" }).then((results) => {
       callback(results);
