@@ -3,19 +3,23 @@
     <v-card class="topNav rounded-0" style="display: flex; box-shadow: none !important;" color="accent white--text">
       <h2 v-text="page" />
       <v-spacer />
-      <v-btn text class="toolbarAction mr-2 fill-height" color="white" style="padding-right: 0 !important;"><v-icon>mdi-magnify</v-icon></v-btn>
+
+      <v-btn text class="toolbarAction mr-2 fill-height" color="white" @click="search = !search"><v-icon>mdi-magnify</v-icon></v-btn>
       
       <v-menu offset-y content-class="mt-8">
         <template v-slot:activator="{ on, attrs }">
           <v-btn text class="toolbarAction fill-height" v-bind="attrs" v-on="on" color="white" style="padding-right: 0 !important;"><v-icon>mdi-dots-vertical</v-icon></v-btn>
+
         </template>
-        <v-list>
+        <v-list style="min-width: 150px;">
           <v-list-item v-for="(item, index) in dropdownMenu" :key="index">
-            <nuxt-link :to="item.link" style="text-decoration: none;" class="info--text">{{ item.title }}</nuxt-link>
+            <nuxt-link :to="item.link" style="text-decoration: none; width: 100%;" class="info--text">{{ item.title }}</nuxt-link>
           </v-list-item>
         </v-list>
       </v-menu>
     </v-card>
+
+    <searchOverlay v-if="search" />
 
     <div class="accent" style="height: 100%">
       <div class="background" style="height: 100%; border-radius: 1rem 1rem 0 0;">
@@ -44,7 +48,7 @@
 
 <style scoped>
 .toolbarAction {
-  min-width: 50px !important;
+  min-width: 40px !important;
 }
 
 .topNav {
@@ -69,8 +73,12 @@
 </style>
 
 <script>
+import search from '../pages/search.vue';
   export default {
+  components: { search },
     data: () => ({
+      search: false,
+
       tabSelection: 0,
       tabs: [
         { name: "Home", icon: "mdi-home", link: "/" },
@@ -85,7 +93,7 @@
       ]
     }),
     mounted() {
-      
+
     },
     computed: {
       page: function () {
