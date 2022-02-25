@@ -2,7 +2,7 @@
 
 DIR=../android
 LOG_OUTPUT=./tmp/capacitor-android.txt
-CAP_VERSION=`grep '"version": ' $DIR/package.json | awk '{print $2}' | tr -d '",'`
+CAP_VERSION=`grep '"version": ' ../package.json | awk '{print $2}' | tr -d '",'`
 echo Attempting to build and publish Capacitor native libraries with version $CAP_VERSION
 
 # Make log dir if doesnt exist
