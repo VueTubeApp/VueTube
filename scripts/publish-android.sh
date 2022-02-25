@@ -23,7 +23,7 @@ else
     printf %"s\n" "Latest native Capacitor Android library is version $CAPACITOR_PUBLISHED_VERSION, publishing to MavenCentral staging..."
 
     # Build and publish
-    $DIR/gradlew clean build publishReleasePublicationToSonatypeRepository --max-workers 1 -b $DIR/build.gradle -Pandroid.useAndroidX=true -Pandroid.enableJetifier=true > $LOG_OUTPUT 2>&1
+    $DIR/gradlew clean build --max-workers 1 -b $DIR/build.gradle -Pandroid.useAndroidX=true -Pandroid.enableJetifier=true > $LOG_OUTPUT 2>&1
 
     echo $RESULT
 
