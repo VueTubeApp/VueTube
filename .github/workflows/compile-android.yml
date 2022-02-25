@@ -1,5 +1,5 @@
   name: Build Android App
-- uses: sparkfabrik/android-build-action@v1.0.0
+  uses: sparkfabrik/android-build-action@v1.0.0
   with:
     project-path: android
     output-path: bettertube.apk
