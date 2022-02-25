@@ -5,7 +5,7 @@
       <v-spacer />
 
       <v-btn text class="toolbarAction mr-2 fill-height" color="white" @click="search = !search"><v-icon>mdi-magnify</v-icon></v-btn>
-      
+
       <v-menu offset-y content-class="mt-8">
         <template v-slot:activator="{ on, attrs }">
           <v-btn text class="toolbarAction fill-height" v-bind="attrs" v-on="on" color="white" style="padding-right: 0 !important;"><v-icon>mdi-dots-vertical</v-icon></v-btn>
@@ -23,6 +23,7 @@
 
     <div class="accent" style="height: 100%">
       <div class="background" style="height: 100%; border-radius: 1rem 1rem 0 0;">
+
         <nuxt />
       </div>
     </div>
@@ -73,9 +74,7 @@
 </style>
 
 <script>
-import search from '../pages/search.vue';
   export default {
-  components: { search },
     data: () => ({
       search: false,
 
