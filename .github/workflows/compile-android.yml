@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: native-publish
+          ref: $BASE_BRANCH
       - name: set up JDK 11
         uses: actions/setup-java@v2
         with:
