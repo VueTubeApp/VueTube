@@ -8,7 +8,7 @@
     />
     <v-list style="min-width: 180px;">
       <v-list-item v-for="(item, index) in response" :key="index">
-        <v-btn text style="width: 100%;" class="info--text">{{ item }}</v-btn>
+        <v-btn text style="width: 100%;" class="info--text">{{ item[0] }}</v-btn>
       </v-list-item>
     </v-list>
   </div>
