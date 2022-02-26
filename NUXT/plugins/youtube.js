@@ -8,6 +8,7 @@ const module = {
       params: { client: 'youtube', q: text },
     };
     const response = await Http.request(options);
+    callback(response)
 
   }
 }

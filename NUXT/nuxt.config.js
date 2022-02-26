@@ -4,12 +4,12 @@ export default {
 
   //---   Bettertube Stuff   ---//
   target: 'static',
-  build: {
-    buildDir: '../dist'
-  },
   plugins: [
     { src: "~/plugins/youtube", mode: "client" }
   ],
+  generate: {
+    dir: '../dist'
+  },
 
   //---   Bettertube Debugging   ---//
   server: {
