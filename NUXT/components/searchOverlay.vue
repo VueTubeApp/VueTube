@@ -21,8 +21,8 @@ export default {
 
   methods: {
     textChanged() {
-      this.$youtube.autoComplete(this.text, (data) => {
-        this.response = data;
+      this.$youtube.autoComplete(this.text, (res) => {
+        this.response = res.data;
       });
     }
   }
