@@ -28,8 +28,8 @@
       </div>
     </div>
 
-    <v-bottom-navigation v-model="tabSelection" shift class="bottomNav py-4" style="height: 5rem;">
-      <v-btn v-for="(item, i) in tabs" :key="i" rounded class="navButton mx-2" style="height: 3rem; border-radius: 2rem;" :to="item.link">
+    <v-bottom-navigation v-model="tabSelection" shift class="bottomNav py-4">
+      <v-btn v-for="(item, i) in tabs" :key="i" rounded class="navButton" :to="item.link">
 
         <span v-text="item.name" />
         <v-icon v-text="item.icon" :color="tabSelection == i ? 'primary' : 'grey'" />
@@ -58,10 +58,12 @@
 .bottomNav {
   position: fixed;
   bottom: 0;
+  padding: 0 !important;
 }
 .navButton {
   width: 25vw !important;
   font-size: .66rem !important;
+  border-radius: 2rem !important;
 }
 .topNavSearch {
   margin-bottom: -10em;
