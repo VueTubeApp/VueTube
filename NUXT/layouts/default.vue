@@ -88,7 +88,8 @@
       ],
       dropdownMenu: [
         { title: "Settings", link: "/settings" },
-        { title: "About", link: "/about" }
+        { title: "About", link: "/about" },
+        { title: "Logs", link: "/logs" }
       ]
     }),
     mounted() {
