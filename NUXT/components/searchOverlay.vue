@@ -2,9 +2,9 @@
   <div>
     <v-text-field
       label="Search"
-      outlined
       v-model="text"
       @input="textChanged"
+      class="searchBar"
     />
     <v-list style="min-width: 180px;">
       <v-list-item v-for="(item, index) in response" :key="index">
@@ -13,6 +13,12 @@
     </v-list>
   </div>
 </template>
+
+<style scoped>
+.searchBar {
+  margin: 0 1em 1em 1em;
+}
+</style>
 
 <script>
 export default {
