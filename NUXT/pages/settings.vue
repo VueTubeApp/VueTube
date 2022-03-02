@@ -42,7 +42,7 @@ export default {
   methods: {
     amoled () {
       this.$vuetify.theme.themes.dark.background === '#000' ? (
-        this.$vuetify.theme.themes.dark.accent = '#444',
+        this.$vuetify.theme.themes.dark.accent = '#222',
         this.$vuetify.theme.themes.dark.background = '#222'
        ) : (
         this.$vuetify.theme.themes.dark.accent = '#000',

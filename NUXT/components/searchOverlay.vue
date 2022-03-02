@@ -1,22 +1,31 @@
 <template>
   <div>
+
+
     <v-text-field
       label="Search"
       v-model="text"
       @input="textChanged"
       class="searchBar"
     />
-    <v-list style="min-width: 180px;">
+
+    <div style="min-width: 180px;">
       <v-list-item v-for="(item, index) in response" :key="index">
-        <v-btn text style="width: 100%;" class="info--text">{{ item[0] }}</v-btn>
+        <v-btn text dense class="info--text searchButton text-left" @click="search(item)" v-text="item[0]" />
       </v-list-item>
-    </v-list>
+    </div>
+
+
   </div>
 </template>
 
 <style scoped>
 .searchBar {
   margin: 0 1em 1em 1em;
+}
+.searchButton {
+  width: 100%;
+  justify-content: left !important;
 }
 </style>
 
@@ -35,6 +44,10 @@ export default {
         const data = res.data.replace(/^.*?\(/,'').replace(/\)$/,''); //Format Response
         this.response = JSON.parse(data)[1]
       });
+    },
+
+    search(item) {
+      console.log(item);
     }
   }
 
