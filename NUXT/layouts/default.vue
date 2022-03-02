@@ -49,7 +49,7 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  border-radius: 0 0 1em 1em !important;
+  /*border-radius: 0 0 1em 1em !important;*/
 }
 .topNavSearch {
   margin-bottom: -10em;
