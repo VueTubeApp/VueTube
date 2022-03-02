@@ -48,12 +48,14 @@ export default {
         light: {
           primary: colors.red.lighten2,
           accent: "#CD201F",
+          accent2: "#fff",
           background: "#fff",
           info: "#000"
         },
         dark: {
           primary: colors.red.darken2, //colors.blue.darken2
-          accent: "#444",
+          accent: "#333",
+          accent2: "#333",
           background: "#222",
           info: "#fff",
         }

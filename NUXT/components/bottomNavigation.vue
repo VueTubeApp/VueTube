@@ -1,6 +1,6 @@
 <template>
 
-  <v-bottom-navigation v-model="tabSelection" shift class="bottomNav py-4">
+  <v-bottom-navigation v-model="tabSelection" shift class="bottomNav py-4 accent2">
     <v-btn v-for="(item, i) in tabs" :key="i" rounded class="navButton" :to="item.link">
 
       <span v-text="item.name" />
