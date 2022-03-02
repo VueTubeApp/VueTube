@@ -46,16 +46,15 @@ export default {
       dark: false,
       themes: {
         light: {
-          background: "#ffffff",
           primary: colors.red.lighten2,
           accent: "#CD201F",
+          background: "#fff",
           info: "#000"
         },
         dark: {
-          background: "#444444",
           primary: colors.red.darken2, //colors.blue.darken2
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+          accent: "#444",
+          background: "#222",
           info: "#fff",
         }
       }

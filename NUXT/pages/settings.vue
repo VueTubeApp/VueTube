@@ -2,7 +2,7 @@
   <div class="mainContainer pt-1">
 
 
-    <v-card class="pb-5"> 
+    <v-card class="pb-5">
       <v-card-title>Theme</v-card-title>
       <v-row class="ml-3 mr-6">
         <section class="row">
@@ -15,20 +15,12 @@
           />
         </section>
         <v-btn v-if="$vuetify.theme.dark" text tile class="white--text black" @click="amoled" >
-          {{ 
-            this.$vuetify.theme.themes.dark.background === '#000000'
-            ? 'LCD' 
+          {{
+            this.$vuetify.theme.themes.dark.background === '#000'
+            ? 'LCD'
             : 'OLED'
           }}
-          <v-icon :size="this.$vuetify.theme.themes.dark.background === '#000000' ? '.5rem' : '.9rem'" class="ml-2">mdi-brightness-2</v-icon>
-        </v-btn>
-        <v-btn v-else text tile class="white--text red" @click="nored" >
-          {{ 
-            this.$vuetify.theme.themes.light.accent === '#888'
-            ? 'RED' 
-            : 'EWW'
-          }}
-          <v-icon :size="this.$vuetify.theme.themes.light.accent === '#888' ? '.5rem' : '.9rem'" class="ml-2">mdi-brightness-1</v-icon>
+          <v-icon :size="this.$vuetify.theme.themes.dark.background === '#000' ? '.5rem' : '.9rem'" class="ml-2">mdi-brightness-2</v-icon>
         </v-btn>
       </v-row>
     </v-card>
@@ -48,20 +40,13 @@
 <script>
 export default {
   methods: {
-    nored () {
-      this.$vuetify.theme.themes.light.accent === '#888' ? (
-        this.$vuetify.theme.themes.light.accent = '#e00'
-       ) : (
-        this.$vuetify.theme.themes.light.accent = '#888'
-      )
-    },
     amoled () {
-      this.$vuetify.theme.themes.dark.background === '#000000' ? (
-        this.$vuetify.theme.themes.dark.accent = '#444444',
-        this.$vuetify.theme.themes.dark.background = '#111111'
+      this.$vuetify.theme.themes.dark.background === '#000' ? (
+        this.$vuetify.theme.themes.dark.accent = '#444',
+        this.$vuetify.theme.themes.dark.background = '#222'
        ) : (
-        this.$vuetify.theme.themes.dark.accent = '#000000',
-        this.$vuetify.theme.themes.dark.background = '#000000'
+        this.$vuetify.theme.themes.dark.accent = '#000',
+        this.$vuetify.theme.themes.dark.background = '#000'
       )
       // doesn't work 😭
       // console.log(document.getElementsByClassName('v-application--wrap')[0])
