@@ -5,7 +5,7 @@
       <v-card class="card">
         <v-card-title>
           {{ item.name }}
-          <span v-text="`${new Date(item.time).toLocaleString()}`" class="date" />
+          <span v-text="`• ${new Date(item.time).toLocaleString()}`" class="date" />
         </v-card-title>
         <v-card-text v-text="item.data" />
       </v-card>
@@ -21,9 +21,10 @@
   margin-top: 1em;
 }
 .date {
-  margin: 0.5em;
+  margin: 0.4em;
   font-size: 0.75em;
   transform: translateY(5%);
+  color: #999;
 }
 </style>
 
