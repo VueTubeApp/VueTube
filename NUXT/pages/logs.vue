@@ -10,6 +10,7 @@
         <v-card-text v-text="item.data" />
       </v-card>
     </v-list-item>
+    <br><br><br> <!--   Temp fix for last log entries being cut off   -->
 
   </div>
 </template>
@@ -20,7 +21,7 @@
   margin-top: 1em;
 }
 .date {
-  margin-left: 0.5em;
+  margin: 0.5em;
   font-size: 0.75em;
   transform: translateY(5%);
 }

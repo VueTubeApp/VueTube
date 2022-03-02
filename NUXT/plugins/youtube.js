@@ -3,7 +3,7 @@ import { Http } from '@capacitor-community/http';
 
 //---   Logger Function   ---//
 function logger(func, data) {
-  module.logs.push({
+  module.logs.unshift({
     name: func,
     time: Date.now(),
     data: data
