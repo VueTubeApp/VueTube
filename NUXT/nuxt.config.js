@@ -20,7 +20,7 @@ export default {
 
   //---   Default NUXT Stuff   ---//
   head: {
-    title: 'BetterTube',
+    title: 'VueTube',
     htmlAttrs: {
       lang: 'en'
     },

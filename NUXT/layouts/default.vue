@@ -24,7 +24,7 @@
     <div class="accent" style="height: 100%">
       <div class="background">
         <searchOverlay v-if="search" />
-        <nuxt v-if="!search" />
+        <nuxt v-show="!search" />
       </div>
     </div>
 
