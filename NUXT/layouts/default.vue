@@ -17,11 +17,12 @@
           </v-list-item>
         </v-list>
       </v-menu>
+
     </v-card>
 
 
     <div class="accent" style="height: 100%">
-      <div class="background" style="height: 100%; border-radius: 1rem 1rem 0 0;">
+      <div class="background">
         <searchOverlay v-if="search" />
         <nuxt v-if="!search" />
       </div>
@@ -45,14 +46,19 @@
 }
 .topNav {
   padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-radius: 0 0 1em 1em !important;
 }
 .topNavSearch {
   margin-bottom: -10em;
   margin-left: 2em;
-  transform: translateY(-2.5%);
-  border-radius: 5px;
-  border-bottom-left-radius: 5px !important;
-  border-bottom-right-radius: 5px !important;
+  /*transform: translateY(-2.5%);*/
+}
+.background {
+  height: 100%;
+  /*border-radius: 1rem 1rem 0 0;*/ /* Causes really weird display issues */
 }
 </style>
 
