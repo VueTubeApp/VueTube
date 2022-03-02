@@ -3,7 +3,10 @@
 
     <v-list-item v-for="(item, index) in logs" :key="index">
       <v-card class="card">
-        <v-card-title v-text="`${item.name} - ${new Date(item.time).toLocaleString()}`" />
+        <v-card-title>
+          {{ item.name }}
+          <span v-text="`${new Date(item.time).toLocaleString()}`" class="date" />
+        </v-card-title>
         <v-card-text v-text="item.data" />
       </v-card>
     </v-list-item>
@@ -15,6 +18,11 @@
 .card {
   width: 100%;
   margin-top: 1em;
+}
+.date {
+  margin-left: 0.5em;
+  font-size: 0.75em;
+  transform: translateY(5%);
 }
 </style>
 

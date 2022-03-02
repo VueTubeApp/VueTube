@@ -19,23 +19,15 @@
       </v-menu>
     </v-card>
 
-    <searchOverlay v-if="search" />
 
     <div class="accent" style="height: 100%">
       <div class="background" style="height: 100%; border-radius: 1rem 1rem 0 0;">
-
-        <nuxt />
+        <searchOverlay v-if="search" />
+        <nuxt v-if="!search" />
       </div>
     </div>
 
-    <v-bottom-navigation v-model="tabSelection" shift class="bottomNav py-4">
-      <v-btn v-for="(item, i) in tabs" :key="i" rounded class="navButton" :to="item.link">
-
-        <span v-text="item.name" />
-        <v-icon v-text="item.icon" :color="tabSelection == i ? 'primary' : 'grey'" />
-
-      </v-btn>
-    </v-bottom-navigation>
+    <bottomNavigation v-if="!search" />
 
 
   </v-app>
@@ -51,19 +43,8 @@
 .toolbarAction {
   min-width: 40px !important;
 }
-
 .topNav {
   padding: 1rem;
-}
-.bottomNav {
-  position: fixed;
-  bottom: 0;
-  padding: 0 !important;
-}
-.navButton {
-  width: 25vw !important;
-  font-size: .66rem !important;
-  border-radius: 2rem !important;
 }
 .topNavSearch {
   margin-bottom: -10em;
@@ -80,14 +61,6 @@
     data: () => ({
       search: false,
 
-      tabSelection: 0,
-      tabs: [
-        { name: "Home", icon: "mdi-home", link: "/" },
-        //{ name: "Shorts", icon: "mdi-lightning-bolt", link: "/shorts" },
-        //{ name: "Upload", icon: "mdi-plus", link: "/upload" },
-        { name: "Subscriptions", icon: "mdi-youtube-subscription", link: "/subs" },
-        { name: "Library", icon: "mdi-view-list", link: "/library" },
-      ],
       dropdownMenu: [
         { title: "Settings", link: "/settings" },
         { title: "About", link: "/about" },

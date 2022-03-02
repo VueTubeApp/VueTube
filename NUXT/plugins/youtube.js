@@ -19,6 +19,10 @@ const module = {
       method: 'GET',
       url: 'https://suggestqueries-clients6.youtube.com/complete/search',
       params: { client: 'youtube', q: text }
+    })
+    .catch((err) => {
+      logger("autoComplete", err);
+      callback(err);
     });
     logger("autoComplete", res);
     callback(res);
