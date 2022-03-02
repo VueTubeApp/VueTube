@@ -21,7 +21,7 @@ export default {
         { name: "Home", icon: "mdi-home", link: "/" },
         //{ name: "Shorts", icon: "mdi-lightning-bolt", link: "/shorts" },
         //{ name: "Upload", icon: "mdi-plus", link: "/upload" },
-        { name: "Subscriptions", icon: "mdi-youtube-subscription", link: "/subs" },
+        { name: "Subscriptions", icon: "mdi-youtube-subscription", link: "/subscriptions" },
         { name: "Library", icon: "mdi-view-list", link: "/library" },
       ],
     }
