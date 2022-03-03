@@ -47,10 +47,11 @@ const module = {
       let results = JSON.parse(html);
       results = results.contents.twoColumnSearchResultsRenderer.primaryContents.sectionListRenderer.contents[0].itemSectionRenderer.contents;
       //---   Output   ---//
+      logger("search", results);
       callback(results);
     })
     .catch((err) => {
-      logger("autoComplete", err);
+      logger("search", err);
       callback(err);
     });
   }

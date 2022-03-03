@@ -1,7 +1,6 @@
 <template>
   <div class="mainContainer pt-1">
 
-
     <v-card class="pb-5">
       <v-card-title>Theme</v-card-title>
       <v-row class="ml-3 mr-6">
@@ -30,6 +29,7 @@
       <section>
         <div style="color: #999;">This is just a temporary section for messing with the tool while it's still being worked on :)</div>
         <v-btn to="/watch">Open Watch Page</v-btn>
+        <v-btn to="/search">Open Search Page</v-btn>
       </section>
     </v-card>
 
