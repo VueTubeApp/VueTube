@@ -6,7 +6,10 @@ An open source YouTube client
 [![.github/workflows/compile-android.yml](https://github.com/Frontesque/BetterTube/actions/workflows/compile-android.yml/badge.svg)](https://github.com/Frontesque/BetterTube/actions/workflows/compile-android.yml)
 
 
-### Features
+## Links
+- [Discord](https://discord.gg/7P8KJrdd5W)
+
+## Features
 - Literally just a UI as of now
 
 ### Plans
