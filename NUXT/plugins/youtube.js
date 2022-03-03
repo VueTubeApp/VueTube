@@ -25,8 +25,36 @@ const module = {
       callback(err);
     });
     logger("autoComplete", res);
-    callback(res);
+    callback(res.data);
+  },
+
+  search(text, callback) {
+    Http.request({
+      method: 'GET',
+      url: 'https://youtube.com/results',
+      params: { q: text, hl: "en" }
+    })
+    .then((res) => {
+      //---   Get HTML Only   ---//
+      let html = res.data;
+      //---   Isolate The Script Containing Video Information   ---//
+      html = html.split("var ytInitialData =")[1].split("</script>")[0].slice(0, -1);
+      //---   Replace Encoded Characters   ---///
+      html = html.replace(/\\x([0-9A-F]{2})/ig, (...items) => { return String.fromCharCode(parseInt(items[1], 16)); });
+      //---   Properly Format JSON   ---//
+      html = html.replaceAll("\\\\\"", "");
+      //---   Parse JSON & Get Results   ---//
+      let results = JSON.parse(html);
+      results = results.contents.twoColumnSearchResultsRenderer.primaryContents.sectionListRenderer.contents[0].itemSectionRenderer.contents;
+      //---   Output   ---//
+      callback(results);
+    })
+    .catch((err) => {
+      logger("autoComplete", err);
+      callback(err);
+    });
   }
+
 }
 
 //---   Start   ---//

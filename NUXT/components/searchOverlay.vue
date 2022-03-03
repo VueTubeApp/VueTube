@@ -41,7 +41,7 @@ export default {
   methods: {
     textChanged() {
       this.$youtube.autoComplete(this.text, (res) => {
-        const data = res.data.replace(/^.*?\(/,'').replace(/\)$/,''); //Format Response
+        const data = res.replace(/^.*?\(/,'').replace(/\)$/,''); //Format Response
         this.response = JSON.parse(data)[1]
       });
     },
