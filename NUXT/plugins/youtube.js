@@ -2,11 +2,12 @@
 import { Http } from '@capacitor-community/http';
 
 //---   Logger Function   ---//
-function logger(func, data) {
+function logger(func, data, isError=false) {
   module.logs.unshift({
     name: func,
     time: Date.now(),
-    data: data
+    data: data,
+    error: isError
   })
 }
 
@@ -28,11 +29,11 @@ function youtubeSearch(text, callback) {
     html = html.replaceAll("\\\\\"", "");
     //---   Parse JSON   ---//
     html = JSON.parse(html);
-    
+
     //---   Get Results   ---// ( Thanks To appit-online On Github ) -> https://github.com/appit-online/youtube-search/blob/master/src/lib/search.ts
     let results;
     if (html && html.contents && html.contents.sectionListRenderer && html.contents.sectionListRenderer.contents
-      && html.contents.sectionListRenderer.contents.length > 0 
+      && html.contents.sectionListRenderer.contents.length > 0
       && html.contents.sectionListRenderer.contents[0].itemSectionRenderer
       && html.contents.sectionListRenderer.contents[0].itemSectionRenderer.contents.length > 0) {
         results = html.contents.sectionListRenderer.contents[0].itemSectionRenderer.contents;
@@ -55,7 +56,7 @@ function youtubeSearch(text, callback) {
 
   })
   .catch((err) => {
-    logger("search", err);
+    logger("search", err, true);
     callback(err);
   });
 }
@@ -75,7 +76,7 @@ const module = {
       callback(res.data);
     })
     .catch((err) => {
-      logger("autoComplete", err);
+      logger("autoComplete", err, true);
       callback(err);
     });
   },
@@ -97,7 +98,7 @@ const module = {
       }
     })
     callback(results);
-    
+
   }
 
 }

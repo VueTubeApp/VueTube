@@ -4,6 +4,7 @@
     <v-list-item v-for="(item, index) in logs" :key="index">
       <v-card class="card">
         <v-card-title>
+          <v-chip outlined class="errorChip" color="error" v-if="item.error">Error</v-chip>
           {{ item.name }}
           <span v-text="`• ${new Date(item.time).toLocaleString()}`" class="date" />
         </v-card-title>
@@ -31,6 +32,9 @@
   font-size: 0.75em;
   transform: translateY(5%);
   color: #999;
+}
+.errorChip {
+  margin-right: 0.5em;
 }
 </style>
 
