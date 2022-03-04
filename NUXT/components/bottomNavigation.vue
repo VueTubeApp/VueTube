@@ -34,6 +34,7 @@ export default {
   position: sticky;
   bottom: 0;
   padding: 0 !important;
+  z-index: 99999;
 }
 .navButton {
   width: 25vw !important;
