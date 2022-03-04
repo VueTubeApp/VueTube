@@ -86,15 +86,17 @@ const module = {
     let results = new Array();
     youtubeSearch(text, (videos) => {
       for (const i in videos) {
-        const video = videos[i];
-        results.push({
-          id: video.compactVideoRenderer.videoId,
-          runtime: video.compactVideoRenderer.lengthText.runs[0].text,
-          uploaded: video.compactVideoRenderer.publishedTimeText.runs[0].text,
-          views: video.compactVideoRenderer.viewCountText.runs[0].text,
-          thumbnails: video.compactVideoRenderer.thumbnail.thumbnails,
-          raw: video
-        })
+        if (video.compactVideoRenderer) {
+          const video = videos[i];
+          results.push({
+            id: video.compactVideoRenderer.videoId,
+            runtime: video.compactVideoRenderer.lengthText.runs[0].text,
+            uploaded: video.compactVideoRenderer.publishedTimeText.runs[0].text,
+            views: video.compactVideoRenderer.viewCountText.runs[0].text,
+            thumbnails: video.compactVideoRenderer.thumbnail.thumbnails,
+            raw: video
+          })
+        }
       }
     })
     callback(results);
