@@ -47,7 +47,7 @@ export default {
     },
 
     search(item) {
-      console.log(item);
+      location.href="/search?q="+item[0];
     }
   }
 

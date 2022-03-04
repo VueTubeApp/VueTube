@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-list-item v-for="(video, index) in videos" :key="index">
-      <v-card>
+      <v-card class="entry">
         <v-card-title v-text="video.raw.compactVideoRenderer.title.runs[0].text" />
         <v-card-text>
           <v-img :src="video.thumbnails[video.thumbnails.length - 1].url" />
@@ -15,6 +15,12 @@
   </div>
 </template>
 
+<style scoped>
+.entry {
+  margin: 1em;
+}
+</style>
+
 <script>
 export default {
   data() {
@@ -23,8 +29,10 @@ export default {
     }
   },
   mounted() {
+    const searchQuestion = this.$route.query.q
+
     const vm = this;
-    this.$youtube.search("TEST", (data) => {
+    this.$youtube.search(searchQuestion, (data) => {
       vm.videos = data;
     })
   }

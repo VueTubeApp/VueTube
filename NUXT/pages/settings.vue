@@ -29,7 +29,6 @@
       <section>
         <div style="color: #999;">This is just a temporary section for messing with the tool while it's still being worked on :)</div>
         <v-btn to="/watch">Watch Page</v-btn>
-        <v-btn to="/search">Search Page</v-btn>
       </section>
     </v-card>
 
