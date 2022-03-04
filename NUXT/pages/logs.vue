@@ -7,7 +7,14 @@
           {{ item.name }}
           <span v-text="`• ${new Date(item.time).toLocaleString()}`" class="date" />
         </v-card-title>
-        <v-card-text v-text="item.data" />
+
+        <v-expansion-panels>
+          <v-expansion-panel>
+            <v-expansion-panel-header>More</v-expansion-panel-header>
+            <v-expansion-panel-content v-text="item.data" style="padding: 1em;" />
+          </v-expansion-panel>
+        </v-expansion-panels>
+
       </v-card>
     </v-list-item>
 
