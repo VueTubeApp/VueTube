@@ -10,6 +10,56 @@ function logger(func, data) {
   })
 }
 
+//---   Search Main Function   ---//
+function youtubeSearch(text, callback) {
+  Http.request({
+    method: 'GET',
+    url: 'https://youtube.com/results',
+    params: { q: text, hl: "en" }
+  })
+  .then((res) => {
+    //---   Get HTML Only   ---//
+    let html = res.data;
+    //---   Isolate The Script Containing Video Information   ---//
+    html = html.split("var ytInitialData = '")[1].split("';</script>")[0];
+    //---   Replace Encoded Characters   ---///
+    html = html.replace(/\\x([0-9A-F]{2})/ig, (...items) => { return String.fromCharCode(parseInt(items[1], 16)); });
+    //---   Properly Format JSON   ---//
+    html = html.replaceAll("\\\\\"", "");
+    //---   Parse JSON   ---//
+    html = JSON.parse(html);
+    
+    //---   Get Results   ---// ( Thanks To appit-online On Github ) -> https://github.com/appit-online/youtube-search/blob/master/src/lib/search.ts
+    let results;
+    if (html && html.contents && html.contents.sectionListRenderer && html.contents.sectionListRenderer.contents
+      && html.contents.sectionListRenderer.contents.length > 0 
+      && html.contents.sectionListRenderer.contents[0].itemSectionRenderer
+      && html.contents.sectionListRenderer.contents[0].itemSectionRenderer.contents.length > 0) {
+        results = html.contents.sectionListRenderer.contents[0].itemSectionRenderer.contents;
+        logger("search", results);
+        callback(results);
+    } else {
+      try {
+        results = JSON.parse(html.split('{"itemSectionRenderer":{"contents":')[html.split('{"itemSectionRenderer":{"contents":').length - 1].split(',"continuations":[{')[0]);
+        logger("search", results);
+        callback(results);
+      } catch (e) {}
+      try {
+        results = JSON.parse(html.split('{"itemSectionRenderer":')[html.split('{"itemSectionRenderer":').length - 1].split('},{"continuationItemRenderer":{')[0]).contents;
+        logger("search", results);
+        callback(results);
+      } catch(e) {}
+    }
+
+
+
+  })
+  .catch((err) => {
+    logger("search", err);
+    callback(err);
+  });
+}
+
 const module = {
   logs: new Array(),
 
@@ -32,52 +82,22 @@ const module = {
 
   search(text, callback) {
 
-    Http.request({
-      method: 'GET',
-      url: 'https://youtube.com/results',
-      params: { q: text, hl: "en" }
-    })
-    .then((res) => {
-      //---   Get HTML Only   ---//
-      let html = res.data;
-      //---   Isolate The Script Containing Video Information   ---//
-      html = html.split("var ytInitialData = '")[1].split("';</script>")[0];
-      //---   Replace Encoded Characters   ---///
-      html = html.replace(/\\x([0-9A-F]{2})/ig, (...items) => { return String.fromCharCode(parseInt(items[1], 16)); });
-      //---   Properly Format JSON   ---//
-      html = html.replaceAll("\\\\\"", "");
-      //---   Parse JSON   ---//
-      html = JSON.parse(html);
-      
-      //---   Get Results   ---// ( Thanks To appit-online On Github ) -> https://github.com/appit-online/youtube-search/blob/master/src/lib/search.ts
-      let results;
-      if (html && html.contents && html.contents.sectionListRenderer && html.contents.sectionListRenderer.contents
-        && html.contents.sectionListRenderer.contents.length > 0 
-        && html.contents.sectionListRenderer.contents[0].itemSectionRenderer
-        && html.contents.sectionListRenderer.contents[0].itemSectionRenderer.contents.length > 0) {
-          results = html.contents.sectionListRenderer.contents[0].itemSectionRenderer.contents;
-          logger("search", results);
-          callback(results);
-      } else {
-        try {
-          results = JSON.parse(html.split('{"itemSectionRenderer":{"contents":')[html.split('{"itemSectionRenderer":{"contents":').length - 1].split(',"continuations":[{')[0]);
-          logger("search", results);
-          callback(results);
-        } catch (e) {}
-        try {
-          results = JSON.parse(html.split('{"itemSectionRenderer":')[html.split('{"itemSectionRenderer":').length - 1].split('},{"continuationItemRenderer":{')[0]).contents;
-          logger("search", results);
-          callback(results);
-        } catch(e) {}
+    let results = new Array();
+    youtubeSearch(text, (videos) => {
+      for (const i in videos) {
+        const video = videos[i];
+        results.push({
+          id: video.compactVideoRenderer.videoId,
+          runtime: video.compactVideoRenderer.lengthText.runs[0].text,
+          uploaded: video.compactVideoRenderer.publishedTimeText.runs[0].text,
+          views: video.compactVideoRenderer.viewCountText.runs[0].text,
+          thumbnails: video.compactVideoRenderer.thumbnail.thumbnails,
+          raw: video
+        })
       }
-
-
-
     })
-    .catch((err) => {
-      logger("search", err);
-      callback(err);
-    });
+    callback(results);
+    
   }
 
 }
