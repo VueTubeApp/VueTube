@@ -14,18 +14,20 @@ const module = {
   logs: new Array(),
 
   //---   Get YouTube's Search Auto Complete   ---//
-  async autoComplete(text, callback) {
-    const res = await Http.request({
+  autoComplete(text, callback) {
+    Http.request({
       method: 'GET',
       url: 'https://suggestqueries-clients6.youtube.com/complete/search',
       params: { client: 'youtube', q: text }
+    })
+    .then((res) => {
+      logger("autoComplete", res);
+      callback(res.data);
     })
     .catch((err) => {
       logger("autoComplete", err);
       callback(err);
     });
-    logger("autoComplete", res);
-    callback(res.data);
   },
 
   search(text, callback) {
