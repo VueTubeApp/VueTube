@@ -22,9 +22,9 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install dependencies
-        run: npm i
+        run: npm i; cd NUXT; npm i
       - name: Build web assets
-        run: cd NUXT; npm run generate
+        run: npm run generate
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
