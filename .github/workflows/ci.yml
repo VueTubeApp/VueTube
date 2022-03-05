@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: npm i; cd NUXT; npm i
       - name: Build web assets
-        run: npm run generate
+        run: cd NUXT; npm run generate
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
