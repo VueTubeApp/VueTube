@@ -97,4 +97,9 @@ jobs:
           CODE_SIGNING_REQUIRED=NO
           CODE_SIGNING_ALLOWED="NO"
           CODE_SIGN_ENTITLEMENTS=""
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: iOS
+          path: ~/Library/Developer/Xcode/DerivedData
   
