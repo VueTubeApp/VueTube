@@ -86,7 +86,10 @@ const module = {
     let results = new Array();
     youtubeSearch(text, (videos) => {
       for (const i in videos) {
+
+
         if (video.compactVideoRenderer) {
+          //---   If Entry Is A Video   ---//
           const video = videos[i];
           results.push({
             id: video.compactVideoRenderer.videoId,
@@ -96,7 +99,12 @@ const module = {
             thumbnails: video.compactVideoRenderer.thumbnail.thumbnails,
             raw: video
           })
+        } else {
+          //---   If Entry Is Not A Video   ---//
+          logger("search", { type: "Error Caught Successfully, Code Continued to run.", error: video }, true);
         }
+
+
       }
     })
     callback(results);
