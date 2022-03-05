@@ -47,7 +47,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install dependencies
-        run: npm ci
+        run: npm i
       - name: Set up JDK 1.8
         uses: actions/setup-java@v1
         with:
@@ -76,7 +76,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install dependencies
-        run: npm ci
+        run: npm i
       - name: Copy web assets to native platform
         run: npx ionic capacitor copy ios --no-build
       - name: Update native platform
