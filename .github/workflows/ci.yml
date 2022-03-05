@@ -40,8 +40,8 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v2
         with:
-          name: www
-          path: www
+          name: dist
+          path: dist
       - name: Set up Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
         with:
@@ -69,8 +69,8 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v2
         with:
-          name: www
-          path: www
+          name: dist
+          path: dist
       - name: Set up Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
         with:
