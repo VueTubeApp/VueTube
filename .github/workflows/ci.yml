@@ -24,7 +24,8 @@ jobs:
       - name: Install dependencies
         run: npm i; cd NUXT; npm i
       - name: Build web assets
-        run: cd NUXT; npm run generate
+        working-directory: NUXT
+        run: npm run generate
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -53,9 +54,9 @@ jobs:
         with:
           java-version: 1.8
       - name: Copy web assets to native platform
-        run: npx ionic capacitor copy android --no-build
+        run: npx cap copy android --no-build
       - name: Update native platform
-        run: npx ionic capacitor update android
+        run: npx cap update android
       - name: Build with Gradle
         working-directory: android
         run: ./gradlew build
@@ -78,9 +79,9 @@ jobs:
       - name: Install dependencies
         run: npm i
       - name: Copy web assets to native platform
-        run: npx ionic capacitor copy ios --no-build
+        run: npx cap copy ios --no-build
       - name: Update native platform
-        run: npx ionic capacitor update ios
+        run: npx cap update ios
       - name: Add empty `GoogleService-Info.plist`
         run: echo "$GOOGLE_SERVICE_INFO_PLIST" > ios/App/App/GoogleService-Info.plist
         env:
