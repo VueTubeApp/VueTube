@@ -59,7 +59,7 @@ jobs:
         run: npx cap update android
       - name: Build with Gradle
         working-directory: android
-        run: chmod +x gradlew; ./gradlew build
+        run: chmod +x gradlew; ./gradlew clean build
   ios:
     name: Build iOS platform
     runs-on: macos-latest
