@@ -1,0 +1,6 @@
+{
+	"appId": "com.Frontesque.youtube",
+	"appName": "VueTube",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
