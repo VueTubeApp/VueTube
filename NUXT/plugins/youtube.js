@@ -100,7 +100,7 @@ const module = {
           })
         } else {
           //---   If Entry Is Not A Video   ---//
-          logger("search", { type: "Error Caught Successfully", error: video }, true);
+          //logger("search", { type: "Error Caught Successfully", error: video }, true);
         }
 
 
