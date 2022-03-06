@@ -63,8 +63,8 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: android
-          path: android/app
+          name: VueTube.apk
+          path: android/app/build/outputs/apk/release/app-release-unsigned.apk
         
   ios:
     name: Build iOS platform
