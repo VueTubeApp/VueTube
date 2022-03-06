@@ -59,7 +59,7 @@ jobs:
         run: npx cap update android
       - name: Build with Gradle
         working-directory: android
-        run: chmod +x gradlew; ./gradlew clean build # Build causes errors / assemble makes a nonfunctional apk
+        run: chmod +x gradlew; ./gradlew clean build -x test # Build causes errors / assemble makes a nonfunctional apk
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
