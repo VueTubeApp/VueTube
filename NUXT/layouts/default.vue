@@ -38,6 +38,9 @@
 * {
   font-family: Arial, Helvetica, sans-serif !important;
 }
+html, body {
+  overflow-x: hidden;
+}
 </style>
 
 <style scoped>

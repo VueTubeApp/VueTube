@@ -86,22 +86,21 @@ const module = {
     let results = new Array();
     youtubeSearch(text, (videos) => {
       for (const i in videos) {
-
+        const video = videos[i];
 
         if (video.compactVideoRenderer) {
           //---   If Entry Is A Video   ---//
-          const video = videos[i];
           results.push({
             id: video.compactVideoRenderer.videoId,
+            title: video.compactVideoRenderer.title.runs[0].text,
             runtime: video.compactVideoRenderer.lengthText.runs[0].text,
             uploaded: video.compactVideoRenderer.publishedTimeText.runs[0].text,
             views: video.compactVideoRenderer.viewCountText.runs[0].text,
-            thumbnails: video.compactVideoRenderer.thumbnail.thumbnails,
-            raw: video
+            thumbnails: video.compactVideoRenderer.thumbnail.thumbnails
           })
         } else {
           //---   If Entry Is Not A Video   ---//
-          logger("search", { type: "Error Caught Successfully, Code Continued to run.", error: video }, true);
+          logger("search", { type: "Error Caught Successfully", error: video }, true);
         }
 
 

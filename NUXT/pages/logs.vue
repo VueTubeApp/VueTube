@@ -12,7 +12,7 @@
         <v-expansion-panels>
           <v-expansion-panel>
             <v-expansion-panel-header>More</v-expansion-panel-header>
-            <v-expansion-panel-content v-text="item.data" style="padding: 1em;" />
+            <v-expansion-panel-content v-text="item.data" class="logContent" />
           </v-expansion-panel>
         </v-expansion-panels>
 
@@ -35,6 +35,10 @@
 }
 .errorChip {
   margin-right: 0.5em;
+}
+.logContent {
+  padding: 1em;
+  word-break: break-all;
 }
 </style>
 
