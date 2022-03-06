@@ -60,6 +60,12 @@ jobs:
       - name: Build with Gradle
         working-directory: android
         run: chmod +x gradlew; ./gradlew clean assemble # At the time of writing, build causes issues with capacitor plugins
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: android
+          path: app
+        
   ios:
     name: Build iOS platform
     runs-on: macos-latest
