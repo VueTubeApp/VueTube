@@ -3,7 +3,7 @@
 An open source YouTube client
 
 ## Builds
-[![.github/workflows/compile-android.yml](https://github.com/Frontesque/BetterTube/actions/workflows/compile-android.yml/badge.svg)](https://github.com/Frontesque/BetterTube/actions/workflows/compile-android.yml)
+[![Build](https://github.com/Frontesque/VueTube/actions/workflows/ci.yml/badge.svg)](https://github.com/Frontesque/VueTube/actions/workflows/ci.yml)
 
 
 ## Links
