@@ -48,6 +48,7 @@ export default {
       themes: {
         light: {
           primary: colors.red.lighten2,
+          primaryAlt: colors.red.lighten4,
           accent: "#CD201F",
           accent2: "#fff",
           background: "#fff",
@@ -55,6 +56,7 @@ export default {
         },
         dark: {
           primary: colors.red.darken2, //colors.blue.darken2
+          primaryAlt: "533",
           accent: "#333",
           accent2: "#333",
           background: "#222",

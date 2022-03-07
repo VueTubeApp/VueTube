@@ -4,7 +4,7 @@
     <v-btn v-for="(item, i) in tabs" :key="i" rounded class="navButton" :to="item.link" plain v-ripple="false">
 
       <span v-text="item.name" />
-      <v-icon v-text="item.icon" :color="tabSelection == i ? 'primary' : 'grey'" :class="tabSelection == i ? 'tab primary lighten-4' : ''" />
+      <v-icon v-text="item.icon" :color="tabSelection == i ? 'primary' : 'grey'" :class="tabSelection == i ? 'tab primaryAlt' : ''" />
 
     </v-btn>
   </v-bottom-navigation>
