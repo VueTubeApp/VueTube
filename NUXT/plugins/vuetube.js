@@ -11,7 +11,7 @@ const module = {
       params: { }
     })
     .then((res) => {
-      callback(res)
+      callback(res.data)
     })
     .catch((err) => {
       callback(err)

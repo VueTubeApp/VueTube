@@ -8,9 +8,10 @@
           <span v-text="`• ${item.sha.substring(0, 7)}`" class="subtitle" />
         </v-card-title>
 
-        <v-card-content style="padding: 1em; padding-top: 0;">
-          {{ item.commit.message }}
-        </v-card-content>
+        <div style="margin-left: 1em;">
+          <b>Title:</b> {{ item.commit.message }}<br>
+          {{ new Date(item.commit.committer.date).toLocaleString() }}
+        </div>
 
         <v-card-actions>
           <v-spacer />
