@@ -1,10 +1,10 @@
 <template>
 
   <v-bottom-navigation v-model="tabSelection" shift class="bottomNav py-4 accent2">
-    <v-btn v-for="(item, i) in tabs" :key="i" rounded class="navButton" :to="item.link">
+    <v-btn v-for="(item, i) in tabs" :key="i" rounded class="navButton" :to="item.link" plain v-ripple="false">
 
       <span v-text="item.name" />
-      <v-icon v-text="item.icon" :color="tabSelection == i ? 'primary' : 'grey'" />
+      <v-icon v-text="item.icon" :color="tabSelection == i ? 'primary' : 'grey'" :class="tabSelection == i ? 'tab primary lighten-4' : ''" />
 
     </v-btn>
   </v-bottom-navigation>
@@ -40,5 +40,9 @@ export default {
   width: 25vw !important;
   font-size: .66rem !important;
   border-radius: 2rem !important;
+}
+.tab {
+  padding: 0.1em 0.5em 0.1em 0.5em;
+  border-radius: 1em;
 }
 </style>
