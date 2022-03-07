@@ -2,6 +2,16 @@
   <v-app>
     <v-card class="topNav rounded-0" style="display: flex; box-shadow: none !important;" color="accent white--text">
       <h2 v-text="page" v-show="!search" />
+
+      <v-text-field
+        label="Search"
+        v-model="text"
+        @input="textChanged"
+        class="searchBar"
+        color="white"
+        v-if="search"
+      />
+
       <v-spacer />
 
       <v-btn text class="toolbarAction mr-2 fill-height" color="white" @click="search = !search"><v-icon>mdi-magnify</v-icon></v-btn>
@@ -20,8 +30,16 @@
 
     <div class="accent" style="height: 100%">
       <div class="background">
-        <searchOverlay v-if="search" />
         <nuxt v-show="!search" />
+
+
+        <div style="min-width: 180px;" v-if="search">
+          <v-list-item v-for="(item, index) in response" :key="index">
+            <v-btn text dense class="info--text searchButton text-left" @click="youtubeSearch(item)" v-text="item[0]" />
+          </v-list-item>
+        </div>
+
+
       </div>
     </div>
 
@@ -61,29 +79,59 @@ html, body {
   height: 100%;
   padding: 4em 0 4em 0; /* Account for Top/Bottom Novigation */
 }
+.searchBar {
+  margin: 0;
+}
+.searchButton {
+  width: 100%;
+  justify-content: left !important;
+}
 </style>
 
 <script>
-  export default {
-    data: () => ({
-      search: false,
+import { App as CapacitorApp } from '@capacitor/app';
+export default {
+  data: () => ({
+    search: false,
 
-      dropdownMenu: [
-        { title: "Settings", link: "/settings" },
-        { title: "Updates", link: "/updates" },
-        { title: "About", link: "/about" },
-        { title: "Logs", link: "/logs" }
-      ]
-    }),
-    mounted() {
+    dropdownMenu: [
+      { title: "Settings", link: "/settings" },
+      { title: "Updates", link: "/updates" },
+      { title: "About", link: "/about" },
+      { title: "Logs", link: "/logs" }
+    ],
 
-    },
-    computed: {
-      page: function () {
-        let pageName = this.$route.path.split("/")[1];
-        pageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
-        return pageName || "Home";
+    text: null,
+    response: [],
+  }),
+  mounted() {
+    CapacitorApp.addListener('backButton', ({canGoBack}) => {
+      if(!canGoBack){
+        CapacitorApp.exitApp();
+      } else {
+        window.history.back();
       }
+    });
+  },
+  computed: {
+    page: function () {
+      let pageName = this.$route.path.split("/")[1];
+      pageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
+      return pageName || "Home";
+    }
+  },
+
+  methods: {
+    textChanged() {
+      this.$youtube.autoComplete(this.text, (res) => {
+        const data = res.replace(/^.*?\(/,'').replace(/\)$/,''); //Format Response
+        this.response = JSON.parse(data)[1]
+      });
+    },
+
+    youtubeSearch(item) {
+      location.href="/search?q="+item[0];
     }
   }
+}
 </script>
