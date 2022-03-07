@@ -5,7 +5,8 @@ export default {
   //---   Bettertube Stuff   ---//
   target: 'static',
   plugins: [
-    { src: "~/plugins/youtube", mode: "client" }
+    { src: "~/plugins/youtube", mode: "client" },
+    { src: "~/plugins/vuetube", mode: "client" }
   ],
   generate: {
     dir: '../dist'

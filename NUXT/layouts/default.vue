@@ -72,6 +72,7 @@ html, body {
 
       dropdownMenu: [
         { title: "Settings", link: "/settings" },
+        { title: "Updates", link: "/updates" },
         { title: "About", link: "/about" },
         { title: "Logs", link: "/logs" }
       ]

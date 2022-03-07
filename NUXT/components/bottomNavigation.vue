@@ -39,7 +39,7 @@ export default {
 .navButton {
   width: 25vw !important;
   font-size: .66rem !important;
-  border-radius: 2rem !important;
+  /*border-radius: 2rem !important;*/
 }
 .tab {
   padding: 0.1em 0.5em 0.1em 0.5em;
