@@ -1,16 +1,13 @@
 <template>
   <v-app>
     <v-card class="topNav rounded-0" style="display: flex; box-shadow: none !important;" color="accent white--text">
-      <h2 v-text="page" />
+      <h2 v-text="page" v-show="!search" />
       <v-spacer />
 
       <v-btn text class="toolbarAction mr-2 fill-height" color="white" @click="search = !search"><v-icon>mdi-magnify</v-icon></v-btn>
 
       <v-menu offset-y content-class="mt-8">
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn text class="toolbarAction fill-height" v-bind="attrs" v-on="on" color="white"><v-icon>mdi-dots-vertical</v-icon></v-btn>
-
-        </template>
+        <template v-slot:activator="{ on, attrs }"><v-btn text class="toolbarAction fill-height" v-bind="attrs" v-on="on" color="white" v-show="!search"><v-icon>mdi-dots-vertical</v-icon></v-btn></template>
         <v-list style="min-width: 180px;">
           <v-list-item v-for="(item, index) in dropdownMenu" :key="index">
             <v-btn text :to="item.link" style="text-decoration: none; width: 100%;" class="info--text">{{ item.title }}</v-btn>
@@ -49,7 +46,8 @@ html, body {
 }
 .topNav {
   padding: 1rem;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 999;
   /*border-radius: 0 0 1em 1em !important;*/
@@ -61,7 +59,7 @@ html, body {
 }
 .background {
   height: 100%;
-  /*border-radius: 1rem 1rem 0 0;*/ /* Causes really weird display issues */
+  padding: 4em 0 4em 0; /* Account for Top/Bottom Novigation */
 }
 </style>
 

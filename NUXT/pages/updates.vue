@@ -48,7 +48,11 @@ export default {
   },
   mounted() {
     this.$vuetube.commits((commits) => {
-      this.commits = commits;
+      if (commits[0].sha) { //If Commit Valid
+        this.commits = commits;
+      } else {
+        console.log(commits)
+      }
     })
   },
   methods: {
