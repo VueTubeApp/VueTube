@@ -3,6 +3,10 @@ import colors from 'vuetify/es5/util/colors'
 export default {
 
   //---   Bettertube Stuff   ---//
+  env: {
+    appVersion: "dev",
+  },
+
   target: 'static',
   plugins: [
     { src: "~/plugins/youtube", mode: "client" },
