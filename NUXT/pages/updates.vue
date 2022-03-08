@@ -61,8 +61,8 @@ export default {
     })
   },
   methods: {
-    async openEternal(item) {
-      await Browser.open({ url: item.url });
+    async openExternal(item) {
+      await Browser.open({ url: item.html_url });
     }
   }
 }
