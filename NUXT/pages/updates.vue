@@ -5,10 +5,11 @@
       <v-card class="card">
         <v-card-title style="padding-bottom: 0;">
           {{ item.author.login }}
-          <span v-text="`• ${item.sha.substring(0, 7)} • ${new Date(item.commit.committer.date).toLocaleString()}`" class="subtitle" />
+          <span v-text="`• ${item.sha.substring(0, 7)}`" class="subtitle" />
         </v-card-title>
 
         <div style="margin-left: 1em;">
+          <div class="date" v-text="new Date(item.commit.committer.date).toLocaleString()" />
           {{ item.commit.message }}
         </div>
 
@@ -34,6 +35,10 @@
   font-size: 0.75em;
   transform: translateY(5%);
   color: #999;
+}
+.date {
+  color: #999;
+  transform: translateY(-40%);
 }
 </style>
 
