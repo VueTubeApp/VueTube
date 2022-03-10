@@ -23,6 +23,9 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install dependencies
         run: npm i; cd NUXT; npm i
+      - name: Set App Version
+        working-directory: NUXT
+        run: sed -i 's/dev-local/${{ github.sha }}/' nuxt.config.js
       - name: Build web assets
         working-directory: NUXT
         run: npm run generate

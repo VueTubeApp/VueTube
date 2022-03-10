@@ -4,7 +4,7 @@ export default {
 
   //---   Bettertube Stuff   ---//
   env: {
-    appVersion: "dev",
+    appVersion: "dev-local",
   },
 
   target: 'static',

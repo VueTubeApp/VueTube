@@ -1,5 +1,5 @@
 # VueTube
-<img src="https://github.com/Frontesque/BetterTube/raw/main/Icons/BetterTube.png" alt="BetterTube icon" width="200"/>
+<img src="https://github.com/Frontesque/VueTube/raw/main/Icons/VueTube.png" alt="VueTube icon" width="200"/>
 An open source YouTube client
 
 ## Builds
