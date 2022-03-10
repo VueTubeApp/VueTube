@@ -15,8 +15,8 @@
 
         <v-card-actions>
           <v-spacer />
-          <v-btn @click="openExternal(item)"><v-icon>mdi-open-in-new</v-icon>Open</v-btn>
-          <v-btn disabled><v-icon>mdi-download</v-icon>Download</v-btn>
+          <v-btn @click="openExternal(item)"><v-icon class="btn-icon">mdi-github</v-icon>View</v-btn>
+          <v-btn disabled><v-icon class="btn-icon">mdi-download</v-icon>Install</v-btn>
         </v-card-actions>
 
       </v-card>
@@ -39,6 +39,9 @@
 .date {
   color: #999;
   transform: translateY(-40%);
+}
+.btn-icon {
+  margin-right: 0.25em;
 }
 </style>
 

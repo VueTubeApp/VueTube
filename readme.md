@@ -10,7 +10,9 @@ An open source YouTube client
 - [Discord](https://discord.gg/7P8KJrdd5W)
 
 ## Features
-- Literally just a UI as of now
+- 🎨 Themes: Light, Dark, AMOLED
+- 🔍 Search: Basic (Advanced search in progress)
+- ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
 
 ### Plans
 - Locally store watch history

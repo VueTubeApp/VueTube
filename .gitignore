@@ -3,3 +3,4 @@ nuxt/dist
 dist
 package-lock.json
 temp.js
+temp.json
