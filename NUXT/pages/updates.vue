@@ -51,14 +51,13 @@ export default {
       commits: new Array()
     }
   },
-  mounted() {
-    this.$vuetube.commits((commits) => {
-      if (commits[0].sha) { //If Commit Valid
-        this.commits = commits;
-      } else {
-        console.log(commits)
-      }
-    })
+  async mounted() {
+    const commits = await this.$vuetube.commits;
+    if (commits[0].sha) { //If Commit Valid
+      this.commits = commits;
+    } else {
+      console.log(commits)
+    }
   },
   methods: {
     async openExternal(item) {

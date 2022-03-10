@@ -4,19 +4,21 @@ import { Http } from '@capacitor-community/http';
 const module = {
 
   //---   Get GitHub Commits   ---//
-  commits(callback) {
+  commits: new Promise((resolve, reject) => {
+
     Http.request({
       method: 'GET',
       url: "https://api.github.com/repos/Frontesque/VueTube/commits",
       params: { }
     })
     .then((res) => {
-      callback(res.data)
+      resolve(res.data)
     })
     .catch((err) => {
-      callback(err)
+      reject(err)
     });
-  }
+
+  })
 
 }
 
