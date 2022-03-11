@@ -19,7 +19,7 @@
         <v-card-actions>
           <v-spacer />
           <v-btn @click="openExternal(item)"><v-icon class="btn-icon">mdi-github</v-icon>View</v-btn>
-          <v-btn disabled><v-icon class="btn-icon">mdi-download</v-icon>Install</v-btn>
+          <v-btn @click="install(item)"><v-icon class="btn-icon">mdi-download</v-icon>Install</v-btn>
         </v-card-actions>
 
       </v-card>
@@ -72,6 +72,13 @@ export default {
   methods: {
     async openExternal(item) {
       await Browser.open({ url: item.html_url });
+    },
+
+    install(item) {
+      this.$vuetube.getRuns(item, (data) => {
+        console.log(data)
+      });
+
     }
   }
 }

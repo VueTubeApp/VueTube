@@ -18,7 +18,25 @@ const module = {
       reject(err)
     });
 
-  })
+  }),
+
+  getRuns(item, callback) {
+
+    let url = `https://api.github.com/repos/Frontesque/VueTube/commits/${item.sha}/check-runs`;
+
+    Http.request({
+      method: 'GET',
+      url: url,
+      params: { }
+    })
+    .then((res) => {
+      callback(res.data)
+    })
+    .catch((err) => {
+      callback(err)
+    });
+
+  }
 
 }
 
