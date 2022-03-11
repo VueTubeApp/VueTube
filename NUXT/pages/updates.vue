@@ -3,9 +3,12 @@
 
     <v-list-item v-for="(item, index) in commits" :key="index">
       <v-card class="card">
-        <v-card-title style="padding-bottom: 0;">
+        <v-card-title style="padding-bottom: 0; padding-top: 0;">
           {{ item.author.login }}
           <span v-text="`• ${item.sha.substring(0, 7)}`" class="subtitle" />
+          <v-spacer />
+          <v-chip outlined class="tags" color="orange" v-if="index == 0">Latest</v-chip>
+          <v-chip outlined class="tags" color="green" v-if="item.sha == installedVersion">Installed</v-chip>
         </v-card-title>
 
         <div style="margin-left: 1em;">
@@ -43,6 +46,9 @@
 .btn-icon {
   margin-right: 0.25em;
 }
+.tags {
+  margin: 0 0.5em 0 0;
+}
 </style>
 
 <script>
@@ -51,7 +57,8 @@ import { Browser } from '@capacitor/browser';
 export default {
   data() {
     return {
-      commits: new Array()
+      commits: new Array(),
+      installedVersion: process.env.appVersion
     }
   },
   async mounted() {
