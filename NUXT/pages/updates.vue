@@ -47,7 +47,7 @@
   margin-right: 0.25em;
 }
 .tags {
-  margin: 0 0.5em 0 0;
+  margin: 0 0 0 0.5em;
 }
 </style>
 

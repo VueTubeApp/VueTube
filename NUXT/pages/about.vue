@@ -6,7 +6,7 @@
 
     <v-btn @click="openExternal('https://github.com/Frontesque/VueTube')"><v-icon>mdi-github</v-icon></v-btn>
     <v-btn @click="openExternal('https://discord.gg/7P8KJrdd5W')"><v-icon>mdi-discord</v-icon></v-btn>
-    <p>App Version: {{ version }}</p>
+    <p>App Version: {{ version.substring(0, 7) }}</p>
   </center>
 </template>
 
