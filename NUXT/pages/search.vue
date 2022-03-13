@@ -16,9 +16,8 @@
             <v-img :src="video.thumbnails[video.thumbnails.length - 1].url" />
             <p v-text="video.runtime" class="videoRuntimeFloat background--text" />
           </div>
-          <p v-text="video.title" />
-          <p v-text="`${video.views} • ${video.uploaded}`" />
-          <p v-text="video.id" />
+          <div v-text="video.title" style="margin-top: 0.5em;" />
+          <div v-text="`${video.views} • ${video.uploaded}`" />
         </v-card-text>
       </v-card>
     </v-list-item>
@@ -28,6 +27,7 @@
 <style scoped>
 .entry {
   margin-top: 1em;
+  width: 100%; /* Prevent Loading Issues */
 }
 .videoRuntimeFloat {
   position: absolute;

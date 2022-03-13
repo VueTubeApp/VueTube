@@ -1,4 +1,4 @@
-# BetterTube
+# VueTube
 
 ## Build Setup
 

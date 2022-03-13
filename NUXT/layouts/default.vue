@@ -122,6 +122,11 @@ export default {
     //---   Load Saved Theme   ---//
     const theme = this.$auth.$storage.getLocalStorage("darkTheme");
     if (theme != undefined) {
+      /*
+      this.$vuetify.theme.themes.dark.accent = '#222',
+      this.$vuetify.theme.themes.dark.accent2 = '#222',
+      this.$vuetify.theme.themes.dark.background = '#333'
+      */
       this.$vuetify.theme.dark = theme;
     }
 
