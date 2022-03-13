@@ -82,6 +82,7 @@ html, body {
 .searchBar {
   margin: 0;
   position: absolute;
+  transform: translateY(-10%);
   width: 80%
 }
 .searchButton {
