@@ -1,4 +1,11 @@
 import colors from 'vuetify/es5/util/colors'
+/**** Front's Notes / Don't Remove ****
+*   Data Storage:
+*   this.$auth.$storage.setLocalStorage("Authentication", val)
+*   this.$auth.$storage.getLocalStorage("Authentication")
+*   this.$auth.$storage.removeLocalStorage("Authentication")
+*/
+
 
 export default {
 
@@ -43,8 +50,11 @@ export default {
   buildModules: [
     '@nuxtjs/vuetify',
   ],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
+  ],
 
-  modules: [],
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {

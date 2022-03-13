@@ -106,16 +106,24 @@ export default {
     text: null,
     response: [],
   }),
+
   mounted() {
+
+    //---   Load Saved Theme   ---//
+    const theme = this.$auth.$storage.getLocalStorage("darkTheme");
+    if (theme != undefined) {
+      this.$vuetify.theme.dark = theme;
+    }
+
+    //---   Back Button Listener   ---//
     CapacitorApp.addListener('backButton', ({canGoBack}) => {
 
-      //--- Back Closes Search   ---//
+      //---   Back Closes Search   ---//
       if (this.search) {
         this.search = false;
-        return;
-      }
-
-      if(!canGoBack){
+      
+      //---   Back Goes Back   ---//
+      } else if (!canGoBack){
         CapacitorApp.exitApp();
       } else {
         window.history.back();

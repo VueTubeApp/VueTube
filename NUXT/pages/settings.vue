@@ -11,6 +11,7 @@
             hint="Bravo Six, Going Dark."
             persistent-hint
             inset
+            @click="saveTheme($vuetify.theme.dark)"
           />
         </section>
         <v-btn v-if="$vuetify.theme.dark" text tile class="white--text black" @click="amoled" >
@@ -39,7 +40,7 @@
 <script>
 export default {
   methods: {
-    amoled () {
+    amoled() {
       this.$vuetify.theme.themes.dark.background === '#000' ? (
         this.$vuetify.theme.themes.dark.accent = '#222',
         this.$vuetify.theme.themes.dark.accent2 = '#222',
@@ -53,6 +54,10 @@ export default {
       // console.log(document.getElementsByClassName('v-application--wrap')[0])
       // console.log(document.getElementsByClassName('v-application--wrap')[0].style)
       // document.getElementsByClassName('v-application--wrap')[0].style.backgroundColor = "#000000 !important"
+    },
+
+    saveTheme(isDark) {
+      this.$auth.$storage.setLocalStorage("darkTheme", isDark)
     }
   }
 }
