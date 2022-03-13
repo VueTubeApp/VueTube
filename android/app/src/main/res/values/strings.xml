@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">VueTube</string>
     <string name="title_activity_main">VueTube</string>
-    <string name="package_name">com.Frontesque.youtube</string>
-    <string name="custom_url_scheme">com.Frontesque.youtube</string>
+    <string name="package_name">com.Frontesque.vuetube</string>
+    <string name="custom_url_scheme">com.Frontesque.vuetube</string>
 </resources>
