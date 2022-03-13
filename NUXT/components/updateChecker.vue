@@ -4,7 +4,7 @@
         {{ updateSnackbarText }}
 
         <template v-slot:action="{ attrs }">
-            <v-btn color="primary" text v-bind="attrs" @click="snackbar = false">Close</v-btn>
+            <v-btn color="primary" text v-bind="attrs" @click="updateSnackbar = false">Close</v-btn>
         </template>
         </v-snackbar>
     </div>
@@ -13,7 +13,6 @@
 <style scoped>
 .updateBar {
     z-index: 99999999;
-    
 }
 </style>
 
