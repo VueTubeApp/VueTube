@@ -26,7 +26,7 @@ An open source YouTube client
 ### Why am I doing this?
 Well this has been thrown around on the Return Youtube Dislike discord server for quite some time, so I figured that I should probably take a crack at it!
 
-Also, YouTube Vanded just shut down
+Also, YouTube Vanced just shut down
 
 ## Screenshots
 <img src="https://github.com/Frontesque/VueTube/raw/main/Icons/screenshots/update_manager.png" alt="VueTube Update Manager" width="400"/>
