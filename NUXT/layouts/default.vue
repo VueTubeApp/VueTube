@@ -106,6 +106,13 @@ export default {
   }),
   mounted() {
     CapacitorApp.addListener('backButton', ({canGoBack}) => {
+
+      //--- Back Closes Search   ---//
+      if (this.search) {
+        this.search = false;
+        return;
+      }
+
       if(!canGoBack){
         CapacitorApp.exitApp();
       } else {
