@@ -1,8 +1,7 @@
 <template>
   <div>
-    <script src="https://cdn.jsdelivr.net/gh/thelevicole/youtube-to-html5-loader@4.0.1/dist/YouTubeToHtml5.js"></script>
-    <video :data-yt2html5="`https://www.youtube.com/watch?v=${id}`" controls width="100%" height="300vh"></video>
-    <p v-html="`https://www.youtube.com/watch?v=${id}`" />
+    <video controls :src="vidSrc" width="100%" height="300vh" />
+    <p>[DEBUG] Streaming From: {{ vidSrc }}</p>
   </div>
 </template>
 
@@ -10,16 +9,13 @@
 export default {
   data() {
     return {
-      id: ""
+      vidSrc: ""
     }
   },
-  fetch() {
-    this.id = this.$route.query.v;
-  },
   mounted() {
-    new YouTubeToHtml5({
-      withAudio: true
-    });
+    this.$youtube.getVideo('wykQsTJElD4', (data) => {
+      this.vidSrc = data[data.length-1].url;
+    })
   }
 }
 </script>

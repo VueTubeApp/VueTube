@@ -116,6 +116,30 @@ const module = {
     })
     callback(results);
 
+  },
+
+  getVideo(id, callback) {
+
+    Http.request({
+      method: 'GET',
+      url: 'https://youtube.com/watch',
+      params: { q: id }
+    })
+    .then((res) => {
+      //---   Get HTML Only   ---//
+      let html = res.data;
+      //---   Isolate The Script Containing Video Information   ---//
+      html = html.split("var ytInitialPlayerResponse = ")[1].split("';</script>")[0].split(";var meta = document.createElement('meta');")[0];
+      //---   Parse JSON   ---//
+      const videoData = JSON.parse(html).streamingData.formats;
+      callback(videoData);
+  
+    })
+    .catch((err) => {
+      logger("getVideo", err, true);
+      callback(err);
+    });
+
   }
 
 }
