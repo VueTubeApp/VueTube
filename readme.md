@@ -10,7 +10,7 @@ An open source YouTube client
 <!-- ## Links -->
 
 ## Features
-- 🎨 Themes: Light, Dark, AMOLED
+- 🎨 Themes: Light, Dark, OLED
 - 🔍 Search: Basic (Advanced search in progress)
 - ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
 
