@@ -10,7 +10,7 @@
     </center>
 
     <v-list-item v-for="(video, index) in videos" :key="index">
-      <v-card class="entry">
+      <v-card class="entry" :to="`/watch?v=${video.id}`">
         <v-card-text>
           <div style="position: relative;">
             <v-img :src="video.thumbnails[video.thumbnails.length - 1].url" />

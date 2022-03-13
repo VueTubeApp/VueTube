@@ -1,6 +1,8 @@
 <template>
   <div>
-    <video controls :src="vidSrc" width="100%" height="300vh" />
+    <script src="https://cdn.jsdelivr.net/gh/thelevicole/youtube-to-html5-loader@4.0.1/dist/YouTubeToHtml5.js"></script>
+    <video :data-yt2html5="`https://www.youtube.com/watch?v=${id}`" controls width="100%" height="300vh"></video>
+    <p v-html="`https://www.youtube.com/watch?v=${id}`" />
   </div>
 </template>
 
@@ -8,8 +10,16 @@
 export default {
   data() {
     return {
-      vidSrc: "https://api.celeste.photos/squish.mp4"
+      id: ""
     }
+  },
+  fetch() {
+    this.id = this.$route.query.v;
+  },
+  mounted() {
+    new YouTubeToHtml5({
+      withAudio: true
+    });
   }
 }
 </script>
