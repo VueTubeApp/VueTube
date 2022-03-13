@@ -81,6 +81,8 @@ html, body {
 }
 .searchBar {
   margin: 0;
+  position: absolute;
+  width: 80%
 }
 .searchButton {
   width: 100%;
