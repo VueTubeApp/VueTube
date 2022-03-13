@@ -1,5 +1,5 @@
 {
-	"appId": "com.Frontesque.youtube",
+	"appId": "com.Frontesque.vuetube",
 	"appName": "VueTube",
 	"webDir": "dist",
 	"bundledWebRuntime": false
