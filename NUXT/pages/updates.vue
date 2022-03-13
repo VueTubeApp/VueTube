@@ -3,7 +3,7 @@
 
     <v-list-item v-for="(item, index) in commits" :key="index">
       <v-card class="card">
-        <v-card-title style="padding-bottom: 0; padding-top: 0;">
+        <v-card-title style="padding: 0 0.25em 0 0.75em;">
           {{ item.author.login }}
           <span v-text="`• ${item.sha.substring(0, 7)}`" class="subtitle" />
           <v-spacer />
@@ -19,7 +19,7 @@
         <v-card-actions>
           <v-spacer />
           <v-btn @click="openExternal(item)"><v-icon class="btn-icon">mdi-github</v-icon>View</v-btn>
-          <v-btn @click="install(item)"><v-icon class="btn-icon">mdi-download</v-icon>Install</v-btn>
+          <v-btn disabled @click="install(item)"><v-icon class="btn-icon">mdi-download</v-icon>Install</v-btn>
         </v-card-actions>
 
       </v-card>
@@ -47,7 +47,7 @@
   margin-right: 0.25em;
 }
 .tags {
-  margin: 0 0 0 0.5em;
+  margin-left: 0.5em;
 }
 </style>
 
