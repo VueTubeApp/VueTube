@@ -6,7 +6,17 @@
 
     <v-btn @click="openExternal('https://github.com/Frontesque/VueTube')"><v-icon>mdi-github</v-icon></v-btn>
     <v-btn @click="openExternal('https://discord.gg/7P8KJrdd5W')"><v-icon>mdi-discord</v-icon></v-btn>
-    <p>App Version: {{ version.substring(0, 7) }}</p>
+
+    <h3 style="margin-top: 2em;">App Information</h3>
+    <div>App Version: {{ version.substring(0, 7) }}</div>
+
+    <h3 style="margin-top: 1em;">Device Information</h3>
+    <div>Platform: {{ deviceInfo.platform }}</div>
+    <div>OS: {{ deviceInfo.operatingSystem }}</div>
+    <div>OS Version: {{ deviceInfo.osVersion }}</div>
+    <div>Model: {{ deviceInfo.model }}</div>
+    <div>Manufacturer: {{ deviceInfo.manufacturer }}</div>
+    <div>Virtual: {{ deviceInfo.isVirtual }}</div>
   </center>
 </template>
 
@@ -18,17 +28,24 @@
 
 <script>
 import { Browser } from '@capacitor/browser';
+import { Device } from '@capacitor/device';
 
 export default {
   data() {
     return {
-      version: process.env.appVersion
+      version: process.env.appVersion,
+      deviceInfo: "",
     }
   },
   methods: {
     async openExternal(url) {
       await Browser.open({ url: url });
     }
+  },
+
+  async mounted () {
+    const info = await Device.getInfo();
+    this.deviceInfo = info
   }
 }
 </script>
