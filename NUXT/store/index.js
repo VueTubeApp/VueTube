@@ -1,0 +1,1 @@
+/* activate vuex store */
