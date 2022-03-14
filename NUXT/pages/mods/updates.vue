@@ -3,18 +3,20 @@
 
     <v-list-item v-for="(item, index) in commits" :key="index">
       <v-card class="card">
-        <v-card-title style="padding: 0 0.25em 0 0.75em;">
-          {{ item.author.login }}
-          <span v-text="`• ${item.sha.substring(0, 7)}`" class="subtitle" />
+        <v-card-title class="title" @click="openExternal(item)">
+          {{ item.commit.message }}
           <v-spacer />
           <v-chip outlined class="tags" color="orange" v-if="index == 0">Latest</v-chip>
           <v-chip outlined class="tags" color="green" v-if="item.sha == installedVersion">Installed</v-chip>
         </v-card-title>
 
-        <div style="margin-left: 1em;">
-          <div class="date" v-text="new Date(item.commit.committer.date).toLocaleString()" />
-          {{ item.commit.message }}
+        <div class="date-hash">
+          <div v-text="new Date(item.commit.committer.date).toLocaleString([], {dateStyle: 'medium',timeStyle: 'short'}) + ' • ' + item.sha.substring(0, 7)" />
         </div>
+
+        <v-card-text class="author">
+          <span>by {{item.author.login}}</span>
+        </v-card-text>
 
         <v-card-actions>
           <v-spacer />
@@ -29,25 +31,31 @@
 </template>
 
 <style scoped>
-.card {
-  width: 100%;
-  margin: 1em 0 1em 0;
-}
-.subtitle {
-  margin: 0.4em;
-  font-size: 0.75em;
-  transform: translateY(5%);
-  color: #999;
-}
-.date {
-  color: #999;
-  transform: translateY(-40%);
+.author {
+  text-align: right;
+  padding: 0em 16px 0em 0em;
 }
 .btn-icon {
   margin-right: 0.25em;
 }
+.card {
+  width: 100%;
+  margin: 1em 0 1em 0;
+}
+.date-hash {
+  color: #999;
+  transform: translateY(-40%);
+}
+.date-hash div {
+margin-left: 1em;
+}
 .tags {
   margin-left: 0.5em;
+}
+.title {
+  margin: 0 0 0 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 </style>
 
