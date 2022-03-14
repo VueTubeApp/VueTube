@@ -3,11 +3,11 @@
 
     <v-list-item v-for="(item, index) in commits" :key="index">
       <v-card class="card">
-        <v-card-title class="title" @click="openExternal(item)">
+        <v-card-title class="title" :class="{ 'has-tag' : index == 0 || item.sha == installedVersion}" @click="openExternal(item)">
           {{ item.commit.message }}
           <v-spacer />
-          <v-chip outlined class="tags" color="orange" v-if="index == 0">Latest</v-chip>
-          <v-chip outlined class="tags" color="green" v-if="item.sha == installedVersion">Installed</v-chip>
+          <v-chip outlined class="tag" color="orange" v-if="index == 0">Latest</v-chip>
+          <v-chip outlined class="tag" color="green" v-if="item.sha == installedVersion">Installed</v-chip>
         </v-card-title>
 
         <div class="date-hash">
@@ -15,7 +15,7 @@
         </div>
 
         <v-card-text class="author">
-          <span>by {{item.author.login}}</span>
+          <span>by {{ item.author.login }}</span>
         </v-card-text>
 
         <v-card-actions>
@@ -49,13 +49,18 @@
 .date-hash div {
   margin-left: 1em;
 }
-.tags {
+.tag {
   margin-left: 0.5em;
+  position: absolute;
+  top: 1em;
+  right: 1em;
 }
 .title {
-  margin: 0 0 0 0;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+.title.has-tag {
+  margin-right: 4em;
 }
 </style>
 
