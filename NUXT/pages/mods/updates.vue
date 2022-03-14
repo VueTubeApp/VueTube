@@ -47,7 +47,7 @@
   transform: translateY(-40%);
 }
 .date-hash div {
-margin-left: 1em;
+  margin-left: 1em;
 }
 .tags {
   margin-left: 0.5em;
