@@ -2,5 +2,10 @@
   "appId": "com.Frontesque.vuetube",
   "appName": "VueTube",
   "webDir": "dist",
-  "bundledWebRuntime": false
+  "bundledWebRuntime": false,
+
+  "server": {
+      "hostname": "youtube.com",
+      "androidScheme": "https"
+  }
 }
