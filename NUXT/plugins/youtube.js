@@ -1,5 +1,6 @@
 //---   Modules/Imports   ---//
 import { Http } from '@capacitor-community/http';
+const ytdl = require('ytdl-core');
 
 //---   Logger Function   ---//
 function logger(func, data, isError=false) {
@@ -55,7 +56,7 @@ function youtubeSearch(text, callback) {
     let html = res.data;
     //---   Isolate The Script Containing Video Information   ---//
     html = html.split("var ytInitialData = '")[1].split("';</script>")[0];
-    
+
     youtubeParse(html, (data) => {
       callback(data);
     })
@@ -118,22 +119,11 @@ const module = {
 
   },
 
-  getVideo(id, callback) {
+  async getVideo(id, callback) {
 
-    Http.request({
-      method: 'GET',
-      url: 'https://vuetube-core.sushipython.repl.co/id/'+id
-    })
-    .then((res) => {
-      const videoData = res.data;
-      logger("videoData", videoData)
-      callback(videoData);
-  
-    })
-    .catch((err) => {
-      logger("getVideo", err, true);
-      callback(err);
-    });
+    const vidInfo = await ytdl.getInfo(id);
+    logger("getVideo", vidInfo)
+    callback(vidInfo);
 
   }
 
