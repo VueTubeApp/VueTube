@@ -123,15 +123,17 @@ const module = {
     Http.request({
       method: 'GET',
       url: 'https://youtube.com/watch',
+      //headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.7113.93 Safari/537.36' },
       params: { q: id }
     })
     .then((res) => {
       //---   Get HTML Only   ---//
       let html = res.data;
+      logger("getVideo-html", html);
       //---   Isolate The Script Containing Video Information   ---//
       html = html.split("var ytInitialPlayerResponse = ")[1].split("';</script>")[0].split(";var meta = document.createElement('meta');")[0];
       //---   Parse JSON   ---//
-      const videoData = JSON.parse(html).streamingData.formats;
+      const videoData = JSON.parse(html).streamingData;
       callback(videoData);
   
     })
