@@ -2,7 +2,7 @@
   <div class="mainContainer pt-1">
 
     <v-card class="pb-5">
-      <v-card-title>Theme</v-card-title>
+      <v-card-title>Global Base Color</v-card-title>
       <v-row class="ml-3 mr-6">
         <section class="row">
           <v-switch
