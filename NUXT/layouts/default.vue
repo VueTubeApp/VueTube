@@ -16,14 +16,7 @@
 
       <v-btn text class="toolbarAction mr-2 fill-height" color="white" @click="search = !search"><v-icon>mdi-magnify</v-icon></v-btn>
 
-      <v-menu offset-y content-class="mt-8">
-        <template v-slot:activator="{ on, attrs }"><v-btn text class="toolbarAction fill-height" v-bind="attrs" v-on="on" color="white" v-show="!search"><v-icon>mdi-dots-vertical</v-icon></v-btn></template>
-        <v-list style="min-width: 180px;">
-          <v-list-item v-for="(item, index) in dropdownMenu" :key="index">
-            <v-btn text :to="item.link" style="text-decoration: none; width: 100%;" class="info--text">{{ item.title }}</v-btn>
-          </v-list-item>
-        </v-list>
-      </v-menu>
+      <v-btn text class="toolbarAction fill-height" color="white" v-show="!search" to="/settings"><v-icon>mdi-dots-vertical</v-icon></v-btn>
 
     </v-card>
 
@@ -60,10 +53,10 @@ html, body {
 }
 
 p, span, div {
-/*  -webkit-user-select: none; /* Safari */        
-/*  -moz-user-select: none; /* Firefox */
-/*  -ms-user-select: none; /* IE10+/Edge */
-/*  user-select: none; /* Standard */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 </style>
 
@@ -106,13 +99,6 @@ export default {
   data: () => ({
     search: false,
 
-    dropdownMenu: [
-      { title: "Settings", link: "/settings" },
-      { title: "Updates", link: "/updates" },
-      { title: "About", link: "/about" },
-      { title: "Logs", link: "/logs" }
-    ],
-
     text: null,
     response: [],
   }),
@@ -136,7 +122,7 @@ export default {
       //---   Back Closes Search   ---//
       if (this.search) {
         this.search = false;
-      
+
       //---   Back Goes Back   ---//
       } else if (!canGoBack){
         CapacitorApp.exitApp();
@@ -147,7 +133,8 @@ export default {
   },
   computed: {
     page: function () {
-      let pageName = this.$route.path.split("/")[1];
+      const splitPath = this.$route.path.split("/");
+      let pageName = splitPath[splitPath.length-1];
       pageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
       return pageName || "Home";
     }

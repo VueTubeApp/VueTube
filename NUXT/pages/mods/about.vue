@@ -12,8 +12,7 @@
 
     <h3 style="margin-top: 1em;">Device Information</h3>
     <div>Platform: {{ deviceInfo.platform }}</div>
-    <div>OS: {{ deviceInfo.operatingSystem }}</div>
-    <div>OS Version: {{ deviceInfo.osVersion }}</div>
+    <div>OS: {{ deviceInfo.operatingSystem }} ({{ deviceInfo.osVersion }})</div>
     <div>Model: {{ deviceInfo.model }}</div>
     <div>Manufacturer: {{ deviceInfo.manufacturer }}</div>
     <div>Virtual: {{ deviceInfo.isVirtual }}</div>

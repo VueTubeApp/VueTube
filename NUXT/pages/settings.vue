@@ -1,66 +1,42 @@
 <template>
-  <div class="mainContainer pt-1">
+ <div style="padding-top: 1em;">
+    <v-list-item v-for="(item, index) in settingsItems" :key="index">
 
-    <v-card class="pb-5">
-      <v-card-title>Theme</v-card-title>
-      <v-row class="ml-3 mr-6">
-        <section class="row">
-          <v-switch
-            v-model="$vuetify.theme.dark"
-            label="Dark Theme"
-            hint="Bravo Six, Going Dark."
-            persistent-hint
-            inset
-            @click="saveTheme($vuetify.theme.dark)"
-          />
-        </section>
-        <v-btn v-if="$vuetify.theme.dark" text tile class="white--text black" @click="amoled" >
-          {{
-            this.$vuetify.theme.themes.dark.background === '#000'
-            ? 'LCD'
-            : 'OLED'
-          }}
-          <v-icon :size="this.$vuetify.theme.themes.dark.background === '#000' ? '.5rem' : '.9rem'" class="ml-2">mdi-brightness-2</v-icon>
-        </v-btn>
-      </v-row>
-    </v-card>
+      <v-btn text class="entry text-left" :to="item.to" :disabled="item.disabled">
+        <v-icon v-text="item.icon" size="30px" class="icon" />
+        {{ item.name }}
+      </v-btn>
 
-
-  </div>
+    </v-list-item>
+ </div>
 </template>
+
+<style scoped>
+.entry {
+  width: 100%;
+  justify-content: left !important;
+  font-size: 1.25em;
+  padding: 1.5em 0.5em 1.5em 0.5em !important;
+}
+.icon {
+  margin-right: 0.5em;
+}
+</style>
 
 <script>
 export default {
-  methods: {
-    amoled() {
-      this.$vuetify.theme.themes.dark.background === '#000' ? (
-        this.$vuetify.theme.themes.dark.accent = '#222',
-        this.$vuetify.theme.themes.dark.accent2 = '#222',
-        this.$vuetify.theme.themes.dark.background = '#333'
-       ) : (
-        this.$vuetify.theme.themes.dark.accent = '#000',
-        this.$vuetify.theme.themes.dark.accent2 = '#000',
-        this.$vuetify.theme.themes.dark.background = '#000'
-      )
-      // doesn't work 😭
-      // console.log(document.getElementsByClassName('v-application--wrap')[0])
-      // console.log(document.getElementsByClassName('v-application--wrap')[0].style)
-      // document.getElementsByClassName('v-application--wrap')[0].style.backgroundColor = "#000000 !important"
-    },
-
-    saveTheme(isDark) {
-      this.$auth.$storage.setLocalStorage("darkTheme", isDark)
+  data() {
+    return {
+      settingsItems: [
+        { name: "General", icon: "mdi-cog", to: "", disabled: true },
+        { name: "Theme", icon: "mdi-brush-variant", to: "/mods/theme" },
+        { name: "Player", icon: "mdi-motion-play-outline", to: "", disabled: true },
+        { name: "UI Tweaker", icon: "mdi-television-guide", to: "", disabled: true },
+        { name: "Updates", icon: "mdi-cloud-download-outline", to: "/mods/updates" },
+        { name: "Logs", icon: "mdi-text-box-outline", to: "/mods/logs" },
+        { name: "About", icon: "mdi-information-outline", to: "/mods/about" },
+      ]
     }
   }
 }
 </script>
-
-<style scoped>
-.v-card {
-  margin: 1em;
-}
-
-section {
-  padding: 0 1em 1em 1em;
-}
-</style>

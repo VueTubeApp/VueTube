@@ -6,7 +6,6 @@
     "@capacitor/browser": "^1.0.7",
     "@capacitor/cli": "^3.4.0",
     "@capacitor/core": "^3.4.0",
-    "@capacitor/device": "^1.1.2",
-    "ytdl-core": "^4.11.0"
+    "@capacitor/device": "^1.1.2"
   }
 }
