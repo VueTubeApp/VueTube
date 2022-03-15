@@ -106,7 +106,7 @@ export default {
   mounted() {
 
     //---   Load Saved Theme   ---//
-    setTimeout(() => {
+    setTimeout(() => { //Set timeout is required to make it load properly... dont ask me why -Front
       const darkTheme = localStorage.getItem('darkTheme');
       if (darkTheme == "true") {
         this.$vuetify.theme.dark = darkTheme;
@@ -114,7 +114,7 @@ export default {
         this.$vuetify.theme.themes.dark.accent2 = '#222',
         this.$vuetify.theme.themes.dark.background = '#333'
       }
-    }, 200);
+    }, 0);
 
     //---   Back Button Listener   ---//
     CapacitorApp.addListener('backButton', ({canGoBack}) => {

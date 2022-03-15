@@ -25,12 +25,33 @@
       </v-row>
     </v-card>
 
+    <v-card class="pb-5">
+      <v-card-title>Accent Color</v-card-title>
+      <v-card-text>
+
+        <v-alert color="primary" dense outlined type="warning">NOTE: This doesn't save after closing the app (yet)</v-alert>
+        <v-color-picker dot-size="5" hide-mode-switch mode="hexa" v-model="accentColor" />
+        
+      </v-card-text>
+    </v-card>
+
 
   </div>
 </template>
 
 <script>
 export default {
+
+  data() {
+    return {
+      accentColor: '#ffffff',
+    }
+  },
+
+  mounted() {
+    //this.accentColor = this.$vuetify.theme.themes.dark.primary;
+  },
+
   methods: {
     amoled() {
       this.$vuetify.theme.themes.dark.background === '#000' ? (
@@ -50,8 +71,30 @@ export default {
 
     saveTheme(isDark) {
       localStorage.setItem("darkTheme", isDark);
+    },
+
+  },
+
+  watch: {
+    accentColor: function (val, oldVal) {
+      this.$vuetify.theme.currentTheme.primary = val;
+
+
+      let primaryAlt = this.$libs.hexToRgb(val);
+
+      for (const i in primaryAlt) {
+        primaryAlt[i] = primaryAlt[i] + 100; //Amount To Lighten By
+        if (primaryAlt[i] > 255) primaryAlt[i] = 255;
+      }
+
+      primaryAlt = this.$libs.rgbToHex(primaryAlt.r, primaryAlt.g, primaryAlt.b);
+      
+
+
+      this.$vuetify.theme.currentTheme.primaryAlt = primaryAlt;
     }
   }
+
 }
 </script>
 

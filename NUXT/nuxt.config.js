@@ -16,7 +16,8 @@ export default {
   target: 'static',
   plugins: [
     { src: "~/plugins/youtube", mode: "client" },
-    { src: "~/plugins/vuetube", mode: "client" }
+    { src: "~/plugins/vuetube", mode: "client" },
+    { src: "~/plugins/libs", mode: "client" }
   ],
   generate: {
     dir: '../dist'
@@ -66,7 +67,7 @@ export default {
         },
         dark: {
           primary: colors.red.darken2, //colors.blue.darken2
-          primaryAlt: "533",
+          primaryAlt: "#533",
           accent: "#333",
           accent2: "#333",
           background: "#222",

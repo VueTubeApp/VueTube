@@ -14,7 +14,7 @@
         <v-card-text>
           <div style="position: relative;">
             <v-img :src="video.thumbnails[video.thumbnails.length - 1].url" />
-            <p v-text="video.runtime" class="videoRuntimeFloat background--text" />
+            <p v-text="video.runtime" class="videoRuntimeFloat" style="color: #fff;" />
           </div>
           <div v-text="video.title" style="margin-top: 0.5em;" />
           <div v-text="`${video.views} • ${video.uploaded}`" />
