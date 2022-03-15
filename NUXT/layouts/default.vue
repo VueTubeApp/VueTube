@@ -106,7 +106,7 @@ export default {
   mounted() {
 
     //---   Load Saved Theme   ---//
-    const theme = this.$auth.$storage.getLocalStorage("darkTheme");
+    const theme = localStorage.getItem('darkTheme');
     if (theme != undefined) {
       /*
       this.$vuetify.theme.themes.dark.accent = '#222',

@@ -49,7 +49,7 @@ export default {
     },
 
     saveTheme(isDark) {
-      this.$auth.$storage.setLocalStorage("darkTheme", isDark)
+      localStorage.setItem("darkTheme", isDark);
     }
   }
 }
