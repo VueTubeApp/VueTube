@@ -106,15 +106,15 @@ export default {
   mounted() {
 
     //---   Load Saved Theme   ---//
-    const theme = localStorage.getItem('darkTheme');
-    if (theme != undefined) {
-      /*
-      this.$vuetify.theme.themes.dark.accent = '#222',
-      this.$vuetify.theme.themes.dark.accent2 = '#222',
-      this.$vuetify.theme.themes.dark.background = '#333'
-      */
-      this.$vuetify.theme.dark = theme;
-    }
+    setTimeout(() => {
+      const theme = Boolean(localStorage.getItem('darkTheme'));
+      if (theme != undefined) {
+        this.$vuetify.theme.themes.dark.accent = '#222',
+        this.$vuetify.theme.themes.dark.accent2 = '#222',
+        this.$vuetify.theme.themes.dark.background = '#333'
+        this.$vuetify.theme.dark = theme;
+      }
+    }, 1000);
 
     //---   Back Button Listener   ---//
     CapacitorApp.addListener('backButton', ({canGoBack}) => {
