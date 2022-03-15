@@ -107,14 +107,14 @@ export default {
 
     //---   Load Saved Theme   ---//
     setTimeout(() => {
-      const theme = Boolean(localStorage.getItem('darkTheme'));
-      if (theme != undefined) {
+      const darkTheme = localStorage.getItem('darkTheme');
+      if (darkTheme == "true") {
+        this.$vuetify.theme.dark = darkTheme;
         this.$vuetify.theme.themes.dark.accent = '#222',
         this.$vuetify.theme.themes.dark.accent2 = '#222',
         this.$vuetify.theme.themes.dark.background = '#333'
-        this.$vuetify.theme.dark = theme;
       }
-    }, 1000);
+    }, 200);
 
     //---   Back Button Listener   ---//
     CapacitorApp.addListener('backButton', ({canGoBack}) => {
