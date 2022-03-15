@@ -15,7 +15,7 @@
         </div>
 
         <v-card-text class="author">
-          <span>by {{ item.author.login }}</span>
+          <span>by {{ item.author ? item.author.login : item.commit.author.name }}</span>
         </v-card-text>
 
         <v-card-actions>
