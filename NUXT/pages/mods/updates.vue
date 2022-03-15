@@ -4,7 +4,7 @@
     <v-list-item v-for="(item, index) in commits" :key="index">
       <v-card class="card">
         <v-card-title style="padding: 0 0.25em 0 0.75em;">
-          {{ item.author.login }}
+          {{ item.author ? item.author.login : item.commit.author.name }}
           <span v-text="`• ${item.sha.substring(0, 7)}`" class="subtitle" />
           <v-spacer />
           <v-chip outlined class="tags" color="orange" v-if="index == 0">Latest</v-chip>
