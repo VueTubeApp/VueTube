@@ -150,6 +150,7 @@ export default {
 
     youtubeSearch(item) {
       this.$router.push(`/search?q=${item[0]}`);
+      this.search = false;
     }
   }
 }
