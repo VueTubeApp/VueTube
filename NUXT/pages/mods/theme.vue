@@ -44,12 +44,12 @@ export default {
 
   data() {
     return {
-      accentColor: '#ffffff',
+      accentColor: '#ffffff'
     }
   },
 
   mounted() {
-    //this.accentColor = this.$vuetify.theme.themes.dark.primary;
+    this.accentColor = this.$vuetify.theme.themes.dark.primary;
   },
 
   methods: {
@@ -78,13 +78,15 @@ export default {
   watch: {
     accentColor: function (val, oldVal) {
       this.$vuetify.theme.currentTheme.primary = val;
-
-
       let primaryAlt = this.$libs.hexToRgb(val);
 
+      let rgbEdit = 130; //Light Mode
+      if (localStorage.getItem('darkTheme') === "true") rgbEdit = -80; //Dark Mode
+
       for (const i in primaryAlt) {
-        primaryAlt[i] = primaryAlt[i] + 100; //Amount To Lighten By
+        primaryAlt[i] = primaryAlt[i] + rgbEdit; //Amount To Lighten By
         if (primaryAlt[i] > 255) primaryAlt[i] = 255;
+        if (primaryAlt[i] < 0) primaryAlt[i] = 0;
       }
 
       primaryAlt = this.$libs.rgbToHex(primaryAlt.r, primaryAlt.g, primaryAlt.b);
