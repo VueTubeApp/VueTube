@@ -3,7 +3,7 @@
     <v-list-item v-for="(item, index) in settingsItems" :key="index">
 
       <v-btn text class="entry text-left text-capitalize" :to="item.to" :disabled="item.disabled">
-        <v-icon v-text="item.icon" size="25px" class="icon" />
+        <v-icon v-text="item.icon" size="30px" class="icon" />
         {{ item.name }}
       </v-btn>
 
@@ -14,6 +14,7 @@
 <style scoped>
 .entry {
   width: 100%;
+  font-size: 1.2em;
   justify-content: left !important;
   padding: 1.5em 0.5em 1.5em 0.5em !important;
 }
