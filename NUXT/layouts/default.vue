@@ -110,9 +110,18 @@ export default {
       const darkTheme = localStorage.getItem('darkTheme');
       if (darkTheme == "true") {
         this.$vuetify.theme.dark = darkTheme;
-        this.$vuetify.theme.themes.dark.accent = '#222',
-        this.$vuetify.theme.themes.dark.accent2 = '#222',
-        this.$vuetify.theme.themes.dark.background = '#333'
+        
+        const isOled = localStorage.getItem('isOled')
+        
+        if(isOled == "true") {
+          this.$vuetify.theme.themes.dark.accent = '#000',
+          this.$vuetify.theme.themes.dark.accent2 = '#000',
+          this.$vuetify.theme.themes.dark.background = '#000'
+        } else {
+          this.$vuetify.theme.themes.dark.accent = '#222',
+          this.$vuetify.theme.themes.dark.accent2 = '#222',
+          this.$vuetify.theme.themes.dark.background = '#333'
+        }
       }
     }, 0);
 
