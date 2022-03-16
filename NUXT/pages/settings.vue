@@ -32,6 +32,7 @@ export default {
         { name: "Theme", icon: "mdi-brush-variant", to: "/mods/theme" },
         { name: "Player", icon: "mdi-motion-play-outline", to: "", disabled: true },
         { name: "UI Tweaker", icon: "mdi-television-guide", to: "", disabled: true },
+        { name: "Startup Options", icon: "mdi-restart", to: "", disabled: true },
         { name: "Updates", icon: "mdi-cloud-download-outline", to: "/mods/updates" },
         { name: "Logs", icon: "mdi-text-box-outline", to: "/mods/logs" },
         { name: "About", icon: "mdi-information-outline", to: "/mods/about" },
