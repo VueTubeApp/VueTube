@@ -5,7 +5,7 @@
   "bundledWebRuntime": false,
 
   "server": {
-      "hostname": "youtube.com",
-      "androidScheme": "https"
+    "hostname": "youtube.com",
+    "androidScheme": "https"
   }
 }
