@@ -1,6 +1,5 @@
 //---   Modules/Imports   ---//
 import { Http } from '@capacitor-community/http';
-const ytdl = require('ytdl-core');
 
 //---   Logger Function   ---//
 function logger(func, data, isError=false) {
@@ -119,12 +118,8 @@ const module = {
 
   },
 
-  async getVideo(id, callback) {
-
-    const vidInfo = await ytdl.getInfo(id);
-    logger("getVideo", vidInfo)
-    callback(vidInfo);
-
+  getVideo(id) {
+    return id;
   }
 
 }
