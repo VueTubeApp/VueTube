@@ -120,7 +120,7 @@ const searchModule = {
     },
 
     async recommend() {
-        const recommendAPI = new Innertube((message, isError) => {
+        const recommendAPI = await Innertube.create((message, isError) => {
             logger("recommendation", message, isError)
         });
         return await recommendAPI.getRecommendations();

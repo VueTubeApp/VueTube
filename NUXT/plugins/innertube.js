@@ -12,20 +12,29 @@ class Innertube {
     }
 
     async init() {
-        const html = await Http.request({ method: 'GET', url: 'https://www.youtube.com', params: { hl: "en" } }).catch((error) => error);
+        const html = await Http.get({ url: 'https://www.youtube.com', params: { hl: "en" } }).catch((error) => error);
         if (html instanceof Error) this.ErrorCallback(html.message, true);
         try {
-            const data = JSON.parse(getBetweenStrings(html.data, 'ytcfg.set({', '});'));
+            const data = JSON.parse(getBetweenStrings(html.data, 'ytcfg.set(', ');'));
             if (data.INNERTUBE_CONTEXT) {
                 this.key = data.INNERTUBE_API_KEY;
                 this.context = data.INNERTUBE_CONTEXT;
+                this.context.clientName = "ANDROID";
+                this.context.clientVersion = "16.25";
             }
 
         } catch (err) {
+            console.log(err)
             this.ErrorCallback(err, true)
             this.retry_count >= 10 ? this.init() : this.ErrorCallback("Failed to retrieve Innertube session", true);
         }
     };
+
+    static async create(ErrorCallback) {
+        const created = new Innertube(ErrorCallback);
+        await created.init();
+        return created;
+    }
 
     async browse(action_type) {
         let data = { context: this.context }
@@ -41,10 +50,16 @@ class Innertube {
             default:
         }
 
-        const response = await Http.request({
-            method: 'POST',
+        console.log(data)
+
+        const response = await Http.post({
             url: `https://www.youtube.com/youtubei/v1/browse?key=${this.key}`,
-            data: JSON.stringify(data)
+            data: JSON.stringify(data),
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With"
+            }
         }).catch((error) => error);
 
         if (response instanceof Error) return { success: false, status_code: response.response.status, message: response.message };
