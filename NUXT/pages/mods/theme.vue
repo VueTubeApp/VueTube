@@ -57,11 +57,14 @@ export default {
       this.$vuetify.theme.themes.dark.background === '#000' ? (
         this.$vuetify.theme.themes.dark.accent = '#222',
         this.$vuetify.theme.themes.dark.accent2 = '#222',
-        this.$vuetify.theme.themes.dark.background = '#333'
+        this.$vuetify.theme.themes.dark.background = '#333',
+        localStorage.setItem("isOled", false)
        ) : (
         this.$vuetify.theme.themes.dark.accent = '#000',
         this.$vuetify.theme.themes.dark.accent2 = '#000',
-        this.$vuetify.theme.themes.dark.background = '#000'
+        this.$vuetify.theme.themes.dark.background = '#000',
+        localStorage.setItem("isOled", true)
+
       )
       // doesn't work 😭
       // console.log(document.getElementsByClassName('v-application--wrap')[0])
