@@ -18,7 +18,7 @@ export default {
     return {
       tabSelection: 0,
       tabs: [
-        { name: "Home", icon: "mdi-home", link: "/" },
+        { name: "Home", icon: "mdi-home", link: "/home" },
         //{ name: "Shorts", icon: "mdi-lightning-bolt", link: "/shorts" },
         //{ name: "Upload", icon: "mdi-plus", link: "/upload" },
         { name: "Subscriptions", icon: "mdi-youtube-subscription", link: "/subscriptions" },

@@ -1,7 +1,17 @@
 <template>
-  <center>
-    <img style="margin-top: 5em; max-width: 80%; max-height: 15em;" src="/dev.svg" />
-    <h1 class="grey--text">Page Under Construction</h1>
-    <p class="grey--text">Please read the VueTube FAQ for more information.</p>
-  </center>
+    <center style="padding-top: 3em;">
+      <v-progress-circular
+        size="50"
+        indeterminate
+        color="primary"
+      />
+    </center>
 </template>
+
+<script>
+export default {
+    mounted() {
+        location.href = `/${localStorage.getItem("startPage") || "home"}`
+    }
+}
+</script>
