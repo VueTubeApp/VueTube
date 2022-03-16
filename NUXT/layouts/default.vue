@@ -149,7 +149,7 @@ export default {
     },
 
     youtubeSearch(item) {
-      location.href="/search?q="+item[0];
+      this.$router.push(`/search?q=${item[0]}`);
     }
   }
 }

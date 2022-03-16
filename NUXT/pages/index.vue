@@ -11,7 +11,7 @@
 <script>
 export default {
     mounted() {
-        location.href = `/${localStorage.getItem("startPage") || "home"}`
+        this.$router.push(`/${localStorage.getItem("startPage") || "home"}`)
     }
 }
 </script>
