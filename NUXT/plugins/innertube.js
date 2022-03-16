@@ -19,8 +19,8 @@ class Innertube {
             if (data.INNERTUBE_CONTEXT) {
                 this.key = data.INNERTUBE_API_KEY;
                 this.context = data.INNERTUBE_CONTEXT;
-                this.context.clientName = "ANDROID";
-                this.context.clientVersion = "16.25";
+                this.context["clientName"] = "ANDROID";
+                this.context["clientVersion"] = "16.25";
             }
 
         } catch (err) {
@@ -54,12 +54,8 @@ class Innertube {
 
         const response = await Http.post({
             url: `https://www.youtube.com/youtubei/v1/browse?key=${this.key}`,
-            data: JSON.stringify(data),
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-                "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With"
-            }
+            data: data,
+            headers: { "Content-Type": "application/json" }
         }).catch((error) => error);
 
         if (response instanceof Error) return { success: false, status_code: response.response.status, message: response.message };
