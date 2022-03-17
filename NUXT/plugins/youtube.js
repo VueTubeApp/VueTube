@@ -127,18 +127,24 @@ const searchModule = {
 }
 
 //---   Recommendations   --//
+
+// Immediately create an Innertube object. This will be the object used in all future Inntertube API calls  
+// These are just a way for the backend Javascript to communicate with the front end Vue scripts. Essentially a wrapper inside a wrapper
 const recommendationModule = {
+    recommendAPI: Innertube.create((message, isError) => { logger("Innertube", message, isError); }), // There's definitely a better way to do this, but it's 2 am and I just can't anymore 
+
+    async getVid(id) {
+        console.log(this.recommendAPI)
+        return this.recommendAPI.getVidInfo(id);
+    },
+
     async recommend() {
-        const recommendAPI = await Innertube.create((message, isError) => {
-            logger("recommendation", message, isError)
-        });
-        return await recommendAPI.getRecommendations();
+        return this.recommendAPI.getRecommendations();
     },
 }
 
 //---   Start   ---//
 export default ({ app }, inject) => {
-    inject('youtube', searchModule)
-    inject('youtube', recommendationModule)
+    inject('youtube', {...searchModule, ...recommendationModule })
 }
 logger("Initialize", "Program Started");
