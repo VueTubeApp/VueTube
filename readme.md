@@ -14,16 +14,17 @@ A simple FOSS video streaming client aimed to recreate ALL features from their r
 ## Features
 - 🎨 Themes: Light, Dark, OLED
 - 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
-- 🔍 Search: Basic (Advanced search in progress)
 - ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
 - 👁️ Tracking Protection: No telemetry is sent from your device to YouTube
 
 ### Plans
-- Locally store watch history
-- A custom video player
-- Most features from the official youtube app
-- Google account sign in
-- Advanced video search
+- 🔍 Advanced Search
+- 🗞️ Locally store watch history
+- 📺 A custom video player
+- ✂️ Shorts
+- 🧑 Google account sign in
+- 🖼️ Picture in picture mode
+- and more!
 
 ### Why am I doing this?
 Well this has been thrown around on the Return Youtube Dislike discord server for quite some time, so I figured that I should probably take a crack at it!
