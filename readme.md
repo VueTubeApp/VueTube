@@ -13,16 +13,16 @@ A simple FOSS video streaming client aimed to recreate ALL features from their r
 
 ## Features
 - 🎨 Themes: Light, Dark, OLED
+- 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
 - 🔍 Search: Basic (Advanced search in progress)
 - ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
+- 👁️ Tracking Protection: No telemetry is sent from your device to YouTube
 
 ### Plans
 - Locally store watch history
 - A custom video player
-- A fully customizable UI
 - Most features from the official youtube app
 - Google account sign in
-- Tracking protection
 - Advanced video search
 
 ### Why am I doing this?
