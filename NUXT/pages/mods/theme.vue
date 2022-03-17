@@ -1,5 +1,5 @@
 <template>
-  <div class="mainContainer pt-1">
+  <div class="py-1">
 
       <v-card class="pb-5">
       <v-card-title>Rounded Corners</v-card-title>
