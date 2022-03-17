@@ -10,6 +10,7 @@
 
 <script>
 export default {
+    layout: "empty",
     mounted() {
         this.$router.push(`/${localStorage.getItem("startPage") || "home"}`);
     }
