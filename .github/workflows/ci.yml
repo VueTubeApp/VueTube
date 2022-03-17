@@ -110,4 +110,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: iOS
-          path: ~/Library/Developer/Xcode/DerivedData/App-*\Build\Products\Debug-iphoneos\App.app
+          path: ~/Library/Developer/Xcode/DerivedData/App-*/Build/Products/Debug-iphoneos/App.app
