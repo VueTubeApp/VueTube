@@ -1,6 +1,7 @@
 //---   Modules/Imports   ---//
 import { Http } from '@capacitor-community/http';
 import Innertube from './innertube'
+import constants from '../static/constants';
 
 //---   Logger Function   ---//
 function logger(func, data, isError = false) {
@@ -48,7 +49,7 @@ function youtubeParse(html, callback) {
 function youtubeSearch(text, callback) {
     Http.request({
             method: 'GET',
-            url: 'https://youtube.com/results',
+            url: `${constants.URLS.YT_URL}/results`,
             params: { q: text, hl: "en" }
         })
         .then((res) => {
@@ -77,7 +78,7 @@ const searchModule = {
     autoComplete(text, callback) {
         Http.request({
                 method: 'GET',
-                url: 'https://suggestqueries-clients6.youtube.com/complete/search',
+                url: `${constants.URLS.YT_SUGGESTIONS}/search`,
                 params: { client: 'youtube', q: text }
             })
             .then((res) => {
@@ -119,13 +120,6 @@ const searchModule = {
 
     },
 
-    async recommend() {
-        const recommendAPI = await Innertube.create((message, isError) => {
-            logger("recommendation", message, isError)
-        });
-        return await recommendAPI.getRecommendations();
-    },
-
     getVideo(id) {
         return id;
     }
@@ -134,11 +128,17 @@ const searchModule = {
 
 //---   Recommendations   --//
 const recommendationModule = {
-
+    async recommend() {
+        const recommendAPI = await Innertube.create((message, isError) => {
+            logger("recommendation", message, isError)
+        });
+        return await recommendAPI.getRecommendations();
+    },
 }
 
 //---   Start   ---//
 export default ({ app }, inject) => {
-    inject('youtube', searchModule, recommendationModule)
+    inject('youtube', searchModule)
+    inject('youtube', recommendationModule)
 }
 logger("Initialize", "Program Started");

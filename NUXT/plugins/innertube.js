@@ -3,6 +3,7 @@
 
 import { Http } from '@capacitor-community/http';
 import { getBetweenStrings } from './utils';
+import constants from '../static/constants';
 
 class Innertube {
     constructor(ErrorCallback) {
@@ -12,7 +13,7 @@ class Innertube {
     }
 
     async init() {
-        const html = await Http.get({ url: 'https://www.youtube.com', params: { hl: "en" } }).catch((error) => error);
+        const html = await Http.get({ url: constants.URLS.YT_URL, params: { hl: "en" } }).catch((error) => error);
         if (html instanceof Error) this.ErrorCallback(html.message, true);
         try {
             const data = JSON.parse(getBetweenStrings(html.data, 'ytcfg.set(', ');'));
@@ -53,7 +54,7 @@ class Innertube {
         console.log(data)
 
         const response = await Http.post({
-            url: `https://www.youtube.com/youtubei/v1/browse?key=${this.key}`,
+            url: `${constants.URLS.YT_BASE_API}/browse?key=${this.key}`,
             data: data,
             headers: { "Content-Type": "application/json" }
         }).catch((error) => error);
