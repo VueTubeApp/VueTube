@@ -1,7 +1,9 @@
 [![Discord](https://img.shields.io/discord/946587366242533377?label=Discord&style=flat&logo=discord)](https://discord.gg/7P8KJrdd5W)
 # VueTube
 <img src="https://github.com/Frontesque/VueTube/raw/main/Icons/VueTube.png" alt="VueTube icon" width="200"/>
-An open source YouTube client
+A simple FOSS video streaming client aimed to recreate ALL features from their respective apps (and more)
+
+- Pronounced View Tube
 
 ## Builds
 [![Build](https://github.com/Frontesque/VueTube/actions/workflows/ci.yml/badge.svg)](https://github.com/Frontesque/VueTube/actions/workflows/ci.yml)
