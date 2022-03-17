@@ -19,8 +19,8 @@ class Innertube {
             if (data.INNERTUBE_CONTEXT) {
                 this.key = data.INNERTUBE_API_KEY;
                 this.context = data.INNERTUBE_CONTEXT;
-                this.context["clientName"] = "ANDROID";
-                this.context["clientVersion"] = "16.25";
+                this.context.client.clientName = "ANDROID";
+                this.context.client.clientVersion = "16.25";
             }
 
         } catch (err) {
