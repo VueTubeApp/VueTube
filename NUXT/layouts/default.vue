@@ -14,7 +14,7 @@
 
       <v-spacer />
 
-      <v-btn text class="toolbarAction mr-2 fill-height" color="white" @click="search = !search"><v-icon>mdi-magnify</v-icon></v-btn>
+      <v-btn text class="toolbarAction mr-2 fill-height" color="white" @click="searchBtn()"><v-icon>mdi-magnify</v-icon></v-btn>
 
       <v-btn text class="toolbarAction fill-height" color="white" v-show="!search" to="/settings"><v-icon>mdi-dots-vertical</v-icon></v-btn>
 
@@ -85,7 +85,7 @@ p, span, div {
   margin: 0;
   position: absolute;
   transform: translateY(-10%);
-  width: 80%
+  width: 75%
 }
 .searchButton {
   width: 100%;
@@ -160,7 +160,19 @@ export default {
     youtubeSearch(item) {
       this.$router.push(`/search?q=${item[0]}`);
       this.search = false;
+    },
+
+    searchBtn() {
+      const query = this.text;
+
+      if (this.search === true) {
+        this.$router.push(`/search?q=${query}`);
+        this.search = false;
+      } else {
+        this.search = true;
+      }
     }
+
   }
 }
 </script>
