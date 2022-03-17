@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <center style="padding-top: 3em;" v-if="videos.length == 0">
+    <center v-if="videos.length == 0">
       <v-skeleton-loader type="card-avatar, article, actions" />
       <v-skeleton-loader type="card-avatar, article, actions" />
     </center>
