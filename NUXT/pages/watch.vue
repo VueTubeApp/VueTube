@@ -13,9 +13,8 @@ export default {
     }
   },
   mounted() {
-    this.$youtube.getVideo('wykQsTJElD4', (data) => {
-      this.vidSrc = data;
-    })
+    const { v } = this.$route.query
+    console.log(v, this.$youtube.getVid(v))
   }
 }
 </script>
