@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="py-1">
 
     <center v-if="videos.length == 0">
       <v-skeleton-loader type="card-avatar, article, actions" />
