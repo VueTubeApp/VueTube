@@ -1,7 +1,13 @@
-[![Discord](https://img.shields.io/discord/946587366242533377?label=Discord&style=flat&logo=discord)](https://discord.gg/7P8KJrdd5W)
 # VueTube
 <img src="https://github.com/Frontesque/VueTube/raw/main/Icons/VueTube.png" alt="VueTube icon" width="200"/>
-An open source YouTube client
+A simple FOSS video streaming client aimed to recreate ALL features from their respective apps (and more)
+
+- Pronounced View Tube
+
+## Links
+- Discord: [![Discord](https://img.shields.io/discord/946587366242533377?label=Discord&style=flat&logo=discord)](https://discord.gg/7P8KJrdd5W)
+- Reddit: https://reddit.com/r/VueTube
+- Telegram: https://t.me/VueTube
 
 ## Builds
 [![Build](https://github.com/Frontesque/VueTube/actions/workflows/ci.yml/badge.svg)](https://github.com/Frontesque/VueTube/actions/workflows/ci.yml)
@@ -11,17 +17,18 @@ An open source YouTube client
 
 ## Features
 - 🎨 Themes: Light, Dark, OLED
-- 🔍 Search: Basic (Advanced search in progress)
+- 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
 - ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
+- 👁️ Tracking Protection: No telemetry is sent from your device to YouTube
 
 ### Plans
-- Locally store watch history
-- A custom video player
-- A fully customizable UI
-- Most features from the official youtube app
-- Google account sign in
-- Tracking protection
-- Advanced video search
+- 🔍 Advanced Search
+- 🗞️ Locally store watch history
+- 📺 A custom video player
+- ✂️ Shorts
+- 🧑 Google account sign in
+- 🖼️ Picture in picture mode
+- and more!
 
 ### Why am I doing this?
 Well this has been thrown around on the Return Youtube Dislike discord server for quite some time, so I figured that I should probably take a crack at it!
