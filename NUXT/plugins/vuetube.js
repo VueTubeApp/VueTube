@@ -58,7 +58,7 @@ const module = {
         return StatusBar.setOverlaysWebView({ overlay: true });
       },
       async setBackground(color) {
-        return await setBackgroundColor({color: color});
+        return await StatusBar.setBackgroundColor({color: color});
       }
     },
 
