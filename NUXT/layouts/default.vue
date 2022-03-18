@@ -1,6 +1,13 @@
 <template>
-  <v-app>
-    <v-card class="topNav rounded-0" style="display: flex; box-shadow: none !important;" color="accent white--text">
+  <v-app style="background: black !important;">
+    <v-card
+      :style="{
+        borderRadius: roblox ? '0rem' : '1rem 1rem 0px 0px !important'
+      }" 
+      style="height: 4rem !important; display: flex; box-shadow: none !important;"
+      color="accent white--text"
+      class="topNav rounded-0"
+      >
       <h2 v-text="page" v-show="!search" />
 
       <v-text-field
@@ -14,32 +21,39 @@
 
       <v-spacer />
 
-      <v-btn text class="toolbarAction mr-2 fill-height" color="white" @click="searchBtn()"><v-icon>mdi-magnify</v-icon></v-btn>
 
+      <v-btn text class="toolbarAction mr-2 fill-height" color="white" @click="searchBtn()"><v-icon>mdi-magnify</v-icon></v-btn>
       <v-btn text class="toolbarAction fill-height" color="white" v-show="!search" to="/settings"><v-icon>mdi-dots-vertical</v-icon></v-btn>
 
     </v-card>
 
 
-    <div class="accent" style="height: 100%">
-      <div class="background">
+    <div style="height: calc(100vh - 8rem); margin-top: 4rem; background: linear-gradient(var(--v-accent-base) 0%, var(--v-accent2-base) 100%)">
+      <div 
+        class="background scroll-y" 
+        style="padding: 0;"
+        :style="{
+          borderRadius: roblox ? '0rem' : '1rem'
+        }"
+      >
+
         <nuxt v-show="!search" />
-
-
         <div style="min-width: 180px;" v-if="search">
           <v-list-item v-for="(item, index) in response" :key="index">
             <v-btn text dense class="info--text searchButton text-left" @click="youtubeSearch(item)" v-text="item[0]" />
           </v-list-item>
         </div>
 
-
       </div>
     </div>
 
-    <bottomNavigation v-if="!search" />
+    <bottomNavigation v-if="!search"
+      :style="{
+        borderRadius: roblox ? '0rem' : '0 0 1rem 1rem !important'
+      }"
+    />
 
     <updateChecker />
-
 
   </v-app>
 </template>
@@ -48,8 +62,13 @@
 * {
   font-family: Arial, Helvetica, sans-serif !important;
 }
+.scroll-y {
+  overflow-y: scroll !important; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch !important;
+}
 html, body {
-  overflow-x: hidden;
+  background: black;
+  overflow: hidden;
 }
 
 p, span, div {
@@ -101,10 +120,15 @@ export default {
 
     text: null,
     response: [],
+    roblox: false,
   }),
 
   mounted() {
-
+    //---   Load Saved Radius  ---//
+    setInterval(() => { // im sorry I'll fix this later
+      this.roblox = localStorage.getItem("roblox") == "true";
+    }, 1000);
+    
     //---   Load Saved Theme   ---//
     setTimeout(() => { //Set timeout is required to make it load properly... dont ask me why -Front
       const darkTheme = localStorage.getItem('darkTheme');
@@ -141,6 +165,10 @@ export default {
     });
   },
   computed: {
+    // TODO: says localStorage is undefined, idk why 😭
+    // roblox () {
+    //     return localStorage.getItem("roblox") === null ? false : localStorage.getItem("roblox")
+    // },
     page: function () {
       const splitPath = this.$route.path.split("/");
       let pageName = splitPath[splitPath.length-1];

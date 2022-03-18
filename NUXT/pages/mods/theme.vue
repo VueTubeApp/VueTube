@@ -1,5 +1,21 @@
 <template>
-  <div class="mainContainer pt-1">
+  <div class="py-1">
+
+      <v-card class="pb-5">
+      <v-card-title>Rounded Corners</v-card-title>
+      <v-row class="ml-3 mr-6">
+        <section class="row">
+          <v-switch
+            v-model="roblox"
+            label="Roblox"
+            hint="If you want UI to look like Minecraft"
+            persistent-hint
+            inset
+            @click="saveRadius(roblox)"
+          />
+        </section>
+      </v-row>
+    </v-card>
 
     <v-card class="pb-5">
       <v-card-title>Global Base Color</v-card-title>
@@ -44,12 +60,14 @@ export default {
 
   data() {
     return {
-      accentColor: '#ffffff'
+      accentColor: '#ffffff',
+      roblox: false,
     }
   },
 
   mounted() {
     this.accentColor = this.$vuetify.theme.themes.dark.primary;
+    this.roblox = localStorage.getItem('roblox') === 'true';
   },
 
   methods: {
@@ -71,11 +89,26 @@ export default {
       // console.log(document.getElementsByClassName('v-application--wrap')[0].style)
       // document.getElementsByClassName('v-application--wrap')[0].style.backgroundColor = "#000000 !important"
     },
-
     saveTheme(isDark) {
       localStorage.setItem("darkTheme", isDark);
     },
+    saveRadius(value) {
+      localStorage.setItem("roblox", value);
+    },
 
+  },
+  computed: {
+    // 😩
+    // roblox: {
+    //   get () {
+    //     return localStorage.getItem("roblox") === 'true'
+    //   },
+    //   set (value) {
+          // if(process.client) {
+    //      localStorage.setItem("roblox", value)
+          // }
+    //   }
+    // }
   },
 
   watch: {
