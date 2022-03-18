@@ -1,9 +1,6 @@
 <template>
   <v-app style="background: black !important;">
     <v-card
-      :style="{
-        borderRadius: roundedCorners ? '0rem' : '1rem 1rem 0px 0px !important'
-      }"
       style="height: 4rem !important; display: flex; box-shadow: none !important;"
       color="accent white--text"
       class="topNav rounded-0"
@@ -32,9 +29,6 @@
       <div
         class="background scroll-y"
         style="padding: 0; height: calc(100vh - 8rem); overflow-x: hidedn;"
-        :style="{
-          borderRadius: roundedCorners ? '0rem' : '1rem'
-        }"
       >
 
         <nuxt v-show="!search" />
@@ -47,11 +41,7 @@
       </div>
     </div>
 
-    <bottomNavigation v-if="!search"
-      :style="{
-        borderRadius: roundedCorners ? '0rem' : '0 0 1rem 1rem !important'
-      }"
-    />
+    <bottomNavigation v-if="!search" />
 
     <updateChecker />
 
@@ -120,15 +110,9 @@ export default {
 
     text: null,
     response: [],
-    roundedCorners: false,
   }),
 
   mounted() {
-    //---   Load Saved Radius  ---//
-    setInterval(() => { // im sorry I'll fix this later
-      this.roundedCorners = localStorage.getItem("roundedCorners") == "true";
-    }, 1000);
-
     //---   Load Saved Theme   ---//
     setTimeout(() => { //Set timeout is required to make it load properly... dont ask me why -Front
       const darkTheme = localStorage.getItem('darkTheme');

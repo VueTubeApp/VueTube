@@ -1,22 +1,6 @@
 <template>
   <div class="py-1">
 
-      <v-card class="pb-5">
-      <v-card-title>Rounded Corners</v-card-title>
-      <v-row class="ml-3 mr-6">
-        <section class="row">
-          <v-switch
-            label="Rounded Corners"
-            hint="Enable rounded corners on the top and bottom of the app"
-            v-model="roundedCorners"
-            persistent-hint
-            inset
-            @click="saveRadius()"
-          />
-        </section>
-      </v-row>
-    </v-card>
-
     <v-card class="pb-5">
       <v-card-title>Global Base Color</v-card-title>
       <v-row class="ml-3 mr-6">
@@ -60,8 +44,7 @@ export default {
 
   data() {
     return {
-      accentColor: '#ffffff',
-      roundedCorners: false,
+      accentColor: '#ffffff'
     }
   },
 
@@ -91,9 +74,6 @@ export default {
     },
     saveTheme(isDark) {
       localStorage.setItem("darkTheme", isDark);
-    },
-    saveRadius(value) {
-      localStorage.setItem("roundedCorners", this.roundedCorners);
     },
 
   },
