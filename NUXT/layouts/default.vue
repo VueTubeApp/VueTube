@@ -28,10 +28,10 @@
     </v-card>
 
 
-    <div style="height: calc(100vh - 8rem); margin-top: 4rem; background: linear-gradient(var(--v-accent-base) 0%, var(--v-accent2-base) 100%)">
+    <div style="height: calc(100% - 1rem); margin-top: 1rem; padding-top: 3rem; background: linear-gradient(var(--v-accent-base) 0%, var(--v-accent2-base) 100%); border-radius: 1rem;">
       <div 
         class="background scroll-y" 
-        style="padding: 0;"
+        style="padding: 0; height: calc(100vh - 8rem); overflow-x: hidedn;"
         :style="{
           borderRadius: roblox ? '0rem' : '1rem'
         }"
