@@ -4,3 +4,4 @@ dist
 package-lock.json
 temp.js
 temp.json
+.vscode/settings.json

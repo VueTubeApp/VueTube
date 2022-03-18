@@ -18,37 +18,37 @@ class Innertube {
         return typeof this.ErrorCallback === "function"
     }
 
-    init() {
-        Http.get({ url: constants.URLS.YT_URL, params: { hl: "en" } })
-            .then(result => {
-                if (result instanceof Error && this.checkErrorCallback) this.ErrorCallback(result.message, true);
-                try {
-                    const data = JSON.parse(getBetweenStrings(result.data, 'ytcfg.set(', ');'));
-                    if (data.INNERTUBE_CONTEXT) {
-                        this.key = data.INNERTUBE_API_KEY;
-                        this.context = data.INNERTUBE_CONTEXT;
-                        this.context.client.clientName = "ANDROID";
-                        this.context.client.clientVersion = "16.25";
-                    }
-
-                } catch (err) {
-                    console.log(err)
-                    if (this.checkErrorCallback) this.ErrorCallback(err, true)
-                    if (this.retry_count >= 10) { this.init() } else { if (this.checkErrorCallback) this.ErrorCallback("Failed to retrieve Innertube session", true); }
+    async initAsync() {
+        const html = await Http.get({ url: constants.URLS.YT_URL, params: { hl: "en" } }).catch((error) => error);
+        try {
+            if (html instanceof Error && this.checkErrorCallback) this.ErrorCallback(html.message, true);
+            try {
+                const data = JSON.parse(getBetweenStrings(html.data, 'ytcfg.set(', ');'));
+                if (data.INNERTUBE_CONTEXT) {
+                    this.key = data.INNERTUBE_API_KEY;
+                    this.context = data.INNERTUBE_CONTEXT;
+                    this.context.client = constants.INNERTUBE_CLIENT(this.context.client)
                 }
-            })
-            .catch((error) => error);
+
+            } catch (err) {
+                console.log(err)
+                if (this.checkErrorCallback) this.ErrorCallback(err, true)
+                if (this.retry_count >= 10) { this.initAsync() } else { if (this.checkErrorCallback) this.ErrorCallback("Failed to retrieve Innertube session", true); }
+            }
+        } catch (error) {
+            this.ErrorCallback(error, true)
+        };
     };
 
-    static create(ErrorCallback) {
+    static async createAsync(ErrorCallback) {
         const created = new Innertube(ErrorCallback);
-        created.init();
+        await created.initAsync();
         return created;
     }
 
     //--- API Calls ---//
 
-    async browse(action_type) {
+    async browseAsync(action_type) {
         let data = { context: this.context }
 
         switch (action_type) {
@@ -69,7 +69,7 @@ class Innertube {
             headers: { "Content-Type": "application/json" }
         }).catch((error) => error);
 
-        if (response instanceof Error) return { success: false, status_code: response.response.status, message: response.message };
+        if (response instanceof Error) return { success: false, status_code: response.status, message: response.message };
 
         return {
             success: true,
@@ -78,13 +78,13 @@ class Innertube {
         };
     }
 
-    async getVidInfo(id) {
+    async getVidInfoAsync(id) {
         let data = { context: this.context, videoId: id }
 
         const response = await Http.post({
             url: `${constants.URLS.YT_BASE_API}/player?key=${this.key}`,
             data: data,
-            headers: { "Content-Type": "application/json" }
+            headers: constants.INNERTUBE_HEADER(this.context)
         }).catch((error) => error);
 
         if (response instanceof Error) return { success: false, status_code: response.response.status, message: response.message };
@@ -97,8 +97,10 @@ class Innertube {
     }
 
     // Simple Wrappers
-    async getRecommendations() {
-        return await this.browse("recommendations")
+    async getRecommendationsAsync() {
+        const rec = await this.browseAsync("recommendations");
+        console.log(rec.data)
+        return rec.data;
     }
 
 

@@ -12,7 +12,9 @@
 export default {
     layout: "empty",
     mounted() {
-        this.$router.push(`/${localStorage.getItem("startPage") || "home"}`);
+        this.$youtube.getAPI().then(
+          this.$router.push(`/${localStorage.getItem("startPage") || "home"}`)
+        );
     }
 }
 </script>
