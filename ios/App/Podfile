@@ -9,10 +9,10 @@ install! 'cocoapods', :disable_input_output_paths => true
 def capacitor_pods
   pod 'Capacitor', :path => '../../node_modules/@capacitor/ios'
   pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
-  pod 'CapacitorCommunityHttp', :path => '..\..\node_modules\@capacitor-community\http'
-  pod 'CapacitorApp', :path => '..\..\node_modules\@capacitor\app'
-  pod 'CapacitorBrowser', :path => '..\..\node_modules\@capacitor\browser'
-  pod 'CapacitorDevice', :path => '..\..\node_modules\@capacitor\device'
+  pod 'CapacitorCommunityHttp', :path => '../../node_modules/@capacitor-community/http'
+  pod 'CapacitorApp', :path => '../../node_modules/@capacitor/app'
+  pod 'CapacitorBrowser', :path => '../../node_modules/@capacitor/browser'
+  pod 'CapacitorDevice', :path => '../../node_modules/@capacitor/device'
 end
 
 target 'App' do

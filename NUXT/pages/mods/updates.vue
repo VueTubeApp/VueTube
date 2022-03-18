@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="py-2">
 
-    <v-list-item v-for="(item, index) in commits" :key="index">
-      <v-card class="card">
+    <v-list-item v-for="(item, index) in commits" :key="index" class="my-1">
+      <v-card class="card my-2">
         <v-card-title style="padding: 0 0.25em 0 0.75em;">
           {{ item.author ? item.author.login : item.commit.author.name }}
           <span v-text="`• ${item.sha.substring(0, 7)}`" class="subtitle" />
           <v-spacer />
-          <v-chip outlined class="tags" color="orange" v-if="index == 0">Latest</v-chip>
+          <v-chip outlined class="tags" style="border-radius: 0 5px 0 5px; margin-top: -12px; margin-right: -5px;" color="orange" v-if="index == 0">Latest</v-chip>
           <v-chip outlined class="tags" color="green" v-if="item.sha == installedVersion">Installed</v-chip>
         </v-card-title>
 
@@ -31,7 +31,6 @@
 <style scoped>
 .card {
   width: 100%;
-  margin: 1em 0 1em 0;
 }
 .subtitle {
   margin: 0.4em;

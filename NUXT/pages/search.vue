@@ -1,12 +1,9 @@
 <template>
-  <div>
+  <div class="py-1">
 
-    <center style="padding-top: 3em;" v-if="videos == null">
-      <v-progress-circular
-        size="50"
-        indeterminate
-        color="primary"
-      />
+    <center v-if="videos.length == 0">
+      <v-skeleton-loader type="card-avatar, article, actions" />
+      <v-skeleton-loader type="card-avatar, article, actions" />
     </center>
 
     <v-list-item v-for="(video, index) in videos" :key="index">
@@ -43,14 +40,13 @@
 export default {
   data() {
     return {
-      videos: null
+      videos: []
     }
   },
   mounted() {
     const searchQuestion = this.$route.query.q
     const vm = this;
     this.$youtube.search(searchQuestion, (data) => {
-      console.log(data)
       vm.videos = data;
     })
   }

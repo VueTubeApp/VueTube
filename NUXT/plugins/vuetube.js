@@ -1,6 +1,8 @@
 //---   Modules/Imports   ---//
 import { Http } from '@capacitor-community/http';
+import { StatusBar, Style } from '@capacitor/status-bar';
 import constants from '../static/constants';
+import { hexToRgb, rgbToHex } from './utils';
 
 const module = {
 
@@ -37,7 +39,31 @@ const module = {
                 callback(err)
             });
 
-    }
+    },
+
+    statusBar: {
+      async hide() {
+        return await StatusBar.hide();
+      },
+      async show() {
+        return await StatusBar.show();
+      },
+      async setLight() {
+        return await StatusBar.setStyle({ style: Style.Light });
+      },
+      async setDark() {
+        return await StatusBar.setStyle({ style: Style.Dark });
+      },
+      async setTransparent() {
+        return StatusBar.setOverlaysWebView({ overlay: true });
+      },
+      async setBackground(color) {
+        return await setBackgroundColor({color: color});
+      }
+    },
+
+    hexToRgb(hex) { return hexToRgb(hex); },
+    rgbToHex(r, g, b) { return rgbToHex(r, g, b); }
 
 }
 

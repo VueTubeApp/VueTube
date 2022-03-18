@@ -18,7 +18,10 @@ If you wish to test the app within your browser, you can enter the `NUXT` direct
 
 > NOTE2: If you get an error about `EACCES: permission denied 0.0.0.0:80`, change the port in `nuxt.config.js` back to 3000.
 
-If you're done with your changes and are ready to submit your code, there is one last step: compiling to your android device. Plug in your Android or iOS device. Then, in the root directory of the project, run `npx cap run android` to test on your Android device or `npx cap run ios` to test on your iPhone. The app will proceed to build and you will be asked what device to install the debug application on.  Select your device and wait as it compiles for you! Hopefully everything goes smoothly, and you are ready to make your pull request!
+If you're done with your changes and are ready to submit your code, there is one last step: compiling to your android device. 
+- Plug in your Android or iOS device. (and make sure that ADB works for android by running `adb devices` in your ADB directory)
+- Then, in the root directory of the project, run `./scripts/build.ps1` on windows or `./scripts/build.sh` for linux or mac.
+- Finally, run `npx cap run android` to push to your android device or `npx cap run ios` for your ios device!
 
 # Making a Pull Request
 A pull request is fairly simple, and it's done here on GitHub. All we ask is that you include a few screenshots (and/or screen recordings) of what you've actually changed within the app.
