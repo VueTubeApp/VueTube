@@ -31,6 +31,8 @@ export default {
 
 <style scoped>
 .bottomNav {
+  box-shadow: none !important;
+  height: 4rem !important;
   position: fixed;
   bottom: 0;
   padding: 0 !important;
