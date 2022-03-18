@@ -128,23 +128,33 @@ const searchModule = {
 
 //---   Recommendations   --//
 
-// Immediately create an Innertube object. This will be the object used in all future Inntertube API calls  
+let InnertubeAPI;
+
+// Lazy loads Innertube object. This will be the object used in all future Innertube API calls. Code provided by Lightfire228 (https://github.com/Lightfire228)
 // These are just a way for the backend Javascript to communicate with the front end Vue scripts. Essentially a wrapper inside a wrapper
 const recommendationModule = {
-    recommendAPI: Innertube.create((message, isError) => { logger("Innertube", message, isError); }), // There's definitely a better way to do this, but it's 2 am and I just can't anymore 
+
+    async getAPI() {
+        if (!InnertubeAPI) {
+            InnertubeAPI = await Innertube.createAsync((message, isError) => { logger("Innertube", message, isError); })
+        }
+        return InnertubeAPI;
+    },
 
     async getVid(id) {
-        console.log(this.recommendAPI)
-        return this.recommendAPI.getVidInfo(id);
+        return InnertubeAPI.getVidInfoAsync(id).data;
     },
 
     async recommend() {
-        return this.recommendAPI.getRecommendations();
+        return InnertubeAPI.getRecommendationsAsync();
     },
+
+    getThumbnail: (id, resolution) => Innertube.getThumbnail(id, resolution)
 }
 
 //---   Start   ---//
 export default ({ app }, inject) => {
-    inject('youtube', {...searchModule, ...recommendationModule })
+    inject('youtube', {...searchModule, ...recommendationModule, })
+    inject("logger", logger)
 }
 logger("Initialize", "Program Started");

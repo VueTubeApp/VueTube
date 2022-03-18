@@ -11,8 +11,9 @@
 <script>
 export default {
     layout: "empty",
-    mounted() {
-        this.$router.push(`/${localStorage.getItem("startPage") || "home"}`);
+    async mounted() {
+        await this.$youtube.getAPI()
+        this.$router.push(`/${localStorage.getItem("startPage") || "home"}`)
     }
 }
 </script>
