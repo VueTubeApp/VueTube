@@ -25,10 +25,11 @@ export default {
             updateSnackbarTimeout: 5000
         }
     },
-    
+
     async mounted() {
         const commits = await this.$vuetube.commits;
-        if (commits[0].sha != process.env.appVersion) {
+        const appVersion = process.env.appVersion;
+        if (appVersion !== commits[0].sha && appVersion !== 'dev-local') {
             this.updateSnackbar = true;
         }
     },
