@@ -16,8 +16,7 @@ export default {
   target: 'static',
   plugins: [
     { src: "~/plugins/youtube", mode: "client" },
-    { src: "~/plugins/vuetube", mode: "client" },
-    { src: "~/plugins/libs", mode: "client" }
+    { src: "~/plugins/vuetube", mode: "client" }
   ],
   generate: {
     dir: '../dist'

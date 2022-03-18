@@ -3,7 +3,7 @@
     <v-card
       :style="{
         borderRadius: roblox ? '0rem' : '1rem 1rem 0px 0px !important'
-      }" 
+      }"
       style="height: 4rem !important; display: flex; box-shadow: none !important;"
       color="accent white--text"
       class="topNav rounded-0"
@@ -29,8 +29,8 @@
 
 
     <div style="height: calc(100% - 1rem); margin-top: 1rem; padding-top: 3rem; background: linear-gradient(var(--v-accent-base) 0%, var(--v-accent2-base) 100%); border-radius: 1rem;">
-      <div 
-        class="background scroll-y" 
+      <div
+        class="background scroll-y"
         style="padding: 0; height: calc(100vh - 8rem); overflow-x: hidedn;"
         :style="{
           borderRadius: roblox ? '0rem' : '1rem'
@@ -128,15 +128,16 @@ export default {
     setInterval(() => { // im sorry I'll fix this later
       this.roblox = localStorage.getItem("roblox") == "true";
     }, 1000);
-    
+
     //---   Load Saved Theme   ---//
     setTimeout(() => { //Set timeout is required to make it load properly... dont ask me why -Front
       const darkTheme = localStorage.getItem('darkTheme');
       if (darkTheme == "true") {
         this.$vuetify.theme.dark = darkTheme;
-        
+        this.$vuetube.statusBar.setDark();
+
         const isOled = localStorage.getItem('isOled')
-        
+
         if(isOled == "true") {
           this.$vuetify.theme.themes.dark.accent = '#000',
           this.$vuetify.theme.themes.dark.accent2 = '#000',
@@ -146,6 +147,8 @@ export default {
           this.$vuetify.theme.themes.dark.accent2 = '#222',
           this.$vuetify.theme.themes.dark.background = '#333'
         }
+      } else {
+        this.$vuetube.statusBar.setLight()
       }
     }, 0);
 

@@ -47,7 +47,7 @@
 
         <v-alert color="primary" dense outlined type="warning">NOTE: This doesn't save after closing the app (yet)</v-alert>
         <v-color-picker dot-size="5" hide-mode-switch mode="hexa" v-model="accentColor" />
-        
+
       </v-card-text>
     </v-card>
 
@@ -114,7 +114,7 @@ export default {
   watch: {
     accentColor: function (val, oldVal) {
       this.$vuetify.theme.currentTheme.primary = val;
-      let primaryAlt = this.$libs.hexToRgb(val);
+      let primaryAlt = this.$vuetube.hexToRgb(val);
 
       let rgbEdit = 130; //Light Mode
       if (localStorage.getItem('darkTheme') === "true") rgbEdit = -80; //Dark Mode
@@ -125,8 +125,8 @@ export default {
         if (primaryAlt[i] < 0) primaryAlt[i] = 0;
       }
 
-      primaryAlt = this.$libs.rgbToHex(primaryAlt.r, primaryAlt.g, primaryAlt.b);
-      
+      primaryAlt = this.$vuetube.rgbToHex(primaryAlt.r, primaryAlt.g, primaryAlt.b);
+
 
 
       this.$vuetify.theme.currentTheme.primaryAlt = primaryAlt;
