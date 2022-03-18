@@ -2,7 +2,7 @@
   <v-app style="background: black !important;">
     <v-card
       :style="{
-        borderRadius: roblox ? '0rem' : '1rem 1rem 0px 0px !important'
+        borderRadius: roundedCorners ? '0rem' : '1rem 1rem 0px 0px !important'
       }"
       style="height: 4rem !important; display: flex; box-shadow: none !important;"
       color="accent white--text"
@@ -33,7 +33,7 @@
         class="background scroll-y"
         style="padding: 0; height: calc(100vh - 8rem); overflow-x: hidedn;"
         :style="{
-          borderRadius: roblox ? '0rem' : '1rem'
+          borderRadius: roundedCorners ? '0rem' : '1rem'
         }"
       >
 
@@ -49,7 +49,7 @@
 
     <bottomNavigation v-if="!search"
       :style="{
-        borderRadius: roblox ? '0rem' : '0 0 1rem 1rem !important'
+        borderRadius: roundedCorners ? '0rem' : '0 0 1rem 1rem !important'
       }"
     />
 
@@ -120,13 +120,13 @@ export default {
 
     text: null,
     response: [],
-    roblox: false,
+    roundedCorners: false,
   }),
 
   mounted() {
     //---   Load Saved Radius  ---//
     setInterval(() => { // im sorry I'll fix this later
-      this.roblox = localStorage.getItem("roblox") == "true";
+      this.roundedCorners = localStorage.getItem("roundedCorners") == "true";
     }, 1000);
 
     //---   Load Saved Theme   ---//
@@ -149,6 +149,7 @@ export default {
         }
       } else {
         this.$vuetube.statusBar.setLight()
+        this.$vuetube.statusBar.setBackground(this.$vuetify.theme.themes.light.accent)
       }
     }, 0);
 
@@ -168,10 +169,6 @@ export default {
     });
   },
   computed: {
-    // TODO: says localStorage is undefined, idk why 😭
-    // roblox () {
-    //     return localStorage.getItem("roblox") === null ? false : localStorage.getItem("roblox")
-    // },
     page: function () {
       const splitPath = this.$route.path.split("/");
       let pageName = splitPath[splitPath.length-1];

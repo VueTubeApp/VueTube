@@ -6,12 +6,12 @@
       <v-row class="ml-3 mr-6">
         <section class="row">
           <v-switch
-            v-model="roblox"
-            label="Roblox"
-            hint="If you want UI to look like Minecraft"
+            label="Rounded Corners"
+            hint="Enable rounded corners on the top and bottom of the app"
+            v-model="roundedCorners"
             persistent-hint
             inset
-            @click="saveRadius(roblox)"
+            @click="saveRadius()"
           />
         </section>
       </v-row>
@@ -61,7 +61,7 @@ export default {
   data() {
     return {
       accentColor: '#ffffff',
-      roblox: false,
+      roundedCorners: false,
     }
   },
 
@@ -93,22 +93,9 @@ export default {
       localStorage.setItem("darkTheme", isDark);
     },
     saveRadius(value) {
-      localStorage.setItem("roblox", value);
+      localStorage.setItem("roundedCorners", this.roundedCorners);
     },
 
-  },
-  computed: {
-    // 😩
-    // roblox: {
-    //   get () {
-    //     return localStorage.getItem("roblox") === 'true'
-    //   },
-    //   set (value) {
-          // if(process.client) {
-    //      localStorage.setItem("roblox", value)
-          // }
-    //   }
-    // }
   },
 
   watch: {
