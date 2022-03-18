@@ -5,15 +5,13 @@ A simple FOSS video streaming client aimed to recreate ALL features from their r
 - Pronounced View Tube
 
 ## Links
+- Website: https://vuetube.app
 - Discord: [![Discord](https://img.shields.io/discord/946587366242533377?label=Discord&style=flat&logo=discord)](https://discord.gg/7P8KJrdd5W)
 - Reddit: https://reddit.com/r/VueTube
 - Telegram: https://t.me/VueTube
 
 ## Builds
 [![Build](https://github.com/Frontesque/VueTube/actions/workflows/ci.yml/badge.svg)](https://github.com/Frontesque/VueTube/actions/workflows/ci.yml)
-
-
-<!-- ## Links -->
 
 ## Features
 - 🎨 Themes: Light, Dark, OLED
