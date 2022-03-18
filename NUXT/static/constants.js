@@ -42,7 +42,11 @@ module.exports = {
             "osName": info.osName,
             "osVersion": info.osVersion,
             "platform": "MOBILE",
-            "originalUrl": info.originalUrl
+            "originalUrl": info.originalUrl,
+            "configInfo": info.configInfo,
+            "remoteHost": info.remoteHost,
+            "visitorData": info.visitorData,
+            // This is, by all accounts, a horrible implementation, but this is currently the only solution besides
         };
         return client
     }

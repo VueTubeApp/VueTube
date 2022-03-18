@@ -135,25 +135,26 @@ let InnertubeAPI;
 const recommendationModule = {
 
     async getAPI() {
-        InnertubeAPI = await Innertube.createAsync((message, isError) => { logger("Innertube", message, isError); })
-        console.log(InnertubeAPI)
+        if (!InnertubeAPI) {
+            InnertubeAPI = await Innertube.createAsync((message, isError) => { logger("Innertube", message, isError); })
+        }
         return InnertubeAPI;
     },
 
     async getVid(id) {
-        console.log(InnertubeAPI)
         return InnertubeAPI.getVidInfoAsync(id).data;
     },
 
     async recommend() {
-        console.log(InnertubeAPI)
         return InnertubeAPI.getRecommendationsAsync();
     },
+
+    getThumbnail: (id, resolution) => Innertube.getThumbnail(id, resolution)
 }
 
 //---   Start   ---//
 export default ({ app }, inject) => {
-    inject('youtube', {...searchModule, ...recommendationModule })
+    inject('youtube', {...searchModule, ...recommendationModule, })
     inject("logger", logger)
 }
 logger("Initialize", "Program Started");

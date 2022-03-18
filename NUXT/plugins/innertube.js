@@ -78,6 +78,17 @@ class Innertube {
         };
     }
 
+    static getThumbnail(id, resolution) {
+        switch (resolution) {
+            case "min":
+                return `https://img.youtube.com/vi/${id}/mqdefault.jpg`
+            case "mid":
+                return `https://img.youtube.com/vi/${id}/hqdefault.jpg`
+            default:
+                return `https://img.youtube.com/vi/${id}/maxresdefault.jpg`
+        }
+    }
+
     async getVidInfoAsync(id) {
         let data = { context: this.context, videoId: id }
 
