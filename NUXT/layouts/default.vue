@@ -118,7 +118,8 @@ export default {
       const darkTheme = localStorage.getItem('darkTheme');
       if (darkTheme == "true") {
         this.$vuetify.theme.dark = darkTheme;
-        this.$vuetube.statusBar.setDark();
+        //this.$vuetube.statusBar.setDark(); //Not needed unless setLight() is used below -Front
+        this.$vuetube.statusBar.setBackground(this.$vuetify.theme.themes.dark.accent)
 
         const isOled = localStorage.getItem('isOled')
 
@@ -132,8 +133,8 @@ export default {
           this.$vuetify.theme.themes.dark.background = '#333'
         }
       } else {
-        this.$vuetube.statusBar.setLight()
-        this.$vuetube.statusBar.setBackground(this.$vuetify.theme.themes.light.accent)
+        //this.$vuetube.statusBar.setLight() //Looks weird -Front
+        this.$vuetube.statusBar.setBackground(this.$vuetify.theme.themes.light.accent);
       }
     }, 0);
 
