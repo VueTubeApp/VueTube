@@ -205,7 +205,7 @@ const recommendationModule = {
             }
         }).catch((error) => error);
         console.log(html.data)
-        return InnertubeAPI.getVidInfoAsync(id).data;
+        return InnertubeAPI.getVidInfoAsync(id);
     },
 
     // It just works™
