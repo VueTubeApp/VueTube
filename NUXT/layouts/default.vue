@@ -179,6 +179,10 @@ export default {
     searchBtn() {
       const query = this.text;
 
+      if(query === "") {
+        return;
+      }
+
       if (this.search === true) {
         this.$router.push(`/search?q=${query}`);
         this.search = false;
