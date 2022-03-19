@@ -23,7 +23,7 @@ export default {
     }
   },
   mounted() {
-      <br />
+
     this.$youtube.getVid(this.$route.query.v).then(result => {
       console.log('Video info data', result)
       result = result.data;
