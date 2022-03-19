@@ -14,6 +14,7 @@
         class="searchBar"
         color="white"
         v-if="search"
+        v-on:keyup.enter="searchBtn"
       />
 
       <v-spacer />
