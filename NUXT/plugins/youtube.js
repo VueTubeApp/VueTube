@@ -29,17 +29,17 @@ function youtubeParse(html, callback) {
         html.contents.sectionListRenderer.contents[0].itemSectionRenderer &&
         html.contents.sectionListRenderer.contents[0].itemSectionRenderer.contents.length > 0) {
         results = html.contents.sectionListRenderer.contents[0].itemSectionRenderer.contents;
-        logger("search", results);
+        logger(constants.LOGGER_NAMES.search, results);
         callback(results);
     } else {
         try {
             results = JSON.parse(html.split('{"itemSectionRenderer":{"contents":')[html.split('{"itemSectionRenderer":{"contents":').length - 1].split(',"continuations":[{')[0]);
-            logger("search", results);
+            logger(constants.LOGGER_NAMES.search, results);
             callback(results);
         } catch (e) {}
         try {
             results = JSON.parse(html.split('{"itemSectionRenderer":')[html.split('{"itemSectionRenderer":').length - 1].split('},{"continuationItemRenderer":{')[0]).contents;
-            logger("search", results);
+            logger(constants.LOGGER_NAMES.search, results);
             callback(results);
         } catch (e) {}
     }
@@ -66,7 +66,7 @@ function youtubeSearch(text, callback) {
 
         })
         .catch((err) => {
-            logger("search", err, true);
+            logger(constants.LOGGER_NAMES.search, err, true);
             callback(err);
         });
 }
@@ -82,11 +82,11 @@ const searchModule = {
                 params: { client: 'youtube', q: text }
             })
             .then((res) => {
-                logger("autoComplete", res);
+                logger(constants.LOGGER_NAMES.autoComplete, res);
                 callback(res.data);
             })
             .catch((err) => {
-                logger("autoComplete", err, true);
+                logger(constants.LOGGER_NAMES.autoComplete, err, true);
                 callback(err);
             });
     },
@@ -110,7 +110,7 @@ const searchModule = {
                     })
                 } else {
                     //---   If Entry Is Not A Video   ---//
-                    //logger("search", { type: "Error Caught Successfully", error: video }, true);
+                    //logger(constants.LOGGER_NAMES.search, { type: "Error Caught Successfully", error: video }, true);
                 }
 
 
@@ -130,13 +130,13 @@ const searchModule = {
 
 let InnertubeAPI;
 
-// Lazy loads Innertube object. This will be the object used in all future Innertube API calls. Code provided by Lightfire228 (https://github.com/Lightfire228)
+// Loads Innertube object. This will be the object used in all future Innertube API calls. Code provided by Lightfire228 (https://github.com/Lightfire228)
 // These are just a way for the backend Javascript to communicate with the front end Vue scripts. Essentially a wrapper inside a wrapper
 const recommendationModule = {
 
     async getAPI() {
         if (!InnertubeAPI) {
-            InnertubeAPI = await Innertube.createAsync((message, isError) => { logger("Innertube", message, isError); })
+            InnertubeAPI = await Innertube.createAsync((message, isError) => { logger(constants.LOGGER_NAMES.innertube, message, isError); })
         }
         return InnertubeAPI;
     },
@@ -146,7 +146,12 @@ const recommendationModule = {
     },
 
     async recommend() {
-        return InnertubeAPI.getRecommendationsAsync();
+        const response = InnertubeAPI.getRecommendationsAsync();
+        if (!response.success) {
+            logger(constants.LOGGER_NAMES.recommendations, "An error occurred and innertube failed to respond", true)
+            return
+        }
+        return
     },
 
     getThumbnail: (id, resolution) => Innertube.getThumbnail(id, resolution)
@@ -157,4 +162,4 @@ export default ({ app }, inject) => {
     inject('youtube', {...searchModule, ...recommendationModule, })
     inject("logger", logger)
 }
-logger("Initialize", "Program Started");
+logger(constants.LOGGER_NAMES.init, "Program Started");

@@ -31,32 +31,30 @@
 export default {
   data() {
     return {
-      recommends: null
+      recommends: []
     }
   },
 
   // The following code is only a demo for debugging purposes, note that each "shelfRenderer" has a "title" value that seems to align to the categories at the top of the vanilla yt app
 
   mounted() {
-    const vm = this;
-    this.$youtube.recommend().then(
-      result => {
-        const videoList = []
-        console.log(result)
-        const recommendContent = result.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.content.sectionListRenderer.contents // I feel like I've committed programming sin
-        recommendContent.forEach(function (contents, index) {
-          contents.shelfRenderer.content.horizontalListRenderer.items.forEach(function (item, index) {
-            const video = item.gridVideoRenderer
-            console.log(video)
-            console.log(video.onTap)
-            videoList.push(video)
-          })
-        })
-        vm.recommends = videoList;
-      }
-    ).catch ((error) => {
+    try {
+      this.$youtube.recommend().then(
+        result => {
+          console.log(result)
+          const recommendContent = result.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.content.sectionListRenderer.contents // I feel like I've committed programming sin
+          recommendContent.forEach(function (contents, index) {
+            contents.shelfRenderer.content.horizontalListRenderer.items.forEach(function (item, index) {
+              const video = item.gridVideoRenderer
+                console.log(video)
+                console.log(video.onTap)
+              this.recommends.push(video)
+            })
+        })}
+      )
+    } catch (error) {
       this.$logger("Home Page", error, true)
-    })
+    }
   },
 
   methods: {
