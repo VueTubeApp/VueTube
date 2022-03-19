@@ -114,31 +114,6 @@ export default {
   }),
 
   mounted() {
-    //---   Load Saved Theme   ---//
-    setTimeout(() => { //Set timeout is required to make it load properly... dont ask me why -Front
-      const darkTheme = localStorage.getItem('darkTheme');
-      if (darkTheme == "true") {
-        this.$vuetify.theme.dark = darkTheme;
-        //this.$vuetube.statusBar.setDark(); //Not needed unless setLight() is used below -Front
-        this.$vuetube.statusBar.setBackground(this.$vuetify.theme.themes.dark.accent)
-
-        const isOled = localStorage.getItem('isOled')
-
-        if(isOled == "true") {
-          this.$vuetify.theme.themes.dark.accent = '#000',
-          this.$vuetify.theme.themes.dark.accent2 = '#000',
-          this.$vuetify.theme.themes.dark.background = '#000'
-        } else {
-          this.$vuetify.theme.themes.dark.accent = '#222',
-          this.$vuetify.theme.themes.dark.accent2 = '#222',
-          this.$vuetify.theme.themes.dark.background = '#333'
-        }
-      } else {
-        //this.$vuetube.statusBar.setLight() //Looks weird -Front
-        this.$vuetube.statusBar.setBackground(this.$vuetify.theme.themes.light.accent);
-      }
-    }, 0);
-
     //---   Back Button Listener   ---//
     CapacitorApp.addListener('backButton', ({canGoBack}) => {
 
