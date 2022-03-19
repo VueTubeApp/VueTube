@@ -17,6 +17,14 @@ module.exports = {
     URLS: url,
     YT_API_VALUES: ytApiVal,
 
+    LOGGER_NAMES: {
+        search: "Search",
+        autoComplete: "AutoComplete",
+        recommendations: "Recommendations",
+        init: "Initialize",
+        innertube: "Innertube"
+    },
+
     INNERTUBE_HEADER: (info) => {
         let headers = {
             'accept': '*/*',
@@ -46,7 +54,6 @@ module.exports = {
             "configInfo": info.configInfo,
             "remoteHost": info.remoteHost,
             "visitorData": info.visitorData,
-            // This is, by all accounts, a horrible implementation, but this is currently the only solution besides
         };
         return client
     }

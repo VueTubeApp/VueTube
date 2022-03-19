@@ -111,7 +111,7 @@ class Innertube {
     async getRecommendationsAsync() {
         const rec = await this.browseAsync("recommendations");
         console.log(rec.data)
-        return rec.data;
+        return rec;
     }
 
 
