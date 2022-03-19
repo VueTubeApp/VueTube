@@ -73,6 +73,7 @@ export default {
       // document.getElementsByClassName('v-application--wrap')[0].style.backgroundColor = "#000000 !important"
     },
     saveTheme(isDark) {
+      this.$vuetube.statusBar.setBackground(this.$vuetify.theme.currentTheme.accent)
       localStorage.setItem("darkTheme", isDark);
     },
 

@@ -11,7 +11,7 @@
         <v-card-text>
           <div style="position: relative;">
             <v-img :src="video.thumbnails[video.thumbnails.length - 1].url" />
-            <p v-text="video.runtime" class="videoRuntimeFloat" style="color: #fff;" />
+            <div v-text="video.runtime" class="videoRuntimeFloat" style="color: #fff;" />
           </div>
           <div v-text="video.title" style="margin-top: 0.5em;" />
           <div v-text="`${video.views} • ${video.uploaded}`" />
@@ -24,15 +24,15 @@
 <style scoped>
 .entry {
   margin-top: 1em;
-  width: 100%; /* Prevent Loading Issues */
+  width: 100%; /* Prevent Loading Weirdness */
 }
 .videoRuntimeFloat {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   right: 10px;
   background: rgba(0, 0, 0, 0.5);
-  border-radius: 1em;
-  padding: 3px;
+  border-radius: 5px;
+  padding: 0 3px 0 3px;
 }
 </style>
 

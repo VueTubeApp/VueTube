@@ -179,11 +179,13 @@ export default {
     searchBtn() {
       const query = this.text;
 
+      if(query === "") {
+        return;
+      }
+
       if (this.search === true) {
-        if(query) {
-          this.$router.push(`/search?q=${query}`);
-          this.search = false;
-        }   
+        this.$router.push(`/search?q=${query}`);
+        this.search = false;
       } else {
         this.search = true;
       }
