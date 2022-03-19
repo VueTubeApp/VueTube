@@ -120,8 +120,50 @@ const searchModule = {
 
     },
 
-    getVideo(id) {
-        return id;
+    getRemainingVideoInfo(id, callback) {
+        String.prototype.decodeEscapeSequence = function() {
+            return this.replace(/\\x([0-9A-Fa-f]{2})/g, function() {
+                return String.fromCharCode(parseInt(arguments[1], 16));
+            });
+        };
+        Http.request({
+            method: 'GET', 
+            url: `${constants.URLS.YT_URL}/watch`,
+            params: { v: id }
+        })
+        .then((res) => {
+            let dataUpdated = res.data.decodeEscapeSequence()
+            let likes = dataUpdated.split(`"defaultIcon":{"iconType":"LIKE"},"defaultText":{"runs":[{"text":"`)[1].split(`"}],"accessibility":`)[0]
+            let uploadDate = dataUpdated.split(`"uploadDate":"`)[1].split(`}},"trackingParams":"`)[0].slice(0, -2);
+            let data = {
+                "likes": likes,
+                "uploadDate": uploadDate
+            }
+            logger("vidData", data)
+            callback(data)
+        })
+        .catch((err) => {
+            logger("codeRun", err, true);
+            callback(err);
+        });
+
+    },
+
+    getReturnYoutubeDislike(id, callback) {
+        Http.request({
+            method: 'GET', 
+            url: `https://returnyoutubedislikeapi.com/votes`,
+            params: { videoId: id }
+        })
+        .then((res) => {
+            logger("rydData", res.data)
+            callback(res.data)
+        })
+        .catch((err) => {
+            logger("codeRun", err, true);
+            callback(err);
+        });
+
     }
 
 }
