@@ -182,13 +182,15 @@ const recommendationModule = {
                     id: item.videoId,
                     title: item.title?.runs[0].text,
                     thumbnail: this.getThumbnail(item.videoId),
-                    channel: item.shortBylineText.runs[0] ? item.shortBylineText.runs[0] : item.longBylineText.runs[0],
+                    channel: item.shortBylineText?.runs[0] ? item.shortBylineText.runs[0].text : item.longBylineText?.runs[0].text,
+                    channelURL: `${constants.YT_URL}/${(item.shortBylineText?.runs[0] ? item.shortBylineText.runs[0] : item.longBylineText?.runs[0]).navigationEndpoint?.browseEndpoint?.canonicalBaseUrl}`,
                     channelThumbnail: item.channelThumbnail?.thumbnails[0],
                     metadata: {
                         published: item.publishedTimeText?.runs[0].text,
                         views: item.shortViewCountText?.runs[0].text,
                         length: item.publishedTimeText?.runs[0].text,
-                        overlay: item.thumbnailOverlays?.map((overlay) =>{overlay.thumbnailOverlayTimeStatusRenderer?.text.runs[0].runs}),
+                        overlayStyle: item.thumbnailOverlays?.map(overlay => overlay.thumbnailOverlayTimeStatusRenderer?.style),
+                        overlay: item.thumbnailOverlays?.map(overlay => overlay.thumbnailOverlayTimeStatusRenderer?.text.runs[0].text),
                     },
                 };
                 else return undefined

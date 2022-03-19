@@ -18,11 +18,7 @@
               />
             </div>
             <div v-text="video.title" style="margin-top: 0.5em" />
-            <div
-              v-text="
-                `${video.channel} • ${video.metadata.view} • ${video.metadata.published}`
-              "
-            />
+            <div v-text="parseBottom(video)" />
           </v-card-text>
         </v-card>
       </v-list-item>
@@ -48,6 +44,14 @@ export default {
         if (result) this.recommends = result;
       })
       .catch((error) => this.$logger("Home Page", error, true));
+  },
+
+  methods: {
+    parseBottom(video) {
+      const bottomText = [video.channel, video.metadata.views];
+      if (video.metadata.published) bottomText.push(video.metadata.published);
+      return bottomText.join(" • ");
+    },
   },
 };
 </script>
