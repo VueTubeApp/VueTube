@@ -1,4 +1,4 @@
-package com.Frontesque.youtube;
+package com.Frontesque.vuetube;
 
 import com.getcapacitor.BridgeActivity;
 
