@@ -7,7 +7,7 @@
           {{ item.author ? item.author.login : item.commit.author.name }}
           <span v-text="`• ${item.sha.substring(0, 7)}`" class="subtitle" />
           <v-spacer />
-          <v-chip outlined class="tags" style="border-radius: 0 5px 0 5px; margin-top: -12px; margin-right: -5px;" color="orange" v-if="index == 0">Latest</v-chip>
+          <v-chip outlined class="tags" color="orange" v-if="index == 0">Latest</v-chip>
           <v-chip outlined class="tags" color="green" v-if="item.sha == installedVersion">Installed</v-chip>
         </v-card-title>
 
