@@ -36,7 +36,7 @@ export default {
 
     
     this.$youtube.getRemainingVideoInfo(this.$route.query.v, (data) => {
-      this.likes = data.likes.toLocaleString(),
+      this.likes = data.likes.toLocaleString();
       this.uploaded = data.uploadDate;
     });
     
