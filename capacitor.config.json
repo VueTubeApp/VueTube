@@ -7,5 +7,12 @@
   "server": {
     "hostname": "youtube.com",
     "androidScheme": "https"
+  },
+
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
   }
+
 }
