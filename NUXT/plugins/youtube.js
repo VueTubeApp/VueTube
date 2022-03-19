@@ -142,16 +142,59 @@ const recommendationModule = {
     },
 
     async getVid(id) {
+
+        // temporary test
+
+        const html = await Http.get({
+            url: "https://m.youtube.com/watch?v=U-9M-BjFYMc&t=8s&pbj=1",
+            params: {},
+            headers: {
+                accept: '*/*',
+                'user-agent': 'Mozilla/5.0 (Linux; Android 10; WP7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.101 Mobile Safari/537.36',
+                'content-type': 'application/json',
+                'accept-language': 'en-US,en;q=0.9',
+                'x-goog-authuser': 0,
+                'x-goog-visitor-id': 'CgtsaVdQdGhfbVNOMCiC0taRBg%3D%3D',
+                'x-youtube-client-name': 2,
+                'x-youtube-client-version': '2.20220318.00.00',
+                'x-youtube-chrome-connected': 'source=Chrome,mode=0,enable_account_consistency=true,supervised=false,consistency_enabled_by_default=false',
+                'x-origin': 'https://m.youtube.com',
+                origin: 'https://m.youtube.com',
+                referer: 'https://m.youtube.com/watch?v=U-9M-BjFYMc'
+            }
+        }).catch((error) => error);
+        console.log(html.data)
         return InnertubeAPI.getVidInfoAsync(id).data;
     },
 
+    // It just works™
     async recommend() {
-        const response = InnertubeAPI.getRecommendationsAsync();
-        if (!response.success) {
-            logger(constants.LOGGER_NAMES.recommendations, "An error occurred and innertube failed to respond", true)
-            return
-        }
-        return
+        const response = await InnertubeAPI.getRecommendationsAsync();
+        if (!response.success) throw new Error("An error occurred and innertube failed to respond")
+
+        const contents = response.data.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.content.sectionListRenderer.contents
+        return contents.map((shelves) => {
+            const video = shelves.shelfRenderer?.content?.horizontalListRenderer?.items
+
+            if (video) return video.map((item) => {
+                item = item.gridVideoRenderer
+                if (item) return {
+                    id: item.videoId,
+                    title: item.title?.runs[0].text,
+                    thumbnail: this.getThumbnail(item.videoId),
+                    channel: item.shortBylineText.runs[0] ? item.shortBylineText.runs[0] : item.longBylineText.runs[0],
+                    channelThumbnail: item.channelThumbnail?.thumbnails[0],
+                    metadata: {
+                        published: item.publishedTimeText?.runs[0].text,
+                        views: item.shortViewCountText?.runs[0].text,
+                        length: item.publishedTimeText?.runs[0].text,
+                        overlay: item.thumbnailOverlays?.map((overlay) =>{overlay.thumbnailOverlayTimeStatusRenderer?.text.runs[0].runs}),
+                    },
+                };
+                else return undefined
+            })
+
+        })
     },
 
     getThumbnail: (id, resolution) => Innertube.getThumbnail(id, resolution)
