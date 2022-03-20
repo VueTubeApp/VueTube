@@ -29,13 +29,13 @@
     <div style="height: calc(100% - 1rem); margin-top: 1rem; padding-top: 3rem; background: linear-gradient(var(--v-accent-base) 0%, var(--v-accent2-base) 100%); border-radius: 1rem;">
       <div
         class="background scroll-y"
-        style="padding: 0; height: calc(100vh - 8rem); overflow-x: hidedn;"
+        style="padding: 0; height: calc(100vh - 8rem); overflow-x: hidden;"
       >
 
         <nuxt v-show="!search" />
         <div style="min-width: 180px;" v-if="search">
           <v-list-item v-for="(item, index) in response" :key="index">
-            <v-btn text dense class="info--text searchButton text-left" @click="youtubeSearch(item)" v-text="item[0]" />
+            <v-btn text dense class="info--text searchButton text-left text-capitalize" @click="youtubeSearch(item)" v-text="item[0]" />
           </v-list-item>
         </div>
 
