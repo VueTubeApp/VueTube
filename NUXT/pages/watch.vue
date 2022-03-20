@@ -11,7 +11,7 @@
           <v-list-item v-for="(item, index) in interactions" :key="index" style="padding: 0; flex: 0 0 20%;">
 
             
-            <v-btn text class="vertical-button" style="padding: 0; margin: 0;" elevation=0 :disabled="item.disabled">
+            <v-btn text @click="item.action" class="vertical-button" style="padding: 0; margin: 0;" elevation=0 :disabled="item.disabled">
               <v-icon v-text="item.icon" />
               <div v-text="item.value || item.name" />
             </v-btn>
