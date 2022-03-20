@@ -16,13 +16,23 @@
               <div v-text="item.value || item.name" />
             </button>
 
-
           </v-list-item>
+
+          <v-btn @click="showMore = !showMore"><v-icon>mdi-chevron-down</v-icon></v-btn>
         </div>
         <!--   End Scrolling Div For Interactions   --->
 
       </v-card-text>
-      <p>{{ description }}</p>
+
+
+      <v-bottom-sheet v-model="showMore" color="accent2">
+        <v-sheet>
+        
+          <v-btn @click="showMore = !showMore"><v-icon>mdi-chevron-up</v-icon></v-btn>
+          {{ description }}
+        
+        </v-sheet>
+      </v-bottom-sheet>
     </v-card>
 
     <recommended />
@@ -50,6 +60,7 @@ export default {
         { name: "Dislikes", icon: "mdi-thumb-down", action: null, value: this.dislikes, disabled: true  },
         { name: "Share", icon: "mdi-share", action: null, disabled: true },
       ],
+      showMore: false,
 
       title: null,
       likes: 100,
