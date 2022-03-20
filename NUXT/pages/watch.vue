@@ -26,7 +26,7 @@
       <p>{{ description }}</p>
     </v-card>
 
-    <recommended />
+    <!-- <recommended /> -->
   </div>
 </template>
 

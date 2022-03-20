@@ -173,7 +173,7 @@ let InnertubeAPI;
 
 // Loads Innertube object. This will be the object used in all future Innertube API calls. getAPI Code provided by Lightfire228 (https://github.com/Lightfire228)
 // These are just a way for the backend Javascript to communicate with the front end Vue scripts. Essentially a wrapper inside a wrapper
-const recommendationModule = {
+const innertubeModule = {
 
     async getAPI() {
         if (!InnertubeAPI) {
@@ -223,9 +223,13 @@ const recommendationModule = {
     }
 }
 
+const viewModule = {
+    
+}
+
 //---   Start   ---//
 export default ({ app }, inject) => {
-    inject('youtube', {...searchModule, ...recommendationModule, })
+    inject('youtube', {...searchModule, ...innertubeModule, ...viewModule })
     inject("logger", logger)
 }
 logger(constants.LOGGER_NAMES.init, "Program Started");

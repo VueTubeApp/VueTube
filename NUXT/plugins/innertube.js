@@ -175,8 +175,7 @@ class Innertube {
             },
             rendered_data: {
                 description: renderedPanels[0].engagementPanelSectionListRenderer?.content.structuredDescriptionContentRenderer?.items[1].expandableVideoDescriptionBodyRenderer?.descriptionBodyText.runs,
-                recommendations: columnUI?.contents[(columnUI.contents).length -1].itemSectionRenderer?.contents,
-                recommendContinuation: columnUI?.continuations[0].reloadContinuationData?.continuation
+                recommendations: columnUI?.contents[(columnUI.contents).length -1].itemSectionRenderer?.contents
             }
         }
 
