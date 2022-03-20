@@ -1,7 +1,7 @@
 //---   Modules/Imports   ---//
 import { Http } from '@capacitor-community/http';
 import { StatusBar, Style } from '@capacitor/status-bar';
-import constants from '../static/constants';
+import constants from './constants';
 import { hexToRgb, rgbToHex } from './utils';
 
 const module = {

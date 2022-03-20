@@ -1,7 +1,8 @@
 //---   Modules/Imports   ---//
 import { Http } from '@capacitor-community/http';
 import Innertube from './innertube'
-import constants from '../static/constants';
+import constants from './constants';
+import useRender from './renderers';
 
 //---   Logger Function   ---//
 function logger(func, data, isError = false) {
@@ -191,45 +192,37 @@ const innertubeModule = {
     },
 
     // It just works™
+    // Front page recommendation
     async recommend() {
         const response = await InnertubeAPI.getRecommendationsAsync();
         if (!response.success) throw new Error("An error occurred and innertube failed to respond")
 
         const contents = response.data.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.content.sectionListRenderer.contents
-        return contents.map((shelves) => {
+        const final = contents.map((shelves) => {
             const video = shelves.shelfRenderer?.content?.horizontalListRenderer?.items
 
             if (video) return video.map((item) => {
-                item = item.gridVideoRenderer
-                if (item) return {
-                    id: item.videoId,
-                    title: item.title?.runs[0].text,
-                    thumbnail: Innertube.getThumbnail(item.videoId, "max"),
-                    channel: item.shortBylineText?.runs[0] ? item.shortBylineText.runs[0].text : item.longBylineText?.runs[0].text,
-                    channelURL: `${constants.YT_URL}/${(item.shortBylineText?.runs[0] ? item.shortBylineText.runs[0] : item.longBylineText?.runs[0]).navigationEndpoint?.browseEndpoint?.canonicalBaseUrl}`,
-                    channelThumbnail: item.channelThumbnail?.thumbnails[0],
-                    metadata: {
-                        published: item.publishedTimeText?.runs[0].text,
-                        views: item.shortViewCountText?.runs[0].text,
-                        length: item.publishedTimeText?.runs[0].text,
-                        overlayStyle: item.thumbnailOverlays?.map(overlay => overlay.thumbnailOverlayTimeStatusRenderer?.style),
-                        overlay: item.thumbnailOverlays?.map(overlay => overlay.thumbnailOverlayTimeStatusRenderer?.text.runs[0].text),
-                    },
-                };
-                else return undefined
+                if (item) {
+                    const renderedItem = useRender(item[Object.keys(item)[0]], Object.keys(item)[0])
+                    console.log(renderedItem)
+                    return renderedItem
+                } else {return undefined} 
             })
 
         })
-    }
-}
+        console.log(final)
+        return final
+    },
 
-const viewModule = {
-    
+    // This is the recommendations that exist under videos
+    async viewRecommends(recommendList) {
+
+    }
 }
 
 //---   Start   ---//
 export default ({ app }, inject) => {
-    inject('youtube', {...searchModule, ...innertubeModule, ...viewModule })
+    inject('youtube', {...searchModule, ...innertubeModule })
     inject("logger", logger)
 }
 logger(constants.LOGGER_NAMES.init, "Program Started");

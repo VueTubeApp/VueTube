@@ -38,7 +38,6 @@ module.exports = {
             'x-youtube-client-version': ytApiVal.VERSION,
             'x-origin': info.originalUrl,
             origin: info.originalUrl,
-            referer: `${url.YT_MOBILE}/watch?v=${id}`
         };
         return headers
     },

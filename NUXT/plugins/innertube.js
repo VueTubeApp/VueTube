@@ -3,7 +3,7 @@
 
 import { Http } from '@capacitor-community/http';
 import { getBetweenStrings } from './utils';
-import constants from '../static/constants';
+import constants from './constants';
 
 class Innertube {
 
