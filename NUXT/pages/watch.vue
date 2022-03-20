@@ -52,6 +52,9 @@
 </style>
 
 <script>
+import { CapacitorVideoPlayer } from 'capacitor-video-player';
+import { Capacitor } from '@capacitor/core';
+
 import recommended from '../components/recommended.vue';
 export default {
   components: { recommended },
