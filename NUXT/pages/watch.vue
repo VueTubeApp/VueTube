@@ -2,12 +2,12 @@
   <div>
     <video controls autoplay :src="vidSrc" width="100%" height="300vh" />
     <v-card class="ml-2 mr-2 flat light" flat>
-      <v-card-title style="padding-top: 0;">{{ title }}</v-card-title>
+      <v-card-title style="padding-top: 0; padding-bottom: 0; font-size: 0.95em;" v-text="title" />
       <v-card-text>
-        <span>{{ views }} views • {{uploaded}}</span><br /><br />
+        <div style="margin-bottom: 1em;">{{ views }} views • {{uploaded}}</div>
         
         <!--   Scrolling Div For Interactions   --->
-        <div style="display: flex;">
+        <div style="display: flex; margin-bottom: 1em;">
           <v-list-item v-for="(item, index) in interactions" :key="index" style="padding: 0; flex: 0 0 20%;">
 
             
@@ -27,6 +27,10 @@
 
         </div>
         <!--   End Scrolling Div For Interactions   --->
+        <hr>
+        <p>Channel Stuff</p>
+        <hr>
+
 
       </v-card-text>
           <div class="scroll-y ml-2 mr-2" v-if="showMore">
