@@ -51,7 +51,7 @@
 
 <style>
 * {
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .scroll-y {
   overflow-y: scroll !important; /* has to be scroll, not auto */
