@@ -25,7 +25,7 @@
       </v-card-text>
 
 
-      <v-bottom-sheet v-model="showMore" color="accent2">
+      <v-bottom-sheet v-model="showMore" color="accent2" style="z-index: 9999999;">
         <v-sheet style="padding: 1em;">
         
           <v-btn block @click="showMore = !showMore"><v-icon>mdi-chevron-down</v-icon></v-btn><br>
