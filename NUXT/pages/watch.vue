@@ -31,17 +31,17 @@ export default {
       this.vidSrc = result.streamingData.formats[result.streamingData.formats.length-1].url
       this.title = result.videoDetails.title
       this.description = result.videoDetails.shortDescription;
-      this.views = result.videoDetails.viewCount;
+      this.views = result.videoDetails.viewCount.toLocaleString();
     });
 
     
     this.$youtube.getRemainingVideoInfo(this.$route.query.v, (data) => {
-      this.likes = data.likes,
+      this.likes = data.likes.toLocaleString();
       this.uploaded = data.uploadDate;
     });
     
     this.$youtube.getReturnYoutubeDislike(this.$route.query.v, (data) => {
-      this.dislikes = data.dislikes;
+      this.dislikes = data.dislikes.toLocaleString();
     });
 
   }
