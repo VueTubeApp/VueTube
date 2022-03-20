@@ -21,6 +21,7 @@ module.exports = {
     LOGGER_NAMES: {
         search: "Search",
         autoComplete: "AutoComplete",
+        watch: "Watch",
         recommendations: "Recommendations",
         init: "Initialize",
         innertube: "Innertube"
@@ -31,14 +32,13 @@ module.exports = {
             accept: '*/*',
             'user-agent': info.userAgent,
             'content-type': 'application/json',
-            'accept-language': `${info.hl}-${info.gl},${info.hl};q=0.9`,
             'x-goog-authuser': 0,
             'x-goog-visitor-id': info.visitorData,
             'x-youtube-client-name': ytApiVal.CLIENTNAME,
             'x-youtube-client-version': ytApiVal.VERSION,
             'x-origin': info.originalUrl,
             origin: info.originalUrl,
-            // referer: 'https://m.youtube.com/watch?v=U-9M-BjFYMc'
+            referer: `${url.YT_MOBILE}/watch?v=${id}`
         };
         return headers
     },

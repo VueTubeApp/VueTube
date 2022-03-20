@@ -183,9 +183,11 @@ const recommendationModule = {
     },
 
     async getVid(id) {
-
-        // temporary test
-        console.log(await InnertubeAPI.VidInfoAsync(id))
+        try {
+            return await InnertubeAPI.VidInfoAsync(id)
+        } catch (error) {
+            logger(constants.LOGGER_NAMES.watch, error, true)
+        }
     },
 
     // It just works™

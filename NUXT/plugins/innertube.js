@@ -136,10 +136,10 @@ class Innertube {
 
     async VidInfoAsync(id) {
         let response = await this.getVidAsync(id)
-        response = response.data
-        if (response[2].playerResponse?.playabilityStatus?.status == ("ERROR" || undefined)) 
-            throw new Error(`Could not get information for video: ${response[2].playerResponse?.playabilityStatus?.status} - ${response[2].playerResponse?.playabilityStatus?.reason}`)
         
+        if (response.success && (response.data[2].playerResponse?.playabilityStatus?.status == ("ERROR" || undefined))) 
+            throw new Error(`Could not get information for video: ${response[2].playerResponse?.playabilityStatus?.status} - ${response[2].playerResponse?.playabilityStatus?.reason}`)
+        response = response.data
         const details = response[2].playerResponse?.videoDetails
         const microformat = response[2].playerResponse?.microformat?.playerMicroformatRenderer
         const renderedPanels = response[3].response?.engagementPanels
