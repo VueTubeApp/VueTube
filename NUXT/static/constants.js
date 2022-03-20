@@ -2,6 +2,7 @@
 
 const url = {
     YT_URL: 'https://www.youtube.com',
+    YT_MOBILE: "https://m.youtube.com",
     YT_MUSIC_URL: 'https://music.youtube.com',
     YT_BASE_API: 'https://www.youtube.com/youtubei/v1',
     YT_SUGGESTIONS: "https://suggestqueries.google.com/complete",
@@ -27,13 +28,17 @@ module.exports = {
 
     INNERTUBE_HEADER: (info) => {
         let headers = {
-            'accept': '*/*',
-            'user-agent': info.client.userAgent,
+            accept: '*/*',
+            'user-agent': info.userAgent,
             'content-type': 'application/json',
+            'accept-language': `${info.hl}-${info.gl},${info.hl};q=0.9`,
             'x-goog-authuser': 0,
-            'x-youtube-client-name': 2,
-            'x-youtube-client-version': info.client.clientVersion,
-            'x-youtube-chrome-connected': 'source=Chrome,mode=0,enable_account_consistency=true,supervised=false,consistency_enabled_by_default=false',
+            'x-goog-visitor-id': info.visitorData,
+            'x-youtube-client-name': ytApiVal.CLIENTNAME,
+            'x-youtube-client-version': ytApiVal.VERSION,
+            'x-origin': info.originalUrl,
+            origin: info.originalUrl,
+            // referer: 'https://m.youtube.com/watch?v=U-9M-BjFYMc'
         };
         return headers
     },

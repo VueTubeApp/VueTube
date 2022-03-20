@@ -185,27 +185,7 @@ const recommendationModule = {
     async getVid(id) {
 
         // temporary test
-
-        const html = await Http.get({
-            url: "https://m.youtube.com/watch?v=U-9M-BjFYMc&t=8s&pbj=1",
-            params: {},
-            headers: {
-                accept: '*/*',
-                'user-agent': 'Mozilla/5.0 (Linux; Android 10; WP7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.101 Mobile Safari/537.36',
-                'content-type': 'application/json',
-                'accept-language': 'en-US,en;q=0.9',
-                'x-goog-authuser': 0,
-                'x-goog-visitor-id': 'CgtsaVdQdGhfbVNOMCiC0taRBg%3D%3D',
-                'x-youtube-client-name': 2,
-                'x-youtube-client-version': '2.20220318.00.00',
-                'x-youtube-chrome-connected': 'source=Chrome,mode=0,enable_account_consistency=true,supervised=false,consistency_enabled_by_default=false',
-                'x-origin': 'https://m.youtube.com',
-                origin: 'https://m.youtube.com',
-                referer: 'https://m.youtube.com/watch?v=U-9M-BjFYMc'
-            }
-        }).catch((error) => error);
-        console.log(html.data)
-        return InnertubeAPI.getVidInfoAsync(id);
+        console.log(await InnertubeAPI.VidInfoAsync(id))
     },
 
     // It just works™

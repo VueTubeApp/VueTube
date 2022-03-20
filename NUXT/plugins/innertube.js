@@ -28,6 +28,7 @@ class Innertube {
                     this.key = data.INNERTUBE_API_KEY;
                     this.context = data.INNERTUBE_CONTEXT;
                     this.context.client = constants.INNERTUBE_CLIENT(this.context.client)
+                    this.header = constants.INNERTUBE_HEADER(this.context.client)
                 }
 
             } catch (err) {
@@ -89,13 +90,32 @@ class Innertube {
         }
     }
 
-    async getVidInfoAsync(id) {
-        let data = { context: this.context, videoId: id }
+    async getVidAsync(id) {
 
-        const response = await Http.post({
-            url: `${constants.URLS.YT_BASE_API}/player?key=${this.key}`,
-            data: data,
-            headers: constants.INNERTUBE_HEADER(this.context)
+        // const url = `${constants.URLS.YT_MOBILE}/watch?v=${id}&t=8s&pbj=1`
+        // console.log(url)
+        // const response = await Http.get({
+        //     url: url,
+        //     params: {},
+        //     headers: Object.assign({"referer": url}, this.header)
+        // }).catch((error) => error)
+        const response = await Http.get({
+            url: `https://m.youtube.com/watch?v=${id}&t=8s&pbj=1`,
+            params: {},
+            headers: {
+                accept: '*/*',
+                'user-agent': 'Mozilla/5.0 (Linux; Android 10; WP7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.101 Mobile Safari/537.36',
+                'content-type': 'application/json',
+                'accept-language': 'en-US,en;q=0.9',
+                'x-goog-authuser': 0,
+                'x-goog-visitor-id': 'CgtsaVdQdGhfbVNOMCiC0taRBg%3D%3D',
+                'x-youtube-client-name': 2,
+                'x-youtube-client-version': '2.20220318.00.00',
+                'x-youtube-chrome-connected': 'source=Chrome,mode=0,enable_account_consistency=true,supervised=false,consistency_enabled_by_default=false',
+                'x-origin': 'https://m.youtube.com',
+                origin: 'https://m.youtube.com',
+                referer: `https://m.youtube.com/watch?v=${id}`
+            }
         }).catch((error) => error);
 
         if (response instanceof Error) return { success: false, status_code: response.response.status, message: response.message };
@@ -112,6 +132,52 @@ class Innertube {
         const rec = await this.browseAsync("recommendations");
         console.log(rec.data)
         return rec;
+    }
+
+    async VidInfoAsync(id) {
+        let response = await this.getVidAsync(id)
+        response = response.data
+        if (response[2].playerResponse?.playabilityStatus?.status == ("ERROR" || undefined)) 
+            throw new Error(`Could not get information for video: ${response[2].playerResponse?.playabilityStatus?.status} - ${response[2].playerResponse?.playabilityStatus?.reason}`)
+        
+        const details = response[2].playerResponse?.videoDetails
+        const microformat = response[2].playerResponse?.microformat?.playerMicroformatRenderer
+        const renderedPanels = response[3].response?.engagementPanels
+        const columnUI = response[3].response?.contents.singleColumnWatchNextResults?.results?.results
+
+        console.log((columnUI.contents).length)
+
+        return {
+            id: details.videoId,
+            title: details.title || microformat.title?.runs[0].text,
+            isLive: details.isLiveContent || microformat.liveBroadcastDetails?.isLiveNow || false,
+            channelName: details.author || microformat.ownerChannelName,
+            channelUrl: microformat.ownerProfileUrl,
+            availableResolutions: response[2].playerResponse?.streamingData?.formats,
+            availableResolutionsAdaptive: response[2].playerResponse?.streamingData?.adaptiveFormats,
+            metadata: {
+                description: microformat.description?.runs[0].text,
+                descriptionShort: details.shortDescription,
+                thumbnails: details.thumbnails?.thumbnails || microformat.thumbnails?.thumbnails,
+                isFamilySafe: microformat.isFamilySafe,
+                availableCountries: microformat.availableCountries,
+                liveBroadcastDetails: microformat.liveBroadcastDetails,
+                uploadDate: microformat.uploadDate,
+                publishDate: microformat.publishDate,
+                isPrivate: details.isPrivate,
+                viewCount: details.viewCount || microformat.viewCount,
+                lengthSeconds: details.lengthSeconds || microformat.lengthSeconds,
+                likes: parseInt(columnUI?.contents[1]
+                    .slimVideoMetadataSectionRenderer?.contents[1].slimVideoActionBarRenderer?.buttons[0]
+                    .slimMetadataToggleButtonRenderer?.button?.toggleButtonRenderer?.defaultText?.accessibility?.accessibilityData?.label?.replace(/\D/g, '')) // Yes. I know.
+            },
+            rendered_data: {
+                description: renderedPanels[0].engagementPanelSectionListRenderer?.content.structuredDescriptionContentRenderer?.items[1].expandableVideoDescriptionBodyRenderer?.descriptionBodyText.runs,
+                recommendations: columnUI?.contents[(columnUI.contents).length -1].itemSectionRenderer?.contents,
+                recommendContinuation: columnUI?.continuations[0].reloadContinuationData?.continuation
+            }
+        }
+
     }
 
 
