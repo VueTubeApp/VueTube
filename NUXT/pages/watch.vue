@@ -67,8 +67,6 @@ export default {
       showMore: false,
 
       title: null,
-      likes: null,
-      dislikes: null,
       uploaded: null,
       vidSrc: null,
       description: null,
@@ -84,20 +82,17 @@ export default {
       this.vidSrc = result.streamingData.formats[result.streamingData.formats.length-1].url
       this.title = result.videoDetails.title
       this.description = result.videoDetails.shortDescription;
-      this.views = result.videoDetails.viewCount.toLocaleString();
+      this.views = result.videoDetails.viewCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     });
 
     
     this.$youtube.getRemainingVideoInfo(this.$route.query.v, (data) => {
-      this.likes = data.likes.toLocaleString();
       this.uploaded = data.uploadDate;
-
-      this.interactions[0].value = data.likes;
+      this.interactions[0].value = data.likes.toString();
     });
     
     this.$youtube.getReturnYoutubeDislike(this.$route.query.v, (data) => {
-      this.dislikes = data.dislikes.toLocaleString();
-      this.interactions[1].value = data.dislikes.toLocaleString();
+      this.interactions[1].value = data.dislikes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     });
 
   }
