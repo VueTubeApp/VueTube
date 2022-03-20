@@ -167,11 +167,11 @@ const searchModule = {
 
 }
 
-//---   Recommendations   --//
+//---   Recommendations   ---//
 
 let InnertubeAPI;
 
-// Loads Innertube object. This will be the object used in all future Innertube API calls. Code provided by Lightfire228 (https://github.com/Lightfire228)
+// Loads Innertube object. This will be the object used in all future Innertube API calls. getAPI Code provided by Lightfire228 (https://github.com/Lightfire228)
 // These are just a way for the backend Javascript to communicate with the front end Vue scripts. Essentially a wrapper inside a wrapper
 const recommendationModule = {
 
@@ -204,7 +204,7 @@ const recommendationModule = {
                 if (item) return {
                     id: item.videoId,
                     title: item.title?.runs[0].text,
-                    thumbnail: this.getThumbnail(item.videoId),
+                    thumbnail: Innertube.getThumbnail(item.videoId, "max"),
                     channel: item.shortBylineText?.runs[0] ? item.shortBylineText.runs[0].text : item.longBylineText?.runs[0].text,
                     channelURL: `${constants.YT_URL}/${(item.shortBylineText?.runs[0] ? item.shortBylineText.runs[0] : item.longBylineText?.runs[0]).navigationEndpoint?.browseEndpoint?.canonicalBaseUrl}`,
                     channelThumbnail: item.channelThumbnail?.thumbnails[0],
@@ -220,9 +220,7 @@ const recommendationModule = {
             })
 
         })
-    },
-
-    getThumbnail: (id, resolution) => Innertube.getThumbnail(id, resolution)
+    }
 }
 
 //---   Start   ---//

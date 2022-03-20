@@ -80,15 +80,17 @@ class Innertube {
     }
 
     static getThumbnail(id, resolution) {
-        switch (resolution) {
-            case "min":
-                return `https://img.youtube.com/vi/${id}/mqdefault.jpg`
-            case "mid":
-                return `https://img.youtube.com/vi/${id}/hqdefault.jpg`
-            default:
-                return `https://img.youtube.com/vi/${id}/maxresdefault.jpg`
+            if (resolution == "max"){
+                const url = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`
+                let img = new Image();
+                img.src = url
+                img.onload = function(){
+                    if (img.height !== 120) return url
+                };
+            }
+            return `https://img.youtube.com/vi/${id}/mqdefault.jpg`
         }
-    }
+    
 
     async getVidAsync(id) {
 
