@@ -8,7 +8,7 @@
         
         <!--   Scrolling Div For Interactions   --->
         <div style="display: flex;">
-          <v-list-item v-for="(item, index) in interactions" :key="index" style="padding: 0;">
+          <v-list-item v-for="(item, index) in interactions" :key="index" style="padding: 0; flex: 0 0 20%;">
 
 
             <v-btn text class="vertical-button" style="padding: 0; margin: 0;" elevation=0 :disabled="item.disabled">
@@ -18,7 +18,8 @@
 
           </v-list-item>
 
-          <v-btn @click="showMore = !showMore"><v-icon>mdi-chevron-up</v-icon></v-btn>
+          <v-spacer />
+          <v-btn text @click="showMore = !showMore"><v-icon>mdi-chevron-up</v-icon></v-btn>
         </div>
         <!--   End Scrolling Div For Interactions   --->
 
