@@ -18,7 +18,7 @@
 
           </v-list-item>
 
-          <v-btn @click="showMore = !showMore"><v-icon>mdi-chevron-down</v-icon></v-btn>
+          <v-btn @click="showMore = !showMore"><v-icon>mdi-chevron-up</v-icon></v-btn>
         </div>
         <!--   End Scrolling Div For Interactions   --->
 
@@ -26,10 +26,13 @@
 
 
       <v-bottom-sheet v-model="showMore" color="accent2">
-        <v-sheet>
+        <v-sheet style="padding: 1em;">
         
-          <v-btn @click="showMore = !showMore"><v-icon>mdi-chevron-up</v-icon></v-btn>
-          {{ description }}
+          <v-btn block @click="showMore = !showMore"><v-icon>mdi-chevron-down</v-icon></v-btn><br>
+
+          <div class="scroll-y">
+            {{ description }}
+          </div>
         
         </v-sheet>
       </v-bottom-sheet>
