@@ -11,10 +11,10 @@
           <v-list-item v-for="(item, index) in interactions" :key="index">
 
 
-            <button class="vertical-button" style="padding: 0; margin: 0;" elevation=0 :disabled="item.disabled">
+            <v-btn text class="vertical-button" style="padding: 0; margin: 0;" elevation=0 :disabled="item.disabled">
               <v-icon v-text="item.icon" />
               <div v-text="item.value || item.name" />
-            </button>
+            </v-btn>
 
           </v-list-item>
 
@@ -53,7 +53,6 @@
 
 <script>
 import { CapacitorVideoPlayer } from 'capacitor-video-player';
-import { Capacitor } from '@capacitor/core';
 
 import recommended from '../components/recommended.vue';
 export default {
@@ -69,7 +68,7 @@ export default {
       showMore: false,
 
       title: null,
-      likes: 100,
+      likes: null,
       dislikes: null,
       uploaded: null,
       vidSrc: null,
@@ -78,8 +77,6 @@ export default {
     }
   },
   mounted() {
-
-    this.likes = 100
 
     this.$youtube.getVid(this.$route.query.v).then(result => {
       console.log('Video info data', result)
@@ -100,12 +97,8 @@ export default {
     });
     
     this.$youtube.getReturnYoutubeDislike(this.$route.query.v, (data) => {
-
-
-
       this.dislikes = data.dislikes.toLocaleString();
       this.interactions[1].value = data.dislikes.toLocaleString();
-
     });
 
   }

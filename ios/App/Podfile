@@ -15,7 +15,6 @@ def capacitor_pods
   pod 'CapacitorDevice', :path => '..\..\node_modules\@capacitor\device'
   pod 'CapacitorSplashScreen', :path => '..\..\node_modules\@capacitor\splash-screen'
   pod 'CapacitorStatusBar', :path => '..\..\node_modules\@capacitor\status-bar'
-  pod 'CapacitorVideoPlayer', :path => '..\..\node_modules\capacitor-video-player'
 end
 
 target 'App' do

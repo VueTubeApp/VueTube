@@ -22,9 +22,5 @@
 	{
 		"pkg": "@capacitor/status-bar",
 		"classpath": "com.capacitorjs.plugins.statusbar.StatusBarPlugin"
-	},
-	{
-		"pkg": "capacitor-video-player",
-		"classpath": "com.jeep.plugin.capacitor.capacitorvideoplayer.CapacitorVideoPlayerPlugin"
 	}
 ]

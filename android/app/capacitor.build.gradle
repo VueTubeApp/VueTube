@@ -15,7 +15,6 @@ dependencies {
     implementation project(':capacitor-device')
     implementation project(':capacitor-splash-screen')
     implementation project(':capacitor-status-bar')
-    implementation project(':capacitor-video-player')
 
 }
 
