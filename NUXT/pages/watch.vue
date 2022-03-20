@@ -10,7 +10,7 @@
         <div style="display: flex; margin-bottom: 1em;">
           <v-list-item v-for="(item, index) in interactions" :key="index" style="padding: 0; flex: 0 0 20%;">
 
-
+            
             <v-btn text class="vertical-button" style="padding: 0; margin: 0;" elevation=0 :disabled="item.disabled">
               <v-icon v-text="item.icon" />
               <div v-text="item.value || item.name" />
@@ -18,8 +18,13 @@
 
           </v-list-item>
 
+
           <v-spacer />
-          <v-btn text @click="showMore = !showMore"><v-icon>mdi-chevron-up</v-icon></v-btn>
+          <v-btn text @click="showMore = !showMore">
+            <v-icon v-if="showMore">mdi-chevron-up</v-icon>
+            <v-icon v-else>mdi-chevron-down</v-icon>
+          </v-btn>
+
         </div>
         <!--   End Scrolling Div For Interactions   --->
         <hr>
@@ -28,12 +33,24 @@
 
 
       </v-card-text>
+          <div class="scroll-y ml-2 mr-2" v-if="showMore">
+            {{ description }}
+          </div>
 
-
-      <v-bottom-sheet v-model="showMore" color="accent2" style="z-index: 9999999;">
+      <!--<v-bottom-sheet v-model="showMore" color="accent2" style="z-index: 9999999;">
         <v-sheet style="padding: 1em;">
         
           <v-btn block @click="showMore = !showMore"><v-icon>mdi-chevron-down</v-icon></v-btn><br>
+
+          <div class="scroll-y">
+            {{ description }}
+          </div>
+        
+        </v-sheet>
+      </v-bottom-sheet>-->
+      <v-bottom-sheet v-model="share" color="accent2" style="z-index: 9999999;">
+        <v-sheet style="padding: 1em;">
+        
 
           <div class="scroll-y">
             {{ description }}
@@ -60,19 +77,24 @@
 import recommended from '../components/recommended.vue';
 export default {
   components: { recommended },
+  methods: {
+    dislike() {
+    },
+    share() {
+      this.share = !this.share;
+    }
+  },
   data() {
     return {
 
       interactions: [
         { name: "Likes", icon: "mdi-thumb-up", action: null, value: this.likes, disabled: true },
-        { name: "Dislikes", icon: "mdi-thumb-down", action: null, value: this.dislikes, disabled: true  },
-        { name: "Share", icon: "mdi-share", action: null, disabled: true },
+        { name: "Dislikes", icon: "mdi-thumb-down", action: this.dislike(), value: this.dislikes, disabled: true  },
+        { name: "Share", icon: "mdi-share", action: this.share(), disabled: true },
       ],
       showMore: false,
-
+      share: false,
       title: null,
-      likes: null,
-      dislikes: null,
       uploaded: null,
       vidSrc: null,
       description: null,
@@ -88,20 +110,19 @@ export default {
       this.vidSrc = result.streamingData.formats[result.streamingData.formats.length-1].url
       this.title = result.videoDetails.title
       this.description = result.videoDetails.shortDescription;
-      this.views = result.videoDetails.viewCount.toLocaleString();
+      this.views = result.videoDetails.viewCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     });
 
     
     this.$youtube.getRemainingVideoInfo(this.$route.query.v, (data) => {
-      this.likes = data.likes.toLocaleString();
       this.uploaded = data.uploadDate;
-
-      this.interactions[0].value = data.likes;
+      this.interactions[0].value = data.likes.toString();
     });
     
-    this.$youtube.getReturnYoutubeDislike(this.$route.query.v, (data) => {
-      this.dislikes = data.dislikes.toLocaleString();
-      this.interactions[1].value = data.dislikes.toLocaleString();
+    this.$ryd.getDislikes(this.$route.query.v, (data) => {
+      console.log('real data')
+      console.log(data)
+      this.interactions[1].value = data.dislikes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     });
 
   }
