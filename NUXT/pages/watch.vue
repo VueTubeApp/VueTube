@@ -8,7 +8,7 @@
         
         <!--   Scrolling Div For Interactions   --->
         <div style="display: flex;">
-          <v-list-item v-for="(item, index) in interactions" :key="index">
+          <v-list-item v-for="(item, index) in interactions" :key="index" style="padding: 0;">
 
 
             <v-btn text class="vertical-button" style="padding: 0; margin: 0;" elevation=0 :disabled="item.disabled">
@@ -52,8 +52,6 @@
 </style>
 
 <script>
-import { CapacitorVideoPlayer } from 'capacitor-video-player';
-
 import recommended from '../components/recommended.vue';
 export default {
   components: { recommended },
