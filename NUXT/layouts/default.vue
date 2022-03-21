@@ -1,40 +1,12 @@
 <template>
   <v-app v-show="stateLoaded" style="background: black !important">
-    <v-card
-      style="height: 4rem !important; display: flex; box-shadow: none !important"
-      color="accent white--text"
-      class="topNav rounded-0"
-    >
-      <h2 v-text="page" v-show="!search" />
-
-      <v-text-field
-        label="Search"
-        v-model="text"
-        @input="textChanged"
-        class="searchBar"
-        color="white"
-        v-if="search"
-        v-on:keyup.enter="searchBtn"
-      />
-
-      <v-spacer />
-
-      <v-btn
-        text
-        class="toolbarAction mr-2 fill-height"
-        color="white"
-        @click="searchBtn()"
-        ><v-icon>mdi-magnify</v-icon></v-btn
-      >
-      <v-btn
-        text
-        class="toolbarAction fill-height"
-        color="white"
-        v-show="!search"
-        to="/settings"
-        ><v-icon>mdi-dots-vertical</v-icon></v-btn
-      >
-    </v-card>
+    <topNavigation
+      @close-search="search = !search"
+      @search-btn="searchBtn"
+      @text-changed="textChanged"
+      :search="search"
+      :page="page"
+    />
 
     <div
       style="
@@ -44,6 +16,7 @@
       "
     >
       <div
+        v-show="!search"
         class="background"
         style="
           padding: 0;
@@ -60,6 +33,21 @@
         <!-- scrollbox below must be a standalone div -->
         <div class="scroll-y" style="height: 100%">
           <nuxt v-show="!search" />
+        </div>
+      </div>
+
+      <div
+        v-show="search"
+        class="background"
+        style="
+          padding: 0;
+          overflow: hidden;
+          height: calc(100vh - 4rem);
+          transition-duration: 0.3s;
+          transition-property: border-radius;
+        "
+      >
+        <div class="scroll-y" style="height: 100%">
           <div style="min-width: 180px" v-if="search">
             <v-list-item v-for="(item, index) in response" :key="index">
               <v-btn
@@ -107,35 +95,9 @@ div {
 </style>
 
 <style scoped>
-.toolbarAction {
-  min-width: 40px !important;
-}
-.topNav {
-  padding: 1rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 999;
-  /*border-radius: 0 0 1em 1em !important;*/
-}
-.topNavSearch {
-  margin-bottom: -10em;
-  margin-left: 2em;
-  /*transform: translateY(-2.5%);*/
-}
 .background {
   height: 100%;
-  padding: 4em 0 4em 0; /* Account for Top/Bottom Novigation */
-}
-.searchBar {
-  margin: 0;
-  position: absolute;
-  transform: translateY(-10%);
-  width: 75%;
-}
-.searchButton {
-  width: 100%;
-  justify-content: left !important;
+  padding: 4em 0 4em 0; /* Account for Top/Bottom Navigation */
 }
 </style>
 
@@ -145,17 +107,15 @@ import { mapState } from "vuex";
 export default {
   data: () => ({
     search: false,
-
-    text: null,
     response: [],
-    stateLoaded: false
+    stateLoaded: false,
   }),
   beforeCreate() {
     // initializes UI tweaks to the saved state
     this.$store.commit("tweaks/initTweaks");
   },
   mounted() {
-    this.stateLoaded = true
+    this.stateLoaded = true;
     //---   Back Button Listener   ---//
     CapacitorApp.addListener("backButton", ({ canGoBack }) => {
       //---   Back Closes Search   ---//
@@ -183,8 +143,8 @@ export default {
   },
 
   methods: {
-    textChanged() {
-      this.$youtube.autoComplete(this.text, (res) => {
+    textChanged(text) {
+      this.$youtube.autoComplete(text, (res) => {
         const data = res.replace(/^.*?\(/, "").replace(/\)$/, ""); //Format Response
         this.response = JSON.parse(data)[1];
       });
@@ -195,8 +155,8 @@ export default {
       this.search = false;
     },
 
-    searchBtn() {
-      const query = this.text;
+    searchBtn(text) {
+      const query = text;
 
       if (this.search === true) {
         if (query) {

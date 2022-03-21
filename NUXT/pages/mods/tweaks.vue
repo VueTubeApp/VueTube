@@ -1,8 +1,13 @@
 <template>
   <div class="py-1">
+    <v-card class="px-8 py-6 ma-4">
+      <h3>Layout</h3>
+      <v-switch class="mt-6" disabled label="Dense Navbars" />
+      <v-switch disabled label="Disable Top Bar" />
+      <!-- <v-switch class="mt-6" disabled label="Reverse (disabled)" /> -->
+    </v-card>
     <v-card class="px-8 pt-6 ma-4">
       <h3>Rounded Corners</h3>
-      <!-- // TODO: add tweaks for other components -->
       <v-switch class="mt-6" disabled label="Reverse (disabled)" />
       <v-slider
         disabled
