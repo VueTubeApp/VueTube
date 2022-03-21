@@ -8,7 +8,7 @@
       :page="page"
     />
 
-    <div class="accent" style="height: 100%; margin-top: 4rem">
+    <div class="accent2" style="height: 100%; margin-top: 4rem">
       <div
         v-show="!search"
         class="background"
