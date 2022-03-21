@@ -37,7 +37,7 @@
 
       <div
         v-show="search"
-        class="background"
+        class="accent2"
         style="
           padding: 0;
           overflow: hidden;
@@ -49,6 +49,7 @@
         <div class="scroll-y" style="height: 100%">
           <div style="min-width: 180px" v-if="search">
             <v-list-item v-for="(item, index) in response" :key="index">
+              <v-icon>mdi-magnify</v-icon>
               <v-btn
                 text
                 dense

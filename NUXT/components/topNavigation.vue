@@ -1,18 +1,12 @@
 <template>
   <v-card
     style="height: 4rem !important; display: flex; box-shadow: none !important"
-    color="accent white--text"
+    color="accent2"
     class="topNav rounded-0 pa-3"
   >
     <h3 class="my-auto ml-4" v-text="page" v-show="!search" />
 
-    <v-btn
-      icon
-      v-if="search"
-      color="white"
-      class="mr-3 my-auto"
-      @click="$emit('close-search')"
-    >
+    <v-btn icon v-if="search" class="mr-3 my-auto" @click="$emit('close-search')">
       <v-icon>mdi-close</v-icon>
     </v-btn>
 
@@ -24,7 +18,6 @@
       v-model="text"
       @input="$emit('text-changed', text)"
       class="searchBar"
-      color="white"
       v-if="search"
       v-on:keyup.enter="$emit('search-btn', text)"
     />
@@ -36,7 +29,6 @@
       tile
       class="ml-3 my-auto fill-height"
       style="border-radius: 0.25rem !important"
-      color="white"
       @click="$emit('search-btn', text)"
       ><v-icon>mdi-magnify</v-icon></v-btn
     >
@@ -45,7 +37,6 @@
       tile
       class="ml-4 mr-2 my-auto fill-height"
       style="border-radius: 0.25rem !important"
-      color="white"
       v-show="!search"
       to="/settings"
       ><v-icon>mdi-dots-vertical</v-icon></v-btn
