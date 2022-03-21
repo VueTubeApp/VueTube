@@ -1,0 +1,1 @@
+npm i; cd NUXT/; npm i; cd ..;
