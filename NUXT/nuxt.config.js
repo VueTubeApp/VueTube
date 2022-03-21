@@ -69,9 +69,9 @@ export default {
         dark: {
           primary: colors.red.darken2, //colors.blue.darken2
           primaryAlt: "#533",
-          accent: "#333333",
-          accent2: "#33333",
-          background: "#222",
+          accent: "#222",
+          accent2: "#222",
+          background: "#333",
           info: "#fff",
         }
       }
