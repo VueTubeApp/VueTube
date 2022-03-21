@@ -8,7 +8,13 @@
       :page="page"
     />
 
-    <div class="accent" style="height: 100%; margin-top: 4rem">
+    <div
+      style="
+        height: 100%;
+        margin-top: 4rem;
+        background: linear-gradient(var(--v-accent-base) 0%, var(--v-accent2-base) 100%);
+      "
+    >
       <div
         v-show="!search"
         class="background"
