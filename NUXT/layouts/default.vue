@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background: black !important">
+  <v-app v-show="stateLoaded" style="background: black !important">
     <v-card
       style="height: 4rem !important; display: flex; box-shadow: none !important"
       color="accent white--text"
@@ -56,7 +56,7 @@
           borderRadius: `${roundTweak / 2}rem`,
         }"
       >
-        <!-- element above removes artifacting from things like v-ripple via overflow:hidden -->
+        <!-- element above removes artifacting from things like v-ripple by -->
         <!-- scrollbox below must be a standalone div -->
         <div class="scroll-y" style="height: 100%">
           <nuxt v-show="!search" />
@@ -148,12 +148,14 @@ export default {
 
     text: null,
     response: [],
+    stateLoaded: false
   }),
   beforeCreate() {
     // initializes UI tweaks to the saved state
     this.$store.commit("tweaks/initTweaks");
   },
   mounted() {
+    this.stateLoaded = true
     //---   Back Button Listener   ---//
     CapacitorApp.addListener("backButton", ({ canGoBack }) => {
       //---   Back Closes Search   ---//
