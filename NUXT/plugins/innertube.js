@@ -173,7 +173,7 @@ class Innertube {
                     .slimVideoMetadataSectionRenderer?.contents[1].slimVideoActionBarRenderer?.buttons[0]
                     .slimMetadataToggleButtonRenderer?.button?.toggleButtonRenderer?.defaultText?.accessibility?.accessibilityData?.label?.replace(/\D/g, '')) // Yes. I know.
             },
-            rendered_data: {
+            renderedData: {
                 description: renderedPanels[0].engagementPanelSectionListRenderer?.content.structuredDescriptionContentRenderer?.items[1].expandableVideoDescriptionBodyRenderer?.descriptionBodyText.runs,
                 recommendations: columnUI?.contents[(columnUI.contents).length -1].itemSectionRenderer?.contents
             }

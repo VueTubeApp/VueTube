@@ -54,11 +54,10 @@ function videoWithContextRenderer(video) {
 }
 function compactAutoplayRenderer(video) {
     video = video.contents
-    if (video) return video.map((item) => {
-        const itemRenderer = useRender[Object.keys(item)[0]]
-        if (item) return itemRenderer(item[Object.keys(item)[0]])
-        else return undefined
-    })
+    let item;
+    if (video) item = video[0]
+    if (item) return useRender(item[Object.keys(item)[0]], Object.keys(item)[0])
+    else return undefined
 }    
 
 export default useRender

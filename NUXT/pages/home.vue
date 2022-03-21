@@ -21,7 +21,7 @@ export default {
     this.$youtube
       .recommend()
       .then((result) => {
-        if (result) this.recommends = result;
+        if (result) this.recommends = result[0];
       })
       .catch((error) => this.$logger("Home Page", error, true));
   },

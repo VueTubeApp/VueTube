@@ -26,7 +26,7 @@
       <p>{{ description }}</p>
     </v-card>
 
-    <!-- <recommended /> -->
+    <recommended :recommends="recommends" />
   </div>
 </template>
 
@@ -39,9 +39,8 @@
 </style>
 
 <script>
-import recommended from "../components/recommended.vue";
+// import recommended from "../components/recommended.vue";
 export default {
-  components: { recommended },
   data() {
     return {
       interactions: [
@@ -69,6 +68,7 @@ export default {
       vidSrc: null,
       description: null,
       views: null,
+      recommends: [],
     };
   },
   mounted() {
@@ -84,6 +84,14 @@ export default {
       this.likes = result.metadata.likes.toLocaleString();
       this.uploaded = result.metadata.uploadDate;
       this.interactions[0].value = result.metadata.likes;
+
+      this.recommends = this.$youtube
+        .viewRecommends(result.renderedData.recommendations)
+        .filter((element) => {
+          return element !== undefined;
+        });
+      // .catch((error) => this.$logger("Watch", error, true));
+      console.log("recommendations:", this.recommends);
     });
 
     this.$youtube.getReturnYoutubeDislike(this.$route.query.v, (data) => {

@@ -215,8 +215,12 @@ const innertubeModule = {
     },
 
     // This is the recommendations that exist under videos
-    async viewRecommends(recommendList) {
-
+    viewRecommends(recommendList) {
+        if (recommendList) return recommendList.map((item) => {
+            if (item) {
+                return useRender(item[Object.keys(item)[0]], Object.keys(item)[0])
+            } else {return undefined} 
+        })
     }
 }
 

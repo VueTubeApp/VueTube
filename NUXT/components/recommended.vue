@@ -6,7 +6,7 @@
       <v-skeleton-loader type="card-avatar, article, actions" />
     </center>
 
-    <v-list-item v-for="(video, index) in recommends[0]" :key="index">
+    <v-list-item v-for="(video, index) in recommends" :key="index">
       <v-card class="entry" :to="`/watch?v=${video.id}`">
         <v-card-text>
           <div style="position: relative">
