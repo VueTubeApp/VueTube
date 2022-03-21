@@ -1,7 +1,8 @@
 //---   Modules/Imports   ---//
 import { Http } from '@capacitor-community/http';
 import Innertube from './innertube'
-import constants from '../static/constants';
+import constants from './constants';
+import useRender from './renderers';
 
 //---   Logger Function   ---//
 function logger(func, data, isError = false) {
@@ -167,13 +168,13 @@ const searchModule = {
 
 }
 
-//---   Recommendations   --//
+//---   Recommendations   ---//
 
 let InnertubeAPI;
 
-// Loads Innertube object. This will be the object used in all future Innertube API calls. Code provided by Lightfire228 (https://github.com/Lightfire228)
+// Loads Innertube object. This will be the object used in all future Innertube API calls. getAPI Code provided by Lightfire228 (https://github.com/Lightfire228)
 // These are just a way for the backend Javascript to communicate with the front end Vue scripts. Essentially a wrapper inside a wrapper
-const recommendationModule = {
+const innertubeModule = {
 
     async getAPI() {
         if (!InnertubeAPI) {
@@ -183,69 +184,49 @@ const recommendationModule = {
     },
 
     async getVid(id) {
-
-        // temporary test
-
-        const html = await Http.get({
-            url: "https://m.youtube.com/watch?v=U-9M-BjFYMc&t=8s&pbj=1",
-            params: {},
-            headers: {
-                accept: '*/*',
-                'user-agent': 'Mozilla/5.0 (Linux; Android 10; WP7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.101 Mobile Safari/537.36',
-                'content-type': 'application/json',
-                'accept-language': 'en-US,en;q=0.9',
-                'x-goog-authuser': 0,
-                'x-goog-visitor-id': 'CgtsaVdQdGhfbVNOMCiC0taRBg%3D%3D',
-                'x-youtube-client-name': 2,
-                'x-youtube-client-version': '2.20220318.00.00',
-                'x-youtube-chrome-connected': 'source=Chrome,mode=0,enable_account_consistency=true,supervised=false,consistency_enabled_by_default=false',
-                'x-origin': 'https://m.youtube.com',
-                origin: 'https://m.youtube.com',
-                referer: 'https://m.youtube.com/watch?v=U-9M-BjFYMc'
-            }
-        }).catch((error) => error);
-        console.log(html.data)
-        return InnertubeAPI.getVidInfoAsync(id);
+        try {
+            return await InnertubeAPI.VidInfoAsync(id)
+        } catch (error) {
+            logger(constants.LOGGER_NAMES.watch, error, true)
+        }
     },
 
     // It just works™
+    // Front page recommendation
     async recommend() {
         const response = await InnertubeAPI.getRecommendationsAsync();
         if (!response.success) throw new Error("An error occurred and innertube failed to respond")
 
         const contents = response.data.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.content.sectionListRenderer.contents
-        return contents.map((shelves) => {
+        const final = contents.map((shelves) => {
             const video = shelves.shelfRenderer?.content?.horizontalListRenderer?.items
 
             if (video) return video.map((item) => {
-                item = item.gridVideoRenderer
-                if (item) return {
-                    id: item.videoId,
-                    title: item.title?.runs[0].text,
-                    thumbnail: this.getThumbnail(item.videoId),
-                    channel: item.shortBylineText?.runs[0] ? item.shortBylineText.runs[0].text : item.longBylineText?.runs[0].text,
-                    channelURL: `${constants.YT_URL}/${(item.shortBylineText?.runs[0] ? item.shortBylineText.runs[0] : item.longBylineText?.runs[0]).navigationEndpoint?.browseEndpoint?.canonicalBaseUrl}`,
-                    channelThumbnail: item.channelThumbnail?.thumbnails[0],
-                    metadata: {
-                        published: item.publishedTimeText?.runs[0].text,
-                        views: item.shortViewCountText?.runs[0].text,
-                        length: item.publishedTimeText?.runs[0].text,
-                        overlayStyle: item.thumbnailOverlays?.map(overlay => overlay.thumbnailOverlayTimeStatusRenderer?.style),
-                        overlay: item.thumbnailOverlays?.map(overlay => overlay.thumbnailOverlayTimeStatusRenderer?.text.runs[0].text),
-                    },
-                };
-                else return undefined
+                if (item) {
+                    const renderedItem = useRender(item[Object.keys(item)[0]], Object.keys(item)[0])
+                    console.log(renderedItem)
+                    return renderedItem
+                } else {return undefined} 
             })
 
         })
+        console.log(final)
+        return final
     },
 
-    getThumbnail: (id, resolution) => Innertube.getThumbnail(id, resolution)
+    // This is the recommendations that exist under videos
+    viewRecommends(recommendList) {
+        if (recommendList) return recommendList.map((item) => {
+            if (item) {
+                return useRender(item[Object.keys(item)[0]], Object.keys(item)[0])
+            } else {return undefined} 
+        })
+    },
 }
 
 //---   Start   ---//
 export default ({ app }, inject) => {
-    inject('youtube', {...searchModule, ...recommendationModule, })
+    inject('youtube', {...searchModule, ...innertubeModule })
     inject("logger", logger)
 }
 logger(constants.LOGGER_NAMES.init, "Program Started");

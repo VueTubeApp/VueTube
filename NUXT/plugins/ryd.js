@@ -1,6 +1,6 @@
 //---   Modules/Imports   ---//
 import { Http } from '@capacitor-community/http';
-import constants from '../static/constants';
+import constants from './constants';
 
 function generateUserID(length = 36) {
     const charset =
