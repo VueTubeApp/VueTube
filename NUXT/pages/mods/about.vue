@@ -1,7 +1,7 @@
 <template>
   <center style="padding: 1em;">
 
-    <div class="row pa-4">
+    <div class="row pa-4" style="flex-direction: column">
       <div>
         <v-img src="/icon.svg" width="100px"/>
       </div>
