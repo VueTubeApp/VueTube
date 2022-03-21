@@ -2,7 +2,7 @@
   <v-card
     style="height: 4rem !important; display: flex; box-shadow: none !important"
     color="accent white--text"
-    class="topNav rounded-0 py-3 px-2"
+    class="topNav rounded-0 pa-3"
   >
     <h3 class="my-auto ml-4" v-text="page" v-show="!search" />
 
@@ -10,7 +10,7 @@
       icon
       v-if="search"
       color="white"
-      class="mr-2 my-auto"
+      class="mr-3 my-auto"
       @click="$emit('close-search')"
     >
       <v-icon>mdi-close</v-icon>
@@ -34,7 +34,7 @@
     <v-btn
       icon
       tile
-      class="ml-2 my-auto fill-height"
+      class="ml-3 my-auto fill-height"
       style="border-radius: 0.25rem !important"
       color="white"
       @click="$emit('search-btn', text)"

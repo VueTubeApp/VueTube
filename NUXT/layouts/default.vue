@@ -19,7 +19,6 @@
         v-show="!search"
         class="background"
         style="
-          padding: 0;
           overflow: hidden;
           height: calc(100vh - 8rem);
           transition-duration: 0.3s;
@@ -91,13 +90,6 @@ div {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
-}
-</style>
-
-<style scoped>
-.background {
-  height: 100%;
-  padding: 4em 0 4em 0; /* Account for Top/Bottom Navigation */
 }
 </style>
 
