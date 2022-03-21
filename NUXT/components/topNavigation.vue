@@ -4,22 +4,27 @@
     color="accent2"
     class="topNav rounded-0 pa-3"
   >
-    <h3 class="my-auto ml-4" v-text="page" v-show="!search" />
+    <h3 v-show="!search" class="my-auto ml-4" v-text="page" />
 
-    <v-btn icon v-if="search" class="mr-3 my-auto" @click="$emit('close-search')">
+    <v-btn
+      v-if="search"
+      icon
+      class="mr-3 my-auto"
+      @click="$emit('close-search')"
+    >
       <v-icon>mdi-close</v-icon>
     </v-btn>
 
     <v-text-field
+      v-if="search"
+      v-model="text"
       solo
       dense
       flat
       label="Search"
-      v-model="text"
-      @input="$emit('text-changed', text)"
       class="searchBar"
-      v-if="search"
-      v-on:keyup.enter="$emit('search-btn', text)"
+      @input="$emit('text-changed', text)"
+      @keyup.enter="$emit('search-btn', text)"
     />
 
     <v-spacer v-if="!search" />
@@ -33,11 +38,11 @@
       ><v-icon>mdi-magnify</v-icon></v-btn
     >
     <v-btn
+      v-show="!search"
       icon
       tile
       class="ml-4 mr-2 my-auto fill-height"
       style="border-radius: 0.25rem !important"
-      v-show="!search"
       to="/settings"
       ><v-icon>mdi-dots-vertical</v-icon></v-btn
     >
@@ -46,7 +51,16 @@
 
 <script>
 export default {
-  props: ["search", "page"],
+  props: {
+    search: {
+      type: Boolean,
+      default: false,
+    },
+    page: {
+      type: String,
+      default: "Home",
+    },
+  },
   events: ["searchBtn", "textChanged", "closeSearch"],
   data: () => ({
     text: "",

@@ -12,12 +12,12 @@
           <div style="position: relative">
             <v-img :src="video.thumbnail" />
             <div
-              v-text="video.metadata.overlay[0]"
               class="videoRuntimeFloat"
               style="color: #fff"
+              v-text="video.metadata.overlay[0]"
             />
           </div>
-          <div v-text="video.title" style="margin-top: 0.5em" />
+          <div style="margin-top: 0.5em" v-text="video.title" />
           <div v-text="parseBottom(video)" />
         </v-card-text>
       </v-card>

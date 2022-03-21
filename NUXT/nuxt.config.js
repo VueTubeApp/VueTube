@@ -1,59 +1,54 @@
-import colors from 'vuetify/es5/util/colors'
+import colors from "vuetify/es5/util/colors";
 /**** Front's Notes / Don't Remove ****
-*   Data Storage:
-*   localStorage.setItem("key", data)
-*   localStorage.getItem('key')
-*/
-
+ *   Data Storage:
+ *   localStorage.setItem("key", data)
+ *   localStorage.getItem('key')
+ */
 
 export default {
-
   //---   Bettertube Stuff   ---//
   env: {
     appVersion: "dev-local",
   },
 
-  target: 'static',
+  target: "static",
   plugins: [
     { src: "~/plugins/youtube", mode: "client" },
     { src: "~/plugins/vuetube", mode: "client" },
-    { src: "~/plugins/ryd", mode: "client"}
+    { src: "~/plugins/ryd", mode: "client" },
   ],
   generate: {
-    dir: '../dist'
+    dir: "../dist",
   },
 
   //---   Bettertube Debugging   ---//
   server: {
     port: 80, // default: 3000 (Note: Running on ports below 1024 requires root privileges!)
-    host: '0.0.0.0', // default: localhost,
-    timing: false
+    host: "0.0.0.0", // default: localhost,
+    timing: false,
   },
 
   //---   Default NUXT Stuff   ---//
   head: {
-    title: 'VueTube',
+    title: "VueTube",
     htmlAttrs: {
-      lang: 'en'
+      lang: "en",
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'format-detection', content: 'telephone=no' }
-    ]
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "format-detection", content: "telephone=no" },
+    ],
   },
-
 
   css: [],
   components: true,
 
-  buildModules: [
-    '@nuxtjs/vuetify',
-  ],
+  buildModules: ["@nuxtjs/vuetify"],
   modules: [],
 
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ["~/assets/variables.scss"],
     theme: {
       dark: false,
       options: { customProperties: true },
@@ -64,7 +59,7 @@ export default {
           accent: "#CD201F",
           accent2: "#fff",
           background: "#fff",
-          info: "#000"
+          info: "#000",
         },
         dark: {
           primary: colors.red.darken2, //colors.blue.darken2
@@ -73,8 +68,8 @@ export default {
           accent2: "#222",
           background: "#333",
           info: "#fff",
-        }
-      }
-    }
-  }
-}
+        },
+      },
+    },
+  },
+};
