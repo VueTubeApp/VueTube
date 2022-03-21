@@ -1,5 +1,5 @@
 # VueTube
-<img src="https://github.com/Frontesque/VueTube/raw/main/Icons/VueTube.png" alt="VueTube icon" width="200"/>
+<img src="https://github.com/Frontesque/VueTube/raw/main/Icons/Stable.svg" alt="VueTube icon" width="200"/>
 A simple FOSS video streaming client aimed to recreate ALL features from their respective apps (and more)
 
 - Pronounced View Tube
