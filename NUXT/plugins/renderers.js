@@ -1,4 +1,4 @@
-import Innertube from "./innertube";
+import Innertube  from "./innertube";
 import constants from "./constants";
 
 // Pointer object, give a key and it will return with a method

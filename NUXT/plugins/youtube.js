@@ -221,7 +221,7 @@ const innertubeModule = {
                 return useRender(item[Object.keys(item)[0]], Object.keys(item)[0])
             } else {return undefined} 
         })
-    }
+    },
 }
 
 //---   Start   ---//

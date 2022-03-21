@@ -18,14 +18,13 @@
 </style>
 
 <script>
-import { Plugins } from "@capacitor/core";
-const { SplashScreen } = Plugins;
+import { SplashScreen } from "@capacitor/splash-screen";
 
 export default {
   layout: "empty",
   async mounted() {
     //---   Hide Splash Screen    ---//
-    // SplashScreen.hide(); This causes an infinite loading for some reason.
+    await SplashScreen.hide();
     //-------------------------------//
 
     //---   Theme Loader Moved From '~/layouts/default.vue' (because this only needs to be run once) -Front   ---//

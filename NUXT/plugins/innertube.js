@@ -27,6 +27,8 @@ class Innertube {
                 if (data.INNERTUBE_CONTEXT) {
                     this.key = data.INNERTUBE_API_KEY;
                     this.context = data.INNERTUBE_CONTEXT;
+                    this.logged_in = data.LOGGED_IN;
+
                     this.context.client = constants.INNERTUBE_CLIENT(this.context.client)
                     this.header = constants.INNERTUBE_HEADER(this.context.client)
                 }
@@ -93,31 +95,20 @@ class Innertube {
     
 
     async getVidAsync(id) {
-
-        // const url = `${constants.URLS.YT_MOBILE}/watch?v=${id}&t=8s&pbj=1`
-        // console.log(url)
-        // const response = await Http.get({
-        //     url: url,
-        //     params: {},
-        //     headers: Object.assign({"referer": url}, this.header)
-        // }).catch((error) => error)
+        let data = { context: this.context, videoId: id }
         const response = await Http.get({
-            url: `https://m.youtube.com/watch?v=${id}&t=8s&pbj=1`,
+            url: `https://m.youtube.com/watch?v=${id}&pbj=1`,
             params: {},
-            headers: {
-                accept: '*/*',
-                'user-agent': 'Mozilla/5.0 (Linux; Android 10; WP7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.101 Mobile Safari/537.36',
-                'content-type': 'application/json',
-                'accept-language': 'en-US,en;q=0.9',
-                'x-goog-authuser': 0,
-                'x-goog-visitor-id': 'CgtsaVdQdGhfbVNOMCiC0taRBg%3D%3D',
-                'x-youtube-client-name': 2,
-                'x-youtube-client-version': '2.20220318.00.00',
-                'x-youtube-chrome-connected': 'source=Chrome,mode=0,enable_account_consistency=true,supervised=false,consistency_enabled_by_default=false',
-                'x-origin': 'https://m.youtube.com',
-                origin: 'https://m.youtube.com',
-                referer: `https://m.youtube.com/watch?v=${id}`
-            }
+            headers: Object.assign(this.header, {
+                referer: `https://m.youtube.com/watch?v=${id}`, 
+                'x-youtube-client-name': constants.YT_API_VALUES.CLIENT_WEB, 
+                'x-youtube-client-version': constants.YT_API_VALUES.VERSION_WEB})
+        }).catch((error) => error);
+
+        const responseMobile = await Http.post({
+            url: `${constants.URLS.YT_BASE_API}/player?key=${this.key}`,
+            data: data,
+            headers: constants.INNERTUBE_HEADER(this.context)
         }).catch((error) => error);
 
         if (response instanceof Error) return { success: false, status_code: response.response.status, message: response.message };
@@ -125,7 +116,7 @@ class Innertube {
         return {
             success: true,
             status_code: response.status,
-            data: response.data
+            data: {webOutput: response.data, appOutput: responseMobile.data}
         };
     }
 
@@ -139,13 +130,15 @@ class Innertube {
     async VidInfoAsync(id) {
         let response = await this.getVidAsync(id)
         
-        if (response.success && (response.data[2].playerResponse?.playabilityStatus?.status == ("ERROR" || undefined))) 
+        if (response.success && (response.data.webOutput[2].playerResponse?.playabilityStatus?.status == ("ERROR" || undefined))) 
             throw new Error(`Could not get information for video: ${response[2].playerResponse?.playabilityStatus?.status} - ${response[2].playerResponse?.playabilityStatus?.reason}`)
-        response = response.data
-        const details = response[2].playerResponse?.videoDetails
-        const microformat = response[2].playerResponse?.microformat?.playerMicroformatRenderer
-        const renderedPanels = response[3].response?.engagementPanels
-        const columnUI = response[3].response?.contents.singleColumnWatchNextResults?.results?.results
+        const responseWeb = response.data.webOutput
+        const responseApp = response.data.appOutput
+        const details = responseWeb[2].playerResponse?.videoDetails
+        const microformat = responseWeb[2].playerResponse?.microformat?.playerMicroformatRenderer
+        const renderedPanels = responseWeb[3].response?.engagementPanels
+        const columnUI = responseWeb[3].response?.contents.singleColumnWatchNextResults?.results?.results
+        const resolutions = responseApp.streamingData
 
         console.log((columnUI.contents).length)
 
@@ -155,8 +148,8 @@ class Innertube {
             isLive: details.isLiveContent || microformat.liveBroadcastDetails?.isLiveNow || false,
             channelName: details.author || microformat.ownerChannelName,
             channelUrl: microformat.ownerProfileUrl,
-            availableResolutions: response[2].playerResponse?.streamingData?.formats,
-            availableResolutionsAdaptive: response[2].playerResponse?.streamingData?.adaptiveFormats,
+            availableResolutions: resolutions?.formats,
+            availableResolutionsAdaptive: resolutions?.adaptiveFormats,
             metadata: {
                 description: microformat.description?.runs[0].text,
                 descriptionShort: details.shortDescription,
@@ -184,4 +177,4 @@ class Innertube {
 
 }
 
-export default Innertube;
+export default Innertube

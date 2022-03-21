@@ -44,24 +44,28 @@
         {{ description }}
       </div>
 
-      <!--<v-bottom-sheet v-model="showMore" color="accent2" style="z-index: 9999999;">
-        <v-sheet style="padding: 1em;">
-        
-          <v-btn block @click="showMore = !showMore"><v-icon>mdi-chevron-down</v-icon></v-btn><br>
-
-          <div class="scroll-y">
-            {{ description }}
-          </div>
-        
-        </v-sheet>
-      </v-bottom-sheet>-->
-      <v-bottom-sheet v-model="share" color="accent2" style="z-index: 9999999">
+      <v-bottom-sheet
+        v-model="showMore"
+        color="accent2"
+        style="z-index: 9999999"
+      >
         <v-sheet style="padding: 1em">
+          <v-btn block @click="showMore = !showMore"
+            ><v-icon>mdi-chevron-down</v-icon></v-btn
+          ><br />
+
           <div class="scroll-y">
             {{ description }}
           </div>
         </v-sheet>
       </v-bottom-sheet>
+      <!-- <v-bottom-sheet v-model="share" color="accent2" style="z-index: 9999999">
+        <v-sheet style="padding: 1em">
+          <div class="scroll-y">
+            {{ description }}
+          </div>
+        </v-sheet>
+      </v-bottom-sheet> -->
     </v-card>
 
     <recommended :recommends="recommends" />
@@ -77,9 +81,7 @@
 </style>
 
 <script>
-// import recommended from "../components/recommended.vue";
 export default {
-  components: { recommended },
   methods: {
     dislike() {},
     share() {
@@ -126,7 +128,8 @@ export default {
     this.$youtube.getVid(this.$route.query.v).then((result) => {
       console.log("Video info data", result);
       console.log(result.availableResolutions);
-      this.vidSrc = result.availableResolutions[1].url;
+      this.vidSrc =
+        result.availableResolutions[result.availableResolutions.length - 1].url; // Takes the highest available resolution with both video and Audio. Note this will be lower than the actual highest resolution
       this.title = result.title;
       this.description = result.metadata.description; // While this works, I do recommend using the rendered description instead in the future as there are some things a pure string wouldn't work with
       this.views = result.metadata.viewCount.toLocaleString();

@@ -1,4 +1,4 @@
-// To centeralize certain values and URLs as for easier debugging and refactoring
+// To  centralize certain values and URLs as for easier debugging and refactoring
 
 const url = {
     YT_URL: 'https://www.youtube.com',
@@ -12,6 +12,8 @@ const url = {
 const ytApiVal = {
     VERSION: "16.25",
     CLIENTNAME: "ANDROID",
+    VERSION_WEB: "2.20220318.00.00",
+    CLIENT_WEB: 2
 }
 
 module.exports = {
@@ -31,13 +33,14 @@ module.exports = {
         let headers = {
             accept: '*/*',
             'user-agent': info.userAgent,
+            'accept-language': `${info.hl}-${info.gl},${info.hl};q=0.9`,
             'content-type': 'application/json',
             'x-goog-authuser': 0,
-            'x-goog-visitor-id': info.visitorData,
+            'x-goog-visitor-id': info.visitorData || "",
             'x-youtube-client-name': ytApiVal.CLIENTNAME,
             'x-youtube-client-version': ytApiVal.VERSION,
             'x-origin': info.originalUrl,
-            origin: info.originalUrl,
+            'origin': info.originalUrl,
         };
         return headers
     },
@@ -60,5 +63,5 @@ module.exports = {
             "visitorData": info.visitorData,
         };
         return client
-    }
+    },
 }
