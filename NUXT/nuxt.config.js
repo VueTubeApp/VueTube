@@ -54,19 +54,21 @@ export default {
       options: { customProperties: true },
       themes: {
         light: {
-          primary: colors.red.lighten2,
-          primaryAlt: colors.red.lighten4,
-          accent: "#CD201F",
-          accent2: "#fff",
+          primary: {
+            base: colors.red.lighten2,
+            lighten2: colors.red.lighten4,
+          },
           background: "#fff",
+          accent: "#fff",
           info: "#000",
         },
         dark: {
-          primary: colors.red.darken2, //colors.blue.darken2
-          primaryAlt: "#533",
-          accent: "#222",
-          accent2: "#222",
+          primary: {
+            base: colors.red.darken2,
+            lighten2: "#533",
+          },
           background: "#333",
+          accent: "#222",
           info: "#fff",
         },
       },

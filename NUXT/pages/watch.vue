@@ -46,7 +46,7 @@
 
       <v-bottom-sheet
         v-model="showMore"
-        color="accent2"
+        color="accent"
         style="z-index: 9999999"
       >
         <v-sheet style="padding: 1em">
@@ -59,7 +59,7 @@
           </div>
         </v-sheet>
       </v-bottom-sheet>
-      <!-- <v-bottom-sheet v-model="share" color="accent2" style="z-index: 9999999">
+      <!-- <v-bottom-sheet v-model="share" color="accent" style="z-index: 9999999">
         <v-sheet style="padding: 1em">
           <div class="scroll-y">
             {{ description }}

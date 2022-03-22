@@ -1,7 +1,7 @@
 <template>
   <v-card
     style="height: 4rem !important; display: flex; box-shadow: none !important"
-    color="accent2"
+    color="accent"
     class="topNav rounded-0 pa-3"
   >
     <h3 v-show="!search" class="my-auto ml-4" v-text="page" />

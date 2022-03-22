@@ -8,7 +8,7 @@
       @text-changed="textChanged"
     />
 
-    <div class="accent2" style="height: 100%; margin-top: 4rem">
+    <div class="accent" style="height: 100%; margin-top: 4rem">
       <div
         v-show="!search"
         class="background"
@@ -31,7 +31,7 @@
 
       <div
         v-show="search"
-        class="accent2"
+        class="accent"
         style="
           padding: 0;
           overflow: hidden;
