@@ -166,6 +166,8 @@ export default {
   },
 
   watch: {
+    // Watch for any changes in the route string
+    // When change is detected, scroll main div back to the top
     $route() {
       this.$refs.pgscroll.scrollTop = 0; // scroll back to top when moving to new route
     }

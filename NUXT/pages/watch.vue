@@ -171,6 +171,8 @@ export default {
     }
   },
   watch: {
+    // Watch for change in the route query string (in this case, ?v=xxxxxxxx to ?v=yyyyyyyy)
+    // When change is detected, reset and run getVideo function again
     $route: {
       deep: true,
       handler(newRt, oldRt) {
