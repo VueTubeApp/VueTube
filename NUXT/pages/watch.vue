@@ -119,6 +119,9 @@ export default {
     };
   },
   mounted() {
+    // scroll back to top after clicking on the video
+    window.scroll(0, 0);
+
     this.likes = 100;
 
     this.$youtube.getVid(this.$route.query.v).then((result) => {
