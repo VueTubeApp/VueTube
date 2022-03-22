@@ -2,7 +2,7 @@
   <v-bottom-navigation
     v-model="tabSelection"
     shift
-    class="bottomNav py-4 accent2"
+    class="bottomNav py-4 accent"
   >
     <v-btn
       v-for="(item, i) in tabs"
@@ -15,7 +15,7 @@
       <span v-text="item.name" />
       <v-icon
         :color="tabSelection == i ? 'primary' : 'grey'"
-        :class="tabSelection == i ? 'tab primaryAlt' : ''"
+        :class="tabSelection == i ? 'tab primary lighten-2' : ''"
         v-text="item.icon"
       />
     </v-btn>
@@ -58,6 +58,7 @@ export default {
   z-index: 99999;
 }
 .navButton {
+  width: 25vw !important;
   font-size: 0.66rem !important;
 }
 .tab {

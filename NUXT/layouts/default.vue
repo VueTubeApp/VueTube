@@ -8,7 +8,7 @@
       @text-changed="textChanged"
     />
 
-    <div class="accent2" style="height: 100%; margin-top: 4rem">
+    <div class="accent" style="height: 100%; margin-top: 4rem">
       <div
         v-show="!search"
         class="background"
@@ -31,7 +31,7 @@
 
       <div
         v-show="search"
-        class="accent2"
+        class="accent"
         style="
           padding: 0;
           overflow: hidden;
@@ -42,15 +42,17 @@
       >
         <div class="scroll-y" style="height: 100%">
           <div v-if="search" style="min-width: 180px">
-            <v-list-item v-for="(item, index) in response" :key="index">
-              <v-icon>mdi-magnify</v-icon>
+            <v-list-item v-for="(item, index) in response" :key="index" class="px-0">
               <v-btn
                 text
+                tile
                 dense
                 class="info--text searchButton text-left text-capitalize"
                 @click="youtubeSearch(item)"
-                v-text="item[0]"
-              />
+              >
+                <v-icon class="mr-5">mdi-magnify</v-icon>
+                {{ item[0] }}
+              </v-btn>
             </v-list-item>
           </div>
         </div>
@@ -85,6 +87,13 @@ div {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
+}
+</style>
+
+<style scoped>
+.searchButton {
+  width: 100%;
+  justify-content: left !important;
 }
 </style>
 

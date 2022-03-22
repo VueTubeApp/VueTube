@@ -63,7 +63,7 @@ export default {
 
   watch: {
     accentColor: function (val) {
-      this.$vuetify.theme.currentTheme.primary = val;
+      this.$vuetify.theme.currentTheme.primary.base = val;
       let primaryAlt = this.$vuetube.hexToRgb(val);
 
       let rgbEdit = 130; //Light Mode
@@ -81,12 +81,12 @@ export default {
         primaryAlt.b
       );
 
-      this.$vuetify.theme.currentTheme.primaryAlt = primaryAlt;
+      this.$vuetify.theme.currentTheme.primary.lighten2 = primaryAlt;
     },
   },
 
   mounted() {
-    this.accentColor = this.$vuetify.theme.themes.dark.primary;
+    this.accentColor = this.$vuetify.theme.themes.dark.primary.base;
     this.roblox = localStorage.getItem("roblox") === "true";
   },
 
@@ -94,17 +94,13 @@ export default {
     amoled() {
       this.$vuetify.theme.themes.dark.background === "#000"
         ? ((this.$vuetify.theme.themes.dark.accent = "#222"),
-          (this.$vuetify.theme.themes.dark.accent2 = "#222"),
+          (this.$vuetify.theme.themes.dark.accent = "#222"),
           (this.$vuetify.theme.themes.dark.background = "#333"),
           localStorage.setItem("isOled", false))
         : ((this.$vuetify.theme.themes.dark.accent = "#000"),
-          (this.$vuetify.theme.themes.dark.accent2 = "#000"),
+          (this.$vuetify.theme.themes.dark.accent = "#000"),
           (this.$vuetify.theme.themes.dark.background = "#000"),
           localStorage.setItem("isOled", true));
-      // doesn't work 😭
-      // console.log(document.getElementsByClassName('v-application--wrap')[0])
-      // console.log(document.getElementsByClassName('v-application--wrap')[0].style)
-      // document.getElementsByClassName('v-application--wrap')[0].style.backgroundColor = "#000000 !important"
     },
     saveTheme(isDark) {
       this.$vuetube.statusBar.setBackground(
