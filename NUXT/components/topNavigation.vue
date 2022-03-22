@@ -84,8 +84,4 @@ export default {
 .searchBar {
   margin: 0;
 }
-.searchButton {
-  width: 100%;
-  justify-content: left !important;
-}
 </style>

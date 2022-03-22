@@ -58,6 +58,7 @@ export default {
   z-index: 99999;
 }
 .navButton {
+  width: 25vw !important;
   font-size: 0.66rem !important;
 }
 .tab {

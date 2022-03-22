@@ -1,13 +1,13 @@
 <template>
   <div>
-    <video controls autoplay :src="vidSrc" width="100%" height="300vh" />
-    <v-card class="ml-2 mr-2 flat light" flat>
-      <v-card-title
-        style="padding-top: 0; padding-bottom: 0; font-size: 0.95em"
+    <video controls autoplay :src="vidSrc" width="100%" style="max-height: 50vh" />
+    <v-card class="ml-2 mr-2 background" flat>
+      <v-card-title class="mt-2"
+        style="padding-top: 0; padding-bottom: 0; font-size: 0.95rem; line-height: 1rem;"
         v-text="title"
       />
       <v-card-text>
-        <div style="margin-bottom: 1em">{{ views }} views • {{ uploaded }}</div>
+        <div style="margin-bottom: 1rem;">{{ views }} views • {{ uploaded }}</div>
 
         <!--   Scrolling Div For Interactions   --->
         <div style="display: flex; margin-bottom: 1em">
@@ -25,7 +25,7 @@
               @click="item.action"
             >
               <v-icon v-text="item.icon" />
-              <div v-text="item.value || item.name" />
+              <div class="mt-2" style="font-size: .66rem;" v-text="item.value || item.name" />
             </v-btn>
           </v-list-item>
 
@@ -36,9 +36,8 @@
           </v-btn>
         </div>
         <!--   End Scrolling Div For Interactions   --->
-        <hr />
+        <!-- <hr /> -->
         <p>Channel Stuff</p>
-        <hr />
       </v-card-text>
       <div v-if="showMore" class="scroll-y ml-2 mr-2">
         {{ description }}
@@ -86,21 +85,21 @@ export default {
       interactions: [
         {
           name: "Likes",
-          icon: "mdi-thumb-up",
+          icon: "mdi-thumb-up-outline",
           action: null,
           value: this.likes,
           disabled: true,
         },
         {
           name: "Dislikes",
-          icon: "mdi-thumb-down",
+          icon: "mdi-thumb-down-outline",
           action: this.dislike(),
           value: this.dislikes,
           disabled: true,
         },
         {
           name: "Share",
-          icon: "mdi-share",
+          icon: "mdi-share-outline",
           action: this.share(),
           disabled: true,
         },
