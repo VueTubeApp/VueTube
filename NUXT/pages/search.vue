@@ -46,7 +46,7 @@ export default {
     };
   },
   mounted() {
-    getSearch();
+    this.getSearch();
   },
   methods: {
     getSearch() {
