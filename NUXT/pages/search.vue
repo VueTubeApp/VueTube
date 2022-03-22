@@ -10,9 +10,13 @@
         <v-card-text>
           <div style="position: relative">
             <v-img :src="video.thumbnails[video.thumbnails.length - 1].url" />
-            <div v-text="video.runtime" class="videoRuntimeFloat" style="color: #fff" />
+            <div
+              class="videoRuntimeFloat"
+              style="color: #fff"
+              v-text="video.runtime"
+            />
           </div>
-          <div v-text="video.title" style="margin-top: 0.5em" />
+          <div style="margin-top: 0.5em" v-text="video.title" />
           <div v-text="`${video.views} • ${video.uploaded}`" />
         </v-card-text>
       </v-card>

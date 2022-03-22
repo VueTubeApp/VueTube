@@ -1,24 +1,26 @@
 <template>
   <div>
-
     <v-list-item v-for="(item, index) in logs" :key="index">
       <v-card class="card">
         <v-card-title>
-          <v-chip outlined class="errorChip" color="error" v-if="item.error">Error</v-chip>
+          <v-chip v-if="item.error" outlined class="errorChip" color="error"
+            >Error</v-chip
+          >
           {{ item.name }}
-          <span v-text="`• ${new Date(item.time).toLocaleString()}`" class="date" />
+          <span
+            class="date"
+            v-text="`• ${new Date(item.time).toLocaleString()}`"
+          />
         </v-card-title>
 
         <v-expansion-panels>
           <v-expansion-panel>
             <v-expansion-panel-header>More</v-expansion-panel-header>
-            <v-expansion-panel-content v-text="item.data" class="logContent" />
+            <v-expansion-panel-content class="logContent" v-text="item.data" />
           </v-expansion-panel>
         </v-expansion-panels>
-
       </v-card>
     </v-list-item>
-
   </div>
 </template>
 
@@ -46,12 +48,12 @@
 export default {
   data() {
     return {
-      logs: new Array()
-    }
+      logs: new Array(),
+    };
   },
   mounted() {
-    const logs = this.$youtube.logs
+    const logs = this.$youtube.logs;
     this.logs = logs;
-  }
-}
+  },
+};
 </script>

@@ -1,11 +1,11 @@
 <template>
   <v-app v-show="stateLoaded" style="background: black !important">
     <topNavigation
+      :search="search"
+      :page="page"
       @close-search="search = !search"
       @search-btn="searchBtn"
       @text-changed="textChanged"
-      :search="search"
-      :page="page"
     />
 
     <div class="accent2" style="height: 100%; margin-top: 4rem">
@@ -41,7 +41,7 @@
         "
       >
         <div class="scroll-y" style="height: 100%">
-          <div style="min-width: 180px" v-if="search">
+          <div v-if="search" style="min-width: 180px">
             <v-list-item v-for="(item, index) in response" :key="index">
               <v-icon>mdi-magnify</v-icon>
               <v-btn
@@ -65,8 +65,8 @@
 
 <style>
 * {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .scroll-y {
   overflow-y: scroll !important; /* has to be scroll, not auto */

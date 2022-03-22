@@ -1,30 +1,42 @@
 <template>
   <div class="py-2">
-
     <v-list-item v-for="(item, index) in commits" :key="index" class="my-1">
       <v-card class="card my-2">
-        <v-card-title style="padding: 0 0.25em 0 0.75em;">
+        <v-card-title style="padding: 0 0.25em 0 0.75em">
           {{ item.author ? item.author.login : item.commit.author.name }}
-          <span v-text="`• ${item.sha.substring(0, 7)}`" class="subtitle" />
+          <span class="subtitle" v-text="`• ${item.sha.substring(0, 7)}`" />
           <v-spacer />
-          <v-chip outlined class="tags" color="orange" v-if="index == 0">Latest</v-chip>
-          <v-chip outlined class="tags" color="green" v-if="item.sha == installedVersion">Installed</v-chip>
+          <v-chip v-if="index == 0" outlined class="tags" color="orange"
+            >Latest</v-chip
+          >
+          <v-chip
+            v-if="item.sha == installedVersion"
+            outlined
+            class="tags"
+            color="green"
+            >Installed</v-chip
+          >
         </v-card-title>
 
-        <div style="margin-left: 1em;">
-          <div class="date" v-text="new Date(item.commit.committer.date).toLocaleString()" />
+        <div style="margin-left: 1em">
+          <div
+            class="date"
+            v-text="new Date(item.commit.committer.date).toLocaleString()"
+          />
           {{ item.commit.message }}
         </div>
 
         <v-card-actions>
           <v-spacer />
-          <v-btn @click="openExternal(item)"><v-icon class="btn-icon">mdi-github</v-icon>View</v-btn>
-          <v-btn disabled @click="install(item)"><v-icon class="btn-icon">mdi-download</v-icon>Install</v-btn>
+          <v-btn @click="openExternal(item)"
+            ><v-icon class="btn-icon">mdi-github</v-icon>View</v-btn
+          >
+          <v-btn disabled @click="install(item)"
+            ><v-icon class="btn-icon">mdi-download</v-icon>Install</v-btn
+          >
         </v-card-actions>
-
       </v-card>
     </v-list-item>
-
   </div>
 </template>
 
@@ -51,21 +63,22 @@
 </style>
 
 <script>
-import { Browser } from '@capacitor/browser';
+import { Browser } from "@capacitor/browser";
 
 export default {
   data() {
     return {
       commits: new Array(),
-      installedVersion: process.env.appVersion
-    }
+      installedVersion: process.env.appVersion,
+    };
   },
   async mounted() {
     const commits = await this.$vuetube.commits;
-    if (commits[0].sha) { //If Commit Valid
+    if (commits[0].sha) {
+      //If Commit Valid
       this.commits = commits;
     } else {
-      console.log(commits)
+      console.log(commits);
     }
   },
   methods: {
@@ -75,10 +88,9 @@ export default {
 
     install(item) {
       this.$vuetube.getRuns(item, (data) => {
-        console.log(data)
+        console.log(data);
       });
-
-    }
-  }
-}
+    },
+  },
+};
 </script>

@@ -18,14 +18,14 @@
         thumb-size="64"
       ></v-slider>
       <v-slider
+        v-model="roundTweak"
         class="mr-2"
         label="Inner"
-        v-model="roundTweak"
         :max="4"
         step="1"
         thumb-size="64"
       >
-        <template v-slot:thumb-label="{ value }">
+        <template #thumb-label="{ value }">
           <div
             class="pa-4 white text-red red-text red--text"
             :style="{ borderRadius: value * 3 + 'px !important' }"

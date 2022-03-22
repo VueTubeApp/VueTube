@@ -1,18 +1,22 @@
 <template>
-  <v-bottom-navigation v-model="tabSelection" shift class="bottomNav py-4 accent2">
+  <v-bottom-navigation
+    v-model="tabSelection"
+    shift
+    class="bottomNav py-4 accent2"
+  >
     <v-btn
       v-for="(item, i) in tabs"
       :key="i"
+      v-ripple="false"
       class="navButton"
       :to="item.link"
       plain
-      v-ripple="false"
     >
       <span v-text="item.name" />
       <v-icon
-        v-text="item.icon"
         :color="tabSelection == i ? 'primary' : 'grey'"
         :class="tabSelection == i ? 'tab primaryAlt' : ''"
+        v-text="item.icon"
       />
     </v-btn>
     <!-- <v-btn text class="navButton mr-2 fill-height" color="white" @click="searchBtn()"

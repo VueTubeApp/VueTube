@@ -6,18 +6,33 @@
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload
 $ npm run dev
 
-# build for production and launch server
+# generate /android and /ios builds
 $ npm run build
 $ npm run start
-
-# generate static project
 $ npm run generate
+
+# lint files to avoid errors and formatting issues (do this before PR)
+$ npm run lint
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+
+## Recommended VSCode Setup for Auto-Formatting
+ - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) `ext install dbaeumer.vscode-eslint`
+ - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) `ext install esbenp.prettier-vscode`
+ - [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+
+>`Ctrl(Cmd)` + `Shift` + `P` > Open Settings (JSON)
+```json
+"editor.formatOnSave": true,
+"editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+}
+"vetur.validation.template": false,
+```
 
 ## Special Directories
 

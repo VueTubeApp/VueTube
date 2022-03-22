@@ -18,11 +18,11 @@
           >
             <v-btn
               text
-              @click="item.action"
               class="vertical-button"
               style="padding: 0; margin: 0"
               elevation="0"
               :disabled="item.disabled"
+              @click="item.action"
             >
               <v-icon v-text="item.icon" />
               <div v-text="item.value || item.name" />
@@ -40,7 +40,7 @@
         <p>Channel Stuff</p>
         <hr />
       </v-card-text>
-      <div class="scroll-y ml-2 mr-2" v-if="showMore">
+      <div v-if="showMore" class="scroll-y ml-2 mr-2">
         {{ description }}
       </div>
 
@@ -72,7 +72,6 @@
   </div>
 </template>
 
-
 <style>
 .vertical-button span.v-btn__content {
   flex-direction: column;
@@ -82,12 +81,6 @@
 
 <script>
 export default {
-  methods: {
-    dislike() {},
-    share() {
-      this.share = !this.share;
-    },
-  },
   data() {
     return {
       interactions: [
@@ -150,6 +143,12 @@ export default {
       this.dislikes = data.dislikes.toLocaleString();
       this.interactions[1].value = data.dislikes.toLocaleString();
     });
+  },
+  methods: {
+    dislike() {},
+    share() {
+      this.share = !this.share;
+    },
   },
 };
 </script>
