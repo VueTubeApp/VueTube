@@ -34,9 +34,11 @@ Well this has been thrown around on the Return Youtube Dislike discord server fo
 Also, YouTube Vanced just shut down
 
 ## Screenshots
-<img src="https://github.com/Frontesque/VueTube/raw/main/Icons/screenshots/update_manager.png" alt="VueTube Update Manager" width="400"/>
+<img src="https://github.com/Frontesque/VueTube/raw/main/Icons/screenshots/home.PNG" alt="VueTube Home" width="400"/>
 
-<img src="https://github.com/Frontesque/VueTube/raw/main/Icons/screenshots/settings.png" alt="VueTube Settings" width="400"/>
+<img src="https://github.com/Frontesque/VueTube/raw/main/Icons/screenshots/search.PNG" alt="VueTube Search" width="400"/>
+
+<img src="https://github.com/Frontesque/VueTube/raw/main/Icons/screenshots/watch.PNG" alt="VueTube Watch" width="400"/>
 
 ## Want to contribute?
 Please read [this](contributing.md) for some more information to get started.
