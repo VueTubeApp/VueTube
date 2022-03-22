@@ -24,7 +24,7 @@
       >
         <!-- element above removes artifacting from things like v-ripple by -->
         <!-- scrollbox below must be a standalone div -->
-        <div class="scroll-y" style="height: 100%">
+        <div class="scroll-y" ref="pgscroll" style="height: 100%">
           <nuxt v-show="!search" />
         </div>
       </div>
@@ -164,5 +164,11 @@ export default {
       }
     },
   },
+
+  watch: {
+    $route() {
+      this.$refs.pgscroll.scrollTop = 0; // scroll back to top when moving to new route
+    }
+  }
 };
 </script>
