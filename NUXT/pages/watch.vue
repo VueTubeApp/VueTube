@@ -22,7 +22,7 @@
               style="padding: 0; margin: 0"
               elevation="0"
               :disabled="item.disabled"
-              @click="item.action"
+              @click="callMethodByName(item.actionName)"
             >
               <v-icon v-text="item.icon" />
               <div class="mt-2" style="font-size: .66rem;" v-text="item.value || item.name" />
@@ -79,6 +79,8 @@
 </style>
 
 <script>
+import { Share } from "@capacitor/share";
+
 export default {
   data() {
     return {
@@ -86,26 +88,28 @@ export default {
         {
           name: "Likes",
           icon: "mdi-thumb-up-outline",
-          action: null,
+          // action: null,
           value: this.likes,
           disabled: true,
         },
         {
           name: "Dislikes",
           icon: "mdi-thumb-down-outline",
-          action: this.dislike(),
+          // action: this.dislike(),
+          actionName: "dislike",
           value: this.dislikes,
           disabled: true,
         },
         {
           name: "Share",
           icon: "mdi-share-outline",
-          action: this.share(),
-          disabled: true,
+          // action: this.share(),
+          actionName: "share",
+          disabled: false,
         },
       ],
       showMore: false,
-      share: false,
+      // share: false,
       title: null,
       uploaded: null,
       vidSrc: null,
@@ -144,9 +148,20 @@ export default {
     });
   },
   methods: {
+    callMethodByName(name) {
+      // Helper function needed because of issues when directly calling method
+      // using item.action in the v-for loop
+      this[name]();
+    },
     dislike() {},
-    share() {
-      this.share = !this.share;
+    async share() {
+      // this.share = !this.share;
+      await Share.share({
+        title: this.title,
+        text: this.title,
+        url: 'https://youtu.be/' + this.$route.query.v,
+        dialogTitle: 'Share video',
+      });
     },
   },
 };
