@@ -1,7 +1,7 @@
 <template>
   <div>
     <video controls autoplay :src="vidSrc" width="100%" style="max-height: 50vh" />
-    <v-card class="ml-2 mr-2 background" flat>
+    <v-card v-if="loaded" class="ml-2 mr-2 background" flat>
       <v-card-title class="mt-2"
         style="padding-top: 0; padding-bottom: 0; font-size: 0.95rem; line-height: 1rem;"
         v-text="title"
@@ -116,38 +116,44 @@ export default {
       description: null,
       views: null,
       recommends: [],
+      loaded: false,
     };
   },
   mounted() {
-    this.likes = 100;
-
-    this.$youtube.getVid(this.$route.query.v).then((result) => {
-      console.log("Video info data", result);
-      console.log(result.availableResolutions);
-      this.vidSrc =
-        result.availableResolutions[result.availableResolutions.length - 1].url; // Takes the highest available resolution with both video and Audio. Note this will be lower than the actual highest resolution
-      this.title = result.title;
-      this.description = result.metadata.description; // While this works, I do recommend using the rendered description instead in the future as there are some things a pure string wouldn't work with
-      this.views = result.metadata.viewCount.toLocaleString();
-      this.likes = result.metadata.likes.toLocaleString();
-      this.uploaded = result.metadata.uploadDate;
-      this.interactions[0].value = result.metadata.likes;
-
-      this.recommends = this.$youtube
-        .viewRecommends(result.renderedData.recommendations)
-        .filter((element) => {
-          return element !== undefined;
-        });
-      // .catch((error) => this.$logger("Watch", error, true));
-      console.log("recommendations:", this.recommends);
-    });
-
-    this.$youtube.getReturnYoutubeDislike(this.$route.query.v, (data) => {
-      this.dislikes = data.dislikes.toLocaleString();
-      this.interactions[1].value = data.dislikes.toLocaleString();
-    });
+    this.getVideo();
   },
   methods: {
+    getVideo() {
+      this.likes = 100;
+      this.loaded = false;
+
+      this.$youtube.getVid(this.$route.query.v).then((result) => {
+        console.log("Video info data", result);
+        console.log(result.availableResolutions);
+        this.vidSrc =
+          result.availableResolutions[result.availableResolutions.length - 1].url; // Takes the highest available resolution with both video and Audio. Note this will be lower than the actual highest resolution
+        this.title = result.title;
+        this.description = result.metadata.description; // While this works, I do recommend using the rendered description instead in the future as there are some things a pure string wouldn't work with
+        this.views = result.metadata.viewCount.toLocaleString();
+        this.likes = result.metadata.likes.toLocaleString();
+        this.uploaded = result.metadata.uploadDate;
+        this.interactions[0].value = result.metadata.likes;
+        this.loaded = true;
+
+        this.recommends = this.$youtube
+          .viewRecommends(result.renderedData.recommendations)
+          .filter((element) => {
+            return element !== undefined;
+          });
+        // .catch((error) => this.$logger("Watch", error, true));
+        console.log("recommendations:", this.recommends);
+      });
+
+      this.$youtube.getReturnYoutubeDislike(this.$route.query.v, (data) => {
+        this.dislikes = data.dislikes.toLocaleString();
+        this.interactions[1].value = data.dislikes.toLocaleString();
+      });
+    },
     callMethodByName(name) {
       // Helper function needed because of issues when directly calling method
       // using item.action in the v-for loop
@@ -162,7 +168,18 @@ export default {
         url: 'https://youtu.be/' + this.$route.query.v,
         dialogTitle: 'Share video',
       });
-    },
+    }
   },
+  watch: {
+    $route: {
+      deep: true,
+      handler(newRt, oldRt) {
+        if (newRt.query.v != oldRt.query.v) {
+          this.vidSrc = "";
+          this.getVideo();
+        }
+      }
+    }
+  }
 };
 </script>
