@@ -46,11 +46,27 @@ export default {
     };
   },
   mounted() {
-    const searchQuestion = this.$route.query.q;
-    const vm = this;
-    this.$youtube.search(searchQuestion, (data) => {
-      vm.videos = data;
-    });
+    getSearch();
+  },
+  methods: {
+    getSearch() {
+      const searchQuestion = this.$route.query.q;
+      const vm = this;
+      this.$youtube.search(searchQuestion, (data) => {
+        vm.videos = data;
+      });
+    },
+  },
+  watch: {
+    // Watches for new searches while the current search page is active.
+    $route: {
+      deep: true,
+      handler(newSearch, oldSearch) {
+        if (newSearch.query.q != oldSearch.query.q) {
+          this.getSearch();
+        }
+      },
+    },
   },
 };
 </script>

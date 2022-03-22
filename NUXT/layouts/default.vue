@@ -42,7 +42,11 @@
       >
         <div class="scroll-y" style="height: 100%">
           <div v-if="search" style="min-width: 180px">
-            <v-list-item v-for="(item, index) in response" :key="index" class="px-0">
+            <v-list-item
+              v-for="(item, index) in response"
+              :key="index"
+              class="px-0"
+            >
               <v-btn
                 text
                 tile
@@ -100,6 +104,7 @@ div {
 <script>
 import { App as CapacitorApp } from "@capacitor/app";
 import { mapState } from "vuex";
+import constants from "../plugins/constants";
 export default {
   data: () => ({
     search: false,
@@ -153,6 +158,11 @@ export default {
 
     searchBtn(text) {
       const query = text;
+
+      this.$logger(
+        constants.LOGGER_NAMES.search,
+        "Query: " + query + " this.search: " + this.search
+      );
 
       if (this.search === true) {
         if (query) {
