@@ -41,4 +41,4 @@ Also, YouTube Vanced just shut down
 <img src="https://github.com/Frontesque/VueTube/raw/main/Icons/screenshots/watch.PNG" alt="VueTube Watch" width="400"/>
 
 ## Want to contribute?
-Please read [this](contributing.md) for some more information to get started.
+Please read our website on how to do so: https://vuetube.app/contributing
