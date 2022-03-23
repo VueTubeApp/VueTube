@@ -7,7 +7,6 @@ function hot {
     shift
     a='';
     while true; do
-      echo "checking $1"
       b=`ls -lahR $* | grep -v 'node_modules'`
       # to avoid confusing myself with nested-if - it is a "short form" of doing a=$b; eval $script if $a != $b.
       [[ $a != $b ]] && a=$b && eval $script;
@@ -17,5 +16,4 @@ function hot {
 }
 
 # NOTE: run from the root of the project
-# ./scripts/watcher.sh init NUXT
 hot ./scripts/build.sh NUXT
