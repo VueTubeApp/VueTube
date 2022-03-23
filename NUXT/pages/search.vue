@@ -5,22 +5,7 @@
       <v-skeleton-loader type="card-avatar, article, actions" />
     </center>
 
-    <v-list-item v-for="(video, index) in videos" :key="index" class="pa-0">
-      <v-card class="entry background" :to="`/watch?v=${video.id}`" flat>
-        <div style="position: relative">
-          <v-img :src="video.thumbnails[video.thumbnails.length - 1].url" />
-          <div
-            class="videoRuntimeFloat"
-            style="color: #fff"
-            v-text="video.runtime"
-          />
-        </div>
-        <div class="px-4 pt-4" v-text="video.title" />
-        <v-card-text class="pt-0">
-          <div v-text="`${video.views} • ${video.uploaded}`" />
-        </v-card-text>
-      </v-card>
-    </v-list-item>
+    <horizontal-list-renderer :recommends="videos" />
   </div>
 </template>
 
@@ -39,7 +24,9 @@
 </style>
 
 <script>
+import horizontalListRenderer from "../components/horizontalListRenderer.vue";
 export default {
+  components: { horizontalListRenderer },
   data() {
     return {
       videos: [],
@@ -51,9 +38,8 @@ export default {
   methods: {
     getSearch() {
       const searchQuestion = this.$route.query.q;
-      const vm = this;
-      this.$youtube.search(searchQuestion, (data) => {
-        vm.videos = data;
+      this.$youtube.search(searchQuestion).then((response) => {
+        this.videos = response.items;
       });
     },
   },

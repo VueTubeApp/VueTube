@@ -85,7 +85,7 @@
       </v-bottom-sheet> -->
     </v-card>
 
-    <recommended :recommends="recommends" />
+    <horizontal-list-renderer :recommends="recommends" />
   </div>
 </template>
 
@@ -98,8 +98,10 @@
 
 <script>
 import { Share } from "@capacitor/share";
+import horizontalListRenderer from "../components/horizontalListRenderer.vue";
 
 export default {
+  components: { horizontalListRenderer },
   data() {
     return {
       interactions: [
