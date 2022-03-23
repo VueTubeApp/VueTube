@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="accent">
     <video
       controls
       autoplay
