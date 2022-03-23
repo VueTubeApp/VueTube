@@ -6,42 +6,23 @@
       <v-skeleton-loader type="card-avatar, article, actions" />
     </center>
 
-    <v-list-item v-for="(video, index) in recommends" :key="index">
-      <v-card class="entry" :to="`/watch?v=${video.id}`">
-        <v-card-text>
-          <div style="position: relative">
-            <v-img :src="video.thumbnail" />
-            <div
-              class="videoRuntimeFloat"
-              style="color: #fff"
-              v-text="video.metadata.overlay[0]"
-            />
-          </div>
-          <div style="margin-top: 0.5em" v-text="video.title" />
-          <div v-text="parseBottom(video)" />
-        </v-card-text>
-      </v-card>
+    <v-list-item v-for="(video, index) in recommends" :key="index" class="pa-0">
+      <component
+        :is="Object.keys(video)[0]"
+        :key="video[Object.keys(video)[0]].videoId"
+        :video="video[Object.keys(video)[0]]"
+      ></component>
     </v-list-item>
   </div>
 </template>
 
-<style scoped>
-.entry {
-  margin-top: 1em;
-  width: 100%; /* Prevent Loading Weirdness */
-}
-.videoRuntimeFloat {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  padding: 0 3px 0 3px;
-}
-</style>
-
 <script>
+import gridVideoRenderer from "./VideoRenderers/gridVideoRenderer.vue";
+
 export default {
+  components: {
+    gridVideoRenderer,
+  },
   props: {
     recommends: Array,
   },

@@ -212,6 +212,18 @@ const innertubeModule = {
     }
   },
 
+  getThumbnail(id, resolution) {
+    if (resolution == "max") {
+      const url = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+      let img = new Image();
+      img.src = url;
+      img.onload = function () {
+        if (img.height !== 120) return url;
+      };
+    }
+    return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
+  },
+
   // It just works™
   // Front page recommendation
   async recommend() {
@@ -226,35 +238,26 @@ const innertubeModule = {
       const video =
         shelves.shelfRenderer?.content?.horizontalListRenderer?.items;
 
-      if (video)
-        return video.map((item) => {
-          if (item) {
-            const renderedItem = useRender(
-              item[Object.keys(item)[0]],
-              Object.keys(item)[0]
-            );
-            console.log(renderedItem);
-            return renderedItem;
-          } else {
-            return undefined;
-          }
-        });
+      if (video) return video;
+      // if (video)
+      //   return video.map((item) => {
+      //     if (item) {
+      //       const renderedItem = useRender(
+      //         item[Object.keys(item)[0]],
+      //         Object.keys(item)[0]
+      //       );
+      //       console.log(renderedItem);
+      //       return renderedItem;
+      //     } else {
+      //       return undefined;
+      //     }
+      //   });
     });
     console.log(final);
     return final;
   },
 
   // This is the recommendations that exist under videos
-  viewRecommends(recommendList) {
-    if (recommendList)
-      return recommendList.map((item) => {
-        if (item) {
-          return useRender(item[Object.keys(item)[0]], Object.keys(item)[0]);
-        } else {
-          return undefined;
-        }
-      });
-  },
 };
 
 //---   Start   ---//

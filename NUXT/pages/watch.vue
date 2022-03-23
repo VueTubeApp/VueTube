@@ -1,13 +1,27 @@
 <template>
   <div>
-    <video controls autoplay :src="vidSrc" width="100%" style="max-height: 50vh" />
+    <video
+      controls
+      autoplay
+      :src="vidSrc"
+      width="100%"
+      style="max-height: 50vh"
+    />
     <v-card v-if="loaded" class="ml-2 mr-2 background" flat>
-      <v-card-title class="mt-2"
-        style="padding-top: 0; padding-bottom: 0; font-size: 0.95rem; line-height: 1rem;"
+      <v-card-title
+        class="mt-2"
+        style="
+          padding-top: 0;
+          padding-bottom: 0;
+          font-size: 0.95rem;
+          line-height: 1rem;
+        "
         v-text="title"
       />
       <v-card-text>
-        <div style="margin-bottom: 1rem;">{{ views }} views • {{ uploaded }}</div>
+        <div style="margin-bottom: 1rem">
+          {{ views }} views • {{ uploaded }}
+        </div>
 
         <!--   Scrolling Div For Interactions   --->
         <div style="display: flex; margin-bottom: 1em">
@@ -25,7 +39,11 @@
               @click="callMethodByName(item.actionName)"
             >
               <v-icon v-text="item.icon" />
-              <div class="mt-2" style="font-size: .66rem;" v-text="item.value || item.name" />
+              <div
+                class="mt-2"
+                style="font-size: 0.66rem"
+                v-text="item.value || item.name"
+              />
             </v-btn>
           </v-list-item>
 
@@ -131,7 +149,9 @@ export default {
         console.log("Video info data", result);
         console.log(result.availableResolutions);
         this.vidSrc =
-          result.availableResolutions[result.availableResolutions.length - 1].url; // Takes the highest available resolution with both video and Audio. Note this will be lower than the actual highest resolution
+          result.availableResolutions[
+            result.availableResolutions.length - 1
+          ].url; // Takes the highest available resolution with both video and Audio. Note this will be lower than the actual highest resolution
         this.title = result.title;
         this.description = result.metadata.description; // While this works, I do recommend using the rendered description instead in the future as there are some things a pure string wouldn't work with
         this.views = result.metadata.viewCount.toLocaleString();
@@ -140,11 +160,7 @@ export default {
         this.interactions[0].value = result.metadata.likes;
         this.loaded = true;
 
-        this.recommends = this.$youtube
-          .viewRecommends(result.renderedData.recommendations)
-          .filter((element) => {
-            return element !== undefined;
-          });
+        this.recommends = result.renderedData.recommendations;
         // .catch((error) => this.$logger("Watch", error, true));
         console.log("recommendations:", this.recommends);
       });
@@ -165,10 +181,10 @@ export default {
       await Share.share({
         title: this.title,
         text: this.title,
-        url: 'https://youtu.be/' + this.$route.query.v,
-        dialogTitle: 'Share video',
+        url: "https://youtu.be/" + this.$route.query.v,
+        dialogTitle: "Share video",
       });
-    }
+    },
   },
   watch: {
     // Watch for change in the route query string (in this case, ?v=xxxxxxxx to ?v=yyyyyyyy)
@@ -180,8 +196,8 @@ export default {
           this.vidSrc = "";
           this.getVideo();
         }
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>
