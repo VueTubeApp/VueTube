@@ -7,8 +7,15 @@
     <div style="position: relative" class="thumbnail-container">
       <v-img
         :aspect-ratio="16 / 9"
-        :src="$youtube.getThumbnail(video.videoId, 'max')"
+        :src="
+          $youtube.getThumbnail(
+            video.videoId,
+            'max',
+            video.thumbnail.thumbnails
+          )
+        "
       />
+
       <div
         class="videoRuntimeFloat"
         :class="
