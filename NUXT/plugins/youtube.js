@@ -111,30 +111,30 @@ const searchModule = {
       });
   },
 
-  search(text, callback) {
-    let results = new Array();
-    youtubeSearch(text, (videos) => {
-      for (const i in videos) {
-        const video = videos[i];
+  // search(text, callback) {
+  //   let results = new Array();
+  //   youtubeSearch(text, (videos) => {
+  //     for (const i in videos) {
+  //       const video = videos[i];
 
-        if (video.compactVideoRenderer) {
-          //---   If Entry Is A Video   ---//
-          results.push({
-            id: video.compactVideoRenderer.videoId,
-            title: video.compactVideoRenderer.title.runs[0].text,
-            runtime: video.compactVideoRenderer.lengthText.runs[0].text,
-            uploaded: video.compactVideoRenderer.publishedTimeText.runs[0].text,
-            views: video.compactVideoRenderer.viewCountText.runs[0].text,
-            thumbnails: video.compactVideoRenderer.thumbnail.thumbnails,
-          });
-        } else {
-          //---   If Entry Is Not A Video   ---//
-          //logger(constants.LOGGER_NAMES.search, { type: "Error Caught Successfully", error: video }, true);
-        }
-      }
-    });
-    callback(results);
-  },
+  //       if (video.compactVideoRenderer) {
+  //         //---   If Entry Is A Video   ---//
+  //         results.push({
+  //           id: video.compactVideoRenderer.videoId,
+  //           title: video.compactVideoRenderer.title.runs[0].text,
+  //           runtime: video.compactVideoRenderer.lengthText.runs[0].text,
+  //           uploaded: video.compactVideoRenderer.publishedTimeText.runs[0].text,
+  //           views: video.compactVideoRenderer.viewCountText.runs[0].text,
+  //           thumbnails: video.compactVideoRenderer.thumbnail.thumbnails,
+  //         });
+  //       } else {
+  //         //---   If Entry Is Not A Video   ---//
+  //         //logger(constants.LOGGER_NAMES.search, { type: "Error Caught Successfully", error: video }, true);
+  //       }
+  //     }
+  //   });
+  //   callback(results);
+  // },
 
   getRemainingVideoInfo(id, callback) {
     String.prototype.decodeEscapeSequence = function () {
@@ -239,25 +239,19 @@ const innertubeModule = {
         shelves.shelfRenderer?.content?.horizontalListRenderer?.items;
 
       if (video) return video;
-      // if (video)
-      //   return video.map((item) => {
-      //     if (item) {
-      //       const renderedItem = useRender(
-      //         item[Object.keys(item)[0]],
-      //         Object.keys(item)[0]
-      //       );
-      //       console.log(renderedItem);
-      //       return renderedItem;
-      //     } else {
-      //       return undefined;
-      //     }
-      //   });
     });
     console.log(final);
     return final;
   },
 
-  // This is the recommendations that exist under videos
+  async search(query) {
+    try {
+      const response = await InnertubeAPI.getSearchAsync(query);
+      return response.content.verticalListRenderer;
+    } catch (err) {
+      logger(constants.LOGGER_NAMES.search, err, true);
+    }
+  },
 };
 
 //---   Start   ---//

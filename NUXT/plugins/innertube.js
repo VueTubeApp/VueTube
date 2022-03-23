@@ -95,18 +95,6 @@ class Innertube {
     };
   }
 
-  static getThumbnail(id, resolution) {
-    if (resolution == "max") {
-      const url = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
-      let img = new Image();
-      img.src = url;
-      img.onload = function () {
-        if (img.height !== 120) return url;
-      };
-    }
-    return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
-  }
-
   async getVidAsync(id) {
     let data = { context: this.context, videoId: id };
     const responseNext = await Http.post({
@@ -121,24 +109,61 @@ class Innertube {
       headers: constants.INNERTUBE_HEADER(this.context.client),
     }).catch((error) => error);
 
-    if (response.error) 
+    if (response.error)
       return {
         success: false,
         status_code: response.status,
         message: response.message,
-      }
-    else if (responseNext.error) 
+      };
+    else if (responseNext.error)
       return {
         success: false,
         status_code: responseNext.status,
         message: responseNext.message,
-      }
-      
+      };
+
     return {
       success: true,
       status_code: response.status,
       data: { output: response.data, outputNext: responseNext.data },
     };
+  }
+
+  async searchAsync(query) {
+    let data = { context: this.context, query: query };
+
+    const response = await Http.post({
+      url: `${constants.URLS.YT_BASE_API}/search?key=${this.key}`,
+      data: data,
+      headers: { "Content-Type": "application/json" },
+    }).catch((error) => error);
+
+    if (response instanceof Error)
+      return {
+        success: false,
+        status_code: response.status,
+        message: response.message,
+      };
+
+    return {
+      success: true,
+      status_code: response.status,
+      data: response.data,
+    };
+  }
+
+  // Static methods
+
+  static getThumbnail(id, resolution) {
+    if (resolution == "max") {
+      const url = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+      let img = new Image();
+      img.src = url;
+      img.onload = function () {
+        if (img.height !== 120) return url;
+      };
+    }
+    return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
   }
 
   // Simple Wrappers
@@ -153,56 +178,96 @@ class Innertube {
 
     if (
       response.success == false ||
-      response.data.output?.playabilityStatus?.status ==
-        ("ERROR" || undefined)
+      response.data.output?.playabilityStatus?.status == ("ERROR" || undefined)
     )
       throw new Error(
-        `Could not get information for video: ${response.status_code || response.data.output?.playabilityStatus?.status} - ${response.message || response.data.output?.playabilityStatus?.reason}`
+        `Could not get information for video: ${
+          response.status_code ||
+          response.data.output?.playabilityStatus?.status
+        } - ${
+          response.message || response.data.output?.playabilityStatus?.reason
+        }`
       );
     const responseInfo = response.data.output;
     const responseNext = response.data.outputNext;
     const details = responseInfo.videoDetails;
     // const columnUI =
     //   responseInfo[3].response?.contents.singleColumnWatchNextResults?.results
-    //     ?.results; 
+    //     ?.results;
     const resolutions = responseInfo.streamingData;
-    const columnUI = responseNext.contents.singleColumnWatchNextResults.results.results
+    const columnUI =
+      responseNext.contents.singleColumnWatchNextResults.results.results;
 
     const vidData = {
       id: details.videoId,
       title: details.title,
       isLive: details.isLiveContent,
       channelName: details.author,
-      channelUrl: columnUI?.contents[0].slimVideoMetadataSectionRenderer?.contents.find(contents => contents.elementRenderer)?.newElement?.type?.componentType?.model?.channelBarModel?.videoChannelBarData
-                  ?.onTap?.innertubeCommand?.browseEndpoint?.canonicalBaseUrl,
-      channelImg: columnUI?.contents[0].slimVideoMetadataSectionRenderer?.contents.find(contents => contents.elementRenderer)?.newElement?.type?.componentType?.model?.channelBarModel?.videoChannelBarData
-      ?.avatar?.image?.sources[0].url,
+      channelUrl:
+        columnUI?.contents[0].slimVideoMetadataSectionRenderer?.contents.find(
+          (contents) => contents.elementRenderer
+        )?.newElement?.type?.componentType?.model?.channelBarModel
+          ?.videoChannelBarData?.onTap?.innertubeCommand?.browseEndpoint
+          ?.canonicalBaseUrl,
+      channelImg:
+        columnUI?.contents[0].slimVideoMetadataSectionRenderer?.contents.find(
+          (contents) => contents.elementRenderer
+        )?.newElement?.type?.componentType?.model?.channelBarModel
+          ?.videoChannelBarData?.avatar?.image?.sources[0].url,
       availableResolutions: resolutions?.formats,
       availableResolutionsAdaptive: resolutions?.adaptiveFormats,
       metadata: {
         description: details.shortDescription,
         thumbnails: details.thumbnails?.thumbnails,
-        uploadDate: columnUI?.contents[0].slimVideoMetadataSectionRenderer?.contents.find(contents => contents.slimVideoDescriptionRenderer)?.slimVideoDescriptionRenderer.publishDate.runs[0].text,
+        uploadDate:
+          columnUI?.contents[0].slimVideoMetadataSectionRenderer?.contents.find(
+            (contents) => contents.slimVideoDescriptionRenderer
+          )?.slimVideoDescriptionRenderer.publishDate.runs[0].text,
         isPrivate: details.isPrivate,
         viewCount: details.viewCount,
         lengthSeconds: details.lengthSeconds,
-        likes: parseInt(columnUI?.contents[0].slimVideoMetadataSectionRenderer?.contents.find(contents => contents.slimVideoScrollableActionBarRenderer)?.slimVideoScrollableActionBarRenderer
-        .buttons.find(button => button.slimMetadataToggleButtonRenderer.isLike == true)?.slimMetadataToggleButtonRenderer?.button
-        .toggleButtonRenderer?.defaultText?.accessibility?.accessibilityData?.label?.replace(/\D/g,"")), // Yes. I know.
+        likes: parseInt(
+          columnUI?.contents[0].slimVideoMetadataSectionRenderer?.contents
+            .find((contents) => contents.slimVideoScrollableActionBarRenderer)
+            ?.slimVideoScrollableActionBarRenderer.buttons.find(
+              (button) => button.slimMetadataToggleButtonRenderer.isLike == true
+            )
+            ?.slimMetadataToggleButtonRenderer?.button.toggleButtonRenderer?.defaultText?.accessibility?.accessibilityData?.label?.replace(
+              /\D/g,
+              ""
+            )
+        ), // Yes. I know.
       },
       renderedData: {
-        description: columnUI?.contents.find(contents => contents.slimVideoMetadataSectionRenderer).slimVideoMetadataSectionRenderer?.contents.find(contents => contents.slimVideoDescriptionRenderer)?.slimVideoDescriptionRenderer.description.runs,
-        recommendations: columnUI?.contents.find(contents => contents.shelfRenderer).shelfRenderer?.content?.horizontalListRenderer?.items,
-        recommendationsContinuation: columnUI?.continuations[0].reloadContinuationData?.continuation
+        description: columnUI?.contents
+          .find((contents) => contents.slimVideoMetadataSectionRenderer)
+          .slimVideoMetadataSectionRenderer?.contents.find(
+            (contents) => contents.slimVideoDescriptionRenderer
+          )?.slimVideoDescriptionRenderer.description.runs,
+        recommendations: columnUI?.contents.find(
+          (contents) => contents.shelfRenderer
+        ).shelfRenderer?.content?.horizontalListRenderer?.items,
+        recommendationsContinuation:
+          columnUI?.continuations[0].reloadContinuationData?.continuation,
       },
     };
 
-    console.log(vidData)
+    console.log(vidData);
 
-    return vidData
+    return vidData;
   }
 
- 
+  async getSearchAsync(query) {
+    const search = await this.searchAsync(query);
+    if (search.success == false)
+      throw new Error(
+        `Could not get search results: ${search.status_code} - ${search.message}`
+      );
+    console.log(search.data);
+    return search.data.contents.sectionListRenderer.contents.find(
+      (contents) => contents.shelfRenderer
+    ).shelfRenderer;
+  }
 }
 
 export default Innertube;

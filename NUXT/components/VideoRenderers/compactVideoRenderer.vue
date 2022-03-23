@@ -1,17 +1,53 @@
 <template>
-  <v-card class="entry compactVideoRenderer" :to="`/watch?v=${video.id}`">
-    <v-card-text>
-      <div style="position: relative">
-        <v-img :src="video.thumbnail" />
-        <div
-          class="videoRuntimeFloat"
-          style="color: #fff"
-          v-text="video.metadata.overlay[0]"
+  <v-card
+    class="entry gridVideoRenderer background"
+    :to="`/watch?v=${video.videoId}`"
+    flat
+  >
+    <div style="position: relative">
+      <v-img
+        :aspect-ratio="16 / 9"
+        :src="$youtube.getThumbnail(video.videoId, 'max')"
+      />
+      <div
+        class="videoRuntimeFloat"
+        :class="
+          'style-' +
+          video.thumbnailOverlays[0].thumbnailOverlayTimeStatusRenderer.style
+        "
+        style="color: #fff"
+        v-text="
+          video.thumbnailOverlays[0].thumbnailOverlayTimeStatusRenderer.text
+            .runs[0].text
+        "
+      />
+    </div>
+    <div id="details">
+      <a
+        :href="
+          video.shortBylineText.runs[0].navigationEndpoint.browseEndpoint
+            .canonicalBaseUrl
+        "
+        class="avatar-link pt-2"
+      >
+        <v-img
+          class="avatar-thumbnail"
+          :src="video.channelThumbnail.thumbnails[0].url"
         />
-      </div>
-      <div style="margin-top: 0.5em" v-text="video.title" />
-      <div v-text="parseBottom(video)" />
-    </v-card-text>
+      </a>
+      <v-card-text class="pt-2">
+        <div
+          v-for="title in video.title.runs"
+          :key="title.text"
+          style="margin-top: 0.5em"
+          class="font-weight-medium vid-title"
+        >
+          {{ title.text }}
+        </div>
+
+        <div class="grey--text caption" v-text="parseBottom(video)" />
+      </v-card-text>
+    </div>
   </v-card>
 </template>
 
@@ -23,23 +59,54 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   padding: 0px 4px 0px 4px;
+}
+
+.videoRuntimeFloat.style-DEFAULT {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.videoRuntimeFloat.style-LIVE {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+.vid-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.avatar-thumbnail {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+#details {
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
 }
 </style>
 
 <script>
 export default {
-  props: {
-    video: Object,
-  },
+  props: ["video"],
 
   methods: {
     parseBottom(video) {
-      const bottomText = [video.channel, video.metadata.views];
-      if (video.metadata.published) bottomText.push(video.metadata.published);
-      return bottomText.join(" • ");
+      const bottomText = [
+        video.shortBylineText?.runs[0].text,
+        video.shortViewCountText?.runs[0].text,
+      ];
+      if (video.publishedTimeText?.runs[0].text)
+        bottomText.push(video.publishedTimeText?.runs[0].text);
+      return bottomText.join(" · ");
     },
   },
 };
