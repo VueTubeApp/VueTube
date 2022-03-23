@@ -4,7 +4,7 @@
       src="/icon.svg"
       width="10em"
       style="margin-bottom: 1em"
-      :class="this.$vuetify.theme.dark ? '' : 'invert'"
+      :class="$vuetify.theme.dark ? '' : 'invert'"
     />
     <v-progress-circular size="50" indeterminate color="primary" />
   </center>
@@ -66,8 +66,5 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -80%);
-}
-.invert {
-  filter: invert(100%);
 }
 </style>

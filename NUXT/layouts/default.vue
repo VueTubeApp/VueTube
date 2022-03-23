@@ -69,38 +69,6 @@
   </v-app>
 </template>
 
-<style>
-* {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-.scroll-y {
-  overflow-y: scroll !important; /* has to be scroll, not auto */
-  -webkit-overflow-scrolling: touch !important;
-}
-html,
-body {
-  background: black;
-  overflow: hidden;
-}
-
-p,
-span,
-div {
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
-}
-</style>
-
-<style scoped>
-.searchButton {
-  width: 100%;
-  justify-content: left !important;
-}
-</style>
-
 <script>
 import { App as CapacitorApp } from "@capacitor/app";
 import { mapState } from "vuex";
@@ -111,10 +79,32 @@ export default {
     response: [],
     stateLoaded: false,
   }),
+
+  computed: {
+    ...mapState({
+      roundTweak: (state) => state.tweaks.roundTweak,
+    }),
+    page: function () {
+      const splitPath = this.$route.path.split("/");
+      let pageName = splitPath[splitPath.length - 1];
+      pageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
+      return pageName || "Home";
+    },
+  },
+
+  watch: {
+    // Watch for any changes in the route string
+    // When change is detected, scroll main div back to the top
+    $route() {
+      this.$refs.pgscroll.scrollTop = 0; // scroll back to top when moving to new route
+    },
+  },
+
   beforeCreate() {
     // initializes UI tweaks to the saved state
     this.$store.commit("tweaks/initTweaks");
   },
+
   mounted() {
     this.stateLoaded = true;
     //---   Back Button Listener   ---//
@@ -130,17 +120,6 @@ export default {
         window.history.back();
       }
     });
-  },
-  computed: {
-    ...mapState({
-      roundTweak: (state) => state.tweaks.roundTweak,
-    }),
-    page: function () {
-      const splitPath = this.$route.path.split("/");
-      let pageName = splitPath[splitPath.length - 1];
-      pageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
-      return pageName || "Home";
-    },
   },
 
   methods: {
@@ -174,13 +153,41 @@ export default {
       }
     },
   },
-
-  watch: {
-    // Watch for any changes in the route string
-    // When change is detected, scroll main div back to the top
-    $route() {
-      this.$refs.pgscroll.scrollTop = 0; // scroll back to top when moving to new route
-    }
-  }
 };
 </script>
+
+<style>
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.scroll-y {
+  overflow-y: scroll !important; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch !important;
+}
+html,
+body {
+  background: black;
+  overflow: hidden;
+}
+
+p,
+span,
+div {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.invert {
+  filter: invert(100%);
+}
+</style>
+
+<style scoped>
+.searchButton {
+  width: 100%;
+  justify-content: left !important;
+}
+</style>
