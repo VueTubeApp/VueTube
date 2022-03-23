@@ -1,6 +1,14 @@
 <template>
   <div>
-    <video controls autoplay :src="vidSrc" width="100%" style="max-height: 50vh" />
+    <video
+      controls
+      autoplay
+      :src="vidSrc"
+      width="100%"
+      @webkitfullscreenchange="handleFullscreenChange"
+      ref="player"
+      style="max-height: 50vh"
+    />
     <v-card v-if="loaded" class="ml-2 mr-2 background" flat>
       <v-card-title class="mt-2"
         style="padding-top: 0; padding-bottom: 0; font-size: 0.95rem; line-height: 1rem;"
@@ -168,6 +176,13 @@ export default {
         url: 'https://youtu.be/' + this.$route.query.v,
         dialogTitle: 'Share video',
       });
+    },
+    handleFullscreenChange() {
+      if (document.fullscreenElement === this.$refs.player) {
+        this.$vuetube.statusBar.hide();
+      } else {
+        this.$vuetube.statusBar.show();
+      }
     }
   },
   watch: {
