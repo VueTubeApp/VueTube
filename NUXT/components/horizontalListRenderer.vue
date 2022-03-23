@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import compactVideoRenderer from "./VideoRenderers/compactVideoRenderer.vue";
+import compactVideoRenderer from "./CompactRenderers/compactVideoRenderer.vue";
 import gridVideoRenderer from "./VideoRenderers/gridVideoRenderer.vue";
 
 export default {
