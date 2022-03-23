@@ -4,11 +4,13 @@
   * This is to allow use of "recommended" videos on other pages such as /watch
   * -Front
   * -->
-  <recommended :recommends="recommends" />
+  <horizontal-list-renderer :recommends="recommends" />
 </template>
 
 <script>
+import horizontalListRenderer from "../components/horizontalListRenderer.vue";
 export default {
+  components: { horizontalListRenderer },
   data() {
     return {
       recommends: [],
