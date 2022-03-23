@@ -1,10 +1,11 @@
 <template>
   <!--
-  * Videos are now polled from '~/components/recommended.vue'
-  * This is to allow use of "recommended" videos on other pages such as /watch
+  * Videos are now polled from '~/components/videoList.vue'
+  * This is to allow listing videos on other pages such as /watch
   * -Front
+  * Edit by etekweb: renamed to videoList and included in search.vue as well
   * -->
-  <recommended :recommends="recommends" />
+  <videoList :videos="recommends" />
 </template>
 
 <script>

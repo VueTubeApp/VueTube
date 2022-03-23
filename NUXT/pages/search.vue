@@ -5,7 +5,7 @@
       <v-skeleton-loader type="card-avatar, article, actions" />
     </center>
 
-    <v-list-item v-for="(video, index) in videos" :key="index" class="pa-0">
+    <!-- <v-list-item v-for="(video, index) in videos" :key="index" class="pa-0">
       <v-card class="entry background" :to="`/watch?v=${video.id}`" flat>
         <div style="position: relative">
           <v-img :src="video.thumbnails[video.thumbnails.length - 1].url" />
@@ -20,7 +20,10 @@
           <div v-text="`${video.views} • ${video.uploaded}`" />
         </v-card-text>
       </v-card>
-    </v-list-item>
+    </v-list-item> -->
+
+    <videoList :videos="videos" />
+
   </div>
 </template>
 

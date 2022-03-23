@@ -75,7 +75,7 @@
       </v-bottom-sheet> -->
     </v-card>
 
-    <recommended :recommends="recommends" />
+    <videoList :videos="recommends" />
   </div>
 </template>
 
