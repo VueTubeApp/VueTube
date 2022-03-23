@@ -2,7 +2,11 @@
   <center style="padding: 1em">
     <div class="row pa-4" style="flex-direction: column">
       <div>
-        <v-img src="/icon.svg" width="100px" />
+        <v-img
+          src="/icon.svg"
+          width="100px"
+          :class="$vuetify.theme.dark ? '' : 'invert'"
+        />
       </div>
       <v-spacer />
       <div>
@@ -28,12 +32,6 @@
   </center>
 </template>
 
-<style scoped>
-.pageTitle {
-  margin-bottom: 1em;
-}
-</style>
-
 <script>
 import { Browser } from "@capacitor/browser";
 import { Device } from "@capacitor/device";
@@ -57,3 +55,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.pageTitle {
+  margin-bottom: 1em;
+}
+</style>

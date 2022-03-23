@@ -1,21 +1,14 @@
 <template>
   <center class="container">
-    <v-img src="/icon.svg" width="10em" style="margin-bottom: 1em" />
+    <v-img
+      src="/icon.svg"
+      width="10em"
+      style="margin-bottom: 1em"
+      :class="$vuetify.theme.dark ? '' : 'invert'"
+    />
     <v-progress-circular size="50" indeterminate color="primary" />
   </center>
 </template>
-
-<style scoped>
-.container {
-  padding-top: 3em;
-  display: block;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -80%);
-}
-</style>
 
 <script>
 import { SplashScreen } from "@capacitor/splash-screen";
@@ -63,3 +56,15 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.container {
+  padding-top: 3em;
+  display: block;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+}
+</style>

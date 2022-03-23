@@ -111,30 +111,30 @@ const searchModule = {
       });
   },
 
-  search(text, callback) {
-    let results = new Array();
-    youtubeSearch(text, (videos) => {
-      for (const i in videos) {
-        const video = videos[i];
+  // search(text, callback) {
+  //   let results = new Array();
+  //   youtubeSearch(text, (videos) => {
+  //     for (const i in videos) {
+  //       const video = videos[i];
 
-        if (video.compactVideoRenderer) {
-          //---   If Entry Is A Video   ---//
-          results.push({
-            id: video.compactVideoRenderer.videoId,
-            title: video.compactVideoRenderer.title.runs[0].text,
-            runtime: video.compactVideoRenderer.lengthText.runs[0].text,
-            uploaded: video.compactVideoRenderer.publishedTimeText.runs[0].text,
-            views: video.compactVideoRenderer.viewCountText.runs[0].text,
-            thumbnails: video.compactVideoRenderer.thumbnail.thumbnails,
-          });
-        } else {
-          //---   If Entry Is Not A Video   ---//
-          //logger(constants.LOGGER_NAMES.search, { type: "Error Caught Successfully", error: video }, true);
-        }
-      }
-    });
-    callback(results);
-  },
+  //       if (video.compactVideoRenderer) {
+  //         //---   If Entry Is A Video   ---//
+  //         results.push({
+  //           id: video.compactVideoRenderer.videoId,
+  //           title: video.compactVideoRenderer.title.runs[0].text,
+  //           runtime: video.compactVideoRenderer.lengthText.runs[0].text,
+  //           uploaded: video.compactVideoRenderer.publishedTimeText.runs[0].text,
+  //           views: video.compactVideoRenderer.viewCountText.runs[0].text,
+  //           thumbnails: video.compactVideoRenderer.thumbnail.thumbnails,
+  //         });
+  //       } else {
+  //         //---   If Entry Is Not A Video   ---//
+  //         //logger(constants.LOGGER_NAMES.search, { type: "Error Caught Successfully", error: video }, true);
+  //       }
+  //     }
+  //   });
+  //   callback(results);
+  // },
 
   getRemainingVideoInfo(id, callback) {
     String.prototype.decodeEscapeSequence = function () {
@@ -212,6 +212,18 @@ const innertubeModule = {
     }
   },
 
+  getThumbnail(id, resolution) {
+    if (resolution == "max") {
+      const url = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+      let img = new Image();
+      img.src = url;
+      img.onload = function () {
+        if (img.height !== 120) return url;
+      };
+    }
+    return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
+  },
+
   // It just works™
   // Front page recommendation
   async recommend() {
@@ -226,34 +238,19 @@ const innertubeModule = {
       const video =
         shelves.shelfRenderer?.content?.horizontalListRenderer?.items;
 
-      if (video)
-        return video.map((item) => {
-          if (item) {
-            const renderedItem = useRender(
-              item[Object.keys(item)[0]],
-              Object.keys(item)[0]
-            );
-            console.log(renderedItem);
-            return renderedItem;
-          } else {
-            return undefined;
-          }
-        });
+      if (video) return video;
     });
     console.log(final);
     return final;
   },
 
-  // This is the recommendations that exist under videos
-  viewRecommends(recommendList) {
-    if (recommendList)
-      return recommendList.map((item) => {
-        if (item) {
-          return useRender(item[Object.keys(item)[0]], Object.keys(item)[0]);
-        } else {
-          return undefined;
-        }
-      });
+  async search(query) {
+    try {
+      const response = await InnertubeAPI.getSearchAsync(query);
+      return response.content.verticalListRenderer;
+    } catch (err) {
+      logger(constants.LOGGER_NAMES.search, err, true);
+    }
   },
 };
 
