@@ -5,6 +5,8 @@
       autoplay
       :src="vidSrc"
       width="100%"
+      @webkitfullscreenchange="handleFullscreenChange"
+      ref="player"
       style="max-height: 50vh"
     />
     <v-card v-if="loaded" class="ml-2 mr-2 background" flat>
@@ -187,14 +189,25 @@ export default {
         dialogTitle: "Share video",
       });
     },
+    handleFullscreenChange() {
+      if (document.fullscreenElement === this.$refs.player) {
+        this.$vuetube.statusBar.hide();
+        this.$vuetube.navigationBar.hide();
+      } else {
+        this.$vuetube.statusBar.show();
+        this.$vuetube.navigationBar.show();
+      }
+    }
   },
   watch: {
     // Watch for change in the route query string (in this case, ?v=xxxxxxxx to ?v=yyyyyyyy)
-    // When change is detected, reset and run getVideo function again
     $route: {
       deep: true,
       handler(newRt, oldRt) {
         if (newRt.query.v != oldRt.query.v) {
+          // Exit fullscreen if currently in fullscreen
+          this.$refs.player.webkitExitFullscreen();
+          // Reset player and run getVideo function again
           this.vidSrc = "";
           this.getVideo();
         }

@@ -26,5 +26,9 @@
 	{
 		"pkg": "@capacitor/status-bar",
 		"classpath": "com.capacitorjs.plugins.statusbar.StatusBarPlugin"
+	},
+	{
+		"pkg": "@hugotomazi/capacitor-navigation-bar",
+		"classpath": "br.com.tombus.capacitor.plugin.navigationbar.NavigationBarPlugin"
 	}
 ]

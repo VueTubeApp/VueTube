@@ -1,6 +1,7 @@
 //---   Modules/Imports   ---//
 import { Http } from "@capacitor-community/http";
 import { StatusBar, Style } from "@capacitor/status-bar";
+import { NavigationBar } from "@hugotomazi/capacitor-navigation-bar";
 import constants from "./constants";
 import { hexToRgb, rgbToHex } from "./utils";
 
@@ -54,6 +55,15 @@ const module = {
     },
     async setBackground(color) {
       return await StatusBar.setBackgroundColor({ color: color });
+    },
+  },
+
+  navigationBar: {
+    async hide() {
+      return await NavigationBar.hide();
+    },
+    async show() {
+      return await NavigationBar.show();
     },
   },
 

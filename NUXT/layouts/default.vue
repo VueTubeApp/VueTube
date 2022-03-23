@@ -97,7 +97,10 @@ export default {
     // When change is detected, scroll main div back to the top
     $route() {
       this.$refs.pgscroll.scrollTop = 0; // scroll back to top when moving to new route
-    },
+      // Exit fullscreen if currently in fullscreen
+      this.$vuetube.statusBar.show();
+      this.$vuetube.navigationBar.show();
+    }
   },
 
   beforeCreate() {
