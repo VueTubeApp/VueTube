@@ -44,7 +44,7 @@
       class="ml-4 mr-2 my-auto fill-height"
       style="border-radius: 0.25rem !important"
       to="/settings"
-      ><v-icon>mdi-dots-vertical</v-icon></v-btn
+      ><v-icon>mdi-cog-outline</v-icon></v-btn
     >
   </v-card>
 </template>
