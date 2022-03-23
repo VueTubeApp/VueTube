@@ -40,7 +40,7 @@
 }
 @media screen and (orientation: landscape) {
   .thumbnail-container {
-    width: 300px;
+    max-width: 250px;
     float: left;
     margin-right: 20px;
     margin-bottom: 16px;
