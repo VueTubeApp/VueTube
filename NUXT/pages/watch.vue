@@ -180,8 +180,10 @@ export default {
     handleFullscreenChange() {
       if (document.fullscreenElement === this.$refs.player) {
         this.$vuetube.statusBar.hide();
+        this.$vuetube.navigationBar.hide();
       } else {
         this.$vuetube.statusBar.show();
+        this.$vuetube.navigationBar.show();
       }
     }
   },
