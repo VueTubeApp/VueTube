@@ -189,11 +189,13 @@ export default {
   },
   watch: {
     // Watch for change in the route query string (in this case, ?v=xxxxxxxx to ?v=yyyyyyyy)
-    // When change is detected, reset and run getVideo function again
     $route: {
       deep: true,
       handler(newRt, oldRt) {
         if (newRt.query.v != oldRt.query.v) {
+          // Exit fullscreen if currently in fullscreen
+          this.$refs.player.webkitExitFullscreen();
+          // Reset player and run getVideo function again
           this.vidSrc = "";
           this.getVideo();
         }
