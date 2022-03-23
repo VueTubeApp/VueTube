@@ -4,7 +4,7 @@
     :to="`/watch?v=${video.videoId}`"
     flat
   >
-    <div style="position: relative">
+    <div style="position: relative" class="thumbnail-container">
       <v-img
         :aspect-ratio="16 / 9"
         :src="$youtube.getThumbnail(video.videoId, 'max')"
@@ -35,7 +35,7 @@
           :src="video.channelThumbnail.thumbnails[0].url"
         />
       </a>
-      <v-card-text class="pt-2">
+      <v-card-text class="video-info pt-2">
         <div
           v-for="title in video.title.runs"
           :key="title.text"
@@ -91,6 +91,28 @@
   display: flex;
   flex-direction: row;
   flex-basis: auto;
+}
+
+@media screen and (orientation: landscape) {
+  .entry {
+    margin-bottom: 8px;
+  }
+  .thumbnail-container {
+    width: 50vh;
+    float: left;
+  }
+  #details {
+    flex-direction: column-reverse;
+  }
+  .avatar-thumbnail {
+    margin-top: 0;
+    margin-left: 16px;
+  }
+  .video-info {
+    padding-top: 0 !important;
+    padding-bottom: 0;
+    margin-top: 0;
+  }
 }
 </style>
 
