@@ -71,7 +71,6 @@ export default {
 
     thumbnailURL(video) {
       // Specific field names vary by where innertube API is called from
-      console.log(video.thumbnail, video.thumbnails);
       if (video.thumbnail) return video.thumbnail; // home and watch views
       else if (video.thumbnails && video.thumbnails.length) {
         return video.thumbnails[video.thumbnails.length - 1].url; // search view
