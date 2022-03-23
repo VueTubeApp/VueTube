@@ -39,8 +39,6 @@ module.exports = {
       "x-goog-visitor-id": info.visitorData || "",
       "x-youtube-client-name": ytApiVal.CLIENTNAME,
       "x-youtube-client-version": ytApiVal.VERSION,
-      "x-origin": info.originalUrl,
-      origin: info.originalUrl,
     };
     return headers;
   },
