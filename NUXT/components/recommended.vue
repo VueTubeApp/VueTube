@@ -9,8 +9,8 @@
     <v-list-item v-for="(video, index) in recommends" :key="index">
       <v-card class="entry" :to="`/watch?v=${video.id}`">
         <v-card-text>
-          <div style="position: relative">
-            <v-img :src="video.thumbnail" />
+          <div style="position: relative" class="thumbnail-container">
+            <v-img :src="video.thumbnail" max-height="50vh" />
             <div
               class="videoRuntimeFloat"
               style="color: #fff"
@@ -37,6 +37,14 @@
   background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   padding: 0 3px 0 3px;
+}
+@media screen and (orientation: landscape) {
+  .thumbnail-container {
+    width: 300px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 16px;
+  }
 }
 </style>
 
