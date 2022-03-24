@@ -98,7 +98,7 @@ class Innertube {
   async getVidAsync(id) {
     let data = { context: this.context, videoId: id };
     const responseNext = await Http.post({
-      url: `${constants.URLS.YT_BASE_API}/next?v=${id}`,
+      url: `${constants.URLS.YT_BASE_API}/next?key=${this.key}`,
       data: data,
       headers: constants.INNERTUBE_HEADER(this.context.client),
     }).catch((error) => error);
@@ -181,11 +181,9 @@ class Innertube {
       response.data.output?.playabilityStatus?.status == ("ERROR" || undefined)
     )
       throw new Error(
-        `Could not get information for video: ${
-          response.status_code ||
-          response.data.output?.playabilityStatus?.status
-        } - ${
-          response.message || response.data.output?.playabilityStatus?.reason
+        `Could not get information for video: ${response.status_code ||
+        response.data.output?.playabilityStatus?.status
+        } - ${response.message || response.data.output?.playabilityStatus?.reason
         }`
       );
     const responseInfo = response.data.output;
@@ -246,7 +244,7 @@ class Innertube {
           )?.slimVideoDescriptionRenderer.description.runs,
         recommendations: columnUI?.contents.find(
           (contents) => contents.shelfRenderer
-        ).shelfRenderer?.content?.horizontalListRenderer?.items,
+        ).shelfRenderer,
         recommendationsContinuation:
           columnUI?.continuations[0].reloadContinuationData?.continuation,
       },
@@ -264,9 +262,7 @@ class Innertube {
         `Could not get search results: ${search.status_code} - ${search.message}`
       );
     console.log(search.data);
-    return search.data.contents.sectionListRenderer.contents.find(
-      (contents) => contents.shelfRenderer
-    ).shelfRenderer;
+    return search.data;
   }
 }
 

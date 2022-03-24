@@ -18,6 +18,12 @@
         :class="tabSelection == i ? 'tab primary lighten-2' : ''"
         v-text="item.icon"
       />
+      <!-- 
+        Add the following to 'v-text- above to make the icons outlined unless active
+        + (tabSelection == i ? '' : '-outline')
+
+
+       -->
     </v-btn>
     <!-- <v-btn text class="navButton mr-2 fill-height" color="white" @click="searchBtn()"
       ><v-icon>mdi-magnify</v-icon></v-btn

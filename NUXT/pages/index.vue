@@ -16,10 +16,6 @@ import { SplashScreen } from "@capacitor/splash-screen";
 export default {
   layout: "empty",
   async mounted() {
-    //---   Hide Splash Screen    ---//
-    await SplashScreen.hide();
-    //-------------------------------//
-
     //---   Theme Loader Moved From '~/layouts/default.vue' (because this only needs to be run once) -Front   ---//
     setTimeout(() => {
       //Set timeout is required to make it load properly... dont ask me why -Front
@@ -52,6 +48,7 @@ export default {
     //-----------------------------------------------------------------------------------------------------------//
 
     await this.$youtube.getAPI();
+    await SplashScreen.hide();
     this.$router.push(`/${localStorage.getItem("startPage") || "home"}`);
   },
 };

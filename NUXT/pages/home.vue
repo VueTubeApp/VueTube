@@ -4,13 +4,19 @@
   * This is to allow use of "recommended" videos on other pages such as /watch
   * -Front
   * -->
-  <horizontal-list-renderer :recommends="recommends" class="video-list" />
+
+  <div>
+    <!--   Video Loading Animation   -->
+    <vid-load-renderer v-if="!recommends" />
+    <horizontal-list-renderer v-else :render="recommends" />
+  </div>
 </template>
 
 <script>
-import horizontalListRenderer from "../components/horizontalListRenderer.vue";
+import horizontalListRenderer from "~/components/ListRenderers/horizontalListRenderer.vue";
+import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 export default {
-  components: { horizontalListRenderer },
+  components: { horizontalListRenderer, VidLoadRenderer },
 
   computed: {
     recommends: {
