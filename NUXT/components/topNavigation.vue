@@ -30,6 +30,15 @@
     <v-spacer v-if="!search" />
 
     <v-btn
+      v-show="page == 'Home'"
+      icon
+      tile
+      class="ml-3 mr-1 my-auto fill-height"
+      style="border-radius: 0.25rem !important"
+      @click="refreshRecommendations"
+      ><v-icon>mdi-refresh</v-icon></v-btn
+    >
+    <v-btn
       icon
       tile
       class="ml-3 my-auto fill-height"
@@ -65,6 +74,18 @@ export default {
   data: () => ({
     text: "",
   }),
+  methods: {
+    refreshRecommendations() {
+      this.$emit("scroll-to-top");
+      this.$store.commit("updateRecommendedVideos", []);
+      this.$youtube
+        .recommend()
+        .then((result) => {
+          if (result) this.$store.commit("updateRecommendedVideos", result[0]);
+        })
+        .catch((error) => this.$logger("Home Page (Nav Refresh)", error, true));
+    },
+  },
 };
 </script>
 
