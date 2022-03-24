@@ -25,7 +25,7 @@
         <!-- element above removes artifacting from things like v-ripple by -->
         <!-- scrollbox below must be a standalone div -->
         <div class="scroll-y" ref="pgscroll" style="height: 100%">
-          <nuxt v-show="!search" />
+          <nuxt />
         </div>
       </div>
 
@@ -100,7 +100,7 @@ export default {
       // Exit fullscreen if currently in fullscreen
       this.$vuetube.statusBar.show();
       this.$vuetube.navigationBar.show();
-    }
+    },
   },
 
   beforeCreate() {

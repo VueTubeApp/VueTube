@@ -7,7 +7,7 @@
       width="100%"
       @webkitfullscreenchange="handleFullscreenChange"
       ref="player"
-      style="max-height: 50vh"
+      style="max-height: 30vh; position: sticky; top: 0; z-index: 9999"
     />
     <v-card v-if="loaded" class="ml-2 mr-2 accent" flat>
       <v-card-title
