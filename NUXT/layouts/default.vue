@@ -6,6 +6,7 @@
       @close-search="search = !search"
       @search-btn="searchBtn"
       @text-changed="textChanged"
+      @scroll-to-top="$refs.pgscroll.scrollTop = 0"
     />
 
     <div class="accent" style="height: 100%; margin-top: 4rem">
