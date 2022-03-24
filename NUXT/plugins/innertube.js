@@ -246,7 +246,7 @@ class Innertube {
           )?.slimVideoDescriptionRenderer.description.runs,
         recommendations: columnUI?.contents.find(
           (contents) => contents.shelfRenderer
-        ).shelfRenderer?.content?.horizontalListRenderer?.items,
+        ).shelfRenderer,
         recommendationsContinuation:
           columnUI?.continuations[0].reloadContinuationData?.continuation,
       },
@@ -264,9 +264,7 @@ class Innertube {
         `Could not get search results: ${search.status_code} - ${search.message}`
       );
     console.log(search.data);
-    return search.data.contents.sectionListRenderer.contents.find(
-      (contents) => contents.shelfRenderer
-    ).shelfRenderer;
+    return search.data;
   }
 }
 
