@@ -29,7 +29,7 @@
 }
 
 .fill-screen {
-  widows: 100 vw; /* Very Hacky */
+  width: 100 vw; /* Very Hacky */
 }
 </style>
 
