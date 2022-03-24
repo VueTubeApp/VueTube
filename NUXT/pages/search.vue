@@ -1,11 +1,8 @@
 <template>
   <div class="accent">
-    <center v-if="videos.length == -1">
-      <v-skeleton-loader type="card-avatar, article, actions" />
-      <v-skeleton-loader type="card-avatar, article, actions" />
-    </center>
-
-    <horizontal-list-renderer :recommends="videos" />
+    <!--   Video Loading Animation   -->
+    <vid-load-renderer v-if="renderer.length <= 0" />
+    <sectionListRenderer :render="renderer" />
   </div>
 </template>
 
@@ -24,12 +21,17 @@
 </style>
 
 <script>
-import horizontalListRenderer from "../components/horizontalListRenderer.vue";
+import sectionListRenderer from "../components/ListRenderers/sectionListRenderer.vue";
+import VidLoadRenderer from "../components/vidLoadRenderer.vue";
+
 export default {
-  components: { horizontalListRenderer },
+  components: {
+    sectionListRenderer,
+    VidLoadRenderer,
+  },
   data() {
     return {
-      videos: [],
+      renderer: [],
     };
   },
   mounted() {
@@ -39,7 +41,7 @@ export default {
     getSearch() {
       const searchQuestion = this.$route.query.q;
       this.$youtube.search(searchQuestion).then((response) => {
-        this.videos = response.items;
+        this.renderer = response;
       });
     },
   },

@@ -137,5 +137,9 @@ export default {
       return bottomText.join(" · ");
     },
   },
+
+  mounted() {
+    console.log("gridVideoRenderer received: ", this.video);
+  },
 };
 </script>

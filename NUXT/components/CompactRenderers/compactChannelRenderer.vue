@@ -4,42 +4,17 @@
     :to="`/watch?v=${video.videoId}`"
     flat
   >
-    <div style="position: relative" class="thumbnail-container">
-      <v-img
-        :aspect-ratio="16 / 9"
-        :src="
-          $youtube.getThumbnail(
-            video.videoId,
-            'max',
-            video.thumbnail.thumbnails
-          )
-        "
-      />
-
-      <div
-        class="videoRuntimeFloat"
-        :class="
-          'style-' +
-          video.thumbnailOverlays[0].thumbnailOverlayTimeStatusRenderer.style
-        "
-        style="color: #fff"
-        v-text="
-          video.thumbnailOverlays[0].thumbnailOverlayTimeStatusRenderer.text
-            .runs[0].text
-        "
-      />
-    </div>
     <div id="details">
       <a
-        :href="
-          video.shortBylineText.runs[0].navigationEndpoint.browseEndpoint
-            .canonicalBaseUrl
-        "
+        :href="video.navigationEndpoint.browseEndpoint.canonicalBaseUrl"
         class="avatar-link pt-2"
       >
         <v-img
           class="avatar-thumbnail"
-          :src="video.channelThumbnail.thumbnails[0].url"
+          :src="
+            video.thumbnail.thumbnails[video.thumbnail.thumbnails.length - 1]
+              .url
+          "
         />
       </a>
       <v-card-text class="video-info pt-2">
@@ -47,7 +22,7 @@
           v-for="title in video.title.runs"
           :key="title.text"
           style="margin-top: 0.5em"
-          class="font-weight-medium vid-title"
+          class="vid-title"
         >
           {{ title.text }}
         </div>
@@ -62,21 +37,6 @@
 .entry {
   width: 100%; /* Prevent Loading Weirdness */
 }
-.videoRuntimeFloat {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  border-radius: 5px;
-  padding: 0px 4px 0px 4px;
-}
-
-.videoRuntimeFloat.style-DEFAULT {
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.videoRuntimeFloat.style-LIVE {
-  background: rgba(255, 0, 0, 0.5);
-}
 
 .vid-title {
   display: -webkit-box;
@@ -90,35 +50,23 @@
   margin-top: 0.5rem;
   margin-left: 0.5rem;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
 }
 
 #details {
   display: flex;
   flex-direction: row;
   flex-basis: auto;
+  padding: 10px;
 }
 
 @media screen and (orientation: landscape) {
   .entry {
     margin-bottom: 8px;
   }
-  .thumbnail-container {
-    width: 50vh;
-    float: left;
-  }
   #details {
     flex-direction: column-reverse;
-  }
-  .avatar-thumbnail {
-    margin-top: 0;
-    margin-left: 16px;
-  }
-  .video-info {
-    padding-top: 0 !important;
-    padding-bottom: 0;
-    margin-top: 0;
   }
 }
 </style>
@@ -130,11 +78,9 @@ export default {
   methods: {
     parseBottom(video) {
       const bottomText = [
-        video.shortBylineText?.runs[0].text,
-        video.shortViewCountText?.runs[0].text,
+        video.subscriberCountText?.runs[0].text,
+        video.videoCountText?.runs.map((run) => run.text).join(" "),
       ];
-      if (video.publishedTimeText?.runs[0].text)
-        bottomText.push(video.publishedTimeText?.runs[0].text);
       return bottomText.join(" · ");
     },
   },
