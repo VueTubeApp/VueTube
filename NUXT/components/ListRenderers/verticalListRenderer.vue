@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import gridVideoRenderer from "~/components/GridRenderers/gridVideoRenderer.vue";
+import gridVideoRenderer from "~/components/gridRenderers/gridVideoRenderer.vue";
 import compactVideoRenderer from "~/components/CompactRenderers/compactVideoRenderer.vue";
 
 export default {

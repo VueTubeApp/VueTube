@@ -29,14 +29,14 @@
 }
 
 .fill-screen {
-  width: 100 vw; /* Very Hacky */
+  width: 100vw; /* Very Hacky */
 }
 </style>
 
 <script>
 import compactVideoRenderer from "~/components/CompactRenderers/compactVideoRenderer.vue";
 import compactChannelRenderer from "~/components/CompactRenderers/compactChannelRenderer.vue";
-import gridVideoRenderer from "~/components/GridRenderers/gridVideoRenderer.vue";
+import gridVideoRenderer from "~/components/gridRenderers/gridVideoRenderer.vue";
 
 export default {
   components: {
