@@ -11,10 +11,16 @@
 </template>
 
 <script>
-import { SplashScreen } from "@capacitor/splash-screen";
-
 export default {
-  layout: "empty",
+  layout: "empty",  
+
+  //---   Hide Splash Screen   ---//
+  async beforeCreate() {
+    const { SplashScreen } = await require("@capacitor/splash-screen"); // This has to be imported here, otherwise NUXT won't import the package because its so early in the lifecycle -Front
+    await SplashScreen.hide();
+  },
+  //---   End Hide Splash Screen   ---//
+
   async mounted() {
     //---   Theme Loader Moved From '~/layouts/default.vue' (because this only needs to be run once) -Front   ---//
     setTimeout(() => {
@@ -48,7 +54,6 @@ export default {
     //-----------------------------------------------------------------------------------------------------------//
 
     await this.$youtube.getAPI();
-    await SplashScreen.hide();
     this.$router.push(`/${localStorage.getItem("startPage") || "home"}`);
   },
 };
