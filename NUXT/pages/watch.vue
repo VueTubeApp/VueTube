@@ -100,8 +100,8 @@
 
 <script>
 import { Share } from "@capacitor/share";
-import ShelfRenderer from "../components/SectionRenderers/shelfRenderer.vue";
-import VidLoadRenderer from "../components/vidLoadRenderer.vue";
+import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
+import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 
 export default {
   components: { ShelfRenderer, VidLoadRenderer },

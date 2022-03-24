@@ -27,8 +27,8 @@
 </style>
 
 <script>
-import verticalListRenderer from "../ListRenderers/verticalListRenderer.vue";
-import horizontalListRenderer from "../ListRenderers/horizontalListRenderer.vue";
+import verticalListRenderer from "~/components/ListRenderers/verticalListRenderer.vue";
+import horizontalListRenderer from "~/components/ListRenderers/horizontalListRenderer.vue";
 
 export default {
   components: {
