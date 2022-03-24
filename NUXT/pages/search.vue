@@ -21,8 +21,8 @@
 </style>
 
 <script>
-import sectionListRenderer from "../components/ListRenderers/sectionListRenderer.vue";
-import VidLoadRenderer from "../components/vidLoadRenderer.vue";
+import sectionListRenderer from "~/components/ListRenderers/sectionListRenderer.vue";
+import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 
 export default {
   components: {

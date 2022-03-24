@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import horizontalListRenderer from "../components/ListRenderers/horizontalListRenderer.vue";
-import VidLoadRenderer from "../components/vidLoadRenderer.vue";
+import horizontalListRenderer from "~/components/ListRenderers/horizontalListRenderer.vue";
+import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 export default {
   components: { horizontalListRenderer, VidLoadRenderer },
 

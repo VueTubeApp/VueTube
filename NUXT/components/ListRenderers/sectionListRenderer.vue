@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import itemSectionRenderer from "../SectionRenderers/itemSectionRenderer.vue";
-import shelfRenderer from "../SectionRenderers/shelfRenderer.vue";
+import itemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
+import shelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 
 export default {
   components: {
