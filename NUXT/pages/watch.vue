@@ -86,8 +86,8 @@
         </v-sheet>
       </v-bottom-sheet> -->
     </v-card>
-
-    <horizontal-list-renderer :recommends="recommends" />
+    <vid-load-renderer v-if="!recommends" />
+    <shelf-renderer v-else :render="recommends" />
   </div>
 </template>
 
@@ -100,10 +100,11 @@
 
 <script>
 import { Share } from "@capacitor/share";
-import horizontalListRenderer from "../components/horizontalListRenderer.vue";
+import ShelfRenderer from "../components/SectionRenderers/shelfRenderer.vue";
+import VidLoadRenderer from "../components/vidLoadRenderer.vue";
 
 export default {
-  components: { horizontalListRenderer },
+  components: { ShelfRenderer, VidLoadRenderer },
   data() {
     return {
       interactions: [
@@ -137,7 +138,7 @@ export default {
       vidSrc: null,
       description: null,
       views: null,
-      recommends: [],
+      recommends: null,
       loaded: false,
     };
   },
@@ -197,7 +198,7 @@ export default {
         this.$vuetube.statusBar.show();
         this.$vuetube.navigationBar.show();
       }
-    }
+    },
   },
   watch: {
     // Watch for change in the route query string (in this case, ?v=xxxxxxxx to ?v=yyyyyyyy)
