@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="accent">
     <video
       controls
       autoplay
@@ -9,7 +9,7 @@
       ref="player"
       style="max-height: 50vh"
     />
-    <v-card v-if="loaded" class="ml-2 mr-2 background" flat>
+    <v-card v-if="loaded" class="ml-2 mr-2 accent" flat>
       <v-card-title
         class="mt-2"
         style="
