@@ -29,7 +29,7 @@
 }
 
 .fill-screen {
-  width: 100 vw; /* Very Hacky */
+  width: 100vw; /* Very Hacky */
 }
 </style>
 
