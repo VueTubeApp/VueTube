@@ -6,3 +6,7 @@ package-lock.json
 temp.js
 temp.json
 .vscode/settings.json
+
+# Capacitor Splash Screens
+resources/android
+resources/ios
