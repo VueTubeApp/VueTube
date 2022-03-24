@@ -1,14 +1,6 @@
 <template>
   <div class="accent">
-    <video
-      controls
-      autoplay
-      :src="vidSrc"
-      width="100%"
-      @webkitfullscreenchange="handleFullscreenChange"
-      ref="player"
-      style="max-height: 50vh"
-    />
+    <videoPlayer :vidSrc="vidSrc" />
     <v-card v-if="loaded" class="ml-2 mr-2 accent" flat>
       <v-card-title
         class="mt-2"
@@ -189,15 +181,6 @@ export default {
         url: "https://youtu.be/" + this.$route.query.v,
         dialogTitle: "Share video",
       });
-    },
-    handleFullscreenChange() {
-      if (document.fullscreenElement === this.$refs.player) {
-        this.$vuetube.statusBar.hide();
-        this.$vuetube.navigationBar.hide();
-      } else {
-        this.$vuetube.statusBar.show();
-        this.$vuetube.navigationBar.show();
-      }
     },
   },
   watch: {
