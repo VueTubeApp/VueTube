@@ -25,7 +25,7 @@
       >
         <!-- element above removes artifacting from things like v-ripple by -->
         <!-- scrollbox below must be a standalone div -->
-        <div class="scroll-y" ref="pgscroll" style="height: 100%">
+        <div ref="pgscroll" class="scroll-y" style="height: 100%">
           <nuxt />
         </div>
       </div>
@@ -165,6 +165,10 @@ export default {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+*:focus::before {
+  opacity: 0 !important;
+}
+
 .scroll-y {
   overflow-y: scroll !important; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch !important;
