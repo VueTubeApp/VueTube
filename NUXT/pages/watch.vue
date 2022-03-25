@@ -1,6 +1,6 @@
 <template>
   <div class="accent">
-    <videoPlayer :vidSrc="vidSrc" />
+    <videoPlayer :vid-src="vidSrc" />
     <v-card v-if="loaded" class="ml-2 mr-2 accent" flat>
       <v-card-title
         class="mt-2"
@@ -134,6 +134,21 @@ export default {
       loaded: false,
     };
   },
+  watch: {
+    // Watch for change in the route query string (in this case, ?v=xxxxxxxx to ?v=yyyyyyyy)
+    $route: {
+      deep: true,
+      handler(newRt, oldRt) {
+        if (newRt.query.v != oldRt.query.v) {
+          // Exit fullscreen if currently in fullscreen
+          this.$refs.player.webkitExitFullscreen();
+          // Reset player and run getVideo function again
+          this.vidSrc = "";
+          this.getVideo();
+        }
+      },
+    },
+  },
   mounted() {
     this.getVideo();
   },
@@ -181,21 +196,6 @@ export default {
         url: "https://youtu.be/" + this.$route.query.v,
         dialogTitle: "Share video",
       });
-    },
-  },
-  watch: {
-    // Watch for change in the route query string (in this case, ?v=xxxxxxxx to ?v=yyyyyyyy)
-    $route: {
-      deep: true,
-      handler(newRt, oldRt) {
-        if (newRt.query.v != oldRt.query.v) {
-          // Exit fullscreen if currently in fullscreen
-          this.$refs.player.webkitExitFullscreen();
-          // Reset player and run getVideo function again
-          this.vidSrc = "";
-          this.getVideo();
-        }
-      },
     },
   },
 };

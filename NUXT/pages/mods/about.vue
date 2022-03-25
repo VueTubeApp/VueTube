@@ -28,7 +28,7 @@
     <div>OS: {{ deviceInfo.operatingSystem }} ({{ deviceInfo.osVersion }})</div>
     <div>Model: {{ deviceInfo.model }}</div>
     <div>Manufacturer: {{ deviceInfo.manufacturer }}</div>
-    <div>Virtual Device: {{ deviceInfo.isVirtual ? 'yes' : 'no'  }}</div>
+    <div>Virtual Device: {{ deviceInfo.isVirtual ? "yes" : "no" }}</div>
   </center>
 </template>
 
