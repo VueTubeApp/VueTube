@@ -37,13 +37,13 @@
     </v-card>
 
     <v-card class="pb-5">
-      <v-card-title>Accent Color</v-card-title>
+      <v-card-title>background Color</v-card-title>
       <v-card-text>
         <v-alert color="primary" dense outlined type="warning"
           >NOTE: This doesn't save after closing the app (yet)</v-alert
         >
         <v-color-picker
-          v-model="accentColor"
+          v-model="backgroundColor"
           dot-size="5"
           hide-mode-switch
           mode="hexa"
@@ -57,12 +57,12 @@
 export default {
   data() {
     return {
-      accentColor: "#ffffff",
+      backgroundColor: "#ffffff",
     };
   },
 
   watch: {
-    accentColor: function (val) {
+    backgroundColor: function (val) {
       this.$vuetify.theme.currentTheme.primary.base = val;
       let primaryAlt = this.$vuetube.hexToRgb(val);
 
@@ -86,24 +86,24 @@ export default {
   },
 
   mounted() {
-    this.accentColor = this.$vuetify.theme.themes.dark.primary.base;
+    this.backgroundColor = this.$vuetify.theme.themes.dark.primary.base;
   },
 
   methods: {
     amoled() {
       this.$vuetify.theme.themes.dark.background === "#000"
-        ? ((this.$vuetify.theme.themes.dark.accent = "#222"),
-          (this.$vuetify.theme.themes.dark.accent = "#222"),
+        ? ((this.$vuetify.theme.themes.dark.background = "#222"),
+          (this.$vuetify.theme.themes.dark.background = "#222"),
           (this.$vuetify.theme.themes.dark.background = "#333"),
           localStorage.setItem("isOled", false))
-        : ((this.$vuetify.theme.themes.dark.accent = "#000"),
-          (this.$vuetify.theme.themes.dark.accent = "#000"),
+        : ((this.$vuetify.theme.themes.dark.background = "#000"),
+          (this.$vuetify.theme.themes.dark.background = "#000"),
           (this.$vuetify.theme.themes.dark.background = "#000"),
           localStorage.setItem("isOled", true));
     },
     saveTheme(isDark) {
       this.$vuetube.statusBar.setBackground(
-        this.$vuetify.theme.currentTheme.accent
+        this.$vuetify.theme.currentTheme.background
       );
       localStorage.setItem("darkTheme", isDark);
     },

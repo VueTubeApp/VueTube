@@ -1,7 +1,7 @@
 <template>
-  <div class="accent">
+  <div class="background">
     <videoPlayer :vid-src="vidSrc" />
-    <v-card v-if="loaded" class="ml-2 mr-2 accent" flat>
+    <v-card v-if="loaded" class="ml-2 mr-2 background" flat>
       <v-card-title
         class="mt-2"
         style="
@@ -57,7 +57,7 @@
 
       <!-- <v-bottom-sheet
         v-model="showMore"
-        color="accent"
+        color="background"
         style="z-index: 9999999"
       >
         <v-sheet style="padding: 1em">
@@ -70,7 +70,7 @@
           </div>
         </v-sheet>
       </v-bottom-sheet> -->
-      <!-- <v-bottom-sheet v-model="share" color="accent" style="z-index: 9999999">
+      <!-- <v-bottom-sheet v-model="share" color="background" style="z-index: 9999999">
         <v-sheet style="padding: 1em">
           <div class="scroll-y">
             {{ description }}

@@ -2,7 +2,7 @@
   <v-bottom-navigation
     v-model="tabSelection"
     shift
-    class="bottomNav py-4 accent"
+    class="bottomNav py-4 background"
   >
     <v-btn
       v-for="(item, i) in tabs"

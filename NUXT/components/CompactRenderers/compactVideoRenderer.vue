@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="entry gridVideoRenderer accent"
+    class="entry gridVideoRenderer background"
     :to="`/watch?v=${video.videoId}`"
     flat
   >

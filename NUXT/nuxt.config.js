@@ -60,18 +60,22 @@ export default {
             base: colors.red.lighten2,
             lighten2: colors.red.lighten4,
           },
-          background: "#fff",
-          accent: "#fff",
-          info: "#000",
+          background: {
+            base: "#fff",
+            lighten1: "#eee",
+            lighten2: "#ddd",
+          },
         },
         dark: {
           primary: {
             base: colors.red.darken2,
             lighten2: "#533",
           },
-          background: "#333",
-          accent: "#222",
-          info: "#fff",
+          background: {
+            base: "#222",
+            lighten1: "#282828",
+            lighten2: "#333",
+          },
         },
       },
     },

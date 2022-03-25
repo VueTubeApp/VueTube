@@ -30,24 +30,24 @@ export default {
         this.$vuetify.theme.dark = darkTheme;
         //this.$vuetube.statusBar.setDark(); //Not needed unless setLight() is used below -Front
         this.$vuetube.statusBar.setBackground(
-          this.$vuetify.theme.themes.dark.accent
+          this.$vuetify.theme.themes.dark.background
         );
 
         const isOled = localStorage.getItem("isOled");
 
         if (isOled == "true") {
-          (this.$vuetify.theme.themes.dark.accent = "#000"),
-            (this.$vuetify.theme.themes.dark.accent = "#000"),
+          (this.$vuetify.theme.themes.dark.background = "#000"),
+            (this.$vuetify.theme.themes.dark.background = "#000"),
             (this.$vuetify.theme.themes.dark.background = "#000");
         } else {
-          (this.$vuetify.theme.themes.dark.accent = "#222"),
-            (this.$vuetify.theme.themes.dark.accent = "#222"),
+          (this.$vuetify.theme.themes.dark.background = "#222"),
+            (this.$vuetify.theme.themes.dark.background = "#222"),
             (this.$vuetify.theme.themes.dark.background = "#333");
         }
       } else {
         //this.$vuetube.statusBar.setLight() //Looks weird -Front
         this.$vuetube.statusBar.setBackground(
-          this.$vuetify.theme.themes.light.accent
+          this.$vuetify.theme.themes.light.background
         );
       }
     }, 0);

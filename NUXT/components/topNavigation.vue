@@ -1,7 +1,7 @@
 <template>
   <v-card
     style="height: 4rem !important; display: flex; box-shadow: none !important"
-    color="accent"
+    color="background"
     class="rounded-0 pa-3 topNav"
   >
     <h3 v-show="!search" class="my-auto ml-4" v-text="page" />
@@ -22,7 +22,8 @@
       dense
       flat
       label="Search"
-      class="searchBar"
+      style="margin-top: 1px"
+      background-color="background lighten-1"
       @input="$emit('text-changed', text)"
       @keyup.enter="$emit('search-btn', text)"
     />
@@ -30,6 +31,7 @@
     <v-spacer v-if="!search" />
 
     <v-btn
+      v-if="!search"
       v-show="page == 'Home'"
       icon
       tile
@@ -102,8 +104,5 @@ export default {
   margin-bottom: -10em;
   margin-left: 2em;
   /*transform: translateY(-2.5%);*/
-}
-.searchBar {
-  margin: 0;
 }
 </style>

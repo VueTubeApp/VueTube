@@ -9,7 +9,7 @@
       @scroll-to-top="$refs.pgscroll.scrollTop = 0"
     />
 
-    <div class="accent" style="height: 100%; margin-top: 4rem">
+    <div class="background" style="height: 100%; margin-top: 4rem">
       <div
         v-show="!search"
         class="background"
@@ -32,7 +32,7 @@
 
       <div
         v-show="search"
-        class="accent"
+        class="background"
         style="
           padding: 0;
           overflow: hidden;
