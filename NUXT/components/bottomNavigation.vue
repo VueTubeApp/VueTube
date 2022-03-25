@@ -59,6 +59,7 @@ export default {
   box-shadow: none !important;
   height: 4rem !important;
   position: fixed;
+  /* bottom: env(safe-area-inset-bottom) !important; */
   bottom: 0;
   padding: 0 !important;
   z-index: 99999;

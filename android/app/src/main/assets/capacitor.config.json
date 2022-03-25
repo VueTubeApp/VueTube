@@ -7,16 +7,19 @@
 		"hostname": "youtube.com",
 		"androidScheme": "https"
 	},
+	"android": {
+		"backgroundColor": "#000000"
+	},
 	"plugins": {
 		"SplashScreen": {
 			"launchShowDuration": 0,
 			"launchAutoHide": true,
-			"backgroundColor": "#111111",
+			"backgroundColor": "#000000",
 			"androidSplashResourceName": "splash",
 			"androidScaleType": "CENTER_CROP",
 			"androidSpinnerStyle": "large",
 			"iosSpinnerStyle": "small",
-			"spinnerColor": "#999999",
+			"spinnerColor": "#000000",
 			"showSpinner": false,
 			"splashFullScreen": false,
 			"splashImmersive": false

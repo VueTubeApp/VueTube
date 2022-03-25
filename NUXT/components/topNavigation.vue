@@ -2,7 +2,7 @@
   <v-card
     style="height: 4rem !important; display: flex; box-shadow: none !important"
     color="accent"
-    class="topNav rounded-0 pa-3"
+    class="rounded-0 pa-3 topNav"
   >
     <h3 v-show="!search" class="my-auto ml-4" v-text="page" />
 
@@ -92,8 +92,9 @@ export default {
 <style scoped>
 .topNav {
   position: fixed;
-  width: 100%;
+  /* top: env(safe-area-inset-top); */
   top: 0;
+  width: 100%;
   z-index: 999;
   /*border-radius: 0 0 1em 1em !important;*/
 }

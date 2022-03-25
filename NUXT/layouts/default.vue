@@ -171,6 +171,8 @@ export default {
 }
 html,
 body {
+  /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left) !important;
+  margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left) !important; */
   background: black;
   overflow: hidden;
 }
