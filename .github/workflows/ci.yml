@@ -106,8 +106,11 @@ jobs:
           CODE_SIGNING_REQUIRED=NO
           CODE_SIGNING_ALLOWED="NO"
           CODE_SIGN_ENTITLEMENTS=""
+      - name: Make IPA
+        run: mkdir Payload && mv ~/Library/Developer/Xcode/DerivedData/App-*/Build/Products/Debug-iphoneos/App.app Payload && zip -r Payload.zip Payload && mv Payload.zip VueTube.ipa
+    
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
           name: iOS
-          path: ~/Library/Developer/Xcode/DerivedData/App-*/Build/Products/Debug-iphoneos/App.app
+          path: VueTube.ipa

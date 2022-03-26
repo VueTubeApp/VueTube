@@ -1,6 +1,14 @@
 <template>
   <div class="accent">
-    <videoPlayer :vid-src="vidSrc" />
+
+    <!--   Stock Player   -->
+    <videoPlayer :vidSrc="vidSrc" /> 
+
+    <!--   VueTube Player V1   -->
+    <!-- <VTPlayerV1 :sources="sources" v-if="sources.length > 0" />-->
+
+
+
     <v-card v-if="loaded" class="ml-2 mr-2 accent" flat>
       <v-card-title
         class="mt-2"
@@ -128,6 +136,7 @@ export default {
       title: null,
       uploaded: null,
       vidSrc: null,
+      sources: [],
       description: null,
       views: null,
       recommends: null,
@@ -160,10 +169,17 @@ export default {
       this.$youtube.getVid(this.$route.query.v).then((result) => {
         console.log("Video info data", result);
         console.log(result.availableResolutions);
+
+        //---   VueTube Player v1   ---//
+        this.sources = result.availableResolutions;
+
+        //---   Legacy Player   ---//
         this.vidSrc =
           result.availableResolutions[
             result.availableResolutions.length - 1
           ].url; // Takes the highest available resolution with both video and Audio. Note this will be lower than the actual highest resolution
+        
+        //---   Content Stuff   ---//
         this.title = result.title;
         this.description = result.metadata.description; // While this works, I do recommend using the rendered description instead in the future as there are some things a pure string wouldn't work with
         this.views = result.metadata.viewCount.toLocaleString();
