@@ -141,7 +141,7 @@ export default {
       handler(newRt, oldRt) {
         if (newRt.query.v != oldRt.query.v) {
           // Exit fullscreen if currently in fullscreen
-          this.$refs.player.webkitExitFullscreen();
+          if (this.$refs.player) this.$refs.player.webkitExitFullscreen();
           // Reset player and run getVideo function again
           this.vidSrc = "";
           this.getVideo();
