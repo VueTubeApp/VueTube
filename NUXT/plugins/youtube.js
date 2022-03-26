@@ -3,6 +3,8 @@ import { Http } from "@capacitor-community/http";
 import Innertube from "./innertube";
 import constants from "./constants";
 import useRender from "./renderers";
+import iconv from "iconv-lite";
+import { Buffer } from "buffer";
 
 //---   Logger Function   ---//
 function logger(func, data, isError = false) {
@@ -16,17 +18,21 @@ function logger(func, data, isError = false) {
 
 const searchModule = {
   logs: new Array(),
-
   //---   Get YouTube's Search Auto Complete   ---//
   autoComplete(text, callback) {
-    Http.request({
-      method: "GET",
-      url: `${constants.URLS.YT_SUGGESTIONS}/search`,
-      params: { client: "youtube", q: text },
+    Http.get({
+      url: `${constants.URLS.YT_SUGGESTIONS}/search?q=${encodeURIComponent(
+        text
+      )}&client=youtube&ds=yt`,
+      responseType: "arraybuffer",
     })
       .then((res) => {
-        logger(constants.LOGGER_NAMES.autoComplete, res);
-        callback(res.data);
+        // make a new buffer object from res.data
+        const buffer = Buffer.from(res.data, "base64");
+        // convert res.data from iso-8859-1 to utf-8
+        const data = buffer.toString("latin1");
+        logger(constants.LOGGER_NAMES.autoComplete, data);
+        callback(data);
       })
       .catch((err) => {
         logger(constants.LOGGER_NAMES.autoComplete, err, true);
