@@ -3,7 +3,6 @@ import { Http } from "@capacitor-community/http";
 import Innertube from "./innertube";
 import constants from "./constants";
 import useRender from "./renderers";
-import iconv from "iconv-lite";
 import { Buffer } from "buffer";
 
 //---   Logger Function   ---//
