@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  layout: "empty",  
+  layout: "empty",
 
   //---   Hide Splash Screen   ---//
   async beforeCreate() {

@@ -34,17 +34,6 @@ export default {
       renderer: [],
     };
   },
-  mounted() {
-    this.getSearch();
-  },
-  methods: {
-    getSearch() {
-      const searchQuestion = this.$route.query.q;
-      this.$youtube.search(searchQuestion).then((response) => {
-        this.renderer = response;
-      });
-    },
-  },
   watch: {
     // Watches for new searches while the current search page is active.
     $route: {
@@ -54,6 +43,17 @@ export default {
           this.getSearch();
         }
       },
+    },
+  },
+  mounted() {
+    this.getSearch();
+  },
+  methods: {
+    getSearch() {
+      const searchQuestion = this.$route.query.q;
+      this.$youtube.search(searchQuestion).then((response) => {
+        this.renderer = response;
+      });
     },
   },
 };
