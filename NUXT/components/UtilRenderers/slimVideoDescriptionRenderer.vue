@@ -3,8 +3,7 @@
     <div v-for="(text, index) in render.description.runs" :key="index">
       <component
         :is="text.navigationEndpoint ? 'a' : 'span'"
-        :href="parseLinks(text.navEndpoint)"
-        target="_blank"
+        :href="parseLinks(text)"
         >{{ text.text }}
       </component>
     </div>
@@ -18,10 +17,11 @@ export default {
   props: ["render"],
 
   methods: {
-    parseLinks(navEndpoint) {
+    parseLinks(base) {
+      const navEndpoint = base.navigationEndpoint;
       if (!navEndpoint) return;
-      if (navEndpoint.webviewEndpoint.url) {
-        return navEndpoint.webviewEndpoint.url;
+      if (navEndpoint.webviewEndpoint) {
+        return base.text;
       } else if (navEndpoint.browseEndpoint) {
         return navEndpoint.browseEndpoint.canonicalBaseUrl;
       } else if (navEndpoint.navigationEndpoint) {
