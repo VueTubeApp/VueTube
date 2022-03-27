@@ -19,7 +19,6 @@ const ytApiVal = {
 module.exports = {
   URLS: url,
   YT_API_VALUES: ytApiVal,
-
   LOGGER_NAMES: {
     search: "Search",
     autoComplete: "AutoComplete",

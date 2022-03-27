@@ -60,7 +60,7 @@
         <p>Channel Stuff</p>
       </v-card-text>
       <div v-if="showMore" class="scroll-y ml-2 mr-2">
-        {{ description }}
+        <slim-video-description-renderer :render="description">
       </div>
 
       <!-- <v-bottom-sheet
@@ -102,9 +102,10 @@
 import { Share } from "@capacitor/share";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
+import SlimVideoDescriptionRenderer from '../components/UtilRenderers/slimVideoDescriptionRenderer.vue';
 
 export default {
-  components: { ShelfRenderer, VidLoadRenderer },
+  components: { ShelfRenderer, VidLoadRenderer, SlimVideoDescriptionRenderer },
   data() {
     return {
       interactions: [
@@ -181,7 +182,7 @@ export default {
         
         //---   Content Stuff   ---//
         this.title = result.title;
-        this.description = result.metadata.description; // While this works, I do recommend using the rendered description instead in the future as there are some things a pure string wouldn't work with
+        this.description = result.renderedData.description; // While this works, I do recommend using the rendered description instead in the future as there are some things a pure string wouldn't work with
         this.views = result.metadata.viewCount.toLocaleString();
         this.likes = result.metadata.likes.toLocaleString();
         this.uploaded = result.metadata.uploadDate;
