@@ -128,6 +128,7 @@ export default {
 
   methods: {
     textChanged(text) {
+      if (text.length <= 0) this.response = []; // No text found, no point in calling API
       this.$youtube.autoComplete(text, (res) => {
         const data = res.replace(/^.*?\(/, "").replace(/\)$/, ""); //Format Response
         this.response = JSON.parse(data)[1];
