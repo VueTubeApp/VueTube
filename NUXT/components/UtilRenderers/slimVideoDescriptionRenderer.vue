@@ -1,12 +1,11 @@
 <template>
-  <div class="description">
-    <div v-for="(text, index) in render.description.runs" :key="index">
-      <component
-        :is="text.navigationEndpoint ? 'a' : 'span'"
-        :href="parseLinks(text)"
-        >{{ text.text }}
-      </component>
-    </div>
+  <div class="description" style="white-space: pre-line">
+    <template v-for="(text, index) in render.description.runs">
+      <template v-if="text.navigationEndpoint">
+        <a :href="parseLinks(text)" :key="index">{{ text.text }}</a>
+      </template>
+      <template v-else> {{ text.text }} </template>
+    </template>
   </div>
 </template>
 
