@@ -1,9 +1,9 @@
 <template>
   <div class="py-1">
-    <v-card class="pb-5">
-      <v-card-title>Global Base Color</v-card-title>
+    <v-card flat class="py-5 ma-4 background lighten-1 rounded-xl">
+      <h3 class="mx-6 mb-2">Background Color</h3>
       <v-row class="ml-3 mr-6">
-        <section class="row">
+        <section class="row px-4 pb-8 pt-4">
           <v-switch
             v-model="$vuetify.theme.dark"
             label="Dark Theme"
@@ -35,21 +35,15 @@
         </v-btn>
       </v-row>
     </v-card>
-
-    <v-card class="pb-5">
-      <v-card-title>background Color</v-card-title>
-      <v-card-text>
-        <v-alert color="primary" dense outlined type="warning"
-          >NOTE: This doesn't save after closing the app (yet)</v-alert
-        >
-        <v-color-picker
-          v-model="backgroundColor"
-          dot-size="5"
-          hide-mode-switch
-          mode="hexa"
-        />
-      </v-card-text>
-    </v-card>
+    <h3 class="mx-10 mb-2">Primary Picker</h3>
+    <v-color-picker
+      class="mx-4 background lighten-1 rounded-xl"
+      v-model="backgroundColor"
+      :swatches="swatches"
+      width="100%"
+      show-swatches
+      hide-canvas
+    />
   </div>
 </template>
 
@@ -58,6 +52,14 @@ export default {
   data() {
     return {
       backgroundColor: "#ffffff",
+      swatches: [
+        ["#FF7777"],
+        ["#FFF777"],
+        ["#77FF77"],
+        ["#77FFFF"],
+        ["#777FFF"],
+        ["#FF77FF"],
+      ],
     };
   },
 
@@ -93,13 +95,11 @@ export default {
     amoled() {
       this.$vuetify.theme.themes.dark.background === "#000"
         ? ((this.$vuetify.theme.themes.dark.background = "#222"),
-          (this.$vuetify.theme.themes.dark.background = "#222"),
-          (this.$vuetify.theme.themes.dark.background = "#333"),
           localStorage.setItem("isOled", false))
         : ((this.$vuetify.theme.themes.dark.background = "#000"),
-          (this.$vuetify.theme.themes.dark.background = "#000"),
-          (this.$vuetify.theme.themes.dark.background = "#000"),
           localStorage.setItem("isOled", true));
+
+      console.log(this.$vuetify.theme.themes.dark);
     },
     saveTheme(isDark) {
       this.$vuetube.statusBar.setBackground(
@@ -111,12 +111,10 @@ export default {
 };
 </script>
 
-<style scoped>
-.v-card {
-  margin: 1em;
-}
-
-section {
-  padding: 0 1em 1em 1em;
+<style>
+.v-color-picker__color {
+  width: 2rem !important;
+  height: 2rem !important;
+  border-radius: 1rem !important;
 }
 </style>

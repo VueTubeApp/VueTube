@@ -72,7 +72,7 @@ export default {
             lighten2: "#533",
           },
           background: {
-            base: "#222",
+            base: "#181818",
             lighten1: "#282828",
             lighten2: "#333",
           },
