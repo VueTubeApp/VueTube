@@ -181,9 +181,11 @@ class Innertube {
       response.data.output?.playabilityStatus?.status == ("ERROR" || undefined)
     )
       throw new Error(
-        `Could not get information for video: ${response.status_code ||
-        response.data.output?.playabilityStatus?.status
-        } - ${response.message || response.data.output?.playabilityStatus?.reason
+        `Could not get information for video: ${
+          response.status_code ||
+          response.data.output?.playabilityStatus?.status
+        } - ${
+          response.message || response.data.output?.playabilityStatus?.reason
         }`
       );
     const responseInfo = response.data.output;
@@ -241,7 +243,7 @@ class Innertube {
           .find((contents) => contents.slimVideoMetadataSectionRenderer)
           .slimVideoMetadataSectionRenderer?.contents.find(
             (contents) => contents.slimVideoDescriptionRenderer
-          )?.slimVideoDescriptionRenderer.description.runs,
+          )?.slimVideoDescriptionRenderer,
         recommendations: columnUI?.contents.find(
           (contents) => contents.shelfRenderer
         ).shelfRenderer,

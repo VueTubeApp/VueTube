@@ -32,7 +32,7 @@ export default {
   // The following code is only a demo for debugging purposes, note that each "shelfRenderer" has a "title" value that seems to align to the categories at the top of the vanilla yt app
 
   mounted() {
-    if (!this.recommends.length) {
+    if (!this.recommends.items || !this.recommends.items.length) {
       this.$youtube
         .recommend()
         .then((result) => {
