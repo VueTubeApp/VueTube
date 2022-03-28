@@ -87,7 +87,6 @@ export default {
 
   mounted() {
     this.accentColor = this.$vuetify.theme.themes.dark.primary.base;
-    this.roblox = localStorage.getItem("roblox") === "true";
   },
 
   methods: {
