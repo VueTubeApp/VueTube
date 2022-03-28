@@ -2,7 +2,7 @@
 import { Http } from "@capacitor-community/http";
 import Innertube from "./innertube";
 import constants from "./constants";
-import useRender from "./renderers";
+import rendererUtils from "./renderers";
 import { Buffer } from "buffer";
 
 //---   Logger Function   ---//
@@ -143,5 +143,6 @@ const innertubeModule = {
 export default ({ app }, inject) => {
   inject("youtube", { ...searchModule, ...innertubeModule });
   inject("logger", logger);
+  inject("rendererUtils", rendererUtils);
 };
 logger(constants.LOGGER_NAMES.init, "Program Started");
