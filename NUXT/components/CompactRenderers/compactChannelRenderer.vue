@@ -6,7 +6,9 @@
   >
     <div id="details">
       <a
-        :href="video.navigationEndpoint.browseEndpoint.canonicalBaseUrl"
+        :href="
+          this.$rendererUtils.getNavigationEndpoints(video.navigationEndpoint)
+        "
         class="avatar-link pt-2"
       >
         <v-img

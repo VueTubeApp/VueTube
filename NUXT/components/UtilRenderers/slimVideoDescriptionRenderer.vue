@@ -6,14 +6,24 @@
           text.navigationEndpoint && text.navigationEndpoint.webviewEndpoint
         "
       >
-        <a @click="openExternal(parseLinks(text))" :key="index" class="link">{{
-          text.text
-        }}</a>
+        <a
+          @click="
+            openExternal(this.$rendererUtils.getNavigationEndpoints(text))
+          "
+          :key="index"
+          class="link"
+          >{{ text.text }}</a
+        >
       </template>
-      <template v-else-if="checkInternal(text)">
-        <a @click="openInternal(parseLinks(text))" :key="index" class="link">{{
-          text.text
-        }}</a>
+      <template v-else-if="this.$rendererUtils.checkInternal(text)">
+        <a
+          @click="
+            openInternal(this.$rendererUtils.getNavigationEndpoints(text))
+          "
+          :key="index"
+          class="link"
+          >{{ text.text }}</a
+        >
       </template>
       <template v-else> {{ text.text }} </template>
     </template>
@@ -28,28 +38,6 @@ export default {
   props: ["render"],
 
   methods: {
-    parseLinks(base) {
-      const navEndpoint = base.navigationEndpoint;
-      if (!navEndpoint) return;
-      if (navEndpoint.webviewEndpoint) {
-        return navEndpoint.webviewEndpoint.url;
-      } else if (navEndpoint.browseEndpoint) {
-        return navEndpoint.browseEndpoint.canonicalBaseUrl;
-      } else if (navEndpoint.watchEndpoint) {
-        return `/watch?v=${navEndpoint.watchEndpoint.videoId}`;
-      } else if (navEndpoint.navigationEndpoint) {
-        return; //for now
-      }
-    },
-    checkInternal(base) {
-      const navEndpoint = base.navigationEndpoint;
-      if (!navEndpoint) return false;
-      if (navEndpoint.browseEndpoint || navEndpoint.watchEndpoint) {
-        return true;
-      } else {
-        return false;
-      }
-    },
     async openExternal(url) {
       await Browser.open({ url: url });
     },

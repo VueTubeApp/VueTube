@@ -31,8 +31,9 @@
     <div id="details">
       <a
         :href="
-          video.shortBylineText.runs[0].navigationEndpoint.browseEndpoint
-            .canonicalBaseUrl
+          this.$rendererUtils.getNavigationEndpoints(
+            video.shortBylineText.runs[0].navigationEndpoint
+          )
         "
         class="avatar-link pt-2"
       >
