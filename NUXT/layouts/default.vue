@@ -1,5 +1,5 @@
 <template>
-  <v-app v-show="stateLoaded" style="background: black !important">
+  <v-app style="background: black !important">
     <topNavigation
       :search="search"
       :page="page"
@@ -78,7 +78,6 @@ export default {
   data: () => ({
     search: false,
     response: [],
-    stateLoaded: false,
   }),
 
   computed: {
@@ -104,13 +103,7 @@ export default {
     },
   },
 
-  beforeCreate() {
-    // initializes UI tweaks to the saved state
-    this.$store.commit("tweaks/initTweaks");
-  },
-
   mounted() {
-    this.stateLoaded = true;
     //---   Back Button Listener   ---//
     CapacitorApp.addListener("backButton", ({ canGoBack }) => {
       //---   Back Closes Search   ---//

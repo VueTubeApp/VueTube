@@ -1,12 +1,13 @@
 <template>
-  <center class="container">
-    <v-img
+  <center v-show="stateLoaded" class="container">
+    <!-- <v-img
       src="/icon.svg"
       width="10em"
       style="margin-bottom: 1em"
       :class="$vuetify.theme.dark ? '' : 'invert'"
     />
-    <v-progress-circular size="50" indeterminate color="primary" />
+    <v-progress-circular size="50" indeterminate color="primary" /> -->
+    hi
   </center>
 </template>
 
@@ -14,14 +15,20 @@
 export default {
   layout: "empty",
 
-  //---   Hide Splash Screen   ---//
+  data: () => ({
+    stateLoaded: false,
+  }),
+
   async beforeCreate() {
-    const { SplashScreen } = await require("@capacitor/splash-screen"); // This has to be imported here, otherwise NUXT won't import the package because its so early in the lifecycle -Front
-    await SplashScreen.hide();
+    // initializes UI tweaks to the saved state
+    this.$store.commit("tweaks/initTweaks");
+    // const { SplashScreen } = await require("@capacitor/splash-screen"); // This has to be imported here, otherwise NUXT won't import the package because its so early in the lifecycle -Front
+    // await SplashScreen.hide();
   },
   //---   End Hide Splash Screen   ---//
 
   async mounted() {
+    this.stateLoaded = true;
     //---   Theme Loader Moved From '~/layouts/default.vue' (because this only needs to be run once) -Front   ---//
     setTimeout(() => {
       //Set timeout is required to make it load properly... dont ask me why -Front

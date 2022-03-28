@@ -1,14 +1,14 @@
 <template>
-  <div class="py-1">
-    <v-card class="px-8 py-6 ma-4">
-      <h3>Layout</h3>
-      <v-switch class="mt-6" disabled label="Dense Navbars" />
-      <v-switch disabled label="Disable Top Bar" />
+  <div class="d-flex flex-column justify-end" style="min-height: 100%">
+    <h4 class="mx-10">Layout</h4>
+    <v-card flat class="px-4 mx-4 mb-4 mt-2 background lighten-1 rounded-xl">
+      <v-switch disabled label="Dense Navbars" />
+      <v-switch class="mt-0" disabled label="Disable Top Bar" />
       <!-- <v-switch class="mt-6" disabled label="Reverse (disabled)" /> -->
     </v-card>
-    <v-card class="px-8 pt-6 ma-4">
-      <h3>Rounded Corners</h3>
-      <v-switch class="mt-6" disabled label="Reverse (disabled)" />
+    <h4 class="mx-10">Rounded Corners</h4>
+    <v-card flat class="px-4 mx-4 mb-4 mt-2 background lighten-1 rounded-xl">
+      <v-switch disabled label="Reverse (disabled)" />
       <v-slider
         disabled
         class="mr-2"
@@ -24,6 +24,7 @@
         :max="4"
         step="1"
         thumb-size="64"
+        @input="vibrate()"
       >
         <template #thumb-label="{ value }">
           <div
@@ -46,6 +47,11 @@ export default {
       set(value) {
         this.$store.commit("tweaks/setRoundTweak", value);
       },
+    },
+  },
+  methods: {
+    vibrate() {
+      navigator.vibrate(10);
     },
   },
 };

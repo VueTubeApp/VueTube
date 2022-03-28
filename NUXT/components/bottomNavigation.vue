@@ -15,7 +15,7 @@
       <span v-text="item.name" />
       <v-icon
         :color="tabSelection == i ? 'primary' : 'grey'"
-        :class="tabSelection == i ? 'tab primary lighten-2' : ''"
+        :class="tabSelection == i ? 'tab primary lighten-1' : ''"
         v-text="item.icon"
       />
       <!-- 

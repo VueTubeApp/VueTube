@@ -1,4 +1,3 @@
-import colors from "vuetify/es5/util/colors";
 /**** Front's Notes / Don't Remove ****
  *   Data Storage:
  *   localStorage.setItem("key", data)
@@ -37,7 +36,10 @@ export default {
     meta: [
       { charset: "utf-8" },
       // { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "viewport", content: "width=device-width, initial-scale=1.0, viewport-fit=cover" },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1.0, viewport-fit=cover",
+      },
       { name: "format-detection", content: "telephone=no" },
     ],
   },
@@ -52,29 +54,39 @@ export default {
     customVariables: ["~/assets/variables.scss"],
     treeShake: true,
     theme: {
-      dark: false,
-      options: { customProperties: true },
+      dark: true,
+      options: {
+        customProperties: true,
+        // themeCache: {
+        //   get: (key) => localStorage.getItem(key),
+        //   set: (key, value) => localStorage.setItem(key, value),
+        // },
+      },
       themes: {
         light: {
           primary: {
-            base: colors.red.lighten2,
-            lighten2: colors.red.lighten4,
+            base: "#E57373",
+            lighten1: "#EF9A9A",
+            lighten2: "#FFCDD2",
           },
           background: {
-            base: "#fff",
+            base: "#ffffff",
             lighten1: "#eee",
-            lighten2: "#ddd",
+            lighten2: "#e0e0e0",
+            lighten4: "#aaaaaa",
           },
         },
         dark: {
           primary: {
-            base: colors.red.darken2,
-            lighten2: "#533",
+            base: "#D32F2F",
+            lighten1: "#533",
+            lighten2: "#300",
           },
           background: {
             base: "#181818",
-            lighten1: "#282828",
-            lighten2: "#333",
+            lighten1: "#222",
+            lighten2: "#282828",
+            lighten4: "#424242",
           },
         },
       },

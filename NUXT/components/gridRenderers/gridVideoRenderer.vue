@@ -6,6 +6,7 @@
   >
     <div style="position: relative" class="thumbnail-container">
       <v-img
+        v-if="video.thumbnail"
         :aspect-ratio="16 / 9"
         :src="
           $youtube.getThumbnail(
@@ -16,6 +17,7 @@
         "
       />
       <div
+        v-if="video.thumbnailOverlays"
         class="videoRuntimeFloat"
         :class="
           'style-' +

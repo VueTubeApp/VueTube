@@ -60,7 +60,7 @@
         <p>Channel Stuff</p>
       </v-card-text>
       <div v-if="showMore" class="scroll-y ml-2 mr-2">
-        <slim-video-description-renderer :render="description">
+        <slim-video-description-renderer :render="description" />
       </div>
 
       <!-- <v-bottom-sheet
