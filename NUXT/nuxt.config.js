@@ -66,7 +66,7 @@ export default {
         light: {
           primary: {
             base: "#E57373",
-            lighten1: "#EF9A9A",
+            lighten1: "#FFAAAA",
             lighten2: "#FFCDD2",
           },
           background: {

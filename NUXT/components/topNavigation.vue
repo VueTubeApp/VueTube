@@ -94,8 +94,8 @@ export default {
 <style scoped>
 .topNav {
   position: fixed;
-  /* top: env(safe-area-inset-top); */
-  top: 0;
+  top: env(safe-area-inset-top);
+  /* top: 0; */
   width: 100%;
   z-index: 999;
   /*border-radius: 0 0 1em 1em !important;*/

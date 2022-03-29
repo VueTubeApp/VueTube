@@ -52,10 +52,37 @@
       style="pointer-events: none"
       class="px-4"
     />
+    <!-- <div class="py-1 background lighten-2" /> -->
 
-    <v-spacer></v-spacer>
+    <v-spacer />
 
-    <h4 class="mx-8 my-2">Background Color</h4>
+    <div class="py-1 background lighten-1" />
+
+    <h4 class="mx-8 mt-6 mb-2">Accent Color</h4>
+    <v-color-picker
+      v-model="primaryColor"
+      style="min-width: 100%"
+      class="px-8 mt-2 background"
+      :swatches="$vuetify.theme.dark ? swatchesDark : swatchesLight"
+      show-swatches
+      hide-canvas
+      hide-inputs
+    >
+    </v-color-picker>
+    <!-- <v-color-picker
+      v-model="primaryColor"
+      style="min-width: 100%"
+      class="px-10 background"
+      hide-mode-switch
+      hide-sliders
+      hide-canvas
+      mode="hexa"
+    >
+    </v-color-picker> -->
+
+    <div class="py-1 mt-4 background lighten-1" />
+
+    <h4 class="mx-8 mt-6 my-2">Background Color</h4>
     <v-radio-group
       v-model="backgroundColor"
       class="mt-0"
@@ -65,7 +92,7 @@
         class="d-flex flex-row px-6 no-wrap"
         style="max-width: 100%; overflow-x: auto"
       >
-        <div class="text-center">
+        <div v-show="false" class="text-center">
           <!-- on-icon="mdi-brightness-1" -->
           <v-radio
             light
@@ -111,7 +138,7 @@
             class="py-4 pl-4 pr-2 ma-2 rounded-lg"
             value="#000000"
           />
-          Night
+          Black
         </div>
         <div class="text-center">
           <!-- on-icon="mdi-brightness-3" -->
@@ -133,37 +160,18 @@
         </div>
       </div>
     </v-radio-group>
-    <!-- <v-switch
+
+    <div class="py-1 background lighten-1" />
+
+    <v-switch
       v-model="$vuetify.theme.dark"
-      class="mx-10 mt-0"
+      class="mx-8 mt-6 mb-6"
       label="Dark Theme"
       hint="Bravo Six, Going Dark."
       persistent-hint
       inset
       @click="saveTheme($vuetify.theme.dark)"
-    /> -->
-
-    <h4 class="mx-8 mt-6 mb-2">Accent Color</h4>
-    <v-color-picker
-      v-model="primaryColor"
-      style="min-width: 100%"
-      class="px-8 mt-2 background"
-      :swatches="$vuetify.theme.dark ? swatchesDark : swatchesLight"
-      show-swatches
-      hide-canvas
-      hide-inputs
-    >
-    </v-color-picker>
-    <v-color-picker
-      v-model="primaryColor"
-      style="min-width: 100%"
-      class="px-10 background"
-      hide-mode-switch
-      hide-sliders
-      hide-canvas
-      mode="hexa"
-    >
-    </v-color-picker>
+    />
   </div>
 </template>
 
@@ -204,15 +212,15 @@ export default {
         localStorage.getItem("darkTheme") === "true"
           ? (primary1[i] -= 100)
           : (primary1[i] += 100);
-        if (primary1[i] > 255) primary1[i] = 255;
-        if (primary1[i] < 0) primary1[i] = 0;
+        if (primary1[i] > 255) primary1[i] = 254;
+        if (primary1[i] < 0) primary1[i] = 1;
       }
       for (const i in primary2) {
         localStorage.getItem("darkTheme") === "true"
           ? (primary2[i] -= 200)
           : (primary2[i] += 200);
-        if (primary2[i] > 255) primary2[i] = 255;
-        if (primary2[i] < 0) primary2[i] = 0;
+        if (primary2[i] > 255) primary2[i] = 254;
+        if (primary2[i] < 0) primary2[i] = 1;
       }
 
       primary1 = this.$vuetube.rgbToHex(primary1.r, primary1.g, primary1.b);
@@ -224,17 +232,23 @@ export default {
   },
 
   methods: {
+    saveTheme() {
+      navigator.vibrate([10, 100, 5]);
+    },
     theme(bg) {
       console.log(bg);
       if (bg !== this.$vuetify.theme.currentTheme.primary.lighten2) {
         localStorage.setItem("darkTheme", bg !== "#ffffff");
         this.$vuetify.theme.dark = bg !== "#ffffff";
+        bg !== "#ffffff"
+          ? this.$vuetube.statusBar.setDark()
+          : this.$vuetube.statusBar.setLight();
       }
       this.$vuetify.theme.currentTheme.background = bg;
+      console.log(this.$vuetify.theme.currentTheme);
+      this.$vuetube.statusBar.setBackground(bg);
+      this.$vuetube.navigationBar.setColor(bg, this.$vuetify.theme.dark);
       // localStorage.setItem("isOled", false)
-      // this.$vuetube.statusBar.setBackground(bg);
-      this.$vuetube.statusBar.setTransparent();
-      // this.$vuetube.statusBar.setDark();
     },
   },
 };

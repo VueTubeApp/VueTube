@@ -54,7 +54,7 @@ const module = {
       return StatusBar.setOverlaysWebView({ overlay: true });
     },
     async setBackground(color) {
-      return await StatusBar.setBackgroundColor({ color: color });
+      return await StatusBar.setBackgroundColor({ color });
     },
   },
 
@@ -64,6 +64,12 @@ const module = {
     },
     async show() {
       return await NavigationBar.show();
+    },
+    async setColor(color, darkButtons) {
+      return await NavigationBar.setColor({ color, darkButtons });
+    },
+    async setTransparent() {
+      return NavigationBar.setTransparency({ isTransparent: true });
     },
   },
 
