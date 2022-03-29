@@ -6,6 +6,7 @@ const url = {
   YT_MUSIC_URL: "https://music.youtube.com",
   YT_BASE_API: "https://www.youtube.com/youtubei/v1",
   YT_SUGGESTIONS: "https://suggestqueries.google.com/complete",
+  YT_API_STATS: "https://www.youtube.com/api/stats/atr",
   VT_GITHUB: "https://api.github.com/repos/Frontesque/VueTube",
 };
 

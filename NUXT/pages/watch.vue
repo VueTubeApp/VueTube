@@ -160,6 +160,7 @@ export default {
     },
   },
   mounted() {
+    this.$youtube.saveApiStats("detailpage", this.$route.query.v, "streamingstats")
     this.getVideo();
   },
   methods: {

@@ -4,6 +4,7 @@ import Innertube from "./innertube";
 import constants from "./constants";
 import rendererUtils from "./renderers";
 import { Buffer } from "buffer";
+import iconv from "iconv-lite";
 
 //---   Logger Function   ---//
 function logger(func, data, isError = false) {
@@ -19,15 +20,7 @@ function getEncoding(contentType) {
   const re = /charset=([^()<>@,;:\"/[\]?.=\s]*)/i;
   const content = re.exec(contentType);
   console.log(content);
-  if (!content || content[1].toLowerCase() == "utf-8") {
-    return "utf8";
-  }
-  if (content[1].toLowerCase() == "iso-8859-1") {
-    return "latin1";
-  }
-  if (content[1].toLowerCase() == "utf16le") {
-    return "utf16le";
-  }
+  return content[1].toLowerCase();
 }
 
 const searchModule = {
@@ -45,7 +38,7 @@ const searchModule = {
         // make a new buffer object from res.data
         const buffer = Buffer.from(res.data, "base64");
         // convert res.data from iso-8859-1 to utf-8
-        const data = buffer.toString(getEncoding(contentType));
+        const data = iconv.decode(buffer, getEncoding(contentType));
         logger(constants.LOGGER_NAMES.autoComplete, data);
         callback(data);
       })
@@ -136,6 +129,10 @@ const innertubeModule = {
     } catch (err) {
       logger(constants.LOGGER_NAMES.search, err, true);
     }
+  },
+
+  async saveApiStats(currentPageType, id, event) {
+    await InnertubeAPI.apiStats(currentPageType, id, event);
   },
 };
 
