@@ -1,5 +1,5 @@
 <template>
-  <div class="description" style="white-space: pre-line">
+  <div class="description">
     <template v-for="(text, index) in render.description.runs">
       <template
         v-if="
@@ -7,19 +7,15 @@
         "
       >
         <a
-          @click="
-            openExternal(this.$rendererUtils.getNavigationEndpoints(text))
-          "
+          @click="openExternal($rendererUtils.getNavigationEndpoints(text))"
           :key="index"
           class="link"
           >{{ text.text }}</a
         >
       </template>
-      <template v-else-if="this.$rendererUtils.checkInternal(text)">
+      <template v-else-if="$rendererUtils.checkInternal(text)">
         <a
-          @click="
-            openInternal(this.$rendererUtils.getNavigationEndpoints(text))
-          "
+          @click="openInternal($rendererUtils.getNavigationEndpoints(text))"
           :key="index"
           class="link"
           >{{ text.text }}</a
@@ -30,7 +26,12 @@
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.description {
+  white-space: pre-line;
+  margin-bottom: 16px;
+}
+</style>
 
 <script>
 import { Browser } from "@capacitor/browser";
