@@ -2,7 +2,7 @@
   <div class="accent">
 
     <!--   Stock Player   -->
-    <videoPlayer :vidSrc="vidSrc" /> 
+    <videoPlayer :vid-src="vidSrc" />
 
     <!--   VueTube Player V1   -->
     <!-- <VTPlayerV1 :sources="sources" v-if="sources.length > 0" />-->
@@ -60,7 +60,7 @@
         <p>Channel Stuff</p>
       </v-card-text>
       <div v-if="showMore" class="scroll-y ml-2 mr-2">
-        <slim-video-description-renderer :render="description">
+        <slim-video-description-renderer :render="description" />
       </div>
 
       <!-- <v-bottom-sheet
@@ -91,18 +91,11 @@
   </div>
 </template>
 
-<style>
-.vertical-button span.v-btn__content {
-  flex-direction: column;
-  justify-content: space-around;
-}
-</style>
-
 <script>
 import { Share } from "@capacitor/share";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
-import SlimVideoDescriptionRenderer from '../components/UtilRenderers/slimVideoDescriptionRenderer.vue';
+import SlimVideoDescriptionRenderer from '~/components/UtilRenderers/slimVideoDescriptionRenderer.vue';
 
 export default {
   components: { ShelfRenderer, VidLoadRenderer, SlimVideoDescriptionRenderer },
@@ -179,7 +172,7 @@ export default {
           result.availableResolutions[
             result.availableResolutions.length - 1
           ].url; // Takes the highest available resolution with both video and Audio. Note this will be lower than the actual highest resolution
-        
+
         //---   Content Stuff   ---//
         this.title = result.title;
         this.description = result.renderedData.description; // While this works, I do recommend using the rendered description instead in the future as there are some things a pure string wouldn't work with
@@ -217,3 +210,10 @@ export default {
   },
 };
 </script>
+
+<style>
+.vertical-button span.v-btn__content {
+  flex-direction: column;
+  justify-content: space-around;
+}
+</style>
