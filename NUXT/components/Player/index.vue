@@ -13,7 +13,6 @@
         :src="vidSrc"
         width="100%"
         style="max-height: 50vh"
-        :duration="duration"
         @webkitfullscreenchange="handleFullscreenChange"
       />
     </div>
@@ -77,8 +76,8 @@ export default {
     updateTiming() {
       const player = this.$refs.player;
       if (player == undefined) return;
-      this.endDuration = player.currentTime;
-      console.log(player.duration, this.endDuration);
+      this.duration = player.currentTime;
+      this.endDuration = player.duration;
     },
   },
 };
@@ -111,6 +110,8 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 5em !important;
+  width: 5em !important;
 }
 .scrubber {
   position: absolute;
