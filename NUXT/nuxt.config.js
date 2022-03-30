@@ -57,37 +57,15 @@ export default {
       dark: true,
       options: {
         customProperties: true,
-        // themeCache: {
-        //   get: (key) => localStorage.getItem(key),
-        //   set: (key, value) => localStorage.setItem(key, value),
-        // },
       },
       themes: {
         light: {
-          primary: {
-            base: "#E57373",
-            lighten1: "#FFAAAA",
-            lighten2: "#FFCDD2",
-          },
-          background: {
-            base: "#ffffff",
-            lighten1: "#eee",
-            lighten2: "#e0e0e0",
-            lighten4: "#aaaaaa",
-          },
+          primary: "#E57373",
+          background: "#ffffff",
         },
         dark: {
-          primary: {
-            base: "#D32F2F",
-            lighten1: "#533",
-            lighten2: "#300",
-          },
-          background: {
-            base: "#181818",
-            lighten1: "#222",
-            lighten2: "#282828",
-            lighten4: "#424242",
-          },
+          primary: "#D32F2F",
+          background: "#181818",
         },
       },
     },

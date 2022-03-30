@@ -14,8 +14,20 @@
     >
       <span v-text="item.name" />
       <v-icon
-        :color="tabSelection == i ? 'primary' : 'grey'"
-        :class="tabSelection == i ? 'tab primary lighten-1' : ''"
+        :color="
+          tabSelection == i
+            ? 'primary'
+            : $vuetify.theme.dark
+            ? 'background lighten-4'
+            : 'background darken-4'
+        "
+        :class="
+          tabSelection == i
+            ? $vuetify.theme.dark
+              ? 'tab primary darken-4'
+              : 'tab primary lighten-4'
+            : ''
+        "
         v-text="item.icon"
       />
       <!-- 
