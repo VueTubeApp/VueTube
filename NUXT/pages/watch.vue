@@ -183,10 +183,10 @@ export default {
         //---   Content Stuff   ---//
         this.title = result.title;
         this.description = result.renderedData.description; // While this works, I do recommend using the rendered description instead in the future as there are some things a pure string wouldn't work with
-        this.views = result.metadata.viewCount.toLocaleString();
+        this.views = parseInt(result.metadata.viewCount).toLocaleString();
         this.likes = result.metadata.likes.toLocaleString();
         this.uploaded = result.metadata.uploadDate;
-        this.interactions[0].value = result.metadata.likes;
+        this.interactions[0].value = result.metadata.likes.toLocaleString();
         this.loaded = true;
 
         this.recommends = result.renderedData.recommendations;
