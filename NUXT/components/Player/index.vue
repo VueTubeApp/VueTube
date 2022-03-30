@@ -5,7 +5,7 @@
         <v-icon size="5em" color="white">mdi-{{ playing ? "pause" : "play" }}</v-icon>
       </v-btn>
 
-      <scrubber />
+      <scrubber class="scrubber" :duration="duration" :endDuration="endDuration" />
 
       <video
         ref="player"
@@ -13,6 +13,7 @@
         :src="vidSrc"
         width="100%"
         style="max-height: 50vh"
+        :duration="duration"
         @webkitfullscreenchange="handleFullscreenChange"
       />
     </div>
@@ -44,8 +45,8 @@ export default {
 
       //---   Player State Information   ---//
       playing: true,
-      currentTime: 0,
-      videoEnd: 0,
+      duration: 0,
+      endDuration: 0,
     };
   },
 
@@ -73,18 +74,11 @@ export default {
       }
     },
 
-    scrubTo() {
-      const player = this.$refs.player;
-      player.currentTime = 0;
-      console.log(val, this.currentTime, player.currentTime);
-    },
-
     updateTiming() {
       const player = this.$refs.player;
       if (player == undefined) return;
-      this.videoEnd = player.duration;
-      this.currentTime = player.currentTime;
-      console.log(player.currentTime, this.currentTime);
+      this.endDuration = player.currentTime;
+      console.log(player.duration, this.endDuration);
     },
   },
 };
@@ -118,9 +112,10 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.seekBar {
+.scrubber {
   position: absolute;
   bottom: 0;
-  width: 100%;
 }
+
+
 </style>

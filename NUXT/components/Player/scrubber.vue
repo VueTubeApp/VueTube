@@ -2,7 +2,8 @@
   <div>
 
     <div class="scrubber">
-
+      <div ref="progress" class="progress" />
+      <div ref="background" class="background" />
     </div>
 
   </div>
@@ -10,13 +11,15 @@
 
 <script>
 export default {
-  duration: {
-    type: Number,
-    default: 0,
-  },
-  endDuration: {
-    type: Number,
-    default: 0,
+  props: {
+    duration: {
+      type: Number,
+      default: 0,
+    },
+    endDuration: {
+      type: Number,
+      default: 0,
+    },
   },
 }
 </script>
