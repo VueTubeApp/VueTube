@@ -94,16 +94,13 @@ export default {
 
 <style scoped>
 .topNav {
+  /* ios notch */
+  top: env(safe-area-inset-top) !important;
   position: fixed;
-  top: env(safe-area-inset-top);
-  /* top: 0; */
   width: 100%;
-  /* z-index: 999; */
-  /*border-radius: 0 0 1em 1em !important;*/
 }
 .topNavSearch {
   margin-bottom: -10em;
   margin-left: 2em;
-  /*transform: translateY(-2.5%);*/
 }
 </style>

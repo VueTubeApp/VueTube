@@ -68,13 +68,12 @@ export default {
 
 <style scoped>
 .bottomNav {
+  /* ios gesture nav */
+  bottom: env(safe-area-inset-bottom) !important;
   box-shadow: none !important;
   height: 4rem !important;
-  position: fixed;
-  bottom: env(safe-area-inset-bottom) !important;
-  /* bottom: 0; */
   padding: 0 !important;
-  /* z-index: 99999; */
+  position: fixed;
 }
 .navButton {
   width: 25vw !important;

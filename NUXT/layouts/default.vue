@@ -154,11 +154,12 @@ export default {
   overflow-y: scroll !important; /* has to be scroll, not auto */
   overflow-x: hidden !important;
   -webkit-overflow-scrolling: touch !important;
+  /* ios notch & gesture nav */
+  margin: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left) !important;
 }
 html,
 body {
-  /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left) !important;
-  margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left) !important; */
   background: var(--v-background-base);
   overflow: hidden;
 }

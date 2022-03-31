@@ -27,7 +27,7 @@
         :max="4"
         step="1"
         thumb-size="64"
-        @input="$vuetube.haptics.hapticsImpactLight(1)"
+        @input="$vuetube.haptics.hapticsImpactLight(0)"
       >
         <template #thumb-label="{ value }">
           <div
