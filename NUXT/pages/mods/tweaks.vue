@@ -3,6 +3,7 @@
     <v-card
       flat
       class="px-6 ma-4 mt-2 background"
+      style="transition-duration: 0.3s; transition-property: border-radius"
       :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
       :style="{
         borderRadius: `${roundTweak / 2}rem`,
@@ -26,7 +27,7 @@
         :max="4"
         step="1"
         thumb-size="64"
-        @input="vibrate()"
+        @input="$vuetube.haptics.hapticsImpactLight(1)"
       >
         <template #thumb-label="{ value }">
           <div
@@ -49,11 +50,6 @@ export default {
       set(value) {
         this.$store.commit("tweaks/setRoundTweak", value);
       },
-    },
-  },
-  methods: {
-    vibrate() {
-      navigator.vibrate(10);
     },
   },
 };

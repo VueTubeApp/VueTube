@@ -4,6 +4,7 @@ import { StatusBar, Style } from "@capacitor/status-bar";
 import { NavigationBar } from "@hugotomazi/capacitor-navigation-bar";
 import constants from "./constants";
 import { hexToRgb, rgbToHex } from "./utils";
+import { Haptics, ImpactStyle } from "@capacitor/haptics";
 
 const module = {
   //---   Get GitHub Commits   ---//
@@ -35,6 +36,21 @@ const module = {
       .catch((err) => {
         callback(err);
       });
+  },
+
+  haptics: {
+    async hapticsImpactHeavy(x) {
+      await Haptics.impact({ style: ImpactStyle.Heavy, duration: x });
+    },
+    async hapticsImpactMedium(x) {
+      await Haptics.impact({ style: ImpactStyle.Medium, duration: x });
+    },
+    async hapticsImpactLight(x) {
+      await Haptics.impact({ style: ImpactStyle.Light, duration: x });
+    },
+    async hapticsVibrate(x) {
+      await Haptics.vibrate(x);
+    },
   },
 
   statusBar: {

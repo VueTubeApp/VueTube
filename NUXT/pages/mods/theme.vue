@@ -105,7 +105,10 @@
         flat
         class="d-flex flex-row justify-between mx-8 mb-4 px-4 background rounded-lg"
         :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
-        @click="$vuetify.theme.dark = !$vuetify.theme.dark"
+        @click="
+          ($vuetify.theme.dark = !$vuetify.theme.dark),
+            $vuetube.haptics.hapticsImpactLight(1)
+        "
       >
         <div class="my-auto">
           <div>Dark Mode</div>
@@ -206,9 +209,6 @@ export default {
         )
           this.$vuetify.theme.currentTheme.background = this.experimentalLight;
       }, 0);
-    },
-    saveTheme() {
-      navigator.vibrate([10, 100, 5]);
     },
   },
 };
