@@ -7,8 +7,8 @@
 
   <div>
     <!--   Video Loading Animation   -->
-    <vid-load-renderer v-if="!recommends" />
-    <horizontal-list-renderer v-else :render="recommends" />
+    <vid-load-renderer v-if="!recommends.contents" />
+    <horizontal-list-renderer v-else :render="recommends.contents[0]" />
   </div>
 </template>
 
@@ -29,14 +29,12 @@ export default {
     },
   },
 
-  // The following code is only a demo for debugging purposes, note that each "shelfRenderer" has a "title" value that seems to align to the categories at the top of the vanilla yt app
-
   mounted() {
     if (!this.recommends.items || !this.recommends.items.length) {
       this.$youtube
         .recommend()
         .then((result) => {
-          if (result) this.recommends = result[0];
+          if (result) this.recommends = result;
         })
         .catch((error) => this.$logger("Home Page", error, true));
     }

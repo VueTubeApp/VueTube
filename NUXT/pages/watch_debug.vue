@@ -1,13 +1,13 @@
 <template>
   <div class="accent">
 
-    <VTPlayerV1 :sources="sources" v-if="sources.length > 0" />
+    <player :sources="sources" v-if="sources.length > 0" />
 
   </div>
 </template>
 
 <script>
-
+import player from "~/components/Player/index.vue"
 export default {
   data() {
     return {

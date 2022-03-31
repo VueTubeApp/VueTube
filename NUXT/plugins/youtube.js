@@ -107,6 +107,8 @@ const innertubeModule = {
   // Front page recommendation
   async recommend() {
     const response = await InnertubeAPI.getRecommendationsAsync();
+
+
     if (!response.success)
       throw new Error("An error occurred and innertube failed to respond");
 
@@ -118,8 +120,28 @@ const innertubeModule = {
 
       if (video) return video;
     });
-    console.log(final);
-    return final;
+    const continuations = response.data.contents.singleColumnBrowseResultsRenderer.tabs[0]
+      .tabRenderer.content.sectionListRenderer.continuations
+    console.log({ continuations: continuations, contents: final });
+    return { continuations: continuations, contents: final };
+  },
+
+  async recommendContinuation(response) {
+    const contents = response.continuationContents.sectionListContinuation.contents;
+    const final = contents.map((shelves) => {
+      const video = shelves.shelfRenderer?.content?.horizontalListRenderer;
+
+      if (video) return video;
+    });
+    const continuations = response.continuationContents.sectionListContinuation.continuations
+    return { continuations: continuations, contents: final };
+  },
+
+  async continuation(continuation, endpoint) {
+    const response = await InnertubeAPI.getContinuationsAsync(continuation, endpoint);
+    console.log(response)
+    if (!response.success) throw new Error("An error occurred and innertube failed to respond");
+    return response
   },
 
   async search(query) {

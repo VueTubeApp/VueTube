@@ -95,6 +95,42 @@ class Innertube {
     };
   }
 
+  async getContinuationsAsync(continuation, type) {
+    let data = { context: this.context, continuation: continuation };
+    let url
+    switch (type) {
+      case "browse":
+        url = `${constants.URLS.YT_BASE_API}/browse?key=${this.key}`;
+        break
+      case "search":
+        url = `${constants.URLS.YT_BASE_API}/search?key=${this.key}`;
+        break
+      case "next":
+        url = `${constants.URLS.YT_BASE_API}/next?key=${this.key}`;
+        break
+      default:
+        throw ("Invalid type")
+    }
+
+    const response = await Http.post({
+      url: url,
+      data: data,
+      headers: { "Content-Type": "application/json" },
+    }).catch((error) => error);
+    if (response instanceof Error) {
+      return {
+        success: false,
+        status_code: response.status,
+        message: response.message,
+      };
+    }
+    return {
+      success: true,
+      status_code: response.status,
+      data: response.data,
+    };
+  }
+
   async getVidAsync(id) {
     let data = { context: this.context, videoId: id };
     const responseNext = await Http.post({
@@ -198,11 +234,9 @@ class Innertube {
       response.data.output?.playabilityStatus?.status == ("ERROR" || undefined)
     )
       throw new Error(
-        `Could not get information for video: ${
-          response.status_code ||
-          response.data.output?.playabilityStatus?.status
-        } - ${
-          response.message || response.data.output?.playabilityStatus?.reason
+        `Could not get information for video: ${response.status_code ||
+        response.data.output?.playabilityStatus?.status
+        } - ${response.message || response.data.output?.playabilityStatus?.reason
         }`
       );
     const responseInfo = response.data.output;
