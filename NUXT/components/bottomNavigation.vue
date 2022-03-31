@@ -2,7 +2,7 @@
   <v-bottom-navigation
     v-model="tabSelection"
     shift
-    class="bottomNav py-4 background"
+    class="bottomNav py-4 transparent"
   >
     <v-btn
       v-for="(item, i) in tabs"
@@ -74,7 +74,7 @@ export default {
   bottom: env(safe-area-inset-bottom) !important;
   /* bottom: 0; */
   padding: 0 !important;
-  z-index: 99999;
+  /* z-index: 99999; */
 }
 .navButton {
   width: 25vw !important;

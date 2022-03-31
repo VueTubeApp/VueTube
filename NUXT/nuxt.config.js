@@ -64,8 +64,8 @@ export default {
           background: "#ffffff",
         },
         dark: {
-          primary: "#D32F2F",
-          background: "#181818",
+          primary: "#B71C1C",
+          background: "#000000",
         },
       },
     },

@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background: black !important">
+  <v-app style="background: transparent !important">
     <topNavigation
       :search="search"
       :page="page"
@@ -9,16 +9,10 @@
       @scroll-to-top="$refs.pgscroll.scrollTop = 0"
     />
 
-    <div class="background" style="height: 100%; margin-top: 4rem">
+    <div style="height: 100%; margin-top: 4rem">
       <div
         v-show="!search"
-        class="background"
-        style="
-          overflow: hidden;
-          height: calc(100vh - 8rem);
-          transition-duration: 0.3s;
-          transition-property: border-radius;
-        "
+        style="overflow: hidden; height: calc(100vh - 8rem)"
         :style="{
           borderRadius: `${roundTweak / 2}rem`,
         }"
@@ -32,14 +26,7 @@
 
       <div
         v-show="search"
-        class="background"
-        style="
-          padding: 0;
-          overflow: hidden;
-          height: calc(100vh - 4rem);
-          transition-duration: 0.3s;
-          transition-property: border-radius;
-        "
+        style="padding: 0; overflow: hidden; height: calc(100vh - 4rem)"
       >
         <div class="scroll-y" style="height: 100%">
           <div v-if="search" style="min-width: 180px">
@@ -165,13 +152,14 @@ export default {
 
 .scroll-y {
   overflow-y: scroll !important; /* has to be scroll, not auto */
+  overflow-x: hidden !important;
   -webkit-overflow-scrolling: touch !important;
 }
 html,
 body {
   /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left) !important;
   margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left) !important; */
-  background: black;
+  background: var(--v-background-base);
   overflow: hidden;
 }
 

@@ -33,7 +33,7 @@
     <div id="details">
       <a
         :href="
-          this.$rendererUtils.getNavigationEndpoints(
+          $rendererUtils.getNavigationEndpoints(
             video.shortBylineText.runs[0].navigationEndpoint
           )
         "

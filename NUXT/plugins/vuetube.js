@@ -56,6 +56,12 @@ const module = {
     async setBackground(color) {
       return await StatusBar.setBackgroundColor({ color });
     },
+    setTheme(color, dark) {
+      StatusBar.setBackgroundColor({ color });
+      dark
+        ? StatusBar.setStyle({ style: Style.Dark })
+        : StatusBar.setStyle({ style: Style.Light });
+    },
   },
 
   navigationBar: {
@@ -65,7 +71,7 @@ const module = {
     async show() {
       return await NavigationBar.show();
     },
-    async setColor(color, darkButtons) {
+    async setTheme(color, darkButtons) {
       return await NavigationBar.setColor({ color, darkButtons });
     },
     async setTransparent() {
