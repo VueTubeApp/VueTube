@@ -1,5 +1,5 @@
 <template>
-  <center v-show="themeFetched" class="container">
+  <center class="container">
     <v-img
       src="/icon.svg"
       width="10rem"
@@ -18,20 +18,12 @@ export default {
   layout: "empty",
 
   data: () => ({
-    progressMsg: "Theming",
-    themeFetched: false,
+    progressMsg: "Fetching the API",
   }),
-
-  beforeCreate() {
-    this.$store.commit("tweaks/initTweaks");
-    // This has to be imported here,otherwise NUXT won't import the package because its so early in the lifecycle -Front
-    // const { SplashScreen } = await require("@capacitor/splash-screen");
-    // await SplashScreen.hide();
-  },
-
   async mounted() {
-    // Set timeout is required for $vuetify.theme... dont ask me why -Front
+    this.$store.commit("tweaks/initTweaks");
     const theming = new Promise((resolve) =>
+      // Set timeout is required for $vuetify.theme... dont ask me why -Front
       setTimeout(() => {
         this.$vuetify.theme.dark = JSON.parse(localStorage.getItem("darkTheme")) === true;
         if (localStorage.getItem("primaryDark") != null)
@@ -42,7 +34,6 @@ export default {
           this.$vuetify.theme.themes.dark.background = localStorage.getItem("backgroundDark");
         if (localStorage.getItem("backgroundLight") != null)
           this.$vuetify.theme.themes.light.background = localStorage.getItem("backgroundLight");
-        this.themeFetched = true;
         this.$vuetube.navigationBar.setTheme(
           this.$vuetify.theme.currentTheme.background,
           !this.$vuetify.theme.dark
@@ -56,7 +47,6 @@ export default {
     );
 
     await theming;
-    this.progressMsg = "Fetching the API";
     await this.$youtube.getAPI();
     this.progressMsg = "Navigating Home";
     this.$router.push(`/${localStorage.getItem("startPage") || "home"}`);
@@ -66,13 +56,11 @@ export default {
 
 <style scoped>
 .container {
-  padding-top: 3em;
   display: block;
-
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -80%);
+  transform: translate(-50%, -50%);
 }
 .intro {
   opacity: 0;

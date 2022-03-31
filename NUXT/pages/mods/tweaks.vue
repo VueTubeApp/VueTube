@@ -2,13 +2,13 @@
   <div class="d-flex flex-column justify-end" style="min-height: 100%">
     <v-card
       flat
-      class="px-4 ma-4 mt-2 background"
+      class="px-6 ma-4 mt-2 background"
       :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
       :style="{
         borderRadius: `${roundTweak / 2}rem`,
       }"
     >
-      <h3 class="mt-4">Rounded Corners</h3>
+      <h3 class="mt-5">Rounded Corners</h3>
       <div
         class="background--text"
         :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"

@@ -12,21 +12,18 @@
   "android": {
     "backgroundColor": "#000000"
   },
+  "ios": {
+    "backgroundColor": "#000000"
+  },
 
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0,
-      "launchAutoHide": true,
       "backgroundColor": "#000000",
-      "androidSplashResourceName": "splash",
-      "androidScaleType": "CENTER_CROP",
-      "androidSpinnerStyle": "large",
-      "iosSpinnerStyle": "small",
-      "spinnerColor": "#000000",
-      "showSpinner": false,
       "splashFullScreen": false,
-      "splashImmersive": false
+      "splashImmersive": false,
+      "launchAutoHide": true,
+      "showSpinner": false
     }
   }
-
 }
