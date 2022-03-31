@@ -41,7 +41,9 @@
                   : '2px solid var(--v-primary-lighten4)',
               }"
               class="py-4 px-4 ma-2 rounded-lg"
-              :value="$vuetify.theme.dark ? experimentalDark : experimentalLight"
+              :value="
+                $vuetify.theme.dark ? experimentalDark : experimentalLight
+              "
             />
             Adaptive
           </div>
@@ -103,6 +105,7 @@
         flat
         class="d-flex flex-row justify-between mx-8 mb-4 px-4 background rounded-lg"
         :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+        @click="$vuetify.theme.dark = !$vuetify.theme.dark"
       >
         <div class="my-auto">
           <div>Dark Mode</div>
@@ -115,7 +118,12 @@
           </div>
         </div>
         <v-spacer />
-        <v-switch v-model="$vuetify.theme.dark" persistent-hint inset />
+        <v-switch
+          v-model="$vuetify.theme.dark"
+          style="pointer-events: none"
+          persistent-hint
+          inset
+        />
       </v-card>
     </div>
   </client-only>
@@ -126,8 +134,18 @@ export default {
   data() {
     return {
       primaryLight: ["#E57373", "#8b5f37", "#016a49", "#34495E"],
-      primaryDark: ["#B71C1C", "#FFBBFF", "#AAAFFF", "#AAFFFF", "#7CD6AF", "#FEC89B"],
-      backgroundsDark: [{ name: "Dark", color: "#181818" }, { name: "Black", color: "#000000" }],
+      primaryDark: [
+        "#B71C1C",
+        "#FFBBFF",
+        "#AAAFFF",
+        "#AAFFFF",
+        "#7CD6AF",
+        "#FEC89B",
+      ],
+      backgroundsDark: [
+        { name: "Dark", color: "#181818" },
+        { name: "Black", color: "#000000" },
+      ],
       backgroundsLight: [{ name: "Normal", color: "#ffffff" }],
       experimentalLight: "",
       experimentalDark: "",
@@ -166,16 +184,26 @@ export default {
   },
   methods: {
     adapt() {
-      let hexD = getComputedStyle(document.documentElement).getPropertyValue("--v-primary-darken4");
-      let hexL = getComputedStyle(document.documentElement).getPropertyValue("--v-primary-lighten4");
+      let hexD = getComputedStyle(document.documentElement).getPropertyValue(
+        "--v-primary-darken4"
+      );
+      let hexL = getComputedStyle(document.documentElement).getPropertyValue(
+        "--v-primary-lighten4"
+      );
       // the menace above returns a hex string with A SPACE " " in front of it, that's why substring(1)
       // the SPACE " " is stored as part of the CSS variable itself to be used for chaining
       this.experimentalDark = hexD.substring(1).toUpperCase();
       this.experimentalLight = hexL.substring(1).toUpperCase();
       setTimeout(() => {
-        if (this.$vuetify.theme.currentTheme.background == hexD.substring(1).toUpperCase())
+        if (
+          this.$vuetify.theme.currentTheme.background ==
+          hexD.substring(1).toUpperCase()
+        )
           this.$vuetify.theme.currentTheme.background = this.experimentalDark;
-        if (this.$vuetify.theme.currentTheme.background == hexL.substring(1).toUpperCase())
+        if (
+          this.$vuetify.theme.currentTheme.background ==
+          hexL.substring(1).toUpperCase()
+        )
           this.$vuetify.theme.currentTheme.background = this.experimentalLight;
       }, 0);
     },
