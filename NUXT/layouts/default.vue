@@ -39,7 +39,7 @@
                 text
                 tile
                 dense
-                class="info--text searchButton text-left text-capitalize"
+                class="searchButton text-left text-capitalize"
                 @click="youtubeSearch(item)"
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
