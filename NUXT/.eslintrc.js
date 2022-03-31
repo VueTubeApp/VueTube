@@ -15,10 +15,7 @@ module.exports = {
   ],
   plugins: ["vue"],
   rules: {
-    // "max-len": "off",
-    // "vue/max-attributes-per-line": "off",
     "vue/multi-word-component-names": 0,
-    "prettier/prettier": "off",
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     // 'prettier/prettier': ['error', { semi: false }],

@@ -152,14 +152,7 @@
 export default {
   data() {
     return {
-      primaryDark: [
-        "#B71C1C",
-        "#FFBBFF",
-        "#AAAFFF",
-        "#AAFFFF",
-        "#7CD6AF",
-        "#FEC89B",
-      ],
+      primaryDark: ["#B71C1C", "#FFBBFF", "#AAAFFF", "#AAFFFF", "#7CD6AF", "#FEC89B"],
       primaryLight: ["#E57373", "#F88469", "#22AA22", "#4A9E90", "#777FFF"],
       backgroundsDark: [
         { name: "Dark", color: "#181818" },
