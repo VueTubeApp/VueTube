@@ -56,11 +56,11 @@ const module = {
     async setBackground(color) {
       return await StatusBar.setBackgroundColor({ color });
     },
-    setTheme(color, dark) {
-      StatusBar.setBackgroundColor({ color });
+    async setTheme(color, dark) {
       dark
         ? StatusBar.setStyle({ style: Style.Dark })
         : StatusBar.setStyle({ style: Style.Light });
+      StatusBar.setBackgroundColor({ color });
     },
   },
 

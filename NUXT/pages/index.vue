@@ -9,6 +9,7 @@
     />
     <div style="height: 5rem" />
     <v-progress-linear rounded height="8" indeterminate color="primary" />
+    <div class="pt-2">{{ progressMsg }}...</div>
   </center>
 </template>
 
@@ -17,6 +18,7 @@ export default {
   layout: "empty",
 
   data: () => ({
+    progressMsg: "Theming",
     themeFetched: false,
   }),
 
@@ -31,35 +33,32 @@ export default {
     // Set timeout is required for $vuetify.theme... dont ask me why -Front
     const theming = new Promise((resolve) =>
       setTimeout(() => {
-        const dark = localStorage.getItem("darkTheme");
-        let bg = null;
-        let pr = null;
-        if (dark !== null) {
-          bg = dark
-            ? localStorage.getItem("backgroundDark")
-            : localStorage.getItem("backgroundLight");
-          pr = dark
-            ? localStorage.getItem("primaryDark")
-            : localStorage.getItem("primaryLight");
-          this.$vuetify.theme.dark = dark === "true";
-          if (pr !== null) this.$vuetify.theme.currentTheme.primary = pr;
-          if (bg !== null) this.$vuetify.theme.currentTheme.background = bg;
-        }
+        this.$vuetify.theme.dark = JSON.parse(localStorage.getItem("darkTheme")) === true;
+        if (localStorage.getItem("primaryDark") != null)
+          this.$vuetify.theme.themes.dark.primary = localStorage.getItem("primaryDark");
+        if (localStorage.getItem("primaryLight") != null)
+          this.$vuetify.theme.themes.light.primary = localStorage.getItem("primaryLight");
+        if (localStorage.getItem("backgroundDark") != null)
+          this.$vuetify.theme.themes.dark.background = localStorage.getItem("backgroundDark");
+        if (localStorage.getItem("backgroundLight") != null)
+          this.$vuetify.theme.themes.light.background = localStorage.getItem("backgroundLight");
         this.themeFetched = true;
         this.$vuetube.navigationBar.setTheme(
           this.$vuetify.theme.currentTheme.background,
-          !dark
+          !this.$vuetify.theme.dark
         );
         this.$vuetube.statusBar.setTheme(
           this.$vuetify.theme.currentTheme.background,
-          dark
+          this.$vuetify.theme.dark
         );
         resolve();
       }, 0)
     );
 
     await theming;
+    this.progressMsg = "Fetching the API";
     await this.$youtube.getAPI();
+    this.progressMsg = "Navigating Home";
     this.$router.push(`/${localStorage.getItem("startPage") || "home"}`);
   },
 };

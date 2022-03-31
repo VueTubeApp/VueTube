@@ -177,7 +177,6 @@ export default {
         this.$vuetify.theme.dark
           ? localStorage.setItem("primaryDark", value)
           : localStorage.setItem("primaryLight", value);
-        console.log(value);
         let tempD = this.experimentalDark;
         let tempL = this.experimentalLight;
         this.$nextTick(() => {
