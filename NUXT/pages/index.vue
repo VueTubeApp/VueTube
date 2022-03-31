@@ -4,7 +4,7 @@
       src="/icon.svg"
       width="10rem"
       height="10rem"
-      class="youspinmerightround"
+      class="intro"
       :class="$vuetify.theme.dark ? '' : 'invert'"
     />
     <div style="height: 5rem" />
@@ -74,14 +74,14 @@ export default {
   left: 50%;
   transform: translate(-50%, -80%);
 }
-.youspinmerightround {
+.intro {
   opacity: 0;
   transform: scale(0.5);
   transition-property: opacity, transform;
-  animation: likearecord 0.66s ease infinite alternate;
+  animation: bounce 0.66s ease infinite alternate;
 }
 /* triangles aren't very good at spinning :c */
-@keyframes likearecord {
+@keyframes bounce {
   0% {
     opacity: 0;
     transform: scale(0.5);
@@ -89,6 +89,25 @@ export default {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* reduced-motion animations */
+@media (prefers-reduced-motion) {
+  .intro {
+    opacity: 0;
+    transform: scale(1);
+    transition-property: opacity, transform;
+    animation: fadein 0.5s ease 1 forwards;
   }
 }
 </style>
