@@ -22,7 +22,9 @@
       flat
       label="Search"
       style="margin-top: 1px"
-      background-color="background lighten-1"
+      :background-color="
+        $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
+      "
       @input="$emit('text-changed', text)"
       @keyup.enter="$emit('search-btn', text)"
     />

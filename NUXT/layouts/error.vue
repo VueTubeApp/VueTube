@@ -2,7 +2,12 @@
   <v-app>
     <center>
       <v-icon size="100">mdi-alert-circle</v-icon>
-      <h1 class="grey--text">An error occured!</h1>
+      <h1
+        class="background--text"
+        :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+      >
+        An error occured!
+      </h1>
       <v-btn to="/">Reload Application</v-btn>
       <v-btn to="/logs">Show Logs</v-btn>
 

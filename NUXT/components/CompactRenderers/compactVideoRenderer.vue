@@ -52,7 +52,11 @@
           {{ title.text }}
         </div>
 
-        <div class="grey--text caption" v-text="parseBottom(video)" />
+        <div
+          class="background--text caption"
+          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+          v-text="parseBottom(video)"
+        />
       </v-card-text>
     </div>
   </v-card>

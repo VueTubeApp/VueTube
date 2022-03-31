@@ -16,7 +16,8 @@
       v-if="
         render.separatorDetails && render.separatorDetails.hasBottomSeparator
       "
-      class="separator-bottom grey"
+      class="separator-bottom background"
+      :class="$vuetify.theme.dark ? 'lighten-4' : 'darken-4'"
       :style="{ height: render.separatorDetails.height + 'px' }"
     ></div>
   </div>
