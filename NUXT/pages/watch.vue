@@ -4,6 +4,7 @@
     <videoPlayer
       style="position: sticky; top: 0; z-index: 696969"
       :vid-src="vidSrc"
+      ref="player"
     />
 
     <!--   VueTube Player V1   -->
@@ -95,6 +96,7 @@
 import { Share } from "@capacitor/share";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
+import { getCpn } from "~/plugins/utils";
 import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
 
 export default {
@@ -135,6 +137,7 @@ export default {
       views: null,
       recommends: null,
       loaded: false,
+      interval: null,
     };
   },
   watch: {
@@ -144,17 +147,23 @@ export default {
       handler(newRt, oldRt) {
         if (newRt.query.v != oldRt.query.v) {
           // Exit fullscreen if currently in fullscreen
-          if (this.$refs.player) this.$refs.player.webkitExitFullscreen();
+          // if (this.$refs.player) this.$refs.player.webkitExitFullscreen();
           // Reset player and run getVideo function again
           this.vidSrc = "";
+          this.startTime = Math.floor(Date.now() / 1000);
+          clearInterval(this.interval);
           this.getVideo();
         }
       },
     },
   },
   mounted() {
-    this.$youtube.saveApiStats("detailpage", this.$route.query.v, "streamingstats")
+    this.startTime = Math.floor(Date.now() / 1000);
     this.getVideo();
+  },
+
+  destroyed() {
+    clearInterval(this.interval);
   },
   methods: {
     getVideo() {
@@ -186,6 +195,14 @@ export default {
         this.recommends = result.renderedData.recommendations;
         // .catch((error) => this.$logger("Watch", error, true));
         console.log("recommendations:", this.recommends);
+
+        //---   API WatchTime call   ---//
+        this.playbackTracking = result.playbackTracking;
+        this.cpn = getCpn();
+        this.initWatchTime().then(() => {
+          this.sendWatchTime();
+          this.interval = setInterval(this.sendWatchTime, 30000);
+        });
       });
 
       this.$youtube.getReturnYoutubeDislike(this.$route.query.v, (data) => {
@@ -207,6 +224,29 @@ export default {
         url: "https://youtu.be/" + this.$route.query.v,
         dialogTitle: "Share video",
       });
+    },
+    sendWatchTime() {
+      const player = this.$refs.player.getPlayer();
+      this.$youtube.saveApiStats(
+        {
+          cpn: this.cpn,
+          rt: Math.floor(Date.now() / 1000) - this.startTime,
+          et: player.currentTime,
+          state: player.paused ? "paused" : "playing",
+          volume: 100,
+        },
+        this.playbackTracking.videostatsWatchtimeUrl.baseUrl
+      );
+    },
+
+    async initWatchTime() {
+      await this.$youtube.saveApiStats(
+        {
+          cpn: this.cpn,
+          rt: Math.floor(Date.now() / 1000) - this.startTime,
+        },
+        this.playbackTracking.videostatsPlaybackUrl.baseUrl
+      );
     },
   },
 };

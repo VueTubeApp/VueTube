@@ -28,8 +28,18 @@ function rgbToHex(r, g, b) {
   return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 }
 
+function getCpn() {
+  const chars =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+  let result = "";
+  for (let i = 16; i > 0; --i)
+    result += chars[Math.round(Math.random() * (chars.length - 1))];
+  return result;
+}
+
 module.exports = {
   getBetweenStrings,
   hexToRgb,
   rgbToHex,
+  getCpn,
 };

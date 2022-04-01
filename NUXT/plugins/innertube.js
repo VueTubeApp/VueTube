@@ -189,20 +189,13 @@ class Innertube {
   }
 
   // WARNING: This is tracking the user's activity, but is required for recommendations to properly work
-  async apiStats(currentPageType, id, event) {
-    const params = {
-      key: this.key,
-      el: currentPageType,
-      ns: "yt",
-      docid: id,
-      event: event,
-      feature: "g-high-rec",
-      c: this.context.client.clientName,
-      volume: 100,
-      cver: this.context.client.clientVersion,
-      hl: this.context.client.hl,
-    };
-    await Http.post({ url: constants.URLS.YT_API_STATS, params: params });
+  async apiStats(params, url) {
+    console.log(params);
+    await Http.get({
+      url: url,
+      params: params,
+      headers: this.header,
+    });
   }
 
   // Static methods
@@ -303,6 +296,7 @@ class Innertube {
         recommendationsContinuation:
           columnUI?.continuations[0].reloadContinuationData?.continuation,
       },
+      playbackTracking: responseInfo.playbackTracking,
     };
 
     console.log(vidData);

@@ -152,8 +152,8 @@ const innertubeModule = {
     }
   },
 
-  async saveApiStats(currentPageType, id, event) {
-    await InnertubeAPI.apiStats(currentPageType, id, event);
+  async saveApiStats(query, url) {
+    await InnertubeAPI.apiStats(query, url);
   },
 };
 
