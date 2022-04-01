@@ -13,7 +13,7 @@
 
     <!--   Add New Key Button   -->
     <center>
-      <v-btn @click="addDialog = !addDialog">
+      <v-btn @click="addDialog = !addDialog; selectedKey = null; selectedKeyData = null;">
         <v-icon style="margin-right: 0.25em;">mdi-plus</v-icon>
         Create Entry
       </v-btn>
