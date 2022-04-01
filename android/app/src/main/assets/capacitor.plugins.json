@@ -16,6 +16,10 @@
 		"classpath": "com.capacitorjs.plugins.device.DevicePlugin"
 	},
 	{
+		"pkg": "@capacitor/haptics",
+		"classpath": "com.capacitorjs.plugins.haptics.HapticsPlugin"
+	},
+	{
 		"pkg": "@capacitor/share",
 		"classpath": "com.capacitorjs.plugins.share.SharePlugin"
 	},

@@ -1,11 +1,12 @@
 <template>
   <v-card
-    class="entry gridVideoRenderer accent"
+    class="entry gridVideoRenderer background"
     :to="`/watch?v=${video.videoId}`"
     flat
   >
     <div style="position: relative" class="thumbnail-container">
       <v-img
+        v-if="video.thumbnail"
         :aspect-ratio="16 / 9"
         :src="
           $youtube.getThumbnail(
@@ -16,6 +17,7 @@
         "
       />
       <div
+        v-if="video.thumbnailOverlays"
         class="videoRuntimeFloat"
         :class="
           'style-' +
@@ -31,7 +33,7 @@
     <div id="details">
       <a
         :href="
-          this.$rendererUtils.getNavigationEndpoints(
+          $rendererUtils.getNavigationEndpoints(
             video.shortBylineText.runs[0].navigationEndpoint
           )
         "
@@ -52,7 +54,11 @@
           {{ title.text }}
         </div>
 
-        <div class="grey--text caption" v-text="parseBottom(video)" />
+        <div
+          class="background--text text--lighten-5 caption"
+          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+          v-text="parseBottom(video)"
+        />
       </v-card-text>
     </div>
   </v-card>

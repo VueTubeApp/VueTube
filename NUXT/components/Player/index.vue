@@ -1,15 +1,17 @@
 <template>
   <div>
-    <div class="content">
-      <v-btn class="pausePlay" text @click="playing = !playing">
-        <v-icon size="5em" color="white">mdi-{{ playing ? "pause" : "play" }}</v-icon>
-      </v-btn>
+    <div @click="toggleControls()" class="content" :style="showControls ? 'background: rgba(0, 0, 0, 0.5);' : '' ">
 
-      <scrubber class="scrubber" :duration="duration" :endDuration="endDuration" />
+      <div v-show="showControls">
+        <v-btn class="pausePlay" text @click="playing = !playing">
+          <v-icon size="5em" color="white">mdi-{{ playing ? "pause" : "play" }}</v-icon>
+        </v-btn>
+
+        <scrubber class="scrubber" :duration="duration" :endDuration="endDuration" />
+      </div>
 
       <video
         ref="player"
-        autoplay
         :src="vidSrc"
         width="100%"
         style="max-height: 50vh"
@@ -43,7 +45,8 @@ export default {
       vidSrc: null,
 
       //---   Player State Information   ---//
-      playing: true,
+      showControls: false,
+      playing: false,
       duration: 0,
       endDuration: 0,
     };
@@ -79,6 +82,11 @@ export default {
       this.duration = player.currentTime;
       this.endDuration = player.duration;
     },
+
+    toggleControls() {
+      this.showControls = !this.showControls;
+    }
+
   },
 };
 </script>
@@ -97,7 +105,6 @@ export default {
 .content:before {
   content: "";
   position: absolute;
-  background: rgba(0, 0, 0, 0.5);
   top: 0;
   right: 0;
   bottom: 0;

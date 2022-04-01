@@ -1,33 +1,37 @@
 <template>
-  <div class="py-1">
-    <v-card class="px-8 py-6 ma-4">
-      <h3>Layout</h3>
-      <v-switch class="mt-6" disabled label="Dense Navbars" />
-      <v-switch disabled label="Disable Top Bar" />
-      <!-- <v-switch class="mt-6" disabled label="Reverse (disabled)" /> -->
-    </v-card>
-    <v-card class="px-8 pt-6 ma-4">
-      <h3>Rounded Corners</h3>
-      <v-switch class="mt-6" disabled label="Reverse (disabled)" />
-      <v-slider
-        disabled
-        class="mr-2"
-        label="Outer (disabled)"
-        :max="4"
-        step="1"
-        thumb-size="64"
-      ></v-slider>
+  <div class="d-flex flex-column justify-end" style="min-height: 100%">
+    <v-card
+      flat
+      class="px-6 ma-4 mt-2 background"
+      style="transition-duration: 0.3s; transition-property: border-radius"
+      :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+      :style="{
+        borderRadius: `${roundTweak / 2}rem`,
+      }"
+    >
+      <h3 class="mt-5">Rounded Corners</h3>
+      <div
+        class="background--text"
+        :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+      >
+        applies to only a few elements for now
+      </div>
+      <!-- TODO: outer radius -->
+      <!-- TODO: Dense Navbar -->
+      <!-- TODO: Disable Top Bar -->
+      <!-- TODO: Top and Bottom bar color selection -->
       <v-slider
         v-model="roundTweak"
-        class="mr-2"
+        class="mr-2 mt-5"
         label="Inner"
         :max="4"
         step="1"
         thumb-size="64"
+        @input="$vuetube.haptics.hapticsImpactLight(0)"
       >
         <template #thumb-label="{ value }">
           <div
-            class="pa-4 white text-red red-text red--text"
+            class="pa-4 background text-red red-text red--text"
             :style="{ borderRadius: value * 3 + 'px !important' }"
           ></div>
         </template>

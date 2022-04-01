@@ -13,7 +13,8 @@
     ></component>
     <div
       v-if="render.separator && render.separator.hasBottomSeparator"
-      class="separator-bottom grey"
+      class="separator-bottom background"
+      :class="$vuetify.theme.dark ? 'lighten-4' : 'darken-4'"
       :style="{ height: render.separator.height + 'px' }"
     ></div>
   </div>

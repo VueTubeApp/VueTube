@@ -1,4 +1,3 @@
-import colors from "vuetify/es5/util/colors";
 /**** Front's Notes / Don't Remove ****
  *   Data Storage:
  *   localStorage.setItem("key", data)
@@ -36,7 +35,11 @@ export default {
     },
     meta: [
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "viewport",
+        content:
+          "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover",
+      },
       { name: "format-detection", content: "telephone=no" },
     ],
   },
@@ -51,26 +54,18 @@ export default {
     customVariables: ["~/assets/variables.scss"],
     treeShake: true,
     theme: {
-      dark: false,
-      options: { customProperties: true },
+      dark: true,
+      options: {
+        customProperties: true,
+      },
       themes: {
         light: {
-          primary: {
-            base: colors.red.lighten2,
-            lighten2: colors.red.lighten4,
-          },
-          background: "#fff",
-          accent: "#fff",
-          info: "#000",
+          primary: "#E57373",
+          background: "#ffffff",
         },
         dark: {
-          primary: {
-            base: colors.red.darken2,
-            lighten2: "#533",
-          },
-          background: "#333",
-          accent: "#222",
-          info: "#fff",
+          primary: "#B71C1C",
+          background: "#000000",
         },
       },
     },

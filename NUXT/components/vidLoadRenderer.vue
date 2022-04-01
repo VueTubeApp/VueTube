@@ -1,10 +1,12 @@
 // this is an loading animation for videos
 <template>
   <div>
-    <v-skeleton-loader
-      v-for="i in 10"
-      :key="i"
-      type="image, list-item-avatar-two-line"
-    />
+    <v-sheet color="background" v-for="i in 10" :key="i">
+      <v-skeleton-loader type="image, list-item-avatar-two-line" />
+    </v-sheet>
   </div>
 </template>
+
+<script>
+export default {};
+</script>

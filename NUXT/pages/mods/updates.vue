@@ -1,26 +1,51 @@
 <template>
   <div class="py-2">
     <v-list-item v-for="(item, index) in commits" :key="index" class="my-1">
-      <v-card class="card my-2">
+      <v-card
+        flat
+        class="card my-2 background"
+        :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+      >
         <v-card-title style="padding: 0 0.25em 0 0.75em">
           {{ item.author ? item.author.login : item.commit.author.name }}
-          <span class="subtitle" v-text="`• ${item.sha.substring(0, 7)}`" />
+          <span
+            class="subtitle background--text"
+            :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+            v-text="`• ${item.sha.substring(0, 7)}`"
+          />
           <v-spacer />
-          <v-chip v-if="index == 0" outlined class="tags" color="orange"
-            >Latest</v-chip
+          <v-chip
+            v-if="index == 0"
+            class="tags"
+            color="orange"
+            style="
+              border-radius: 0.5rem;
+              border: 2px var(--v-oragnge-base);
+              margin-top: -1.5rem;
+              margin-right: -0.5rem;
+            "
           >
+            Latest
+          </v-chip>
           <v-chip
             v-if="item.sha == installedVersion"
-            outlined
             class="tags"
             color="green"
+            style="
+              border-radius: 0.5rem;
+              border: 2px var(--v-green-base);
+              margin-top: -1.5rem;
+              margin-right: -0.5rem;
+            "
+          >
             >Installed</v-chip
           >
         </v-card-title>
 
         <div style="margin-left: 1em">
           <div
-            class="date"
+            class="date background--text"
+            :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
             v-text="new Date(item.commit.committer.date).toLocaleString()"
           />
           {{ item.commit.message }}
@@ -28,12 +53,12 @@
 
         <v-card-actions>
           <v-spacer />
-          <v-btn @click="openExternal(item)"
-            ><v-icon class="btn-icon">mdi-github</v-icon>View</v-btn
-          >
-          <v-btn disabled @click="install(item)"
-            ><v-icon class="btn-icon">mdi-download</v-icon>Install</v-btn
-          >
+          <v-btn @click="openExternal(item)" class="background">
+            <v-icon class="btn-icon">mdi-github</v-icon>View
+          </v-btn>
+          <v-btn disabled @click="install(item)">
+            <v-icon class="btn-icon">mdi-download</v-icon>Install
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-list-item>
@@ -48,10 +73,8 @@
   margin: 0.4em;
   font-size: 0.75em;
   transform: translateY(5%);
-  color: #999;
 }
 .date {
-  color: #999;
   transform: translateY(-40%);
 }
 .btn-icon {
