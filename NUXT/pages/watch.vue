@@ -1,15 +1,15 @@
 <template>
-  <div class="accent">
-
+  <div class="background">
     <!--   Stock Player   -->
-    <videoPlayer :vid-src="vidSrc" />
+    <videoPlayer
+      style="position: sticky; top: 0; z-index: 696969"
+      :vid-src="vidSrc"
+    />
 
     <!--   VueTube Player V1   -->
     <!-- <VTPlayerV1 :sources="sources" v-if="sources.length > 0" />-->
 
-
-
-    <v-card v-if="loaded" class="ml-2 mr-2 accent" flat>
+    <v-card v-if="loaded" class="ml-2 mr-2 background" flat>
       <v-card-title
         class="mt-2"
         style="
@@ -65,7 +65,7 @@
 
       <!-- <v-bottom-sheet
         v-model="showMore"
-        color="accent"
+        color="background"
         style="z-index: 9999999"
       >
         <v-sheet style="padding: 1em">
@@ -78,7 +78,7 @@
           </div>
         </v-sheet>
       </v-bottom-sheet> -->
-      <!-- <v-bottom-sheet v-model="share" color="accent" style="z-index: 9999999">
+      <!-- <v-bottom-sheet v-model="share" color="background" style="z-index: 9999999">
         <v-sheet style="padding: 1em">
           <div class="scroll-y">
             {{ description }}
@@ -95,7 +95,7 @@
 import { Share } from "@capacitor/share";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
-import SlimVideoDescriptionRenderer from '~/components/UtilRenderers/slimVideoDescriptionRenderer.vue';
+import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
 
 export default {
   components: { ShelfRenderer, VidLoadRenderer, SlimVideoDescriptionRenderer },

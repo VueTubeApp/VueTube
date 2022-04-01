@@ -1,5 +1,5 @@
 <template>
-  <v-app v-show="stateLoaded" style="background: black !important">
+  <v-app style="background: transparent !important">
     <topNavigation
       :search="search"
       :page="page"
@@ -9,16 +9,11 @@
       @scroll-to-top="$refs.pgscroll.scrollTop = 0"
     />
 
-    <div class="accent" style="height: 100%; margin-top: 4rem">
+    <div style="height: 100%; margin-top: 4rem">
       <div
         v-show="!search"
-        class="background"
-        style="
-          overflow: hidden;
-          height: calc(100vh - 8rem);
-          transition-duration: 0.3s;
-          transition-property: border-radius;
-        "
+        class="scrollcontainer"
+        style="overflow: hidden; height: calc(100vh - 8rem)"
         :style="{
           borderRadius: `${roundTweak / 2}rem`,
         }"
@@ -26,20 +21,14 @@
         <!-- element above removes artifacting from things like v-ripple by -->
         <!-- scrollbox below must be a standalone div -->
         <div ref="pgscroll" class="scroll-y" style="height: 100%">
-          <nuxt v-show="!search" />
+          <nuxt />
         </div>
       </div>
 
       <div
         v-show="search"
-        class="accent"
-        style="
-          padding: 0;
-          overflow: hidden;
-          height: calc(100vh - 4rem);
-          transition-duration: 0.3s;
-          transition-property: border-radius;
-        "
+        class="scrollcontainer"
+        style="overflow: hidden; height: calc(100vh - 4rem)"
       >
         <div class="scroll-y" style="height: 100%">
           <div v-if="search" style="min-width: 180px">
@@ -52,7 +41,7 @@
                 text
                 tile
                 dense
-                class="info--text searchButton text-left text-capitalize"
+                class="searchButton text-left text-capitalize"
                 @click="youtubeSearch(item)"
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
@@ -78,7 +67,6 @@ export default {
   data: () => ({
     search: false,
     response: [],
-    stateLoaded: false,
   }),
 
   computed: {
@@ -104,13 +92,7 @@ export default {
     },
   },
 
-  beforeCreate() {
-    // initializes UI tweaks to the saved state
-    this.$store.commit("tweaks/initTweaks");
-  },
-
   mounted() {
-    this.stateLoaded = true;
     //---   Back Button Listener   ---//
     CapacitorApp.addListener("backButton", ({ canGoBack }) => {
       //---   Back Closes Search   ---//
@@ -170,13 +152,21 @@ export default {
   opacity: 0 !important;
 }
 
+.scrollcontainer {
+  overflow: hidden;
+  /* ios notch & gesture nav */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left) !important;
+}
+
 .scroll-y {
   overflow-y: scroll !important; /* has to be scroll, not auto */
+  overflow-x: hidden !important;
   -webkit-overflow-scrolling: touch !important;
 }
 html,
 body {
-  background: black;
+  background: var(--v-background-base);
   overflow: hidden;
 }
 

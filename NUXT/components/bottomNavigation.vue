@@ -2,7 +2,7 @@
   <v-bottom-navigation
     v-model="tabSelection"
     shift
-    class="bottomNav py-4 accent"
+    class="bottomNav py-4 transparent"
   >
     <v-btn
       v-for="(item, i) in tabs"
@@ -14,8 +14,20 @@
     >
       <span v-text="item.name" />
       <v-icon
-        :color="tabSelection == i ? 'primary' : 'grey'"
-        :class="tabSelection == i ? 'tab primary lighten-2' : ''"
+        :color="
+          tabSelection == i
+            ? 'primary'
+            : $vuetify.theme.dark
+            ? 'background lighten-4'
+            : 'background darken-4'
+        "
+        :class="
+          tabSelection == i
+            ? $vuetify.theme.dark
+              ? 'tab primary darken-4'
+              : 'tab primary lighten-4'
+            : ''
+        "
         v-text="item.icon"
       />
       <!-- 
@@ -56,12 +68,12 @@ export default {
 
 <style scoped>
 .bottomNav {
+  /* ios gesture nav */
+  bottom: env(safe-area-inset-bottom) !important;
   box-shadow: none !important;
   height: 4rem !important;
-  position: fixed;
-  bottom: 0;
   padding: 0 !important;
-  z-index: 99999;
+  position: fixed;
 }
 .navButton {
   width: 25vw !important;

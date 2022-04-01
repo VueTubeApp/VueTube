@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="entry gridVideoRenderer accent"
+    class="entry gridVideoRenderer background"
     :to="`/watch?v=${video.videoId}`"
     flat
   >
@@ -52,7 +52,11 @@
           {{ title.text }}
         </div>
 
-        <div class="grey--text caption" v-text="parseBottom(video)" />
+        <div
+          class="background--text caption"
+          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+          v-text="parseBottom(video)"
+        />
       </v-card-text>
     </div>
   </v-card>

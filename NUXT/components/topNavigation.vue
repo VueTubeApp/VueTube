@@ -1,8 +1,7 @@
 <template>
   <v-card
     style="height: 4rem !important; display: flex; box-shadow: none !important"
-    color="accent"
-    class="topNav rounded-0 pa-3"
+    class="rounded-0 pa-3 topNav transparent"
   >
     <h3 v-show="!search" class="my-auto ml-4" v-text="page" />
 
@@ -22,7 +21,10 @@
       dense
       flat
       label="Search"
-      class="searchBar"
+      style="margin-top: 1px"
+      :background-color="
+        $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
+      "
       @input="$emit('text-changed', text)"
       @keyup.enter="$emit('search-btn', text)"
     />
@@ -30,6 +32,7 @@
     <v-spacer v-if="!search" />
 
     <v-btn
+      v-if="!search"
       v-show="page == 'Home'"
       icon
       tile
@@ -91,18 +94,13 @@ export default {
 
 <style scoped>
 .topNav {
+  /* ios notch */
+  top: env(safe-area-inset-top) !important;
   position: fixed;
   width: 100%;
-  top: 0;
-  z-index: 999;
-  /*border-radius: 0 0 1em 1em !important;*/
 }
 .topNavSearch {
   margin-bottom: -10em;
   margin-left: 2em;
-  /*transform: translateY(-2.5%);*/
-}
-.searchBar {
-  margin: 0;
 }
 </style>

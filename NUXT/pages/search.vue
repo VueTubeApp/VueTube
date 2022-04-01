@@ -1,5 +1,5 @@
 <template>
-  <div class="accent">
+  <div class="background">
     <!--   Video Loading Animation   -->
     <vid-load-renderer v-if="renderer.length <= 0" />
     <sectionListRenderer :render="renderer" />

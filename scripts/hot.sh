@@ -9,7 +9,7 @@ function hot {
     while true; do
       b=`ls -lahR $* | grep -v 'node_modules'`
       # to avoid confusing myself with nested-if - it is a "short form" of doing a=$b; eval $script if $a != $b.
-      [[ $a != $b ]] && a=$b && eval $script;
+      [[ $a != $b ]] && a=$b && eval time $script;
       sleep .5;
     done
   fi

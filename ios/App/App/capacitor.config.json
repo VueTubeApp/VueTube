@@ -7,19 +7,20 @@
 		"hostname": "youtube.com",
 		"androidScheme": "https"
 	},
+	"android": {
+		"backgroundColor": "#000000"
+	},
+	"ios": {
+		"backgroundColor": "#000000"
+	},
 	"plugins": {
 		"SplashScreen": {
 			"launchShowDuration": 0,
-			"launchAutoHide": true,
-			"backgroundColor": "#111111",
-			"androidSplashResourceName": "splash",
-			"androidScaleType": "CENTER_CROP",
-			"androidSpinnerStyle": "large",
-			"iosSpinnerStyle": "small",
-			"spinnerColor": "#999999",
-			"showSpinner": false,
+			"backgroundColor": "#000000",
 			"splashFullScreen": false,
-			"splashImmersive": false
+			"splashImmersive": false,
+			"launchAutoHide": true,
+			"showSpinner": false
 		}
 	}
 }
