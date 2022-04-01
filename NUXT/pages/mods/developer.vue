@@ -37,7 +37,7 @@
       <v-card :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
         <v-card-title class="text-h5">Confirm Delete</v-card-title>
         <v-card-text>Are you sure that you want to delete <span class="highlight" v-text="selectedKey" />?</v-card-text>
-        <v-alert text outlined type="warning" style="margin: 0 2em 2em; 2em;">Deleting random keys may cause the app to break!</v-alert>
+        <v-alert text outlined type="warning" style="margin: -0.5em 2em 1em 2em;">Deleting random keys may cause the app to break!</v-alert>
         <v-divider />
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -60,7 +60,7 @@
           />
 
         </v-card-text>
-        <v-alert text outlined type="warning" style="margin: -2em 2em 2em; 2em;">Editing random keys may cause the app to break!</v-alert>
+        <v-alert text outlined type="warning" style="margin: -2em 2em 1em 2em;">Editing random keys may cause the app to break!</v-alert>
         <v-divider />
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -86,6 +86,7 @@
             v-model="selectedKeyData"
             label="Value"
             solo
+            style="margin-bottom: -2em;"
           />
 
         </v-card-text>
