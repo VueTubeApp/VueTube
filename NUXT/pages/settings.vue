@@ -53,6 +53,8 @@ export default {
         },
         { name: "Logs", icon: "mdi-text-box-outline", to: "/mods/logs" },
         { name: "About", icon: "mdi-information-outline", to: "/mods/about" },
+
+        /* Developer Settings, Don't Remove // Included in all releases for users to mess with if they feel comfortable enough */ { name: "", icon: "", to: "/mods/developer" },
       ],
     };
   },
