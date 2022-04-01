@@ -18,7 +18,7 @@
         <v-card-text v-text="item.value" />
         <v-card-actions>
           <v-spacer />
-          <v-btn text class="actionButton" disabled><v-icon color="primary">mdi-pencil</v-icon></v-btn>
+          <v-btn text class="actionButton" @click="confirmEdit(item)"><v-icon color="primary">mdi-pencil</v-icon></v-btn>
           <v-btn text class="actionButton" @click="confirmDelete(item)"><v-icon color="error">mdi-delete</v-icon></v-btn>
         </v-card-actions>
       </v-card>
@@ -26,16 +26,11 @@
 
     <!--   Delete Entry Dialog   -->
     <v-dialog v-model="deleteDialog" width="500">
-
       <v-card :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
         <v-card-title class="text-h5">Confirm Delete</v-card-title>
-
         <v-card-text>Are you sure that you want to delete <span class="highlight" v-text="selectedKey" />?</v-card-text>
-
         <v-alert text outlined type="warning" style="margin: 0 2em 2em; 2em;">Deleting random keys may cause the app to break!</v-alert>
-
-        <v-divider></v-divider>
-
+        <v-divider />
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="primary" text @click="deleteDialog = false">No</v-btn>
@@ -44,6 +39,28 @@
       </v-card>
     </v-dialog>
 
+    <!--   Edit Entry Dialog   -->
+    <v-dialog v-model="editDialog" width="500">
+      <v-card :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
+        <v-card-title class="text-h5" v-text="selectedKey"/>
+        <v-card-text>
+
+          <v-text-field
+            v-model="selectedKeyData"
+            label="Solo"
+            solo
+          />
+
+        </v-card-text>
+        <v-alert text outlined type="warning" style="margin: -2em 2em 2em; 2em;">Editing random keys may cause the app to break!</v-alert>
+        <v-divider />
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" text @click="editDialog = false">Close</v-btn>
+          <v-btn color="primary" text @click="updateKey()">Update</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
 
 
   </div>
@@ -56,7 +73,9 @@ export default {
       keys: [],
 
       selectedKey: null,
-      deleteDialog: false
+      selectedKeyData: null,
+      deleteDialog: false,
+      editDialog: false
     };
   },
   mounted() {
@@ -79,9 +98,20 @@ export default {
       this.selectedKey = item.key;
       this.deleteDialog = true;
     },
+    confirmEdit(item) {
+      this.selectedKey = item.key;
+      this.selectedKeyData = item.value;
+      this.editDialog = true;
+    },
+
     deleteKey() {
       this.deleteDialog = false;
       localStorage.removeItem(this.selectedKey);
+      this.syncRegistry();
+    },
+    updateKey() {
+      this.editDialog = false;
+      localStorage.setItem(this.selectedKey, this.selectedKeyData);
       this.syncRegistry();
     }
   }
