@@ -6,9 +6,16 @@
     <center style="margin: 2em;">
       <h1>VueTube Registry</h1>
       <v-alert text outlined type="warning">
-        ONLY TOUCH THIS IF YOU KNOW WHAT YOU ARE DOING!<br>
         MESSING WITH SETTINGS MAY CAUSE YOUR APP TO BREAK!
       </v-alert>
+    </center>
+
+    <!--   Add New Key Button   -->
+    <center>
+      <v-btn @click="addDialog = !addDialog; selectedKey = null; selectedKeyData = null;">
+        <v-icon style="margin-right: 0.25em;">mdi-plus</v-icon>
+        Create Entry
+      </v-btn>
     </center>
 
     <!--   Registry List Loader   -->
@@ -18,7 +25,7 @@
         <v-card-text v-text="item.value" />
         <v-card-actions>
           <v-spacer />
-          <v-btn text class="actionButton" disabled><v-icon color="primary">mdi-pencil</v-icon></v-btn>
+          <v-btn text class="actionButton" @click="confirmEdit(item)"><v-icon color="primary">mdi-pencil</v-icon></v-btn>
           <v-btn text class="actionButton" @click="confirmDelete(item)"><v-icon color="error">mdi-delete</v-icon></v-btn>
         </v-card-actions>
       </v-card>
@@ -26,24 +33,70 @@
 
     <!--   Delete Entry Dialog   -->
     <v-dialog v-model="deleteDialog" width="500">
-
-      <v-card :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
+      <v-card class="rounded-lg" :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
         <v-card-title class="text-h5">Confirm Delete</v-card-title>
-
         <v-card-text>Are you sure that you want to delete <span class="highlight" v-text="selectedKey" />?</v-card-text>
-
-        <v-alert text outlined type="warning" style="margin: 0 2em 2em; 2em;">Deleting random keys may cause the app to break!</v-alert>
-
-        <v-divider></v-divider>
-
+        <v-alert text outlined type="warning" style="margin: -0.5em 2em 1em 2em;">Deleting random keys may cause the app to break!</v-alert>
+        <v-divider />
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="deleteDialog = false">No</v-btn>
-          <v-btn color="primary" text @click="deleteKey()">Yes</v-btn>
+          <v-btn color="primary" text @click="deleteDialog = false">Cancel</v-btn>
+          <v-btn color="primary" text @click="deleteKey()">Delete</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
 
+    <!--   Edit Entry Dialog   -->
+    <v-dialog v-model="editDialog" width="500">
+      <v-card class="rounded-lg" :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
+        <v-card-title class="text-h5" v-text="selectedKey"/>
+        <v-card-text>
+
+          <v-text-field
+            v-model="selectedKeyData"
+            label="Value"
+            solo
+          />
+
+        </v-card-text>
+        <v-alert text outlined type="warning" style="margin: -2em 2em 1em 2em;">Editing random keys may cause the app to break!</v-alert>
+        <v-divider />
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" text @click="editDialog = false">Cancel</v-btn>
+          <v-btn color="primary" text @click="updateKey()">Change</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
+    <!--   Add Entry Dialog   -->
+    <v-dialog v-model="addDialog" width="500">
+      <v-card class="rounded-lg" :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
+        <v-card-title class="text-h5">Create Registry Entry</v-card-title>
+        <v-card-text>
+
+
+          <v-text-field
+            v-model="selectedKey"
+            label="Key"
+            solo
+          />
+          <v-text-field
+            v-model="selectedKeyData"
+            label="Value"
+            solo
+            style="margin-bottom: -2em;"
+          />
+
+        </v-card-text>
+        <v-divider />
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" text @click="addDialog = false">Cancel</v-btn>
+          <v-btn color="primary" text @click="createKey()">Create</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
 
 
   </div>
@@ -56,7 +109,10 @@ export default {
       keys: [],
 
       selectedKey: null,
-      deleteDialog: false
+      selectedKeyData: null,
+      deleteDialog: false,
+      editDialog: false,
+      addDialog: false
     };
   },
   mounted() {
@@ -79,9 +135,25 @@ export default {
       this.selectedKey = item.key;
       this.deleteDialog = true;
     },
+    confirmEdit(item) {
+      this.selectedKey = item.key;
+      this.selectedKeyData = item.value;
+      this.editDialog = true;
+    },
+
     deleteKey() {
       this.deleteDialog = false;
       localStorage.removeItem(this.selectedKey);
+      this.syncRegistry();
+    },
+    updateKey() {
+      this.editDialog = false;
+      localStorage.setItem(this.selectedKey, this.selectedKeyData);
+      this.syncRegistry();
+    },
+    createKey() {
+      this.addDialog = false;
+      localStorage.setItem(this.selectedKey, this.selectedKeyData);
       this.syncRegistry();
     }
   }
