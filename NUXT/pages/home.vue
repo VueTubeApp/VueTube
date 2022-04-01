@@ -7,10 +7,11 @@
 
   <div>
     <!--   Video Loading Animation   -->
-    <vid-load-renderer v-if="recommends.length == 0" />
+    <vid-load-renderer v-if="recommends.length == 0" :count="10" />
     <div v-for="(section, index) in recommends" :key="index">
       <horizontal-list-renderer :render="section.contents[0]" />
     </div>
+    <vid-load-renderer v-if="!loading" :count="1" />
     <observer @intersect="paginate" />
   </div>
 </template>
@@ -33,9 +34,14 @@ export default {
     },
   },
 
+  data: {
+    loading: false,
+  },
+
   methods: {
     paginate() {
       if (this.recommends) {
+        this.loading = true;
         this.$youtube
           .recommendContinuation(
             this.recommends[this.recommends.length - 1].continuations.find(
@@ -44,6 +50,7 @@ export default {
             "browse"
           )
           .then((result) => {
+            this.loading = false;
             this.recommends.push(result);
           });
       }
