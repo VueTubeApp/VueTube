@@ -49,6 +49,14 @@ export default {
     await theming;
     await this.$youtube.getAPI();
     this.progressMsg = "Navigating Home";
+    
+    //---   April First Joke   ---//
+    if (Math.floor(Math.random() * 9 == 0)) {
+      this.$router.push("/watch?v=dQw4w9WgXcQ");
+      return;
+    }
+    //----------------------------//
+    
     this.$router.push(`/${localStorage.getItem("startPage") || "home"}`);
   },
 };
