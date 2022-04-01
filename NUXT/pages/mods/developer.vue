@@ -11,6 +11,14 @@
       </v-alert>
     </center>
 
+    <!--   Add New Key Button   -->
+    <center>
+      <v-btn @click="addDialog = !addDialog">
+        <v-icon style="margin-right: 0.25em;">mdi-plus</v-icon>
+        Create Entry
+      </v-btn>
+    </center>
+
     <!--   Registry List Loader   -->
     <v-list-item v-for="(item, index) in keys" :key="index">
       <v-card class="card rounded-lg" :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
@@ -33,8 +41,8 @@
         <v-divider />
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="deleteDialog = false">No</v-btn>
-          <v-btn color="primary" text @click="deleteKey()">Yes</v-btn>
+          <v-btn color="primary" text @click="deleteDialog = false">Cancel</v-btn>
+          <v-btn color="primary" text @click="deleteKey()">Delete</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -47,7 +55,7 @@
 
           <v-text-field
             v-model="selectedKeyData"
-            label="Solo"
+            label="Value"
             solo
           />
 
@@ -56,8 +64,36 @@
         <v-divider />
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="editDialog = false">Close</v-btn>
-          <v-btn color="primary" text @click="updateKey()">Update</v-btn>
+          <v-btn color="primary" text @click="editDialog = false">Cancel</v-btn>
+          <v-btn color="primary" text @click="updateKey()">Change</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
+    <!--   Add Entry Dialog   -->
+    <v-dialog v-model="addDialog" width="500">
+      <v-card :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
+        <v-card-title class="text-h5">Create Registry Entry</v-card-title>
+        <v-card-text>
+
+
+          <v-text-field
+            v-model="selectedKey"
+            label="Key"
+            solo
+          />
+          <v-text-field
+            v-model="selectedKeyData"
+            label="Value"
+            solo
+          />
+
+        </v-card-text>
+        <v-divider />
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" text @click="addDialog = false">Cancel</v-btn>
+          <v-btn color="primary" text @click="createKey()">Create</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -75,7 +111,8 @@ export default {
       selectedKey: null,
       selectedKeyData: null,
       deleteDialog: false,
-      editDialog: false
+      editDialog: false,
+      addDialog: false
     };
   },
   mounted() {
@@ -111,6 +148,11 @@ export default {
     },
     updateKey() {
       this.editDialog = false;
+      localStorage.setItem(this.selectedKey, this.selectedKeyData);
+      this.syncRegistry();
+    },
+    createKey() {
+      this.addDialog = false;
       localStorage.setItem(this.selectedKey, this.selectedKeyData);
       this.syncRegistry();
     }
