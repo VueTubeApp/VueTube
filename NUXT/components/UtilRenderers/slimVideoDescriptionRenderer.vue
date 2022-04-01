@@ -9,7 +9,6 @@
         <a
           @click="openExternal($rendererUtils.getNavigationEndpoints(text))"
           :key="index"
-          class="link"
           >{{ text.text }}</a
         >
       </template>
@@ -17,7 +16,6 @@
         <a
           @click="openInternal($rendererUtils.getNavigationEndpoints(text))"
           :key="index"
-          class="link"
           >{{ text.text }}</a
         >
       </template>

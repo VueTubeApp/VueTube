@@ -1,7 +1,10 @@
 // this is an loading animation for videos
 <template>
-  <center>
-    <v-skeleton-loader type="card-avatar, article, actions" />
-    <v-skeleton-loader type="card-avatar, article, actions" />
-  </center>
+  <div>
+    <v-skeleton-loader
+      v-for="i in 10"
+      :key="i"
+      type="image, list-item-avatar-two-line"
+    />
+  </div>
 </template>

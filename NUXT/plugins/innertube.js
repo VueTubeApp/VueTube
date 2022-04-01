@@ -97,19 +97,19 @@ class Innertube {
 
   async getContinuationsAsync(continuation, type) {
     let data = { context: this.context, continuation: continuation };
-    let url
+    let url;
     switch (type) {
       case "browse":
         url = `${constants.URLS.YT_BASE_API}/browse?key=${this.key}`;
-        break
+        break;
       case "search":
         url = `${constants.URLS.YT_BASE_API}/search?key=${this.key}`;
-        break
+        break;
       case "next":
         url = `${constants.URLS.YT_BASE_API}/next?key=${this.key}`;
-        break
+        break;
       default:
-        throw ("Invalid type")
+        throw "Invalid type";
     }
 
     const response = await Http.post({
@@ -234,9 +234,11 @@ class Innertube {
       response.data.output?.playabilityStatus?.status == ("ERROR" || undefined)
     )
       throw new Error(
-        `Could not get information for video: ${response.status_code ||
-        response.data.output?.playabilityStatus?.status
-        } - ${response.message || response.data.output?.playabilityStatus?.reason
+        `Could not get information for video: ${
+          response.status_code ||
+          response.data.output?.playabilityStatus?.status
+        } - ${
+          response.message || response.data.output?.playabilityStatus?.reason
         }`
       );
     const responseInfo = response.data.output;

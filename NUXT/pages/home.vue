@@ -7,16 +7,20 @@
 
   <div>
     <!--   Video Loading Animation   -->
-    <vid-load-renderer v-if="!recommends.contents" />
-    <horizontal-list-renderer v-else :render="recommends.contents[0]" />
+    <vid-load-renderer v-if="recommends.length == 0" />
+    <div v-for="(section, index) in recommends" :key="index">
+      <horizontal-list-renderer :render="section.contents[0]" />
+    </div>
+    <observer @intersect="paginate" />
   </div>
 </template>
 
 <script>
 import horizontalListRenderer from "~/components/ListRenderers/horizontalListRenderer.vue";
 import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
+import Observer from "~/components/observer.vue";
 export default {
-  components: { horizontalListRenderer, VidLoadRenderer },
+  components: { horizontalListRenderer, VidLoadRenderer, Observer },
 
   computed: {
     recommends: {
@@ -29,12 +33,29 @@ export default {
     },
   },
 
+  methods: {
+    paginate() {
+      if (this.recommends) {
+        this.$youtube
+          .recommendContinuation(
+            this.recommends[this.recommends.length - 1].continuations.find(
+              (element) => element.nextContinuationData
+            ).nextContinuationData.continuation,
+            "browse"
+          )
+          .then((result) => {
+            this.recommends.push(result);
+          });
+      }
+    },
+  },
+
   mounted() {
-    if (!this.recommends.items || !this.recommends.items.length) {
+    if (!this.recommends.length) {
       this.$youtube
         .recommend()
         .then((result) => {
-          if (result) this.recommends = result;
+          if (result) this.recommends = [result];
         })
         .catch((error) => this.$logger("Home Page", error, true));
     }
