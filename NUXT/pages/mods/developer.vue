@@ -6,7 +6,6 @@
     <center style="margin: 2em;">
       <h1>VueTube Registry</h1>
       <v-alert text outlined type="warning">
-        ONLY TOUCH THIS IF YOU KNOW WHAT YOU ARE DOING!<br>
         MESSING WITH SETTINGS MAY CAUSE YOUR APP TO BREAK!
       </v-alert>
     </center>
@@ -34,7 +33,7 @@
 
     <!--   Delete Entry Dialog   -->
     <v-dialog v-model="deleteDialog" width="500">
-      <v-card :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
+      <v-card class="rounded-lg" :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
         <v-card-title class="text-h5">Confirm Delete</v-card-title>
         <v-card-text>Are you sure that you want to delete <span class="highlight" v-text="selectedKey" />?</v-card-text>
         <v-alert text outlined type="warning" style="margin: -0.5em 2em 1em 2em;">Deleting random keys may cause the app to break!</v-alert>
@@ -49,7 +48,7 @@
 
     <!--   Edit Entry Dialog   -->
     <v-dialog v-model="editDialog" width="500">
-      <v-card :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
+      <v-card class="rounded-lg" :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
         <v-card-title class="text-h5" v-text="selectedKey"/>
         <v-card-text>
 
@@ -72,7 +71,7 @@
 
     <!--   Add Entry Dialog   -->
     <v-dialog v-model="addDialog" width="500">
-      <v-card :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
+      <v-card class="rounded-lg" :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
         <v-card-title class="text-h5">Create Registry Entry</v-card-title>
         <v-card-text>
 
