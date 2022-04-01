@@ -12,6 +12,7 @@
     <div style="height: 100%; margin-top: 4rem">
       <div
         v-show="!search"
+        class="scrollcontainer"
         style="overflow: hidden; height: calc(100vh - 8rem)"
         :style="{
           borderRadius: `${roundTweak / 2}rem`,
@@ -26,7 +27,8 @@
 
       <div
         v-show="search"
-        style="padding: 0; overflow: hidden; height: calc(100vh - 4rem)"
+        class="scrollcontainer"
+        style="overflow: hidden; height: calc(100vh - 4rem)"
       >
         <div class="scroll-y" style="height: 100%">
           <div v-if="search" style="min-width: 180px">
@@ -150,13 +152,17 @@ export default {
   opacity: 0 !important;
 }
 
+.scrollcontainer {
+  overflow: hidden;
+  /* ios notch & gesture nav */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left) !important;
+}
+
 .scroll-y {
   overflow-y: scroll !important; /* has to be scroll, not auto */
   overflow-x: hidden !important;
   -webkit-overflow-scrolling: touch !important;
-  /* ios notch & gesture nav */
-  margin: env(safe-area-inset-top) env(safe-area-inset-right)
-    env(safe-area-inset-bottom) env(safe-area-inset-left) !important;
 }
 html,
 body {

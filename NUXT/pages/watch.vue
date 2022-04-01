@@ -1,13 +1,13 @@
 <template>
   <div class="background">
-
     <!--   Stock Player   -->
-    <videoPlayer :vid-src="vidSrc" />
+    <videoPlayer
+      style="position: sticky; top: 0; z-index: 696969"
+      :vid-src="vidSrc"
+    />
 
     <!--   VueTube Player V1   -->
     <!-- <VTPlayerV1 :sources="sources" v-if="sources.length > 0" />-->
-
-
 
     <v-card v-if="loaded" class="ml-2 mr-2 background" flat>
       <v-card-title
@@ -95,7 +95,7 @@
 import { Share } from "@capacitor/share";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
-import SlimVideoDescriptionRenderer from '~/components/UtilRenderers/slimVideoDescriptionRenderer.vue';
+import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
 
 export default {
   components: { ShelfRenderer, VidLoadRenderer, SlimVideoDescriptionRenderer },
