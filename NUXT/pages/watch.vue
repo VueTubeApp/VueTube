@@ -198,6 +198,7 @@ export default {
 
         //---   API WatchTime call   ---//
         this.playbackTracking = result.playbackTracking;
+        this.st = 0;
         this.cpn = getCpn();
         this.initWatchTime().then(() => {
           this.sendWatchTime();
@@ -227,14 +228,23 @@ export default {
     },
     sendWatchTime() {
       const player = this.$refs.player.getPlayer();
+      const rt = Math.floor(Date.now() / 1000) - this.startTime;
+      const params = {
+        cpn: this.cpn,
+        rt: rt,
+        rti: rt,
+        rtn: rt,
+        cmt: player.currentTime,
+        et: player.currentTime,
+        st: this.st,
+        state: player.paused ? "paused" : "playing",
+        volume: 100,
+        muted: 0,
+        fmt: 396,
+      };
+      this.st = player.currentTime;
       this.$youtube.saveApiStats(
-        {
-          cpn: this.cpn,
-          rt: Math.floor(Date.now() / 1000) - this.startTime,
-          et: player.currentTime,
-          state: player.paused ? "paused" : "playing",
-          volume: 100,
-        },
+        params,
         this.playbackTracking.videostatsWatchtimeUrl.baseUrl
       );
     },
@@ -243,7 +253,11 @@ export default {
       await this.$youtube.saveApiStats(
         {
           cpn: this.cpn,
+          fmt: 243,
+          rtn: Math.floor(Date.now() / 1000) - this.startTime,
           rt: Math.floor(Date.now() / 1000) - this.startTime,
+          fmt: 243,
+          muted: 0,
         },
         this.playbackTracking.videostatsPlaybackUrl.baseUrl
       );

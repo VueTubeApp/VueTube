@@ -193,7 +193,15 @@ class Innertube {
     console.log(params);
     await Http.get({
       url: url,
-      params: params,
+      params: {
+        ...params,
+        ...{
+          ver: 2,
+          c: constants.YT_API_VALUES.CLIENTNAME.toLowerCase(),
+          cbrver: constants.YT_API_VALUES.VERSION,
+          cver: constants.YT_API_VALUES.VERSION,
+        },
+      },
       headers: this.header,
     });
   }
