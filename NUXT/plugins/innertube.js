@@ -95,6 +95,42 @@ class Innertube {
     };
   }
 
+  async getContinuationsAsync(continuation, type) {
+    let data = { context: this.context, continuation: continuation };
+    let url;
+    switch (type) {
+      case "browse":
+        url = `${constants.URLS.YT_BASE_API}/browse?key=${this.key}`;
+        break;
+      case "search":
+        url = `${constants.URLS.YT_BASE_API}/search?key=${this.key}`;
+        break;
+      case "next":
+        url = `${constants.URLS.YT_BASE_API}/next?key=${this.key}`;
+        break;
+      default:
+        throw "Invalid type";
+    }
+
+    const response = await Http.post({
+      url: url,
+      data: data,
+      headers: { "Content-Type": "application/json" },
+    }).catch((error) => error);
+    if (response instanceof Error) {
+      return {
+        success: false,
+        status_code: response.status,
+        message: response.message,
+      };
+    }
+    return {
+      success: true,
+      status_code: response.status,
+      data: response.data,
+    };
+  }
+
   async getVidAsync(id) {
     let data = { context: this.context, videoId: id };
     const responseNext = await Http.post({
@@ -150,6 +186,24 @@ class Innertube {
       status_code: response.status,
       data: response.data,
     };
+  }
+
+  // WARNING: This is tracking the user's activity, but is required for recommendations to properly work
+  async apiStats(params, url) {
+    console.log(params);
+    await Http.get({
+      url: url,
+      params: {
+        ...params,
+        ...{
+          ver: 2,
+          c: constants.YT_API_VALUES.CLIENTNAME.toLowerCase(),
+          cbrver: constants.YT_API_VALUES.VERSION,
+          cver: constants.YT_API_VALUES.VERSION,
+        },
+      },
+      headers: this.header,
+    });
   }
 
   // Static methods
@@ -250,6 +304,7 @@ class Innertube {
         recommendationsContinuation:
           columnUI?.continuations[0].reloadContinuationData?.continuation,
       },
+      playbackTracking: responseInfo.playbackTracking,
     };
 
     console.log(vidData);

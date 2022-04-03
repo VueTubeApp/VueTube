@@ -1,12 +1,14 @@
 // this is an loading animation for videos
 <template>
-  <center>
-    <v-sheet color="background">
-      <v-skeleton-loader type="card-avatar, article, actions" />
+  <div>
+    <v-sheet color="background" v-for="i in count" :key="i">
+      <v-skeleton-loader type="image, list-item-avatar-two-line" />
     </v-sheet>
-  </center>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["count"],
+};
 </script>

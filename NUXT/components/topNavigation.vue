@@ -80,11 +80,20 @@ export default {
   methods: {
     refreshRecommendations() {
       this.$emit("scroll-to-top");
+      const continuations =
+        this.$store.state.recommendedVideos[
+          this.$store.state.recommendedVideos.length - 1
+        ].continuations;
       this.$store.commit("updateRecommendedVideos", []);
       this.$youtube
-        .recommend()
+        .recommendContinuation(
+          continuations.find((element) => element.reloadContinuationData)
+            .reloadContinuationData.continuation,
+          "browse"
+        )
         .then((result) => {
-          if (result) this.$store.commit("updateRecommendedVideos", result[0]);
+          console.log(result);
+          if (result) this.$store.commit("updateRecommendedVideos", [result]);
         })
         .catch((error) => this.$logger("Home Page (Nav Refresh)", error, true));
     },

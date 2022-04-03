@@ -106,6 +106,15 @@ export default {
         window.history.back();
       }
     });
+
+    CapacitorApp.addListener("appUrlOpen", (event) => {
+      const slug = new URL(event.url);
+      // We only push to the route if there is a slug present
+      if (slug) {
+        console.log(slug.pathname + slug.search);
+        this.$router.push(slug.pathname + slug.search);
+      }
+    });
   },
 
   methods: {

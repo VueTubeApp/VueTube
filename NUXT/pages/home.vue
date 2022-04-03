@@ -7,16 +7,21 @@
 
   <div>
     <!--   Video Loading Animation   -->
-    <vid-load-renderer v-if="!recommends" />
-    <horizontal-list-renderer v-else :render="recommends" />
+    <vid-load-renderer v-if="recommends.length == 0" :count="10" />
+    <div v-for="(section, index) in recommends" :key="index">
+      <horizontal-list-renderer :render="section.contents[0]" />
+    </div>
+    <vid-load-renderer v-if="!loading" :count="1" />
+    <observer @intersect="paginate" />
   </div>
 </template>
 
 <script>
 import horizontalListRenderer from "~/components/ListRenderers/horizontalListRenderer.vue";
 import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
+import Observer from "~/components/observer.vue";
 export default {
-  components: { horizontalListRenderer, VidLoadRenderer },
+  components: { horizontalListRenderer, VidLoadRenderer, Observer },
 
   computed: {
     recommends: {
@@ -29,14 +34,35 @@ export default {
     },
   },
 
-  // The following code is only a demo for debugging purposes, note that each "shelfRenderer" has a "title" value that seems to align to the categories at the top of the vanilla yt app
+  data: {
+    loading: false,
+  },
+
+  methods: {
+    paginate() {
+      if (this.recommends) {
+        this.loading = true;
+        this.$youtube
+          .recommendContinuation(
+            this.recommends[this.recommends.length - 1].continuations.find(
+              (element) => element.nextContinuationData
+            ).nextContinuationData.continuation,
+            "browse"
+          )
+          .then((result) => {
+            this.loading = false;
+            this.recommends.push(result);
+          });
+      }
+    },
+  },
 
   mounted() {
-    if (!this.recommends.items || !this.recommends.items.length) {
+    if (!this.recommends.length) {
       this.$youtube
         .recommend()
         .then((result) => {
-          if (result) this.recommends = result[0];
+          if (result) this.recommends = [result];
         })
         .catch((error) => this.$logger("Home Page", error, true));
     }
