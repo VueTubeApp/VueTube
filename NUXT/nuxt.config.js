@@ -15,6 +15,7 @@ export default {
     { src: "~/plugins/youtube", mode: "client" },
     { src: "~/plugins/vuetube", mode: "client" },
     { src: "~/plugins/ryd", mode: "client" },
+    { src: "~/plugins/thirdPartyPluginLoader", mode: "client" },
   ],
   generate: {
     dir: "../dist",

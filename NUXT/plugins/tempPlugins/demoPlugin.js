@@ -1,6 +1,7 @@
 module.exports = {
   manifest: {
     name: "Test plugin",
+    vuetube: "*",
     version: "1.0",
     author: "Frontesque",
     description: "A plugin to test how vuetube handles plugins // Add 'Hello, World!' to the home page.",

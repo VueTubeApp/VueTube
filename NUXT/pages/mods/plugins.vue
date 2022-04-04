@@ -52,8 +52,7 @@ export default {
     };
   },
   async mounted() {
-    const temp = require("~/plugins/demoPlugin.js");
-    this.plugins = [temp];
+    this.plugins = await this.$tppl.list;
   },
 };
 </script>
