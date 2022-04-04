@@ -20,9 +20,7 @@
             color="orange"
             style="
               border-radius: 0.5rem;
-              border: 2px var(--v-oragnge-base);
-              margin-top: -1.5rem;
-              margin-right: -0.5rem;
+              border: 2px var(--v-orange-base);
             "
           >
             Latest
@@ -34,8 +32,6 @@
             style="
               border-radius: 0.5rem;
               border: 2px var(--v-green-base);
-              margin-top: -1.5rem;
-              margin-right: -0.5rem;
             "
           >
             >Installed</v-chip
