@@ -38,12 +38,14 @@
 import compactVideoRenderer from "~/components/CompactRenderers/compactVideoRenderer.vue";
 import compactChannelRenderer from "~/components/CompactRenderers/compactChannelRenderer.vue";
 import gridVideoRenderer from "~/components/gridRenderers/gridVideoRenderer.vue";
+import videoWithContextRenderer from "~/components/gridRenderers/videoWithContextRenderer.vue";
 
 export default {
   components: {
     gridVideoRenderer,
     compactVideoRenderer,
     compactChannelRenderer,
+    videoWithContextRenderer,
   },
   props: ["render"],
 

@@ -3,6 +3,7 @@
 
 import { Http } from "@capacitor-community/http";
 import { getBetweenStrings } from "./utils";
+import rendererUtils from "./renderers";
 import constants from "./constants";
 
 class Innertube {
@@ -95,8 +96,11 @@ class Innertube {
     };
   }
 
-  async getContinuationsAsync(continuation, type) {
-    let data = { context: this.context, continuation: continuation };
+  async getContinuationsAsync(continuation, type, contextAdditional = {}) {
+    let data = {
+      context: { ...this.context, ...contextAdditional },
+      continuation: continuation,
+    };
     let url;
     switch (type) {
       case "browse":
@@ -135,7 +139,17 @@ class Innertube {
     let data = { context: this.context, videoId: id };
     const responseNext = await Http.post({
       url: `${constants.URLS.YT_BASE_API}/next?key=${this.key}`,
-      data: data,
+      data: {
+        ...data,
+        ...{
+          context: {
+            client: {
+              clientName: constants.YT_API_VALUES.CLIENT_WEB,
+              clientVersion: constants.YT_API_VALUES.VERSION_WEB,
+            },
+          },
+        },
+      },
       headers: constants.INNERTUBE_HEADER(this.context.client),
     }).catch((error) => error);
 
@@ -251,59 +265,67 @@ class Innertube {
     const resolutions = responseInfo.streamingData;
     const columnUI =
       responseNext.contents.singleColumnWatchNextResults.results.results;
+    const vidMetadata = columnUI.contents.find(
+      (content) => content.slimVideoMetadataSectionRenderer
+    ).slimVideoMetadataSectionRenderer;
+
+    const recommendations = columnUI?.contents.find(
+      (contents) => contents?.itemSectionRenderer?.targetId == "watch-next-feed"
+    ).itemSectionRenderer;
+
+    const ownerData = vidMetadata.contents.find(
+      (content) => content.slimOwnerRenderer
+    )?.slimOwnerRenderer;
 
     const vidData = {
       id: details.videoId,
       title: details.title,
       isLive: details.isLiveContent,
       channelName: details.author,
-      channelUrl:
-        columnUI?.contents[0].slimVideoMetadataSectionRenderer?.contents.find(
-          (contents) => contents.elementRenderer
-        )?.newElement?.type?.componentType?.model?.channelBarModel
-          ?.videoChannelBarData?.onTap?.innertubeCommand?.browseEndpoint
-          ?.canonicalBaseUrl,
-      channelImg:
-        columnUI?.contents[0].slimVideoMetadataSectionRenderer?.contents.find(
-          (contents) => contents.elementRenderer
-        )?.newElement?.type?.componentType?.model?.channelBarModel
-          ?.videoChannelBarData?.avatar?.image?.sources[0].url,
+      channelSubs: ownerData?.collapsedSubtitle?.runs[0]?.text,
+      channelUrl: rendererUtils.getNavigationEndpoints(ownerData),
+      channelImg: ownerData?.thumbnail?.thumbnails[0].url,
       availableResolutions: resolutions?.formats,
       availableResolutionsAdaptive: resolutions?.adaptiveFormats,
       metadata: {
+        contents: vidMetadata.contents,
         description: details.shortDescription,
         thumbnails: details.thumbnails?.thumbnails,
-        uploadDate:
-          columnUI?.contents[0].slimVideoMetadataSectionRenderer?.contents.find(
-            (contents) => contents.slimVideoDescriptionRenderer
-          )?.slimVideoDescriptionRenderer.publishDate.runs[0].text,
         isPrivate: details.isPrivate,
         viewCount: details.viewCount,
         lengthSeconds: details.lengthSeconds,
         likes: parseInt(
-          columnUI?.contents[0].slimVideoMetadataSectionRenderer?.contents
-            .find((contents) => contents.slimVideoScrollableActionBarRenderer)
-            ?.slimVideoScrollableActionBarRenderer.buttons.find(
-              (button) => button.slimMetadataToggleButtonRenderer.isLike == true
+          vidMetadata.contents
+            .find((content) => content.slimVideoActionBarRenderer)
+            .slimVideoActionBarRenderer.buttons.find(
+              (button) => button.slimMetadataToggleButtonRenderer.isLike
             )
-            ?.slimMetadataToggleButtonRenderer?.button.toggleButtonRenderer?.defaultText?.accessibility?.accessibilityData?.label?.replace(
+            .slimMetadataToggleButtonRenderer.button.toggleButtonRenderer.defaultText.accessibility.accessibilityData.label.replace(
               /\D/g,
               ""
             )
         ), // Yes. I know.
       },
       renderedData: {
-        description: columnUI?.contents
-          .find((contents) => contents.slimVideoMetadataSectionRenderer)
-          .slimVideoMetadataSectionRenderer?.contents.find(
-            (contents) => contents.slimVideoDescriptionRenderer
-          )?.slimVideoDescriptionRenderer,
-        recommendations: columnUI?.contents.find(
-          (contents) => contents.shelfRenderer
-        ).shelfRenderer,
+        description: responseNext.engagementPanels
+          .find(
+            (panel) =>
+              panel.engagementPanelSectionListRenderer.panelIdentifier ==
+              "video-description-ep-identifier"
+          )
+          .engagementPanelSectionListRenderer.content.structuredDescriptionContentRenderer.items.find(
+            (item) => item.expandableVideoDescriptionBodyRenderer
+          ).expandableVideoDescriptionBodyRenderer,
+        recommendations: recommendations,
         recommendationsContinuation:
-          columnUI?.continuations[0].reloadContinuationData?.continuation,
+          recommendations.contents[recommendations.contents.length - 1]
+            .continuationItemRenderer?.continuationEndpoint.continuationCommand
+            .token,
       },
+      // commentData:
+      //   responseNext?.frameworkUpdates?.entityBatchUpdate?.mutations?.find(
+      //     (mutations) => mutations.payload?.commentHeaderEntityPayload
+      //   ).payload.commentHeaderEntityPayload,
       playbackTracking: responseInfo.playbackTracking,
     };
 

@@ -1,20 +1,20 @@
 <template>
   <div class="description">
-    <template v-for="(text, index) in render.description.runs">
-      <template
-        v-if="
-          text.navigationEndpoint && text.navigationEndpoint.webviewEndpoint
-        "
-      >
+    <template v-for="(text, index) in render.descriptionBodyText.runs">
+      <template v-if="$rendererUtils.checkInternal(text)">
         <a
-          @click="openExternal($rendererUtils.getNavigationEndpoints(text))"
+          @click="openInternal($rendererUtils.getNavigationEndpoints(text))"
           :key="index"
           >{{ text.text }}</a
         >
       </template>
-      <template v-else-if="$rendererUtils.checkInternal(text)">
+      <template
+        v-else-if="
+          text.navigationEndpoint && text.navigationEndpoint.urlEndpoint
+        "
+      >
         <a
-          @click="openInternal($rendererUtils.getNavigationEndpoints(text))"
+          @click="openExternal($rendererUtils.getNavigationEndpoints(text))"
           :key="index"
           >{{ text.text }}</a
         >
@@ -28,6 +28,7 @@
 .description {
   white-space: pre-line;
   margin-bottom: 16px;
+  margin-top: 16px;
 }
 </style>
 

@@ -19,11 +19,16 @@
           font-size: 0.95rem;
           line-height: 1rem;
         "
-        v-text="title"
+        v-text="video.title"
       />
       <v-card-text>
         <div style="margin-bottom: 1rem">
-          {{ views }} views • {{ uploaded }}
+          <template
+            v-for="text in video.metadata.contents.find(
+              (content) => content.slimVideoInformationRenderer
+            ).slimVideoInformationRenderer.collapsedSubtitle.runs"
+            >{{ text.text }}</template
+          >
         </div>
 
         <!--   Scrolling Div For Interactions   --->
@@ -58,12 +63,7 @@
         </div>
         <!--   End Scrolling Div For Interactions   --->
         <!-- <hr /> -->
-        <p>Channel Stuff</p>
       </v-card-text>
-      <div v-if="showMore" class="scroll-y ml-2 mr-2">
-        <slim-video-description-renderer :render="description" />
-      </div>
-
       <!-- <v-bottom-sheet
         v-model="showMore"
         color="background"
@@ -75,32 +75,88 @@
           ><br />
 
           <div class="scroll-y">
-            {{ description }}
+            {{ response.renderedData.description }}
           </div>
         </v-sheet>
       </v-bottom-sheet> -->
       <!-- <v-bottom-sheet v-model="share" color="background" style="z-index: 9999999">
         <v-sheet style="padding: 1em">
           <div class="scroll-y">
-            {{ description }}
+            {{ response.renderedData.description }}
           </div>
         </v-sheet>
       </v-bottom-sheet> -->
     </v-card>
-    <vid-load-renderer v-if="!recommends" />
-    <shelf-renderer v-else :render="recommends" />
+    <v-divider />
+
+    <!--   Channel Bar   -->
+    <v-card
+      class="channel-section background"
+      v-if="loaded"
+      :to="video.channelUrl"
+    >
+      <div id="details">
+        <div class="avatar-link mr-3">
+          <v-img class="avatar-thumbnail" :src="video.channelImg" />
+        </div>
+        <div class="channel-byline">
+          <div class="channel-name" v-text="video.channelName" />
+          <div
+            class="caption background--text"
+            :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+            v-text="video.channelSubs"
+          />
+        </div>
+      </div>
+      <div
+        class="channel-buttons"
+        style="color: rgb(204, 0, 0); text-transform: uppercase"
+      >
+        subscribe
+      </div>
+    </v-card>
+    <v-divider />
+
+    <!-- Comments -->
+    <!-- <v-card flat class="background comment-button" v-if="loaded">
+      <v-text
+        >{{ video.commentData.title }} •
+        {{ video.commentData.commentsCount }}</v-text
+      >
+    </v-card>
+    <v-divider /> -->
+
+    <!-- Description -->
+    <div v-if="showMore" class="scroll-y ml-4 mr-4">
+      <slim-video-description-renderer
+        :render="video.renderedData.description"
+      />
+    </div>
+
+    <!-- Related Videos -->
+    <div class="loaders" v-if="!loaded">
+      <v-skeleton-loader
+        type="list-item-two-line, actions, divider, list-item-avatar, divider, list-item-three-line"
+      />
+      <vid-load-renderer :count="5" />
+    </div>
+    <item-section-renderer v-else :render="recommends" />
   </div>
 </template>
 
 <script>
 import { Share } from "@capacitor/share";
-import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 import { getCpn } from "~/plugins/utils";
 import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
+import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
 
 export default {
-  components: { ShelfRenderer, VidLoadRenderer, SlimVideoDescriptionRenderer },
+  components: {
+    VidLoadRenderer,
+    SlimVideoDescriptionRenderer,
+    ItemSectionRenderer,
+  },
   data() {
     return {
       interactions: [
@@ -129,15 +185,12 @@ export default {
       ],
       showMore: false,
       // share: false,
-      title: null,
-      uploaded: null,
       vidSrc: null,
       sources: [],
-      description: null,
-      views: null,
       recommends: null,
       loaded: false,
       interval: null,
+      video: null,
     };
   },
   watch: {
@@ -167,10 +220,10 @@ export default {
   },
   methods: {
     getVideo() {
-      this.likes = 100;
       this.loaded = false;
 
       this.$youtube.getVid(this.$route.query.v).then((result) => {
+        this.video = result;
         console.log("Video info data", result);
         console.log(result.availableResolutions);
 
@@ -184,14 +237,9 @@ export default {
           ].url; // Takes the highest available resolution with both video and Audio. Note this will be lower than the actual highest resolution
 
         //---   Content Stuff   ---//
-        this.title = result.title;
-        this.description = result.renderedData.description; // While this works, I do recommend using the rendered description instead in the future as there are some things a pure string wouldn't work with
-        this.views = parseInt(result.metadata.viewCount).toLocaleString();
         this.likes = result.metadata.likes.toLocaleString();
-        this.uploaded = result.metadata.uploadDate;
         this.interactions[0].value = result.metadata.likes.toLocaleString();
         this.loaded = true;
-
         this.recommends = result.renderedData.recommendations;
         // .catch((error) => this.$logger("Watch", error, true));
         console.log("recommendations:", this.recommends);
@@ -220,8 +268,8 @@ export default {
     async share() {
       // this.share = !this.share;
       await Share.share({
-        title: this.title,
-        text: this.title,
+        title: this.video.title,
+        text: this.video.title,
         url: "https://youtu.be/" + this.$route.query.v,
         dialogTitle: "Share video",
       });
@@ -270,5 +318,35 @@ export default {
 .vertical-button span.v-btn__content {
   flex-direction: column;
   justify-content: space-around;
+}
+
+.channel-section,
+.comment-button {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.channel-section #details {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.channel-section .channel-byline {
+  min-width: 0;
+}
+
+.channel-section .avatar-thumbnail {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.channel-section .channel-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

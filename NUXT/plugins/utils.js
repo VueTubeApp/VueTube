@@ -37,9 +37,15 @@ function getCpn() {
   return result;
 }
 
+function getMutationByKey(key, mutations) {
+  if (!key || !mutations) return undefined;
+  return mutations.find((mutation) => mutation.entityKey === key).payload;
+}
+
 module.exports = {
   getBetweenStrings,
   hexToRgb,
   rgbToHex,
   getCpn,
+  getMutationByKey,
 };
