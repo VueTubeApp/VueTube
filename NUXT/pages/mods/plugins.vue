@@ -12,7 +12,7 @@
         margin: $store.state.tweaks.roundTweak > 0 ? '0 1rem' : '0',
         padding:
           $store.state.tweaks.roundTweak > 0
-            ? '.75rem 1rem .75rem 0rem'
+            ? '.75rem 0rem .75rem 1rem'
             : '.75rem .75rem .75rem 1.5rem',
       }"
     >
