@@ -1,60 +1,59 @@
 <template>
-  <div class="py-2">
-    <v-list-item v-for="(plugin, index) in plugins" :key="index" class="my-1">
-      <v-card flat class="card my-2 background" :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'">
-
-
-        <v-card-title style="padding: 0 0.25em 0 0.75em">{{ plugin.manifest.name }} {{ plugin.manifest.version }}</v-card-title>
-        <div style="padding: 1em 1em 0 0.75em; padding-left: 1.25em;">by {{ plugin.manifest.author }} {{ plugin.manifest.license ? `(${plugin.manifest.license})` : '' }}</div>
-        <v-card-text>
+  <div>
+    <!-- sorry for the mess, I will make a dumb (styles only) standardized card component later - Nik -->
+    <div
+      v-for="(plugin, index) in plugins"
+      :key="index"
+      flat
+      class="card d-flex mb-4 background"
+      :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+      :style="{
+        borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
+        margin: $store.state.tweaks.roundTweak > 0 ? '0 1rem' : '0',
+        padding:
+          $store.state.tweaks.roundTweak > 0
+            ? '.75rem 1rem .75rem 0rem'
+            : '.75rem .75rem .75rem 1.5rem',
+      }"
+    >
+      <div>
+        <v-card-title class="pa-0">
+          {{ plugin.manifest.name }}
+          {{ plugin.manifest.version }}
+        </v-card-title>
+        <v-card-text
+          class="pa-0 mb-3 background--text"
+          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+        >
+          by {{ plugin.manifest.author }}
+          {{ plugin.manifest.license ? `(${plugin.manifest.license})` : "" }}
+        </v-card-text>
+        <v-card-text class="pa-0">
           {{ plugin.manifest.description }}
         </v-card-text>
-
-      </v-card>
-    </v-list-item>
+      </div>
+      <v-switch
+        v-model="$vuetify.theme.dark"
+        style="pointer-events: none"
+        class="my-0"
+        persistent-hint
+        inset
+      />
+    </div>
   </div>
 </template>
 
-<style scoped>
-  .card {
-    width: 100%;
-  }
-
-  .subtitle {
-    margin: 0.4em;
-    font-size: 0.75em;
-    transform: translateY(5%);
-  }
-
-  .date {
-    transform: translateY(-40%);
-  }
-
-  .btn-icon {
-    margin-right: 0.25em;
-  }
-
-  .tags {
-    margin-left: 0.5em;
-  }
-
-</style>
-
 <script>
-
-  export default {
-    data() {
-      return {
-        plugins: new Array(),
-        installedVersion: process.env.appVersion,
-      };
-    },
-    async mounted() {
-
-      const temp = require('~/plugins/demoPlugin.js');
-      this.plugins = [temp];
-
-    }
-  };
-
+export default {
+  data() {
+    return {
+      plugins: new Array(),
+      installedVersion: process.env.appVersion,
+    };
+  },
+  async mounted() {
+    const temp = require("~/plugins/demoPlugin.js");
+    this.plugins = [temp];
+  },
+};
 </script>
