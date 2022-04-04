@@ -83,6 +83,7 @@ export default {
   methods: {
     refreshRecommendations() {
       this.$emit("scroll-to-top");
+
       const continuations =
         this.$store.state.recommendedVideos[
           this.$store.state.recommendedVideos.length - 1
