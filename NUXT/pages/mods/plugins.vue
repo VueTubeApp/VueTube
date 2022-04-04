@@ -33,7 +33,7 @@
         </v-card-text>
       </div>
       <v-switch
-        v-model="$vuetify.theme.dark"
+        disabled
         style="pointer-events: none"
         class="my-0"
         persistent-hint
