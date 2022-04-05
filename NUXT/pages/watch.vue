@@ -5,11 +5,11 @@
       style="position: sticky; top: 0; z-index: 696969"
       :vid-src="vidSrc"
       ref="player"
-      v-if="useBetaPlayer != true"
+      v-if="useBetaPlayer !== 'true'"
     />
 
     <!--   VueTube Player V1   -->
-    <VTPlayerV1 :sources="sources" v-if="useBetaPlayer == true" />
+    <vuetubePlayer :sources="sources" v-if="useBetaPlayer === 'true'" />
 
     <v-card v-if="loaded" class="ml-2 mr-2 background" flat>
       <v-card-title
@@ -99,9 +99,10 @@ import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 import { getCpn } from "~/plugins/utils";
 import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
+import vuetubePlayer from "~/components/Player/index.vue"
 
 export default {
-  components: { ShelfRenderer, VidLoadRenderer, SlimVideoDescriptionRenderer },
+  components: { ShelfRenderer, VidLoadRenderer, SlimVideoDescriptionRenderer, vuetubePlayer },
   data() {
     return {
       interactions: [
