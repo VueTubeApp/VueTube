@@ -41,6 +41,7 @@ function getMutationByKey(key, mutations) {
   if (!key || !mutations) return undefined;
   return mutations.find((mutation) => mutation.entityKey === key).payload;
 }
+
 function linkParser(url) {
 
   var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
