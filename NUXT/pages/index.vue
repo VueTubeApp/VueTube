@@ -18,7 +18,7 @@ export default {
   layout: "empty",
 
   data: () => ({
-    progressMsg: "Fetching the API",
+    progressMsg: "Connecting",
   }),
   async mounted() {
     this.$store.commit("tweaks/initTweaks");
@@ -48,7 +48,7 @@ export default {
 
     await theming;
     await this.$youtube.getAPI();
-    this.progressMsg = "Navigating Home";
+    this.progressMsg = "Launching";
     
     //---   April First Joke   ---//
     if (Math.floor(Math.random() * 9 == 0)) {
