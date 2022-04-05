@@ -106,11 +106,9 @@
 export default {
 
   computed: {
-    roundTweak: {
-      get() {
-        return this.$store.state.tweaks.roundTweak;
-      }
-    },
+    roundTweak() {
+      return this.$store.state.tweaks.roundTweak;
+    }
   },
 
   data() {
