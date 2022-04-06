@@ -2,6 +2,7 @@
  *   Data Storage:
  *   localStorage.setItem("key", data)
  *   localStorage.getItem('key')
+ *   this.$router.push("PageName");
  */
 
 export default {
