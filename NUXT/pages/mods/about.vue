@@ -16,7 +16,10 @@
     <!--   App Information   -->
     <v-card class="obj" :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'" :style="{borderRadius: `${roundTweak / 2}rem`}">
       <v-card-title>App Information</v-card-title>
-      <v-card-text>App Version: {{ version.substring(0, 7) }}</v-card-text>
+      <v-card-text>
+        <h3>App Version</h3>
+        {{ version.substring(0, 7) || "Unknown" }}
+      </v-card-text>
     </v-card>
     <!--   End App Information   -->
 
