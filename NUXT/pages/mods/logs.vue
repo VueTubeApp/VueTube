@@ -5,6 +5,7 @@
         class="card background"
         :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
         flat
+        :style="{borderRadius: `${roundTweak / 2}rem`}"
       >
         <v-card-title>
           <v-chip v-if="item.error" outlined class="errorChip" color="error"
@@ -22,6 +23,7 @@
           <v-expansion-panel
             class="background"
             :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+            :style="{borderRadius: `${roundTweak / 2}rem`}"
           >
             <v-expansion-panel-header>More</v-expansion-panel-header>
             <v-expansion-panel-content class="logContent" v-text="item.data" />
@@ -53,6 +55,11 @@
 
 <script>
 export default {
+  computed: {
+    roundTweak() {
+      return this.$store.state.tweaks.roundTweak;
+    }
+  },
   data() {
     return {
       logs: new Array(),
