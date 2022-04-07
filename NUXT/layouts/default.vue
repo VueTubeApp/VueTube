@@ -14,9 +14,6 @@
         v-show="!search"
         class="scrollcontainer"
         style="overflow: hidden; height: calc(100vh - 8rem)"
-        :style="{
-          borderRadius: `${roundTweak / 2}rem`,
-        }"
       >
         <!-- element above removes artifacting from things like v-ripple by -->
         <!-- scrollbox below must be a standalone div -->

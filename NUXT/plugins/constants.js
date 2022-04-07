@@ -16,9 +16,15 @@ const ytApiVal = {
   CLIENT_WEB: 2,
 };
 
+const filesystem = {
+  plugins: "vuetube/plugins",
+  temp: "vuetube/temp",
+}
+
 module.exports = {
   URLS: url,
   YT_API_VALUES: ytApiVal,
+  fs: filesystem,
   LOGGER_NAMES: {
     search: "Search",
     autoComplete: "AutoComplete",

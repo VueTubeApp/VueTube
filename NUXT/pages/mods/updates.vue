@@ -5,6 +5,7 @@
         flat
         class="card my-2 background"
         :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+        :style="{ borderRadius: `${roundTweak / 2}rem` }"
       >
         <v-card-title style="padding: 0 0.25em 0 0.75em">
           {{ item.author ? item.author.login : item.commit.author.name }}
@@ -89,31 +90,23 @@
 import { Browser } from "@capacitor/browser";
 
 export default {
+  computed: {
+    roundTweak() {
+      return this.$store.state.tweaks.roundTweak;
+    },
+  },
+
   data() {
     return {
       commits: new Array(),
       installedVersion: process.env.appVersion,
     };
   },
-  async mounted() {
-    const commits = await this.$vuetube.commits;
-    if (commits[0].sha) {
-      //If Commit Valid
-      this.commits = commits;
-    } else {
-      console.log(commits);
-    }
-  },
-  methods: {
-    async openExternal(item) {
-      await Browser.open({ url: item.html_url });
-    },
 
-    install(item) {
-      this.$vuetube.getRuns(item, (data) => {
-        console.log(data);
-      });
-    },
+  install(item) {
+    this.$vuetube.getRuns(item, (data) => {
+      console.log(data);
+    });
   },
 };
 </script>

@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-  workflow_dispatch:
 
 env:
   NODE_VERSION: 16

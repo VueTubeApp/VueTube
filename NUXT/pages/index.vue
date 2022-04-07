@@ -18,22 +18,27 @@ export default {
   layout: "empty",
 
   data: () => ({
-    progressMsg: "Fetching the API",
+    progressMsg: "Connecting",
   }),
   async mounted() {
     this.$store.commit("tweaks/initTweaks");
     const theming = new Promise((resolve) =>
       // Set timeout is required for $vuetify.theme... dont ask me why -Front
       setTimeout(() => {
-        this.$vuetify.theme.dark = JSON.parse(localStorage.getItem("darkTheme")) === true;
+        this.$vuetify.theme.dark =
+          JSON.parse(localStorage.getItem("darkTheme")) === true;
         if (localStorage.getItem("primaryDark") != null)
-          this.$vuetify.theme.themes.dark.primary = localStorage.getItem("primaryDark");
+          this.$vuetify.theme.themes.dark.primary =
+            localStorage.getItem("primaryDark");
         if (localStorage.getItem("primaryLight") != null)
-          this.$vuetify.theme.themes.light.primary = localStorage.getItem("primaryLight");
+          this.$vuetify.theme.themes.light.primary =
+            localStorage.getItem("primaryLight");
         if (localStorage.getItem("backgroundDark") != null)
-          this.$vuetify.theme.themes.dark.background = localStorage.getItem("backgroundDark");
+          this.$vuetify.theme.themes.dark.background =
+            localStorage.getItem("backgroundDark");
         if (localStorage.getItem("backgroundLight") != null)
-          this.$vuetify.theme.themes.light.background = localStorage.getItem("backgroundLight");
+          this.$vuetify.theme.themes.light.background =
+            localStorage.getItem("backgroundLight");
         this.$vuetube.navigationBar.setTheme(
           this.$vuetify.theme.currentTheme.background,
           !this.$vuetify.theme.dark
@@ -48,7 +53,8 @@ export default {
 
     await theming;
     await this.$youtube.getAPI();
-    this.progressMsg = "Navigating Home";
+    this.progressMsg = "Launching";
+
     this.$router.push(`/${localStorage.getItem("startPage") || "home"}`);
   },
 };

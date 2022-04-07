@@ -5,10 +5,11 @@
       style="position: sticky; top: 0; z-index: 696969"
       :vid-src="vidSrc"
       ref="player"
+      v-if="useBetaPlayer !== 'true'"
     />
 
     <!--   VueTube Player V1   -->
-    <!-- <VTPlayerV1 :sources="sources" v-if="sources.length > 0" />-->
+    <vuetubePlayer :sources="sources" v-if="useBetaPlayer === 'true'" />
 
     <v-card v-if="loaded" class="ml-2 mr-2 background" flat>
       <v-card-title
@@ -150,11 +151,14 @@ import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 import { getCpn } from "~/plugins/utils";
 import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
 import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
+import vuetubePlayer from "~/components/Player/index.vue";
 
 export default {
   components: {
+    ShelfRenderer,
     VidLoadRenderer,
     SlimVideoDescriptionRenderer,
+    vuetubePlayer,
     ItemSectionRenderer,
   },
   data() {
@@ -191,8 +195,10 @@ export default {
       loaded: false,
       interval: null,
       video: null,
+      useBetaPlayer: false,
     };
   },
+
   watch: {
     // Watch for change in the route query string (in this case, ?v=xxxxxxxx to ?v=yyyyyyyy)
     $route: {
@@ -213,6 +219,8 @@ export default {
   mounted() {
     this.startTime = Math.floor(Date.now() / 1000);
     this.getVideo();
+
+    this.useBetaPlayer = localStorage.getItem("debug.BetaPlayer");
   },
 
   destroyed() {

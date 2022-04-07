@@ -4,9 +4,9 @@
 
     <!--   Top Notice   -->
     <center style="margin: 2em;">
-      <h1>VueTube Registry</h1>
+      <h1>Registry Editor</h1>
       <v-alert text outlined type="warning">
-        MESSING WITH SETTINGS MAY CAUSE YOUR APP TO BREAK!
+        EDITING ENTRIES MAY CAUSE YOUR APP TO BREAK!
       </v-alert>
     </center>
 
@@ -20,7 +20,7 @@
 
     <!--   Registry List Loader   -->
     <v-list-item v-for="(item, index) in keys" :key="index">
-      <v-card class="card rounded-lg" :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'">
+      <v-card class="card" :class="$vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'" :style="{borderRadius: `${roundTweak / 2}rem`}">
         <v-card-title v-text="item.key" />
         <v-card-text v-text="item.value" />
         <v-card-actions>
@@ -104,6 +104,13 @@
 
 <script>
 export default {
+
+  computed: {
+    roundTweak() {
+      return this.$store.state.tweaks.roundTweak;
+    }
+  },
+
   data() {
     return {
       keys: [],
