@@ -322,10 +322,11 @@ class Innertube {
             .continuationItemRenderer?.continuationEndpoint.continuationCommand
             .token,
       },
-      // commentData:
-      //   responseNext?.frameworkUpdates?.entityBatchUpdate?.mutations?.find(
-      //     (mutations) => mutations.payload?.commentHeaderEntityPayload
-      //   ).payload.commentHeaderEntityPayload,
+      engagementPanels: responseNext.engagementPanels,
+      commentData: columnUI.contents.find(
+        (content) =>
+          content.itemSectionRenderer?.contents.commentsEntryPointHeaderRenderer
+      )?.itemSectionRenderer.contents.commentsEntryPointHeaderRenderer,
       playbackTracking: responseInfo.playbackTracking,
     };
 

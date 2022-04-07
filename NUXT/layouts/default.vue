@@ -115,6 +115,12 @@ export default {
         this.$router.push(slug.pathname + slug.search);
       }
     });
+
+    // ---   Import Twemoji   ---///
+    const plugin = document.createElement("script");
+    plugin.setAttribute("src", "//twemoji.maxcdn.com/v/latest/twemoji.min.js");
+    plugin.setAttribute("crossorigin", "anonymous");
+    document.head.appendChild(plugin);
   },
 
   methods: {
