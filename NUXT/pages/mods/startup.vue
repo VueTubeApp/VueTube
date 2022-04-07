@@ -4,6 +4,7 @@
       flat
       class="pb-5 background"
       :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+      :style="{borderRadius: `${roundTweak / 2}rem`}"
     >
       <v-card-title>Default Page</v-card-title>
       <v-card-text>
@@ -21,6 +22,13 @@
 
 <script>
 export default {
+
+  computed: {
+    roundTweak() {
+      return this.$store.state.tweaks.roundTweak;
+    }
+  },
+
   data() {
     return {
       page: "home",
