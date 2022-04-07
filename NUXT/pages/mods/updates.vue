@@ -1,7 +1,7 @@
 <template>
   <div class="py-2">
     <v-list-item v-for="(item, index) in commits" :key="index" class="my-1">
-      <v-card flat class="card my-2 background" :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'">
+      <v-card flat class="card my-2 background" :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'" :style="{borderRadius: `${roundTweak / 2}rem`}">
         <v-card-title style="padding: 0 0.25em 0 0.75em">
           {{ item.author ? item.author.login : item.commit.author.name }}
           <span class="subtitle background--text" :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
@@ -67,11 +67,16 @@
 </style>
 
 <script>
-  import {
-    Browser
-  } from "@capacitor/browser";
+  import { Browser } from "@capacitor/browser";
 
   export default {
+
+     computed: {
+        roundTweak() {
+          return this.$store.state.tweaks.roundTweak;
+        }
+      },
+
     data() {
       return {
         commits: new Array(),
