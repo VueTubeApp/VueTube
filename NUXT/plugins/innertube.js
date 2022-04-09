@@ -40,7 +40,10 @@ class Innertube {
         }
       } catch (err) {
         console.log(err);
-        if (this.checkErrorCallback) this.ErrorCallback(err, true);
+        if (this.checkErrorCallback) {
+          this.ErrorCallback(html.data, true);
+          this.ErrorCallback(err, true);
+        }
         if (this.retry_count >= 10) {
           this.initAsync();
         } else {

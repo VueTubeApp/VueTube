@@ -152,6 +152,7 @@ import { getCpn } from "~/plugins/utils";
 import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
 import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
 import vuetubePlayer from "~/components/Player/index.vue";
+import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 
 export default {
   components: {
