@@ -11,6 +11,7 @@
     "@capacitor/share": "^1.1.2",
     "@capacitor/splash-screen": "^1.2.2",
     "@capacitor/status-bar": "^1.0.8",
+    "@capacitor/toast": "^1.0.8",
     "@hugotomazi/capacitor-navigation-bar": "^1.1.1",
     "iconv-lite": "^0.6.3"
   }

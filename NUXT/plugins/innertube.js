@@ -2,7 +2,7 @@
 // https://www.youtube.com/youtubei/v1
 
 import { Http } from "@capacitor-community/http";
-import { getBetweenStrings } from "./utils";
+import { getBetweenStrings, delay } from "./utils";
 import rendererUtils from "./renderers";
 import constants from "./constants";
 
@@ -44,11 +44,23 @@ class Innertube {
           this.ErrorCallback(html.data, true);
           this.ErrorCallback(err, true);
         }
-        if (this.retry_count >= 10) {
-          this.initAsync();
+        if (this.retry_count < 10) {
+          this.retry_count += 1;
+          if (this.checkErrorCallback)
+            this.ErrorCallback(
+              `retry count: ${this.retry_count}`,
+              false,
+              `An error occurred while trying to init the innertube API. Retrial number: ${this.retry_count}/10`
+            );
+          await delay(5000);
+          await this.initAsync();
         } else {
           if (this.checkErrorCallback)
-            this.ErrorCallback("Failed to retrieve Innertube session", true);
+            this.ErrorCallback(
+              "Failed to retrieve Innertube session",
+              true,
+              "An error occurred while retrieving the innertube session. Check the Logs for more information."
+            );
         }
       }
     } catch (error) {

@@ -49,6 +49,8 @@ function linkParser(url) {
   return match && match[7].length == 11 ? match[7] : false;
 }
 
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
 module.exports = {
   getBetweenStrings,
   hexToRgb,
@@ -56,4 +58,5 @@ module.exports = {
   getCpn,
   getMutationByKey,
   linkParser,
+  delay,
 };
