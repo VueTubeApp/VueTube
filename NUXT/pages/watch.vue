@@ -118,21 +118,31 @@
     </v-card>
     <v-divider />
 
-    <!-- Comments -->
-    <!-- <v-card flat class="background comment-button" v-if="loaded">
-      <v-text
-        >{{ video.commentData.title }} •
-        {{ video.commentData.commentsCount }}</v-text
-      >
-    </v-card>
-    <v-divider /> -->
-
     <!-- Description -->
     <div v-if="showMore" class="scroll-y ml-4 mr-4">
       <slim-video-description-renderer
         :render="video.renderedData.description"
       />
+      <v-divider />
     </div>
+
+    <!-- Comments -->
+    <v-card
+      flat
+      class="background comment-renderer"
+      v-if="loaded && video.commentData"
+    >
+      <v-text class="comment-count keep-spaces">
+        <template v-for="text in video.commentData.headerText.runs">
+          <template v-if="text.bold">
+            <strong :key="text.text">{{ text.text }}</strong>
+          </template>
+          <template v-else>{{ text.text }}</template>
+        </template>
+      </v-text>
+      <v-icon>mdi-unfold-more-horizontal</v-icon>
+    </v-card>
+    <v-divider />
 
     <!-- Related Videos -->
     <div class="loaders" v-if="!loaded">
@@ -330,13 +340,14 @@ export default {
 }
 
 .channel-section,
-.comment-button {
+.comment-renderer {
   display: flex;
   align-items: center;
   padding: 12px;
 }
 
-.channel-section #details {
+.channel-section #details,
+.comment-renderer .comment-count {
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -357,5 +368,9 @@ export default {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.keep-spaces {
+  white-space: pre-wrap;
 }
 </style>

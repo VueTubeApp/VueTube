@@ -285,7 +285,7 @@ class Innertube {
     ).slimVideoMetadataSectionRenderer;
 
     const recommendations = columnUI?.contents.find(
-      (contents) => contents?.itemSectionRenderer?.targetId == "watch-next-feed"
+      (content) => content?.itemSectionRenderer?.targetId == "watch-next-feed"
     ).itemSectionRenderer;
 
     const ownerData = vidMetadata.contents.find(
@@ -338,14 +338,13 @@ class Innertube {
             .token,
       },
       engagementPanels: responseNext.engagementPanels,
-      commentData: columnUI.contents.find(
-        (content) =>
-          content.itemSectionRenderer?.contents.commentsEntryPointHeaderRenderer
-      )?.itemSectionRenderer.contents.commentsEntryPointHeaderRenderer,
+      commentData: columnUI.contents
+        .find((content) => content.itemSectionRenderer?.contents)
+        ?.itemSectionRenderer.contents.find(
+          (content) => content.commentsEntryPointHeaderRenderer
+        )?.commentsEntryPointHeaderRenderer,
       playbackTracking: responseInfo.playbackTracking,
     };
-
-    console.log(vidData);
 
     return vidData;
   }
