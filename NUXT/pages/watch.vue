@@ -96,60 +96,58 @@
       <v-divider />
 
       <!--   Channel Bar   -->
-      <v-card
-        class="channel-section background"
-        v-if="loaded"
-        :to="video.channelUrl"
-      >
-        <div id="details">
-          <div class="avatar-link mr-3">
-            <v-img class="avatar-thumbnail" :src="video.channelImg" />
+      <div class="channel-container" v-if="loaded">
+        <v-card class="channel-section background" :to="video.channelUrl">
+          <div id="details">
+            <div class="avatar-link mr-3">
+              <v-img class="avatar-thumbnail" :src="video.channelImg" />
+            </div>
+            <div class="channel-byline">
+              <div class="channel-name" v-text="video.channelName" />
+              <div
+                class="caption background--text"
+                :class="
+                  $vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'
+                "
+                v-text="video.channelSubs"
+              />
+            </div>
           </div>
-          <div class="channel-byline">
-            <div class="channel-name" v-text="video.channelName" />
-            <div
-              class="caption background--text"
-              :class="
-                $vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'
-              "
-              v-text="video.channelSubs"
-            />
+          <div
+            class="channel-buttons"
+            style="color: rgb(204, 0, 0); text-transform: uppercase"
+          >
+            subscribe
           </div>
-        </div>
-        <div
-          class="channel-buttons"
-          style="color: rgb(204, 0, 0); text-transform: uppercase"
-        >
-          subscribe
-        </div>
-      </v-card>
-      <v-divider />
+        </v-card>
+        <v-divider />
+      </div>
 
       <!-- Description -->
-      <div v-if="showMore" class="scroll-y ml-4 mr-4">
-        <slim-video-description-renderer
-          :render="video.renderedData.description"
-        />
+      <div class="description-container" v-if="showMore">
+        <div class="scroll-y ma-4">
+          <slim-video-description-renderer
+            :render="video.renderedData.description"
+          />
+        </div>
         <v-divider />
       </div>
 
       <!-- Comments -->
-      <v-card
-        flat
-        class="background comment-renderer"
-        v-if="loaded && video.commentData"
-      >
-        <v-text class="comment-count keep-spaces">
-          <template v-for="text in video.commentData.headerText.runs">
-            <template v-if="text.bold">
-              <strong :key="text.text">{{ text.text }}</strong>
+      <div class="comment-container" v-if="loaded && video.commentData">
+        <v-card flat class="background comment-renderer">
+          <v-text class="comment-count keep-spaces">
+            <template v-for="text in video.commentData.headerText.runs">
+              <template v-if="text.bold">
+                <strong :key="text.text">{{ text.text }}</strong>
+              </template>
+              <template v-else>{{ text.text }}</template>
             </template>
-            <template v-else>{{ text.text }}</template>
-          </template>
-        </v-text>
-        <v-icon>mdi-unfold-more-horizontal</v-icon>
-      </v-card>
-      <v-divider />
+          </v-text>
+          <v-icon>mdi-unfold-more-horizontal</v-icon>
+        </v-card>
+        <v-divider />
+      </div>
 
       <!-- Related Videos -->
       <div class="loaders" v-if="!loaded">

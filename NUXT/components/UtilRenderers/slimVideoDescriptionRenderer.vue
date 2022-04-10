@@ -1,5 +1,5 @@
 <template>
-  <div class="description">
+  <div class="description" v-if="render.descriptionBodyText">
     <template v-for="(text, index) in render.descriptionBodyText.runs">
       <template v-if="$rendererUtils.checkInternal(text)">
         <a
@@ -27,8 +27,6 @@
 <style scoped>
 .description {
   white-space: pre-line;
-  margin-bottom: 16px;
-  margin-top: 16px;
 }
 </style>
 
