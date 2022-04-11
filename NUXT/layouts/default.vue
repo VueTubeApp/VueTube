@@ -60,7 +60,7 @@
 import { App as CapacitorApp } from "@capacitor/app";
 import { mapState } from "vuex";
 import constants from "~/plugins/constants";
-import { linkParser } from "~/plugins/utils"
+import { linkParser } from "~/plugins/utils";
 
 export default {
   data: () => ({
@@ -124,15 +124,20 @@ export default {
 
   methods: {
     textChanged(text) {
-      if (text.length <= 0) this.response = []; // No text found, no point in calling API
+      if (text.length <= 0) {
+        this.response = [];
+        return;
+      } // No text found, no point in calling API
 
       //---   User Pastes Link, Direct Them To Video   ---//
       const isLink = linkParser(text);
       if (isLink) {
-        this.response = [{
-          text: `Watch video from ID: ${isLink}`,
-          id: isLink
-        }];
+        this.response = [
+          {
+            text: `Watch video from ID: ${isLink}`,
+            id: isLink,
+          },
+        ];
         return;
       }
       //---   End User Pastes Link, Direct Them To Video   ---//
@@ -145,9 +150,7 @@ export default {
     },
 
     youtubeSearch(item) {
-      const link = item.id
-        ? `/watch?v=${item.id}`
-        : `/search?q=${item[0]}`
+      const link = item.id ? `/watch?v=${item.id}` : `/search?q=${item[0]}`;
       this.$router.push(link);
       this.search = false;
     },
