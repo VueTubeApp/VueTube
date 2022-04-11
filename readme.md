@@ -23,7 +23,7 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 ## Features
-- 🎨 Themes: Light, Dark, OLED
+- 🎨 Themes: Light, Dark, OLED, All the colors of the rainbow
 - 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
 - ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
 - 👁️ Tracking Protection: No telemetry is sent from your device to YouTube
