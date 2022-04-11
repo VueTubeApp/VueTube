@@ -50,7 +50,7 @@ Well this has been thrown around on the Return Youtube Dislike discord server fo
 Also, YouTube Vanced just shut down
 
 ## Screenshots
-[View on our website: https://vuetube.app/info/screenshots](https://vuetube.app/info/screenshots)
+View on our website: [https://vuetube.app/info/screenshots](https://vuetube.app/info/screenshots)
 
 ## Want to contribute?
 Please read our website on how to do so: https://vuetube.app/contributing
