@@ -1,29 +1,44 @@
 <template>
   <div class="py-2">
     <v-list-item v-for="(item, index) in commits" :key="index" class="my-1">
-      <v-card flat class="card my-2 background" :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'" :style="{borderRadius: `${roundTweak / 2}rem`}">
+      <v-card
+        flat
+        class="card my-2 background"
+        :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+        :style="{ borderRadius: `${roundTweak / 2}rem` }"
+      >
         <v-card-title style="padding: 0 0.25em 0 0.75em">
           {{ item.author ? item.author.login : item.commit.author.name }}
-          <span class="subtitle background--text" :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-            v-text="`• ${item.sha.substring(0, 7)}`" />
+          <span
+            class="subtitle background--text"
+            :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+            v-text="`• ${item.sha.substring(0, 7)}`"
+          />
           <v-spacer />
-          <v-chip v-if="index == 0" class="tags" color="orange" style="
-              border-radius: 0.5rem;
-              border: 2px var(--v-orange-base);
-            ">
+          <v-chip
+            v-if="index == 0"
+            class="tags"
+            color="orange"
+            style="border-radius: 0.5rem; border: 2px var(--v-orange-base)"
+          >
             Latest
           </v-chip>
-          <v-chip v-if="item.sha == installedVersion" class="tags" color="green" style="
-              border-radius: 0.5rem;
-              border: 2px var(--v-green-base);
-            ">
+          <v-chip
+            v-if="item.sha == installedVersion"
+            class="tags"
+            color="green"
+            style="border-radius: 0.5rem; border: 2px var(--v-green-base)"
+          >
             Installed
           </v-chip>
         </v-card-title>
 
         <div style="margin-left: 1em">
-          <div class="date background--text" :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-            v-text="new Date(item.commit.committer.date).toLocaleString()" />
+          <div
+            class="date background--text"
+            :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+            v-text="new Date(item.commit.committer.date).toLocaleString()"
+          />
           {{ item.commit.message }}
         </div>
 
@@ -42,69 +57,65 @@
 </template>
 
 <style scoped>
-  .card {
-    width: 100%;
-  }
+.card {
+  width: 100%;
+}
 
-  .subtitle {
-    margin: 0.4em;
-    font-size: 0.75em;
-    transform: translateY(5%);
-  }
+.subtitle {
+  margin: 0.4em;
+  font-size: 0.75em;
+  transform: translateY(5%);
+}
 
-  .date {
-    transform: translateY(-40%);
-  }
+.date {
+  transform: translateY(-40%);
+}
 
-  .btn-icon {
-    margin-right: 0.25em;
-  }
+.btn-icon {
+  margin-right: 0.25em;
+}
 
-  .tags {
-    margin-left: 0.5em;
-  }
-
+.tags {
+  margin-left: 0.5em;
+}
 </style>
 
 <script>
-  import { Browser } from "@capacitor/browser";
+import { Browser } from "@capacitor/browser";
 
-  export default {
-
-     computed: {
-        roundTweak() {
-          return this.$store.state.tweaks.roundTweak;
-        }
-      },
-
-    data() {
-      return {
-        commits: new Array(),
-        installedVersion: process.env.appVersion,
-      };
+export default {
+  computed: {
+    roundTweak() {
+      return this.$store.state.tweaks.roundTweak;
     },
-    async mounted() {
-      const commits = await this.$vuetube.commits;
-      if (commits[0].sha) {
-        //If Commit Valid
-        this.commits = commits;
-      } else {
-        console.log(commits);
-      }
+  },
+  data() {
+    return {
+      commits: new Array(),
+      installedVersion: process.env.appVersion,
+    };
+  },
+  async mounted() {
+    const commits = await this.$vuetube.commits;
+    if (commits[0].sha) {
+      //If Commit Valid
+      this.commits = commits;
+    } else {
+      console.log(commits);
+    }
+  },
+  methods: {
+    async openExternal(item) {
+      await Browser.open({
+        url: item.html_url,
+      });
     },
-    methods: {
-      async openExternal(item) {
-        await Browser.open({
-          url: item.html_url
-        });
-      },
 
-      install(item) {
-        this.$vuetube.getRuns(item, (data) => {
-          console.log(data);
-        });
-      },
+    install(item) {
+      this.$vuetube.getRuns(item, (data) => {
+        console.log(data);
+      });
     },
-  };
-
+  },
+};
 </script>

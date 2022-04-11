@@ -17,10 +17,10 @@ function hexToRgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : null;
 }
 
@@ -37,16 +37,24 @@ function getCpn() {
   return result;
 }
 
-function linkParser(url){
-  var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
-  var match = url.match(regExp);
-  return (match&&match[7].length==11)? match[7] : false;
+function getMutationByKey(key, mutations) {
+  if (!key || !mutations) return undefined;
+  return mutations.find((mutation) => mutation.entityKey === key).payload;
 }
+function linkParser(url) {
+  console.log("linkParpar", url)
+  const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[7].length == 11) ? match[7] : false;
+}
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 module.exports = {
   getBetweenStrings,
   hexToRgb,
   rgbToHex,
   getCpn,
+  getMutationByKey,
   linkParser,
+  delay,
 };

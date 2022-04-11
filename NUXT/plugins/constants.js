@@ -12,7 +12,7 @@ const url = {
 const ytApiVal = {
   VERSION: "16.25",
   CLIENTNAME: "ANDROID",
-  VERSION_WEB: "2.20220318.00.00",
+  VERSION_WEB: "2.20220331.06.00",
   CLIENT_WEB: 2,
 };
 

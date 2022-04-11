@@ -14,7 +14,6 @@
 
     <!--   Dev Mode Open   -->
     <v-btn text class="entry" @click="dev()" />
-
   </div>
 </template>
 
@@ -51,7 +50,7 @@ export default {
           to: "/mods/tweaks",
         },
         { name: "Startup Options", icon: "mdi-restart", to: "/mods/startup" },
-        { name: "Plugins", icon: "mdi-puzzle", to: "", to: "/mods/plugins", disabled: true },
+        { name: "Plugins", icon: "mdi-puzzle", to: "", to: "/mods/plugins" },
         {
           name: "Updates",
           icon: "mdi-cloud-download-outline",
@@ -68,7 +67,7 @@ export default {
       if (this.devClicks >= 6) {
         this.$router.push("/mods/developer");
       }
-    }
-  }
+    },
+  },
 };
 </script>

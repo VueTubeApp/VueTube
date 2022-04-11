@@ -5,6 +5,7 @@ import constants from "./constants";
 import rendererUtils from "./renderers";
 import { Buffer } from "buffer";
 import iconv from "iconv-lite";
+import { Toast } from "@capacitor/toast";
 
 //---   Logger Function   ---//
 function logger(func, data, isError = false) {
@@ -74,9 +75,14 @@ let InnertubeAPI;
 const innertubeModule = {
   async getAPI() {
     if (!InnertubeAPI) {
-      InnertubeAPI = await Innertube.createAsync((message, isError) => {
-        logger(constants.LOGGER_NAMES.innertube, message, isError);
-      });
+      InnertubeAPI = await Innertube.createAsync(
+        (message, isError, shortMessage) => {
+          logger(constants.LOGGER_NAMES.innertube, message, isError);
+          if (shortMessage) {
+            Toast.show({ text: shortMessage });
+          }
+        }
+      );
     }
     return InnertubeAPI;
   },
