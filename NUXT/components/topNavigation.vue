@@ -39,16 +39,18 @@
       class="ml-3 mr-1 my-auto fill-height"
       style="border-radius: 0.25rem !important"
       @click="refreshRecommendations"
-      ><v-icon>mdi-refresh</v-icon></v-btn
     >
+      <v-icon>mdi-refresh</v-icon>
+    </v-btn>
     <v-btn
       icon
       tile
       class="ml-3 my-auto fill-height"
       style="border-radius: 0.25rem !important"
       @click="$emit('search-btn', text)"
-      ><v-icon>mdi-magnify</v-icon></v-btn
     >
+      <v-icon>mdi-magnify</v-icon>
+    </v-btn>
     <v-btn
       v-show="!search"
       icon
@@ -56,8 +58,9 @@
       class="ml-4 mr-2 my-auto fill-height"
       style="border-radius: 0.25rem !important"
       to="/settings"
-      ><v-icon>mdi-cog-outline</v-icon></v-btn
     >
+      <v-icon>mdi-cog-outline</v-icon>
+    </v-btn>
   </v-card>
 </template>
 
@@ -80,6 +83,7 @@ export default {
   methods: {
     refreshRecommendations() {
       this.$emit("scroll-to-top");
+
       const continuations =
         this.$store.state.recommendedVideos[
           this.$store.state.recommendedVideos.length - 1
@@ -108,6 +112,7 @@ export default {
   position: fixed;
   width: 100%;
 }
+
 .topNavSearch {
   margin-bottom: -10em;
   margin-left: 2em;

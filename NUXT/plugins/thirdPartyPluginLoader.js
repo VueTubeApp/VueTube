@@ -14,22 +14,24 @@ const ensureStructure = new Promise(async (resolve, reject) => {
 
   //---   Ensure Plugins Folder   ---//
   try {
-    await Filesystem.mkdir({ directory: APP_DIRECTORY, recursive: true,
+    await Filesystem.mkdir({
+      directory: APP_DIRECTORY, recursive: true,
       path: fs.plugins,
     });
   } catch (e) { /* Exists */ }
 
   //---   Ensure Temp Folder   ---//
   try {
-    await Filesystem.mkdir({ directory: APP_DIRECTORY, recursive: true,
+    await Filesystem.mkdir({
+      directory: APP_DIRECTORY, recursive: true,
       path: fs.temp,
     });
   } catch (e) { /* Exists */ }
 
-  perms 
+  perms
     ? resolve(true)
     : reject(false)
-    
+
 })
 
 
@@ -41,7 +43,7 @@ const module = {
     let plugins = new Array();
 
     if (await !ensureStructure) reject("Invalid Structure");
-    
+
     // Temp Plugin List
     plugins = Filesystem.readdir({
       directory: APP_DIRECTORY,

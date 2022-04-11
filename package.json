@@ -7,6 +7,7 @@
     "@capacitor/cli": "^3.4.0",
     "@capacitor/core": "^3.4.0",
     "@capacitor/device": "^1.1.2",
+    "@capacitor/filesystem": "^1.1.0",
     "@capacitor/haptics": "^1.1.4",
     "@capacitor/share": "^1.1.2",
     "@capacitor/splash-screen": "^1.2.2",

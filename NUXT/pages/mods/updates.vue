@@ -19,12 +19,7 @@
             v-if="index == 0"
             class="tags"
             color="orange"
-            style="
-              border-radius: 0.5rem;
-              border: 2px var(--v-oragnge-base);
-              margin-top: -1.5rem;
-              margin-right: -0.5rem;
-            "
+            style="border-radius: 0.5rem; border: 2px var(--v-orange-base)"
           >
             Latest
           </v-chip>
@@ -32,15 +27,10 @@
             v-if="item.sha == installedVersion"
             class="tags"
             color="green"
-            style="
-              border-radius: 0.5rem;
-              border: 2px var(--v-green-base);
-              margin-top: -1.5rem;
-              margin-right: -0.5rem;
-            "
+            style="border-radius: 0.5rem; border: 2px var(--v-green-base)"
           >
-            >Installed</v-chip
-          >
+            Installed
+          </v-chip>
         </v-card-title>
 
         <div style="margin-left: 1em">
@@ -70,17 +60,21 @@
 .card {
   width: 100%;
 }
+
 .subtitle {
   margin: 0.4em;
   font-size: 0.75em;
   transform: translateY(5%);
 }
+
 .date {
   transform: translateY(-40%);
 }
+
 .btn-icon {
   margin-right: 0.25em;
 }
+
 .tags {
   margin-left: 0.5em;
 }
@@ -95,18 +89,33 @@ export default {
       return this.$store.state.tweaks.roundTweak;
     },
   },
-
   data() {
     return {
       commits: new Array(),
       installedVersion: process.env.appVersion,
     };
   },
+  async mounted() {
+    const commits = await this.$vuetube.commits;
+    if (commits[0].sha) {
+      //If Commit Valid
+      this.commits = commits;
+    } else {
+      console.log(commits);
+    }
+  },
+  methods: {
+    async openExternal(item) {
+      await Browser.open({
+        url: item.html_url,
+      });
+    },
 
-  install(item) {
-    this.$vuetube.getRuns(item, (data) => {
-      console.log(data);
-    });
+    install(item) {
+      this.$vuetube.getRuns(item, (data) => {
+        console.log(data);
+      });
+    },
   },
 };
 </script>

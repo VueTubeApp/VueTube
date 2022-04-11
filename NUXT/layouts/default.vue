@@ -42,7 +42,7 @@
                 @click="youtubeSearch(item)"
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
-                {{ item[0] }}
+                {{ item[0] || item.text }}
               </v-btn>
             </v-list-item>
           </div>
@@ -59,7 +59,9 @@
 <script>
 import { App as CapacitorApp } from "@capacitor/app";
 import { mapState } from "vuex";
-import constants from "../plugins/constants";
+import constants from "~/plugins/constants";
+import { linkParser } from "~/plugins/utils"
+
 export default {
   data: () => ({
     search: false,
@@ -123,6 +125,19 @@ export default {
   methods: {
     textChanged(text) {
       if (text.length <= 0) this.response = []; // No text found, no point in calling API
+
+      //---   User Pastes Link, Direct Them To Video   ---//
+      const isLink = linkParser(text);
+      if (isLink) {
+        this.response = [{
+          text: `Watch video from ID: ${isLink}`,
+          id: isLink
+        }];
+        return;
+      }
+      //---   End User Pastes Link, Direct Them To Video   ---//
+
+      //---   Auto Suggest   ---//
       this.$youtube.autoComplete(text, (res) => {
         const data = res.replace(/^.*?\(/, "").replace(/\)$/, ""); //Format Response
         this.response = JSON.parse(data)[1];
@@ -130,7 +145,10 @@ export default {
     },
 
     youtubeSearch(item) {
-      this.$router.push(`/search?q=${item[0]}`);
+      const link = item.id
+        ? `/watch?v=${item.id}`
+        : `/search?q=${item[0]}`
+      this.$router.push(link);
       this.search = false;
     },
 

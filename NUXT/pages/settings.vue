@@ -50,6 +50,7 @@ export default {
           to: "/mods/tweaks",
         },
         { name: "Startup Options", icon: "mdi-restart", to: "/mods/startup" },
+<<<<<<< HEAD
         {
           name: "Plugins",
           icon: "mdi-puzzle",
@@ -57,6 +58,9 @@ export default {
           to: "/mods/plugins",
           disabled: true,
         },
+=======
+        { name: "Plugins", icon: "mdi-puzzle", to: "", to: "/mods/plugins" },
+>>>>>>> 94e0108 (Merge branch 'main' of https://github.com/Frontesque/VueTube)
         {
           name: "Updates",
           icon: "mdi-cloud-download-outline",
