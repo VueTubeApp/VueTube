@@ -112,16 +112,15 @@ export default {
       // We only push to the route if there is a url present
       if (slug) {
         const host = slug.hostname.toLowerCase().replace(/^www\./, "");
+        let result;
         if (host == "youtube.com") {
-          this.$router.push(slug.pathname + slug.search);
+          result = slug;
         } else if (host == "youtu.be") {
-          this.$router.push(
-            new URL("/watch", window.location.origin).searchParams.set(
-              "v",
-              slug.pathname.split("/")[1]
-            ).href
-          );
+          result = new URL("/watch", window.location.origin);
+          result.searchParams.set("v", slug.pathname.split("/")[1]);
         }
+        if (result instanceof URL)
+          this.$router.push(result.pathname + result.search);
       }
     });
 
