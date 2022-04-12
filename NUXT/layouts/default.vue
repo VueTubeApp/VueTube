@@ -108,10 +108,20 @@ export default {
 
     CapacitorApp.addListener("appUrlOpen", (event) => {
       const slug = new URL(event.url);
-      // We only push to the route if there is a slug present
+      this.$logger("ExternalURL", event.url);
+      // We only push to the route if there is a url present
       if (slug) {
-        console.log(slug.pathname + slug.search);
-        this.$router.push(slug.pathname + slug.search);
+        const host = slug.hostname.toLowerCase().replace(/^www\./, "");
+        if (host == "youtube.com") {
+          this.$router.push(slug.pathname + slug.search);
+        } else if (host == "youtu.be") {
+          this.$router.push(
+            new URL("/watch", window.location.origin).searchParams.set(
+              "v",
+              slug.pathname.split("/")[1]
+            ).href
+          );
+        }
       }
     });
 
