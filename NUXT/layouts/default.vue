@@ -106,6 +106,7 @@ export default {
       }
     });
 
+    // ---   External URL Handling   --- //
     CapacitorApp.addListener("appUrlOpen", (event) => {
       const slug = new URL(event.url);
       this.$logger("ExternalURL", event.url);

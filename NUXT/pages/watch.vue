@@ -14,7 +14,7 @@
       <!--   VueTube Player V1   -->
       <vuetubePlayer :sources="sources" v-if="useBetaPlayer === 'true'" />
     </div>
-    <div class="content-container">
+    <div class="content-container overflow-y-auto">
       <v-card v-if="loaded" class="ml-2 mr-2 background" flat>
         <v-card-title
           class="mt-2"
@@ -178,66 +178,31 @@ export default {
     vuetubePlayer,
     ItemSectionRenderer,
   },
-  data() {
-    return {
-      interactions: [
-        {
-          name: "Likes",
-          icon: "mdi-thumb-up-outline",
-          // action: null,
-          value: this.likes,
-          disabled: true,
-        },
-        {
-          name: "Dislikes",
-          icon: "mdi-thumb-down-outline",
-          // action: this.dislike(),
-          actionName: "dislike",
-          value: this.dislikes,
-          disabled: true,
-        },
-        {
-          name: "Share",
-          icon: "mdi-share-outline",
-          // action: this.share(),
-          actionName: "share",
-          disabled: false,
-        },
-      ],
-      showMore: false,
-      // share: false,
-      vidSrc: null,
-      sources: [],
-      recommends: null,
-      loaded: false,
-      interval: null,
-      video: null,
-      useBetaPlayer: false,
-    };
-  },
 
+  data: function () {
+    return this.initializeState();
+  },
   watch: {
     // Watch for change in the route query string (in this case, ?v=xxxxxxxx to ?v=yyyyyyyy)
     $route: {
       deep: true,
       handler(newRt, oldRt) {
-        if (newRt.query.v != oldRt.query.v) {
+        if (newRt.query.v && newRt.query.v != oldRt.query.v) {
           // Exit fullscreen if currently in fullscreen
           // if (this.$refs.player) this.$refs.player.webkitExitFullscreen();
           // Reset player and run getVideo function again
-          this.vidSrc = "";
-          this.startTime = Math.floor(Date.now() / 1000);
+          // this.vidSrc = "";
+          // this.startTime = Math.floor(Date.now() / 1000);
+          // this.getVideo();
           clearInterval(this.interval);
-          this.getVideo();
+          Object.assign(this.$data, this.initializeState());
+          this.mountedInit();
         }
       },
     },
   },
   mounted() {
-    this.startTime = Math.floor(Date.now() / 1000);
-    this.getVideo();
-
-    this.useBetaPlayer = localStorage.getItem("debug.BetaPlayer");
+    this.mountedInit();
   },
 
   destroyed() {
@@ -335,6 +300,56 @@ export default {
         this.playbackTracking.videostatsPlaybackUrl.baseUrl
       );
     },
+
+    initializeState() {
+      return {
+        interactions: [
+          {
+            name: "Likes",
+            icon: "mdi-thumb-up-outline",
+            // action: null,
+            value: this.likes,
+            disabled: true,
+          },
+          {
+            name: "Dislikes",
+            icon: "mdi-thumb-down-outline",
+            // action: this.dislike(),
+            actionName: "dislike",
+            value: this.dislikes,
+            disabled: true,
+          },
+          {
+            name: "Share",
+            icon: "mdi-share-outline",
+            // action: this.share(),
+            actionName: "share",
+            disabled: false,
+          },
+        ],
+        showMore: false,
+        // share: false,
+        vidSrc: null,
+        sources: [],
+        recommends: null,
+        loaded: false,
+        interval: null,
+        video: null,
+        useBetaPlayer: false,
+      };
+    },
+
+    mountedInit() {
+      this.startTime = Math.floor(Date.now() / 1000);
+      this.getVideo();
+      this.useBetaPlayer = localStorage.getItem("debug.BetaPlayer");
+
+      //  Reset vertical scrolling
+      const scrollableList = document.querySelectorAll(".overflow-y-auto");
+      scrollableList.forEach((scrollable) => {
+        scrollable.scrollTo(0, 0);
+      });
+    },
   },
 };
 </script>
@@ -348,7 +363,6 @@ export default {
 }
 
 .content-container {
-  overflow-y: auto;
   height: 100%;
 }
 
