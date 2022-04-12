@@ -50,7 +50,7 @@ export default {
           to: "/mods/tweaks",
         },
         { name: "Startup Options", icon: "mdi-restart", to: "/mods/startup" },
-        { name: "Plugins", icon: "mdi-puzzle", to: "", to: "/mods/plugins" },
+        { name: "Plugins", icon: "mdi-puzzle", to: "", to: "/mods/plugins", disabled: true },
         {
           name: "Updates",
           icon: "mdi-cloud-download-outline",

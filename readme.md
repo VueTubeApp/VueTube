@@ -1,23 +1,35 @@
-# VueTube
-<img src="https://github.com/Frontesque/VueTube/raw/main/Icons/Stable.svg" alt="VueTube icon" width="200"/>
-A simple FOSS video streaming client aimed to recreate ALL features from their respective apps (and more)
-
-- Pronounced View Tube
-
-## Links
-- Website: https://vuetube.app
-- Discord: [![Discord](https://img.shields.io/discord/946587366242533377?label=Discord&style=flat&logo=discord)](https://discord.gg/7P8KJrdd5W)
-- Reddit: https://reddit.com/r/VueTube
-- Telegram: https://t.me/VueTube
-
-## Builds
+[![Commit rate](https://img.shields.io/github/commit-activity/m/Frontesque/VueTube?label=Commits)](https://github.com/Frontesque/VueTube/commits/main)
+[![issues](https://img.shields.io/github/issues/Frontesque/VueTube)](https://github.com/Frontesque/VueTube/issues)
+![VueTube](https://img.shields.io/github/languages/count/Frontesque/VueTube)
+[![License](https://img.shields.io/github/license/Frontesque/VueTube)](https://github.com/Frontesque/VueTube/blob/main/LICENSE)
+![Stars](https://img.shields.io/github/stars/Frontesque/VueTube)
+![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/FrontEsque/VueTube)
+![Dependencies](https://img.shields.io/librariesio/github/Frontesque/VueTube)
+![Lines of Code](https://img.shields.io/tokei/lines/github/Frontesque/VueTube)
 [![Build](https://github.com/Frontesque/VueTube/actions/workflows/ci.yml/badge.svg)](https://github.com/Frontesque/VueTube/actions/workflows/ci.yml)
+[![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fvuetube.app)](https://vuetube.app)
+[![Reddit](https://img.shields.io/reddit/subreddit-subscribers/vuetube?label=r%2FVuetube&logo=reddit&logoColor=white)](https://reddit.com/r/vuetube)
+[![Telegram](https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fvuetube)](https://t.me/VueTube)
+[![Discord](https://img.shields.io/discord/946587366242533377?label=Discord&style=flat&logo=discord&logoColor=white)](https://discord.gg/7P8KJrdd5W)
+
+<p align="center">
+  <a href="https://vuetube.app/">
+    <img src="https://cdn.discordapp.com/attachments/751596360108605500/963045605071028274/vuetube-logo.svg" alt="VueTube icon" width="500"/>
+  </a>
+</br>
+<strong>A simple FOSS video streaming client aimed to recreate ALL features from their respective apps (and more)</strong>
+</br>
+Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
+</p>
 
 ## Features
-- 🎨 Themes: Light, Dark, OLED
+- 🎨 Themes: Light, Dark, OLED, All the colors of the rainbow
 - 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
 - ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
 - 👁️ Tracking Protection: No telemetry is sent from your device to YouTube
+
+### Install
+To install please visit www.vuetube.app/install
 
 ### Plans
 - 🔍 Advanced Search
@@ -38,7 +50,14 @@ Well this has been thrown around on the Return Youtube Dislike discord server fo
 Also, YouTube Vanced just shut down
 
 ## Screenshots
-[View on our website: https://vuetube.app/info/screenshots](https://vuetube.app/info/screenshots)
+View on our website: [https://vuetube.app/info/screenshots](https://vuetube.app/info/screenshots)
 
 ## Want to contribute?
 Please read our website on how to do so: https://vuetube.app/contributing
+
+### Contributors
+<a href="https://github.com/Frontesque/VueTube/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Frontesque/VueTube" />
+</a>
+
+<sub>Made with [contrib.rocks](https://contrib.rocks). </sub>
