@@ -44,7 +44,7 @@
           :src="video.channelThumbnail.thumbnails[0].url"
         />
       </a>
-      <v-card-text class="video-info pt-2">
+      <v-card-text class="video-info pt-2" v-emoji>
         <div
           v-for="title in video.title.runs"
           :key="title.text"

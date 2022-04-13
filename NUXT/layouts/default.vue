@@ -33,6 +33,7 @@
               v-for="(item, index) in response"
               :key="index"
               class="px-0"
+              v-emoji
             >
               <v-btn
                 text

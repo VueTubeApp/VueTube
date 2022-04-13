@@ -1,5 +1,5 @@
 <template>
-  <div class="description" v-if="render.descriptionBodyText" ref="description">
+  <div class="description" v-if="render.descriptionBodyText">
     <template v-for="(text, index) in render.descriptionBodyText.runs">
       <template v-if="$rendererUtils.checkInternal(text)">
         <a
@@ -32,7 +32,6 @@
 
 <script>
 import { Browser } from "@capacitor/browser";
-import { parseEmoji } from "~/plugins/utils";
 export default {
   props: ["render"],
 
@@ -43,11 +42,6 @@ export default {
     async openInternal(url) {
       await this.$router.push(url);
     },
-  },
-
-  mounted() {
-    const twemojiParse = parseEmoji(this.$refs.description);
-    if (twemojiParse) this.$refs.description = twemojiParse;
   },
 };
 </script>

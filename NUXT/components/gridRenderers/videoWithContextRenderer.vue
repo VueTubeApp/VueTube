@@ -47,7 +47,7 @@
           "
         />
       </a>
-      <v-card-text class="video-info pt-2">
+      <v-card-text class="video-info pt-2" v-emoji>
         <div
           v-for="title in video.headline.runs"
           :key="title.text"

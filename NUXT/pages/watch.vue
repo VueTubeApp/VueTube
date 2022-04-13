@@ -25,6 +25,7 @@
             line-height: 1rem;
           "
           v-text="video.title"
+          v-emoji
         />
         <v-card-text>
           <div style="margin-bottom: 1rem">
@@ -102,7 +103,7 @@
             <div class="avatar-link mr-3">
               <v-img class="avatar-thumbnail" :src="video.channelImg" />
             </div>
-            <div class="channel-byline">
+            <div class="channel-byline" v-emoji>
               <div class="channel-name" v-text="video.channelName" />
               <div
                 class="caption background--text"

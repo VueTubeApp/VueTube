@@ -17,10 +17,10 @@ function hexToRgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16),
-    }
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
     : null;
 }
 
@@ -44,14 +44,18 @@ function getMutationByKey(key, mutations) {
 
 function setHttp(link) {
   if (link.search(/^http[s]?\:\/\//) == -1) {
-    link = 'http://' + link;
+    link = "http://" + link;
   }
   return link;
 }
 
 // Replace inputted html with tweemoji
 function parseEmoji(body) {
-  if (twemoji) return twemoji.parse(body)
+  if (twemoji)
+    return twemoji.parse(body, {
+      folder: "svg",
+      ext: ".svg",
+    });
 }
 
 function linkParser(url) {
@@ -67,7 +71,7 @@ function linkParser(url) {
         result.searchParams.set("v", slug.pathname.split("/")[1]);
       }
     } finally {
-      return result instanceof URL ? result : false
+      return result instanceof URL ? result : false;
     }
   }
 }
@@ -81,4 +85,5 @@ module.exports = {
   getMutationByKey,
   linkParser,
   delay,
+  parseEmoji,
 };
