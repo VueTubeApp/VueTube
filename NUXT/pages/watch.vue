@@ -1,9 +1,6 @@
 <template>
   <div class="background" id="watch-body">
-    <div
-      class="player-container"
-      style="position: sticky; top: 0; z-index: 696969"
-    >
+    <div class="player-container">
       <!--   Stock Player   -->
       <videoPlayer
         :vid-src="vidSrc"
@@ -135,7 +132,11 @@
       </div>
 
       <!-- Comments -->
-      <div class="comment-container" v-if="loaded && video.commentData">
+      <div
+        class="comment-container"
+        v-if="loaded && video.commentData"
+        @click="showComments = !showComments"
+      >
         <v-card flat class="background comment-renderer">
           <v-text class="comment-count keep-spaces">
             <template v-for="text in video.commentData.headerText.runs">
@@ -149,6 +150,23 @@
         </v-card>
         <v-divider />
       </div>
+
+      <v-dialog
+        v-model="showComments"
+        fullscreen
+        hide-overlay
+        transition="dialog-bottom-transition"
+      >
+        <v-card>
+          <v-toolbar dark color="background">
+            <v-btn icon dark @click="showComments = false">
+              <v-icon>mdi-close</v-icon>
+            </v-btn>
+            <v-toolbar-title class="font-weight-bold">Comments</v-toolbar-title>
+          </v-toolbar>
+          <v-subheader>Hello World</v-subheader>
+        </v-card>
+      </v-dialog>
 
       <!-- Related Videos -->
       <div class="loaders" v-if="!loaded">
@@ -329,6 +347,7 @@ export default {
           },
         ],
         showMore: false,
+        showComments: false,
         // share: false,
         vidSrc: null,
         sources: [],
