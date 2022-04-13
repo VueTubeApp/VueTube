@@ -41,11 +41,24 @@ function getMutationByKey(key, mutations) {
   if (!key || !mutations) return undefined;
   return mutations.find((mutation) => mutation.entityKey === key).payload;
 }
+
+function setHttp(link) {
+  if (link.search(/^http[s]?\:\/\//) == -1) {
+    link = 'http://' + link;
+  }
+  return link;
+}
+
+// Replace inputted html with tweemoji
+function parseEmoji(body) {
+  if (twemoji) return twemoji.parse(body)
+}
+
 function linkParser(url) {
   let result;
   if (url) {
     try {
-      const slug = new URL(url);
+      const slug = new URL(setHttp(url));
       const host = slug.hostname.toLowerCase().replace(/^www\./, "");
       if (host == "youtube.com") {
         result = slug;

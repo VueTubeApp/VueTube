@@ -214,6 +214,13 @@ div {
 .invert {
   filter: invert(100%);
 }
+
+.emoji {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.1em;
+}
 </style>
 
 <style scoped>
