@@ -33,12 +33,13 @@
               v-for="(item, index) in response"
               :key="index"
               class="px-0"
+              v-emoji
             >
               <v-btn
                 text
                 tile
                 dense
-                class="searchButton text-left text-capitalize"
+                class="searchButton text-left"
                 @click="youtubeSearch(item)"
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
@@ -106,13 +107,12 @@ export default {
       }
     });
 
+    // ---   External URL Handling   --- //
     CapacitorApp.addListener("appUrlOpen", (event) => {
-      const slug = new URL(event.url);
-      // We only push to the route if there is a slug present
-      if (slug) {
-        console.log(slug.pathname + slug.search);
-        this.$router.push(slug.pathname + slug.search);
-      }
+      this.$logger("ExternalURL", event.url);
+      // We only push to the route if there is a url present
+      linkParser(event.url);
+      if (result) this.$router.push(result.pathname + result.search);
     });
 
     // ---   Import Twemoji   ---///
@@ -134,8 +134,8 @@ export default {
       if (isLink) {
         this.response = [
           {
-            text: `Watch video from ID: ${isLink}`,
-            id: isLink,
+            text: `Watch Video from ID: ${isLink.searchParams.get("v")}`,
+            id: isLink.searchParams.get("v"),
           },
         ];
         return;
@@ -215,11 +215,19 @@ div {
 .invert {
   filter: invert(100%);
 }
+
+.emoji {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.1em;
+}
 </style>
 
 <style scoped>
 .searchButton {
   width: 100%;
+  text-transform: none !important;
   justify-content: left !important;
 }
 </style>

@@ -17,10 +17,10 @@ function hexToRgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16),
-    }
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
     : null;
 }
 
@@ -41,11 +41,39 @@ function getMutationByKey(key, mutations) {
   if (!key || !mutations) return undefined;
   return mutations.find((mutation) => mutation.entityKey === key).payload;
 }
+
+function setHttp(link) {
+  if (link.search(/^http[s]?\:\/\//) == -1) {
+    link = "http://" + link;
+  }
+  return link;
+}
+
+// Replace inputted html with tweemoji
+function parseEmoji(body) {
+  if (twemoji)
+    return twemoji.parse(body, {
+      folder: "svg",
+      ext: ".svg",
+    });
+}
+
 function linkParser(url) {
-  console.log("linkParpar", url)
-  const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
-  const match = url.match(regExp);
-  return (match && match[7].length == 11) ? match[7] : false;
+  let result;
+  if (url) {
+    try {
+      const slug = new URL(setHttp(url));
+      const host = slug.hostname.toLowerCase().replace(/^www\./, "");
+      if (host == "youtube.com") {
+        result = slug;
+      } else if (host == "youtu.be") {
+        result = new URL("/watch", window.location.origin);
+        result.searchParams.set("v", slug.pathname.split("/")[1]);
+      }
+    } finally {
+      return result instanceof URL ? result : false;
+    }
+  }
 }
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
@@ -57,4 +85,5 @@ module.exports = {
   getMutationByKey,
   linkParser,
   delay,
+  parseEmoji,
 };
