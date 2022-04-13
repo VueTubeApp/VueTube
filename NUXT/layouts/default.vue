@@ -38,7 +38,7 @@
                 text
                 tile
                 dense
-                class="searchButton text-left text-capitalize"
+                class="searchButton text-left"
                 @click="youtubeSearch(item)"
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
@@ -108,21 +108,10 @@ export default {
 
     // ---   External URL Handling   --- //
     CapacitorApp.addListener("appUrlOpen", (event) => {
-      const slug = new URL(event.url);
       this.$logger("ExternalURL", event.url);
       // We only push to the route if there is a url present
-      if (slug) {
-        const host = slug.hostname.toLowerCase().replace(/^www\./, "");
-        let result;
-        if (host == "youtube.com") {
-          result = slug;
-        } else if (host == "youtu.be") {
-          result = new URL("/watch", window.location.origin);
-          result.searchParams.set("v", slug.pathname.split("/")[1]);
-        }
-        if (result instanceof URL)
-          this.$router.push(result.pathname + result.search);
-      }
+      linkParser(event.url);
+      if (result) this.$router.push(result.pathname + result.search);
     });
 
     // ---   Import Twemoji   ---///
@@ -144,8 +133,8 @@ export default {
       if (isLink) {
         this.response = [
           {
-            text: `Watch video from ID: ${isLink}`,
-            id: isLink,
+            text: `Watch Video from ID: ${isLink.searchParams.get("v")}`,
+            id: isLink.searchParams.get("v"),
           },
         ];
         return;
@@ -230,6 +219,7 @@ div {
 <style scoped>
 .searchButton {
   width: 100%;
+  text-transform: none !important;
   justify-content: left !important;
 }
 </style>

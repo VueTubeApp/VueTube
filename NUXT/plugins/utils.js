@@ -42,10 +42,21 @@ function getMutationByKey(key, mutations) {
   return mutations.find((mutation) => mutation.entityKey === key).payload;
 }
 function linkParser(url) {
-  console.log("linkParpar", url)
-  const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
-  const match = url.match(regExp);
-  return (match && match[7].length == 11) ? match[7] : false;
+  let result;
+  if (url) {
+    try {
+      const slug = new URL(url);
+      const host = slug.hostname.toLowerCase().replace(/^www\./, "");
+      if (host == "youtube.com") {
+        result = slug;
+      } else if (host == "youtu.be") {
+        result = new URL("/watch", window.location.origin);
+        result.searchParams.set("v", slug.pathname.split("/")[1]);
+      }
+    } finally {
+      return result instanceof URL ? result : false
+    }
+  }
 }
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
