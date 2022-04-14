@@ -39,7 +39,7 @@
                 text
                 tile
                 dense
-                class="searchButton text-left"
+                class="searchButton text-left text-none"
                 @click="youtubeSearch(item)"
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
@@ -227,7 +227,6 @@ div {
 <style scoped>
 .searchButton {
   width: 100%;
-  text-transform: none !important;
   justify-content: left !important;
 }
 </style>

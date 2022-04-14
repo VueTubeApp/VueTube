@@ -132,12 +132,13 @@
       </div>
 
       <!-- Comments -->
-      <div
-        class="comment-container"
-        v-if="loaded && video.commentData"
-        @click="showComments = !showComments"
-      >
-        <v-card flat class="background comment-renderer">
+      <div class="comment-container" v-if="loaded && video.commentData">
+        <v-btn
+          class="background comment-renderer text-none"
+          @click="showComments = !showComments"
+          block
+          large
+        >
           <v-text class="comment-count keep-spaces">
             <template v-for="text in video.commentData.headerText.runs">
               <template v-if="text.bold">
@@ -147,11 +148,11 @@
             </template>
           </v-text>
           <v-icon>mdi-unfold-more-horizontal</v-icon>
-        </v-card>
+        </v-btn>
         <v-divider />
       </div>
 
-      <v-dialog
+      <!-- <v-dialog
         v-model="showComments"
         fullscreen
         hide-overlay
@@ -166,7 +167,12 @@
           </v-toolbar>
           <v-subheader>Hello World</v-subheader>
         </v-card>
-      </v-dialog>
+      </v-dialog> -->
+
+      <swipeable-bottom-sheet
+        :v-model="showComments"
+        style="z-index: 9999999"
+      ></swipeable-bottom-sheet>
 
       <!-- Related Videos -->
       <div class="loaders" v-if="!loaded">
@@ -188,6 +194,7 @@ import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDe
 import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
 import vuetubePlayer from "~/components/Player/index.vue";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
+import SwipeableBottomSheet from "../components/CustomComponents/swipeableBottomSheet.vue";
 
 export default {
   components: {
@@ -196,6 +203,7 @@ export default {
     SlimVideoDescriptionRenderer,
     vuetubePlayer,
     ItemSectionRenderer,
+    SwipeableBottomSheet,
   },
 
   data: function () {
