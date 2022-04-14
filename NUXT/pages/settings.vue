@@ -14,7 +14,6 @@
 
     <!--   Dev Mode Open   -->
     <v-btn text class="entry" @click="dev()" />
-
   </div>
 </template>
 
@@ -68,7 +67,7 @@ export default {
       if (this.devClicks >= 6) {
         this.$router.push("/mods/developer");
       }
-    }
-  }
+    },
+  },
 };
 </script>

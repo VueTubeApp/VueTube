@@ -3,8 +3,16 @@ import { Http } from "@capacitor-community/http";
 import { StatusBar, Style } from "@capacitor/status-bar";
 import { NavigationBar } from "@hugotomazi/capacitor-navigation-bar";
 import constants from "./constants";
-import { hexToRgb, rgbToHex } from "./utils";
+import { hexToRgb, rgbToHex, parseEmoji } from "./utils";
 import { Haptics, ImpactStyle } from "@capacitor/haptics";
+import Vue from "vue";
+
+Vue.directive("emoji", {
+  inserted: function (el) {
+    const twemojiParse = parseEmoji(el.innerHTML);
+    if (twemojiParse) el.innerHTML = twemojiParse;
+  },
+});
 
 const module = {
   //---   Get GitHub Commits   ---//

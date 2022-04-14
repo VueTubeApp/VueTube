@@ -33,12 +33,13 @@
               v-for="(item, index) in response"
               :key="index"
               class="px-0"
+              v-emoji
             >
               <v-btn
                 text
                 tile
                 dense
-                class="searchButton text-left text-capitalize"
+                class="searchButton text-left"
                 @click="youtubeSearch(item)"
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
@@ -60,7 +61,7 @@
 import { App as CapacitorApp } from "@capacitor/app";
 import { mapState } from "vuex";
 import constants from "~/plugins/constants";
-import { linkParser } from "~/plugins/utils"
+import { linkParser } from "~/plugins/utils";
 
 export default {
   data: () => ({
@@ -106,27 +107,37 @@ export default {
       }
     });
 
+    // ---   External URL Handling   --- //
     CapacitorApp.addListener("appUrlOpen", (event) => {
-      const slug = new URL(event.url);
-      // We only push to the route if there is a slug present
-      if (slug) {
-        console.log(slug.pathname + slug.search);
-        this.$router.push(slug.pathname + slug.search);
-      }
+      this.$logger("ExternalURL", event.url);
+      // We only push to the route if there is a url present
+      linkParser(event.url);
+      if (result) this.$router.push(result.pathname + result.search);
     });
+
+    // ---   Import Twemoji   ---///
+    const plugin = document.createElement("script");
+    plugin.setAttribute("src", "//twemoji.maxcdn.com/v/latest/twemoji.min.js");
+    plugin.setAttribute("crossorigin", "anonymous");
+    document.head.appendChild(plugin);
   },
 
   methods: {
     textChanged(text) {
-      if (text.length <= 0) this.response = []; // No text found, no point in calling API
+      if (text.length <= 0) {
+        this.response = [];
+        return;
+      } // No text found, no point in calling API
 
       //---   User Pastes Link, Direct Them To Video   ---//
       const isLink = linkParser(text);
       if (isLink) {
-        this.response = [{
-          text: `Watch video from ID: ${isLink}`,
-          id: isLink
-        }];
+        this.response = [
+          {
+            text: `Watch Video from ID: ${isLink.searchParams.get("v")}`,
+            id: isLink.searchParams.get("v"),
+          },
+        ];
         return;
       }
       //---   End User Pastes Link, Direct Them To Video   ---//
@@ -139,9 +150,7 @@ export default {
     },
 
     youtubeSearch(item) {
-      const link = item.id
-        ? `/watch?v=${item.id}`
-        : `/search?q=${item[0]}`
+      const link = item.id ? `/watch?v=${item.id}` : `/search?q=${item[0]}`;
       this.$router.push(link);
       this.search = false;
     },
@@ -206,11 +215,19 @@ div {
 .invert {
   filter: invert(100%);
 }
+
+.emoji {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.1em;
+}
 </style>
 
 <style scoped>
 .searchButton {
   width: 100%;
+  text-transform: none !important;
   justify-content: left !important;
 }
 </style>

@@ -1,11 +1,12 @@
 <template>
   <v-card
-    class="entry gridVideoRenderer background"
+    class="entry videoWithContextRenderer background"
     :to="`/watch?v=${video.videoId}`"
     flat
   >
     <div style="position: relative" class="thumbnail-container">
       <v-img
+        v-if="video.thumbnail"
         :aspect-ratio="16 / 9"
         :src="
           $youtube.getThumbnail(
@@ -16,6 +17,7 @@
         "
       />
       <div
+        v-if="video.thumbnailOverlays"
         class="videoRuntimeFloat"
         :class="
           'style-' +
@@ -31,20 +33,23 @@
     <div id="details">
       <a
         :href="
-          this.$rendererUtils.getNavigationEndpoints(
-            video.shortBylineText.runs[0]
+          $rendererUtils.getNavigationEndpoints(
+            video.shortBylineText.runs[0].navigationEndpoint
           )
         "
         class="avatar-link pt-2"
       >
         <v-img
           class="avatar-thumbnail"
-          :src="video.channelThumbnail.thumbnails[0].url"
+          :src="
+            video.channelThumbnail.channelThumbnailWithLinkRenderer.thumbnail
+              .thumbnails[0].url
+          "
         />
       </a>
       <v-card-text class="video-info pt-2" v-emoji>
         <div
-          v-for="title in video.title.runs"
+          v-for="title in video.headline.runs"
           :key="title.text"
           style="margin-top: 0.5em"
           class="font-weight-medium vid-title"
@@ -53,7 +58,7 @@
         </div>
 
         <div
-          class="background--text caption"
+          class="background--text text--lighten-5 caption"
           :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
           v-text="parseBottom(video)"
         />

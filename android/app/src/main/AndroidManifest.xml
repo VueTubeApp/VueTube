@@ -26,17 +26,38 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data android:scheme="http" />
                 <data android:scheme="https" />
-                
-                <data android:host="youtu.be" />
-                <data android:host="m.youtube.com" />
                 <data android:host="youtube.com" />
+                <data android:host="m.youtube.com" />
                 <data android:host="www.youtube.com" />
-                <data android:pathPattern="/.*" />
+                <!-- video prefix -->
+                <data android:pathPrefix="/v/" />
+                <data android:pathPrefix="/embed/" />
+                <data android:pathPrefix="/watch" />
+                <data android:pathPrefix="/attribution_link" />
+                <data android:pathPrefix="/shorts/" />
+                <!-- channel prefix -->
+                <data android:pathPrefix="/channel/" />
+                <data android:pathPrefix="/user/" />
+                <data android:pathPrefix="/c/" />
+                <!-- playlist prefix -->
+                <data android:pathPrefix="/playlist" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="youtu.be" />
+                <data android:pathPrefix="/" />
             </intent-filter>
 
         </activity>
