@@ -3,6 +3,11 @@
     v-model="tabSelection"
     shift
     class="bottomNav py-4 transparent"
+    :style="
+      $vuetify.theme.dark
+        ? 'border-top: 1px solid var(--v-background-lighten1) !important;'
+        : 'border-top: 1px solid var(--v-background-darken1) !important;'
+    "
   >
     <v-btn
       v-for="(item, i) in tabs"

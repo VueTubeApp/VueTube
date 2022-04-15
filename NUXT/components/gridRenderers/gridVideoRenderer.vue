@@ -4,14 +4,7 @@
     :to="`/watch?v=${video.videoId}`"
     flat
   >
-    <div
-      style="position: relative; overflow: hidden !important"
-      class="thumbnail-container"
-      :style="{
-        borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
-        margin: $store.state.tweaks.roundTweak > 0 ? '0 .5rem' : '0',
-      }"
-    >
+    <div style="position: relative" class="thumbnail-container">
       <v-img
         v-if="video.thumbnail"
         :aspect-ratio="16 / 9"
