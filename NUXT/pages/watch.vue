@@ -1,6 +1,6 @@
 <template>
   <div class="background" id="watch-body">
-    <div class="player-container">
+    <div id="player-container">
       <!--   Stock Player   -->
       <videoPlayer
         :vid-src="vidSrc"
@@ -11,7 +11,13 @@
       <!--   VueTube Player V1   -->
       <vuetubePlayer :sources="sources" v-if="useBetaPlayer === 'true'" />
     </div>
-    <div class="content-container overflow-y-auto">
+    <div
+      v-bind:class="{
+        'overflow-y-auto': !showComments,
+        'overflow-y-hidden': showComments,
+      }"
+      id="content-container"
+    >
       <v-card v-if="loaded" class="ml-2 mr-2 background" flat>
         <v-card-title
           class="mt-2"
@@ -152,27 +158,47 @@
         <v-divider />
       </div>
 
-      <!-- <v-dialog
-        v-model="showComments"
-        fullscreen
-        hide-overlay
-        transition="dialog-bottom-transition"
-      >
-        <v-card>
-          <v-toolbar dark color="background">
-            <v-btn icon dark @click="showComments = false">
-              <v-icon>mdi-close</v-icon>
-            </v-btn>
-            <v-toolbar-title class="font-weight-bold">Comments</v-toolbar-title>
-          </v-toolbar>
-          <v-subheader>Hello World</v-subheader>
-        </v-card>
-      </v-dialog> -->
-
       <swipeable-bottom-sheet
+        v-model="showComments"
+        hide-overlay
+        persistent
+        no-click-animation
+        attach="#content-container"
+        v-if="loaded && video.commentData"
+      >
+        <v-card height="100%">
+          <div
+            class="toolbar-container"
+            style="position: sticky; inset: -1px; z-index: 2"
+          >
+            <v-toolbar color="background" flat>
+              <v-toolbar-title>
+                <template v-for="text in video.commentData.headerText.runs">
+                  <template v-if="text.bold">
+                    <strong :key="text.text">{{ text.text }}</strong>
+                  </template>
+                  <template v-else>{{ text.text }}</template>
+                </template>
+              </v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-btn icon dark @click="showComments = !showComments">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+            </v-toolbar>
+            <v-divider></v-divider>
+          </div>
+          <div scrollable>
+            <v-sheet color="background" v-for="i in 10" :key="i">
+              <v-skeleton-loader type="list-item-avatar-three-line, actions" />
+            </v-sheet>
+          </div>
+        </v-card>
+      </swipeable-bottom-sheet>
+
+      <!-- <swipeable-bottom-sheet
         :v-model="showComments"
         style="z-index: 9999999"
-      ></swipeable-bottom-sheet>
+      ></swipeable-bottom-sheet> -->
 
       <!-- Related Videos -->
       <div class="loaders" v-if="!loaded">
@@ -194,7 +220,7 @@ import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDe
 import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
 import vuetubePlayer from "~/components/Player/index.vue";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
-import SwipeableBottomSheet from "../components/CustomComponents/swipeableBottomSheet.vue";
+import SwipeableBottomSheet from "~/components/ExtendedComponents/swipeableBottomSheet";
 
 export default {
   components: {
@@ -390,8 +416,9 @@ export default {
   flex-direction: column;
 }
 
-.content-container {
+#content-container {
   height: 100%;
+  position: relative;
 }
 
 .vertical-button span.v-btn__content {
