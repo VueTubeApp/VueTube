@@ -27,12 +27,18 @@
     
     &.v-dialog:not(.v-dialog--fullscreen)
       max-height: 100%
+      height: 100%
   
 .swipeable-bottom-sheet__content
-  position: sticky !important
-  bottom: 0
-  top: unset
-  overflow-y: auto
+  align-items: center
+  display: flex
+  justify-content: center
+  pointer-events: none
+  position: absolute
+  transition: .2s map-get($transition, 'fast-in-fast-out'), z-index 1ms
+  width: 100%
   height: 100%
+  outline: none
+  inset: 0
 
 

@@ -27,6 +27,7 @@ export default VDialog.extend({
     contentClasses() {
       return {
         "swipeable-bottom-sheet__content": true,
+        "swipeable-bottom-sheet__content--active": this.isActive,
       };
     },
   },

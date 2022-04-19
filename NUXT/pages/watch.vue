@@ -166,33 +166,11 @@
         attach="#content-container"
         v-if="loaded && video.commentData"
       >
-        <v-card height="100%">
-          <div
-            class="toolbar-container"
-            style="position: sticky; inset: -1px; z-index: 2"
-          >
-            <v-toolbar color="background" flat>
-              <v-toolbar-title>
-                <template v-for="text in video.commentData.headerText.runs">
-                  <template v-if="text.bold">
-                    <strong :key="text.text">{{ text.text }}</strong>
-                  </template>
-                  <template v-else>{{ text.text }}</template>
-                </template>
-              </v-toolbar-title>
-              <v-spacer></v-spacer>
-              <v-btn icon dark @click="showComments = !showComments">
-                <v-icon>mdi-close</v-icon>
-              </v-btn>
-            </v-toolbar>
-            <v-divider></v-divider>
-          </div>
-          <div scrollable>
-            <v-sheet color="background" v-for="i in 10" :key="i">
-              <v-skeleton-loader type="list-item-avatar-three-line, actions" />
-            </v-sheet>
-          </div>
-        </v-card>
+        <mainCommentRenderer
+          :continuation="video.commentContinuation"
+          :commentData="video.commentData"
+          v-model="showComments"
+        ></mainCommentRenderer>
       </swipeable-bottom-sheet>
 
       <!-- <swipeable-bottom-sheet
@@ -220,6 +198,7 @@ import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDe
 import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
 import vuetubePlayer from "~/components/Player/index.vue";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
+import mainCommentRenderer from "~/components/Comments/mainCommentRenderer.vue";
 import SwipeableBottomSheet from "~/components/ExtendedComponents/swipeableBottomSheet";
 
 export default {
@@ -230,6 +209,7 @@ export default {
     vuetubePlayer,
     ItemSectionRenderer,
     SwipeableBottomSheet,
+    mainCommentRenderer,
   },
 
   data: function () {
@@ -254,13 +234,15 @@ export default {
       },
     },
   },
+
   mounted() {
     this.mountedInit();
   },
 
-  destroyed() {
+  beforeDestroy() {
     clearInterval(this.interval);
   },
+
   methods: {
     getVideo() {
       this.loaded = false;
