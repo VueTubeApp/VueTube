@@ -19,7 +19,7 @@ const ytApiVal = {
 const filesystem = {
   plugins: "vuetube/plugins",
   temp: "vuetube/temp",
-}
+};
 
 module.exports = {
   URLS: url,
