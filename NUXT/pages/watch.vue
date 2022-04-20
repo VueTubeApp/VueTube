@@ -1,27 +1,34 @@
 <template>
-  <div class="background">
-    <v-btn text style="position: fixed; z-index: 69420" to="home">
-      <v-icon>mdi-chevron-down</v-icon>
-    </v-btn>
-    <!--   VueTube Player V1   -->
-    <vuetubePlayer :sources="sources" v-if="useBetaPlayer === 'true'" />
-    <!--   Stock Player   -->
-    <videoPlayer
-      id="player"
-      ref="player"
-      v-touch="{ down: () => $router.push('/home') }"
-      style="position: sticky; top: 0; z-index: 42069"
-      class="background"
-      :vid-src="vidSrc"
-    />
+  <div class="background" id="watch-body">
+    <div id="player-container">
+      <v-btn text style="position: fixed; z-index: 69420" to="home">
+        <v-icon>mdi-chevron-down</v-icon>
+      </v-btn>
+      <!--   VueTube Player V1   -->
+      <vuetubePlayer :sources="sources" v-if="useBetaPlayer === 'true'" />
+      <!--   Stock Player   -->
+      <videoPlayer
+        id="player"
+        ref="player"
+        v-touch="{ down: () => $router.push('/home') }"
+        class="background"
+        :vid-src="vidSrc"
+      />
+    </div>
 
-    <!---->
-    <v-card v-if="loaded" class="background rounded-0" flat>
-      <div
-        v-ripple
-        class="d-flex justify-space-between align-start px-3 pt-3"
-        @click="showMore = !showMore"
-      >
+    <div
+      v-bind:class="{
+        'overflow-y-auto': !showComments,
+        'overflow-y-hidden': showComments,
+      }"
+      id="content-container"
+    >
+      <v-card v-if="loaded" class="ml-2 mr-2 background rounded-0" flat>
+        <div
+          v-ripple
+          class="d-flex justify-space-between align-start px-3 pt-3"
+          @click="showMore = !showMore"
+        >
         <div class="d-flex flex-column">
           <v-card-title
             class="pa-0"
@@ -34,6 +41,7 @@
             class="background--text pa-0"
             :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
           >
+          <div style="margin-bottom: 1rem">
             <template
               v-for="text in video.metadata.contents.find(
                 (content) => content.slimVideoInformationRenderer
@@ -155,9 +163,25 @@
       <v-divider />
     </div>
 
-    <v-card v-if="showComments">
-      <v-subheader>Hello World</v-subheader>
-    </v-card>
+    <swipeable-bottom-sheet
+      v-model="showComments"
+      hide-overlay
+      persistent
+      no-click-animation
+      attach="#content-container"
+      v-if="loaded && video.commentData"
+    >
+      <mainCommentRenderer
+        :continuation="video.commentContinuation"
+        :commentData="video.commentData"
+        v-model="showComments"
+      ></mainCommentRenderer>
+    </swipeable-bottom-sheet>
+
+    <!-- <swipeable-bottom-sheet
+      :v-model="showComments"
+      style="z-index: 9999999"
+    ></swipeable-bottom-sheet> -->
 
     <!-- Related Videos -->
     <div class="loaders" v-if="!loaded">
@@ -178,6 +202,8 @@ import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDe
 import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
 import vuetubePlayer from "~/components/Player/index.vue";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
+import mainCommentRenderer from "~/components/Comments/mainCommentRenderer.vue";
+import SwipeableBottomSheet from "~/components/ExtendedComponents/swipeableBottomSheet";
 
 export default {
   components: {
@@ -186,6 +212,8 @@ export default {
     SlimVideoDescriptionRenderer,
     vuetubePlayer,
     ItemSectionRenderer,
+    SwipeableBottomSheet,
+    mainCommentRenderer,
   },
   layout: "empty",
   // transition(to) { // TODO: fix layout switching
@@ -215,13 +243,15 @@ export default {
       },
     },
   },
+
   mounted() {
     this.mountedInit();
   },
 
-  destroyed() {
+  beforeDestroy() {
     clearInterval(this.interval);
   },
+
   methods: {
     getVideo() {
       this.loaded = false;
@@ -369,6 +399,19 @@ export default {
 </script>
 
 <style>
+#watch-body {
+  height: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#content-container {
+  height: 100%;
+  position: relative;
+}
+
 .vertical-button span.v-btn__content {
   flex-direction: column;
   justify-content: space-around;

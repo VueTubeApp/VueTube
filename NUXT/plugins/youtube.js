@@ -133,20 +133,36 @@ const innertubeModule = {
   },
 
   async recommendContinuation(continuation, endpoint) {
-    const response = await InnertubeAPI.getContinuationsAsync(
-      continuation,
-      endpoint
-    );
+    const response = await this.getContinuation(continuation, endpoint);
     const contents =
       response.data.continuationContents.sectionListContinuation.contents;
     const final = contents.map((shelves) => {
       const video = shelves.shelfRenderer?.content?.horizontalListRenderer;
-
       if (video) return video;
     });
     const continuations =
       response.data.continuationContents.sectionListContinuation.continuations;
     return { continuations: continuations, contents: final };
+  },
+
+  async getContinuation(continuation, endpoint, mode = "android") {
+    let contextAdditional = {};
+    if (mode.toLowerCase() == "web") {
+      contextAdditional = {
+        ...contextAdditional,
+        ...{
+          client: {
+            clientName: constants.YT_API_VALUES.CLIENT_WEB,
+            clientVersion: constants.YT_API_VALUES.VERSION_WEB,
+          },
+        },
+      };
+    }
+    return await InnertubeAPI.getContinuationsAsync(
+      continuation,
+      endpoint,
+      contextAdditional
+    );
   },
 
   async search(query) {
