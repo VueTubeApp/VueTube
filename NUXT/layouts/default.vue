@@ -193,14 +193,15 @@ export default {
 }
 
 .scroll-y {
-  overflow-y: scroll !important; /* has to be scroll, not auto */
+  overflow-y: scroll !important;
+  /* has to be scroll, not auto */
   overflow-x: hidden !important;
   -webkit-overflow-scrolling: touch !important;
 }
 html,
 body {
   background: var(--v-background-base);
-  overflow: hidden;
+  /* overflow-x: hidden; */
 }
 
 p,

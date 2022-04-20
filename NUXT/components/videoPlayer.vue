@@ -1,21 +1,46 @@
 <template>
   <div>
     <video
+      ref="player"
       controls
       autoplay
       :src="vidSrc"
       width="100%"
+      style="max-height: 50vh; display: block"
       @webkitfullscreenchange="handleFullscreenChange"
-      ref="player"
-      style="max-height: 50vh"
     />
+    <v-progress-linear
+      active
+      background-color="primary"
+      background-opacity="0.5"
+      :buffer-value="buffered"
+      color="primary"
+      height="3"
+      query
+      :value="percentage"
+    />
+    <!-- <v-slider v-model="value" step="0"></v-slider> -->
   </div>
 </template>
 
 <script>
 export default {
   props: ["vidSrc"],
-
+  data() {
+    return {
+      percentage: 0,
+      buffered: 0,
+    };
+  },
+  mounted() {
+    let vid = this.$refs.player;
+    vid.ontimeupdate = () => {
+      this.percentage = (vid.currentTime / vid.duration) * 100;
+    };
+    vid.addEventListener("progress", () => {
+      this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
+    });
+  },
   methods: {
     handleFullscreenChange() {
       if (document.fullscreenElement === this.$refs.player) {
