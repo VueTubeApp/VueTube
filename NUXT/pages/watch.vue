@@ -1,182 +1,172 @@
 <template>
-  <div class="background" id="watch-body">
-    <div class="player-container">
-      <!--   Stock Player   -->
-      <videoPlayer
-        :vid-src="vidSrc"
-        ref="player"
-        v-if="useBetaPlayer !== 'true'"
-      />
+  <div class="background">
+    <v-btn text style="position: fixed; z-index: 69420" to="home">
+      <v-icon>mdi-chevron-down</v-icon>
+    </v-btn>
+    <!--   VueTube Player V1   -->
+    <vuetubePlayer :sources="sources" v-if="useBetaPlayer === 'true'" />
+    <!--   Stock Player   -->
+    <videoPlayer
+      id="player"
+      ref="player"
+      v-touch="{ down: () => $router.push('/home') }"
+      style="position: sticky; top: 0; z-index: 42069"
+      class="background"
+      :vid-src="vidSrc"
+    />
 
-      <!--   VueTube Player V1   -->
-      <vuetubePlayer :sources="sources" v-if="useBetaPlayer === 'true'" />
-    </div>
-    <div class="content-container overflow-y-auto">
-      <v-card v-if="loaded" class="ml-2 mr-2 background" flat>
-        <v-card-title
-          class="mt-2"
-          style="
-            padding-top: 0;
-            padding-bottom: 0;
-            font-size: 0.95rem;
-            line-height: 1rem;
-          "
-          v-text="video.title"
-          v-emoji
-        />
-        <v-card-text>
-          <div style="margin-bottom: 1rem">
+    <!---->
+    <v-card v-if="loaded" class="background rounded-0" flat>
+      <div
+        v-ripple
+        class="d-flex justify-space-between align-start px-3 pt-3"
+        @click="showMore = !showMore"
+      >
+        <div class="d-flex flex-column">
+          <v-card-title
+            class="pa-0"
+            style="font-size: 0.95rem; line-height: 1.15rem"
+            v-text="video.title"
+            v-emoji
+          />
+          <v-card-text
+            style="font-size: 0.75rem"
+            class="background--text pa-0"
+            :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+          >
             <template
               v-for="text in video.metadata.contents.find(
                 (content) => content.slimVideoInformationRenderer
               ).slimVideoInformationRenderer.collapsedSubtitle.runs"
-              >{{ text.text }}</template
-            >
-          </div>
-
-          <!--   Scrolling Div For Interactions   --->
-          <div style="display: flex; margin-bottom: 1em">
-            <v-list-item
-              v-for="(item, index) in interactions"
-              :key="index"
-              style="padding: 0; flex: 0 0 20%"
-            >
-              <v-btn
-                text
-                class="vertical-button"
-                style="padding: 0; margin: 0"
-                elevation="0"
-                :disabled="item.disabled"
-                @click="callMethodByName(item.actionName)"
-              >
-                <v-icon v-text="item.icon" />
-                <div
-                  class="mt-2"
-                  style="font-size: 0.66rem"
-                  v-text="item.value || item.name"
-                />
-              </v-btn>
-            </v-list-item>
-
-            <v-spacer />
-            <v-btn text @click="showMore = !showMore">
-              <v-icon v-if="showMore">mdi-chevron-up</v-icon>
-              <v-icon v-else>mdi-chevron-down</v-icon>
-            </v-btn>
-          </div>
-          <!--   End Scrolling Div For Interactions   --->
-          <!-- <hr /> -->
-        </v-card-text>
-        <!-- <v-bottom-sheet
-      v-model="showMore"
-      color="background"
-      style="z-index: 9999999"
-    >
-      <v-sheet style="padding: 12px">
-        <v-btn block @click="showMore = !showMore"
-          ><v-icon>mdi-chevron-down</v-icon></v-btn
-        ><br />
-
-        <slim-video-description-renderer
-          class="scroll-y"
-          :render="video.renderedData.description"
-        />
-      </v-sheet>
-    </v-bottom-sheet> -->
-        <!-- <v-bottom-sheet v-model="share" color="background" style="z-index: 9999999">
-      <v-sheet style="padding: 1em">
-        <div class="scroll-y">
-          {{ response.renderedData.description }}
+              >{{ text.text }}
+            </template>
+          </v-card-text>
         </div>
-      </v-sheet>
-    </v-bottom-sheet> -->
+        <v-icon class="ml-4" v-if="showMore">mdi-chevron-up</v-icon>
+        <v-icon class="ml-4" v-else>mdi-chevron-down</v-icon>
+      </div>
+      <div class="d-flex">
+        <v-btn
+          v-for="(item, index) in interactions"
+          :key="index"
+          text
+          fab
+          class="vertical-button ma-1"
+          elevation="0"
+          style="width: 4.2rem !important; height: 4.2rem !important"
+          :disabled="item.disabled"
+          @click="callMethodByName(item.actionName)"
+        >
+          <v-icon v-text="item.icon" />
+          <div
+            class="mt-2"
+            style="font-size: 0.66rem"
+            v-text="item.value || item.name"
+          />
+        </v-btn>
+        <!--   End Scrolling Div For Interactions   --->
+        <!-- <hr /> -->
+      </div>
+      <!-- <v-bottom-sheet
+          v-model="showMore"
+          color="background"
+          style="z-index: 9999999"
+        >
+          <v-sheet style="padding: 12px">
+            <v-btn block @click="showMore = !showMore"
+              ><v-icon>mdi-chevron-down</v-icon></v-btn
+            ><br />
+
+            <slim-video-description-renderer
+              class="scroll-y"
+              :render="video.renderedData.description"
+            />
+          </v-sheet>
+        </v-bottom-sheet> -->
+
+      <!-- <v-bottom-sheet v-model="share" color="background" style="z-index: 9999999">
+          <v-sheet style="padding: 1em">
+            <div class="scroll-y">
+              {{ response.renderedData.description }}
+            </div>
+          </v-sheet>
+        </v-bottom-sheet> -->
+    </v-card>
+    <v-divider />
+
+    <!--   Channel Bar   -->
+    <div class="channel-container" v-if="loaded">
+      <v-card
+        class="channel-section background px-3 rounded-0"
+        :to="video.channelUrl"
+      >
+        <div id="details">
+          <div class="avatar-link mr-3">
+            <v-img class="avatar-thumbnail" :src="video.channelImg" />
+          </div>
+          <div class="channel-byline" v-emoji>
+            <div class="channel-name" v-text="video.channelName" />
+            <div
+              class="caption background--text"
+              :class="
+                $vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'
+              "
+              v-text="video.channelSubs"
+            />
+          </div>
+        </div>
+        <div
+          class="channel-buttons"
+          style="color: rgb(204, 0, 0); text-transform: uppercase"
+        >
+          subscribe
+        </div>
       </v-card>
       <v-divider />
-
-      <!--   Channel Bar   -->
-      <div class="channel-container" v-if="loaded">
-        <v-card class="channel-section background" :to="video.channelUrl">
-          <div id="details">
-            <div class="avatar-link mr-3">
-              <v-img class="avatar-thumbnail" :src="video.channelImg" />
-            </div>
-            <div class="channel-byline" v-emoji>
-              <div class="channel-name" v-text="video.channelName" />
-              <div
-                class="caption background--text"
-                :class="
-                  $vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'
-                "
-                v-text="video.channelSubs"
-              />
-            </div>
-          </div>
-          <div
-            class="channel-buttons"
-            style="color: rgb(204, 0, 0); text-transform: uppercase"
-          >
-            subscribe
-          </div>
-        </v-card>
-        <v-divider />
-      </div>
-
-      <!-- Description -->
-      <div class="description-container" v-if="showMore">
-        <div class="scroll-y ma-4">
-          <slim-video-description-renderer
-            :render="video.renderedData.description"
-          />
-        </div>
-        <v-divider />
-      </div>
-
-      <!-- Comments -->
-      <div
-        class="comment-container"
-        v-if="loaded && video.commentData"
-        @click="showComments = !showComments"
-      >
-        <v-card flat class="background comment-renderer">
-          <v-text class="comment-count keep-spaces">
-            <template v-for="text in video.commentData.headerText.runs">
-              <template v-if="text.bold">
-                <strong :key="text.text">{{ text.text }}</strong>
-              </template>
-              <template v-else>{{ text.text }}</template>
-            </template>
-          </v-text>
-          <v-icon>mdi-unfold-more-horizontal</v-icon>
-        </v-card>
-        <v-divider />
-      </div>
-
-      <v-dialog
-        v-model="showComments"
-        fullscreen
-        hide-overlay
-        transition="dialog-bottom-transition"
-      >
-        <v-card>
-          <v-toolbar dark color="background">
-            <v-btn icon dark @click="showComments = false">
-              <v-icon>mdi-close</v-icon>
-            </v-btn>
-            <v-toolbar-title class="font-weight-bold">Comments</v-toolbar-title>
-          </v-toolbar>
-          <v-subheader>Hello World</v-subheader>
-        </v-card>
-      </v-dialog>
-
-      <!-- Related Videos -->
-      <div class="loaders" v-if="!loaded">
-        <v-skeleton-loader
-          type="list-item-two-line, actions, divider, list-item-avatar, divider, list-item-three-line"
-        />
-        <vid-load-renderer :count="5" />
-      </div>
-      <item-section-renderer v-else :render="recommends" />
     </div>
+
+    <!-- Description -->
+    <div v-if="showMore">
+      <div class="scroll-y ma-4">
+        <slim-video-description-renderer
+          :render="video.renderedData.description"
+        />
+      </div>
+      <v-divider />
+    </div>
+
+    <!-- Comments -->
+    <div
+      v-if="loaded && video.commentData"
+      @click="showComments = !showComments"
+    >
+      <v-card flat class="background comment-renderer">
+        <v-text class="comment-count keep-spaces">
+          <template v-for="text in video.commentData.headerText.runs">
+            <template v-if="text.bold">
+              <strong :key="text.text">{{ text.text }}</strong>
+            </template>
+            <template v-else>{{ text.text }}</template>
+          </template>
+        </v-text>
+        <v-icon v-if="showComments">mdi-unfold-less-horizontal</v-icon>
+        <v-icon v-else>mdi-unfold-more-horizontal</v-icon>
+      </v-card>
+      <v-divider />
+    </div>
+
+    <v-card v-if="showComments">
+      <v-subheader>Hello World</v-subheader>
+    </v-card>
+
+    <!-- Related Videos -->
+    <div class="loaders" v-if="!loaded">
+      <v-skeleton-loader
+        type="list-item-two-line, actions, divider, list-item-avatar, divider, list-item-three-line"
+      />
+      <vid-load-renderer :count="5" />
+    </div>
+    <item-section-renderer v-else :render="recommends" />
   </div>
 </template>
 
@@ -197,7 +187,12 @@ export default {
     vuetubePlayer,
     ItemSectionRenderer,
   },
-
+  layout: "empty",
+  // transition(to) { // TODO: fix layout switching
+  //   return to.name == "watch"
+  //     ? { name: "slide-up", mode: "" }
+  //     : { name: "slide-down", mode: "" };
+  // },
   data: function () {
     return this.initializeState();
   },
@@ -313,7 +308,6 @@ export default {
           fmt: 243,
           rtn: Math.floor(Date.now() / 1000) - this.startTime,
           rt: Math.floor(Date.now() / 1000) - this.startTime,
-          fmt: 243,
           muted: 0,
         },
         this.playbackTracking.videostatsPlaybackUrl.baseUrl
@@ -375,17 +369,6 @@ export default {
 </script>
 
 <style>
-#watch-body {
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.content-container {
-  height: 100%;
-}
-
 .vertical-button span.v-btn__content {
   flex-direction: column;
   justify-content: space-around;

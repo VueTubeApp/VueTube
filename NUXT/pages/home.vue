@@ -34,9 +34,9 @@ export default {
     },
   },
 
-  data: {
+  data: () => ({
     loading: false,
-  },
+  }),
 
   methods: {
     paginate() {

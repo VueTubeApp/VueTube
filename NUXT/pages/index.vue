@@ -60,7 +60,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .container {
   display: block;
   position: absolute;
@@ -103,5 +103,27 @@ export default {
     transition-property: opacity, transform;
     animation: fadein 0.5s ease 1 forwards;
   }
+}
+
+/* page transition */
+.slide-up-enter-active,
+.slide-up-leave-active,
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition-duration: 0.1s;
+  transition-property: opacity, transform;
+  /* overflow: hidden; */
+}
+
+.slide-up-enter,
+.slide-down-leave-active {
+  opacity: 0;
+  transform: translateY(3rem);
+}
+
+.slide-up-leave-active,
+.slide-down-enter {
+  opacity: 0;
+  transform: translateY(-1rem);
 }
 </style>
