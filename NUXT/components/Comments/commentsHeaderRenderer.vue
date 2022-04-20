@@ -10,13 +10,15 @@
         "
       />
     </div>
-    <v-text-field disabled>
-      {{
+    <div
+      class="placeholder-text background--text"
+      :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+      v-text="
         boxRenderer.placeholderText.runs[
           boxRenderer.placeholderText.runs.length - 1
         ].text
-      }}
-    </v-text-field>
+      "
+    ></div>
   </div>
 </template>
 
@@ -26,8 +28,7 @@
 }
 
 .avatar-thumbnail {
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
   border-radius: 50%;
   width: 48px;
   height: 48px;
@@ -37,7 +38,8 @@
   display: flex;
   flex-direction: row;
   flex-basis: auto;
-  padding: 10px;
+  align-items: center;
+  padding: 10px 0;
   width: 100%;
 }
 </style>

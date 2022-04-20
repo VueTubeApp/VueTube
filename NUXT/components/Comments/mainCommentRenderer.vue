@@ -15,24 +15,27 @@
       </v-btn>
     </template>
 
-    <div class="commentList">
-      <template v-for="commentItems in comments">
-        <v-list-item
-          v-for="(comment, index) in commentItems.reloadContinuationItemsCommand
-            .continuationItems"
-          :key="index"
-        >
-          <component
-            v-if="getComponents()[Object.keys(comment)[0]]"
-            :is="Object.keys(comment)[0]"
-            :comment="comment[Object.keys(comment)[0]]"
-          ></component>
-        </v-list-item>
-      </template>
-    </div>
+    <template v-for="(comment, index) in comments">
+      <v-list-item :key="index">
+        <component
+          v-if="getComponents()[Object.keys(comment)[0]]"
+          :is="Object.keys(comment)[0]"
+          :comment="comment[Object.keys(comment)[0]]"
+          @intersect="paginate()"
+        ></component>
+      </v-list-item>
+      <v-divider
+        v-if="getComponents()[Object.keys(comment)[0]]"
+        :key="index"
+      ></v-divider>
+    </template>
     <div class="loading" v-if="loading">
-      <v-sheet color="background" v-for="i in !comments ? 10 : 3" :key="i">
-        <v-skeleton-loader type="list-item-avatar-three-line, actions" />
+      <v-sheet
+        color="background"
+        v-for="i in comments.length <= 0 ? 5 : 1"
+        :key="i"
+      >
+        <v-skeleton-loader type="list-item-avatar-three-line" />
       </v-sheet>
     </div>
   </dialog-base>
@@ -42,6 +45,7 @@
 import dialogBase from "~/components/dialogBase.vue";
 import commentsHeaderRenderer from "~/components/Comments/commentsHeaderRenderer.vue";
 import commentThreadRenderer from "~/components/Comments/commentThreadRenderer.vue";
+import continuationItemRenderer from "~/components/observer.vue";
 
 export default {
   props: ["continuation", "commentData", "showComments"],
@@ -55,6 +59,7 @@ export default {
     dialogBase,
     commentsHeaderRenderer,
     commentThreadRenderer,
+    continuationItemRenderer,
   },
 
   data: () => ({
@@ -73,15 +78,47 @@ export default {
 
     paginate() {
       this.loading = true;
+      const watcherIndex = this.comments.findIndex(
+        (comment) => comment.continuationItemRenderer
+      );
+      if (watcherIndex) this.comments.splice(watcherIndex, 1);
       this.$youtube
         .getContinuation(this.continuation, "next", "web")
         .then((result) => {
-          this.comments = this.comments.concat(
-            result.data.onResponseReceivedEndpoints
-          );
+          let processed;
+          if (
+            result.data.onResponseReceivedEndpoints.find(
+              (endpoints) => endpoints.reloadContinuationItemsCommand
+            )
+          ) {
+            processed = result.data.onResponseReceivedEndpoints.map(
+              (endpoints) =>
+                endpoints.reloadContinuationItemsCommand.continuationItems
+            );
+          } else {
+            processed = result.data.onResponseReceivedEndpoints.map(
+              (endpoints) =>
+                endpoints.appendContinuationItemsAction.continuationItems
+            );
+          }
+          processed = processed.flat(1);
+          this.comments = this.comments.concat(processed);
+          this.continuation = this.findContinuation(processed);
           console.log("comments", this.comments);
           if (this.comments) this.loading = false;
         });
+    },
+
+    findContinuation(newResponses) {
+      const continuationItemParent = newResponses.find(
+        (item) => item.continuationItemRenderer
+      );
+
+      const newContinuation =
+        continuationItemParent.continuationItemRenderer.continuationEndpoint
+          .continuationCommand.token;
+
+      return newContinuation;
     },
   },
 };

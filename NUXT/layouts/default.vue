@@ -222,6 +222,7 @@ div {
   width: 1em;
   height: 1em;
   vertical-align: -0.1em;
+  margin: 0 2px;
 }
 </style>
 
