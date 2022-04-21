@@ -32,9 +32,8 @@
         </span>
       </div>
       <collapsable-text :lines="4">
-        <template v-for="text in commentRenderer.contentText.runs">{{
-          text.text
-        }}</template>
+        <yt-text-formatter :textRuns="commentRenderer.contentText.runs">
+        </yt-text-formatter>
       </collapsable-text>
     </div>
   </div>
@@ -88,8 +87,10 @@
 
 <script>
 import collapsableText from "~/components/UtilRenderers/collapsableText.vue";
+import YtTextFormatter from "~/components/UtilRenderers/YtTextFormatter.vue";
+
 export default {
-  components: { collapsableText },
+  components: { collapsableText, YtTextFormatter },
   props: ["comment"],
 
   data() {
