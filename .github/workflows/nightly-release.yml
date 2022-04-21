@@ -1,12 +1,10 @@
-# This is a basic workflow to help you get started with Actions
-
 name: nightly-release
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on on a schedule
   schedule:
-    # Runs "at minute 55 past every hour" (see https://crontab.guru)
+    # Runs "at 0:00 UTC every day" (see https://crontab.guru)
     - cron: '0 0 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
@@ -26,6 +24,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: main
       - name: Set up Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
         with:
