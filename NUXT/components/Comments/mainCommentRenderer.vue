@@ -77,36 +77,38 @@ export default {
     },
 
     paginate() {
-      this.loading = true;
-      const watcherIndex = this.comments.findIndex(
-        (comment) => comment.continuationItemRenderer
-      );
-      if (watcherIndex) this.comments.splice(watcherIndex, 1);
-      this.$youtube
-        .getContinuation(this.continuation, "next", "web")
-        .then((result) => {
-          let processed;
-          if (
-            result.data.onResponseReceivedEndpoints.find(
-              (endpoints) => endpoints.reloadContinuationItemsCommand
-            )
-          ) {
-            processed = result.data.onResponseReceivedEndpoints.map(
-              (endpoints) =>
-                endpoints.reloadContinuationItemsCommand.continuationItems
-            );
-          } else {
-            processed = result.data.onResponseReceivedEndpoints.map(
-              (endpoints) =>
-                endpoints.appendContinuationItemsAction.continuationItems
-            );
-          }
-          processed = processed.flat(1);
-          this.comments = this.comments.concat(processed);
-          this.continuation = this.findContinuation(processed);
-          console.log("comments", this.comments);
-          if (this.comments) this.loading = false;
-        });
+      if (this.continuation) {
+        this.loading = true;
+        const watcherIndex = this.comments.findIndex(
+          (comment) => comment.continuationItemRenderer
+        );
+        if (watcherIndex) this.comments.splice(watcherIndex, 1);
+        this.$youtube
+          .getContinuation(this.continuation, "next", "web")
+          .then((result) => {
+            let processed;
+            if (
+              result.data.onResponseReceivedEndpoints.find(
+                (endpoints) => endpoints.reloadContinuationItemsCommand
+              )
+            ) {
+              processed = result.data.onResponseReceivedEndpoints.map(
+                (endpoints) =>
+                  endpoints.reloadContinuationItemsCommand.continuationItems
+              );
+            } else {
+              processed = result.data.onResponseReceivedEndpoints.map(
+                (endpoints) =>
+                  endpoints.appendContinuationItemsAction.continuationItems
+              );
+            }
+            processed = processed.flat(1);
+            this.comments = this.comments.concat(processed);
+            this.continuation = this.findContinuation(processed);
+            console.log("comments", this.comments);
+            if (this.comments) this.loading = false;
+          });
+      }
     },
 
     findContinuation(newResponses) {
@@ -115,7 +117,7 @@ export default {
       );
 
       const newContinuation =
-        continuationItemParent.continuationItemRenderer.continuationEndpoint
+        continuationItemParent?.continuationItemRenderer.continuationEndpoint
           .continuationCommand.token;
 
       return newContinuation;
