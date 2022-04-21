@@ -172,7 +172,7 @@
       v-if="loaded && video.commentData"
     >
       <mainCommentRenderer
-        :continuation="video.commentContinuation"
+        :defaultContinuation="video.commentContinuation"
         :commentData="video.commentData"
         v-model="showComments"
       ></mainCommentRenderer>

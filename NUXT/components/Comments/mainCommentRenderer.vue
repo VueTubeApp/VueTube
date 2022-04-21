@@ -48,7 +48,7 @@ import commentThreadRenderer from "~/components/Comments/commentThreadRenderer.v
 import continuationItemRenderer from "~/components/observer.vue";
 
 export default {
-  props: ["continuation", "commentData", "showComments"],
+  props: ["defaultContinuation", "commentData", "showComments"],
 
   model: {
     prop: "showComments",
@@ -65,9 +65,11 @@ export default {
   data: () => ({
     loading: true,
     comments: [],
+    continuation: null,
   }),
 
   mounted() {
+    if (!this.continuation) this.continuation = this.defaultContinuation;
     this.paginate();
   },
 
