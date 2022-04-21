@@ -21,7 +21,7 @@
       <div class="comment-content--header">
         <h3 class="author-name--wrapper">
           <span class="font-weight-bold subtitle-2 pr-1 author-name" emoji>
-            {{ commentRenderer.authorText.runs[0].text }}
+            {{ commentRenderer.authorText.simpleText }}
           </span>
         </h3>
         <span
