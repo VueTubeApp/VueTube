@@ -19,7 +19,7 @@
           >{{ text.text }}</a
         >
       </template>
-      <template v-else-if="text.emoji">
+      <template v-else-if="text.emoji && text.emoji.isCustomEmoji">
         <img
           :src="
             text.emoji.image.thumbnails[text.emoji.image.thumbnails.length - 1]

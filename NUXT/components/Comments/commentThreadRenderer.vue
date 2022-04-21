@@ -18,15 +18,35 @@
       />
     </a>
     <div class="comment-content">
-      <div class="comment-content--header">
-        <h3 class="author-name--wrapper">
-          <span class="font-weight-bold subtitle-2 pr-1 author-name" emoji>
-            {{ commentRenderer.authorText.simpleText }}
-          </span>
-        </h3>
+      <div class="comment-content--header subtitle-2">
+        <div class="author-badge-name pr-1">
+          <div class="author-name--wrapper">
+            <span class="font-weight-bold author-name" v-emoji>
+              {{ commentRenderer.authorText.simpleText }}
+            </span>
+          </div>
+          <template
+            v-for="(badge, index) in commentRenderer.authorCommentBadge"
+          >
+            <author-comment-badge-renderer
+              :metadata="badge"
+              :key="index"
+              class="ml-1"
+            />
+          </template>
+          <template
+            v-for="(badge, index) in commentRenderer.sponsorCommentBadge"
+          >
+            <sponsor-comment-badge-renderer
+              :metadata="badge"
+              :key="index"
+              class="ml-1"
+            />
+          </template>
+        </div>
         <span
           :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-          class="background--text subtitle-2 comment-timestamp"
+          class="background--text comment-timestamp"
         >
           {{ commentRenderer.publishedTimeText.runs[0].text }}
         </span>
@@ -70,17 +90,22 @@
       display: flex;
       align-items: baseline;
 
-      .author-name--wrapper {
-        min-width: 0;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-      }
-
       .comment-timestamp {
         white-space: nowrap;
       }
     }
+  }
+}
+
+.author-badge-name {
+  display: flex;
+  flex-direction: row;
+
+  .author-name--wrapper {
+    min-width: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
 </style>
@@ -88,9 +113,16 @@
 <script>
 import collapsableText from "~/components/UtilRenderers/collapsableText.vue";
 import YtTextFormatter from "~/components/UtilRenderers/YtTextFormatter.vue";
+import AuthorCommentBadgeRenderer from "~/components/Comments/authorCommentBadgeRenderer.vue";
+import SponsorCommentBadgeRenderer from "~/components/Comments/sponsorCommentBadgeRenderer.vue";
 
 export default {
-  components: { collapsableText, YtTextFormatter },
+  components: {
+    collapsableText,
+    YtTextFormatter,
+    AuthorCommentBadgeRenderer,
+    SponsorCommentBadgeRenderer,
+  },
   props: ["comment"],
 
   data() {
