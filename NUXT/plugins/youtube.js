@@ -152,7 +152,7 @@ const innertubeModule = {
         ...contextAdditional,
         ...{
           client: {
-            clientName: constants.YT_API_VALUES.CLIENT_WEB,
+            clientName: constants.YT_API_VALUES.CLIENT_WEB_D,
             clientVersion: constants.YT_API_VALUES.VERSION_WEB,
           },
         },

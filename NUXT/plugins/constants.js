@@ -13,7 +13,8 @@ const ytApiVal = {
   VERSION: "16.25",
   CLIENTNAME: "ANDROID",
   VERSION_WEB: "2.20220411.09.00",
-  CLIENT_WEB: 2,
+  CLIENT_WEB_M: 2,
+  CLIENT_WEB_D: 1,
 };
 
 const filesystem = {
