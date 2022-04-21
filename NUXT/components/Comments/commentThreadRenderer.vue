@@ -19,7 +19,10 @@
     </a>
     <div class="comment-content">
       <div class="comment-content--header subtitle-2">
-        <div class="author-badge-name pr-1">
+        <div
+          class="author-badge-name mr-1"
+          :class="{ owner: commentRenderer.authorIsChannelOwner }"
+        >
           <div class="author-name--wrapper">
             <span class="font-weight-bold author-name" v-emoji>
               {{ commentRenderer.authorText.simpleText }}
@@ -100,12 +103,24 @@
 .author-badge-name {
   display: flex;
   flex-direction: row;
+  min-width: 0;
 
   .author-name--wrapper {
     min-width: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+  }
+}
+
+.owner {
+  padding: 0 0.6em;
+  background-color: #888888;
+  color: #fff;
+  border-radius: 1em;
+
+  &::v-deep .author-badge {
+    color: #fff;
   }
 }
 </style>
