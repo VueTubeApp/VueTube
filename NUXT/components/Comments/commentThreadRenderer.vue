@@ -54,31 +54,45 @@
           {{ commentRenderer.publishedTimeText.runs[0].text }}
         </span>
       </div>
-      <collapsable-text :lines="4">
+      <collapsable-text
+        :lines="4"
+        :expandText="
+          commentRenderer.expandButton.buttonRenderer.text.runs[0].text
+        "
+        :collapseText="
+          commentRenderer.collapseButton.buttonRenderer.text.runs[0].text
+        "
+      >
         <yt-text-formatter :textRuns="commentRenderer.contentText.runs">
         </yt-text-formatter>
       </collapsable-text>
       <div class="toolbar">
+        <v-btn-toggle v-model="voteStatus" group>
+          <div class="toolbar--item">
+            <v-btn class="toolbar--button like" disabled icon x-small plain>
+              <v-icon small>mdi-thumb-up</v-icon>
+            </v-btn>
+            <span
+              v-text="commentRenderer.voteCount.simpleText"
+              class="like-count mr-1 subtitle-2"
+            ></span>
+          </div>
+          <div class="toolbar--item">
+            <v-btn class="toolbar--button dislike" disabled icon x-small plain>
+              <v-icon small>mdi-thumb-down</v-icon>
+            </v-btn>
+          </div>
+        </v-btn-toggle>
         <div class="toolbar--item">
-          <v-btn class="toolbar--button like" disabled icon x-small>
-            <v-icon small left>mdi-thumb-up</v-icon>
-          </v-btn>
-        </div>
-        <div class="toolbar--item">
-          <span
-            v-text="commentRenderer.voteCount.simpleText"
-            class="like-count mr-1 subtitle-2"
-          ></span>
-        </div>
-        <div class="toolbar--item">
-          <v-btn class="toolbar--button dislike" disabled icon x-small>
-            <v-icon small>mdi-thumb-down</v-icon>
-          </v-btn>
-        </div>
-        <div class="toolbar--item">
-          <v-btn class="toolbar--button reply" disabled icon x-small>
+          <v-btn class="toolbar--button reply ml-2" disabled icon x-small plain>
             <v-icon small>mdi-comment</v-icon>
           </v-btn>
+        </div>
+        <div class="toolbar--item" v-if="commentRenderer.replyCount">
+          <span
+            v-text="commentRenderer.replyCount"
+            class="like-count mr-1 subtitle-2"
+          ></span>
         </div>
       </div>
     </div>
@@ -151,6 +165,10 @@
     color: #fff;
   }
 }
+
+.toolbar--button::v-deep.v-btn--active .v-btn__content {
+  color: var(--v-primary-base);
+}
 </style>
 
 <script>
@@ -171,6 +189,7 @@ export default {
   data() {
     return {
       commentRenderer: null,
+      voteStatus: null,
     };
   },
 
