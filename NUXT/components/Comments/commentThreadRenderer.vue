@@ -58,6 +58,29 @@
         <yt-text-formatter :textRuns="commentRenderer.contentText.runs">
         </yt-text-formatter>
       </collapsable-text>
+      <div class="toolbar">
+        <div class="toolbar--item">
+          <v-btn class="toolbar--button like" disabled icon x-small>
+            <v-icon small left>mdi-thumb-up</v-icon>
+          </v-btn>
+        </div>
+        <div class="toolbar--item">
+          <span
+            v-text="commentRenderer.voteCount.simpleText"
+            class="like-count mr-1 subtitle-2"
+          ></span>
+        </div>
+        <div class="toolbar--item">
+          <v-btn class="toolbar--button dislike" disabled icon x-small>
+            <v-icon small>mdi-thumb-down</v-icon>
+          </v-btn>
+        </div>
+        <div class="toolbar--item">
+          <v-btn class="toolbar--button reply" disabled icon x-small>
+            <v-icon small>mdi-comment</v-icon>
+          </v-btn>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -76,7 +99,6 @@
 
   .avatar-thumbnail {
     margin-right: 0.5rem;
-    margin-top: 0.5rem;
     border-radius: 50%;
     width: 48px;
     height: 48px;
@@ -98,6 +120,12 @@
       }
     }
   }
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .author-badge-name {
