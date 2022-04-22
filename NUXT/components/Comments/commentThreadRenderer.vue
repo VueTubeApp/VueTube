@@ -18,23 +18,45 @@
       />
     </a>
     <div class="comment-content">
-      <div class="comment-content--header">
-        <h3 class="author-name--wrapper">
-          <span class="font-weight-bold subtitle-2 pr-1 author-name" emoji>
-            {{ commentRenderer.authorText.runs[0].text }}
-          </span>
-        </h3>
+      <div class="comment-content--header subtitle-2">
+        <div
+          class="author-badge-name mr-1"
+          :class="{ owner: commentRenderer.authorIsChannelOwner }"
+        >
+          <div class="author-name--wrapper">
+            <span class="font-weight-bold author-name" v-emoji>
+              {{ commentRenderer.authorText.simpleText }}
+            </span>
+          </div>
+          <template
+            v-for="(badge, index) in commentRenderer.authorCommentBadge"
+          >
+            <author-comment-badge-renderer
+              :metadata="badge"
+              :key="index"
+              class="ml-1"
+            />
+          </template>
+          <template
+            v-for="(badge, index) in commentRenderer.sponsorCommentBadge"
+          >
+            <sponsor-comment-badge-renderer
+              :metadata="badge"
+              :key="index"
+              class="ml-1"
+            />
+          </template>
+        </div>
         <span
           :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-          class="background--text subtitle-2 comment-timestamp"
+          class="background--text comment-timestamp"
         >
           {{ commentRenderer.publishedTimeText.runs[0].text }}
         </span>
       </div>
       <collapsable-text :lines="4">
-        <template v-for="text in commentRenderer.contentText.runs">{{
-          text.text
-        }}</template>
+        <yt-text-formatter :textRuns="commentRenderer.contentText.runs">
+        </yt-text-formatter>
       </collapsable-text>
     </div>
   </div>
@@ -71,25 +93,51 @@
       display: flex;
       align-items: baseline;
 
-      .author-name--wrapper {
-        min-width: 0;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-      }
-
       .comment-timestamp {
         white-space: nowrap;
       }
     }
   }
 }
+
+.author-badge-name {
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+
+  .author-name--wrapper {
+    min-width: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+.owner {
+  padding: 0 0.6em;
+  background-color: #888888;
+  color: #fff;
+  border-radius: 1em;
+
+  &::v-deep .author-badge {
+    color: #fff;
+  }
+}
 </style>
 
 <script>
 import collapsableText from "~/components/UtilRenderers/collapsableText.vue";
+import YtTextFormatter from "~/components/UtilRenderers/YtTextFormatter.vue";
+import AuthorCommentBadgeRenderer from "~/components/Comments/authorCommentBadgeRenderer.vue";
+import SponsorCommentBadgeRenderer from "~/components/Comments/sponsorCommentBadgeRenderer.vue";
+
 export default {
-  components: { collapsableText },
+  components: {
+    collapsableText,
+    YtTextFormatter,
+    AuthorCommentBadgeRenderer,
+    SponsorCommentBadgeRenderer,
+  },
   props: ["comment"],
 
   data() {
