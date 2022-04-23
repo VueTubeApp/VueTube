@@ -48,6 +48,7 @@
               ).slimVideoInformationRenderer.collapsedSubtitle.runs"
               >{{ text.text }}
             </template>
+          </div>
           </v-card-text>
         </div>
         <v-icon class="ml-4" v-if="showMore">mdi-chevron-up</v-icon>
@@ -191,6 +192,7 @@
       <vid-load-renderer :count="5" />
     </div>
     <item-section-renderer v-else :render="recommends" />
+  </div>
   </div>
 </template>
 
