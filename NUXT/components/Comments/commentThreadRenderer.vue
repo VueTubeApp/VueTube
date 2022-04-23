@@ -73,6 +73,7 @@
               <v-icon small>mdi-thumb-up</v-icon>
             </v-btn>
             <span
+              v-if="commentRenderer.voteCount"
               v-text="commentRenderer.voteCount.simpleText"
               class="like-count mr-1 subtitle-2"
             ></span>
