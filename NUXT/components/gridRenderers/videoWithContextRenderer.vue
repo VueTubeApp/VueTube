@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import baseVideoRenderer from "~/UtilRenderers/baseVideoRenderer.vue";
+import baseVideoRenderer from "~/components/UtilRenderers/baseVideoRenderer.vue";
 export default {
   props: ["video"],
 
