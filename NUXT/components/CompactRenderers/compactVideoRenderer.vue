@@ -2,13 +2,8 @@
   <base-video-renderer
     :vidId="video.videoId"
     :thumbnails="video.thumbnail.thumbnails"
-    :thumbnailOverlayStyle="
-      video.thumbnailOverlays[0]?.thumbnailOverlayTimeStatusRenderer?.style
-    "
-    :thumbnailOverlayText="
-      video.thumbnailOverlays[0]?.thumbnailOverlayTimeStatusRenderer?.text
-        .runs[0].text
-    "
+    :thumbnailOverlayStyle="thumbnailOverlayStyle"
+    :thumbnailOverlayText="thumbnailOverlayText"
     :channelUrl="
       this.$rendererUtils.getNavigationEndpoints(video.shortBylineText.runs[0])
     "
@@ -26,6 +21,17 @@ export default {
 
   components: {
     baseVideoRenderer,
+  },
+
+  computed: {
+    thumbnailOverlayText() {
+      return this.video.thumbnailOverlays[0]?.thumbnailOverlayTimeStatusRenderer
+        ?.text.runs[0].text;
+    },
+    thumbnailOverlayStyle() {
+      return this.video.thumbnailOverlays[0]?.thumbnailOverlayTimeStatusRenderer
+        ?.style;
+    },
   },
 
   methods: {
