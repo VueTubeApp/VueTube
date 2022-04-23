@@ -12,7 +12,6 @@
 </style>
 
 <script>
-import { Browser } from "@capacitor/browser";
 import YtTextFormatter from "~/components/UtilRenderers/YtTextFormatter.vue";
 
 export default {
@@ -20,15 +19,6 @@ export default {
 
   components: {
     YtTextFormatter,
-  },
-
-  methods: {
-    async openExternal(url) {
-      await Browser.open({ url: url });
-    },
-    async openInternal(url) {
-      await this.$router.push(url);
-    },
   },
 };
 </script>

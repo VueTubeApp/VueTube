@@ -286,7 +286,7 @@ export default {
         this.cpn = getCpn();
         this.initWatchTime().then(() => {
           this.sendWatchTime();
-          this.interval = setInterval(this.sendWatchTime, 30000);
+          this.interval = setInterval(this.sendWatchTime, 60000);
         });
       });
 

@@ -8,8 +8,9 @@
       <slot></slot>
     </div>
     <a
-      class="toggle-collapse"
+      class="toggle-collapse background--text font-weight-bold"
       @click="expanded = !expanded"
+      :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
       v-if="expandable"
       v-text="expanded ? collapseText : expandText"
     ></a>
