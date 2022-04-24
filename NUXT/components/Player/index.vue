@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div @click="toggleControls()" class="content" :style="showControls ? 'background: rgba(0, 0, 0, 0.5);' : '' ">
+    <div @click="toggleControls()" class="content">
 
-      <div v-show="showControls">
+      <div v-show="showControls" class="controls">
         <v-btn class="pausePlay" text @click="playing = !playing">
           <v-icon size="5em" color="white">mdi-{{ playing ? "pause" : "play" }}</v-icon>
         </v-btn>
@@ -54,6 +54,7 @@ export default {
 
   watch: {
     playing() {
+      console.log("Changed Playback State");
       this.playing ? this.$refs.player.play() : this.$refs.player.pause();
     },
   },
@@ -62,9 +63,11 @@ export default {
     const src = this.sources[this.sources.length - 1].url;
     this.vidSrc = src;
 
-    console.log(this.sources, src);
+    console.log("Beta Player Sources Debug:", this.sources, src);
 
-    setInterval(this.updateTiming, 100);
+    setTimeout(function() { this.$refs.player.play(); }, 1000); // Auto Play
+
+    setInterval(this.updateTiming, 100); // Auto Update Scrubber
   },
 
   methods: {
@@ -114,6 +117,9 @@ export default {
 }
 
 /***   General Overlay Styling   ***/
+.controls {
+  z-index: 999;
+}
 .pausePlay {
   position: absolute;
   top: 50%;

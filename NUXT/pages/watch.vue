@@ -5,7 +5,11 @@
         <v-icon>mdi-chevron-down</v-icon>
       </v-btn>
       <!--   VueTube Player V1   -->
-      <vuetubePlayer :sources="sources" v-if="useBetaPlayer === 'true'" />
+      <vuetubePlayer
+        :sources="sources"
+        v-if="useBetaPlayer === 'true' && sources.length > 0"
+      />
+
       <!--   Stock Player   -->
       <videoPlayer
         id="player"
