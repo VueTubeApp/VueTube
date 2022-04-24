@@ -209,6 +209,8 @@ import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 import mainCommentRenderer from "~/components/Comments/mainCommentRenderer.vue";
 import SwipeableBottomSheet from "~/components/ExtendedComponents/swipeableBottomSheet";
 
+import { App as CapacitorApp } from "@capacitor/app";
+
 export default {
   components: {
     ShelfRenderer,
@@ -250,10 +252,29 @@ export default {
 
   mounted() {
     this.mountedInit();
+
+    this.backHandler = CapacitorApp.addListener(
+      "backButton",
+      ({ canGoBack }) => {
+        //---   Back Closes Search   ---//
+        if (this.showComments) {
+          this.showComments = false;
+
+          //---   Back Goes Back   ---//
+        } else if (!canGoBack) {
+          this.$router.replace(
+            `/${localStorage.getItem("startPage") || "home"}`
+          );
+        } else {
+          window.history.back();
+        }
+      }
+    );
   },
 
   beforeDestroy() {
     clearInterval(this.interval);
+    if (this.backHandler) this.backHandler.remove();
   },
 
   methods: {

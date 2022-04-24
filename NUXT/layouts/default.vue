@@ -94,18 +94,21 @@ export default {
 
   mounted() {
     //---   Back Button Listener   ---//
-    CapacitorApp.addListener("backButton", ({ canGoBack }) => {
-      //---   Back Closes Search   ---//
-      if (this.search) {
-        this.search = false;
+    this.backHandler = CapacitorApp.addListener(
+      "backButton",
+      ({ canGoBack }) => {
+        //---   Back Closes Search   ---//
+        if (this.search) {
+          this.search = false;
 
-        //---   Back Goes Back   ---//
-      } else if (!canGoBack) {
-        CapacitorApp.exitApp();
-      } else {
-        window.history.back();
+          //---   Back Goes Back   ---//
+        } else if (!canGoBack) {
+          CapacitorApp.exitApp();
+        } else {
+          window.history.back();
+        }
       }
-    });
+    );
 
     // ---   External URL Handling   --- //
     CapacitorApp.addListener("appUrlOpen", (event) => {
@@ -120,6 +123,10 @@ export default {
     plugin.setAttribute("src", "//twemoji.maxcdn.com/v/latest/twemoji.min.js");
     plugin.setAttribute("crossorigin", "anonymous");
     document.head.appendChild(plugin);
+  },
+
+  beforeDestroy() {
+    if (this.backHandler) this.backHandler.remove();
   },
 
   methods: {
