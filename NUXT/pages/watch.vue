@@ -5,7 +5,11 @@
         <v-icon>mdi-chevron-down</v-icon>
       </v-btn>
       <!--   VueTube Player V1   -->
-      <vuetubePlayer :sources="sources" v-if="useBetaPlayer === 'true'" />
+      <vuetubePlayer
+        :sources="sources"
+        v-if="useBetaPlayer === 'true' && sources.length > 0"
+      />
+
       <!--   Stock Player   -->
       <videoPlayer
         id="player"
@@ -13,6 +17,7 @@
         v-touch="{ down: () => $router.push('/home') }"
         class="background"
         :vid-src="vidSrc"
+        v-if="useBetaPlayer !== 'true'"
       />
     </div>
 
