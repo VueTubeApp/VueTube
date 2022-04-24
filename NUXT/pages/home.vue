@@ -40,7 +40,7 @@ export default {
 
   methods: {
     paginate() {
-      if (this.recommends) {
+      if (this.recommends && !this.loading) {
         this.loading = true;
         this.$youtube
           .recommendContinuation(
