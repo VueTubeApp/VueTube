@@ -21,7 +21,7 @@
           v-if="getComponents()[Object.keys(comment)[0]]"
           :is="Object.keys(comment)[0]"
           :comment="comment[Object.keys(comment)[0]]"
-          @intersect="paginate()"
+          @intersect="paginate"
         ></component>
       </v-list-item>
       <v-divider
