@@ -62,6 +62,8 @@ export default {
     const src = this.sources[this.sources.length - 1].url;
     this.vidSrc = src;
 
+    console.log(this.sources, src);
+
     setInterval(this.updateTiming, 100);
   },
 

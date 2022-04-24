@@ -13,6 +13,7 @@
         v-touch="{ down: () => $router.push('/home') }"
         class="background"
         :vid-src="vidSrc"
+        v-if="useBetaPlayer !== 'true'"
       />
     </div>
 
