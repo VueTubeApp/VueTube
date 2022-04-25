@@ -3,7 +3,7 @@
     <v-list-item
       v-for="(renderer, index) in render.contents"
       :key="index"
-      class="pa-0"
+      class="pa-0 min-height-0"
     >
       <component
         v-if="getComponents()[Object.keys(renderer)[0]]"

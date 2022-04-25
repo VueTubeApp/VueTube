@@ -3,7 +3,7 @@
     <v-list-item
       v-for="(video, index) in render.items"
       :key="index"
-      class="pa-0"
+      class="pa-0 min-height-0"
     >
       <component
         v-if="getComponents()[Object.keys(video)[0]]"

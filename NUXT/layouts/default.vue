@@ -231,6 +231,14 @@ div {
   vertical-align: -0.1em;
   margin: 0 2px;
 }
+
+.min-height-0 {
+  min-height: 0 !important;
+}
+
+.fill-width {
+  width: 100% !important;
+}
 </style>
 
 <style scoped>
