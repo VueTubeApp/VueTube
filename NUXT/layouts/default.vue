@@ -33,7 +33,6 @@
               v-for="(item, index) in response"
               :key="index"
               class="px-0"
-              v-emoji
             >
               <v-btn
                 text
@@ -41,6 +40,7 @@
                 dense
                 class="searchButton text-left text-none"
                 @click="youtubeSearch(item)"
+                v-emoji
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
                 {{ item[0] || item.text }}
