@@ -57,6 +57,10 @@
   background: rgba(255, 0, 0, 0.5);
 }
 
+.videoRuntimeFloat.style-UPCOMING {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 .vid-title {
   display: -webkit-box;
   -webkit-line-clamp: 2;
