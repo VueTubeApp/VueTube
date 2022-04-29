@@ -5,13 +5,13 @@
         <v-icon>mdi-chevron-down</v-icon>
       </v-btn>
       <!--   VueTube Player V1   -->
-      <legacyPlayer
+      <vuetubePlayer
         :sources="sources"
         v-if="useBetaPlayer === 'true' && sources.length > 0"
       />
 
       <!--   Stock Player   -->
-      <videoPlayer
+      <legacyPlayer
         id="player"
         ref="player"
         v-touch="{ down: () => $router.push('/home') }"
