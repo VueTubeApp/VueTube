@@ -9,42 +9,27 @@
       style="max-height: 50vh; display: block"
       @webkitfullscreenchange="handleFullscreenChange"
     />
-    <v-progress-linear
-      active
-      background-color="primary"
-      background-opacity="0.5"
-      :buffer-value="buffered"
-      color="primary"
-      height="3"
-      query
-      :value="percentage"
-    />
+    <seekbar :video=$refs.player v-if="$refs.player" />
     <!-- <v-slider v-model="value" step="0"></v-slider> -->
     {{ vidSrc }}
   </div>
 </template>
 
 <script>
+import seekbar from '~/components/Player/seekbar.vue';
+
 export default {
   props: ["sources"],
+  components: {
+    seekbar
+  },
   data() {
     return {
       vidSrc: "",
-
-      percentage: 0,
-      buffered: 0,
     };
   },
   mounted() {
     this.vidSrc = this.sources[this.sources.length-1].url;
-
-    let vid = this.$refs.player;
-    vid.ontimeupdate = () => {
-      this.percentage = (vid.currentTime / vid.duration) * 100;
-    };
-    vid.addEventListener("progress", () => {
-      this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
-    });
   },
   methods: {
     handleFullscreenChange() {
