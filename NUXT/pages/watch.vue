@@ -11,7 +11,7 @@
       />
 
       <!--   Stock Player   -->
-      <videoPlayer
+      <legacyPlayer
         id="player"
         ref="player"
         v-touch="{ down: () => $router.push('/home') }"
@@ -209,6 +209,7 @@ import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 import { getCpn } from "~/plugins/utils";
 import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
 import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
+import legacyPlayer from "~/components/Player/legacy.vue"
 import vuetubePlayer from "~/components/Player/index.vue";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 import mainCommentRenderer from "~/components/Comments/mainCommentRenderer.vue";
@@ -222,6 +223,7 @@ export default {
     VidLoadRenderer,
     SlimVideoDescriptionRenderer,
     vuetubePlayer,
+    legacyPlayer,
     ItemSectionRenderer,
     SwipeableBottomSheet,
     mainCommentRenderer,
