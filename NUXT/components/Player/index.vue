@@ -1,8 +1,7 @@
 <template>
-  <div>
+  <div style="position: relative;">
     <video
       ref="player"
-      controls
       autoplay
       :src="vidSrc"
       width="100%"
@@ -10,18 +9,49 @@
       @webkitfullscreenchange="handleFullscreenChange"
     />
     <seekbar :video=$refs.player v-if="$refs.player" />
+
+
+
+    <!--   Video Controls   -->
+    <div class="videoControls" v-if="$refs.player">
+      <div class="videoControlsWrap">
+
+
+        <controls :video=$refs.player />
+
+
+      </div>
+    </div>
+    <!--   End Video Controls   -->
+
+
     <!-- <v-slider v-model="value" step="0"></v-slider> -->
-    {{ vidSrc }}
   </div>
 </template>
 
+<style scoped>
+.videoControls {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.videoControlsWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
 <script>
 import seekbar from '~/components/Player/seekbar.vue';
+import controls from '~/components/Player/controls.vue';
 
 export default {
   props: ["sources"],
   components: {
-    seekbar
+    seekbar,
+    controls
   },
   data() {
     return {

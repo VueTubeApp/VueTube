@@ -13,9 +13,6 @@
       :value="percentage"
     />
 
-    {{ percentage }}
-    {{ buffered }}
-
 
   </div>
 </template>
