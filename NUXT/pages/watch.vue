@@ -209,7 +209,7 @@ import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 import { getCpn } from "~/plugins/utils";
 import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
 import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
-import legacyPlayer from "~/components/Player/legacy.vue"
+import legacyPlayer from "~/components/Player/legacy.vue";
 import vuetubePlayer from "~/components/Player/index.vue";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 import mainCommentRenderer from "~/components/Comments/mainCommentRenderer.vue";
@@ -260,22 +260,10 @@ export default {
   mounted() {
     this.mountedInit();
 
+    this.$vuetube.resetBackActions();
     this.backHandler = CapacitorApp.addListener(
       "backButton",
-      ({ canGoBack }) => {
-        //---   Back Closes Search   ---//
-        if (this.showComments) {
-          this.showComments = false;
-
-          //---   Back Goes Back   ---//
-        } else if (!canGoBack) {
-          this.$router.replace(
-            `/${localStorage.getItem("startPage") || "home"}`
-          );
-        } else {
-          window.history.back();
-        }
-      }
+      this.$vuetube.back
     );
   },
 

@@ -6,6 +6,7 @@ import constants from "./constants";
 import { hexToRgb, rgbToHex, parseEmoji } from "./utils";
 import { Haptics, ImpactStyle } from "@capacitor/haptics";
 import Vue from "vue";
+import backHandler from "./classes/backHander";
 
 Vue.directive("emoji", {
   inserted: function (el) {
@@ -13,6 +14,8 @@ Vue.directive("emoji", {
     if (twemojiParse) el.innerHTML = twemojiParse;
   },
 });
+
+let backActions = new backHandler();
 
 const module = {
   //---   Get GitHub Commits   ---//
@@ -109,6 +112,25 @@ const module = {
   rgbToHex(r, g, b) {
     return rgbToHex(r, g, b);
   },
+
+  resetBackActions() {
+    backActions = new backHandler();
+  },
+
+  addBackAction(callback, condition = true) {
+    backActions.addAction(() => {
+      if (condition) {
+        callback();
+        return true
+      } else {
+        return false
+      }
+    });
+  },
+
+  back(listenerFunc) {
+    backActions.back(listenerFunc);
+  }
 };
 
 //---   Start   ---//
