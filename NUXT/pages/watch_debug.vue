@@ -1,5 +1,5 @@
 <template>
-  <div class="accent">
+  <div>
 
     <player :sources="sources" v-if="sources.length > 0" />
 

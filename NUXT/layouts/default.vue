@@ -93,20 +93,19 @@ export default {
   },
 
   mounted() {
+    this.$vuetube.resetBackActions();
     //---   Back Button Listener   ---//
     this.backHandler = CapacitorApp.addListener(
       "backButton",
-      ({ canGoBack }) => {
-        //---   Back Closes Search   ---//
-        if (this.search) {
-          this.search = false;
+      this.$vuetube.back
+    );
 
-          //---   Back Goes Back   ---//
-        } else if (!canGoBack) {
-          CapacitorApp.exitApp();
-        } else {
-          window.history.back();
-        }
+    this.$vuetube.addBackAction(
+      () => {
+        this.search = false;
+      },
+      () => {
+        return this.search;
       }
     );
 
