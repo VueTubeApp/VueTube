@@ -263,20 +263,7 @@ export default {
     this.$vuetube.resetBackActions();
     this.backHandler = CapacitorApp.addListener(
       "backButton",
-      ({ canGoBack }) => {
-        //---   First, handle anything that needs to be dismissed first  ---//
-        if (this.showComments) {
-          this.showComments = false;
-
-          //---   Back Goes Back   ---//
-        } else if (!canGoBack) {
-          this.$router.replace(
-            `/${localStorage.getItem("startPage") || "home"}`
-          );
-        } else {
-          window.history.back();
-        }
-      }
+      this.$vuetube.back
     );
   },
 
