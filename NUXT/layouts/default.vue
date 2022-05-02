@@ -100,14 +100,9 @@ export default {
       this.$vuetube.back
     );
 
-    this.$vuetube.addBackAction(
-      () => {
-        this.search = false;
-      },
-      () => {
-        return this.search;
-      }
-    );
+    this.$vuetube.addBackAction(() => {
+      this.search = false;
+    }, this.search);
 
     // ---   External URL Handling   --- //
     CapacitorApp.addListener("appUrlOpen", (event) => {

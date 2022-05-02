@@ -156,7 +156,7 @@
         v-if="loaded && video.commentData"
         @click="showComments = !showComments"
       >
-        <v-card flat class="background comment-renderer">
+        <v-card flat class="background comment-renderer pa-0">
           <v-card-text class="comment-count keep-spaces">
             <template v-for="text in video.commentData.headerText.runs">
               <template v-if="text.bold">
