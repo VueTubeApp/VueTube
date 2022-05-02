@@ -26,7 +26,7 @@ export default {
   computed: {
     recommends: {
       get() {
-        return this.$store.state.recommendedVideos;
+        return [...this.$store.state.recommendedVideos];
       },
       set(val) {
         this.$store.commit("updateRecommendedVideos", val);

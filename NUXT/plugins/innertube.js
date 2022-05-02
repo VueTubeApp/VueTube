@@ -298,7 +298,9 @@ class Innertube {
       isLive: details.isLiveContent,
       channelName: details.author,
       channelSubs: ownerData?.collapsedSubtitle?.runs[0]?.text,
-      channelUrl: rendererUtils.getNavigationEndpoints(ownerData),
+      channelUrl: rendererUtils.getNavigationEndpoints(
+        ownerData.navigationEndpoint
+      ),
       channelImg: ownerData?.thumbnail?.thumbnails[0].url,
       availableResolutions: resolutions?.formats,
       availableResolutionsAdaptive: resolutions?.adaptiveFormats,

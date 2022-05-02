@@ -157,14 +157,14 @@
         @click="showComments = !showComments"
       >
         <v-card flat class="background comment-renderer">
-          <v-text class="comment-count keep-spaces">
+          <v-card-text class="comment-count keep-spaces">
             <template v-for="text in video.commentData.headerText.runs">
               <template v-if="text.bold">
                 <strong :key="text.text">{{ text.text }}</strong>
               </template>
               <template v-else>{{ text.text }}</template>
             </template>
-          </v-text>
+          </v-card-text>
           <v-icon v-if="showComments">mdi-unfold-less-horizontal</v-icon>
           <v-icon v-else>mdi-unfold-more-horizontal</v-icon>
         </v-card>
@@ -261,7 +261,7 @@ export default {
     this.backHandler = CapacitorApp.addListener(
       "backButton",
       ({ canGoBack }) => {
-        //---   Back Closes Search   ---//
+        //---   First, handle anything that needs to be dismissed first  ---//
         if (this.showComments) {
           this.showComments = false;
 
@@ -410,6 +410,7 @@ export default {
         interval: null,
         video: null,
         useBetaPlayer: false,
+        backHierarchy: [],
       };
     },
 
