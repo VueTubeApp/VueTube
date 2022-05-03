@@ -2,8 +2,8 @@
   <div>
 
 
-    <v-btn class="centerVideoControls" @click="togglePlaying()">
-      <v-icon v-text="playing ? 'mdi-pause' : 'mdi-play' " ref="pausePlayIndicator" />
+    <v-btn class="centerVideoControls" @click="togglePlaying()" text>
+      <v-icon x-large v-text="playing ? 'mdi-pause' : 'mdi-play' " ref="pausePlayIndicator" />
     </v-btn>
 
 
@@ -17,7 +17,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
+  .pausePlay {
+    min-height: 5em;
+    min-width: 5em;
+  }
 </style>
 
 <script>
@@ -33,11 +36,11 @@
     methods: {
       togglePlaying() {
         if (this.video.paused) {
-            this.video.play()
-            this.playing = true;
+          this.video.play()
+          this.playing = true;
         } else {
-            this.video.pause()
-            this.playing = false;
+          this.video.pause()
+          this.playing = false;
         }
 
       }
