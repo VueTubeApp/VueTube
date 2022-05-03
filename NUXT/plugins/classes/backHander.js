@@ -1,26 +1,55 @@
 import { App as CapacitorApp } from "@capacitor/app";
+import backType from "./backType";
 export default class backHandler {
-    constructor() {
-        this.backStack = []
-    }
+  constructor() {
+    this.backStack = []; // This should only contain instances of backType. Any other type will be ignored.
 
-    back({ canGoBack }) {
-        if (this.backStack.length > 0) {
-            let lastResult = false
-            while (!lastResult && this.backStack.length > 0) {
-                const backAction = this.backStack.pop()
-                lastResult = backAction()
-            }
-            if (lastResult) return
-        }
-        if (!canGoBack) {
-            CapacitorApp.exitApp();
-        } else {
-            window.history.back();
-        }
-    }
+    // Add a listener for the back button.
+    this.backHandler = CapacitorApp.addListener("backButton", this.back);
 
-    addAction(callback) {
-        this.backStack.push(callback)
+    // Start garbage collection. Run every 5 minutes.
+    setInterval(() => {
+      this.garbageCollect();
+    }, 5 * 60 * 1000);
+  }
+
+  reset() {
+    this.backStack = [];
+  }
+
+  back({ canGoBack }) {
+    // Check if backStack contains any backType objects. If so, call the goBack() function.
+    if (this.backStack.length > 0) {
+      // Loop through the backStack array.
+      let lastResult = false;
+      while (!lastResult && this.backStack.length > 0) {
+        const backAction = this.backStack.pop();
+        lastResult = backAction.goBack();
+      }
+      // Since a function was successfully called, no need to continue.
+      if (lastResult) return;
     }
+    if (!canGoBack) {
+      // If we can't go back, then we should exit the app.
+      CapacitorApp.exitApp();
+    } else {
+      // If we can go back, then we should go back.
+      window.history.back();
+    }
+  }
+
+  addAction(callback) {
+    if (callback instanceof backType) {
+      this.backStack.push(callback);
+    } else {
+      throw new TypeError("backType object expected");
+    }
+  }
+
+  // Loops through the backStack array if array larger than 10. If backType.check() returns false, then remove it from the backStack array.
+  garbageCollect() {
+    if (this.backStack.length > 10) {
+      this.backStack = this.backStack.filter((backType) => backType.check());
+    }
+  }
 }

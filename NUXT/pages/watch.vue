@@ -259,12 +259,7 @@ export default {
 
   mounted() {
     this.mountedInit();
-
     this.$vuetube.resetBackActions();
-    this.backHandler = CapacitorApp.addListener(
-      "backButton",
-      this.$vuetube.back
-    );
   },
 
   beforeDestroy() {

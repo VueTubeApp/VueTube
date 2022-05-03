@@ -15,7 +15,7 @@ Vue.directive("emoji", {
   },
 });
 
-let backActions = new backHandler();
+let backActions;
 
 const module = {
   //---   Get GitHub Commits   ---//
@@ -113,24 +113,22 @@ const module = {
     return rgbToHex(r, g, b);
   },
 
-  resetBackActions() {
+  async launchBackHandling() {
     backActions = new backHandler();
+    return true;
   },
 
-  addBackAction(callback, condition = true) {
-    backActions.addAction(() => {
-      if (condition) {
-        callback();
-        return true
-      } else {
-        return false
-      }
-    });
+  resetBackActions() {
+    backActions.reset();
+  },
+
+  addBackAction(action) {
+    backActions.addAction(action);
   },
 
   back(listenerFunc) {
     backActions.back(listenerFunc);
-  }
+  },
 };
 
 //---   Start   ---//
