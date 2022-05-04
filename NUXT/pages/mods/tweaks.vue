@@ -16,9 +16,9 @@
       <div
         v-for="item in list"
         :key="item"
-        @click="list.pop(item)"
         class="pa-4 mb-1 background text-center rounded-sm"
         :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+        @click="list.pop(item)"
       >
         {{ item }}
       </div>

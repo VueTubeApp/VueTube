@@ -39,6 +39,7 @@ export default {
         if (localStorage.getItem("backgroundLight") != null)
           this.$vuetify.theme.themes.light.background =
             localStorage.getItem("backgroundLight");
+
         this.$vuetube.navigationBar.setTheme(
           this.$vuetify.theme.currentTheme.background,
           !this.$vuetify.theme.dark
@@ -47,6 +48,8 @@ export default {
           this.$vuetify.theme.currentTheme.background,
           this.$vuetify.theme.dark
         );
+        // this.$vuetube.statusBar.setTransparent();
+        // this.$vuetube.navigationBar.setTransparent();
         resolve();
       }, 0)
     );
