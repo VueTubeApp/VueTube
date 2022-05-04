@@ -1,6 +1,6 @@
 <template>
-  <div class="videoControls">
-    <div class="videoControlsWrap">
+  <div class="controls" @click="toggleControls()">
+    <div class="controlsWrap" ref="controlsWrap">
 
 
       <v-btn class="centerVideoControls" @click="togglePlaying()" text>
@@ -25,14 +25,14 @@
     min-width: 5em;
   }
 
-  .videoControls {
+  .controls {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
   }
 
-  .videoControlsWrap {
+  .controlsWrap {
     position: relative;
     width: 100%;
     height: 100%;
@@ -47,6 +47,7 @@
     data() {
       return {
         playing: true,
+        controls: true,
       }
     },
 
@@ -59,8 +60,14 @@
           this.video.pause()
           this.playing = false;
         }
+      },
 
+      toggleControls() {
+        const setControls = this.controls ? 'none' : 'block';
+        this.$refs.controlsWrap.style.display = setControls;
+        this.controls = !this.controls;
       }
+
     }
   }
 
