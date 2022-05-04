@@ -117,7 +117,7 @@ class Innertube {
       continuation: continuation,
     };
     let url;
-    switch (type) {
+    switch (type.toLowerCase()) {
       case "browse":
         url = `${constants.URLS.YT_BASE_API}/browse?key=${this.key}`;
         break;
@@ -159,7 +159,7 @@ class Innertube {
         ...{
           context: {
             client: {
-              clientName: constants.YT_API_VALUES.CLIENT_WEB,
+              clientName: constants.YT_API_VALUES.CLIENT_WEB_M,
               clientVersion: constants.YT_API_VALUES.VERSION_WEB,
             },
           },
@@ -344,6 +344,19 @@ class Innertube {
           (content) => content.commentsEntryPointHeaderRenderer
         )?.commentsEntryPointHeaderRenderer,
       playbackTracking: responseInfo.playbackTracking,
+      commentContinuation: responseNext.engagementPanels
+        .find(
+          (panel) =>
+            panel.engagementPanelSectionListRenderer.panelIdentifier ==
+            "engagement-panel-comments-section"
+        )
+        ?.engagementPanelSectionListRenderer.content.sectionListRenderer.contents.find(
+          (content) => content.itemSectionRenderer
+        )
+        ?.itemSectionRenderer.contents.find(
+          (content) => content.continuationItemRenderer
+        )?.continuationItemRenderer.continuationEndpoint.continuationCommand
+        .token,
     };
 
     return vidData;

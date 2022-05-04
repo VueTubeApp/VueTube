@@ -1,70 +1,40 @@
 <template>
-  <div>
-    <div @click="toggleControls()" class="content" :style="showControls ? 'background: rgba(0, 0, 0, 0.5);' : '' ">
+  <div style="position: relative;">
+    <video
+      ref="player"
+      autoplay
+      :src="vidSrc"
+      width="100%"
+      style="max-height: 50vh; display: block"
+      @webkitfullscreenchange="handleFullscreenChange"
+    />
 
-      <div v-show="showControls">
-        <v-btn class="pausePlay" text @click="playing = !playing">
-          <v-icon size="5em" color="white">mdi-{{ playing ? "pause" : "play" }}</v-icon>
-        </v-btn>
 
-        <scrubber class="scrubber" :duration="duration" :endDuration="endDuration" />
-      </div>
+    <seekbar :video=$refs.player v-if="$refs.player" />
+    <controls v-if="$refs.player" :video="$refs.player" />
 
-      <video
-        ref="player"
-        :src="vidSrc"
-        width="100%"
-        style="max-height: 50vh"
-        @webkitfullscreenchange="handleFullscreenChange"
-      />
-    </div>
-
-    <div v-for="(source, index) in sources" :key="index">
-      {{ source.qualityLabel }}
-    </div>
+    <!-- <v-slider v-model="value" step="0"></v-slider> -->
   </div>
 </template>
 
 <script>
-import scrubber from "./scrubber.vue";
+import seekbar from '~/components/Player/seekbar.vue';
+import controls from '~/components/Player/controls.vue';
 
 export default {
+  props: ["sources"],
   components: {
-    scrubber,
-  },
-  props: {
-    sources: {
-      type: Array,
-      default: [],
-    },
+    seekbar,
+    controls
   },
   data() {
     return {
-      //---   Basic Information   ---//
-      playerVersion: 0.1,
-      vidSrc: null,
-
-      //---   Player State Information   ---//
-      showControls: false,
-      playing: false,
-      duration: 0,
-      endDuration: 0,
+      vidSrc: "",
     };
   },
-
-  watch: {
-    playing() {
-      this.playing ? this.$refs.player.play() : this.$refs.player.pause();
-    },
-  },
-
   mounted() {
-    const src = this.sources[this.sources.length - 1].url;
-    this.vidSrc = src;
-
-    setInterval(this.updateTiming, 100);
+    this.vidSrc = this.sources[this.sources.length-1].url;
   },
-
   methods: {
     handleFullscreenChange() {
       if (document.fullscreenElement === this.$refs.player) {
@@ -76,54 +46,9 @@ export default {
       }
     },
 
-    updateTiming() {
-      const player = this.$refs.player;
-      if (player == undefined) return;
-      this.duration = player.currentTime;
-      this.endDuration = player.duration;
+    getPlayer() {
+      return this.$refs.player;
     },
-
-    toggleControls() {
-      this.showControls = !this.showControls;
-    }
-
   },
 };
 </script>
-
-<style scoped>
-/***   Overlay Information   ***/
-.content {
-  position: relative;
-  width: 500px;
-  margin: 0 auto;
-}
-.content video {
-  width: 100%;
-  display: block;
-}
-.content:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-/***   General Overlay Styling   ***/
-.pausePlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 5em !important;
-  width: 5em !important;
-}
-.scrubber {
-  position: absolute;
-  bottom: 0;
-}
-
-
-</style>

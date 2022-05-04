@@ -1,5 +1,5 @@
 <template>
-  <div class="observer" />
+  <div class="observer" style="height: 1px" />
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
     observer: null,
   }),
   mounted() {
-    const options = this.options || {};
+    const options = this.options || { threshold: 0.0 };
     this.observer = new IntersectionObserver(([entry]) => {
       if (entry && entry.isIntersecting) {
         this.$emit("intersect");

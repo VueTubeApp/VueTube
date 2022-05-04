@@ -58,7 +58,7 @@ export default {
     await this.$youtube.getAPI();
     this.progressMsg = "Launching";
 
-    this.$router.push(`/${localStorage.getItem("startPage") || "home"}`);
+    this.$router.replace(`/${localStorage.getItem("startPage") || "home"}`); // Prevent user from navigating back to the splash screen
   },
 };
 </script>

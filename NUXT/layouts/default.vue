@@ -32,14 +32,14 @@
               v-for="(item, index) in response"
               :key="index"
               class="px-0"
-              v-emoji
             >
               <v-btn
                 text
                 tile
                 dense
-                class="searchButton text-left"
+                class="searchButton text-left text-none"
                 @click="youtubeSearch(item)"
+                v-emoji
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
                 {{ item[0] || item.text }}
@@ -93,18 +93,21 @@ export default {
 
   mounted() {
     //---   Back Button Listener   ---//
-    CapacitorApp.addListener("backButton", ({ canGoBack }) => {
-      //---   Back Closes Search   ---//
-      if (this.search) {
-        this.search = false;
+    this.backHandler = CapacitorApp.addListener(
+      "backButton",
+      ({ canGoBack }) => {
+        //---   Back Closes Search   ---//
+        if (this.search) {
+          this.search = false;
 
-        //---   Back Goes Back   ---//
-      } else if (!canGoBack) {
-        CapacitorApp.exitApp();
-      } else {
-        window.history.back();
+          //---   Back Goes Back   ---//
+        } else if (!canGoBack) {
+          CapacitorApp.exitApp();
+        } else {
+          window.history.back();
+        }
       }
-    });
+    );
 
     // ---   External URL Handling   --- //
     CapacitorApp.addListener("appUrlOpen", (event) => {
@@ -119,6 +122,10 @@ export default {
     plugin.setAttribute("src", "//twemoji.maxcdn.com/v/latest/twemoji.min.js");
     plugin.setAttribute("crossorigin", "anonymous");
     document.head.appendChild(plugin);
+  },
+
+  beforeDestroy() {
+    if (this.backHandler) this.backHandler.remove();
   },
 
   methods: {
@@ -226,13 +233,13 @@ div {
   width: 1em;
   height: 1em;
   vertical-align: -0.1em;
+  margin: 0 2px;
 }
 </style>
 
 <style scoped>
 .searchButton {
   width: 100%;
-  text-transform: none !important;
   justify-content: left !important;
 }
 </style>
