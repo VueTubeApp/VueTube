@@ -8,6 +8,10 @@
         </v-btn>
       </div>
 
+      <div class="bottomVideoControls">
+        {{ watched }} <span style="color: #999;">/ {{ video.duration }}</span>
+      </div>
+
     </div>
 
   </div>
@@ -19,6 +23,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .bottomVideoControls {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
   }
 
   .pausePlay {
@@ -49,7 +59,16 @@
       return {
         playing: true,
         controls: true,
+
+        watched: 0,
       }
+    },
+
+    mounted() {
+      this.video.ontimeupdate = () => {
+        console.log(this.video.currentTime)
+        this.watched = this.video.currentTime;
+      };
     },
 
     methods: {
