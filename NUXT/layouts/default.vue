@@ -57,6 +57,7 @@
   </v-app>
 </template>
 
+
 <script>
 import { App as CapacitorApp } from "@capacitor/app";
 import { mapState } from "vuex";
