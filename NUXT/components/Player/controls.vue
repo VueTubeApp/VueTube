@@ -2,10 +2,11 @@
   <div class="controls" @click="toggleControls()">
     <div class="controlsWrap" ref="controlsWrap">
 
-
-      <v-btn class="centerVideoControls" @click="togglePlaying()" text>
-        <v-icon x-large v-text="playing ? 'mdi-pause' : 'mdi-play' " ref="pausePlayIndicator" />
-      </v-btn>
+      <div  class="centerVideoControls">
+        <v-btn @click="togglePlaying()" text style="height: 5em; width: 5em;">
+          <v-icon size="5em" v-text="playing ? 'mdi-pause' : 'mdi-play' " ref="pausePlayIndicator" />
+        </v-btn>
+      </div>
 
     </div>
 
@@ -59,7 +60,8 @@
         } else {
           this.video.pause()
           this.playing = false;
-        }
+        };
+        this.toggleControls(); // Prevent Screen From Closing
       },
 
       toggleControls() {
