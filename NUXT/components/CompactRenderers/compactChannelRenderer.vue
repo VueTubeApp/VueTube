@@ -2,6 +2,17 @@
   <v-card
     class="entry gridVideoRenderer background"
     :to="`/watch?v=${video.videoId}`"
+    :class="
+      $store.state.tweaks.roundTweak > 0
+        ? $vuetify.theme.dark
+          ? 'lighten-1'
+          : 'darken-1'
+        : ''
+    "
+    :style="{
+      borderRadius: `${roundTweak / 2}rem`,
+      margin: $store.state.tweaks.roundTweak > 0 ? '0.5rem 1rem' : '0',
+    }"
     flat
   >
     <div id="details">

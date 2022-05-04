@@ -52,10 +52,13 @@ export default {
     );
 
     await theming;
+    this.progressMsg = "Communicating with the API";
     await this.$youtube.getAPI();
-    this.progressMsg = "Launching";
+    this.progressMsg = "Launching startup tasks";
+    await this.$vuetube.launchBackHandling();
+    this.progressMsg = "Navigating to the home page";
 
-    this.$router.push(`/${localStorage.getItem("startPage") || "home"}`);
+    this.$router.replace(`/${localStorage.getItem("startPage") || "home"}`); // Prevent user from navigating back to the splash screen
   },
 };
 </script>

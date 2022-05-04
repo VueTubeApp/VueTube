@@ -109,6 +109,15 @@ const innertubeModule = {
     else return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
   },
 
+  async getChannel(url) {
+    try {
+      const response = await InnertubeAPI.getChannelAsync(url);
+      return response.data;
+    } catch (error) {
+      logger(constants.LOGGER_NAMES.channel, error, true);
+    }
+  },
+
   // It just works™
   // Front page recommendation
   async recommend() {

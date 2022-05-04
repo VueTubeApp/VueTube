@@ -68,13 +68,14 @@
       </collapsable-text>
       <div class="toolbar">
         <v-btn-toggle v-model="voteStatus" group>
-          <div class="toolbar--item">
+          <div class="toolbar--item mr-1">
             <v-btn class="toolbar--button like" disabled icon x-small plain>
               <v-icon small>mdi-thumb-up</v-icon>
             </v-btn>
             <span
+              v-if="commentRenderer.voteCount"
               v-text="commentRenderer.voteCount.simpleText"
-              class="like-count mr-1 subtitle-2"
+              class="like-count subtitle-2"
             ></span>
           </div>
           <div class="toolbar--item">

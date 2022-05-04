@@ -33,7 +33,6 @@
               v-for="(item, index) in response"
               :key="index"
               class="px-0"
-              v-emoji
             >
               <v-btn
                 text
@@ -41,6 +40,7 @@
                 dense
                 class="searchButton text-left text-none"
                 @click="youtubeSearch(item)"
+                v-emoji
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
                 {{ item[0] || item.text }}
@@ -57,11 +57,13 @@
   </v-app>
 </template>
 
+
 <script>
 import { App as CapacitorApp } from "@capacitor/app";
 import { mapState } from "vuex";
 import constants from "~/plugins/constants";
 import { linkParser } from "~/plugins/utils";
+import backType from "~/plugins/classes/backType";
 
 export default {
   data: () => ({
@@ -93,19 +95,7 @@ export default {
   },
 
   mounted() {
-    //---   Back Button Listener   ---//
-    CapacitorApp.addListener("backButton", ({ canGoBack }) => {
-      //---   Back Closes Search   ---//
-      if (this.search) {
-        this.search = false;
-
-        //---   Back Goes Back   ---//
-      } else if (!canGoBack) {
-        CapacitorApp.exitApp();
-      } else {
-        window.history.back();
-      }
-    });
+    this.$vuetube.resetBackActions();
 
     // ---   External URL Handling   --- //
     CapacitorApp.addListener("appUrlOpen", (event) => {
@@ -120,6 +110,10 @@ export default {
     plugin.setAttribute("src", "//twemoji.maxcdn.com/v/latest/twemoji.min.js");
     plugin.setAttribute("crossorigin", "anonymous");
     document.head.appendChild(plugin);
+  },
+
+  beforeDestroy() {
+    if (this.backHandler) this.backHandler.remove();
   },
 
   methods: {
@@ -170,6 +164,17 @@ export default {
         }
       } else {
         this.search = true;
+
+        // Adds to the back stack
+        const closeSearch = new backType(
+          () => {
+            this.search = false;
+          },
+          () => {
+            return this.search;
+          }
+        );
+        this.$vuetube.addBackAction(closeSearch);
       }
     },
   },
@@ -223,6 +228,14 @@ div {
   height: 1em;
   vertical-align: -0.1em;
   margin: 0 2px;
+}
+
+.min-height-0 {
+  min-height: 0 !important;
+}
+
+.fill-width {
+  width: 100% !important;
 }
 </style>
 
