@@ -8,40 +8,14 @@
       style="max-height: 50vh; display: block"
       @webkitfullscreenchange="handleFullscreenChange"
     />
+
+
     <seekbar :video=$refs.player v-if="$refs.player" />
-
-
-
-    <!--   Video Controls   -->
-    <div class="videoControls" v-if="$refs.player">
-      <div class="videoControlsWrap">
-
-
-        <controls :video=$refs.player />
-
-
-      </div>
-    </div>
-    <!--   End Video Controls   -->
-
+    <controls v-if="$refs.player" :video="$refs.player" />
 
     <!-- <v-slider v-model="value" step="0"></v-slider> -->
   </div>
 </template>
-
-<style scoped>
-.videoControls {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-}
-.videoControlsWrap {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-</style>
 
 <script>
 import seekbar from '~/components/Player/seekbar.vue';
