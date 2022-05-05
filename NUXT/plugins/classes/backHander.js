@@ -1,20 +1,25 @@
 import { App as CapacitorApp } from "@capacitor/app";
+import { Capacitor } from "@capacitor/core";
 import backType from "./backType";
 export default class backHandler {
   constructor() {
     this.backStack = []; // This should only contain instances of backType. Any other type will be ignored.
-    this.startUp();
+    if (Capacitor.getPlatform() != "web") this.startUp(); // Only run on native platforms.
   }
 
   startUp() {
     this.reset();
 
     // Add a listener for the back button.
-    this.backHandler = CapacitorApp.addListener("backButton", (context) => { this.back(context) });
+    this.backHandler = CapacitorApp.addListener("backButton", (context) => {
+      this.back(context);
+    });
 
     // Start garbage collection. Run every 5 minutes.
     setInterval(() => {
-      () => { this.garbageCollect };
+      () => {
+        this.garbageCollect;
+      };
     }, 5 * 60 * 1000);
   }
 
@@ -23,7 +28,7 @@ export default class backHandler {
   }
 
   back({ canGoBack }) {
-    console.log("backStack", this.backStack)
+    console.log("backStack", this.backStack);
     // Check if backStack contains any backType objects. If so, call the goBack() function.
     if (this.backStack.length > 0) {
       // Loop through the backStack array.
