@@ -9,7 +9,7 @@
       </div>
 
       <div class="bottomVideoControls">
-        {{ watched }} <span style="color: #999;">/ {{ video.duration }}</span>
+        {{ watched }} <span style="color: #999;">/ {{ $vuetube.humanTime(video.duration) }}</span>
       </div>
 
     </div>
@@ -67,7 +67,7 @@
     mounted() {
       this.video.ontimeupdate = () => {
         console.log(this.video.currentTime)
-        this.watched = this.video.currentTime;
+        this.watched = this.$vuetube.humanTime(this.video.currentTime);
       };
     },
 
