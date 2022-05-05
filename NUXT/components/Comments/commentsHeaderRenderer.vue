@@ -1,5 +1,5 @@
 <template>
-  <div class="comment-header" v-if="boxRenderer">
+  <div class="comment-header px-3" v-if="boxRenderer">
     <div class="avatar-container">
       <v-img
         class="avatar-thumbnail"

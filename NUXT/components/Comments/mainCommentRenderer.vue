@@ -16,7 +16,7 @@
     </template>
 
     <template v-for="(comment, index) in comments">
-      <v-list-item :key="index">
+      <v-list-item :key="index" class="px-0">
         <component
           v-if="getComponents()[Object.keys(comment)[0]]"
           :is="Object.keys(comment)[0]"
@@ -47,6 +47,8 @@
         v-model="showReply"
         :parentComment="replyData.parent"
         :defaultContinuation="replyData.replyContinuation"
+        class="transition-fast-in-fast-out v-card--reveal"
+        style="height: 100%"
       ></main-comment-reply-renderer>
     </template>
   </dialog-base>

@@ -3,7 +3,9 @@
     <template v-for="(text, index) in textRuns">
       <template v-if="$rendererUtils.checkInternal(text)">
         <a
-          @click="openInternal($rendererUtils.getNavigationEndpoints(text))"
+          @click.stop.prevent="
+            openInternal($rendererUtils.getNavigationEndpoints(text))
+          "
           :key="index"
           >{{ text.text }}</a
         >
@@ -14,7 +16,9 @@
         "
       >
         <a
-          @click="openExternal($rendererUtils.getNavigationEndpoints(text))"
+          @click.stop.prevent="
+            openExternal($rendererUtils.getNavigationEndpoints(text))
+          "
           :key="index"
           >{{ text.text }}</a
         >

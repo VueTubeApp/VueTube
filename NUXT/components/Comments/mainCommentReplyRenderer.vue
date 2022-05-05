@@ -2,7 +2,7 @@
   <dialog-base>
     <template v-slot:header>
       <v-btn icon @click="$emit('changeState', false)">
-        <v-icon>mdi-arrow-back</v-icon>
+        <v-icon>mdi-arrow-left</v-icon>
       </v-btn>
       <v-toolbar-title>
         <strong>Replies</strong>

@@ -1,6 +1,7 @@
 <template>
   <div
-    class="comment-thread"
+    v-ripple
+    class="comment-thread px-3"
     v-if="commentRenderer"
     @click="$emit('showReplies', comment)"
   >
