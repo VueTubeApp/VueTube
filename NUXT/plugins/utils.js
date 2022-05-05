@@ -77,6 +77,22 @@ function linkParser(url) {
 }
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
+//---   Convert Time To Human Readable String   ---//
+function humanTime(givenTime) {
+  const minutes = Math.floor(givenTime / 60);
+  const seconds = givenTime - minutes * 60;
+  const hours = Math.floor(givenTime / 3600);
+  return {
+    formatted: (hours ? hours+":" : "") + `${minutes}:${seconds}`,
+    raw: {
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds
+    }
+  }
+}
+//---   End Convert Time To Human Readable String   ---//
+
 module.exports = {
   getBetweenStrings,
   hexToRgb,
