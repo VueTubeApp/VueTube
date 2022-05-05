@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="deploymentTargetDropDown">
-    <targetSelectedWithDropDown>
+    <runningDeviceTargetSelectedWithDropDown>
       <Target>
-        <type value="QUICK_BOOT_TARGET" />
+        <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
           <Key>
-            <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="$USER_HOME$/.android/avd/Pixel_3a_API_31_arm64-v8a.avd" />
+            <type value="SERIAL_NUMBER" />
+            <value value="adb-97QAY11P1S-NELaqI._adb-tls-connect._tcp." />
           </Key>
         </deviceKey>
       </Target>
-    </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-04-14T19:24:24.550770Z" />
+    </runningDeviceTargetSelectedWithDropDown>
+    <timeTargetWasSelectedWithDropDown value="2022-05-05T23:23:16.786886Z" />
   </component>
 </project>

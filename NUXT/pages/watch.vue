@@ -113,6 +113,7 @@
       <!--   Channel Bar   -->
       <div class="channel-container" v-if="loaded">
         <v-card
+          flat
           class="channel-section background px-3 rounded-0"
           :to="video.channelUrl"
         >

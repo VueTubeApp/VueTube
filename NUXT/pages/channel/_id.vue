@@ -19,14 +19,21 @@
     >
       {{ subscribe }}
     </v-btn>
-    <div class="mt-2">{{ subscribers }} &middot; {{ videos }}</div>
+    <div style="font-size: 0.75rem" class="mt-2">
+      {{ subscribers }} &middot; {{ videos }}
+    </div>
     <div
       style="font-size: 0.75rem"
       class="background--text text-center px-4"
       :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
     >
       {{ descriptionPreview }}
-      <v-icon>mdi-arrow-right</v-icon>
+      <v-icon
+        class="background--text"
+        :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+      >
+        mdi-chevron-right
+      </v-icon>
     </div>
   </div>
 </template>
@@ -68,7 +75,7 @@ export default {
           channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelProfile.descriptionPreview.description;
         this.subscribers =
           channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelProfile.metadata.subscriberCountText;
-        this.subscribers =
+        this.videos =
           channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelProfile.metadata.videosCountText;
       });
   },

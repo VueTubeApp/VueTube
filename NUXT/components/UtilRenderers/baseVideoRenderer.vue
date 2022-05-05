@@ -25,7 +25,7 @@
       />
     </div>
     <div id="details">
-      <a :href="channelUrl" class="avatar-link pt-2">
+      <a :href="channelUrl" class="avatar-link pl-2 pt-2">
         <v-img class="avatar-thumbnail" :src="channelIcon" />
       </a>
       <v-card-text class="video-info pt-2" v-emoji>
