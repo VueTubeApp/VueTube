@@ -129,6 +129,30 @@ const module = {
   back(listenerFunc) {
     backActions.back(listenerFunc);
   },
+
+  //---   Convert Time To Human Readable String   ---//
+  humanTime(seconds = 0) {
+    seconds = Math.floor(seconds); // Not doing this seems to break the calculation
+    let levels = [
+      Math.floor(seconds / 31536000), //Years
+      Math.floor((seconds % 31536000) / 86400), //Days
+      Math.floor(((seconds % 31536000) % 86400) / 3600), //Hours
+      Math.floor((((seconds % 31536000) % 86400) % 3600) / 60), //Minutes
+      (((seconds % 31536000) % 86400) % 3600) % 60, //Seconds
+    ];
+
+    let returntext = new String();
+    for (const i in levels) {
+      const num = levels[i].toString().length == 1 ? "0"+levels[i] : levels[i]; // If Number Is Single Digit, Add 0 In Front
+
+      returntext += ":"+num;
+    }
+    while (returntext.startsWith(":00")) { returntext = returntext.substring(3); } // Remove Prepending 0s (eg. 00:00:00:01:00)
+    if (returntext.startsWith(":0")) { returntext = returntext.substring(2); } else { returntext = returntext.substring(1); } // Prevent Time Starting With 0 (eg. 01:00)
+    console.log("Human Time:", returntext);
+    return returntext;
+  },
+  //---   End Convert Time To Human Readable String   ---//
 };
 
 //---   Start   ---//
