@@ -22,6 +22,9 @@ import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 import Observer from "~/components/observer.vue";
 export default {
   components: { horizontalListRenderer, VidLoadRenderer, Observer },
+  data: () => ({
+    loading: false,
+  }),
 
   computed: {
     recommends: {
@@ -33,11 +36,6 @@ export default {
       },
     },
   },
-
-  data: () => ({
-    loading: false,
-  }),
-
   methods: {
     paginate() {
       this.loading = true;

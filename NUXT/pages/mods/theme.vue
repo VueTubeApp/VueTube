@@ -1,6 +1,9 @@
 <template>
   <client-only>
-    <div class="d-flex flex-column justify-end" style="min-height: 100%">
+    <div
+      class="d-flex flex-column justify-end"
+      style="min-height: calc(100vh - 8rem)"
+    >
       <!-- ----------------------------------------------Background Colors------------------------ -->
       <v-radio-group v-model="$vuetify.theme.currentTheme.background">
         <div
@@ -103,7 +106,7 @@
       <!-- ----------------------------------------------Mode Switch------------------------ -->
       <v-card
         flat
-        class="d-flex flex-row justify-between mx-8 mb-4 px-4 background rounded-lg"
+        class="d-flex flex-row justify-between mx-8 mb-8 px-4 background rounded-lg"
         :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
         @click="
           ($vuetify.theme.dark = !$vuetify.theme.dark),

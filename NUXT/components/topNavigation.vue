@@ -1,7 +1,13 @@
 <template>
   <v-card
-    style="height: 4rem !important; display: flex; box-shadow: none !important"
-    class="rounded-0 pa-3 topNav transparent"
+    scroll-off-screen
+    style="height: 4rem !important; display: flex"
+    class="rounded-0 pa-3 topNav background"
+    :style="
+      $vuetify.theme.dark
+        ? 'border-bottom: 1px solid var(--v-background-lighten1) !important;'
+        : 'border-bottom: 1px solid var(--v-background-darken1) !important;'
+    "
   >
     <h3 v-show="!search" class="my-auto ml-4" v-text="page" />
 
@@ -107,6 +113,8 @@ export default {
 
 <style scoped>
 .topNav {
+  /* box-shadow: inset 0 1rem 10rem var(--v-background-base) !important; */
+  box-shadow: none !important;
   /* ios notch */
   top: env(safe-area-inset-top) !important;
   position: fixed;

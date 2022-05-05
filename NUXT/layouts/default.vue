@@ -3,21 +3,20 @@
     <topNavigation
       :search="search"
       :page="page"
+      style="z-index: 696969"
       @close-search="search = !search"
       @search-btn="searchBtn"
       @text-changed="textChanged"
       @scroll-to-top="$refs.pgscroll.scrollTop = 0"
     />
 
-    <div style="height: 100%; margin-top: 4rem">
-      <div
-        v-show="!search"
-        class="scrollcontainer"
-        style="overflow: hidden; height: calc(100vh - 8rem)"
-      >
+    <div style="height: 100%; margin-top: 4rem; padding-bottom: 4rem">
+      <div v-show="!search">
+        <!-- class="scrollcontainer" -->
+        <!-- style="overflow: hidden; height: calc(100vh - 8rem)" -->
         <!-- element above removes artifacting from things like v-ripple by -->
         <!-- scrollbox below must be a standalone div -->
-        <div ref="pgscroll" class="scroll-y" style="height: 100%">
+        <div ref="pgscroll" style="height: 100%">
           <nuxt />
         </div>
       </div>
@@ -57,7 +56,6 @@
   </v-app>
 </template>
 
-
 <script>
 import { App as CapacitorApp } from "@capacitor/app";
 import { mapState } from "vuex";
@@ -95,7 +93,7 @@ export default {
   },
 
   mounted() {
-    this.$vuetube.resetBackActions();
+    if (!process.browser) this.$vuetube.resetBackActions();
 
     // ---   External URL Handling   --- //
     CapacitorApp.addListener("appUrlOpen", (event) => {
@@ -188,6 +186,11 @@ export default {
 }
 *:focus::before {
   opacity: 0 !important;
+}
+
+.glassy {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .scrollcontainer {

@@ -1,8 +1,9 @@
 <template>
+  <!-- hide-on-scroll -->
   <v-bottom-navigation
     v-model="tabSelection"
     shift
-    class="bottomNav py-4 transparent"
+    class="bottomNav py-4 background"
     :style="
       $vuetify.theme.dark
         ? 'border-top: 1px solid var(--v-background-lighten1) !important;'
@@ -73,9 +74,10 @@ export default {
 
 <style scoped>
 .bottomNav {
+  /* box-shadow: inset 0 1rem 10rem var(--v-background-base) !important; */
+  box-shadow: none !important;
   /* ios gesture nav */
   bottom: env(safe-area-inset-bottom) !important;
-  box-shadow: none !important;
   height: 4rem !important;
   padding: 0 !important;
   position: fixed;

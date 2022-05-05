@@ -1,5 +1,8 @@
 <template>
-  <div class="d-flex flex-column justify-end" style="min-height: 100%">
+  <div
+    class="d-flex flex-column justify-end"
+    style="min-height: calc(100vh - 8rem)"
+  >
     <v-card
       flat
       class="mb-4 background"
@@ -16,9 +19,9 @@
       <div
         v-for="item in list"
         :key="item"
-        @click="list.pop(item)"
         class="pa-4 mb-1 background text-center rounded-sm"
         :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+        @click="list.pop(item)"
       >
         {{ item }}
       </div>
@@ -38,9 +41,9 @@
       :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
       :style="{
         borderRadius: `${roundTweak / 2}rem`,
-        margin: $store.state.tweaks.roundTweak > 0 ? '0 1rem' : '0',
       }"
     >
+      <!-- margin: $store.state.tweaks.roundTweak > 0 ? '0 1rem' : '0', -->
       <h3 class="mt-5">Rounded Corners</h3>
       <div
         class="background--text"
