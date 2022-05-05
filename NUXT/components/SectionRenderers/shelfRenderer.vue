@@ -13,12 +13,12 @@
         :render="render.content[Object.keys(render.content)[0]]"
       ></component
     ></v-list-item>
-    <div
+    <!-- <div
       v-if="render.separator && render.separator.hasBottomSeparator"
       class="separator-bottom background"
       :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
       :style="{ height: render.separator.height + 'px' }"
-    ></div>
+    ></div> -->
   </div>
 </template>
 

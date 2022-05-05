@@ -48,7 +48,7 @@
                 $vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'
               "
             >
-              <div style="margin-bottom: 1rem">
+              <div>
                 <template
                   v-for="text in video.metadata.contents.find(
                     (content) => content.slimVideoInformationRenderer
@@ -131,10 +131,7 @@
               />
             </div>
           </div>
-          <div
-            class="channel-buttons"
-            style="color: rgb(204, 0, 0); text-transform: uppercase"
-          >
+          <div class="primary--text" style="text-transform: uppercase">
             subscribe
           </div>
         </v-card>

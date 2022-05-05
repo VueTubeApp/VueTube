@@ -17,18 +17,6 @@
   </div>
 </template>
 
-<style scoped>
-.entry {
-  width: 100%;
-  font-size: 1.2em;
-  justify-content: left !important;
-  padding: 1.5em 0.5em 1.5em 0.5em !important;
-}
-.icon {
-  margin-right: 0.5em;
-}
-</style>
-
 <script>
 export default {
   data() {
@@ -50,7 +38,12 @@ export default {
           to: "/mods/tweaks",
         },
         { name: "Startup Options", icon: "mdi-restart", to: "/mods/startup" },
-        { name: "Plugins", icon: "mdi-puzzle", to: "", to: "/mods/plugins", disabled: true },
+        {
+          name: "Plugins",
+          icon: "mdi-puzzle",
+          to: "/mods/plugins",
+          disabled: true,
+        },
         {
           name: "Updates",
           icon: "mdi-cloud-download-outline",
@@ -71,3 +64,15 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.entry {
+  width: 100%;
+  font-size: 1.2em;
+  justify-content: left !important;
+  padding: 1.5em 0.5em 1.5em 0.5em !important;
+}
+.icon {
+  margin-right: 0.5em;
+}
+</style>

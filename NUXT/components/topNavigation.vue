@@ -3,12 +3,12 @@
     scroll-off-screen
     style="height: 4rem !important; display: flex"
     class="rounded-0 pa-3 topNav background"
-    :style="
+  >
+    <!-- :style="
       $vuetify.theme.dark
         ? 'border-bottom: 1px solid var(--v-background-lighten1) !important;'
         : 'border-bottom: 1px solid var(--v-background-darken1) !important;'
-    "
-  >
+    " -->
     <h3 v-show="!search" class="my-auto ml-4" v-text="page" />
 
     <v-btn
@@ -38,7 +38,7 @@
     <v-spacer v-if="!search" />
 
     <v-btn
-      v-if="!search"
+      v-if="!search && $route.path.includes('/home')"
       v-show="page == 'Home'"
       icon
       tile

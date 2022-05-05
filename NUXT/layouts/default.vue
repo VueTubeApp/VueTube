@@ -9,8 +9,33 @@
       @text-changed="textChanged"
       @scroll-to-top="$refs.pgscroll.scrollTop = 0"
     />
+    <v-tabs
+      v-if="$route.path.includes('/channel')"
+      mobile-breakpoint="0"
+      style="
+        position: fixed;
+        top: calc(4rem + env(safe-area-inset-top));
+        z-index: 696969;
+      "
+      background-color="background"
+      :color="$vuetify.theme.dark ? 'white' : 'black'"
+    >
+      <v-tab
+        v-for="tab in channelTabs"
+        :key="tab.name"
+        :to="tab.to"
+        :v-ripple="false"
+      >
+        {{ tab.name }}
+      </v-tab>
+    </v-tabs>
 
-    <div style="height: 100%; margin-top: 4rem; padding-bottom: 4rem">
+    <div
+      style="height: 100%; padding-bottom: 4rem"
+      :style="{
+        marginTop: $route.path.includes('/channel') ? '7rem' : '4rem',
+      }"
+    >
       <div v-show="!search">
         <!-- class="scrollcontainer" -->
         <!-- style="overflow: hidden; height: calc(100vh - 8rem)" -->
@@ -67,6 +92,14 @@ export default {
   data: () => ({
     search: false,
     response: [],
+    channelTabs: [
+      { name: "Home", to: "/channel" },
+      { name: "Videos", to: "/channel/videos" },
+      { name: "Playlists", to: "/channel/playlists" },
+      { name: "Community", to: "/channel/community" },
+      { name: "Channels", to: "/channel/channels" },
+      { name: "About", to: "/channel/about" },
+    ],
   }),
 
   computed: {
@@ -186,6 +219,12 @@ export default {
 }
 *:focus::before {
   opacity: 0 !important;
+}
+.v-slide-group__prev {
+  display: none !important;
+}
+.v-slide-group__next {
+  display: none !important;
 }
 
 .glassy {
