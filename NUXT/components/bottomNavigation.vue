@@ -75,6 +75,7 @@ export default {
 <style scoped>
 .bottomNav {
   /* box-shadow: inset 0 1rem 10rem var(--v-background-base) !important; */
+  box-shadow: none !important;
   /* ios gesture nav */
   bottom: env(safe-area-inset-bottom) !important;
   height: 4rem !important;

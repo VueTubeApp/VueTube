@@ -10,7 +10,7 @@
       @scroll-to-top="$refs.pgscroll.scrollTop = 0"
     />
 
-    <div style="height: 100%; margin-top: 4rem">
+    <div style="height: 100%; margin-top: 4rem; padding-bottom: 4rem">
       <div v-show="!search">
         <!-- class="scrollcontainer" -->
         <!-- style="overflow: hidden; height: calc(100vh - 8rem)" -->
@@ -56,7 +56,6 @@
   </v-app>
 </template>
 
-
 <script>
 import { App as CapacitorApp } from "@capacitor/app";
 import { mapState } from "vuex";
@@ -94,7 +93,7 @@ export default {
   },
 
   mounted() {
-    this.$vuetube.resetBackActions();
+    if (!process.browser) this.$vuetube.resetBackActions();
 
     // ---   External URL Handling   --- //
     CapacitorApp.addListener("appUrlOpen", (event) => {

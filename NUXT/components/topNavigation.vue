@@ -114,6 +114,7 @@ export default {
 <style scoped>
 .topNav {
   /* box-shadow: inset 0 1rem 10rem var(--v-background-base) !important; */
+  box-shadow: none !important;
   /* ios notch */
   top: env(safe-area-inset-top) !important;
   position: fixed;
