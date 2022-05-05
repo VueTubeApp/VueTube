@@ -1,6 +1,21 @@
 <template>
-  <v-card class="entry videoRenderer background" :to="`/watch?v=${vidId}`" flat>
-    <div style="position: relative" class="thumbnail-container">
+  <v-card
+    class="entry videoRenderer background"
+    :to="`/watch?v=${vidId}`"
+    :class="
+      $store.state.tweaks.roundTweak > 0
+        ? $vuetify.theme.dark
+          ? 'lighten-1'
+          : 'darken-1'
+        : ''
+    "
+    :style="{
+      borderRadius: `${roundTweak / 2}rem`,
+      margin: $store.state.tweaks.roundTweak > 0 ? '0.5rem 1rem' : '0',
+    }"
+    flat
+  >
+    <div style="position: relative" class="thumbnail-container overflow-hidden">
       <v-img
         :aspect-ratio="16 / 9"
         :src="$youtube.getThumbnail(vidId, 'max', thumbnails)"
@@ -108,6 +123,12 @@
 
 <script>
 export default {
+  computed: {
+    roundTweak() {
+      return this.$store.state.tweaks.roundTweak;
+    },
+  },
+
   props: {
     vidId: {
       type: String,

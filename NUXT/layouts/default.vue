@@ -56,11 +56,13 @@
   </v-app>
 </template>
 
+
 <script>
 import { App as CapacitorApp } from "@capacitor/app";
 import { mapState } from "vuex";
 import constants from "~/plugins/constants";
 import { linkParser } from "~/plugins/utils";
+import backType from "~/plugins/classes/backType";
 
 export default {
   data: () => ({
@@ -92,22 +94,7 @@ export default {
   },
 
   mounted() {
-    //---   Back Button Listener   ---//
-    this.backHandler = CapacitorApp.addListener(
-      "backButton",
-      ({ canGoBack }) => {
-        //---   Back Closes Search   ---//
-        if (this.search) {
-          this.search = false;
-
-          //---   Back Goes Back   ---//
-        } else if (!canGoBack) {
-          CapacitorApp.exitApp();
-        } else {
-          window.history.back();
-        }
-      }
-    );
+    this.$vuetube.resetBackActions();
 
     // ---   External URL Handling   --- //
     CapacitorApp.addListener("appUrlOpen", (event) => {
@@ -176,6 +163,17 @@ export default {
         }
       } else {
         this.search = true;
+
+        // Adds to the back stack
+        const closeSearch = new backType(
+          () => {
+            this.search = false;
+          },
+          () => {
+            return this.search;
+          }
+        );
+        this.$vuetube.addBackAction(closeSearch);
       }
     },
   },
@@ -234,6 +232,14 @@ div {
   height: 1em;
   vertical-align: -0.1em;
   margin: 0 2px;
+}
+
+.min-height-0 {
+  min-height: 0 !important;
+}
+
+.fill-width {
+  width: 100% !important;
 }
 </style>
 

@@ -1,20 +1,22 @@
 <template>
-  <div>
+  <div class="fill-width">
     <h4 v-if="render.headerRenderer" class="font-weight-bold shelf-header">
       {{
         render.headerRenderer.elementRenderer.newElement.type.componentType
           .model.shelfHeaderModel.shelfHeaderData.title
       }}
     </h4>
-    <component
-      v-if="render.content && getComponents()[Object.keys(render.content)[0]]"
-      :is="Object.keys(render.content)[0]"
-      :render="render.content[Object.keys(render.content)[0]]"
-    ></component>
+    <v-list-item class="pa-0 min-height-0">
+      <component
+        v-if="render.content && getComponents()[Object.keys(render.content)[0]]"
+        :is="Object.keys(render.content)[0]"
+        :render="render.content[Object.keys(render.content)[0]]"
+      ></component
+    ></v-list-item>
     <div
       v-if="render.separator && render.separator.hasBottomSeparator"
       class="separator-bottom background"
-      :class="$vuetify.theme.dark ? 'lighten-4' : 'darken-4'"
+      :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
       :style="{ height: render.separator.height + 'px' }"
     ></div>
   </div>

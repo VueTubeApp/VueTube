@@ -28,7 +28,7 @@
       }"
       id="content-container"
     >
-      <v-card v-if="loaded" class="ml-2 mr-2 background rounded-0" flat>
+      <v-card v-if="loaded" class="px-2 background rounded-0" flat>
         <div
           v-ripple
           class="d-flex justify-space-between align-start px-3 pt-3"
@@ -152,21 +152,18 @@
       </div>
 
       <!-- Comments -->
-      <div
-        v-if="loaded && video.commentData"
-        @click="showComments = !showComments"
-      >
-        <v-card flat class="background comment-renderer">
-          <v-text class="comment-count keep-spaces">
+      <div v-if="loaded && video.commentData" @click="toggleComment">
+        <v-card flat tile class="background comment-renderer py-0">
+          <v-card-text class="comment-count keep-spaces px-0">
             <template v-for="text in video.commentData.headerText.runs">
               <template v-if="text.bold">
                 <strong :key="text.text">{{ text.text }}</strong>
               </template>
               <template v-else>{{ text.text }}</template>
             </template>
-          </v-text>
-          <v-icon v-if="showComments">mdi-unfold-less-horizontal</v-icon>
-          <v-icon v-else>mdi-unfold-more-horizontal</v-icon>
+          </v-card-text>
+          <v-icon v-if="showComments" dense>mdi-unfold-less-horizontal</v-icon>
+          <v-icon v-else dense>mdi-unfold-more-horizontal</v-icon>
         </v-card>
         <v-divider />
       </div>
@@ -209,13 +206,13 @@ import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 import { getCpn } from "~/plugins/utils";
 import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
 import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
-import legacyPlayer from "~/components/Player/legacy.vue"
+import legacyPlayer from "~/components/Player/legacy.vue";
 import vuetubePlayer from "~/components/Player/index.vue";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 import mainCommentRenderer from "~/components/Comments/mainCommentRenderer.vue";
 import SwipeableBottomSheet from "~/components/ExtendedComponents/swipeableBottomSheet";
 
-import { App as CapacitorApp } from "@capacitor/app";
+import backType from "~/plugins/classes/backType";
 
 export default {
   components: {
@@ -259,29 +256,11 @@ export default {
 
   mounted() {
     this.mountedInit();
-
-    this.backHandler = CapacitorApp.addListener(
-      "backButton",
-      ({ canGoBack }) => {
-        //---   Back Closes Search   ---//
-        if (this.showComments) {
-          this.showComments = false;
-
-          //---   Back Goes Back   ---//
-        } else if (!canGoBack) {
-          this.$router.replace(
-            `/${localStorage.getItem("startPage") || "home"}`
-          );
-        } else {
-          window.history.back();
-        }
-      }
-    );
+    this.$vuetube.resetBackActions();
   },
 
   beforeDestroy() {
     clearInterval(this.interval);
-    if (this.backHandler) this.backHandler.remove();
   },
 
   methods: {
@@ -412,6 +391,7 @@ export default {
         interval: null,
         video: null,
         useBetaPlayer: false,
+        backHierarchy: [],
       };
     },
 
@@ -425,6 +405,22 @@ export default {
       scrollableList.forEach((scrollable) => {
         scrollable.scrollTo(0, 0);
       });
+    },
+
+    // Toggle this.showComments to true or false. If it is true, then add the dismiss function to backStack.
+    toggleComment() {
+      this.showComments = !this.showComments;
+      if (this.showComments) {
+        const dismissComment = new backType(
+          () => {
+            this.showComments = false;
+          },
+          () => {
+            return this.showComments;
+          }
+        );
+        this.$vuetube.addBackAction(dismissComment);
+      }
     },
   },
 };
