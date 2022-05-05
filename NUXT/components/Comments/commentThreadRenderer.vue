@@ -1,5 +1,9 @@
 <template>
-  <div class="comment-thread" v-if="commentRenderer">
+  <div
+    class="comment-thread"
+    v-if="commentRenderer"
+    @click="$emit('showReplies', comment)"
+  >
     <a
       :href="
         this.$rendererUtils.getNavigationEndpoints(

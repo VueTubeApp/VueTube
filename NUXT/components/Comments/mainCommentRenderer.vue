@@ -22,6 +22,7 @@
           :is="Object.keys(comment)[0]"
           :comment="comment[Object.keys(comment)[0]]"
           @intersect="paginate"
+          @showReplies="openReply"
         ></component>
       </v-list-item>
       <v-divider
@@ -29,6 +30,7 @@
         :key="index"
       ></v-divider>
     </template>
+
     <div class="loading" v-if="loading">
       <v-sheet
         color="background"
@@ -38,6 +40,15 @@
         <v-skeleton-loader type="list-item-avatar-three-line" />
       </v-sheet>
     </div>
+
+    <template v-slot:reveal>
+      <main-comment-reply-renderer
+        v-if="showReply && replyData"
+        v-model="showReply"
+        :parentComment="replyData.parent"
+        :defaultContinuation="replyData.replyContinuation"
+      ></main-comment-reply-renderer>
+    </template>
   </dialog-base>
 </template>
 
@@ -46,6 +57,7 @@ import dialogBase from "~/components/dialogBase.vue";
 import commentsHeaderRenderer from "~/components/Comments/commentsHeaderRenderer.vue";
 import commentThreadRenderer from "~/components/Comments/commentThreadRenderer.vue";
 import continuationItemRenderer from "~/components/observer.vue";
+import mainCommentReplyRenderer from "~/components/Comments/mainCommentReplyRenderer.vue";
 
 export default {
   props: ["defaultContinuation", "commentData", "showComments"],
@@ -60,12 +72,15 @@ export default {
     commentsHeaderRenderer,
     commentThreadRenderer,
     continuationItemRenderer,
+    mainCommentReplyRenderer,
   },
 
   data: () => ({
     loading: true,
     comments: [],
     continuation: null,
+    showReply: false,
+    replyData: {},
   }),
 
   mounted() {
@@ -123,6 +138,11 @@ export default {
           .continuationCommand.token;
 
       return newContinuation;
+    },
+
+    openReply(event) {
+      this.showReply = true;
+      this.replyData = { parent: event, replyContinuation: null };
     },
   },
 };

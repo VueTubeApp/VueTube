@@ -9,6 +9,9 @@
     <div class="dialog-body background">
       <slot></slot>
     </div>
+    <expand-x-transition>
+      <slot name="reveal"></slot>
+    </expand-x-transition>
   </v-card>
 </template>
 
