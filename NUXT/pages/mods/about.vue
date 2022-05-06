@@ -1,18 +1,15 @@
 <template>
   <div style="padding: 1rem">
     <center>
-      <div class="d-flex justify-center pa-4">
+      <div class="d-flex flex-column justify-center pa-4">
         <div>
           <v-img
-            width="27px"
+            width="69px"
             src="/icon.svg"
-            style="transform: rotate(90deg); filter: drop-shadow(0.1px 0.1px 0px #fff) drop-shadow(0.1px -0.1px 0px #fff);"
             :class="$vuetify.theme.dark ? '' : 'invert'"
           />
         </div>
-        <h1 style="font-size: 2rem; margin-left: -1px; margin-top: -9px">
-          ueTube
-        </h1>
+        <h1 style="font-size: 2rem">VueTube</h1>
       </div>
     </center>
 
@@ -61,10 +58,10 @@
     <!--   End Device Information   -->
 
     <!--   App Links   --->
-    <div class="obj d-flex flex-row gap-1">
+    <div class="obj d-flex flex-row gap-1 full-width">
       <v-btn
         depressed
-        class="action col"
+        class="action flex-grow-1"
         :class="
           $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
         "
@@ -76,7 +73,7 @@
       </v-btn>
       <v-btn
         depressed
-        class="action col ml-4"
+        class="action flex-grow-1 ml-4"
         :class="
           $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
         "

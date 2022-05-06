@@ -1,10 +1,13 @@
 <template>
   <v-card
-    class="entry videoRenderer background mb-2"
+    class="entry videoRenderer background"
     :to="`/watch?v=${vidId}`"
     :style="{
       borderRadius: `${roundTweak / 2.5}rem`,
-      margin: $store.state.tweaks.roundTweak > 0 ? '1rem' : '0',
+      margin:
+        $store.state.tweaks.roundTweak > 0
+          ? '0 1rem 1rem 1rem'
+          : '0 0 0.25rem 0',
     }"
     flat
   >

@@ -22,13 +22,13 @@
     </div>
 
     <div
-      v-bind:class="{
+      id="content-container"
+      :class="{
         'overflow-y-auto': !showComments,
         'overflow-y-hidden': showComments,
       }"
-      id="content-container"
     >
-      <v-card v-if="loaded" class="px-2 background rounded-0" flat>
+      <v-card v-if="loaded" class="background rounded-0" flat>
         <div
           v-ripple
           class="d-flex justify-space-between align-start px-3 pt-3"
@@ -61,13 +61,13 @@
           <v-icon class="ml-4" v-if="showMore">mdi-chevron-up</v-icon>
           <v-icon class="ml-4" v-else>mdi-chevron-down</v-icon>
         </div>
-        <div class="d-flex">
+        <div class="d-flex pl-4">
           <v-btn
             v-for="(item, index) in interactions"
             :key="index"
             text
             fab
-            class="vertical-button ma-1"
+            class="vertical-button mx-1"
             elevation="0"
             style="width: 4.2rem !important; height: 4.2rem !important"
             :disabled="item.disabled"
@@ -111,10 +111,10 @@
       <v-divider />
 
       <!--   Channel Bar   -->
-      <div class="channel-container" v-if="loaded">
+      <div v-if="loaded">
         <v-card
           flat
-          class="channel-section background px-3 rounded-0"
+          class="channel-section background py-2 px-3 rounded-0"
           :to="video.channelUrl"
         >
           <div id="details">
@@ -151,7 +151,7 @@
 
       <!-- Comments -->
       <div v-if="loaded && video.commentData" @click="toggleComment">
-        <v-card flat tile class="background comment-renderer py-0">
+        <v-card flat tile class="background comment-renderer px-3">
           <v-card-text class="comment-count keep-spaces px-0">
             <template v-for="text in video.commentData.headerText.runs">
               <template v-if="text.bold">
@@ -187,13 +187,19 @@
     ></swipeable-bottom-sheet> -->
 
       <!-- Related Videos -->
-      <div class="loaders" v-if="!loaded">
+      <div v-if="!loaded">
         <v-skeleton-loader
           type="list-item-two-line, actions, divider, list-item-avatar, divider, list-item-three-line"
         />
         <vid-load-renderer :count="5" />
       </div>
-      <item-section-renderer v-else :render="recommends" />
+      <item-section-renderer
+        v-else
+        :render="recommends"
+        :style="{
+          marginTop: $store.state.tweaks.roundTweak > 0 ? '1rem' : '0',
+        }"
+      />
     </div>
   </div>
 </template>
@@ -447,7 +453,6 @@ export default {
 .comment-renderer {
   display: flex;
   align-items: center;
-  padding: 12px;
 }
 
 .channel-section #details,

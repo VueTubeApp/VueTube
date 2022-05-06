@@ -77,7 +77,7 @@ export default {
   opacity: 0;
   transform: scale(0.5);
   transition-property: opacity, transform;
-  animation: bounce 0.66s ease infinite alternate;
+  animation: bounce 0.66s 0.5s ease 1 forwards;
 }
 /* triangles aren't very good at spinning :c */
 @keyframes bounce {
