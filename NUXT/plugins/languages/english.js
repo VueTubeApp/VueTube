@@ -21,7 +21,8 @@ module.exports = {
     plugins: "Plugins",
     updates: "Updates",
     logs: "Logs",
-    about: "About"
+    about: "About",
+    devmode: "Registry Editor"
   },
 
   mods: {
