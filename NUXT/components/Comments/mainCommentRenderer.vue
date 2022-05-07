@@ -15,8 +15,12 @@
       </v-btn>
     </template>
 
-    <template v-for="(comment, index) in comments">
-      <v-list-item :key="index" class="px-0">
+    <div
+      v-for="(comment, index) in comments"
+      :key="index"
+      class="commentElement"
+    >
+      <v-list-item class="px-0">
         <component
           v-if="getComponents()[Object.keys(comment)[0]]"
           :is="Object.keys(comment)[0]"
@@ -25,11 +29,8 @@
           @showReplies="openReply"
         ></component>
       </v-list-item>
-      <v-divider
-        v-if="getComponents()[Object.keys(comment)[0]]"
-        :key="index"
-      ></v-divider>
-    </template>
+      <v-divider v-if="getComponents()[Object.keys(comment)[0]]"></v-divider>
+    </div>
 
     <div class="loading" v-if="loading">
       <v-sheet

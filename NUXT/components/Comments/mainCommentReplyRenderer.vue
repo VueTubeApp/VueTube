@@ -15,9 +15,11 @@
     <template>
       <comment-thread-renderer :comment="parentComment" />
       <v-divider></v-divider>
-      <template v-for="index in 10">
-        <comment-thread-renderer :comment="parentComment" v-bind:key="index" />
-      </template>
+      <comment-thread-renderer
+        v-for="index in 10"
+        v-bind:key="index"
+        :comment="parentComment"
+      />
     </template>
   </dialog-base>
 </template>
