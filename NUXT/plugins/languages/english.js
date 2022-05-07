@@ -4,7 +4,7 @@ module.exports = {
   global: {
     home: "Home",
     subscriptions: "Subscriptions",
-    library: "Libraary"
+    library: "Library"
   },
 
   index: {
@@ -21,6 +21,24 @@ module.exports = {
     plugins: "Plugins",
     updates: "Updates",
     logs: "Logs",
-    about: "About"
+    about: "About",
+    devmode: "Registry Editor"
+  },
+
+  mods: {
+    about: {
+      appinformation: "App Information",
+      appversion: "App Version",
+      deviceinformation: "Device Information",
+      platform: "Platform",
+      os: "Operating System",
+      model: "Model",
+      manufacturer: "Manufacturer",
+      emulator: "Emulator",
+      github: "GitHub",
+      discord: "Discord"
+    }
   }
+
+
 }

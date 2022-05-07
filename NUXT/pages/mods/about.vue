@@ -15,16 +15,15 @@
 
     <!--   App Information   -->
     <v-card
-      flat
       class="obj"
       :class="
         $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
       "
       :style="{ borderRadius: `${roundTweak / 2}rem` }"
     >
-      <v-card-title>App Information</v-card-title>
+      <v-card-title>{{ languagePack.mods.about.appinformation }}</v-card-title>
       <v-card-text>
-        <h3>App Version</h3>
+        <h3>{{ languagePack.mods.about.appversion }}</h3>
         {{ version.substring(0, 7) || "Unknown" }}
       </v-card-text>
     </v-card>
@@ -32,26 +31,27 @@
 
     <!--   Device Information   -->
     <v-card
-      flat
       class="obj"
       :class="
         $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
       "
       :style="{ borderRadius: `${roundTweak / 2}rem` }"
     >
-      <v-card-title>Device Information</v-card-title>
+      <v-card-title>{{
+        languagePack.mods.about.deviceinformation
+      }}</v-card-title>
       <v-card-text>
-        <h3>Platform</h3>
+        <h3>{{ languagePack.mods.about.platform }}</h3>
         {{ deviceInfo.platform || "Unknown" }}<br />
-        <h3>Operating System</h3>
+        <h3>{{ languagePack.mods.about.os }}</h3>
         {{ deviceInfo.operatingSystem || "Unknown" }} ({{
           deviceInfo.osVersion || "Unknown"
         }})<br />
-        <h3>Model</h3>
+        <h3>{{ languagePack.mods.about.model }}</h3>
         {{ deviceInfo.model || "Unknown" }}<br />
-        <h3>Manufacturer</h3>
+        <h3>{{ languagePack.mods.about.manufacturer }}</h3>
         {{ deviceInfo.manufacturer || "Unknown" }}<br />
-        <h3>Emulator</h3>
+        <h3>{{ languagePack.mods.about.emulator }}</h3>
         {{ deviceInfo.isVirtual ? "yes" : "no" }}
       </v-card-text>
     </v-card>
@@ -69,7 +69,7 @@
         @click="openExternal('https://github.com/Frontesque/VueTube')"
       >
         <v-icon x-large class="actionIcon">mdi-github</v-icon>
-        Github
+        {{ languagePack.mods.about.github }}
       </v-btn>
       <v-btn
         depressed
@@ -81,7 +81,7 @@
         @click="openExternal('https://discord.gg/7P8KJrdd5W')"
       >
         <v-icon x-large class="actionIcon">mdi-discord</v-icon>
-        Discord
+        {{ languagePack.mods.about.discord }}
       </v-btn>
     </div>
   </div>
@@ -96,6 +96,7 @@ export default {
     return {
       version: process.env.appVersion,
       deviceInfo: "",
+      languagePack: { mods: { about: {} } },
     };
   },
   computed: {
@@ -107,6 +108,8 @@ export default {
   async mounted() {
     const info = await Device.getInfo();
     this.deviceInfo = info;
+
+    this.languagePack = this.$lang();
   },
   methods: {
     async openExternal(url) {

@@ -13,7 +13,19 @@
     </v-list-item>
 
     <!--   Dev Mode Open   -->
-    <v-btn text class="entry" @click="dev()" />
+    <v-btn text class="entry" @click="dev()" v-if="!devmode" />
+
+    <v-btn
+      text
+      class="entry text-left text-capitalize"
+      style="margin: 0 0.75em 0 0.75em"
+      to="/mods/developer"
+      v-if="devmode"
+    >
+      <v-icon size="30px" class="icon">mdi-database-edit</v-icon>
+      {{ devmodebuttonname }}
+    </v-btn>
+    <!--   End Dev Mode   -->
   </div>
 </template>
 
@@ -35,6 +47,9 @@ export default {
   data() {
     return {
       devClicks: 0,
+      devmode: false,
+
+      devmodebuttonname: "Developer Mode",
 
       settingsItems: [
         {
@@ -100,13 +115,17 @@ export default {
     this.settingsItems[6].name = this.$lang("settings").updates;
     this.settingsItems[7].name = this.$lang("settings").logs;
     this.settingsItems[8].name = this.$lang("settings").about;
+    this.devmodebuttonname = this.$lang("settings").devmode;
+
+    this.devmode = localStorage.getItem("devmode");
   },
 
   methods: {
     dev() {
       this.devClicks++;
       if (this.devClicks >= 6) {
-        this.$router.push("/mods/developer");
+        localStorage.setItem("devmode", "true");
+        this.devmode = true;
       }
     },
   },
