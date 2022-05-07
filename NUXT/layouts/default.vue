@@ -232,6 +232,13 @@ export default {
   -webkit-backdrop-filter: blur(20px);
 }
 
+.v-card--reveal {
+  bottom: 0;
+  opacity: 1 !important;
+  position: absolute !important;
+  width: 100%;
+}
+
 .scrollcontainer {
   overflow: hidden;
   /* ios notch & gesture nav */

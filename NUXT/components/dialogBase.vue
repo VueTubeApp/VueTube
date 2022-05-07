@@ -1,8 +1,5 @@
 <template>
   <v-card class="dialog-base">
-    <v-expand-transition>
-      <slot name="reveal"></slot>
-    </v-expand-transition>
     <div class="toolbar-container">
       <v-toolbar color="background" flat>
         <slot name="header"></slot>
@@ -12,6 +9,9 @@
     <div class="dialog-body background">
       <slot></slot>
     </div>
+    <v-expand-transition>
+      <slot name="reveal"></slot>
+    </v-expand-transition>
   </v-card>
 </template>
 

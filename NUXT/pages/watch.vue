@@ -150,7 +150,7 @@
       </div>
 
       <!-- Comments -->
-      <div v-if="loaded && video.commentData" @click="toggleComment">
+      <div v-if="loaded && video.commentData" @click="toggleComment" v-ripple>
         <v-card flat tile class="background comment-renderer px-3">
           <v-card-text class="comment-count keep-spaces px-0">
             <template v-for="text in video.commentData.headerText.runs">
