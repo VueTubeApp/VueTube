@@ -50,7 +50,7 @@ To install please visit www.vuetube.app/install
 
 ## Screenshots
 
-View on our website: [https://vuetube.app/info/screenshots](https://vuetube.app/info/screenshots)
+View on our website: www.vuetube.app/info/screenshots
 
 ### Technologies used
 
@@ -62,7 +62,7 @@ Well this has been thrown around on the Return Youtube Dislike discord server fo
 
 ### Want to contribute?
 
-Please read our website on how to do so: https://vuetube.app/contributing
+Please read our website on how to do so: www.vuetube.app/contributing
 
 ## Contributors
 
