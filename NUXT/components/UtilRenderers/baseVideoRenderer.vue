@@ -2,8 +2,15 @@
   <v-card
     class="entry videoRenderer background"
     :to="`/watch?v=${vidId}`"
+    :class="
+      $store.state.tweaks.roundTweak > 0
+        ? $vuetify.theme.dark
+          ? 'lighten-1'
+          : 'darken-1'
+        : ''
+    "
     :style="{
-      borderRadius: `${roundTweak / 2.5}rem`,
+      borderRadius: `${roundTweak / 2}rem`,
       margin:
         $store.state.tweaks.roundTweak > 0
           ? '0 1rem 1rem 1rem'
@@ -16,7 +23,7 @@
         :aspect-ratio="16 / 9"
         :src="$youtube.getThumbnail(vidId, 'max', thumbnails)"
         :style="{
-          borderRadius: `${roundTweak / 2.5}rem`,
+          borderRadius: `${roundTweak / 4}rem`,
         }"
       />
       <div

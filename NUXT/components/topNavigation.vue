@@ -1,14 +1,5 @@
 <template>
-  <v-card
-    scroll-off-screen
-    style="height: 4rem !important; display: flex"
-    class="rounded-0 pa-3 topNav background"
-  >
-    <!-- :style="
-      $vuetify.theme.dark
-        ? 'border-bottom: 1px solid var(--v-background-lighten1) !important;'
-        : 'border-bottom: 1px solid var(--v-background-darken1) !important;'
-    " -->
+  <v-card style="display: flex" class="rounded-0 pa-3 topNav background">
     <h3 v-show="!search" class="my-auto ml-4" v-text="page" />
 
     <v-btn
@@ -114,11 +105,12 @@ export default {
 <style scoped>
 .topNav {
   /* box-shadow: inset 0 1rem 10rem var(--v-background-base) !important; */
+  height: calc(4rem + env(safe-area-inset-top)) !important;
+  padding-top: env(safe-area-inset-top) !important;
   box-shadow: none !important;
-  /* ios notch */
-  top: env(safe-area-inset-top) !important;
   position: fixed;
   width: 100%;
+  top: 0;
 }
 
 .topNavSearch {

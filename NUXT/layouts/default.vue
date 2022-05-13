@@ -9,6 +9,8 @@
       @text-changed="textChanged"
       @scroll-to-top="$refs.pgscroll.scrollTop = 0"
     />
+
+    <!-- channel-tabs -->
     <v-tabs
       v-if="$route.path.includes('/channel')"
       mobile-breakpoint="0"
@@ -31,9 +33,14 @@
     </v-tabs>
 
     <div
-      style="height: 100%; padding-bottom: 4rem"
+      style="
+        height: 100%;
+        padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+      "
       :style="{
-        marginTop: $route.path.includes('/channel') ? '7rem' : '4rem',
+        paddingTop: $route.path.includes('/channel')
+          ? 'calc(7rem + env(safe-area-inset-top))'
+          : 'calc(4rem + env(safe-area-inset-top))',
       }"
     >
       <div v-show="!search">
@@ -226,7 +233,13 @@ export default {
 .v-slide-group__next {
   display: none !important;
 }
+.v-input--selection-controls__input {
+  margin-right: 0 !important;
+}
 
+.border-primary {
+  border: 2px solid var(--v-primary-base) !important;
+}
 .glassy {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
