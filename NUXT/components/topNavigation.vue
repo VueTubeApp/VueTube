@@ -40,7 +40,7 @@
       <v-icon>mdi-refresh</v-icon>
     </v-btn>
     <v-btn
-      v-if="$route.name !== 'settings'"
+      v-if="$route.name !== 'settings' && !$route.path.includes('/mods')"
       icon
       tile
       class="ml-3 my-auto fill-height"

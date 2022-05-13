@@ -1,6 +1,6 @@
 <template>
   <div class="bottomNav background">
-    <v-divider v-if="$store.state.tweaks.roundTweak < 1" />
+    <v-divider v-if="!$store.state.tweaks.roundTweak" />
     <v-bottom-navigation
       v-model="tabSelection"
       style="padding: 0 !important; box-shadow: none !important"

@@ -20,7 +20,6 @@
       :key="index"
       class="commentElement"
     >
-      <v-divider v-if="getComponents()[Object.keys(comment)[0]]"></v-divider>
       <v-list-item class="px-0">
         <component
           :is="Object.keys(comment)[0]"
@@ -30,6 +29,7 @@
           @showReplies="openReply"
         ></component>
       </v-list-item>
+      <v-divider v-if="getComponents()[Object.keys(comment)[0]]"></v-divider>
     </div>
 
     <div class="loading" v-if="loading">

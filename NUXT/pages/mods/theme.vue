@@ -126,7 +126,7 @@
         />
       </v-dialog>
       <!-- ----Mode Switch---- -->
-      <v-divider v-if="$store.state.tweaks.roundTweak < 1" />
+      <v-divider v-if="!$store.state.tweaks.roundTweak" />
       <v-card
         flat
         class="d-flex flex-row justify-between mx-8 mb-8 px-4 background"
@@ -139,8 +139,8 @@
         "
         :style="{
           borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
-          padding: $store.state.tweaks.roundTweak < 1 ? '2rem !important' : '',
-          margin: $store.state.tweaks.roundTweak < 1 ? '0 !important' : '',
+          padding: !$store.state.tweaks.roundTweak ? '2rem !important' : '',
+          margin: !$store.state.tweaks.roundTweak ? '0 !important' : '',
         }"
         @click="
           ($vuetify.theme.dark = !$vuetify.theme.dark),

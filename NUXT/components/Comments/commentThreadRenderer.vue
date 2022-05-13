@@ -11,7 +11,7 @@
           commentRenderer.authorEndpoint
         )
       "
-      class="avatar-link"
+      class="avatar-link pr-2"
     >
       <v-img
         class="avatar-thumbnail"
@@ -23,50 +23,42 @@
       />
     </a>
     <div class="comment-content">
-      <div class="comment-content--header subtitle-2">
+      <div class="comment-content--header subtitle-2 mb-2">
         <div
           class="author-badge-name mr-1"
           :class="
             commentRenderer.authorIsChannelOwner
               ? $vuetify.theme.dark
                 ? 'owner background lighten-2'
-                : 'owner primary lighten-3'
+                : 'owner background darken-2'
               : ''
           "
         >
           <div class="author-name--wrapper">
-            <span class="font-weight-bold author-name" v-emoji>
+            <span class="font-weight-bold author-name mr-1" v-emoji>
               {{ commentRenderer.authorText.simpleText }}
             </span>
           </div>
           <template
             v-for="(badge, index) in commentRenderer.authorCommentBadge"
           >
-            <author-comment-badge-renderer
-              :metadata="badge"
-              :key="index"
-              class="ml-1"
-            />
+            <author-comment-badge-renderer :metadata="badge" :key="index" />
           </template>
           <template
             v-for="(badge, index) in commentRenderer.sponsorCommentBadge"
           >
-            <sponsor-comment-badge-renderer
-              :metadata="badge"
-              :key="index"
-              class="ml-1"
-            />
+            <sponsor-comment-badge-renderer :metadata="badge" :key="index" />
           </template>
         </div>
         <span
           :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-          class="background--text comment-timestamp"
+          class="background--text comment-timestamp ml-2"
         >
           {{ commentRenderer.publishedTimeText.runs[0].text }}
         </span>
       </div>
       <collapsable-text
-        :lines="4"
+        :lines="3"
         :expandText="
           commentRenderer.expandButton.buttonRenderer.text.runs[0].text
         "
@@ -77,33 +69,23 @@
         <yt-text-formatter :textRuns="commentRenderer.contentText.runs">
         </yt-text-formatter>
       </collapsable-text>
-      <div class="toolbar">
+      <div class="toolbar mt-2">
         <v-btn-toggle v-model="voteStatus" group>
           <div class="toolbar--item mr-1">
-            <v-btn class="toolbar--button like" disabled icon x-small plain>
-              <v-icon small>mdi-thumb-up</v-icon>
-            </v-btn>
+            <v-icon small>mdi-thumb-up-outline</v-icon>
             <span
               v-if="commentRenderer.voteCount"
               v-text="commentRenderer.voteCount.simpleText"
-              class="like-count subtitle-2"
+              class="like-count caption"
             ></span>
-          </div>
-          <div class="toolbar--item">
-            <v-btn class="toolbar--button dislike" disabled icon x-small plain>
-              <v-icon small>mdi-thumb-down</v-icon>
-            </v-btn>
+            <v-icon class="ml-2" small>mdi-thumb-down-outline</v-icon>
           </div>
         </v-btn-toggle>
-        <div class="toolbar--item">
-          <v-btn class="toolbar--button reply ml-2" disabled icon x-small plain>
-            <v-icon small>mdi-comment</v-icon>
-          </v-btn>
-        </div>
-        <div class="toolbar--item" v-if="commentRenderer.replyCount">
+        <div class="toolbar--item ml-2" v-if="commentRenderer.replyCount">
+          <v-icon small>mdi-comment-outline</v-icon>
           <span
             v-text="commentRenderer.replyCount"
-            class="like-count mr-1 subtitle-2"
+            class="like-count caption"
           ></span>
         </div>
       </div>
@@ -168,13 +150,8 @@
 }
 
 .owner {
-  color: var(--v-primary-base);
   border-radius: 1em;
   padding: 0 0.3em 0 0.6em;
-
-  &::v-deep .author-badge {
-    color: var(--v-primary-base);
-  }
 }
 
 .toolbar--button::v-deep.v-btn--active .v-btn__content {

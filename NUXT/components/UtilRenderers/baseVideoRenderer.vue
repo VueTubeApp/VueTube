@@ -3,18 +3,16 @@
     class="entry videoRenderer background"
     :to="`/watch?v=${vidId}`"
     :class="
-      $store.state.tweaks.roundTweak > 0
+      roundThumb && roundTweak > 0
         ? $vuetify.theme.dark
           ? 'lighten-1'
           : 'darken-1'
         : ''
     "
     :style="{
-      borderRadius: `${roundTweak / 2}rem`,
+      borderRadius: roundThumb ? `${roundTweak / 2}rem` : '0',
       margin:
-        $store.state.tweaks.roundTweak > 0
-          ? '0 1rem 1rem 1rem'
-          : '0 0 0.25rem 0',
+        roundThumb && roundTweak > 0 ? '0 1rem 1rem 1rem' : '0 0 0.25rem 0',
     }"
     flat
   >
@@ -23,7 +21,7 @@
         :aspect-ratio="16 / 9"
         :src="$youtube.getThumbnail(vidId, 'max', thumbnails)"
         :style="{
-          borderRadius: `${roundTweak / 4}rem`,
+          borderRadius: roundThumb ? `${roundTweak / 4}rem` : '0',
         }"
       />
       <div
@@ -57,6 +55,52 @@
     </div>
   </v-card>
 </template>
+
+<script>
+export default {
+  props: {
+    vidId: {
+      type: String,
+      required: true,
+    },
+    thumbnails: {
+      type: Array,
+      required: true,
+    },
+    channelUrl: {
+      type: String,
+      required: true,
+    },
+    channelIcon: {
+      type: String,
+      required: true,
+    },
+    titles: {
+      type: Array,
+      required: true,
+    },
+    bottomText: {
+      type: String,
+      required: true,
+    },
+    thumbnailOverlayText: {
+      type: String,
+    },
+    thumbnailOverlayStyle: {
+      type: String,
+    },
+  },
+
+  computed: {
+    roundTweak() {
+      return this.$store.state.tweaks.roundTweak;
+    },
+    roundThumb() {
+      return this.$store.state.tweaks.roundThumb;
+    },
+  },
+};
+</script>
 
 <style scoped>
 .entry {
@@ -126,46 +170,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-  computed: {
-    roundTweak() {
-      return this.$store.state.tweaks.roundTweak;
-    },
-  },
-
-  props: {
-    vidId: {
-      type: String,
-      required: true,
-    },
-    thumbnails: {
-      type: Array,
-      required: true,
-    },
-    channelUrl: {
-      type: String,
-      required: true,
-    },
-    channelIcon: {
-      type: String,
-      required: true,
-    },
-    titles: {
-      type: Array,
-      required: true,
-    },
-    bottomText: {
-      type: String,
-      required: true,
-    },
-    thumbnailOverlayText: {
-      type: String,
-    },
-    thumbnailOverlayStyle: {
-      type: String,
-    },
-  },
-};
-</script>
