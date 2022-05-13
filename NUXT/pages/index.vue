@@ -18,9 +18,11 @@ export default {
   layout: "empty",
 
   data: () => ({
-    progressMsg: "Connecting",
+    progressMsg: "...",
   }),
   async mounted() {
+    this.progressMsg = this.$lang("index").connecting;
+
     this.$store.commit("tweaks/initTweaks");
     const theming = new Promise((resolve) =>
       // Set timeout is required for $vuetify.theme... dont ask me why -Front
@@ -56,9 +58,8 @@ export default {
 
     await theming;
     await this.$youtube.getAPI();
-    this.progressMsg = "Launching";
     await this.$vuetube.launchBackHandling();
-    this.progressMsg = "Navigating";
+    this.progressMsg = this.$lang("index").launching;
 
     this.$router.replace(`/${localStorage.getItem("startPage") || "home"}`); // Prevent user from navigating back to the splash screen
   },

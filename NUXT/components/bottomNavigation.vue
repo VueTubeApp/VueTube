@@ -34,15 +34,35 @@
           v-text="item.icon"
         />
         <!-- 
-        Add the following to 'v-text- above to make the icons outlined unless active
+      <span v-text="item.name" />
+      <v-icon
+        :color="
+          tabSelection == i
+            ? 'primary'
+            : $vuetify.theme.dark
+            ? 'background lighten-4'
+            : 'background darken-4'
+        "
+        :class="
+          tabSelection == i
+            ? $vuetify.theme.dark
+              ? 'tab primary darken-4'
+              : 'tab primary lighten-4'
+            : ''
+        "
+        v-text="item.icon"
+      /> -->
+        <!-- Add the following to 'v-text- above to make the icons outlined unless active
         + (tabSelection == i ? '' : '-outline')
-
-
        -->
       </v-btn>
-      <!-- <v-btn text class="navButton mr-2 fill-height" color="white" @click="searchBtn()"
-      ><v-icon>mdi-magnify</v-icon></v-btn
-    > -->
+      <!-- <v-btn
+        text
+        class="navButton mr-2 fill-height"
+        color="white"
+        @click="searchBtn()"
+        ><v-icon>mdi-magnify</v-icon></v-btn
+      > -->
     </v-bottom-navigation>
   </div>
 </template>
@@ -54,18 +74,24 @@ export default {
       tabSelection: 0,
       tabs: [
         // TODO: pull from Vuex & localStorage for customizations
-        { name: "Home", icon: "mdi-home", link: "/home" },
+        { name: "...", icon: "mdi-home", link: "/home" },
         //{ name: "Shorts", icon: "mdi-lightning-bolt", link: "/shorts" },
         //{ name: "Upload", icon: "mdi-plus", link: "/upload" },
         {
-          name: "Subscriptions",
+          name: "...",
           icon: "mdi-youtube-subscription",
           link: "/subscriptions",
         },
-        { name: "Library", icon: "mdi-view-list", link: "/library" },
+        { name: "...", icon: "mdi-view-list", link: "/library" },
         // { name: "Settings", icon: "mdi-menu", link: "/settings" },
       ],
     };
+  },
+
+  mounted() {
+    this.tabs[0].name = this.$lang("global").home;
+    this.tabs[1].name = this.$lang("global").subscriptions;
+    this.tabs[2].name = this.$lang("global").library;
   },
 };
 </script>
