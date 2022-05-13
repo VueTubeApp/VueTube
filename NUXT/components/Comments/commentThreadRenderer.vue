@@ -1,8 +1,8 @@
 <template>
   <div
+    v-if="commentRenderer"
     v-ripple
     class="comment-thread px-3"
-    v-if="commentRenderer"
     @click="$emit('showReplies', comment)"
   >
     <a
@@ -26,7 +26,13 @@
       <div class="comment-content--header subtitle-2">
         <div
           class="author-badge-name mr-1"
-          :class="{ owner: commentRenderer.authorIsChannelOwner }"
+          :class="
+            commentRenderer.authorIsChannelOwner
+              ? $vuetify.theme.dark
+                ? 'owner background lighten-2'
+                : 'owner primary lighten-3'
+              : ''
+          "
         >
           <div class="author-name--wrapper">
             <span class="font-weight-bold author-name" v-emoji>
@@ -162,13 +168,12 @@
 }
 
 .owner {
-  padding: 0 0.6em;
-  background-color: #888888;
-  color: #fff;
+  color: var(--v-primary-base);
   border-radius: 1em;
+  padding: 0 0.3em 0 0.6em;
 
   &::v-deep .author-badge {
-    color: #fff;
+    color: var(--v-primary-base);
   }
 }
 

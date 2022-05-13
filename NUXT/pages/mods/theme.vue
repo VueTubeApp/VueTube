@@ -108,8 +108,8 @@
         v-model="pickerState"
         width="300"
         content-class="background"
-        :style="{
-          borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
+        :content-style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 2}rem !important`,
         }"
       >
         <v-color-picker

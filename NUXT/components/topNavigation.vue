@@ -18,7 +18,7 @@
       dense
       flat
       label="Search"
-      style="margin-top: 1px"
+      style="margin-top: 7px"
       :background-color="
         $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
       "
@@ -40,6 +40,7 @@
       <v-icon>mdi-refresh</v-icon>
     </v-btn>
     <v-btn
+      v-if="$route.name !== 'settings'"
       icon
       tile
       class="ml-3 my-auto fill-height"

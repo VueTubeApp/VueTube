@@ -4,7 +4,7 @@
       <v-toolbar color="background" flat>
         <slot name="header"></slot>
       </v-toolbar>
-      <v-divider></v-divider>
+      <!-- <v-divider></v-divider> -->
     </div>
     <div class="dialog-body background">
       <slot></slot>

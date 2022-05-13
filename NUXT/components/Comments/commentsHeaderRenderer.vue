@@ -22,6 +22,22 @@
   </div>
 </template>
 
+<script>
+export default {
+  props: ["comment"],
+
+  data() {
+    return {
+      boxRenderer: null,
+    };
+  },
+
+  mounted() {
+    this.boxRenderer = this.comment?.createRenderer?.commentSimpleboxRenderer;
+  },
+};
+</script>
+
 <style scoped>
 .entry {
   width: 100%; /* Prevent Loading Weirdness */
@@ -44,18 +60,3 @@
 }
 </style>
 
-<script>
-export default {
-  props: ["comment"],
-
-  data() {
-    return {
-      boxRenderer: null,
-    };
-  },
-
-  mounted() {
-    this.boxRenderer = this.comment?.createRenderer?.commentSimpleboxRenderer;
-  },
-};
-</script>
