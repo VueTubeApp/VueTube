@@ -76,7 +76,7 @@
           (roundThumb = !roundThumb), $vuetube.haptics.hapticsImpactLight(1)
         "
       >
-        <div class="ml-2">Round Thumbnails</div>
+        <div class="ml-2 mt-1">Round Thumbnails</div>
         <v-spacer />
         <v-switch
           v-model="roundThumb"
@@ -94,7 +94,7 @@
           (roundWatch = !roundWatch), $vuetube.haptics.hapticsImpactLight(1)
         "
       >
-        <div class="ml-2">Round Watch Page Components</div>
+        <div class="ml-2 mt-1">Round Watch Page Components</div>
         <v-spacer />
         <v-switch
           v-model="roundWatch"
