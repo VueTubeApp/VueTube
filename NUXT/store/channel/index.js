@@ -12,7 +12,9 @@ const getDefaultState = () => {
     videos: null,
   };
 };
-export const state = getDefaultState();
+export const state = () => {
+  return getDefaultState();
+};
 export const actions = {
   fetchChannel({ state }, channelUrl) {
     Object.assign(state, getDefaultState());
