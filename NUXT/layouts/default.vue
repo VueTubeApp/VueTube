@@ -4,9 +4,9 @@
       :search="search"
       :page="page"
       style="z-index: 696969"
-      @close-search="search = !search"
       @search-btn="searchBtn"
       @text-changed="textChanged"
+      @close-search="search = !search"
       @scroll-to-top="$refs.pgscroll.scrollTop = 0"
     />
 
@@ -62,21 +62,17 @@
       >
         <div class="scroll-y" style="height: 100%">
           <div v-if="search" style="min-width: 180px">
-            <v-list-item
-              v-for="(item, index) in response"
-              :key="index"
-              class="px-0"
-            >
+            <v-list-item v-for="item in response" :key="item[0]" class="px-0">
               <v-btn
+                v-emoji
                 text
                 tile
                 dense
                 class="searchButton text-left text-none"
-                @click="youtubeSearch(item)"
-                v-emoji
+                @click="youtubeSearch(item[1])"
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
-                {{ item[0] || item.text }}
+                {{ item[0] }}
               </v-btn>
             </v-list-item>
           </div>
@@ -163,10 +159,17 @@ export default {
         return;
       } // No text found, no point in calling API
 
+      //---   Auto Suggest   ---//
+      this.$youtube.autoComplete(text, (res) => {
+        const data = res.replace(/^.*?\(/, "").replace(/\)$/, ""); //Format Response
+        this.response = JSON.parse(data)[1];
+      });
+
       //---   User Pastes Link, Direct Them To Video   ---//
       const isLink = linkParser(text);
       if (isLink) {
         this.response = [
+          `Watch Video from ID: ${isLink.searchParams.get("v")}`,
           {
             text: `Watch Video from ID: ${isLink.searchParams.get("v")}`,
             id: isLink.searchParams.get("v"),
@@ -175,12 +178,6 @@ export default {
         return;
       }
       //---   End User Pastes Link, Direct Them To Video   ---//
-
-      //---   Auto Suggest   ---//
-      this.$youtube.autoComplete(text, (res) => {
-        const data = res.replace(/^.*?\(/, "").replace(/\)$/, ""); //Format Response
-        this.response = JSON.parse(data)[1];
-      });
     },
 
     youtubeSearch(item) {
