@@ -15,6 +15,7 @@
 
     <!--   App Information   -->
     <v-card
+      flat
       class="obj"
       :class="
         $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
@@ -31,6 +32,7 @@
 
     <!--   Device Information   -->
     <v-card
+      flat
       class="obj"
       :class="
         $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'

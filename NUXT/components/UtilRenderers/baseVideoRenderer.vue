@@ -110,8 +110,9 @@ export default {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 0px 4px 0px 4px;
+  font-size: 0.66rem;
 }
 
 .videoRuntimeFloat.style-DEFAULT {

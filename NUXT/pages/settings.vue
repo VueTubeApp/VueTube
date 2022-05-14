@@ -1,11 +1,25 @@
 <template>
-  <div style="padding-top: 1em">
-    <v-list-item v-for="(item, index) in settingsItems" :key="index">
+  <div>
+    <v-list-item
+      v-for="(item, index) in settingsItems"
+      :key="index"
+      :style="{
+        padding:
+          $store.state.tweaks.roundTweak > 0
+            ? '0 1rem !important'
+            : '0rem !important',
+      }"
+    >
       <v-btn
         text
         class="entry text-left text-capitalize"
         :to="item.to"
         :disabled="item.disabled"
+        :style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
+          paddingLeft:
+            $store.state.tweaks.roundTweak > 0 ? '' : '1.5rem !important',
+        }"
       >
         <v-icon size="30px" class="icon" v-text="item.icon" />
         {{ item.name }}
@@ -28,19 +42,6 @@
     <!--   End Dev Mode   -->
   </div>
 </template>
-
-<style scoped>
-.entry {
-  width: 100%;
-  font-size: 1.2em;
-  justify-content: left !important;
-  padding: 1.5em 0.5em 1.5em 0.5em !important;
-}
-
-.icon {
-  margin-right: 0.5em;
-}
-</style>
 
 <script>
 export default {
