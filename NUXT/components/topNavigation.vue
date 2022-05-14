@@ -1,6 +1,12 @@
 <template>
   <v-card style="display: flex" class="rounded-0 pa-3 topNav background">
-    <h3 v-show="!search" class="my-auto ml-4" v-text="page" />
+    <h3
+      v-show="!search"
+      class="my-auto ml-4"
+      v-text="
+        $route.path.includes('channel') ? $store.state.channel.title : page
+      "
+    />
 
     <v-btn
       v-if="search"

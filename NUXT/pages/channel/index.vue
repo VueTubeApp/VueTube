@@ -25,7 +25,7 @@
     </div>
     <v-card
       flat
-      to="/channel/about?text=AboutDescription"
+      to="/channel/about"
       style="
         font-size: 0.75rem;
         height: 2rem;

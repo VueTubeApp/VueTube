@@ -26,6 +26,7 @@
         v-for="tab in channelTabs"
         :key="tab.name"
         :to="tab.to"
+        exact
         :v-ripple="false"
       >
         {{ tab.name }}
