@@ -1,9 +1,5 @@
 <template>
-  <v-card
-    class="entry gridVideoRenderer background"
-    :to="`/watch?v=${video.videoId}`"
-    flat
-  >
+  <v-card class="entry gridVideoRenderer background" to="/channel" flat>
     <div id="details">
       <a
         :href="

@@ -12,7 +12,7 @@
 
     <!-- channel-tabs -->
     <v-tabs
-      v-if="$route.path.includes('/channel')"
+      v-if="$route.path.includes('/channel') && !search"
       mobile-breakpoint="0"
       style="
         position: fixed;
