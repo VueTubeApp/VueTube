@@ -107,17 +107,11 @@
       <v-dialog
         v-model="pickerState"
         width="300"
-        content-class="background"
-        :content-style="{
-          borderRadius: `${$store.state.tweaks.roundTweak / 2}rem !important`,
-        }"
+        content-class="background rounded-lg"
       >
         <v-color-picker
           v-model="$vuetify.theme.currentTheme[pickerMode]"
           style="min-width: 100%"
-          :style="{
-            borderRadius: `${$store.state.tweaks.roundTweak / 2}rem !important`,
-          }"
           class="background"
           hide-mode-switch
           dot-size="50"
