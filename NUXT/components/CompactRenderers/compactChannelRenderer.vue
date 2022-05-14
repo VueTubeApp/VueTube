@@ -1,5 +1,10 @@
 <template>
-  <v-card class="entry gridVideoRenderer background" to="/channel" flat>
+  <v-card
+    flat
+    to="/channel"
+    class="entry gridVideoRenderer background"
+    @click="$store.dispatch('channel/fetchChannel', video.channelId)"
+  >
     <div id="details">
       <a
         :href="
@@ -34,6 +39,21 @@
     </div>
   </v-card>
 </template>
+
+<script>
+export default {
+  props: ["video"],
+  methods: {
+    parseBottom(video) {
+      const bottomText = [
+        video.subscriberCountText?.runs[0].text,
+        video.videoCountText?.runs.map((run) => run.text).join(" "),
+      ];
+      return bottomText.join(" · ");
+    },
+  },
+};
+</script>
 
 <style scoped>
 .entry {
@@ -72,19 +92,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-  props: ["video"],
-
-  methods: {
-    parseBottom(video) {
-      const bottomText = [
-        video.subscriberCountText?.runs[0].text,
-        video.videoCountText?.runs.map((run) => run.text).join(" "),
-      ];
-      return bottomText.join(" · ");
-    },
-  },
-};
-</script>

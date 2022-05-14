@@ -10,16 +10,21 @@ export const state = () => ({
 });
 export const actions = {
   fetchChannel({ state }, channelUrl) {
-    // console.log(
-    //   "%c getChannel ",
-    //   "color: black; font-weight: bold; background: #f00; padding: .5rem .25rem; border-radius: .25rem;"
-    // );
-    // console.log(
-    //   `%c${id}`,
-    //   "color: black; font-weight: bold; background: #0f0; padding: .5rem .25rem; border-radius: .25rem;"
-    // );
+    console.log(
+      "%c getChannel ",
+      "color: black; font-weight: bold; background: #f00; padding: .5rem .25rem; border-radius: .25rem;"
+    );
+    console.log(
+      `%c${channelUrl}`,
+      "color: black; font-weight: bold; background: #0f0; padding: .5rem .25rem; border-radius: .25rem;"
+    );
+    // substring removes /channel/ from the url if called from watch page, but keeps string intact if called from search page
     this.$youtube
-      .getChannel(`https://youtube.com/${channelUrl}`)
+      .getChannel(
+        `https://youtube.com/channel/${channelUrl.substring(
+          channelUrl.indexOf("/")
+        )}`
+      )
       .then((channel) => {
         // console.log(channel);
         state.banner =
