@@ -1,25 +1,22 @@
-export const state = () => ({
-  avatar: null,
-  banner: null,
-  title: null,
-  subscribe: null,
-  subscribeAlt: null,
-  descriptionPreview: null,
-  subscribers: null,
-  videos: null,
-});
+const getDefaultState = () => {
+  return {
+    loading: null,
+    error: null,
+    avatar: null,
+    banner: null,
+    title: null,
+    subscribe: null,
+    subscribeAlt: null,
+    descriptionPreview: null,
+    subscribers: null,
+    videos: null,
+  };
+};
+export const state = getDefaultState();
 export const actions = {
   fetchChannel({ state }, channelUrl) {
-    console.log(
-      "%c getChannel ",
-      "color: black; font-weight: bold; background: #f00; padding: .5rem .25rem; border-radius: .25rem;"
-    );
-    console.log(
-      `%c${channelUrl}`,
-      "color: black; font-weight: bold; background: #0f0; padding: .5rem .25rem; border-radius: .25rem;"
-    );
-    console.log(channelUrl.substring(channelUrl.lastIndexOf("/") + 1));
-    // substring removes /channel/ from the url if called from watch page, but keeps string intact if called from search page
+    Object.assign(state, getDefaultState());
+    state.loading = true;
     this.$youtube
       .getChannel(
         `https://youtube.com/channel/${channelUrl.substring(
@@ -27,7 +24,7 @@ export const actions = {
         )}`
       )
       .then((channel) => {
-        // console.log(channel);
+        state.loading = false;
         state.banner =
           channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelBanner?.image.sources[0].url;
         state.avatar =
@@ -46,6 +43,8 @@ export const actions = {
           channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelProfile.metadata.videosCountText;
       })
       .catch((err) => {
+        state.loading = false;
+        state.error = err;
         console.error(err);
       });
   },

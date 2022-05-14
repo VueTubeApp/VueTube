@@ -39,9 +39,10 @@
         padding-bottom: calc(4rem + env(safe-area-inset-bottom));
       "
       :style="{
-        paddingTop: $route.path.includes('/channel')
-          ? 'calc(7rem + env(safe-area-inset-top))'
-          : 'calc(4rem + env(safe-area-inset-top))',
+        paddingTop:
+          $route.path.includes('/channel') && !search
+            ? 'calc(7rem + env(safe-area-inset-top))'
+            : 'calc(4rem + env(safe-area-inset-top))',
       }"
     >
       <div v-show="!search">

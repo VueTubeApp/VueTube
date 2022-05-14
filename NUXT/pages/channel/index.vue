@@ -6,8 +6,16 @@
       class="background"
       :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
     ></v-img>
-    <v-avatar size="60" class="mt-2 primary">
-      <img :src="$store.state.channel.avatar" />
+    <v-avatar
+      size="60"
+      class="mt-2 background"
+      :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+    >
+      <img
+        v-if="!$store.state.channel.loading"
+        :src="$store.state.channel.avatar"
+      />
+      <v-progress-circular v-else indeterminate color="primary" size="60" />
     </v-avatar>
     <h2 class="mt-2">{{ $store.state.channel.title }}</h2>
     <v-btn
@@ -19,11 +27,16 @@
     >
       {{ $store.state.channel.subscribe }}
     </v-btn>
-    <div style="font-size: 0.75rem" class="mt-2">
+    <div
+      v-if="!$store.state.channel.loading"
+      style="font-size: 0.75rem"
+      class="mt-2"
+    >
       {{ $store.state.channel.subscribers }} &middot;
       {{ $store.state.channel.videos }}
     </div>
     <v-card
+      v-if="!$store.state.channel.loading"
       flat
       to="/channel/about"
       style="
