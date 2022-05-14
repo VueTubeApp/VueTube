@@ -133,7 +133,7 @@
                 : 'background darken-1'
               : ''
           "
-          :to="video.channelUrl"
+          to="/channel"
           :style="{
             borderRadius: $store.state.tweaks.roundWatch
               ? `${$store.state.tweaks.roundTweak / 2}rem`
@@ -144,6 +144,7 @@
                 ? '1rem'
                 : '0',
           }"
+          @click="$store.dispatch('channel/fetchChannel', video.channelUrl)"
         >
           <div id="details">
             <div class="avatar-link mr-3">
