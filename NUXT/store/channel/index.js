@@ -18,19 +18,20 @@ export const actions = {
       `%c${channelUrl}`,
       "color: black; font-weight: bold; background: #0f0; padding: .5rem .25rem; border-radius: .25rem;"
     );
+    console.log(channelUrl.substring(channelUrl.lastIndexOf("/") + 1));
     // substring removes /channel/ from the url if called from watch page, but keeps string intact if called from search page
     this.$youtube
       .getChannel(
         `https://youtube.com/channel/${channelUrl.substring(
-          channelUrl.indexOf("/")
+          channelUrl.lastIndexOf("/") + 1
         )}`
       )
       .then((channel) => {
         // console.log(channel);
         state.banner =
-          channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelBanner.image.sources[0].url;
+          channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelBanner?.image.sources[0].url;
         state.avatar =
-          channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelProfile.avatarData.avatar.image.sources[0].url;
+          channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelProfile.avatarData.avatar?.image.sources[0].url;
         state.title =
           channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelProfile.title;
         state.subscribe =
@@ -45,7 +46,7 @@ export const actions = {
           channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelProfile.metadata.videosCountText;
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
       });
   },
 };
