@@ -234,6 +234,9 @@ export default {
 .v-input--selection-controls__input {
   margin-right: 0 !important;
 }
+.v-input__slot {
+  margin: 0 !important;
+}
 
 .border-primary {
   border: 2px solid var(--v-primary-base) !important;

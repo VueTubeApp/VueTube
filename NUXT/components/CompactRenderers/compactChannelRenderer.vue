@@ -6,8 +6,8 @@
     :class="
       roundThumb && roundTweak > 0
         ? $vuetify.theme.dark
-          ? 'background lighten-1'
-          : 'background darken-1'
+          ? 'lighten-1'
+          : 'darken-1'
         : ''
     "
     :style="{

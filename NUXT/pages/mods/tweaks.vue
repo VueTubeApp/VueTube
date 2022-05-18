@@ -12,7 +12,7 @@
     <!-- TODO: Top and Bottom bar color selection -->
     <v-card
       flat
-      class="mx-4 my-2 px-4 d-flex flex-row justify-between background"
+      class="mx-4 my-2 px-4 py-2 d-flex flex-row justify-between background"
       style="transition-duration: 0.3s; transition-property: border-radius"
       :class="
         roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
@@ -22,20 +22,26 @@
       }"
     >
       <h3
-        class="ml-2 my-auto background--text"
+        class="my-auto background--text"
         :class="$vuetify.theme.dark ? 'text--lighten-3' : 'text--darken-3'"
       >
         Fullscreen (Soon™)
       </h3>
       <v-spacer />
-      <v-switch disabled style="pointer-events: none" persistent-hint inset />
+      <v-switch
+        disabled
+        class="mt-2"
+        style="pointer-events: none"
+        persistent-hint
+        inset
+      />
     </v-card>
 
     <v-divider v-if="!roundTweak" />
 
     <v-card
       flat
-      class="mx-4 my-2 px-4 d-flex flex-row justify-between background"
+      class="mx-4 my-2 px-4 py-2 d-flex flex-row justify-between background"
       style="transition-duration: 0.3s; transition-property: border-radius"
       :class="
         roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
@@ -45,71 +51,106 @@
       }"
     >
       <h3
-        class="ml-2 my-auto background--text"
+        class="my-auto background--text"
         :class="$vuetify.theme.dark ? 'text--lighten-3' : 'text--darken-3'"
       >
         Navbar Blur (Soon™)
       </h3>
       <v-spacer />
-      <v-switch disabled style="pointer-events: none" persistent-hint inset />
+      <v-switch
+        disabled
+        class="mt-2"
+        style="pointer-events: none"
+        persistent-hint
+        inset
+      />
     </v-card>
 
     <v-divider v-if="!roundTweak" />
 
+    <h3 class="ml-8 mt-8">Rounded Corners</h3>
+
     <v-card
       flat
       class="mx-4 my-2 background"
-      style="transition-duration: 0.3s; transition-property: border-radius"
-      :class="
-        roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
+      style="
+        transition-duration: 0.3s;
+        transition-property: border-radius;
+        overflow: hidden;
       "
       :style="{
         borderRadius: `${roundTweak / 2}rem`,
       }"
     >
-      <h3 class="my-5 mx-6">Rounded Corners</h3>
+      <!-- margin: $store.state.tweaks.roundTweak > 0 ? '0 1rem' : '0', -->
       <v-card
         flat
-        class="px-4 d-flex flex-row justify-between transparent background--text"
-        :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+        class="mb-1 px-3 py-1 d-flex flex-row justify-between background"
+        :class="
+          roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
+        "
+        :style="{
+          borderRadius: `${roundTweak / 6}rem`,
+        }"
         @click="
           (roundThumb = !roundThumb), $vuetube.haptics.hapticsImpactLight(1)
         "
       >
-        <div class="ml-2 mt-1">Round Thumbnails</div>
+        <div
+          class="ml-2 my-auto background--text"
+          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+        >
+          Round Thumbnails
+        </div>
         <v-spacer />
         <v-switch
           v-model="roundThumb"
           style="pointer-events: none"
           persistent-hint
-          class="ma-0"
+          class="mt-2"
           inset
         />
       </v-card>
       <v-card
         flat
-        class="px-4 d-flex flex-row justify-between transparent background--text"
-        :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+        class="mb-1 px-3 py-1 d-flex flex-row justify-between background"
+        :class="
+          roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
+        "
+        :style="{
+          borderRadius: `${roundTweak / 6}rem`,
+        }"
         @click="
           (roundWatch = !roundWatch), $vuetube.haptics.hapticsImpactLight(1)
         "
       >
-        <div class="ml-2 mt-1">Round Watch Page Components</div>
+        <div
+          class="ml-2 my-auto background--text"
+          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+        >
+          Round Watch Page Components
+        </div>
         <v-spacer />
         <v-switch
           v-model="roundWatch"
           style="pointer-events: none"
           persistent-hint
-          class="ma-0"
+          class="mt-2"
           inset
         />
       </v-card>
       <v-slider
         v-model="roundTweak"
-        class="mr-8 ml-6"
+        class="pr-8 pl-6 pt-3 background"
         :max="4"
         step=".25"
         thumb-size="64"
+        :class="
+          roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
+        "
+        :style="{
+          borderRadius: `${roundTweak / 6}rem`,
+        }"
         @input="$vuetube.haptics.hapticsImpactLight(0)"
       >
         <template #thumb-label="{ value }">
