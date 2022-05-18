@@ -85,19 +85,19 @@
       <!-- margin: $store.state.tweaks.roundTweak > 0 ? '0 1rem' : '0', -->
       <v-card
         flat
-        class="mb-1 px-3 py-1 d-flex flex-row justify-between background"
+        class="mb-1 px-4 py-2 d-flex flex-row justify-between background"
         :class="
           roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
         "
         :style="{
-          borderRadius: `${roundTweak / 6}rem`,
+          borderRadius: `${roundTweak / 12}rem`,
         }"
         @click="
           (roundThumb = !roundThumb), $vuetube.haptics.hapticsImpactLight(1)
         "
       >
         <div
-          class="ml-2 my-auto background--text"
+          class="my-auto background--text"
           :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
         >
           Round Thumbnails
@@ -113,19 +113,19 @@
       </v-card>
       <v-card
         flat
-        class="mb-1 px-3 py-1 d-flex flex-row justify-between background"
+        class="mb-1 px-4 py-2 d-flex flex-row justify-between background"
         :class="
           roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
         "
         :style="{
-          borderRadius: `${roundTweak / 6}rem`,
+          borderRadius: `${roundTweak / 12}rem`,
         }"
         @click="
           (roundWatch = !roundWatch), $vuetube.haptics.hapticsImpactLight(1)
         "
       >
         <div
-          class="ml-2 my-auto background--text"
+          class="my-auto background--text"
           :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
         >
           Round Watch Page Components
@@ -141,15 +141,16 @@
       </v-card>
       <v-slider
         v-model="roundTweak"
-        class="pr-8 pl-6 pt-3 background"
+        class="pr-4 pl-4 pt-4 pb-1 background"
         :max="4"
+        label="Radius"
         step=".25"
         thumb-size="64"
         :class="
           roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
         "
         :style="{
-          borderRadius: `${roundTweak / 6}rem`,
+          borderRadius: `${roundTweak / 12}rem`,
         }"
         @input="$vuetube.haptics.hapticsImpactLight(0)"
       >

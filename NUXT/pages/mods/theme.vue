@@ -123,7 +123,7 @@
       <v-divider v-if="!$store.state.tweaks.roundTweak" />
       <v-card
         flat
-        class="d-flex flex-row justify-between mx-8 mb-8 px-4 background"
+        class="d-flex flex-row justify-between mx-8 mb-8 px-4 py-3 background"
         :class="
           $store.state.tweaks.roundTweak > 0
             ? $vuetify.theme.dark
@@ -155,6 +155,7 @@
         <v-switch
           v-model="$vuetify.theme.dark"
           style="pointer-events: none"
+          class="mt-2"
           persistent-hint
           inset
         />

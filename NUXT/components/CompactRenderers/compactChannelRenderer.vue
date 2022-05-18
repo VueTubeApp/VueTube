@@ -17,12 +17,12 @@
     }"
     @click="$store.dispatch('channel/fetchChannel', video.channelId)"
   >
-    <div id="details">
+    <div id="details" class="pa-4">
       <a
         :href="
           this.$rendererUtils.getNavigationEndpoints(video.navigationEndpoint)
         "
-        class="avatar-link pt-2"
+        class="avatar-link"
       >
         <v-img
           class="avatar-thumbnail"
@@ -32,7 +32,7 @@
           "
         />
       </a>
-      <v-card-text class="video-info pt-2 pb-0" v-emoji>
+      <v-card-text class="video-info py-0" v-emoji>
         <div
           v-for="title in video.title.runs"
           :key="title.text"
@@ -89,7 +89,6 @@ export default {
 }
 
 .avatar-thumbnail {
-  margin-left: 0.5rem;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -99,7 +98,6 @@ export default {
   display: flex;
   flex-direction: row;
   flex-basis: auto;
-  padding: 10px;
 }
 
 @media screen and (orientation: landscape) {
