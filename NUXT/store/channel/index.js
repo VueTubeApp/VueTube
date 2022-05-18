@@ -9,7 +9,7 @@ const getDefaultState = () => {
     subscribeAlt: null,
     descriptionPreview: null,
     subscribers: null,
-    videos: null,
+    videosCount: null,
   };
 };
 export const state = () => {
@@ -19,13 +19,13 @@ export const actions = {
   fetchChannel({ state }, channelUrl) {
     Object.assign(state, getDefaultState());
     state.loading = true;
+    const channelRequest = channelUrl.includes("/c/")
+      ? `https://youtube.com/${channelUrl}`
+      : `https://youtube.com/channel/${channelUrl}`;
     this.$youtube
-      .getChannel(
-        `https://youtube.com/channel/${channelUrl.substring(
-          channelUrl.lastIndexOf("/") + 1
-        )}`
-      )
+      .getChannel(channelRequest)
       .then((channel) => {
+        console.log(channel);
         state.loading = false;
         state.banner =
           channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelBanner?.image.sources[0].url;
@@ -41,7 +41,7 @@ export const actions = {
           channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelProfile.descriptionPreview.description;
         state.subscribers =
           channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelProfile.metadata.subscriberCountText;
-        state.videos =
+        state.videosCount =
           channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelProfile.metadata.videosCountText;
       })
       .catch((err) => {

@@ -33,7 +33,7 @@
       class="mt-2"
     >
       {{ $store.state.channel.subscribers }} &middot;
-      {{ $store.state.channel.videos }}
+      {{ $store.state.channel.videosCount }}
     </div>
     <v-card
       v-if="!$store.state.channel.loading"
