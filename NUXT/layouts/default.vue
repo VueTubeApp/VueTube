@@ -269,7 +269,7 @@ export default {
 html,
 body {
   background: var(--v-background-base);
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 p,
