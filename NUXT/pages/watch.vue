@@ -184,7 +184,8 @@
 
       <v-divider
         v-if="
-          !$store.state.tweaks.roundTweak || !$store.state.tweaks.roundWatch
+          showMore &&
+          (!$store.state.tweaks.roundTweak || !$store.state.tweaks.roundWatch)
         "
       />
 
