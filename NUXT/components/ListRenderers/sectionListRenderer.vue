@@ -6,8 +6,8 @@
       class="pa-0 min-height-0"
     >
       <component
-        v-if="getComponents()[Object.keys(renderer)[0]]"
         :is="Object.keys(renderer)[0]"
+        v-if="getComponents()[Object.keys(renderer)[0]]"
         :key="index"
         :render="renderer[Object.keys(renderer)[0]]"
       ></component>

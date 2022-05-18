@@ -3,6 +3,18 @@
     flat
     to="/channel"
     class="entry gridVideoRenderer background"
+    :class="
+      roundThumb && roundTweak > 0
+        ? $vuetify.theme.dark
+          ? 'background lighten-1'
+          : 'background darken-1'
+        : ''
+    "
+    :style="{
+      borderRadius: roundThumb ? `${roundTweak / 2}rem` : '0',
+      margin:
+        roundThumb && roundTweak > 0 ? '0 1rem 1rem 1rem' : '0 0 0.25rem 0',
+    }"
     @click="$store.dispatch('channel/fetchChannel', video.channelId)"
   >
     <div id="details">
@@ -20,7 +32,7 @@
           "
         />
       </a>
-      <v-card-text class="video-info pt-2" v-emoji>
+      <v-card-text class="video-info pt-2 pb-0" v-emoji>
         <div
           v-for="title in video.title.runs"
           :key="title.text"
@@ -43,6 +55,14 @@
 <script>
 export default {
   props: ["video"],
+  computed: {
+    roundTweak() {
+      return this.$store.state.tweaks.roundTweak;
+    },
+    roundThumb() {
+      return this.$store.state.tweaks.roundThumb;
+    },
+  },
   methods: {
     parseBottom(video) {
       const bottomText = [
@@ -69,7 +89,6 @@ export default {
 }
 
 .avatar-thumbnail {
-  margin-top: 0.5rem;
   margin-left: 0.5rem;
   border-radius: 50%;
   width: 50px;

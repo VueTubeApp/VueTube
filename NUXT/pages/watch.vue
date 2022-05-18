@@ -379,7 +379,6 @@ export default {
       // using item.action in the v-for loop
       this[name]();
     },
-    dislike() {},
     async share() {
       // this.share = !this.share;
       await Share.share({
@@ -431,7 +430,8 @@ export default {
           {
             name: "Likes",
             icon: "mdi-thumb-up-outline",
-            // action: null,
+            // action: this.like(),
+            actionName: "like",
             value: this.likes,
             disabled: true,
           },

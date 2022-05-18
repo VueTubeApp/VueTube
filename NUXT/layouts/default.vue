@@ -69,7 +69,7 @@
                 tile
                 dense
                 class="searchButton text-left text-none"
-                @click="youtubeSearch(item[1])"
+                @click="youtubeSearch(item)"
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
                 {{ item[0] }}
@@ -170,10 +170,7 @@ export default {
       if (isLink) {
         this.response = [
           `Watch Video from ID: ${isLink.searchParams.get("v")}`,
-          {
-            text: `Watch Video from ID: ${isLink.searchParams.get("v")}`,
-            id: isLink.searchParams.get("v"),
-          },
+          { id: isLink.searchParams.get("v") },
         ];
         return;
       }
@@ -181,7 +178,9 @@ export default {
     },
 
     youtubeSearch(item) {
-      const link = item.id ? `/watch?v=${item.id}` : `/search?q=${item[0]}`;
+      const link = item[1].id
+        ? `/watch?v=${item[1].id}` // link pasted
+        : `/search?q=${item[0]}`; // regular suggestion
       this.$router.push(link);
       this.search = false;
     },

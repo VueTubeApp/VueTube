@@ -9,10 +9,10 @@ export const mutations = {
     // currently called on mounted() in pages/index.vue
     if (process.client) {
       state.roundTweak = localStorage.getItem("roundTweak") || 0;
-      state.roundThumb = localStorage.getItem("roundThumb");
-      state.roundWatch = localStorage.getItem("roundWatch");
-      console.log(state.roundThumb);
-      console.log(state.roundWatch);
+      state.roundThumb =
+        JSON.parse(localStorage.getItem("roundThumb")) === true;
+      state.roundWatch =
+        JSON.parse(localStorage.getItem("roundWatch")) === true;
     }
   },
   setRoundTweak(state, payload) {
