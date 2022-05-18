@@ -269,6 +269,7 @@ export default {
 html,
 body {
   background: var(--v-background-base);
+  -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
 }
 
