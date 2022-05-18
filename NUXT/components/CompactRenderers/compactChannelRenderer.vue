@@ -36,8 +36,7 @@
         <div
           v-for="title in video.title.runs"
           :key="title.text"
-          style="margin-top: 0.5em"
-          class="vid-title"
+          class="vid-title mt-1"
         >
           {{ title.text }}
         </div>
