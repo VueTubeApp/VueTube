@@ -11,6 +11,7 @@ const getDefaultState = () => {
     subscribers: null,
     videosCount: null,
     featuredChannels: null,
+    videoExample: null,
   };
 };
 export const state = () => {
@@ -55,6 +56,14 @@ export const actions = {
           );
         state.featuredChannels =
           featuredSection.shelfRenderer.content.horizontalListRenderer.items;
+        console.log(
+          channel.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer
+            .content.sectionListRenderer.contents[0].shelfRenderer.content
+            .verticalListRenderer.items[0].elementRenderer.newElement.type
+            .componentType.model
+        );
+        state.videoExample =
+          channel.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.verticalListRenderer.items[0].elementRenderer.newElement.type.componentType.model.videoWithContextModel.videoWithContextData.videoData;
       })
       .catch((err) => {
         state.loading = false;

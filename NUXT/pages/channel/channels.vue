@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-4">
+  <div>
     <v-list-item
       v-for="(channel, index) in $store.state.channel.featuredChannels"
       :key="index"
