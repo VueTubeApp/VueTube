@@ -41,11 +41,6 @@
           @click.prevent=""
         >
           <v-icon>mdi-share-outline</v-icon>
-          <div
-            class="mt-2"
-            style="font-size: 0.66rem"
-            v-text="item.value || item.name"
-          />
         </v-btn>
       </div>
       <p class="px-4">Blurb Blurb Text Goes Here ...</p>

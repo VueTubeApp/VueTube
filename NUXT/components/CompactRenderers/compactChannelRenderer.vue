@@ -47,6 +47,15 @@
           v-text="parseBottom(video)"
         />
       </v-card-text>
+      <v-btn
+        fab
+        text
+        elevation="0"
+        style="width: 50px !important; height: 50px !important"
+        @click.prevent=""
+      >
+        <v-icon>mdi-share-outline</v-icon>
+      </v-btn>
     </div>
   </v-card>
 </template>
