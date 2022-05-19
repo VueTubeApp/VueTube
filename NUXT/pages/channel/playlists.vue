@@ -3,7 +3,7 @@
     <!-- TODO: make this a playlist-card-renderer -->
     <v-card
       v-ripple
-      class="background d-flex flex-row overflow-hidden ma-4"
+      class="background d-flex flex-row overflow-hidden mb-4 mx-4"
       :class="
         $store.state.tweaks.roundThumb && $store.state.tweaks.roundTweak > 0
           ? $vuetify.theme.dark
@@ -38,7 +38,7 @@
             right: 0;
             width: 40%;
             height: 100%;
-            opacity: 0.25;
+            opacity: 0.5;
           "
         >
           <div>420</div>
