@@ -33,17 +33,17 @@
             69 years ago
           </div>
         </div>
+        <v-spacer />
         <v-btn
           fab
           text
           elevation="0"
           style="width: 50px !important; height: 50px !important"
-          @click.prevent=""
         >
           <v-icon>mdi-share-outline</v-icon>
         </v-btn>
       </div>
-      <p class="px-4">Blurb Blurb Text Goes Here ...</p>
+      <p class="px-4" v-emoji>Blurb Blurb Text Goes Here ...</p>
       <v-img
         contain
         class="background my-4"

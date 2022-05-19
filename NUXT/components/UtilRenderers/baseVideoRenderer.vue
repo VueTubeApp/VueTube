@@ -33,7 +33,13 @@
       />
     </div>
     <div id="details">
-      <a href="/channel" class="avatar-link pl-2 pt-2">
+      <a
+        @click.prevent="
+          $store.dispatch('channel/fetchChannel', channelUrl),
+            $router.push('/channel')
+        "
+        class="avatar-link pl-2 pt-2"
+      >
         <v-img class="avatar-thumbnail" :src="channelIcon" />
       </a>
       <v-card-text class="video-info pt-2" v-emoji>

@@ -18,20 +18,10 @@
       <v-progress-circular v-else indeterminate color="primary" size="60" />
     </v-avatar>
     <h2 class="mt-2">{{ $store.state.channel.title }}</h2>
-    <v-btn
-      :aria-label="subscribeAlt"
-      class="mt-2"
-      text
-      color="primary"
-      style="height: 1rem"
-    >
+    <v-btn :aria-label="subscribeAlt" class="py-2" text color="primary">
       {{ $store.state.channel.subscribe }}
     </v-btn>
-    <div
-      v-if="!$store.state.channel.loading"
-      style="font-size: 0.75rem"
-      class="mt-2"
-    >
+    <div v-if="!$store.state.channel.loading" style="font-size: 0.75rem">
       {{ $store.state.channel.subscribers }} &middot;
       {{ $store.state.channel.videosCount }}
     </div>
@@ -39,12 +29,7 @@
       v-if="!$store.state.channel.loading"
       flat
       to="/channel/about"
-      style="
-        font-size: 0.75rem;
-        height: 2rem;
-        text-oveflow: ellipsis;
-        overflow: hidden;
-      "
+      style="font-size: 0.75rem; text-oveflow: ellipsis; overflow: hidden"
       class="background background--text text-center px-4"
       :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
     >

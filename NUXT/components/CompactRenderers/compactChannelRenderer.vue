@@ -51,8 +51,7 @@
         fab
         text
         elevation="0"
-        style="width: 50px !important; height: 50px !important"
-        @click.prevent=""
+        style="width: 50px !important; height: 50px !important; z-index: 420"
       >
         <v-icon>mdi-share-outline</v-icon>
       </v-btn>

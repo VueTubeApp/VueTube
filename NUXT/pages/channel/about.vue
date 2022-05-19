@@ -1,5 +1,5 @@
 <template>
-  <div class="pa-8">
+  <div class="px-6 py-3">
     <h3 class="my-2">Description</h3>
     <p>{{ $store.state.channel.descriptionPreview }}</p>
     <br />
