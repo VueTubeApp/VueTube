@@ -20,9 +20,11 @@ export const actions = {
   fetchChannel({ state }, channelUrl) {
     Object.assign(state, getDefaultState());
     state.loading = true;
-    const channelRequest = channelUrl.includes("/c/")
-      ? `https://youtube.com/${channelUrl}`
-      : `https://youtube.com/channel/${channelUrl}`;
+    console.log(channelUrl);
+    const channelRequest =
+      channelUrl.includes("/c/") || channelUrl.includes("/channel/")
+        ? `https://youtube.com/${channelUrl}`
+        : `https://youtube.com/channel/${channelUrl}`;
     this.$youtube
       .getChannel(channelRequest)
       .then((channel) => {
@@ -51,12 +53,8 @@ export const actions = {
                 ?.items[0].gridChannelRenderer;
             }
           );
-        console.log("CHANNEL INDEX");
-        console.log(featuredSection);
         state.featuredChannels =
           featuredSection.shelfRenderer.content.horizontalListRenderer.items;
-        console.log("ITEMS ITEMS");
-        console.log(state.featuredChannels);
       })
       .catch((err) => {
         state.loading = false;
