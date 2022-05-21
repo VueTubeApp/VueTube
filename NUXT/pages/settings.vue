@@ -25,20 +25,42 @@
         {{ item.name }}
       </v-btn>
     </v-list-item>
-
-    <!--   Dev Mode Open   -->
-    <v-btn text class="entry" @click="dev()" v-if="!devmode" />
-
-    <v-btn
-      text
-      class="entry text-left text-capitalize"
-      style="margin: 0 0.75em 0 0.75em"
-      to="/mods/developer"
-      v-if="devmode"
+    <v-list-item
+      :style="{
+        padding:
+          $store.state.tweaks.roundTweak > 0
+            ? '0 1rem !important'
+            : '0rem !important',
+      }"
     >
-      <v-icon size="30px" class="icon">mdi-database-edit</v-icon>
-      {{ devmodebuttonname }}
-    </v-btn>
+      <!--   Dev Mode Open   -->
+      <v-btn
+        v-if="!devmode"
+        text
+        class="entry"
+        :style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
+          paddingLeft:
+            $store.state.tweaks.roundTweak > 0 ? '' : '1.5rem !important',
+        }"
+        @click="dev()"
+      />
+
+      <v-btn
+        v-if="devmode"
+        text
+        class="entry text-left text-capitalize"
+        to="/mods/developer"
+        :style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
+          paddingLeft:
+            $store.state.tweaks.roundTweak > 0 ? '' : '1.5rem !important',
+        }"
+      >
+        <v-icon size="30px" class="icon">mdi-database-edit</v-icon>
+        {{ devmodebuttonname }}
+      </v-btn>
+    </v-list-item>
     <!--   End Dev Mode   -->
   </div>
 </template>

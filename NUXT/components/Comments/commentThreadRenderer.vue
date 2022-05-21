@@ -5,13 +5,18 @@
     class="comment-thread px-3"
     @click="$emit('showReplies', comment)"
   >
-    <a
-      :href="
-        this.$rendererUtils.getNavigationEndpoints(
-          commentRenderer.authorEndpoint
+    <v-btn
+      fab
+      text
+      to="/channel"
+      class="avatar-link mr-4"
+      style="height: 3rem; width: 3rem"
+      @click.prevent="
+        $store.dispatch(
+          'channel/fetchChannel',
+          $rendererUtils.getNavigationEndpoints(commentRenderer.authorEndpoint)
         )
       "
-      class="avatar-link pr-2"
     >
       <v-img
         class="avatar-thumbnail"
@@ -21,21 +26,25 @@
           ].url
         "
       />
-    </a>
+    </v-btn>
     <div class="comment-content">
-      <div class="comment-content--header subtitle-2 mb-2">
+      <div
+        class="comment-content--header background--text"
+        :class="$vuetify.theme.dark ? 'text--lighten-5' : 'text--darken-4'"
+        style="font-size: 0.8rem !important"
+      >
         <div
-          class="author-badge-name mr-1"
+          class="author-badge-name mr-2"
           :class="
             commentRenderer.authorIsChannelOwner
               ? $vuetify.theme.dark
-                ? 'owner background lighten-2'
-                : 'owner background darken-2'
+                ? 'owner primary--text background lighten-2'
+                : 'owner primary--text background darken-2'
               : ''
           "
         >
           <div class="author-name--wrapper">
-            <span class="font-weight-bold author-name mr-1" v-emoji>
+            <span class="author-name mr-1" v-emoji>
               {{ commentRenderer.authorText.simpleText }}
             </span>
           </div>
@@ -50,23 +59,24 @@
             <sponsor-comment-badge-renderer :metadata="badge" :key="index" />
           </template>
         </div>
-        <span
-          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-          class="background--text comment-timestamp ml-2"
-        >
+        &middot;
+        <span class="comment-timestamp ml-2">
           {{ commentRenderer.publishedTimeText.runs[0].text }}
         </span>
       </div>
       <collapsable-text
         :lines="3"
-        :expandText="
+        :expand-text="
           commentRenderer.expandButton.buttonRenderer.text.runs[0].text
         "
-        :collapseText="
+        :collapse-text="
           commentRenderer.collapseButton.buttonRenderer.text.runs[0].text
         "
       >
-        <yt-text-formatter :textRuns="commentRenderer.contentText.runs">
+        <yt-text-formatter
+          style="font-size: 0.9rem"
+          :text-runs="commentRenderer.contentText.runs"
+        >
         </yt-text-formatter>
       </collapsable-text>
       <div class="toolbar mt-2">
@@ -75,17 +85,17 @@
             <v-icon small>mdi-thumb-up-outline</v-icon>
             <span
               v-if="commentRenderer.voteCount"
-              v-text="commentRenderer.voteCount.simpleText"
               class="like-count caption"
+              v-text="commentRenderer.voteCount.simpleText"
             ></span>
             <v-icon class="ml-2" small>mdi-thumb-down-outline</v-icon>
           </div>
         </v-btn-toggle>
-        <div class="toolbar--item ml-2" v-if="commentRenderer.replyCount">
+        <div class="toolbar--item ml-6" v-if="commentRenderer.replyCount">
           <v-icon small>mdi-comment-outline</v-icon>
           <span
-            v-text="commentRenderer.replyCount"
             class="like-count caption"
+            v-text="commentRenderer.replyCount"
           ></span>
         </div>
       </div>
@@ -106,7 +116,6 @@
   padding: 10px 0;
 
   .avatar-thumbnail {
-    margin-right: 0.5rem;
     border-radius: 50%;
     width: 48px;
     height: 48px;
@@ -152,6 +161,7 @@
 .owner {
   border-radius: 1em;
   padding: 0 0.3em 0 0.6em;
+  font-weight: bold;
 }
 
 .toolbar--button::v-deep.v-btn--active .v-btn__content {

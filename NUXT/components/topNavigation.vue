@@ -23,13 +23,13 @@
       solo
       dense
       flat
+      autofocus
       label="Search"
       style="margin-top: 7px"
       :background-color="
         $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
       "
       @input="$emit('text-changed', text)"
-      @
       @keyup.enter="$emit('search-btn', text)"
     />
 

@@ -23,7 +23,9 @@ export const actions = {
     state.loading = true;
     console.log(channelUrl);
     const channelRequest =
-      channelUrl.includes("/c/") || channelUrl.includes("/channel/")
+      channelUrl.includes("/c/") ||
+      channelUrl.includes("/user/") ||
+      channelUrl.includes("/channel/")
         ? `https://youtube.com/${channelUrl}`
         : `https://youtube.com/channel/${channelUrl}`;
     this.$youtube

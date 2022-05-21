@@ -149,7 +149,7 @@ const module = {
     }
     while (returntext.startsWith(":00")) { returntext = returntext.substring(3); } // Remove Prepending 0s (eg. 00:00:00:01:00)
     if (returntext.startsWith(":0")) { returntext = returntext.substring(2); } else { returntext = returntext.substring(1); } // Prevent Time Starting With 0 (eg. 01:00)
-    console.log("Human Time:", returntext);
+    // console.log("Human Time:", returntext);
     return returntext;
   },
   //---   End Convert Time To Human Readable String   ---//

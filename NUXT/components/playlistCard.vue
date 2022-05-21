@@ -2,6 +2,7 @@
   <v-card
     v-ripple
     class="background d-flex flex-row overflow-hidden mb-4 mx-4"
+    style="height: 6rem !important"
     :class="
       $store.state.tweaks.roundThumb && $store.state.tweaks.roundTweak > 0
         ? $vuetify.theme.dark
@@ -21,7 +22,7 @@
       src="/dev.svg"
       class="background"
       style="position: relative; max-width: 8rem !important"
-      :class="$vuetify.theme.dark ? 'lighten-2' : 'darken-2'"
+      :class="$vuetify.theme.dark ? 'lighten-3' : 'darken-3'"
       :style="{
         borderRadius: $store.state.tweaks.roundThumb
           ? `${$store.state.tweaks.roundTweak / 4}rem`
@@ -43,11 +44,11 @@
         <v-icon>mdi-playlist-play</v-icon>
       </div>
     </v-img>
-    <div class="pa-4" v-emoji>
+    <div class="pa-4" v-emoji style="font-size: 0.75rem !important">
       <b>Work in Progress</b>
 
       <div
-        class="background--text caption"
+        class="background--text caption mt-2"
         :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
       >
         Bottom Text <br />
@@ -60,17 +61,19 @@
         text
         tile
         elevation="0"
-        style="width: 50px !important; height: 50px !important"
+        class="flex-grow-1"
+        style="width: 2rem !important"
       >
-        <v-icon>mdi-share-outline</v-icon>
+        <v-icon>mdi-playlist-plus</v-icon>
       </v-btn>
       <v-btn
         text
         tile
         elevation="0"
-        style="width: 50px !important; height: 50px !important"
+        class="flex-grow-1"
+        style="width: 2rem !important"
       >
-        <v-icon>mdi-plus-box-multiple-outline</v-icon>
+        <v-icon>mdi-share-outline</v-icon>
       </v-btn>
     </div>
   </v-card>

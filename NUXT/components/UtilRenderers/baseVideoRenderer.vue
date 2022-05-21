@@ -53,8 +53,8 @@
         </span>
 
         <div
-          class="background--text text--lighten-5 caption"
-          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+          class="background--text caption"
+          :class="$vuetify.theme.dark ? 'text--lighten-5' : 'text--darken-4'"
           v-text="bottomText"
         />
       </v-card-text>

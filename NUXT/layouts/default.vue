@@ -237,6 +237,9 @@ export default {
 .v-input__slot {
   margin: 0 !important;
 }
+.v-slider {
+  margin: 0 !important;
+}
 
 .border-primary {
   border: 2px solid var(--v-primary-base) !important;
@@ -244,6 +247,9 @@ export default {
 .glassy {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+}
+.debug {
+  outline: 1px solid red;
 }
 
 .v-card--reveal {

@@ -1,13 +1,10 @@
 <template>
   <div class="background" id="watch-body">
     <div id="player-container">
-      <v-btn text style="position: fixed; z-index: 69420" to="home">
-        <v-icon>mdi-chevron-down</v-icon>
-      </v-btn>
       <!--   VueTube Player V1   -->
       <vuetubePlayer
-        :sources="sources"
         v-if="useBetaPlayer === 'true' && sources.length > 0"
+        :sources="sources"
       />
 
       <!--   Stock Player   -->
@@ -16,14 +13,7 @@
         id="player"
         ref="player"
         v-touch="{ down: () => $router.push('/home') }"
-        class="background"
         :vid-src="vidSrc"
-        style="overflow: hidden !important"
-        :style="{
-          borderRadius: $store.state.tweaks.roundWatch
-            ? `${$store.state.tweaks.roundTweak / 4}rem`
-            : '0',
-        }"
       />
     </div>
 
@@ -67,7 +57,7 @@
           <v-icon class="ml-4" v-if="showMore">mdi-chevron-up</v-icon>
           <v-icon class="ml-4" v-else>mdi-chevron-down</v-icon>
         </div>
-        <div class="d-flex pl-4">
+        <div class="d-flex pl-2">
           <v-btn
             v-for="(item, index) in interactions"
             :key="index"
@@ -453,10 +443,21 @@ export default {
           },
           {
             name: "Save",
-            // icon: "mdi-playlist-plus",
             icon: "mdi-plus-box-multiple-outline",
             actionName: "enqueue",
             disabled: true,
+          },
+          {
+            name: "Quality",
+            icon: "mdi-high-definition",
+            actionName: "quality",
+            disabled: false,
+          },
+          {
+            name: "Speed",
+            icon: "mdi-speedometer",
+            actionName: "speed",
+            disabled: false,
           },
         ],
         showMore: false,
