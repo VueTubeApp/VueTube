@@ -1,17 +1,19 @@
 <template>
-  <div class="pb-2" style="position: relative">
+  <div
+    style="position: relative"
+    class="overflow-hidden"
+    :style="{
+      borderRadius: $store.state.tweaks.roundWatch
+        ? `${$store.state.tweaks.roundTweak / 3}rem`
+        : '0',
+    }"
+  >
     <video
       ref="player"
       autoplay
       controls
       width="100%"
       :src="vidSrc"
-      style="outline: 1px solid red"
-      :style="{
-        borderRadius: $store.state.tweaks.roundWatch
-          ? `${$store.state.tweaks.roundTweak}rem`
-          : '0',
-      }"
       @webkitfullscreenchange="handleFullscreenChange"
     />
 
@@ -121,7 +123,7 @@
 -->
     <v-progress-linear
       active
-      style="position: absolute; bottom: 0.75rem; left: 0; width: 100%"
+      style="position: absolute; bottom: 0rem; left: 0; width: 100%"
       background-color="primary"
       background-opacity="0.5"
       :buffer-value="buffered"
