@@ -1,7 +1,7 @@
 <template>
   <div
+    class="d-flex flex-column"
     style="position: relative"
-    class="overflow-hidden"
     :style="{
       borderRadius: $store.state.tweaks.roundWatch
         ? `${$store.state.tweaks.roundTweak / 3}rem`
@@ -10,23 +10,30 @@
   >
     <video
       ref="player"
-      autoplay
       controls
+      autoplay
       width="100%"
       :src="vidSrc"
       @webkitfullscreenchange="handleFullscreenChange"
     />
-
-    <!-- <div
-      v-if="$refs.player"
-      class="background overflow-hidden"
-      :style="{
-        borderRadius: $store.state.tweaks.roundWatch
-          ? `${$store.state.tweaks.roundTweak}rem !important`
-          : '0',
-      }"
-      style="width: 100%; position: relative; height: 100%"
-    > -->
+    <video
+      ref="playerfake"
+      autoplay
+      volume="0"
+      style="display: none"
+      :src="vidSrc"
+    />
+    <v-progress-linear
+      query
+      active
+      style="width: 100%"
+      background-color="primary"
+      background-opacity="0.5"
+      :buffer-value="buffered"
+      :value="percent"
+      color="primary"
+      height="4"
+    />
 
     <!-- <v-btn
       text
@@ -63,9 +70,9 @@
       to="home"
     >
       <v-icon>mdi-close</v-icon>
-    </v-btn>
+    </v-btn> -->
 
-    <v-btn
+    <!-- <v-btn
       v-if="$refs.player"
       fab
       text
@@ -85,9 +92,9 @@
         size="5rem"
         v-text="$refs.player.paused ? 'mdi-play' : 'mdi-pause'"
       />
-    </v-btn>
+    </v-btn> -->
 
-    <div
+    <!-- <div
       v-if="$vuetify"
       class="debug px-4 rounded-xl"
       style="position: absolute; bottom: 2rem; left: 1rem"
@@ -119,25 +126,40 @@
       "
     >
       1X
-    </v-btn>
--->
-    <v-progress-linear
-      active
-      style="position: absolute; bottom: 0rem; left: 0; width: 100%"
-      background-color="primary"
-      background-opacity="0.5"
-      :buffer-value="buffered"
-      color="primary"
-      height="3"
-      query
-      :value="percent"
-    />
-    <!-- </div> -->
-    <!-- <v-slider
-      style="position: absolute; bottom: -1rem; left: 0; width: 100%"
+    </v-btn> -->
+    <v-slider
+      v-if="$refs.player"
+      dense
+      height="4"
+      hide-details
+      style="
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 69420;
+      "
       :value="progress"
       :max="duration"
-    /> -->
+      @start="scrubbing = true"
+      @end="scrubbing = false"
+      @input="seek($event)"
+      @change="scrub($event)"
+    >
+      <template #thumb-label="{ value }">
+        <canvas
+          ref="preview"
+          class="rounded-lg mb-8"
+          style="
+            border: 4px solid var(--v-primary-base);
+            margin-top: -20px !important;
+            top: -20px !important;
+          "
+          :width="$refs.player.clientWidth / 4"
+          :height="$refs.player.clientHeight / 4"
+        ></canvas>
+      </template>
+    </v-slider>
   </div>
 </template>
 
@@ -146,6 +168,7 @@ export default {
   props: ["vidSrc"],
   data() {
     return {
+      scrubbing: false,
       percent: 0,
       progress: 0,
       buffered: 0,
@@ -157,22 +180,44 @@ export default {
   mounted() {
     let vid = this.$refs.player;
     vid.addEventListener("loadeddata", (e) => {
+      console.log("%c loadeddata", "color: #00ff00");
+      console.log(e);
       //Video should now be loaded but we can add a second check
       if (vid.readyState >= 3) {
         vid.ontimeupdate = () => {
+          console.log("%c timeupdate", "color: #aaaaff");
           this.duration = vid.duration;
-          this.progress = vid.currentTime;
+          if (!this.scrubbing) this.progress = vid.currentTime;
           this.percent = (vid.currentTime / vid.duration) * 100;
           this.watched = this.$vuetube.humanTime(vid.currentTime);
           this.total = this.$vuetube.humanTime(vid.duration);
         };
-        vid.addEventListener("progress", () => {
+        vid.onprogress = () => {
+          console.log("%c progress", "color: #ff00ff");
           this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
-        });
+        };
       }
     });
   },
   methods: {
+    seek(e) {
+      console.log(`scrubbing ${e}`);
+      let vid = this.$refs.playerfake;
+      let canvas = this.$refs.preview;
+      this.$refs.playerfake.currentTime = e;
+      canvas
+        .getContext("2d")
+        .drawImage(
+          vid,
+          0,
+          0,
+          this.$refs.player.clientWidth / 4,
+          this.$refs.player.clientHeight / 4
+        );
+    },
+    scrub(e) {
+      this.$refs.player.currentTime = e;
+    },
     handleFullscreenChange() {
       if (document.fullscreenElement === this.$refs.player) {
         this.$vuetube.statusBar.hide();
