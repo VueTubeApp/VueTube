@@ -199,6 +199,46 @@ export default {
       }
     });
   },
+  // TODO: screenshot-based faster dynamic thumbnail preview
+  //   var video = document.getElementById("thumb");
+  // video.addEventListener("loadedmetadata", initScreenshot);
+  // video.addEventListener("playing", startScreenshot);
+  // video.addEventListener("pause", stopScreenshot);
+  // video.addEventListener("ended", stopScreenshot);
+
+  // var canvas = document.getElementById("canvas");
+  // var ctx = canvas.getContext("2d");
+  // var ssContainer = document.getElementById("screenShots");
+  // var videoHeight, videoWidth;
+  // var drawTimer = null;
+
+  // function initScreenshot() {
+  //   videoHeight = video.videoHeight;
+  //   videoWidth = video.videoWidth;
+  //   canvas.width = videoWidth;
+  //   canvas.height = videoHeight;
+  // }
+
+  // function startScreenshot() {
+  //   if (drawTimer == null) {
+  //     drawTimer = setInterval(grabScreenshot, 1000);
+  //   }
+  // }
+
+  // function stopScreenshot() {
+  //   if (drawTimer) {
+  //     clearInterval(drawTimer);
+  //     drawTimer = null;
+  //   }
+  // }
+
+  // function grabScreenshot() {
+  //   ctx.drawImage(video, 0, 0, videoWidth, videoHeight);
+  //   var img = new Image();
+  //   img.src = canvas.toDataURL("image/png");
+  //   img.width = 120;
+  //   ssContainer.appendChild(img);
+  // }
   methods: {
     seek(e) {
       console.log(`scrubbing ${e}`);
