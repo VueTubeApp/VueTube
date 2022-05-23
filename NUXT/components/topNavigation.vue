@@ -1,5 +1,7 @@
 <template>
   <v-card style="display: flex" class="rounded-0 pa-3 topNav background">
+    <!-- opacity with vue 😉 -->
+    <!-- :style="{ background: $vuetify.theme.currentTheme.primary + '55' }" -->
     <h3
       v-show="!search"
       class="my-auto ml-4"
@@ -112,7 +114,9 @@ export default {
 
 <style scoped>
 .topNav {
-  /* box-shadow: inset 0 1rem 10rem var(--v-background-base) !important; */
+  /* opacity with hex, wow 😉 */
+  /* background: linear-gradient(var(--v-background-base) -1000%, #00000000 1000%); */
+  /* box-shadow: inset 0 0 5rem var(--v-background-base) !important; */
   height: calc(4rem + env(safe-area-inset-top)) !important;
   padding-top: env(safe-area-inset-top) !important;
   box-shadow: none !important;

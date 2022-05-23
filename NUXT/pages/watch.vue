@@ -57,7 +57,7 @@
           <v-icon class="ml-4" v-if="showMore">mdi-chevron-up</v-icon>
           <v-icon class="ml-4" v-else>mdi-chevron-down</v-icon>
         </div>
-        <div class="d-flex pl-2">
+        <div class="d-flex pl-6">
           <v-btn
             v-for="(item, index) in interactions"
             :key="index"

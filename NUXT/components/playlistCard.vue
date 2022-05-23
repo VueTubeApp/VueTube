@@ -25,19 +25,19 @@
       :class="$vuetify.theme.dark ? 'lighten-3' : 'darken-3'"
       :style="{
         borderRadius: $store.state.tweaks.roundThumb
-          ? `${$store.state.tweaks.roundTweak / 4}rem`
+          ? `${$store.state.tweaks.roundTweak / 2}rem`
           : '0',
       }"
     >
       <div
-        class="background d-flex flex-column justify-center align-center"
+        class="d-flex flex-column justify-center align-center"
         style="
           position: absolute;
           top: 0;
           right: 0;
-          width: 40%;
+          width: 50%;
           height: 100%;
-          opacity: 0.5;
+          background: linear-gradient(var(--v-background-base) -1000%, #00000000 1000%);
         "
       >
         <div>420</div>
@@ -64,7 +64,7 @@
         class="flex-grow-1"
         style="width: 2rem !important"
       >
-        <v-icon>mdi-playlist-plus</v-icon>
+        <v-icon>mdi-share-outline</v-icon>
       </v-btn>
       <v-btn
         text
@@ -73,7 +73,7 @@
         class="flex-grow-1"
         style="width: 2rem !important"
       >
-        <v-icon>mdi-share-outline</v-icon>
+        <v-icon>mdi-playlist-plus</v-icon>
       </v-btn>
     </div>
   </v-card>

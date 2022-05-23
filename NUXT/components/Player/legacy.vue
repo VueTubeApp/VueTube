@@ -14,6 +14,7 @@
       autoplay
       width="100%"
       :src="vidSrc"
+      style="filter: brightness(50%)"
       @webkitfullscreenchange="handleFullscreenChange"
     />
     <video
@@ -27,12 +28,12 @@
       query
       active
       style="width: 100%"
-      background-color="primary"
       background-opacity="0.5"
+      background-color="primary"
       :buffer-value="buffered"
       :value="percent"
       color="primary"
-      height="4"
+      height="2"
     />
 
     <!-- <v-btn
@@ -129,35 +130,44 @@
     </v-btn> -->
     <v-slider
       v-if="$refs.player"
-      dense
-      height="4"
       hide-details
+      height="2"
+      dense
       style="
         position: absolute;
+        z-index: 69420;
+        width: 100%;
         bottom: 0;
         left: 0;
-        width: 100%;
-        z-index: 69420;
       "
-      :value="progress"
+      :thumb-size="0"
       :max="duration"
+      :value="progress"
       @start="scrubbing = true"
       @end="scrubbing = false"
-      @input="seek($event)"
       @change="scrub($event)"
+      @input="seek($event)"
     >
+      <!-- :thumb-size="$refs.player.clientHeight / 3" -->
       <template #thumb-label="{ value }">
-        <canvas
-          ref="preview"
-          class="rounded-lg mb-8"
-          style="
-            border: 4px solid var(--v-primary-base);
-            margin-top: -20px !important;
-            top: -20px !important;
-          "
-          :width="$refs.player.clientWidth / 4"
-          :height="$refs.player.clientHeight / 4"
-        ></canvas>
+        <div style="transform: translateY(-50%)">
+          <canvas
+            ref="preview"
+            class="background"
+            :class="$vuetify.theme.dark ? 'lighten-4' : 'darken-4'"
+            :width="$refs.player.clientWidth / 3"
+            :height="$refs.player.clientHeight / 3"
+            style="border: 2px solid"
+            :style="{
+              borderRadius: $store.state.tweaks.roundWatch
+                ? `${$store.state.tweaks.roundTweak / 3}rem`
+                : '0',
+            }"
+          ></canvas>
+          <div class="text-center pb-5" style="font-size: 0.8rem">
+            <b>{{ $vuetube.humanTime(value) }}</b>
+          </div>
+        </div>
       </template>
     </v-slider>
   </div>
@@ -199,47 +209,126 @@ export default {
       }
     });
   },
-  // TODO: screenshot-based faster dynamic thumbnail preview
-  //   var video = document.getElementById("thumb");
-  // video.addEventListener("loadedmetadata", initScreenshot);
-  // video.addEventListener("playing", startScreenshot);
-  // video.addEventListener("pause", stopScreenshot);
-  // video.addEventListener("ended", stopScreenshot);
-
-  // var canvas = document.getElementById("canvas");
-  // var ctx = canvas.getContext("2d");
-  // var ssContainer = document.getElementById("screenShots");
-  // var videoHeight, videoWidth;
-  // var drawTimer = null;
-
-  // function initScreenshot() {
-  //   videoHeight = video.videoHeight;
-  //   videoWidth = video.videoWidth;
-  //   canvas.width = videoWidth;
-  //   canvas.height = videoHeight;
-  // }
-
-  // function startScreenshot() {
-  //   if (drawTimer == null) {
-  //     drawTimer = setInterval(grabScreenshot, 1000);
-  //   }
-  // }
-
-  // function stopScreenshot() {
-  //   if (drawTimer) {
-  //     clearInterval(drawTimer);
-  //     drawTimer = null;
-  //   }
-  // }
-
-  // function grabScreenshot() {
-  //   ctx.drawImage(video, 0, 0, videoWidth, videoHeight);
-  //   var img = new Image();
-  //   img.src = canvas.toDataURL("image/png");
-  //   img.width = 120;
-  //   ssContainer.appendChild(img);
-  // }
   methods: {
+    loadVideoFrames() {
+      // Exit loop if desired number of frames have been extracted
+      if (this.frames.length >= frameCount) {
+        this.visibleFrame = 0;
+
+        // Append all canvases to container div
+        this.frames.forEach((frame) => {
+          this.frameContainerElement.appendChild(frame);
+        });
+        return;
+      }
+
+      // If extraction hasn’t started, set desired time for first frame
+      if (this.frames.length === 0) {
+        this.requestedTime = 0;
+      } else {
+        this.requestedTime = this.requestedTime + this.frameTimestep;
+      }
+
+      // Send seek request to video player for the next frame.
+      this.videoElement.currentTime = this.requestedTime;
+    },
+    extractFrame(videoWidth, videoHeight) {
+      // Create DOM canvas object
+      var canvas = document.createElement("canvas");
+      canvas.className = "video-scrubber-frame";
+      canvas.height = videoHeight;
+      canvas.width = videoWidth;
+
+      // Copy current frame to canvas
+      var context = canvas.getContext("2d");
+      context.drawImage(this.videoElement, 0, 0, videoWidth, videoHeight);
+      this.frames.push(canvas);
+
+      //  Load the next frame
+      loadVideoFrames();
+    },
+    prefetch_file(url, fetched_callback, progress_callback, error_callback) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", url, true);
+      xhr.responseType = "blob";
+
+      xhr.addEventListener(
+        "load",
+        function () {
+          if (xhr.status === 200) {
+            var URL = window.URL || window.webkitURL;
+            var blob_url = URL.createObjectURL(xhr.response);
+            fetched_callback(blob_url);
+          } else {
+            error_callback();
+          }
+        },
+        false
+      );
+
+      var prev_pc = 0;
+      xhr.addEventListener("progress", function (event) {
+        if (event.lengthComputable) {
+          var pc = Math.round((event.loaded / event.total) * 100);
+          if (pc != prev_pc) {
+            prev_pc = pc;
+            progress_callback(pc);
+          }
+        }
+      });
+      xhr.send();
+    },
+    async extractFramesFromVideo(videoUrl, fps = 25) {
+      // fully download it first (no buffering):
+      console.log(videoUrl);
+      console.log(fps);
+      let videoBlob = await fetch(videoUrl, {
+        headers: { range: "bytes=0-567139" },
+      }).then((r) => r.blob());
+      console.log(videoBlob);
+      let videoObjectUrl = URL.createObjectURL(videoBlob);
+      let video = document.createElement("video");
+
+      let seekResolve;
+      video.addEventListener("seeked", async function () {
+        if (seekResolve) seekResolve();
+      });
+
+      video.src = videoObjectUrl;
+
+      // workaround chromium metadata bug (https://stackoverflow.com/q/38062864/993683)
+      while (
+        (video.duration === Infinity || isNaN(video.duration)) &&
+        video.readyState < 2
+      ) {
+        await new Promise((r) => setTimeout(r, 1000));
+        video.currentTime = 10000000 * Math.random();
+      }
+      let duration = video.duration;
+
+      let canvas = document.createElement("canvas");
+      let context = canvas.getContext("2d");
+      let [w, h] = [video.videoWidth, video.videoHeight];
+      canvas.width = w;
+      canvas.height = h;
+
+      let interval = 1;
+      let currentTime = 0;
+
+      while (currentTime < duration) {
+        video.currentTime = currentTime;
+        await new Promise((r) => (seekResolve = r));
+
+        context.drawImage(video, 0, 0, w, h);
+        let base64ImageData = canvas.toDataURL();
+        console.log(base64ImageData);
+        this.frames.push(base64ImageData);
+
+        currentTime += interval;
+      }
+      console.log("%c frames", "color: #00ff00");
+      console.log(this.frames);
+    },
     seek(e) {
       console.log(`scrubbing ${e}`);
       let vid = this.$refs.playerfake;
@@ -251,8 +340,8 @@ export default {
           vid,
           0,
           0,
-          this.$refs.player.clientWidth / 4,
-          this.$refs.player.clientHeight / 4
+          this.$refs.player.clientWidth / 3,
+          this.$refs.player.clientHeight / 3
         );
     },
     scrub(e) {
