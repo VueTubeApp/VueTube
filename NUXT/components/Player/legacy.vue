@@ -18,8 +18,8 @@
     />
     <video
       ref="playerfake"
+      muted
       autoplay
-      volume="0"
       style="display: none"
       :src="vidSrc"
     />
