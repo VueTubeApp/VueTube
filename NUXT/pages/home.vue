@@ -22,22 +22,20 @@ import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 import Observer from "~/components/observer.vue";
 export default {
   components: { horizontalListRenderer, VidLoadRenderer, Observer },
+  data: () => ({
+    loading: false,
+  }),
 
   computed: {
     recommends: {
       get() {
-        return this.$store.state.recommendedVideos;
+        return [...this.$store.state.recommendedVideos];
       },
       set(val) {
         this.$store.commit("updateRecommendedVideos", val);
       },
     },
   },
-
-  data: () => ({
-    loading: false,
-  }),
-
   methods: {
     paginate() {
       this.loading = true;

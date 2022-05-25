@@ -6,6 +6,7 @@ import constants from "./constants";
 import { hexToRgb, rgbToHex, parseEmoji } from "./utils";
 import { Haptics, ImpactStyle } from "@capacitor/haptics";
 import Vue from "vue";
+import backHandler from "./classes/backHander";
 
 Vue.directive("emoji", {
   inserted: function (el) {
@@ -13,6 +14,8 @@ Vue.directive("emoji", {
     if (twemojiParse) el.innerHTML = twemojiParse;
   },
 });
+
+let backActions;
 
 const module = {
   //---   Get GitHub Commits   ---//
@@ -110,9 +113,25 @@ const module = {
     return rgbToHex(r, g, b);
   },
 
+  async launchBackHandling() {
+    backActions = new backHandler();
+    return true;
+  },
+
+  resetBackActions() {
+    backActions.reset();
+  },
+
+  addBackAction(action) {
+    backActions.addAction(action);
+  },
+
+  back(listenerFunc) {
+    backActions.back(listenerFunc);
+  },
 
   //---   Convert Time To Human Readable String   ---//
-  humanTime(seconds=0) {
+  humanTime(seconds = 0) {
     seconds = Math.floor(seconds); // Not doing this seems to break the calculation
     let levels = [
       Math.floor(seconds / 31536000), //Years
@@ -124,18 +143,16 @@ const module = {
 
     let returntext = new String();
     for (const i in levels) {
-      const num = levels[i].toString().length == 1 ? "0"+levels[i] : levels[i]; // If Number Is Single Digit, Add 0 In Front
+      const num = levels[i].toString().length == 1 ? "0" + levels[i] : levels[i]; // If Number Is Single Digit, Add 0 In Front
 
-      returntext += ":"+num;
+      returntext += ":" + num;
     }
     while (returntext.startsWith(":00")) { returntext = returntext.substring(3); } // Remove Prepending 0s (eg. 00:00:00:01:00)
     if (returntext.startsWith(":0")) { returntext = returntext.substring(2); } else { returntext = returntext.substring(1); } // Prevent Time Starting With 0 (eg. 01:00)
-    console.log("Human Time:", returntext)
+    // console.log("Human Time:", returntext);
     return returntext;
-  }
-//---   End Convert Time To Human Readable String   ---//
-
-
+  },
+  //---   End Convert Time To Human Readable String   ---//
 };
 
 //---   Start   ---//

@@ -76,18 +76,23 @@ class Innertube {
 
   //--- API Calls ---//
 
-  async browseAsync(action_type) {
+  async browseAsync(action_type, args = {}) {
     let data = { context: this.context };
 
     switch (action_type) {
       case "recommendations":
-        data.browseId = "FEwhat_to_watch";
+        args.browseId = "FEwhat_to_watch";
         break;
       case "playlist":
-        data.browseId = args.browse_id;
-        break;
+      case "channel":
+        if (args && args.browseId) {
+          break;
+        } else {
+          throw new ReferenceError("No browseId provided");
+        }
       default:
     }
+    data = { ...data, ...args };
 
     console.log(data);
 
@@ -217,6 +222,28 @@ class Innertube {
     };
   }
 
+  async getEndPoint(url) {
+    let data = { context: this.context, url: url };
+    const response = await Http.post({
+      url: `${constants.URLS.YT_BASE_API}/navigation/resolve_url?key=${this.key}`,
+      data: data,
+      headers: { "Content-Type": "application/json" },
+    }).catch((error) => error);
+
+    if (response instanceof Error)
+      return {
+        success: false,
+        status_code: response.status,
+        message: response.message,
+      };
+
+    return {
+      success: true,
+      status_code: response.status,
+      data: response.data,
+    };
+  }
+
   // WARNING: This is tracking the user's activity, but is required for recommendations to properly work
   async apiStats(params, url) {
     console.log(params);
@@ -252,8 +279,22 @@ class Innertube {
   // Simple Wrappers
   async getRecommendationsAsync() {
     const rec = await this.browseAsync("recommendations");
-    console.log(rec.data);
     return rec;
+  }
+
+  async getChannelAsync(url) {
+    const channelEndpoint = await this.getEndPoint(url);
+    if (
+      channelEndpoint.success &&
+      channelEndpoint.data.endpoint?.browseEndpoint
+    ) {
+      return await this.browseAsync(
+        "channel",
+        channelEndpoint.data.endpoint?.browseEndpoint
+      );
+    } else {
+      throw new ReferenceError("Cannot find channel");
+    }
   }
 
   async VidInfoAsync(id) {
@@ -264,11 +305,9 @@ class Innertube {
       response.data.output?.playabilityStatus?.status == ("ERROR" || undefined)
     )
       throw new Error(
-        `Could not get information for video: ${
-          response.status_code ||
-          response.data.output?.playabilityStatus?.status
-        } - ${
-          response.message || response.data.output?.playabilityStatus?.reason
+        `Could not get information for video: ${response.status_code ||
+        response.data.output?.playabilityStatus?.status
+        } - ${response.message || response.data.output?.playabilityStatus?.reason
         }`
       );
     const responseInfo = response.data.output;
@@ -298,7 +337,9 @@ class Innertube {
       isLive: details.isLiveContent,
       channelName: details.author,
       channelSubs: ownerData?.collapsedSubtitle?.runs[0]?.text,
-      channelUrl: rendererUtils.getNavigationEndpoints(ownerData),
+      channelUrl: rendererUtils.getNavigationEndpoints(
+        ownerData.navigationEndpoint
+      ),
       channelImg: ownerData?.thumbnail?.thumbnails[0].url,
       availableResolutions: resolutions?.formats,
       availableResolutionsAdaptive: resolutions?.adaptiveFormats,

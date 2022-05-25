@@ -15,29 +15,43 @@
       </v-btn>
     </template>
 
-    <template v-for="(comment, index) in comments">
-      <v-list-item :key="index">
+    <div
+      v-for="(comment, index) in comments"
+      :key="index"
+      class="commentElement"
+    >
+      <v-list-item class="px-0">
         <component
-          v-if="getComponents()[Object.keys(comment)[0]]"
           :is="Object.keys(comment)[0]"
+          v-if="getComponents()[Object.keys(comment)[0]]"
           :comment="comment[Object.keys(comment)[0]]"
           @intersect="paginate"
+          @showReplies="openReply"
         ></component>
       </v-list-item>
-      <v-divider
-        v-if="getComponents()[Object.keys(comment)[0]]"
-        :key="index"
-      ></v-divider>
-    </template>
+      <v-divider v-if="getComponents()[Object.keys(comment)[0]]"></v-divider>
+    </div>
+
     <div class="loading" v-if="loading">
       <v-sheet
-        color="background"
         v-for="i in comments.length <= 0 ? 5 : 1"
         :key="i"
+        color="background"
       >
         <v-skeleton-loader type="list-item-avatar-three-line" />
       </v-sheet>
     </div>
+
+    <template v-slot:reveal>
+      <main-comment-reply-renderer
+        v-if="showReply && replyData"
+        v-model="showReply"
+        :parentComment="replyData.parent"
+        :defaultContinuation="replyData.replyContinuation"
+        class="transition-fast-in-fast-out v-card--reveal"
+        style="height: 100%"
+      ></main-comment-reply-renderer>
+    </template>
   </dialog-base>
 </template>
 
@@ -46,6 +60,7 @@ import dialogBase from "~/components/dialogBase.vue";
 import commentsHeaderRenderer from "~/components/Comments/commentsHeaderRenderer.vue";
 import commentThreadRenderer from "~/components/Comments/commentThreadRenderer.vue";
 import continuationItemRenderer from "~/components/observer.vue";
+import mainCommentReplyRenderer from "~/components/Comments/mainCommentReplyRenderer.vue";
 
 export default {
   props: ["defaultContinuation", "commentData", "showComments"],
@@ -60,12 +75,15 @@ export default {
     commentsHeaderRenderer,
     commentThreadRenderer,
     continuationItemRenderer,
+    mainCommentReplyRenderer,
   },
 
   data: () => ({
     loading: true,
     comments: [],
     continuation: null,
+    showReply: false,
+    replyData: {},
   }),
 
   mounted() {
@@ -123,6 +141,11 @@ export default {
           .continuationCommand.token;
 
       return newContinuation;
+    },
+
+    openReply(event) {
+      this.showReply = true;
+      this.replyData = { parent: event, replyContinuation: null };
     },
   },
 };

@@ -21,7 +21,7 @@ export default {
     progressMsg: "...",
   }),
   async mounted() {
-    this.progressMsg = this.$lang('index').connecting;
+    this.progressMsg = this.$lang("index").connecting;
 
     this.$store.commit("tweaks/initTweaks");
     const theming = new Promise((resolve) =>
@@ -41,6 +41,7 @@ export default {
         if (localStorage.getItem("backgroundLight") != null)
           this.$vuetify.theme.themes.light.background =
             localStorage.getItem("backgroundLight");
+
         this.$vuetube.navigationBar.setTheme(
           this.$vuetify.theme.currentTheme.background,
           !this.$vuetify.theme.dark
@@ -49,13 +50,17 @@ export default {
           this.$vuetify.theme.currentTheme.background,
           this.$vuetify.theme.dark
         );
+
+        // this.$vuetube.navigationBar.setTransparent();
+        // this.$vuetube.statusBar.setTransparent();
         resolve();
       }, 0)
     );
 
     await theming;
     await this.$youtube.getAPI();
-    this.progressMsg = this.$lang('index').launching;
+    await this.$vuetube.launchBackHandling();
+    this.progressMsg = this.$lang("index").launching;
 
     this.$router.replace(`/${localStorage.getItem("startPage") || "home"}`); // Prevent user from navigating back to the splash screen
   },
@@ -74,7 +79,7 @@ export default {
   opacity: 0;
   transform: scale(0.5);
   transition-property: opacity, transform;
-  animation: bounce 0.66s ease infinite alternate;
+  animation: bounce 0.66s 0.5s ease 1 forwards;
 }
 /* triangles aren't very good at spinning :c */
 @keyframes bounce {

@@ -33,6 +33,7 @@ module.exports = {
     recommendations: "Recommendations",
     init: "Initialize",
     innertube: "Innertube",
+    channel: "Channel",
   },
 
   INNERTUBE_HEADER: (info) => {

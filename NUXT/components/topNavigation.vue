@@ -1,9 +1,12 @@
 <template>
-  <v-card
-    style="height: 4rem !important; display: flex; box-shadow: none !important"
-    class="rounded-0 pa-3 topNav transparent"
-  >
-    <h3 v-show="!search" class="my-auto ml-4" v-text="page" />
+  <v-card style="display: flex" class="rounded-0 pa-3 topNav background">
+    <h3
+      v-show="!search"
+      class="my-auto ml-4"
+      v-text="
+        $route.path.includes('channel') ? $store.state.channel.title : page
+      "
+    />
 
     <v-btn
       v-if="search"
@@ -20,8 +23,9 @@
       solo
       dense
       flat
+      autofocus
       label="Search"
-      style="margin-top: 1px"
+      style="margin-top: 7px"
       :background-color="
         $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
       "
@@ -32,7 +36,7 @@
     <v-spacer v-if="!search" />
 
     <v-btn
-      v-if="!search"
+      v-if="!search && $route.path.includes('/home')"
       v-show="page == 'Home'"
       icon
       tile
@@ -43,6 +47,7 @@
       <v-icon>mdi-refresh</v-icon>
     </v-btn>
     <v-btn
+      v-if="$route.name !== 'settings' && !$route.path.includes('/mods')"
       icon
       tile
       class="ml-3 my-auto fill-height"
@@ -76,7 +81,7 @@ export default {
       default: "Home",
     },
   },
-  events: ["searchBtn", "textChanged", "closeSearch"],
+  events: ["searchBtn", "textChanged", "closeSearch", "scrollToTop"],
   data: () => ({
     text: "",
   }),
@@ -107,10 +112,13 @@ export default {
 
 <style scoped>
 .topNav {
-  /* ios notch */
-  top: env(safe-area-inset-top) !important;
+  /* box-shadow: inset 0 1rem 10rem var(--v-background-base) !important; */
+  height: calc(4rem + env(safe-area-inset-top)) !important;
+  padding-top: env(safe-area-inset-top) !important;
+  box-shadow: none !important;
   position: fixed;
   width: 100%;
+  top: 0;
 }
 
 .topNavSearch {

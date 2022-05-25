@@ -1,34 +1,30 @@
 <template>
   <div class="background" id="watch-body">
     <div id="player-container">
-      <v-btn text style="position: fixed; z-index: 69420" to="home">
-        <v-icon>mdi-chevron-down</v-icon>
-      </v-btn>
       <!--   VueTube Player V1   -->
       <vuetubePlayer
-        :sources="sources"
         v-if="useBetaPlayer === 'true' && sources.length > 0"
+        :sources="sources"
       />
 
       <!--   Stock Player   -->
       <legacyPlayer
+        v-if="useBetaPlayer !== 'true'"
         id="player"
         ref="player"
         v-touch="{ down: () => $router.push('/home') }"
-        class="background"
         :vid-src="vidSrc"
-        v-if="useBetaPlayer !== 'true'"
       />
     </div>
 
     <div
-      v-bind:class="{
+      id="content-container"
+      :class="{
         'overflow-y-auto': !showComments,
         'overflow-y-hidden': showComments,
       }"
-      id="content-container"
     >
-      <v-card v-if="loaded" class="ml-2 mr-2 background rounded-0" flat>
+      <v-card v-if="loaded" class="background rounded-0" flat>
         <div
           v-ripple
           class="d-flex justify-space-between align-start px-3 pt-3"
@@ -48,7 +44,7 @@
                 $vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'
               "
             >
-              <div style="margin-bottom: 1rem">
+              <div>
                 <template
                   v-for="text in video.metadata.contents.find(
                     (content) => content.slimVideoInformationRenderer
@@ -61,13 +57,13 @@
           <v-icon class="ml-4" v-if="showMore">mdi-chevron-up</v-icon>
           <v-icon class="ml-4" v-else>mdi-chevron-down</v-icon>
         </div>
-        <div class="d-flex">
+        <div class="d-flex pl-2">
           <v-btn
             v-for="(item, index) in interactions"
             :key="index"
             text
             fab
-            class="vertical-button ma-1"
+            class="vertical-button mx-1"
             elevation="0"
             style="width: 4.2rem !important; height: 4.2rem !important"
             :disabled="item.disabled"
@@ -108,13 +104,37 @@
           </v-sheet>
         </v-bottom-sheet> -->
       </v-card>
-      <v-divider />
+
+      <v-divider
+        v-if="
+          !$store.state.tweaks.roundTweak || !$store.state.tweaks.roundWatch
+        "
+      />
 
       <!--   Channel Bar   -->
-      <div class="channel-container" v-if="loaded">
+      <div v-if="loaded">
         <v-card
-          class="channel-section background px-3 rounded-0"
-          :to="video.channelUrl"
+          flat
+          class="channel-section py-2 px-3 background"
+          :class="
+            $store.state.tweaks.roundWatch && $store.state.tweaks.roundTweak > 0
+              ? $vuetify.theme.dark
+                ? 'background lighten-1'
+                : 'background darken-1'
+              : ''
+          "
+          to="/channel"
+          :style="{
+            borderRadius: $store.state.tweaks.roundWatch
+              ? `${$store.state.tweaks.roundTweak / 2}rem`
+              : '0',
+            margin:
+              $store.state.tweaks.roundWatch &&
+              $store.state.tweaks.roundTweak > 0
+                ? '1rem'
+                : '0',
+          }"
+          @click="$store.dispatch('channel/fetchChannel', video.channelUrl)"
         >
           <div id="details">
             <div class="avatar-link mr-3">
@@ -131,15 +151,17 @@
               />
             </div>
           </div>
-          <div
-            class="channel-buttons"
-            style="color: rgb(204, 0, 0); text-transform: uppercase"
-          >
+          <div class="primary--text" style="text-transform: uppercase">
             subscribe
           </div>
         </v-card>
-        <v-divider />
       </div>
+
+      <v-divider
+        v-if="
+          !$store.state.tweaks.roundTweak || !$store.state.tweaks.roundWatch
+        "
+      />
 
       <!-- Description -->
       <div v-if="showMore">
@@ -148,28 +170,58 @@
             :render="video.renderedData.description"
           />
         </div>
-        <v-divider />
       </div>
 
+      <v-divider
+        v-if="
+          showMore &&
+          (!$store.state.tweaks.roundTweak || !$store.state.tweaks.roundWatch)
+        "
+      />
+
       <!-- Comments -->
-      <div
-        v-if="loaded && video.commentData"
-        @click="showComments = !showComments"
-      >
-        <v-card flat class="background comment-renderer">
-          <v-text class="comment-count keep-spaces">
+      <div v-if="loaded && video.commentData" @click="toggleComment">
+        <v-card
+          v-ripple
+          flat
+          tile
+          class="comment-renderer px-3 background"
+          :class="
+            $store.state.tweaks.roundWatch && $store.state.tweaks.roundTweak > 0
+              ? $vuetify.theme.dark
+                ? 'background lighten-1'
+                : 'background darken-1'
+              : ''
+          "
+          :style="{
+            borderRadius: $store.state.tweaks.roundWatch
+              ? `${$store.state.tweaks.roundTweak / 2}rem !important`
+              : '0',
+            margin:
+              $store.state.tweaks.roundWatch &&
+              $store.state.tweaks.roundTweak > 0
+                ? '1rem'
+                : '0',
+          }"
+        >
+          <v-card-text class="comment-count keep-spaces px-0">
             <template v-for="text in video.commentData.headerText.runs">
               <template v-if="text.bold">
                 <strong :key="text.text">{{ text.text }}</strong>
               </template>
               <template v-else>{{ text.text }}</template>
             </template>
-          </v-text>
-          <v-icon v-if="showComments">mdi-unfold-less-horizontal</v-icon>
-          <v-icon v-else>mdi-unfold-more-horizontal</v-icon>
+          </v-card-text>
+          <v-icon v-if="showComments" dense>mdi-unfold-less-horizontal</v-icon>
+          <v-icon v-else dense>mdi-unfold-more-horizontal</v-icon>
         </v-card>
-        <v-divider />
       </div>
+
+      <v-divider
+        v-if="
+          !$store.state.tweaks.roundTweak || !$store.state.tweaks.roundWatch
+        "
+      />
 
       <swipeable-bottom-sheet
         v-model="showComments"
@@ -192,13 +244,19 @@
     ></swipeable-bottom-sheet> -->
 
       <!-- Related Videos -->
-      <div class="loaders" v-if="!loaded">
+      <div v-if="!loaded">
         <v-skeleton-loader
           type="list-item-two-line, actions, divider, list-item-avatar, divider, list-item-three-line"
         />
         <vid-load-renderer :count="5" />
       </div>
-      <item-section-renderer v-else :render="recommends" />
+      <item-section-renderer
+        v-else
+        :render="recommends"
+        :style="{
+          marginTop: $store.state.tweaks.roundTweak > 0 ? '1rem' : '0',
+        }"
+      />
     </div>
   </div>
 </template>
@@ -209,13 +267,13 @@ import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 import { getCpn } from "~/plugins/utils";
 import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
 import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
-import legacyPlayer from "~/components/Player/legacy.vue"
+import legacyPlayer from "~/components/Player/legacy.vue";
 import vuetubePlayer from "~/components/Player/index.vue";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
 import mainCommentRenderer from "~/components/Comments/mainCommentRenderer.vue";
 import SwipeableBottomSheet from "~/components/ExtendedComponents/swipeableBottomSheet";
 
-import { App as CapacitorApp } from "@capacitor/app";
+import backType from "~/plugins/classes/backType";
 
 export default {
   components: {
@@ -259,29 +317,11 @@ export default {
 
   mounted() {
     this.mountedInit();
-
-    this.backHandler = CapacitorApp.addListener(
-      "backButton",
-      ({ canGoBack }) => {
-        //---   Back Closes Search   ---//
-        if (this.showComments) {
-          this.showComments = false;
-
-          //---   Back Goes Back   ---//
-        } else if (!canGoBack) {
-          this.$router.replace(
-            `/${localStorage.getItem("startPage") || "home"}`
-          );
-        } else {
-          window.history.back();
-        }
-      }
-    );
+    this.$vuetube.resetBackActions();
   },
 
   beforeDestroy() {
     clearInterval(this.interval);
-    if (this.backHandler) this.backHandler.remove();
   },
 
   methods: {
@@ -330,7 +370,6 @@ export default {
       // using item.action in the v-for loop
       this[name]();
     },
-    dislike() {},
     async share() {
       // this.share = !this.share;
       await Share.share({
@@ -382,7 +421,8 @@ export default {
           {
             name: "Likes",
             icon: "mdi-thumb-up-outline",
-            // action: null,
+            // action: this.like(),
+            actionName: "like",
             value: this.likes,
             disabled: true,
           },
@@ -401,6 +441,24 @@ export default {
             actionName: "share",
             disabled: false,
           },
+          {
+            name: "Save",
+            icon: "mdi-plus-box-multiple-outline",
+            actionName: "enqueue",
+            disabled: true,
+          },
+          // {
+          //   name: "Quality",
+          //   icon: "mdi-high-definition",
+          //   actionName: "quality",
+          //   disabled: false,
+          // },
+          // {
+          //   name: "Speed",
+          //   icon: "mdi-speedometer",
+          //   actionName: "speed",
+          //   disabled: false,
+          // },
         ],
         showMore: false,
         showComments: false,
@@ -412,6 +470,7 @@ export default {
         interval: null,
         video: null,
         useBetaPlayer: false,
+        backHierarchy: [],
       };
     },
 
@@ -425,6 +484,22 @@ export default {
       scrollableList.forEach((scrollable) => {
         scrollable.scrollTo(0, 0);
       });
+    },
+
+    // Toggle this.showComments to true or false. If it is true, then add the dismiss function to backStack.
+    toggleComment() {
+      this.showComments = !this.showComments;
+      if (this.showComments) {
+        const dismissComment = new backType(
+          () => {
+            this.showComments = false;
+          },
+          () => {
+            return this.showComments;
+          }
+        );
+        this.$vuetube.addBackAction(dismissComment);
+      }
     },
   },
 };
@@ -453,7 +528,6 @@ export default {
 .comment-renderer {
   display: flex;
   align-items: center;
-  padding: 12px;
 }
 
 .channel-section #details,

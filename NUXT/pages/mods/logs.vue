@@ -5,7 +5,7 @@
         class="card background"
         :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
         flat
-        :style="{borderRadius: `${roundTweak / 2}rem`}"
+        :style="{ borderRadius: `${roundTweak / 2}rem` }"
       >
         <v-card-title>
           <v-chip v-if="item.error" outlined class="errorChip" color="error"
