@@ -1,6 +1,10 @@
 <template>
   <div
     ref="vidcontainer"
+    v-touch="{
+      down: () => ($refs.player.styles.width = '50% !important'),
+      up: () => ($refs.player.styles['object-fit'] = 'contain !important'),
+    }"
     class="d-flex flex-column"
     style="position: relative"
     :style="{
@@ -12,16 +16,14 @@
   >
     <video
       ref="player"
-      v-touch="{
-        down: () => ($refs.player.innerWidth = '50%'),
-        up: () => ($refs.player.fillStyle = 'cover'),
-      }"
       autoplay
       width="100%"
       :src="vidSrc"
-      style="transition: filter 0.15s ease-in-out; object-fit: cover"
+      style="transition: filter 0.15s ease-in-out; max-height: 100vh"
       :style="
-        controls ? 'filter: brightness(50%); max-height: 100vh' : 'filter: none'
+        controls
+          ? 'filter: brightness(50%); object-fit: contain'
+          : 'filter: none; object-fit: cover'
       "
     />
     <!-- @webkitfullscreenchange="handleFullscreenChange" -->
@@ -368,6 +370,7 @@ export default {
       this.$refs.player.currentTime = e;
     },
     handleFullscreenChange() {
+      console.log(this.$refs.player);
       console.log(document.fullscreenElement);
       if (document?.fullscreenElement === this.$refs.vidcontainer) {
         // const cancellFullScreen =
