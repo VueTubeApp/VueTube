@@ -8,15 +8,126 @@
         ? `${$store.state.tweaks.roundTweak / 3}rem`
         : '0',
     }"
+    @click="controls = !controls"
   >
     <video
       ref="player"
+      v-touch="{
+        down: () => ($refs.player.innerWidth = '50%'),
+        up: () => ($refs.player.fillStyle = 'cover'),
+      }"
       autoplay
       width="100%"
       :src="vidSrc"
-      style="filter: brightness(50%); max-height: 100vh"
+      style="transition: filter 0.15s ease-in-out; object-fit: cover"
+      :style="
+        controls ? 'filter: brightness(50%); max-height: 100vh' : 'filter: none'
+      "
     />
     <!-- @webkitfullscreenchange="handleFullscreenChange" -->
+
+    <v-btn
+      text
+      tile
+      style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        opacity: 0;
+      "
+      @doubleclick.stop="$refs.player.currentTime -= $refs.player.duration / 10"
+    >
+      <v-icon>mdi-rewind</v-icon>
+    </v-btn>
+
+    <v-btn
+      text
+      tile
+      style="
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        opacity: 0;
+      "
+      @doubleclick.stop="$refs.player.currentTime += $refs.player.duration / 10"
+    >
+      <v-icon>mdi-fast-forward</v-icon>
+    </v-btn>
+
+    <div
+      style="transition: opacity 0.15s ease-in-out"
+      :style="controls ? 'opacity: 1;' : 'opacity: 0; pointer-events: none'"
+    >
+      <v-btn fab text style="position: absolute; top: 0; left: 0">
+        <v-icon>mdi-chevron-down</v-icon>
+      </v-btn>
+      <v-btn fab text style="position: absolute; top: 0; right: 7rem">
+        <v-icon>mdi-sync</v-icon>
+      </v-btn>
+      <v-btn fab text style="position: absolute; top: 0; right: 3.5rem">
+        <v-icon>mdi-closed-caption-outline</v-icon>
+      </v-btn>
+      <v-btn fab text style="position: absolute; top: 0; right: 0">
+        <v-icon>mdi-close</v-icon>
+      </v-btn>
+
+      <v-btn
+        v-if="$refs.player"
+        fab
+        text
+        style="
+          height: 5rem;
+          width: 5rem;
+          position: absolute;
+          top: calc(50% - 2.5rem);
+          left: calc(50% - 2.5rem);
+        "
+        color="white"
+        @click.stop="
+          $refs.player.paused
+            ? ($refs.player.play(), (controls = false))
+            : $refs.player.pause()
+        "
+      >
+        <v-icon
+          ref="pausePlayIndicator"
+          size="5rem"
+          v-text="$refs.player.paused ? 'mdi-play' : 'mdi-pause'"
+        />
+      </v-btn>
+
+      <div
+        v-if="$refs.player"
+        style="position: absolute; bottom: 1.25rem; left: 1.25rem"
+      >
+        {{ watched }}
+        <span style="color: #999"> / {{ total }} </span>
+      </div>
+      <v-btn fab text style="position: absolute; bottom: 0.25rem; right: 7rem">
+        1X
+      </v-btn>
+      <v-btn
+        fab
+        text
+        style="position: absolute; bottom: 0.25rem; right: 3.5rem"
+      >
+        HD
+      </v-btn>
+      <v-btn
+        fab
+        text
+        style="position: absolute; bottom: 0.25rem; right: 0"
+        @click.stop="(controls = $refs.player.paused), handleFullscreenChange()"
+      >
+        <v-icon>{{
+          isFullscreen ? "mdi-fullscreen-exit" : "mdi-fullscreen"
+        }}</v-icon>
+      </v-btn>
+    </div>
     <video
       ref="playerfake"
       muted
@@ -35,81 +146,6 @@
       color="primary"
       height="2"
     />
-
-    <v-btn
-      text
-      tile
-      style="position: absolute; top: 0; left: 0; width: 50%; height: 100%"
-    >
-      <v-icon>mdi-rewind</v-icon>
-    </v-btn>
-
-    <v-btn
-      text
-      tile
-      style="position: absolute; top: 0; left: 50%; width: 50%; height: 100%"
-    >
-      <v-icon>mdi-fast-forward</v-icon>
-    </v-btn>
-
-    <v-btn fab text style="position: absolute; top: 0; left: 0">
-      <v-icon>mdi-chevron-down</v-icon>
-    </v-btn>
-    <v-btn fab text style="position: absolute; top: 0; right: 7rem">
-      <v-icon>mdi-sync</v-icon>
-    </v-btn>
-    <v-btn fab text style="position: absolute; top: 0; right: 3.5rem">
-      <v-icon>mdi-closed-caption-outline</v-icon>
-    </v-btn>
-    <v-btn fab text style="position: absolute; top: 0; right: 0">
-      <v-icon>mdi-close</v-icon>
-    </v-btn>
-
-    <v-btn
-      v-if="$refs.player"
-      fab
-      text
-      style="
-        height: 5rem;
-        width: 5rem;
-        position: absolute;
-        top: calc(50% - 2.5rem);
-        left: calc(50% - 2.5rem);
-      "
-      color="white"
-      @click="$refs.player.paused ? $refs.player.play() : $refs.player.pause()"
-    >
-      <v-icon
-        ref="pausePlayIndicator"
-        size="5rem"
-        v-text="$refs.player.paused ? 'mdi-play' : 'mdi-pause'"
-      />
-    </v-btn>
-
-    <div
-      v-if="$refs.player"
-      style="position: absolute; bottom: 1.25rem; left: 1.25rem"
-    >
-      {{ watched }}
-      <span style="color: #999"> / {{ total }} </span>
-    </div>
-    <v-btn fab text style="position: absolute; bottom: 0.25rem; right: 7rem">
-      1X
-    </v-btn>
-    <v-btn fab text style="position: absolute; bottom: 0.25rem; right: 3.5rem">
-      HD
-    </v-btn>
-    <v-btn
-      fab
-      text
-      style="position: absolute; bottom: 0.25rem; right: 0"
-      @click="handleFullscreenChange()"
-    >
-      <v-icon>{{
-        isFullscreen ? "mdi-fullscreen-exit" : "mdi-fullscreen"
-      }}</v-icon>
-    </v-btn>
-
     <!-- Scrubber -->
     <v-slider
       v-if="$refs.player"
@@ -162,6 +198,7 @@ export default {
     return {
       isFullscreen: false,
       scrubbing: false,
+      controls: false,
       percent: 0,
       progress: 0,
       buffered: 0,

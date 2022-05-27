@@ -12,7 +12,6 @@
         v-if="useBetaPlayer !== 'true'"
         id="player"
         ref="player"
-        v-touch="{ down: () => $router.push('/home') }"
         :vid-src="vidSrc"
       />
     </div>
