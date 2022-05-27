@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="vidcontainer"
     class="d-flex flex-column"
     style="position: relative"
     :style="{
@@ -10,13 +11,12 @@
   >
     <video
       ref="player"
-      controls
       autoplay
       width="100%"
       :src="vidSrc"
-      style="filter: brightness(50%)"
-      @webkitfullscreenchange="handleFullscreenChange"
+      style="filter: brightness(50%); max-height: 100vh"
     />
+    <!-- @webkitfullscreenchange="handleFullscreenChange" -->
     <video
       ref="playerfake"
       muted
@@ -36,10 +36,9 @@
       height="2"
     />
 
-    <!-- <v-btn
+    <v-btn
       text
       tile
-      class="debug"
       style="position: absolute; top: 0; left: 0; width: 50%; height: 100%"
     >
       <v-icon>mdi-rewind</v-icon>
@@ -48,32 +47,25 @@
     <v-btn
       text
       tile
-      class="debug"
       style="position: absolute; top: 0; left: 50%; width: 50%; height: 100%"
     >
       <v-icon>mdi-fast-forward</v-icon>
     </v-btn>
 
-    <v-btn
-      text
-      class="debug"
-      style="position: absolute; top: 1rem; left: 1rem; border-radius: 2rem"
-      to="home"
-      disabled
-    >
+    <v-btn fab text style="position: absolute; top: 0; left: 0">
       <v-icon>mdi-chevron-down</v-icon>
+    </v-btn>
+    <v-btn fab text style="position: absolute; top: 0; right: 7rem">
+      <v-icon>mdi-sync</v-icon>
+    </v-btn>
+    <v-btn fab text style="position: absolute; top: 0; right: 3.5rem">
+      <v-icon>mdi-closed-caption-outline</v-icon>
+    </v-btn>
+    <v-btn fab text style="position: absolute; top: 0; right: 0">
+      <v-icon>mdi-close</v-icon>
     </v-btn>
 
     <v-btn
-      text
-      class="debug"
-      style="position: absolute; top: 1rem; right: 1rem; border-radius: 2rem"
-      to="home"
-    >
-      <v-icon>mdi-close</v-icon>
-    </v-btn> -->
-
-    <!-- <v-btn
       v-if="$refs.player"
       fab
       text
@@ -84,7 +76,6 @@
         top: calc(50% - 2.5rem);
         left: calc(50% - 2.5rem);
       "
-      class="debug"
       color="white"
       @click="$refs.player.paused ? $refs.player.play() : $refs.player.pause()"
     >
@@ -93,41 +84,33 @@
         size="5rem"
         v-text="$refs.player.paused ? 'mdi-play' : 'mdi-pause'"
       />
-    </v-btn> -->
+    </v-btn>
 
-    <!-- <div
-      v-if="$vuetify"
-      class="debug px-4 rounded-xl"
-      style="position: absolute; bottom: 2rem; left: 1rem"
+    <div
+      v-if="$refs.player"
+      style="position: absolute; bottom: 1.25rem; left: 1.25rem"
     >
       {{ watched }}
       <span style="color: #999"> / {{ total }} </span>
     </div>
-
-    <v-btn
-      text
-      class="debug"
-      style="
-        position: absolute;
-        bottom: 2rem;
-        right: 1rem;
-        border-radius: 0 2rem 2rem 0;
-      "
-    >
+    <v-btn fab text style="position: absolute; bottom: 0.25rem; right: 7rem">
+      1X
+    </v-btn>
+    <v-btn fab text style="position: absolute; bottom: 0.25rem; right: 3.5rem">
       HD
     </v-btn>
     <v-btn
+      fab
       text
-      class="debug"
-      style="
-        position: absolute;
-        bottom: 2rem;
-        right: 5rem;
-        border-radius: 2rem 0 0 2rem;
-      "
+      style="position: absolute; bottom: 0.25rem; right: 0"
+      @click="handleFullscreenChange()"
     >
-      1X
-    </v-btn> -->
+      <v-icon>{{
+        isFullscreen ? "mdi-fullscreen-exit" : "mdi-fullscreen"
+      }}</v-icon>
+    </v-btn>
+
+    <!-- Scrubber -->
     <v-slider
       v-if="$refs.player"
       hide-details
@@ -153,18 +136,17 @@
         <div style="transform: translateY(-50%)">
           <canvas
             ref="preview"
-            class="background"
-            :class="$vuetify.theme.dark ? 'lighten-4' : 'darken-4'"
+            class="white"
             :width="$refs.player.clientWidth / 3"
             :height="$refs.player.clientHeight / 3"
-            style="border: 2px solid"
+            style="border: 2px solid white"
             :style="{
               borderRadius: $store.state.tweaks.roundWatch
                 ? `${$store.state.tweaks.roundTweak / 3}rem`
                 : '0',
             }"
           ></canvas>
-          <div class="text-center pb-5" style="font-size: 0.8rem">
+          <div class="text-center pb-4" style="font-size: 0.8rem">
             <b>{{ $vuetube.humanTime(value) }}</b>
           </div>
         </div>
@@ -178,6 +160,7 @@ export default {
   props: ["vidSrc"],
   data() {
     return {
+      isFullscreen: false,
       scrubbing: false,
       percent: 0,
       progress: 0,
@@ -348,13 +331,47 @@ export default {
       this.$refs.player.currentTime = e;
     },
     handleFullscreenChange() {
-      if (document.fullscreenElement === this.$refs.player) {
-        this.$vuetube.statusBar.hide();
-        this.$vuetube.navigationBar.hide();
-      } else {
+      console.log(document.fullscreenElement);
+      if (document?.fullscreenElement === this.$refs.vidcontainer) {
+        // const cancellFullScreen =
+        //   document.exitFullscreen ||
+        //   document.mozCancelFullScreen ||
+        //   document.webkitExitFullscreen ||
+        //   document.msExitFullscreen;
+        // cancellFullScreen.call(document);
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+        this.isFullscreen = false;
         this.$vuetube.statusBar.show();
         this.$vuetube.navigationBar.show();
+      } else {
+        // const element = document;
+        // const requestFullScreen =
+        //   element.requestFullscreen ||
+        //   element.webkitRequestFullScreen ||
+        //   element.mozRequestFullScreen ||
+        //   element.msRequestFullScreen;
+        // requestFullScreen.call(element);
+        this.$refs.vidcontainer.requestFullscreen({
+          requireOrientation: "landscape",
+        });
+        this.isFullscreen = true;
+        this.$vuetube.statusBar.hide();
+        this.$vuetube.navigationBar.hide();
       }
+      // screen.orientation
+      //   .lock("landscape")
+      //   .then(function () {
+      //     console.log("Locked");
+      //   })
+      //   .catch(function (error) {
+      //     console.log(error);
+      //   });
     },
   },
 };
