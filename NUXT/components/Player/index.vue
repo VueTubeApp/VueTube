@@ -28,6 +28,7 @@
     />
 
     <v-btn
+      v-if="controls"
       text
       tile
       style="
@@ -44,6 +45,7 @@
     </v-btn>
 
     <v-btn
+      v-if="controls"
       text
       tile
       style="
@@ -63,14 +65,10 @@
       style="transition: opacity 0.15s ease-in-out"
       :style="controls ? 'opacity: 1;' : 'opacity: 0; pointer-events: none'"
     >
-      <v-btn fab text style="position: absolute; top: 0; left: 0">
-        <v-icon>mdi-chevron-down</v-icon>
-      </v-btn>
+      <minimize />
       <loop />
       <captions />
-      <v-btn fab text style="position: absolute; top: 0; right: 0">
-        <v-icon>mdi-close</v-icon>
-      </v-btn>
+      <close />
 
       <playpause
         v-if="$refs.player"
@@ -87,7 +85,7 @@
       />
     </div>
     <seekbar
-      v-if="$refs.player"
+      v-if="$refs.player && (!isFullscreen || controls)"
       :fullscreen="isFullscreen"
       :video="$refs.player"
       :sources="sources"
@@ -100,6 +98,7 @@ import loop from "~/components/Player/loop.vue";
 import speed from "~/components/Player/speed.vue";
 import seekbar from "~/components/Player/seekbar.vue";
 import quality from "~/components/Player/quality.vue";
+import minimize from "~/components/Player/minimize.vue";
 import captions from "~/components/Player/captions.vue";
 import playpause from "~/components/Player/playpause.vue";
 import watchtime from "~/components/Player/watchtime.vue";
@@ -110,6 +109,7 @@ export default {
     watchtime,
     playpause,
     captions,
+    minimize,
     quality,
     seekbar,
     speed,

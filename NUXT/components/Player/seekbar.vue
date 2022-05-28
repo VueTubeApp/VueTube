@@ -23,8 +23,12 @@
       hide-details
       height="2"
       dense
-      style="position: absolute; z-index: 69420; width: 100%; left: 0"
-      :style="fullscreen ? 'bottom: 5rem;' : 'bottom: 0;'"
+      style="position: absolute; z-index: 69420"
+      :style="
+        fullscreen
+          ? 'width: calc(100% - 2rem); left: 1rem; bottom: 4rem;'
+          : 'width: 100%; left: 0; bottom: 0;'
+      "
       :thumb-size="0"
       :max="duration"
       :value="progress"
