@@ -99,6 +99,7 @@ export default {
     });
   },
   methods: {
+    // TODO: better scrubbing preview
     loadVideoFrames() {
       // Exit loop if desired number of frames have been extracted
       if (this.frames.length >= frameCount) {
@@ -218,6 +219,7 @@ export default {
       console.log("%c frames", "color: #00ff00");
       console.log(this.frames);
     },
+    // TODO: scrubbing preview end
     seek(e) {
       // console.log(`scrubbing ${e}`);
       let vid = this.$refs.playerfake;

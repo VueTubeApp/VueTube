@@ -1,7 +1,8 @@
 <template>
   <div class="background" id="watch-body">
     <div id="player-container">
-      <!--   VueTube Player V1   -->
+      <!-- TODO: move component to default.vue -->
+      <!-- TODO: pass sources through vuex instead of props -->
       <player v-if="sources.length > 0" ref="player" :sources="sources" />
     </div>
 

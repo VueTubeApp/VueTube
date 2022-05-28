@@ -1,9 +1,10 @@
 <template>
+  <!-- TODO: down: () => minimize, -->
   <div
     ref="vidcontainer"
     v-touch="{
-      down: () => ($refs.player.styles.width = '50% !important'),
-      up: () => ($refs.player.styles['object-fit'] = 'contain !important'),
+      up: () => (contain = false),
+      down: () => (contain = true),
     }"
     class="d-flex flex-column"
     style="position: relative"
@@ -19,13 +20,17 @@
       autoplay
       width="100%"
       :src="vidSrc"
-      style="transition: filter 0.15s ease-in-out; max-height: 100vh"
+      style="
+        transition: 0.15s ease-in-out;
+        transition-properties: all;
+        max-height: 100vh;
+      "
       :style="
-        controls
-          ? 'filter: brightness(50%); object-fit: contain'
-          : 'filter: none; object-fit: cover'
+        (controls ? 'filter: brightness(50%);' : 'filter: none;',
+        contain ? 'object-fit: contain;' : 'object-fit: cover;')
       "
     />
+    <!-- TODO: controls || seeking, take seeking out of <seekbar> component -->
 
     <v-btn
       v-if="controls"
@@ -84,8 +89,10 @@
         @fullscreen="(controls = $refs.player.paused), handleFullscreenChange()"
       />
     </div>
+    <!-- NOTE: breaks in fullscreen -->
     <seekbar
-      v-if="$refs.player && (!isFullscreen || controls)"
+      v-if="$refs.player"
+      v-show="!isFullscreen || controls"
       :fullscreen="isFullscreen"
       :video="$refs.player"
       :sources="sources"
@@ -95,6 +102,7 @@
 
 <script>
 import loop from "~/components/Player/loop.vue";
+import close from "~/components/Player/close.vue";
 import speed from "~/components/Player/speed.vue";
 import seekbar from "~/components/Player/seekbar.vue";
 import quality from "~/components/Player/quality.vue";
@@ -113,6 +121,7 @@ export default {
     quality,
     seekbar,
     speed,
+    close,
     loop,
   },
   props: {
@@ -125,6 +134,7 @@ export default {
     return {
       isFullscreen: false,
       controls: false,
+      contain: true,
       vidSrc: "",
     };
   },
