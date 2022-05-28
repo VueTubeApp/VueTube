@@ -23,13 +23,8 @@
       hide-details
       height="2"
       dense
-      style="
-        position: absolute;
-        z-index: 69420;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-      "
+      style="position: absolute; z-index: 69420; width: 100%; left: 0"
+      :style="fullscreen ? 'bottom: 5rem;' : 'bottom: 0;'"
       :thumb-size="0"
       :max="duration"
       :value="progress"
@@ -63,7 +58,7 @@
 
 <script>
 export default {
-  props: ["sources", "video"],
+  props: ["sources", "video", "fullscreen"],
 
   data() {
     return {

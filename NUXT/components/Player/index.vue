@@ -26,7 +26,6 @@
           : 'filter: none; object-fit: cover'
       "
     />
-    <!-- @webkitfullscreenchange="handleFullscreenChange" -->
 
     <v-btn
       text
@@ -87,7 +86,12 @@
         @fullscreen="(controls = $refs.player.paused), handleFullscreenChange()"
       />
     </div>
-    <seekbar v-if="$refs.player" :sources="sources" :video="$refs.player" />
+    <seekbar
+      v-if="$refs.player"
+      :fullscreen="isFullscreen"
+      :video="$refs.player"
+      :sources="sources"
+    />
   </div>
 </template>
 
@@ -130,48 +134,33 @@ export default {
   },
   methods: {
     handleFullscreenChange() {
-      console.log(this.$refs.player);
-      console.log(document.fullscreenElement);
+      // close fullscreen 👇
       if (document?.fullscreenElement === this.$refs.vidcontainer) {
-        // const cancellFullScreen =
-        //   document.exitFullscreen ||
-        //   document.mozCancelFullScreen ||
-        //   document.webkitExitFullscreen ||
-        //   document.msExitFullscreen;
-        // cancellFullScreen.call(document);
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) {
-          document.webkitExitFullscreen();
-        }
-        this.isFullscreen = false;
-        this.$vuetube.statusBar.show();
+        const cancellFullScreen =
+          document.exitFullscreen ||
+          document.mozCancelFullScreen ||
+          document.webkitExitFullscreen ||
+          document.msExitFullscreen;
+        cancellFullScreen.call(document);
+        screen.orientation.lock("portrait");
+        screen.orientation.unlock();
         this.$vuetube.navigationBar.show();
+        this.$vuetube.statusBar.show();
+        this.isFullscreen = false;
+        // open fullscreen 👇
       } else {
-        // const element = document;
-        // const requestFullScreen =
-        //   element.requestFullscreen ||
-        //   element.webkitRequestFullScreen ||
-        //   element.mozRequestFullScreen ||
-        //   element.msRequestFullScreen;
-        // requestFullScreen.call(element);
-        this.$refs.vidcontainer.requestFullscreen({
-          requireOrientation: "landscape",
-        });
-        this.isFullscreen = true;
-        this.$vuetube.statusBar.hide();
+        const element = this.$refs.vidcontainer;
+        const requestFullScreen =
+          element.requestFullscreen ||
+          element.webkitRequestFullScreen ||
+          element.mozRequestFullScreen ||
+          element.msRequestFullScreen;
+        requestFullScreen.call(element);
+        screen.orientation.lock("landscape");
         this.$vuetube.navigationBar.hide();
+        this.$vuetube.statusBar.hide();
+        this.isFullscreen = true;
       }
-      // screen.orientation
-      //   .lock("landscape")
-      //   .then(function () {
-      //     console.log("Locked");
-      //   })
-      //   .catch(function (error) {
-      //     console.log(error);
-      //   });
     },
     getPlayer() {
       return this.$refs.player;

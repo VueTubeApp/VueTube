@@ -11,7 +11,12 @@
 
 <script>
 export default {
-  props: ["fullscreen"],
+  props: {
+    fullscreen: {
+      type: Boolean,
+      required: true,
+    },
+  },
   emits: ["fullscreen"],
 };
 </script>
