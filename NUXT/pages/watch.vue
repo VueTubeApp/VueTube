@@ -1,20 +1,9 @@
 <template>
   <div class="background" id="watch-body">
     <div id="player-container">
-      <!--   VueTube Player V1   -->
-      <vuetubePlayer
-        v-if="useBetaPlayer === 'true' && sources.length > 0"
-        :sources="sources"
-      />
-
-      <!--   Stock Player   -->
-      <legacyPlayer
-        v-if="useBetaPlayer !== 'true'"
-        id="player"
-        ref="player"
-        v-touch="{ down: () => $router.push('/home') }"
-        :vid-src="vidSrc"
-      />
+      <!-- TODO: move component to default.vue -->
+      <!-- TODO: pass sources through vuex instead of props -->
+      <player v-if="sources.length > 0" ref="player" :sources="sources" />
     </div>
 
     <div
@@ -57,12 +46,13 @@
           <v-icon class="ml-4" v-if="showMore">mdi-chevron-up</v-icon>
           <v-icon class="ml-4" v-else>mdi-chevron-down</v-icon>
         </div>
-        <div class="d-flex pl-2">
+        <div class="d-flex pl-6">
           <v-btn
             v-for="(item, index) in interactions"
             :key="index"
             text
             fab
+            no-caps
             class="vertical-button mx-1"
             elevation="0"
             style="width: 4.2rem !important; height: 4.2rem !important"
@@ -262,29 +252,27 @@
 </template>
 
 <script>
+import player from "~/components/Player/index.vue";
 import { Share } from "@capacitor/share";
-import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 import { getCpn } from "~/plugins/utils";
-import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
-import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
-import legacyPlayer from "~/components/Player/legacy.vue";
-import vuetubePlayer from "~/components/Player/index.vue";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
+import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
+import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
 import mainCommentRenderer from "~/components/Comments/mainCommentRenderer.vue";
 import SwipeableBottomSheet from "~/components/ExtendedComponents/swipeableBottomSheet";
+import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
 
 import backType from "~/plugins/classes/backType";
 
 export default {
   components: {
+    player,
     ShelfRenderer,
     VidLoadRenderer,
-    SlimVideoDescriptionRenderer,
-    vuetubePlayer,
-    legacyPlayer,
     ItemSectionRenderer,
-    SwipeableBottomSheet,
     mainCommentRenderer,
+    SwipeableBottomSheet,
+    SlimVideoDescriptionRenderer,
   },
   layout: "empty",
   // transition(to) { // TODO: fix layout switching
@@ -304,7 +292,6 @@ export default {
           // Exit fullscreen if currently in fullscreen
           // if (this.$refs.player) this.$refs.player.webkitExitFullscreen();
           // Reset player and run getVideo function again
-          // this.vidSrc = "";
           // this.startTime = Math.floor(Date.now() / 1000);
           // this.getVideo();
           clearInterval(this.interval);
@@ -329,18 +316,9 @@ export default {
       this.loaded = false;
 
       this.$youtube.getVid(this.$route.query.v).then((result) => {
-        this.video = result;
-        console.log("Video info data", result);
-        console.log(result.availableResolutions);
-
-        //---   VueTube Player v1   ---//
         this.sources = result.availableResolutions;
-
-        //---   Legacy Player   ---//
-        this.vidSrc =
-          result.availableResolutions[
-            result.availableResolutions.length - 1
-          ].url; // Takes the highest available resolution with both video and Audio. Note this will be lower than the actual highest resolution
+        console.log("Video info data", result);
+        this.video = result;
 
         //---   Content Stuff   ---//
         this.likes = result.metadata.likes.toLocaleString();
@@ -463,13 +441,11 @@ export default {
         showMore: false,
         showComments: false,
         // share: false,
-        vidSrc: null,
         sources: [],
         recommends: null,
         loaded: false,
         interval: null,
         video: null,
-        useBetaPlayer: false,
         backHierarchy: [],
       };
     },
@@ -477,7 +453,6 @@ export default {
     mountedInit() {
       this.startTime = Math.floor(Date.now() / 1000);
       this.getVideo();
-      this.useBetaPlayer = localStorage.getItem("debug.BetaPlayer");
 
       //  Reset vertical scrolling
       const scrollableList = document.querySelectorAll(".overflow-y-auto");
