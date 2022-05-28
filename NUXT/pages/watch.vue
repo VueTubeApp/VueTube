@@ -51,6 +51,7 @@
             :key="index"
             text
             fab
+            no-caps
             class="vertical-button mx-1"
             elevation="0"
             style="width: 4.2rem !important; height: 4.2rem !important"
