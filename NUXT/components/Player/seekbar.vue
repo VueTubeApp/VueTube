@@ -20,7 +20,6 @@
     />
     <!-- Scrubber -->
     <v-slider
-      v-if="$refs.player"
       hide-details
       height="2"
       dense
@@ -44,8 +43,8 @@
           <canvas
             ref="preview"
             class="white"
-            :width="$refs.player.clientWidth / 3"
-            :height="$refs.player.clientHeight / 3"
+            :width="video.clientWidth / 3"
+            :height="video.clientHeight / 3"
             style="border: 2px solid white"
             :style="{
               borderRadius: $store.state.tweaks.roundWatch
