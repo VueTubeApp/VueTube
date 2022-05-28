@@ -1,6 +1,7 @@
 <template>
   <div
     style="
+      color: #fff;
       left: 1.25rem;
       bottom: 1.25rem;
       font-size: 0.75rem;

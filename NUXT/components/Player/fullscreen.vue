@@ -2,6 +2,7 @@
   <v-btn
     fab
     text
+    color="white"
     style="position: absolute; bottom: 0.25rem; right: 0"
     @click.stop="$emit('fullscreen')"
   >
