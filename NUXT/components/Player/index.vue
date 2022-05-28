@@ -20,15 +20,9 @@
       autoplay
       width="100%"
       :src="vidSrc"
-      style="
-        transition: 0.15s ease-in-out;
-        transition-properties: all;
-        max-height: 100vh;
-      "
-      :style="
-        (controls ? 'filter: brightness(50%);' : 'filter: none;',
-        contain ? 'object-fit: contain;' : 'object-fit: cover;')
-      "
+      style="transition: filter 0.15s ease-in-out; max-height: 100vh"
+      :class="controls ? 'dim' : ''"
+      :style="contain ? 'object-fit: contain;' : 'object-fit: cover;'"
     />
     <!-- TODO: controls || seeking, take seeking out of <seekbar> component -->
 
@@ -142,35 +136,42 @@ export default {
     console.log("sources", this.sources);
     this.vidSrc = this.sources[this.sources.length - 1].url;
   },
+  beforeDestroy() {
+    this.exitFullscreen();
+  },
   methods: {
     handleFullscreenChange() {
-      // close fullscreen 👇
       if (document?.fullscreenElement === this.$refs.vidcontainer) {
-        const cancellFullScreen =
-          document.exitFullscreen ||
-          document.mozCancelFullScreen ||
-          document.webkitExitFullscreen ||
-          document.msExitFullscreen;
-        cancellFullScreen.call(document);
-        screen.orientation.lock("portrait");
-        screen.orientation.unlock();
-        this.$vuetube.navigationBar.show();
-        this.$vuetube.statusBar.show();
-        this.isFullscreen = false;
-        // open fullscreen 👇
+        this.exitFullscreen();
       } else {
-        const element = this.$refs.vidcontainer;
-        const requestFullScreen =
-          element.requestFullscreen ||
-          element.webkitRequestFullScreen ||
-          element.mozRequestFullScreen ||
-          element.msRequestFullScreen;
-        requestFullScreen.call(element);
-        screen.orientation.lock("landscape");
-        this.$vuetube.navigationBar.hide();
-        this.$vuetube.statusBar.hide();
-        this.isFullscreen = true;
+        this.openFullscreen();
       }
+    },
+    exitFullscreen() {
+      const cancellFullScreen =
+        document.exitFullscreen ||
+        document.mozCancelFullScreen ||
+        document.webkitExitFullscreen ||
+        document.msExitFullscreen;
+      cancellFullScreen.call(document);
+      screen.orientation.lock("portrait");
+      screen.orientation.unlock();
+      this.$vuetube.navigationBar.show();
+      this.$vuetube.statusBar.show();
+      this.isFullscreen = false;
+    },
+    openFullscreen() {
+      const element = this.$refs.vidcontainer;
+      const requestFullScreen =
+        element.requestFullscreen ||
+        element.webkitRequestFullScreen ||
+        element.mozRequestFullScreen ||
+        element.msRequestFullScreen;
+      requestFullScreen.call(element);
+      screen.orientation.lock("landscape");
+      this.$vuetube.navigationBar.hide();
+      this.$vuetube.statusBar.hide();
+      this.isFullscreen = true;
     },
     getPlayer() {
       return this.$refs.player;
@@ -178,3 +179,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.dim {
+  filter: brightness(50%);
+}
+</style>
