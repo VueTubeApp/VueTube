@@ -62,7 +62,7 @@
             style="
               width: 4.2rem !important;
               height: 4.2rem !important;
-              text-decoration: none !important;
+              text-transform: none !important;
             "
             :disabled="item.disabled"
             @click="callMethodByName(item.actionName)"
@@ -70,7 +70,7 @@
             <v-icon v-text="item.icon" />
             <div
               class="mt-1"
-              style="font-size: 0.66rem"
+              style="font-size: 0.6rem"
               v-text="item.value || item.name"
             />
           </v-btn>

@@ -88,7 +88,7 @@
         style="
           position: absolute;
           top: calc(50% - 1.25rem);
-          left: calc(50% - 9.5rem);
+          left: calc(50% - 10rem);
         "
         color="white"
         @click.stop="$refs.player.currentTime -= 5"
@@ -101,7 +101,7 @@
         style="
           position: absolute;
           top: calc(50% - 1.75rem);
-          left: calc(50% - 6rem);
+          left: calc(50% - 6.5rem);
         "
         color="white"
         disabled
@@ -260,7 +260,7 @@ export default {
 
 <style>
 .dim {
-  filter: brightness(50%);
+  filter: brightness(42%);
 }
 .invisible {
   opacity: 0;
