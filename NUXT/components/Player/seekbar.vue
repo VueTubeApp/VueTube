@@ -10,10 +10,7 @@
     <v-progress-linear
       query
       active
-      style="width: 100%"
-      :class="
-        $vuetify.theme.dark ? 'transparent-lighten-1' : 'transparent-darken-1'
-      "
+      style="width: 100%; background: #ffffff22"
       background-opacity="0.5"
       background-color="primary"
       :buffer-value="buffered"
