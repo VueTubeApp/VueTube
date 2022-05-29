@@ -17,7 +17,12 @@
           {{ sources.find((src) => src.url == video.src).qualityLabel }}
         </v-btn>
       </template>
-      <v-card class="background">
+      <v-card
+        v-touch="{
+          down: () => (sheet = false),
+        }"
+        class="background"
+      >
         <v-subheader>Quality for current video</v-subheader>
         <v-card-text style="max-height: 50vh" class="pa-0">
           <v-list-item

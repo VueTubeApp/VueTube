@@ -17,7 +17,12 @@
           {{ video.playbackRate }}X
         </v-btn>
       </template>
-      <v-card class="background">
+      <v-card
+        v-touch="{
+          down: () => (sheet = false),
+        }"
+        class="background"
+      >
         <v-subheader>Playback Speed</v-subheader>
         <v-card-text style="height: 50vh" class="pa-0">
           <v-list-item

@@ -51,22 +51,25 @@
           <v-icon class="ml-4" v-if="showMore">mdi-chevron-up</v-icon>
           <v-icon class="ml-4" v-else>mdi-chevron-down</v-icon>
         </div>
-        <div class="d-flex pl-6">
+        <div class="d-flex pl-4">
           <v-btn
             v-for="(item, index) in interactions"
             :key="index"
             text
             fab
-            no-caps
             class="vertical-button mx-1"
             elevation="0"
-            style="width: 4.2rem !important; height: 4.2rem !important"
+            style="
+              width: 4.2rem !important;
+              height: 4.2rem !important;
+              text-decoration: none !important;
+            "
             :disabled="item.disabled"
             @click="callMethodByName(item.actionName)"
           >
             <v-icon v-text="item.icon" />
             <div
-              class="mt-2"
+              class="mt-1"
               style="font-size: 0.66rem"
               v-text="item.value || item.name"
             />
