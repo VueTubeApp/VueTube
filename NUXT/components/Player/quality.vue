@@ -17,7 +17,7 @@
         </v-btn>
       </template>
       <v-card class="background">
-        <v-subheader>Playback Speed</v-subheader>
+        <v-subheader>Quality for current video</v-subheader>
         <v-card-text style="max-height: 50vh" class="pa-0">
           <v-list-item
             v-for="src in sources"
