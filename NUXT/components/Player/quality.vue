@@ -3,7 +3,7 @@
     fab
     text
     disabled
-    style="position: absolute; bottom: 0.25rem; right: 3.5rem"
+    style="position: absolute; bottom: 0.25rem; right: 4rem"
   >
     HD
   </v-btn>

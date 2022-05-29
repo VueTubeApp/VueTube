@@ -1,14 +1,7 @@
 <template>
   <v-card
-    class="entry videoRenderer background"
+    class="entry videoRenderer background overflow-hidden"
     :to="`/watch?v=${vidId}`"
-    :class="
-      roundThumb && roundTweak > 0
-        ? $vuetify.theme.dark
-          ? 'lighten-1'
-          : 'darken-1'
-        : ''
-    "
     :style="{
       borderRadius: roundThumb ? `${roundTweak / 2}rem` : '0',
       margin:
@@ -21,7 +14,7 @@
         :aspect-ratio="16 / 9"
         :src="$youtube.getThumbnail(vidId, 'max', thumbnails)"
         :style="{
-          borderRadius: roundThumb ? `${roundTweak / 4}rem` : '0',
+          borderRadius: roundThumb ? `${roundTweak / 12}rem` : '0',
         }"
       />
       <div
@@ -32,13 +25,26 @@
         v-text="thumbnailOverlayText"
       />
     </div>
-    <div id="details">
+    <div
+      id="details"
+      class="background mt-1"
+      :class="
+        roundThumb && roundTweak > 0
+          ? $vuetify.theme.dark
+            ? 'lighten-1'
+            : 'darken-1'
+          : ''
+      "
+      :style="{
+        borderRadius: roundThumb ? `${roundTweak / 12}rem` : '0',
+      }"
+    >
       <a
+        class="avatar-link pl-2 pt-2"
         @click.prevent="
           $store.dispatch('channel/fetchChannel', channelUrl),
             $router.push('/channel')
         "
-        class="avatar-link pl-2 pt-2"
       >
         <v-img class="avatar-thumbnail" :src="channelIcon" />
       </a>

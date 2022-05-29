@@ -2,14 +2,14 @@
   <div
     style="
       color: #fff;
-      left: 1.25rem;
-      bottom: 1.25rem;
+      left: 1.5rem;
+      bottom: 1.5rem;
       font-size: 0.75rem;
       position: absolute;
     "
   >
     {{ watched }}
-    <span style="color: #999"> / {{ duration }} </span>
+    <span style="color: #aaa"> / {{ duration }} </span>
   </div>
 </template>
 

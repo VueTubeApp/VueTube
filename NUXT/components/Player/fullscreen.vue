@@ -3,7 +3,7 @@
     fab
     text
     color="white"
-    style="position: absolute; bottom: 0.25rem; right: 0"
+    style="position: absolute; bottom: 0.25rem; right: 0.5rem"
     @click.stop="$emit('fullscreen')"
   >
     <v-icon>{{ fullscreen ? "mdi-fullscreen-exit" : "mdi-fullscreen" }}</v-icon>

@@ -3,7 +3,7 @@
     fab
     text
     disabled
-    style="position: absolute; bottom: 0.25rem; right: 7rem"
+    style="position: absolute; bottom: 0.25rem; right: 7.5rem"
   >
     1X
   </v-btn>

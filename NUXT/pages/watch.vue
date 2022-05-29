@@ -3,7 +3,12 @@
     <div id="player-container">
       <!-- TODO: move component to default.vue -->
       <!-- TODO: pass sources through vuex instead of props -->
-      <player v-if="sources.length > 0" ref="player" :sources="sources" />
+      <player
+        v-if="sources.length > 0 && video.title && video.channelName"
+        ref="player"
+        :video="video"
+        :sources="sources"
+      />
     </div>
 
     <div
@@ -214,17 +219,17 @@
       />
 
       <swipeable-bottom-sheet
+        v-if="loaded && video.commentData"
         v-model="showComments"
         hide-overlay
         persistent
         no-click-animation
         attach="#content-container"
-        v-if="loaded && video.commentData"
       >
         <mainCommentRenderer
-          :defaultContinuation="video.commentContinuation"
-          :commentData="video.commentData"
           v-model="showComments"
+          :comment-data="video.commentData"
+          :default-continuation="video.commentContinuation"
         ></mainCommentRenderer>
       </swipeable-bottom-sheet>
 
