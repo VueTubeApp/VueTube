@@ -9,7 +9,8 @@
         <v-btn
           fab
           text
-          style="position: absolute; bottom: 0.25rem; right: 4rem"
+          small
+          style="position: absolute; bottom: 0.25rem; right: 3rem"
           v-bind="attrs"
           v-on="on"
         >

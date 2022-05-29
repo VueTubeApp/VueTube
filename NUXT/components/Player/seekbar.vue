@@ -19,7 +19,7 @@
       height="3"
       :style="
         fullscreen
-          ? 'width: calc(100% - 3rem); left: 1.5rem; position: absolute; bottom: 3.75rem;'
+          ? 'width: calc(100% - 2rem); left: 1rem; position: absolute; bottom: 3rem;'
           : 'width: 100%'
       "
     />
@@ -34,7 +34,7 @@
       style="position: absolute; z-index: 2"
       :style="
         fullscreen
-          ? 'width: calc(100% - 3rem); left: 1.5rem; bottom: 3.75rem;'
+          ? 'width: calc(100% - 2rem); left: 1rem; bottom: 3rem;'
           : 'width: calc(100% - 0.8rem); left: 0.4rem; bottom: 0;'
       "
       :thumb-size="0"

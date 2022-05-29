@@ -30,31 +30,29 @@
       v-if="isFullscreen && controls"
       style="
         position: absolute;
-        width: calc(100% - 13.5rem);
-        left: 3.5rem;
-        top: 1rem;
+        width: calc(100% - 12rem);
+        left: 3rem;
+        top: 0.5rem;
       "
     >
-      <h3>{{ video.title }}</h3>
-      <div style="color: #aaa">{{ video.channelName }}</div>
+      <h4>{{ video.title }}</h4>
+      <div style="color: #aaa; font-size: 0.75rem">{{ video.channelName }}</div>
     </div>
 
     <!-- <v-btn
-      v-if="controls"
       text
       tile
       style="position: absolute; top: 0; left: 0; width: 50%; height: 100%"
-      @click.stop="$refs.player.currentTime -= $refs.player.duration / 10"
+      @dblclick.stop="$refs.player.currentTime -= $refs.player.duration / 10"
     >
       <v-icon>mdi-rewind</v-icon>
     </v-btn>
 
     <v-btn
-      v-if="controls"
       text
       tile
       style="position: absolute; top: 0; left: 50%; width: 50%; height: 100%"
-      @click.stop="$refs.player.currentTime += $refs.player.duration / 10"
+      @dblclick.stop="$refs.player.currentTime += $refs.player.duration / 10"
     >
       <v-icon>mdi-fast-forward</v-icon>
     </v-btn> -->

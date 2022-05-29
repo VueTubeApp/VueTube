@@ -1,5 +1,11 @@
 <template>
-  <v-btn fab text disabled style="position: absolute; top: 0; left: 0">
+  <v-btn
+    fab
+    text
+    small
+    disabled
+    style="position: absolute; top: 0.25rem; left: 0.25rem"
+  >
     <v-icon>mdi-chevron-down</v-icon>
   </v-btn>
 </template>

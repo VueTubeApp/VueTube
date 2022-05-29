@@ -2,8 +2,9 @@
   <v-btn
     fab
     text
+    small
     color="white"
-    style="position: absolute; bottom: 0.25rem; right: 0.5rem"
+    style="position: absolute; bottom: 0.25rem; right: 0.25rem"
     @click.stop="$emit('fullscreen')"
   >
     <v-icon>{{ fullscreen ? "mdi-fullscreen-exit" : "mdi-fullscreen" }}</v-icon>

@@ -2,8 +2,8 @@
   <div
     style="
       color: #fff;
-      left: 1.5rem;
-      bottom: 1.5rem;
+      left: 1rem;
+      bottom: 1rem;
       font-size: 0.75rem;
       position: absolute;
     "
