@@ -1,5 +1,5 @@
 <template>
-  <!-- TODO: down: () => minimize, -->
+  <!-- // TODO: down: () => minimize, -->
   <div
     ref="vidcontainer"
     v-touch="{
@@ -32,7 +32,7 @@
         position: absolute;
         width: calc(100% - 13.5rem);
         left: 3.5rem;
-        top: 0.5rem;
+        top: 1rem;
       "
     >
       <h3>{{ video.title }}</h3>
@@ -75,8 +75,8 @@
       />
 
       <watchtime v-if="$refs.player" :video="$refs.player" />
-      <quality />
-      <speed />
+      <quality v-if="$refs.player" :video="$refs.player" :sources="sources" />
+      <speed v-if="$refs.player" :video="$refs.player" />
       <fullscreen
         :fullscreen="isFullscreen"
         @fullscreen="(controls = $refs.player.paused), handleFullscreenChange()"

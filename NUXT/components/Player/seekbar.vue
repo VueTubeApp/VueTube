@@ -11,14 +11,15 @@
       query
       active
       style="width: 100%"
-      class="background"
-      :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+      :class="
+        $vuetify.theme.dark ? 'transparent-lighten-1' : 'transparent-darken-1'
+      "
       background-opacity="0.5"
       background-color="primary"
       :buffer-value="buffered"
       :value="percent"
       color="primary"
-      height="2"
+      height="3"
       :style="
         fullscreen
           ? 'width: calc(100% - 3rem); left: 1.5rem; position: absolute; bottom: 3.75rem;'
@@ -33,7 +34,7 @@
       dense
       track-color="transparent"
       :class="!controls && !fullscreen && !scrubbing ? 'invisible' : ''"
-      style="position: absolute; z-index: 69420"
+      style="position: absolute; z-index: 2"
       :style="
         fullscreen
           ? 'width: calc(100% - 3rem); left: 1.5rem; bottom: 3.75rem;'
