@@ -51,7 +51,7 @@
         width: 50%;
         height: 100%;
       "
-      @dblclick.stop="$refs.player.currentTime -= $refs.player.duration / 10"
+      @dblclick.stop="$refs.player.currentTime -= 10"
     >
       <v-icon>mdi-rewind</v-icon>
     </v-btn>
@@ -67,7 +67,7 @@
         width: 50%;
         height: 100%;
       "
-      @dblclick.stop="$refs.player.currentTime += $refs.player.duration / 10"
+      @dblclick.stop="$refs.player.currentTime += 10"
     >
       <v-icon>mdi-fast-forward</v-icon>
     </v-btn>
