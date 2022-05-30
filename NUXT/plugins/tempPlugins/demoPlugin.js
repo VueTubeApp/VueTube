@@ -13,7 +13,7 @@ module.exports = {
    * Execute code on ALL VueTube pages
    ************************/
   global: function() {
-
+    console.log("This code is now executed when ALL vuetube pages (including settings) are loaded.")
   },
 
   /************************* 
