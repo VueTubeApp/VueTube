@@ -248,6 +248,12 @@ export default {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
+.transparent-lighten-1 {
+  background: #ffffff22;
+}
+.transparent-darken-1 {
+  background: #00000022;
+}
 .debug {
   outline: 1px solid red;
 }

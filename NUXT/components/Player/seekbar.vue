@@ -10,30 +10,38 @@
     <v-progress-linear
       query
       active
-      style="width: 100%"
+      style="width: 100%; background: #ffffff22"
       background-opacity="0.5"
       background-color="primary"
       :buffer-value="buffered"
       :value="percent"
       color="primary"
-      height="2"
+      height="3"
+      :style="
+        fullscreen
+          ? 'width: calc(100% - 2rem); left: 1rem; position: absolute; bottom: 3rem;'
+          : 'width: 100%'
+      "
     />
     <!-- Scrubber -->
     <v-slider
+      id="scrubber"
       hide-details
       height="2"
       dense
-      style="position: absolute; z-index: 69420"
+      track-color="transparent"
+      :class="!controls && !fullscreen && !scrubbing ? 'invisible' : ''"
+      style="position: absolute; z-index: 2"
       :style="
         fullscreen
-          ? 'width: calc(100% - 2rem); left: 1rem; bottom: 4rem;'
-          : 'width: 100%; left: 0; bottom: 0;'
+          ? 'width: calc(100% - 2rem); left: 1rem; bottom: 3rem;'
+          : 'width: calc(100% - 0.8rem); left: 0.4rem; bottom: 0;'
       "
       :thumb-size="0"
       :max="duration"
       :value="progress"
-      @start="scrubbing = true"
-      @end="scrubbing = false"
+      @start="(scrubbing = true), $emit('seeking')"
+      @end="(scrubbing = false), $emit('seeking')"
       @change="scrub($event)"
       @input="scrubbing ? seek($event) : null"
     >
@@ -62,7 +70,7 @@
 
 <script>
 export default {
-  props: ["sources", "video", "fullscreen"],
+  props: ["sources", "video", "controls", "fullscreen"],
 
   data() {
     return {

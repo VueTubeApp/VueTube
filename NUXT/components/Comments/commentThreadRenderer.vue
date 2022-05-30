@@ -10,7 +10,7 @@
       text
       to="/channel"
       class="avatar-link mr-4"
-      style="height: 3rem; width: 3rem"
+      style="height: 35px; width: 35px"
       @click.prevent="
         $store.dispatch(
           'channel/fetchChannel',
@@ -117,8 +117,8 @@
 
   .avatar-thumbnail {
     border-radius: 50%;
-    width: 48px;
-    height: 48px;
+    width: 35px;
+    height: 35px;
   }
 
   .comment-content {

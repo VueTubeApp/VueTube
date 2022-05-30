@@ -1,9 +1,14 @@
 <template>
   <div class="background" id="watch-body">
     <div id="player-container">
-      <!-- TODO: move component to default.vue -->
-      <!-- TODO: pass sources through vuex instead of props -->
-      <player v-if="sources.length > 0" ref="player" :sources="sources" />
+      <!-- // TODO: move component to default.vue -->
+      <!-- // TODO: pass sources through vuex instead of props -->
+      <player
+        v-if="sources.length > 0 && video.title && video.channelName"
+        ref="player"
+        :video="video"
+        :sources="sources"
+      />
     </div>
 
     <div
@@ -46,23 +51,26 @@
           <v-icon class="ml-4" v-if="showMore">mdi-chevron-up</v-icon>
           <v-icon class="ml-4" v-else>mdi-chevron-down</v-icon>
         </div>
-        <div class="d-flex pl-6">
+        <div class="d-flex pl-4">
           <v-btn
             v-for="(item, index) in interactions"
             :key="index"
             text
             fab
-            no-caps
             class="vertical-button mx-1"
             elevation="0"
-            style="width: 4.2rem !important; height: 4.2rem !important"
+            style="
+              width: 4.2rem !important;
+              height: 4.2rem !important;
+              text-transform: none !important;
+            "
             :disabled="item.disabled"
             @click="callMethodByName(item.actionName)"
           >
             <v-icon v-text="item.icon" />
             <div
-              class="mt-2"
-              style="font-size: 0.66rem"
+              class="mt-1"
+              style="font-size: 0.6rem"
               v-text="item.value || item.name"
             />
           </v-btn>
@@ -214,17 +222,17 @@
       />
 
       <swipeable-bottom-sheet
+        v-if="loaded && video.commentData"
         v-model="showComments"
         hide-overlay
         persistent
         no-click-animation
         attach="#content-container"
-        v-if="loaded && video.commentData"
       >
         <mainCommentRenderer
-          :defaultContinuation="video.commentContinuation"
-          :commentData="video.commentData"
           v-model="showComments"
+          :comment-data="video.commentData"
+          :default-continuation="video.commentContinuation"
         ></mainCommentRenderer>
       </swipeable-bottom-sheet>
 
@@ -316,6 +324,7 @@ export default {
       this.loaded = false;
 
       this.$youtube.getVid(this.$route.query.v).then((result) => {
+        // TODO: add other resolutions as well
         this.sources = result.availableResolutions;
         console.log("Video info data", result);
         this.video = result;

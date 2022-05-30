@@ -1,5 +1,11 @@
 <template>
-  <v-btn disabled fab text style="position: absolute; top: 0; right: 3.5rem">
+  <v-btn
+    fab
+    text
+    small
+    disabled
+    style="position: absolute; top: 0.25rem; right: 3rem"
+  >
     <v-icon>mdi-closed-caption-outline</v-icon>
   </v-btn>
 </template>

@@ -2,20 +2,15 @@
   <v-btn
     fab
     text
-    style="
-      width: 5rem;
-      height: 5rem;
-      position: absolute;
-      top: calc(50% - 2.5rem);
-      left: calc(50% - 2.5rem);
-    "
+    large
+    style="position: absolute; top: calc(50% - 2rem); left: calc(50% - 2rem)"
     color="white"
     @click.stop="
       (paused = !video.paused),
         video.paused ? (video.play(), $emit('close')) : video.pause()
     "
   >
-    <v-icon size="5rem">
+    <v-icon size="3.5rem">
       {{ paused ? "mdi-play" : "mdi-pause" }}
     </v-icon>
   </v-btn>

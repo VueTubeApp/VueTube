@@ -1,10 +1,64 @@
 <template>
-  <v-btn
-    fab
-    text
-    disabled
-    style="position: absolute; bottom: 0.25rem; right: 7rem"
-  >
-    1X
-  </v-btn>
+  <div>
+    <v-bottom-sheet
+      v-model="sheet"
+      :attach="$parent.$refs.vidcontainer"
+      scrollable
+    >
+      <template #activator="{ on, attrs }">
+        <v-btn
+          fab
+          text
+          small
+          style="position: absolute; bottom: 0.25rem; right: 6rem"
+          v-bind="attrs"
+          v-on="on"
+        >
+          {{ video.playbackRate }}X
+        </v-btn>
+      </template>
+      <v-card
+        v-touch="{
+          down: () => (sheet = false),
+        }"
+        class="background"
+      >
+        <v-subheader>Playback Speed</v-subheader>
+        <v-card-text style="height: 50vh" class="pa-0">
+          <v-list-item
+            v-for="sped in speeds"
+            :key="sped"
+            @click="(sheet = false), (video.playbackRate = sped)"
+          >
+            <!-- // TODO: save playbackRate to localStorage and manage via store/video/index.js -->
+            <v-list-item-avatar>
+              <v-icon
+                :color="
+                  video.playbackRate === sped
+                    ? 'primary'
+                    : $vuetify.theme.dark
+                    ? 'background lighten-2'
+                    : 'background darken-2'
+                "
+                v-text="
+                  video.playbackRate === sped ? 'mdi-check' : 'mdi-speedometer'
+                "
+              ></v-icon>
+            </v-list-item-avatar>
+            <v-list-item-title>{{ sped }}X</v-list-item-title>
+          </v-list-item>
+        </v-card-text>
+      </v-card>
+    </v-bottom-sheet>
+  </div>
 </template>
+
+<script>
+export default {
+  props: ["video"],
+  data: () => ({
+    sheet: false,
+    speeds: [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 3, 4, 8, 16],
+  }),
+};
+</script>

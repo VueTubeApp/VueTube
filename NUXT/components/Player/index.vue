@@ -1,5 +1,5 @@
 <template>
-  <!-- TODO: down: () => minimize, -->
+  <!-- // TODO: down: () => minimize, -->
   <div
     ref="vidcontainer"
     v-touch="{
@@ -19,43 +19,55 @@
       ref="player"
       autoplay
       width="100%"
+      :height="isFullscreen ? '100%' : 'auto'"
       :src="vidSrc"
-      style="transition: filter 0.15s ease-in-out; max-height: 100vh"
-      :class="controls ? 'dim' : ''"
+      style="transition: filter 0.15s ease-in-out"
+      :class="controls || seeking ? 'dim' : ''"
       :style="contain ? 'object-fit: contain;' : 'object-fit: cover;'"
     />
-    <!-- TODO: controls || seeking, take seeking out of <seekbar> component -->
 
+    <div
+      v-if="isFullscreen && controls"
+      style="
+        position: absolute;
+        width: calc(100% - 12rem);
+        left: 3rem;
+        top: 0.5rem;
+      "
+    >
+      <h4>{{ video.title }}</h4>
+      <div style="color: #aaa; font-size: 0.75rem">{{ video.channelName }}</div>
+    </div>
+
+    <!-- // TODO: merge the bottom 2 into 1 reusable component -->
     <v-btn
-      v-if="controls"
       text
       tile
       style="
+        opacity: 0;
         position: absolute;
         top: 0;
         left: 0;
         width: 50%;
         height: 100%;
-        opacity: 0;
       "
-      @dbclick.stop="$refs.player.currentTime -= $refs.player.duration / 10"
+      @dblclick.stop="$refs.player.currentTime -= 10"
     >
       <v-icon>mdi-rewind</v-icon>
     </v-btn>
 
     <v-btn
-      v-if="controls"
       text
       tile
       style="
+        opacity: 0;
         position: absolute;
         top: 0;
         left: 50%;
         width: 50%;
         height: 100%;
-        opacity: 0;
       "
-      @dbclick.stop="$refs.player.currentTime += $refs.player.duration / 10"
+      @dblclick.stop="$refs.player.currentTime += 10"
     >
       <v-icon>mdi-fast-forward</v-icon>
     </v-btn>
@@ -69,15 +81,72 @@
       <captions />
       <close />
 
+      <v-btn
+        fab
+        text
+        small
+        style="
+          position: absolute;
+          top: calc(50% - 1.25rem);
+          left: calc(50% - 10rem);
+        "
+        color="white"
+        @click.stop="$refs.player.currentTime -= 5"
+      >
+        <v-icon size="1rem">mdi-rewind-5</v-icon>
+      </v-btn>
+      <v-btn
+        fab
+        text
+        style="
+          position: absolute;
+          top: calc(50% - 1.75rem);
+          left: calc(50% - 6.5rem);
+        "
+        color="white"
+        disabled
+        @click.stop=""
+      >
+        <v-icon size="2rem">mdi-skip-previous</v-icon>
+      </v-btn>
       <playpause
         v-if="$refs.player"
         :video="$refs.player"
         @close="controls = false"
       />
+      <v-btn
+        fab
+        text
+        style="
+          position: absolute;
+          top: calc(50% - 1.75rem);
+          left: calc(50% + 3rem);
+        "
+        color="white"
+        disabled
+        @click.stop=""
+      >
+        <v-icon size="2rem">mdi-skip-next</v-icon>
+      </v-btn>
+      <v-btn
+        fab
+        text
+        small
+        style="
+          position: absolute;
+          top: calc(50% - 1.25rem);
+          left: calc(50% + 7rem);
+        "
+        color="white"
+        @click.stop="$refs.player.currentTime += 5"
+      >
+        <v-icon size="1rem">mdi-fast-forward-5</v-icon>
+      </v-btn>
 
       <watchtime v-if="$refs.player" :video="$refs.player" />
-      <quality />
-      <speed />
+      <!-- // TODO: merge the bottom 2 into 1 reusable component -->
+      <quality v-if="$refs.player" :video="$refs.player" :sources="sources" />
+      <speed v-if="$refs.player" :video="$refs.player" />
       <fullscreen
         :fullscreen="isFullscreen"
         @fullscreen="(controls = $refs.player.paused), handleFullscreenChange()"
@@ -90,6 +159,8 @@
       :fullscreen="isFullscreen"
       :video="$refs.player"
       :sources="sources"
+      :controls="controls"
+      @seeking="seeking = !seeking"
     />
   </div>
 </template>
@@ -123,11 +194,16 @@ export default {
       type: Array,
       required: true,
     },
+    video: {
+      type: Object,
+      required: true,
+    },
   },
   data() {
     return {
       isFullscreen: false,
       controls: false,
+      seeking: false,
       contain: true,
       vidSrc: "",
     };
@@ -135,9 +211,11 @@ export default {
   mounted() {
     console.log("sources", this.sources);
     this.vidSrc = this.sources[this.sources.length - 1].url;
+    // TODO: detect orientation change and enter fullscreen
+    // TODO: detect video loading state and send this.loading to play button :loading = loading
   },
   beforeDestroy() {
-    this.exitFullscreen();
+    if (this.isFullscreen) this.exitFullscreen();
   },
   methods: {
     handleFullscreenChange() {
@@ -182,6 +260,9 @@ export default {
 
 <style>
 .dim {
-  filter: brightness(50%);
+  filter: brightness(42%);
+}
+.invisible {
+  opacity: 0;
 }
 </style>

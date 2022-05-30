@@ -3,7 +3,8 @@
   <v-btn
     fab
     text
-    style="position: absolute; top: 0; right: 0"
+    small
+    style="position: absolute; top: 0.25rem; right: 0.25rem"
     to="/home"
     color="white"
   >
