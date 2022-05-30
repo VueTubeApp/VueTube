@@ -1,7 +1,12 @@
 <template>
   <div>
 
-    <center v-if="plugins.length == 0">
+    <div style="margin: 1em;">
+      <v-btn style="width: 100%;" class="primary" @click="pickFile()">Load Plugin</v-btn>
+      <input type="file" id="filePicker" accept=".js" />
+    </div>
+
+    <center v-if="plugins.length == 0" style="margin-top: 2em;">
       <v-icon size="50px">mdi-connection</v-icon>
       <h2>No plugins installed</h2>
     </center>
@@ -49,6 +54,13 @@
   </div>
 </template>
 
+<style scoped>
+#filePicker {
+  visibility: hidden;
+  display: none;
+}
+</style>
+
 <script>
 export default {
   data() {
@@ -58,7 +70,19 @@ export default {
     };
   },
   async mounted() {
-    this.plugins = await this.$tppl.list;
+    //this.plugins = await this.$tppl.list;
+
+    document.getElementById('filePicker').onchange = function() {
+      const file = document.getElementById("filePicker").files[0];
+
+    };
+
+
   },
+  methods: {
+    pickFile() {
+      document.getElementById("filePicker").click();
+    }
+  }
 };
 </script>
