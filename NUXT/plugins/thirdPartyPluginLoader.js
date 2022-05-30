@@ -5,16 +5,8 @@ import { fs } from './constants';
 //---   Set Up App Directory   ---//
 const APP_DIRECTORY = Directory.Data;
 
-
+//---   Ensure Plugins Folder   ---//
 const ensureStructure = new Promise(async (resolve, reject) => {
-  /*
-  const perms = await Filesystem.checkPermissions();
-  if (perms.publicStorage !== "granted") {
-    perms = await Filesystem.requestPermissions();
-  }
-  // Legacy shit that isnt supported on android 10+   */ 
-
-  //---   Ensure Plugins Folder   ---//
   try {
     await Filesystem.mkdir({
       directory: APP_DIRECTORY, recursive: true,
@@ -22,40 +14,38 @@ const ensureStructure = new Promise(async (resolve, reject) => {
     });
   } catch (e) { /* Exists */ }
 
-  perms
-    ? resolve(true)
-    : reject(false)
-
+  resolve();
 })
 
-
 const module = {
-
 
   //---   List Plugins   ---//
   list: new Promise(async (resolve, reject) => {
 
-    if (await !ensureStructure) reject("Invalid Structure");
+    await ensureStructure();
 
     const plugins = await Filesystem.readdir({
       path: fs.plugins,
       directory: APP_DIRECTORY
-    });
+    }).catch(err => { reject(err) })
     resolve(plugins);
 
   }),
 
-  debug(path) { return new Promise(async (resolve, reject) => {
+  addPlugin(content) {
+    await ensureStructure();
+    new Promise(async (resolve, reject) => {
+      const fileName = require("./utils").getCpn(); // Im not sure what this is actually meant for but im using it as a random string generator
+      console.log("Saving Plugin As"+ fileName)
+      await Filesystem.writeFile({
+        path: fs.plugins+"/"+fileName+".js",
+        directory: APP_DIRECTORY,
+        data: content,
+        encoding: Encoding.UTF8,
+      });
 
-    if (await !ensureStructure) reject("Invalid Structure");
-  
-    const plugins = await Filesystem.readdir({
-      path: path,
-      directory: APP_DIRECTORY
-    });
-    resolve(plugins);
-  
-  })}
+    })
+  }
 
 
 
