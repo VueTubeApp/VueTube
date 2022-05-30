@@ -1,17 +1,22 @@
 <template>
   <div
+    v-if="commentRenderer"
     v-ripple
     class="comment-thread px-3"
-    v-if="commentRenderer"
     @click="$emit('showReplies', comment)"
   >
-    <a
-      :href="
-        this.$rendererUtils.getNavigationEndpoints(
-          commentRenderer.authorEndpoint
+    <v-btn
+      fab
+      text
+      to="/channel"
+      class="avatar-link mr-4"
+      style="height: 35px; width: 35px"
+      @click.prevent="
+        $store.dispatch(
+          'channel/fetchChannel',
+          $rendererUtils.getNavigationEndpoints(commentRenderer.authorEndpoint)
         )
       "
-      class="avatar-link"
     >
       <v-img
         class="avatar-thumbnail"
@@ -21,83 +26,76 @@
           ].url
         "
       />
-    </a>
+    </v-btn>
     <div class="comment-content">
-      <div class="comment-content--header subtitle-2">
+      <div
+        class="comment-content--header background--text"
+        :class="$vuetify.theme.dark ? 'text--lighten-5' : 'text--darken-4'"
+        style="font-size: 0.8rem !important"
+      >
         <div
-          class="author-badge-name mr-1"
-          :class="{ owner: commentRenderer.authorIsChannelOwner }"
+          class="author-badge-name mr-2"
+          :class="
+            commentRenderer.authorIsChannelOwner
+              ? $vuetify.theme.dark
+                ? 'owner primary--text background lighten-2'
+                : 'owner primary--text background darken-2'
+              : ''
+          "
         >
           <div class="author-name--wrapper">
-            <span class="font-weight-bold author-name" v-emoji>
+            <span class="author-name mr-1" v-emoji>
               {{ commentRenderer.authorText.simpleText }}
             </span>
           </div>
           <template
             v-for="(badge, index) in commentRenderer.authorCommentBadge"
           >
-            <author-comment-badge-renderer
-              :metadata="badge"
-              :key="index"
-              class="ml-1"
-            />
+            <author-comment-badge-renderer :metadata="badge" :key="index" />
           </template>
           <template
             v-for="(badge, index) in commentRenderer.sponsorCommentBadge"
           >
-            <sponsor-comment-badge-renderer
-              :metadata="badge"
-              :key="index"
-              class="ml-1"
-            />
+            <sponsor-comment-badge-renderer :metadata="badge" :key="index" />
           </template>
         </div>
-        <span
-          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-          class="background--text comment-timestamp"
-        >
+        &middot;
+        <span class="comment-timestamp ml-2">
           {{ commentRenderer.publishedTimeText.runs[0].text }}
         </span>
       </div>
       <collapsable-text
-        :lines="4"
-        :expandText="
+        :lines="3"
+        :expand-text="
           commentRenderer.expandButton.buttonRenderer.text.runs[0].text
         "
-        :collapseText="
+        :collapse-text="
           commentRenderer.collapseButton.buttonRenderer.text.runs[0].text
         "
       >
-        <yt-text-formatter :textRuns="commentRenderer.contentText.runs">
+        <yt-text-formatter
+          style="font-size: 0.9rem"
+          :text-runs="commentRenderer.contentText.runs"
+        >
         </yt-text-formatter>
       </collapsable-text>
-      <div class="toolbar">
+      <div class="toolbar mt-2">
         <v-btn-toggle v-model="voteStatus" group>
           <div class="toolbar--item mr-1">
-            <v-btn class="toolbar--button like" disabled icon x-small plain>
-              <v-icon small>mdi-thumb-up</v-icon>
-            </v-btn>
+            <v-icon small>mdi-thumb-up-outline</v-icon>
             <span
               v-if="commentRenderer.voteCount"
+              class="like-count caption"
               v-text="commentRenderer.voteCount.simpleText"
-              class="like-count subtitle-2"
             ></span>
-          </div>
-          <div class="toolbar--item">
-            <v-btn class="toolbar--button dislike" disabled icon x-small plain>
-              <v-icon small>mdi-thumb-down</v-icon>
-            </v-btn>
+            <v-icon class="ml-2" small>mdi-thumb-down-outline</v-icon>
           </div>
         </v-btn-toggle>
-        <div class="toolbar--item">
-          <v-btn class="toolbar--button reply ml-2" disabled icon x-small plain>
-            <v-icon small>mdi-comment</v-icon>
-          </v-btn>
-        </div>
-        <div class="toolbar--item" v-if="commentRenderer.replyCount">
+        <div class="toolbar--item ml-6" v-if="commentRenderer.replyCount">
+          <v-icon small>mdi-comment-outline</v-icon>
           <span
+            class="like-count caption"
             v-text="commentRenderer.replyCount"
-            class="like-count mr-1 subtitle-2"
           ></span>
         </div>
       </div>
@@ -118,10 +116,9 @@
   padding: 10px 0;
 
   .avatar-thumbnail {
-    margin-right: 0.5rem;
     border-radius: 50%;
-    width: 48px;
-    height: 48px;
+    width: 35px;
+    height: 35px;
   }
 
   .comment-content {
@@ -162,14 +159,9 @@
 }
 
 .owner {
-  padding: 0 0.6em;
-  background-color: #888888;
-  color: #fff;
   border-radius: 1em;
-
-  &::v-deep .author-badge {
-    color: #fff;
-  }
+  padding: 0 0.3em 0 0.6em;
+  font-weight: bold;
 }
 
 .toolbar--button::v-deep.v-btn--active .v-btn__content {

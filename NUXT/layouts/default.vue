@@ -4,13 +4,15 @@
       :search="search"
       :page="page"
       style="z-index: 696969"
-      @close-search="search = !search"
       @search-btn="searchBtn"
       @text-changed="textChanged"
+      @close-search="search = !search"
       @scroll-to-top="$refs.pgscroll.scrollTop = 0"
     />
+
+    <!-- channel-tabs -->
     <v-tabs
-      v-if="$route.path.includes('/channel')"
+      v-if="$route.path.includes('/channel') && !search"
       mobile-breakpoint="0"
       style="
         position: fixed;
@@ -24,6 +26,7 @@
         v-for="tab in channelTabs"
         :key="tab.name"
         :to="tab.to"
+        exact
         :v-ripple="false"
       >
         {{ tab.name }}
@@ -31,9 +34,15 @@
     </v-tabs>
 
     <div
-      style="height: 100%; padding-bottom: 4rem"
+      style="
+        height: 100%;
+        padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+      "
       :style="{
-        marginTop: $route.path.includes('/channel') ? '7rem' : '4rem',
+        paddingTop:
+          $route.path.includes('/channel') && !search
+            ? 'calc(7rem + env(safe-area-inset-top))'
+            : 'calc(4rem + env(safe-area-inset-top))',
       }"
     >
       <div v-show="!search">
@@ -53,21 +62,17 @@
       >
         <div class="scroll-y" style="height: 100%">
           <div v-if="search" style="min-width: 180px">
-            <v-list-item
-              v-for="(item, index) in response"
-              :key="index"
-              class="px-0"
-            >
+            <v-list-item v-for="item in response" :key="item[0]" class="px-0">
               <v-btn
+                v-emoji
                 text
                 tile
                 dense
                 class="searchButton text-left text-none"
                 @click="youtubeSearch(item)"
-                v-emoji
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
-                {{ item[0] || item.text }}
+                {{ item[0] }}
               </v-btn>
             </v-list-item>
           </div>
@@ -154,28 +159,28 @@ export default {
         return;
       } // No text found, no point in calling API
 
-      //---   User Pastes Link, Direct Them To Video   ---//
-      const isLink = linkParser(text);
-      if (isLink) {
-        this.response = [
-          {
-            text: `Watch Video from ID: ${isLink.searchParams.get("v")}`,
-            id: isLink.searchParams.get("v"),
-          },
-        ];
-        return;
-      }
-      //---   End User Pastes Link, Direct Them To Video   ---//
-
       //---   Auto Suggest   ---//
       this.$youtube.autoComplete(text, (res) => {
         const data = res.replace(/^.*?\(/, "").replace(/\)$/, ""); //Format Response
         this.response = JSON.parse(data)[1];
       });
+
+      //---   User Pastes Link, Direct Them To Video   ---//
+      const isLink = linkParser(text);
+      if (isLink) {
+        this.response = [
+          `Watch Video from ID: ${isLink.searchParams.get("v")}`,
+          { id: isLink.searchParams.get("v") },
+        ];
+        return;
+      }
+      //---   End User Pastes Link, Direct Them To Video   ---//
     },
 
     youtubeSearch(item) {
-      const link = item.id ? `/watch?v=${item.id}` : `/search?q=${item[0]}`;
+      const link = item[1].id
+        ? `/watch?v=${item[1].id}` // link pasted
+        : `/search?q=${item[0]}`; // regular suggestion
       this.$router.push(link);
       this.search = false;
     },
@@ -226,10 +231,38 @@ export default {
 .v-slide-group__next {
   display: none !important;
 }
+.v-input--selection-controls__input {
+  margin-right: 0 !important;
+}
+.v-input__slot {
+  margin: 0 !important;
+}
+.v-slider {
+  margin: 0 !important;
+}
 
+.border-primary {
+  border: 2px solid var(--v-primary-base) !important;
+}
 .glassy {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+}
+.transparent-lighten-1 {
+  background: #ffffff22;
+}
+.transparent-darken-1 {
+  background: #00000022;
+}
+.debug {
+  outline: 1px solid red;
+}
+
+.v-card--reveal {
+  bottom: 0;
+  opacity: 1 !important;
+  position: absolute !important;
+  width: 100%;
 }
 
 .scrollcontainer {
@@ -248,7 +281,9 @@ export default {
 html,
 body {
   background: var(--v-background-base);
-  /* overflow-x: hidden; */
+  -webkit-overflow-scrolling: touch !important;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
 }
 
 p,

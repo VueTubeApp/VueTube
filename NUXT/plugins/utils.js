@@ -85,5 +85,5 @@ module.exports = {
   getMutationByKey,
   linkParser,
   delay,
-  parseEmoji
+  parseEmoji,
 };

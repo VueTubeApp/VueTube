@@ -1,13 +1,11 @@
 <template>
   <v-card
-    class="entry videoRenderer background"
+    class="entry videoRenderer background overflow-hidden"
     :to="`/watch?v=${vidId}`"
     :style="{
-      borderRadius: `${roundTweak / 2.5}rem`,
+      borderRadius: roundThumb ? `${roundTweak / 2}rem` : '0',
       margin:
-        $store.state.tweaks.roundTweak > 0
-          ? '0 1rem 1rem 1rem'
-          : '0 0 0.25rem 0',
+        roundThumb && roundTweak > 0 ? '0 1rem 1rem 1rem' : '0 0 0.25rem 0',
     }"
     flat
   >
@@ -16,7 +14,7 @@
         :aspect-ratio="16 / 9"
         :src="$youtube.getThumbnail(vidId, 'max', thumbnails)"
         :style="{
-          borderRadius: `${roundTweak / 2.5}rem`,
+          borderRadius: roundThumb ? `${roundTweak / 12}rem` : '0',
         }"
       />
       <div
@@ -27,8 +25,27 @@
         v-text="thumbnailOverlayText"
       />
     </div>
-    <div id="details">
-      <a :href="channelUrl" class="avatar-link pl-2 pt-2">
+    <div
+      id="details"
+      class="background mt-1"
+      :class="
+        roundThumb && roundTweak > 0
+          ? $vuetify.theme.dark
+            ? 'lighten-1'
+            : 'darken-1'
+          : ''
+      "
+      :style="{
+        borderRadius: roundThumb ? `${roundTweak / 12}rem` : '0',
+      }"
+    >
+      <a
+        class="avatar-link pl-2 pt-2"
+        @click.prevent="
+          $store.dispatch('channel/fetchChannel', channelUrl),
+            $router.push('/channel')
+        "
+      >
         <v-img class="avatar-thumbnail" :src="channelIcon" />
       </a>
       <v-card-text class="video-info pt-2" v-emoji>
@@ -42,14 +59,60 @@
         </span>
 
         <div
-          class="background--text text--lighten-5 caption"
-          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+          class="background--text caption"
+          :class="$vuetify.theme.dark ? 'text--lighten-5' : 'text--darken-4'"
           v-text="bottomText"
         />
       </v-card-text>
     </div>
   </v-card>
 </template>
+
+<script>
+export default {
+  props: {
+    vidId: {
+      type: String,
+      required: true,
+    },
+    thumbnails: {
+      type: Array,
+      required: true,
+    },
+    channelUrl: {
+      type: String,
+      required: true,
+    },
+    channelIcon: {
+      type: String,
+      required: true,
+    },
+    titles: {
+      type: Array,
+      required: true,
+    },
+    bottomText: {
+      type: String,
+      required: true,
+    },
+    thumbnailOverlayText: {
+      type: String,
+    },
+    thumbnailOverlayStyle: {
+      type: String,
+    },
+  },
+
+  computed: {
+    roundTweak() {
+      return this.$store.state.tweaks.roundTweak;
+    },
+    roundThumb() {
+      return this.$store.state.tweaks.roundThumb;
+    },
+  },
+};
+</script>
 
 <style scoped>
 .entry {
@@ -59,8 +122,9 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 0px 4px 0px 4px;
+  font-size: 0.66rem;
 }
 
 .videoRuntimeFloat.style-DEFAULT {
@@ -119,46 +183,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-  computed: {
-    roundTweak() {
-      return this.$store.state.tweaks.roundTweak;
-    },
-  },
-
-  props: {
-    vidId: {
-      type: String,
-      required: true,
-    },
-    thumbnails: {
-      type: Array,
-      required: true,
-    },
-    channelUrl: {
-      type: String,
-      required: true,
-    },
-    channelIcon: {
-      type: String,
-      required: true,
-    },
-    titles: {
-      type: Array,
-      required: true,
-    },
-    bottomText: {
-      type: String,
-      required: true,
-    },
-    thumbnailOverlayText: {
-      type: String,
-    },
-    thumbnailOverlayStyle: {
-      type: String,
-    },
-  },
-};
-</script>

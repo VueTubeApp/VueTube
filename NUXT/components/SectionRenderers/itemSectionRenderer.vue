@@ -14,7 +14,9 @@
     </v-list-item>
     <div
       v-if="
-        render.separatorDetails && render.separatorDetails.hasBottomSeparator
+        render.separatorDetails &&
+        render.separatorDetails.hasBottomSeparator &&
+        !($store.state.tweaks.roundThumb && $store.state.tweaks.roundTweak > 0)
       "
       class="separator-bottom background"
       :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"

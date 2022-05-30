@@ -1,5 +1,5 @@
 <template>
-  <div class="py-2">
+  <div>
     <v-list-item v-for="(item, index) in commits" :key="index" class="my-1">
       <v-card
         flat

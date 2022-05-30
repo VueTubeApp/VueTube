@@ -1,15 +1,14 @@
 <template>
-  <v-card
-    scroll-off-screen
-    style="height: 4rem !important; display: flex"
-    class="rounded-0 pa-3 topNav background"
-  >
-    <!-- :style="
-      $vuetify.theme.dark
-        ? 'border-bottom: 1px solid var(--v-background-lighten1) !important;'
-        : 'border-bottom: 1px solid var(--v-background-darken1) !important;'
-    " -->
-    <h3 v-show="!search" class="my-auto ml-4" v-text="page" />
+  <v-card style="display: flex" class="rounded-0 pa-3 topNav background">
+    <!-- opacity with vue 😉 -->
+    <!-- :style="{ background: $vuetify.theme.currentTheme.primary + '55' }" -->
+    <h3
+      v-show="!search"
+      class="my-auto ml-4"
+      v-text="
+        $route.path.includes('channel') ? $store.state.channel.title : page
+      "
+    />
 
     <v-btn
       v-if="search"
@@ -26,8 +25,9 @@
       solo
       dense
       flat
+      autofocus
       label="Search"
-      style="margin-top: 1px"
+      style="margin-top: 7px"
       :background-color="
         $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
       "
@@ -49,6 +49,7 @@
       <v-icon>mdi-refresh</v-icon>
     </v-btn>
     <v-btn
+      v-if="$route.name !== 'settings' && !$route.path.includes('/mods')"
       icon
       tile
       class="ml-3 my-auto fill-height"
@@ -82,7 +83,7 @@ export default {
       default: "Home",
     },
   },
-  events: ["searchBtn", "textChanged", "closeSearch"],
+  events: ["searchBtn", "textChanged", "closeSearch", "scrollToTop"],
   data: () => ({
     text: "",
   }),
@@ -113,12 +114,15 @@ export default {
 
 <style scoped>
 .topNav {
-  /* box-shadow: inset 0 1rem 10rem var(--v-background-base) !important; */
+  /* opacity with hex, wow 😉 */
+  /* background: linear-gradient(var(--v-background-base) -1000%, #00000000 1000%); */
+  /* box-shadow: inset 0 0 5rem var(--v-background-base) !important; */
+  height: calc(4rem + env(safe-area-inset-top)) !important;
+  padding-top: env(safe-area-inset-top) !important;
   box-shadow: none !important;
-  /* ios notch */
-  top: env(safe-area-inset-top) !important;
   position: fixed;
   width: 100%;
+  top: 0;
 }
 
 .topNavSearch {

@@ -1,23 +1,13 @@
 <template>
   <div class="background" id="watch-body">
     <div id="player-container">
-      <v-btn text style="position: fixed; z-index: 69420" to="home">
-        <v-icon>mdi-chevron-down</v-icon>
-      </v-btn>
-      <!--   VueTube Player V1   -->
-      <vuetubePlayer
-        :sources="sources"
-        v-if="useBetaPlayer === 'true' && sources.length > 0"
-      />
-
-      <!--   Stock Player   -->
-      <legacyPlayer
-        id="player"
+      <!-- // TODO: move component to default.vue -->
+      <!-- // TODO: pass sources through vuex instead of props -->
+      <player
+        v-if="sources.length > 0 && video.title && video.channelName"
         ref="player"
-        v-touch="{ down: () => $router.push('/home') }"
-        class="background"
-        :vid-src="vidSrc"
-        v-if="useBetaPlayer !== 'true'"
+        :video="video"
+        :sources="sources"
       />
     </div>
 
@@ -69,14 +59,18 @@
             fab
             class="vertical-button mx-1"
             elevation="0"
-            style="width: 4.2rem !important; height: 4.2rem !important"
+            style="
+              width: 4.2rem !important;
+              height: 4.2rem !important;
+              text-transform: none !important;
+            "
             :disabled="item.disabled"
             @click="callMethodByName(item.actionName)"
           >
             <v-icon v-text="item.icon" />
             <div
-              class="mt-2"
-              style="font-size: 0.66rem"
+              class="mt-1"
+              style="font-size: 0.6rem"
               v-text="item.value || item.name"
             />
           </v-btn>
@@ -108,14 +102,37 @@
           </v-sheet>
         </v-bottom-sheet> -->
       </v-card>
-      <v-divider />
+
+      <v-divider
+        v-if="
+          !$store.state.tweaks.roundTweak || !$store.state.tweaks.roundWatch
+        "
+      />
 
       <!--   Channel Bar   -->
       <div v-if="loaded">
         <v-card
           flat
-          class="channel-section background py-2 px-3 rounded-0"
-          :to="video.channelUrl"
+          class="channel-section py-2 px-3 background"
+          :class="
+            $store.state.tweaks.roundWatch && $store.state.tweaks.roundTweak > 0
+              ? $vuetify.theme.dark
+                ? 'background lighten-1'
+                : 'background darken-1'
+              : ''
+          "
+          to="/channel"
+          :style="{
+            borderRadius: $store.state.tweaks.roundWatch
+              ? `${$store.state.tweaks.roundTweak / 2}rem`
+              : '0',
+            margin:
+              $store.state.tweaks.roundWatch &&
+              $store.state.tweaks.roundTweak > 0
+                ? '1rem'
+                : '0',
+          }"
+          @click="$store.dispatch('channel/fetchChannel', video.channelUrl)"
         >
           <div id="details">
             <div class="avatar-link mr-3">
@@ -136,8 +153,13 @@
             subscribe
           </div>
         </v-card>
-        <v-divider />
       </div>
+
+      <v-divider
+        v-if="
+          !$store.state.tweaks.roundTweak || !$store.state.tweaks.roundWatch
+        "
+      />
 
       <!-- Description -->
       <div v-if="showMore">
@@ -146,12 +168,40 @@
             :render="video.renderedData.description"
           />
         </div>
-        <v-divider />
       </div>
+
+      <v-divider
+        v-if="
+          showMore &&
+          (!$store.state.tweaks.roundTweak || !$store.state.tweaks.roundWatch)
+        "
+      />
 
       <!-- Comments -->
       <div v-if="loaded && video.commentData" @click="toggleComment">
-        <v-card flat tile class="background comment-renderer px-3">
+        <v-card
+          v-ripple
+          flat
+          tile
+          class="comment-renderer px-3 background"
+          :class="
+            $store.state.tweaks.roundWatch && $store.state.tweaks.roundTweak > 0
+              ? $vuetify.theme.dark
+                ? 'background lighten-1'
+                : 'background darken-1'
+              : ''
+          "
+          :style="{
+            borderRadius: $store.state.tweaks.roundWatch
+              ? `${$store.state.tweaks.roundTweak / 2}rem !important`
+              : '0',
+            margin:
+              $store.state.tweaks.roundWatch &&
+              $store.state.tweaks.roundTweak > 0
+                ? '1rem'
+                : '0',
+          }"
+        >
           <v-card-text class="comment-count keep-spaces px-0">
             <template v-for="text in video.commentData.headerText.runs">
               <template v-if="text.bold">
@@ -163,21 +213,26 @@
           <v-icon v-if="showComments" dense>mdi-unfold-less-horizontal</v-icon>
           <v-icon v-else dense>mdi-unfold-more-horizontal</v-icon>
         </v-card>
-        <v-divider />
       </div>
 
+      <v-divider
+        v-if="
+          !$store.state.tweaks.roundTweak || !$store.state.tweaks.roundWatch
+        "
+      />
+
       <swipeable-bottom-sheet
+        v-if="loaded && video.commentData"
         v-model="showComments"
         hide-overlay
         persistent
         no-click-animation
         attach="#content-container"
-        v-if="loaded && video.commentData"
       >
         <mainCommentRenderer
-          :defaultContinuation="video.commentContinuation"
-          :commentData="video.commentData"
           v-model="showComments"
+          :comment-data="video.commentData"
+          :default-continuation="video.commentContinuation"
         ></mainCommentRenderer>
       </swipeable-bottom-sheet>
 
@@ -205,29 +260,27 @@
 </template>
 
 <script>
+import player from "~/components/Player/index.vue";
 import { Share } from "@capacitor/share";
-import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 import { getCpn } from "~/plugins/utils";
-import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
-import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
-import legacyPlayer from "~/components/Player/legacy.vue";
-import vuetubePlayer from "~/components/Player/index.vue";
 import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
+import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
+import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
 import mainCommentRenderer from "~/components/Comments/mainCommentRenderer.vue";
 import SwipeableBottomSheet from "~/components/ExtendedComponents/swipeableBottomSheet";
+import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
 
 import backType from "~/plugins/classes/backType";
 
 export default {
   components: {
+    player,
     ShelfRenderer,
     VidLoadRenderer,
-    SlimVideoDescriptionRenderer,
-    vuetubePlayer,
-    legacyPlayer,
     ItemSectionRenderer,
-    SwipeableBottomSheet,
     mainCommentRenderer,
+    SwipeableBottomSheet,
+    SlimVideoDescriptionRenderer,
   },
   layout: "empty",
   // transition(to) { // TODO: fix layout switching
@@ -247,7 +300,6 @@ export default {
           // Exit fullscreen if currently in fullscreen
           // if (this.$refs.player) this.$refs.player.webkitExitFullscreen();
           // Reset player and run getVideo function again
-          // this.vidSrc = "";
           // this.startTime = Math.floor(Date.now() / 1000);
           // this.getVideo();
           clearInterval(this.interval);
@@ -272,18 +324,10 @@ export default {
       this.loaded = false;
 
       this.$youtube.getVid(this.$route.query.v).then((result) => {
-        this.video = result;
-        console.log("Video info data", result);
-        console.log(result.availableResolutions);
-
-        //---   VueTube Player v1   ---//
+        // TODO: add other resolutions as well
         this.sources = result.availableResolutions;
-
-        //---   Legacy Player   ---//
-        this.vidSrc =
-          result.availableResolutions[
-            result.availableResolutions.length - 1
-          ].url; // Takes the highest available resolution with both video and Audio. Note this will be lower than the actual highest resolution
+        console.log("Video info data", result);
+        this.video = result;
 
         //---   Content Stuff   ---//
         this.likes = result.metadata.likes.toLocaleString();
@@ -313,7 +357,6 @@ export default {
       // using item.action in the v-for loop
       this[name]();
     },
-    dislike() {},
     async share() {
       // this.share = !this.share;
       await Share.share({
@@ -365,7 +408,8 @@ export default {
           {
             name: "Likes",
             icon: "mdi-thumb-up-outline",
-            // action: null,
+            // action: this.like(),
+            actionName: "like",
             value: this.likes,
             disabled: true,
           },
@@ -384,17 +428,33 @@ export default {
             actionName: "share",
             disabled: false,
           },
+          {
+            name: "Save",
+            icon: "mdi-plus-box-multiple-outline",
+            actionName: "enqueue",
+            disabled: true,
+          },
+          // {
+          //   name: "Quality",
+          //   icon: "mdi-high-definition",
+          //   actionName: "quality",
+          //   disabled: false,
+          // },
+          // {
+          //   name: "Speed",
+          //   icon: "mdi-speedometer",
+          //   actionName: "speed",
+          //   disabled: false,
+          // },
         ],
         showMore: false,
         showComments: false,
         // share: false,
-        vidSrc: null,
         sources: [],
         recommends: null,
         loaded: false,
         interval: null,
         video: null,
-        useBetaPlayer: false,
         backHierarchy: [],
       };
     },
@@ -402,7 +462,6 @@ export default {
     mountedInit() {
       this.startTime = Math.floor(Date.now() / 1000);
       this.getVideo();
-      this.useBetaPlayer = localStorage.getItem("debug.BetaPlayer");
 
       //  Reset vertical scrolling
       const scrollableList = document.querySelectorAll(".overflow-y-auto");
