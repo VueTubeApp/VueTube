@@ -155,7 +155,14 @@ const module = {
     } else {
       returntext = returntext.substring(1);
     } // Prevent Time Starting With 0 (eg. 01:00)
-    // console.log("Human Time:", returntext);
+    
+    if (!returntext.includes(":")) {
+       if (returntext.length == 1) {
+           returntext = "0" + returntext; // Make tens digit in seconds always visible (eg. 0:09)
+       }
+       returntext = "0:" + returntext; // Make minutes visible as 0 when sub 60 seconds (eg. 0:51)
+    } 
+    
     return returntext;
   },
   //---   End Convert Time To Human Readable String   ---//
