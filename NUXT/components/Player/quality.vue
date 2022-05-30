@@ -41,8 +41,8 @@
                 "
                 v-text="
                   video.src === src.url
-                    ? 'mdi-checkbox-outline'
-                    : 'mdi-checkbox-blank-outline'
+                    ? 'mdi-radiobox-marked'
+                    : 'mdi-radiobox-blank'
                 "
               ></v-icon>
             </v-list-item-avatar>
