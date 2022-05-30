@@ -38,35 +38,18 @@ const ensureStructure = new Promise(async (resolve, reject) => {
 const module = {
 
 
-  //---   Get Plugins   ---//
+  //---   List Plugins   ---//
   list: new Promise(async (resolve, reject) => {
-    let plugins = new Array();
 
     if (await !ensureStructure) reject("Invalid Structure");
 
-    // Temp Plugin List
-    plugins = Filesystem.readdir({
-      directory: APP_DIRECTORY,
-      path: fs.plugins
-    })
-    // End Temp Plugin List
-    resolve(plugins);
-  }),
-  //---   End Get Plugins   ---//
-
-  //---   Delete Plugin   ---//
-  list: async (pluginName) => {
-
-    console.log(fs.plugins);
-    /*
-    const contents = await Filesystem.readFile({
-      path: 'secrets/text.txt',
-      directory: Directory.Documents,
-      encoding: Encoding.UTF8,
+    const plugins = await Filesystem.readdir({
+      path: "vuetube/plugins/",
+      directory: APP_DIRECTORY
     });
-    */
+    resolve(plugins);
 
-  }
+  })
 
 
 

@@ -1,5 +1,11 @@
 <template>
   <div>
+
+    <center v-if="plugins.length == 0">
+      <v-icon size="50px">mdi-connection</v-icon>
+      <h2>No plugins installed</h2>
+    </center>
+
     <!-- sorry for the mess, I will make a dumb (styles only) standardized card component later - Nik -->
     <div
       v-for="(plugin, index) in plugins"
@@ -47,7 +53,7 @@
 export default {
   data() {
     return {
-      plugins: new Array(),
+      plugins: [],
       installedVersion: process.env.appVersion,
     };
   },
