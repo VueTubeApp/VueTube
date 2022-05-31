@@ -32,7 +32,7 @@ const module = {
 
   }),
 
-  addPlugin(content) {
+  async addPlugin(content) {
     await ensureStructure();
     new Promise(async (resolve, reject) => {
       const fileName = require("./utils").getCpn(); // Im not sure what this is actually meant for but im using it as a random string generator
