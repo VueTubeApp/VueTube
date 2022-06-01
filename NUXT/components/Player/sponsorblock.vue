@@ -16,7 +16,7 @@ export default {
   },
   mounted() {
     let sponsorBlock = [];
-    this.$youtube.getSponsorBlock(this.$route.query.v, (data) => {
+    this.$youtube.getSponsorBlock(this.videoid, (data) => {
       sponsorBlock = data.segment;
     });
 
