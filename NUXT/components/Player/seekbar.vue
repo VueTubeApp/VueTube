@@ -7,22 +7,6 @@
       style="display: none"
       :src="vidWrs"
     />
-    <v-progress-linear
-      query
-      active
-      style="width: 100%; background: #ffffff22"
-      background-opacity="0.5"
-      background-color="white"
-      :buffer-value="buffered"
-      :value="percent"
-      color="primary"
-      height="3"
-      :style="
-        fullscreen
-          ? 'width: calc(100% - 2rem); left: 1rem; position: absolute; bottom: 3rem;'
-          : 'width: 100%'
-      "
-    />
     <!-- Scrubber -->
     <v-slider
       id="scrubber"
@@ -31,7 +15,7 @@
       dense
       track-color="transparent"
       :class="!controls && !fullscreen && !scrubbing ? 'invisible' : ''"
-      style="position: absolute; z-index: 2"
+      style="position: absolute; z-index: 3"
       :style="
         fullscreen
           ? 'width: calc(100% - 2rem); left: 1rem; bottom: 3rem;'
@@ -70,43 +54,64 @@
 
 <script>
 export default {
-  props: ["sources", "video", "controls", "fullscreen"],
-
-  data() {
-    return {
-      scrubbing: false,
-      percent: 0,
-      progress: 0,
-      buffered: 0,
-      duration: 0,
-      vidSrc: "",
-      vidWrs: "",
-    };
+  props: {
+    video: {
+      type: Object,
+      required: true,
+    },
+    controls: {
+      type: Boolean,
+      required: true,
+    },
+    fullscreen: {
+      type: Boolean,
+      required: true,
+    },
+    sources: {
+      type: Array,
+      required: true,
+    },
+    currentTime: {
+      type: Number,
+      required: true,
+    },
   },
+  data: () => ({
+    scrubbing: false,
+    progress: 0,
+    duration: 0,
+    vidWrs: "",
+  }),
   mounted() {
-    console.log("sources", this.sources);
-    this.vidSrc = this.sources[this.sources.length - 1].url;
-    this.vidWrs = this.sources[1].url;
-    let vid = this.video;
-    vid.addEventListener("loadeddata", (e) => {
-      // console.log("%c loadeddata", "color: #00ff00");
-      console.log(e);
-      //Video should now be loaded but we can add a second check
-      if (vid.readyState >= 3) {
-        vid.ontimeupdate = () => {
-          // console.log("%c timeupdate", "color: #aaaaff");
-          this.duration = vid.duration;
-          if (!this.scrubbing) this.progress = vid.currentTime;
-          this.percent = (vid.currentTime / vid.duration) * 100;
-        };
-        vid.onprogress = () => {
-          // console.log("%c progress", "color: #ff00ff");
-          this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
-        };
+    // this.vidWrs = this.sources[1].url;
+    this.video.addEventListener("loadeddata", (e) => {
+      if (this.video.readyState >= 3) {
+        this.video.addEventListener("timeupdate", () => {
+          this.duration = this.video.duration;
+          if (!this.scrubbing) this.progress = this.currentTime;
+        });
       }
     });
   },
   methods: {
+    seek(e) {
+      // console.log(`scrubbing ${e}`);
+      let vid = this.$refs.playerfake;
+      let canvas = this.$refs.preview;
+      this.$refs.playerfake.currentTime = e;
+      canvas
+        .getContext("2d")
+        .drawImage(
+          vid,
+          0,
+          0,
+          this.video.clientWidth / 3,
+          this.video.clientHeight / 3
+        );
+    },
+    scrub(e) {
+      this.video.currentTime = e;
+    },
     // TODO: better scrubbing preview
     loadVideoFrames() {
       // Exit loop if desired number of frames have been extracted
@@ -228,24 +233,6 @@ export default {
       console.log(this.frames);
     },
     // TODO: scrubbing preview end
-    seek(e) {
-      // console.log(`scrubbing ${e}`);
-      let vid = this.$refs.playerfake;
-      let canvas = this.$refs.preview;
-      this.$refs.playerfake.currentTime = e;
-      canvas
-        .getContext("2d")
-        .drawImage(
-          vid,
-          0,
-          0,
-          this.video.clientWidth / 3,
-          this.video.clientHeight / 3
-        );
-    },
-    scrub(e) {
-      this.video.currentTime = e;
-    },
   },
 };
 </script>

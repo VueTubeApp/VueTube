@@ -228,6 +228,7 @@
         hide-overlay
         persistent
         no-click-animation
+        style="z-index: 2 !important"
         attach="#content-container"
       >
         <mainCommentRenderer

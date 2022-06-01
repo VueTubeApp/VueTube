@@ -152,7 +152,12 @@
         @fullscreen="(controls = $refs.player.paused), handleFullscreenChange()"
       />
     </div>
-    <!-- NOTE: breaks in fullscreen -->
+    <progressbar
+      v-if="$refs.player"
+      :video="$refs.player"
+      :fullscreen="isFullscreen"
+      :current-time="$refs.player.currentTime"
+    />
     <seekbar
       v-if="$refs.player"
       v-show="!isFullscreen || controls"
@@ -160,6 +165,7 @@
       :video="$refs.player"
       :sources="sources"
       :controls="controls"
+      :current-time="$refs.player.currentTime"
       @seeking="seeking = !seeking"
     />
     <sponsorblock
@@ -181,10 +187,12 @@ import captions from "~/components/Player/captions.vue";
 import playpause from "~/components/Player/playpause.vue";
 import watchtime from "~/components/Player/watchtime.vue";
 import fullscreen from "~/components/Player/fullscreen.vue";
+import progressbar from "~/components/Player/progressbar.vue";
 import sponsorblock from "~/components/Player/sponsorblock.vue";
 export default {
   components: {
     sponsorblock,
+    progressbar,
     fullscreen,
     watchtime,
     playpause,
