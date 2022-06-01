@@ -162,7 +162,11 @@
       :controls="controls"
       @seeking="seeking = !seeking"
     />
-    <sponsorblock v-if="$refs.player" :video="$refs.player" />
+    <sponsorblock
+      v-if="$refs.player"
+      :video="$refs.player"
+      :videoid="videoid"
+    />
   </div>
 </template>
 
@@ -199,6 +203,10 @@ export default {
     },
     video: {
       type: Object,
+      required: true,
+    },
+    videoid: {
+      type: String,
       required: true,
     },
   },
