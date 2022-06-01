@@ -15,33 +15,28 @@ export default {
     },
   },
   mounted() {
-    let sponsorBlock = [];
-    this.$youtube.getSponsorBlock(this.videoid, (data) => {
-      sponsorBlock = data.segment;
-    });
+    let vid = this.video;
+    let id = this.videoid;
 
-    this.$refs.player.addEventListener("loadeddata", (e) => {
-      console.log("%c loadeddata", "color: #00ff00");
+    vid.addEventListener("loadeddata", (e) => {
+      if (vid.readyState >= 3) {
+        this.$youtube.getSponsorBlock(id, (data) => {
+          console.log(data);
 
-      if (this.$refs.player.readyState >= 3) {
-        this.$refs.player.ontimeupdate = () => {
-          console.log("%c notinsegment", "color: #00ff00");
+          // iterate over data.segments array
+            vid.ontimeupdate = () => {
+              data.forEach(function(sponsor) {
+                let vidTime = vid.currentTime;
 
-          let vidTime = this.$refs.player.currentTime;
-
-          for (let i = 0; i < sponsorBlock.length; i++) {
-            console.log("%c loopin", "color: #00ffff");
-
-            if (vidTime > sponsorBlock[i][0] && vidTime < sponsorBlock[0][i]) {
-              console.log("%c insegment", "color: #ff0000");
-
-              this.$refs.player.currentTime = sponsorBlock[i][0];
-              break;
+                if (vidTime >= sponsor.segment[0] && vidTime <= sponsor.segment[1]) {
+                  console.log("Skipping the sponsor");
+                  vid.currentTime = sponsor.segment[1];
+                }
+              })
             }
-          }
-        };
+        })
       }
-    });
+    })
   },
 };
 </script>
