@@ -11,6 +11,7 @@
         background: transparent;
         pointer-events: none;
       "
+      :class="!fullscreen || controls ? '' : 'invisible'"
       background-color="white"
       background-opacity="1"
       color="transparent"

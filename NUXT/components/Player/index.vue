@@ -155,6 +155,7 @@
     <progressbar
       v-if="$refs.player"
       :video="$refs.player"
+      :controls="controls"
       :fullscreen="isFullscreen"
       :current-time="$refs.player.currentTime"
     />
@@ -172,6 +173,7 @@
       v-if="$refs.player"
       :video="$refs.player"
       :videoid="videoid"
+      :controls="controls"
       :fullscreen="isFullscreen"
     />
   </div>

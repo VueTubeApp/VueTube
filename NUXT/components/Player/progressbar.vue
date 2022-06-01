@@ -5,6 +5,7 @@
     background-color="primary"
     :buffer-value="buffered"
     :value="(currentTime / video.duration) * 100"
+    :class="!fullscreen || controls ? '' : 'invisible'"
     color="primary"
     height="2"
     :style="
