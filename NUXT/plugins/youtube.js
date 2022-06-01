@@ -78,6 +78,9 @@ const searchModule = {
         logger("codeRun", err, true);
         callback(err);
       });
+  },
+  showToast(text) {
+    Toast.show({ text: text });
   }
 };
 
