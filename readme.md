@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://vuetube.app/">
-    <img src="https://cdn.discordapp.com/attachments/751596360108605500/963045605071028274/vuetube-logo.svg" alt="VueTube icon" width="500"/>
+    <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
   <sub>Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub>

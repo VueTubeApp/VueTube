@@ -3,16 +3,10 @@ import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 import { fs } from './constants';
 
 //---   Set Up App Directory   ---//
-const APP_DIRECTORY = Directory.Documents;
+const APP_DIRECTORY = Directory.Data;
 
-
+//---   Ensure Plugins Folder   ---//
 const ensureStructure = new Promise(async (resolve, reject) => {
-  const perms = await Filesystem.checkPermissions();
-  if (perms.publicStorage !== "granted") {
-    perms = await Filesystem.requestPermissions();
-  }
-
-  //---   Ensure Plugins Folder   ---//
   try {
     await Filesystem.mkdir({
       directory: APP_DIRECTORY, recursive: true,
@@ -20,52 +14,37 @@ const ensureStructure = new Promise(async (resolve, reject) => {
     });
   } catch (e) { /* Exists */ }
 
-  //---   Ensure Temp Folder   ---//
-  try {
-    await Filesystem.mkdir({
-      directory: APP_DIRECTORY, recursive: true,
-      path: fs.temp,
-    });
-  } catch (e) { /* Exists */ }
-
-  perms
-    ? resolve(true)
-    : reject(false)
-
+  resolve();
 })
-
 
 const module = {
 
-
-  //---   Get Plugins   ---//
+  //---   List Plugins   ---//
   list: new Promise(async (resolve, reject) => {
-    let plugins = new Array();
 
-    if (await !ensureStructure) reject("Invalid Structure");
+    await ensureStructure();
 
-    // Temp Plugin List
-    plugins = Filesystem.readdir({
-      directory: APP_DIRECTORY,
-      path: fs.plugins
-    })
-    // End Temp Plugin List
+    const plugins = await Filesystem.readdir({
+      path: fs.plugins,
+      directory: APP_DIRECTORY
+    }).catch(err => { reject(err) })
     resolve(plugins);
+
   }),
-  //---   End Get Plugins   ---//
 
-  //---   Delete Plugin   ---//
-  list: async (pluginName) => {
+  async addPlugin(content) {
+    await ensureStructure();
+    new Promise(async (resolve, reject) => {
+      const fileName = require("./utils").getCpn(); // Im not sure what this is actually meant for but im using it as a random string generator
+      console.log("Saving Plugin As"+ fileName)
+      await Filesystem.writeFile({
+        path: fs.plugins+"/"+fileName+".js",
+        directory: APP_DIRECTORY,
+        data: content,
+        encoding: Encoding.UTF8,
+      });
 
-    console.log(fs.plugins);
-    /*
-    const contents = await Filesystem.readFile({
-      path: 'secrets/text.txt',
-      directory: Directory.Documents,
-      encoding: Encoding.UTF8,
-    });
-    */
-
+    })
   }
 
 

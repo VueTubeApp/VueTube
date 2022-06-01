@@ -105,9 +105,7 @@ export default {
         {
           name: "Plugins",
           icon: "mdi-puzzle",
-          to: "",
-          to: "/mods/plugins",
-          disabled: true,
+          to: "/mods/plugins"
         },
         {
           name: "Updates",
