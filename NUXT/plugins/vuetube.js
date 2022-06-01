@@ -149,7 +149,7 @@ const module = {
     // join the array into a string with : as a separator
     const returntext = levels.join(":");
 
-    console.log("Human Time:", returntext);
+    // console.log("Human Time:", returntext);
     return returntext;
   },
   //---   End Convert Time To Human Readable String   ---//
