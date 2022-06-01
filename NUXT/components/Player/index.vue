@@ -172,6 +172,7 @@
       v-if="$refs.player"
       :video="$refs.player"
       :videoid="videoid"
+      :fullscreen="isFullscreen"
     />
   </div>
 </template>

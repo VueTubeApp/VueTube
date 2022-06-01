@@ -1,21 +1,26 @@
 <template>
   <div>
-    <!-- <v-progress-linear
-      v-for="segment in segments"
-      :key="segment.UUID"
-      background-opacity="0.5"
-      style="width: 100%; background: #ffffff22"
-      :background-color="segment.category"
-      :buffer-value="(segment.segments[1] / video.duration) * 100"
-      :value="(segment.segments[0] / video.duration) * 100"
-      color="red"
+    <v-progress-linear
+      v-for="block in blocks"
+      :key="block.UUID"
+      :buffer-value="(block.segment[1] / video.duration) * 100"
+      :value="(block.segment[0] / video.duration) * 100"
+      style="
+        z-index: 4;
+        width: 100%;
+        background: transparent;
+        pointer-events: none;
+      "
+      background-color="white"
+      background-opacity="1"
+      color="transparent"
       height="2"
       :style="
         fullscreen
           ? 'width: calc(100% - 2rem); left: 1rem; position: absolute; bottom: 3rem;'
           : 'width: 100%; left: 0; position: absolute; bottom: 0;'
       "
-    /> -->
+    />
   </div>
 </template>
 
@@ -30,9 +35,14 @@ export default {
       type: String,
       required: true,
     },
+    fullscreen: {
+      type: Boolean,
+      required: true,
+    },
   },
   data: () => ({
-    segments: [],
+    blocks: [],
+    skipping: false,
   }),
   mounted() {
     let vid = this.video;
@@ -43,20 +53,23 @@ export default {
         this.$youtube.getSponsorBlock(id, (data) => {
           console.log("sbreturn", data);
           if (Array.isArray(data)) {
-            this.segments = data;
+            this.blocks = data;
 
             // iterate over data.segments array
             vid.addEventListener("timeupdate", () => {
-              console.log("sb check", data);
+              // console.log("sb check", data);
               data.forEach((sponsor) => {
                 let vidTime = vid.currentTime;
 
                 if (
                   vidTime >= sponsor.segment[0] &&
-                  vidTime <= sponsor.segment[1]
+                  vidTime <= sponsor.segment[1] &&
+                  !this.skipping
                 ) {
                   console.log("Skipping the sponsor");
-                  vid.currentTime = sponsor.segment[1];
+                  // to avoid jank and jitters
+                  this.skipping = true;
+                  vid.currentTime = sponsor.segment[1] + 1;
                 }
               });
             });
@@ -71,5 +84,29 @@ export default {
 <style>
 .sponsor {
   color: green;
+}
+.selfpromo {
+  color: yellow;
+}
+.exclusive_access {
+  color: orange;
+}
+.interaction {
+  color: blue;
+}
+.intro {
+  color: purple;
+}
+.outro {
+  color: purple;
+}
+.music_offtopic {
+  color: red;
+}
+.poi_highlight {
+  color: #ff00ff;
+}
+.filler {
+  color: blue;
 }
 </style>

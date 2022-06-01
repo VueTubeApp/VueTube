@@ -83,7 +83,7 @@ export default {
     vidWrs: "",
   }),
   mounted() {
-    // this.vidWrs = this.sources[1].url;
+    this.vidWrs = this.sources[1].url;
     this.video.addEventListener("loadeddata", (e) => {
       if (this.video.readyState >= 3) {
         this.video.addEventListener("timeupdate", () => {
