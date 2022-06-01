@@ -42,7 +42,6 @@ export default {
   },
   data: () => ({
     blocks: [],
-    skipping: false,
   }),
   mounted() {
     let vid = this.video;
@@ -63,12 +62,9 @@ export default {
 
                 if (
                   vidTime >= sponsor.segment[0] &&
-                  vidTime <= sponsor.segment[1] &&
-                  !this.skipping
+                  vidTime <= sponsor.segment[1]
                 ) {
                   console.log("Skipping the sponsor");
-                  // to avoid jank and jitters
-                  this.skipping = true;
                   vid.currentTime = sponsor.segment[1] + 1;
                 }
               });
