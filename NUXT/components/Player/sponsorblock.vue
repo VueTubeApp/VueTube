@@ -40,6 +40,10 @@ export default {
       type: Boolean,
       required: true,
     },
+    controls: {
+      type: Boolean,
+      required: true,
+    },
   },
   data: () => ({
     blocks: [],

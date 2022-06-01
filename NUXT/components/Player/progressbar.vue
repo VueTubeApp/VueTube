@@ -30,6 +30,10 @@ export default {
       type: Number,
       required: true,
     },
+    controls: {
+      type: Boolean,
+      required: true,
+    },
   },
   data: () => ({
     buffered: 0,
