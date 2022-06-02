@@ -70,6 +70,7 @@ export default {
                   vidTime <= sponsor.segment[1]
                 ) {
                   console.log("Skipping the sponsor");
+                  this.$youtube.showToast("Skipped sponsor")
                   vid.currentTime = sponsor.segment[1] + 1;
                 }
               });
