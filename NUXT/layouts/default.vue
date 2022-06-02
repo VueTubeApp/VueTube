@@ -159,22 +159,26 @@ export default {
         return;
       } // No text found, no point in calling API
 
-      //---   Auto Suggest   ---//
-      this.$youtube.autoComplete(text, (res) => {
-        const data = res.replace(/^.*?\(/, "").replace(/\)$/, ""); //Format Response
-        this.response = JSON.parse(data)[1];
-      });
-
-      //---   User Pastes Link, Direct Them To Video   ---//
       const isLink = linkParser(text);
-      if (isLink) {
+      if (!isLink) {
+        //---   Auto Suggest   ---//
+        this.$youtube.autoComplete(text, (res) => {
+          const data = res.replace(/^.*?\(/, "").replace(/\)$/, ""); //Format Response
+          this.response = JSON.parse(data)[1];
+          console.log(this.response);
+        });
+      } else {
+        //---   User Pastes Link, Direct Them To Video   ---//
         this.response = [
-          `Watch Video from ID: ${isLink.searchParams.get("v")}`,
-          { id: isLink.searchParams.get("v") },
+          [
+            `Watch Video from ID: ${isLink.searchParams.get("v")}`,
+            { id: isLink.searchParams.get("v") },
+          ],
         ];
+        console.log("this.response: ", this.response);
         return;
+        //---   End User Pastes Link, Direct Them To Video   ---//
       }
-      //---   End User Pastes Link, Direct Them To Video   ---//
     },
 
     youtubeSearch(item) {
