@@ -12,7 +12,7 @@
       active
       style="width: 100%; background: #ffffff22"
       background-opacity="0.5"
-      background-color="primary"
+      background-color="white"
       :buffer-value="buffered"
       :value="percent"
       color="primary"

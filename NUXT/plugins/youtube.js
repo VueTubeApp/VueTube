@@ -64,6 +64,21 @@ const searchModule = {
         callback(err);
       });
   },
+  getSponsorBlock(id, callback) {
+    Http.request({
+      method: "GET",
+      url: `https://sponsor.ajay.app/api/skipSegments`,
+      params: { videoID: id },
+    })
+      .then((res) => {
+        logger("sponsorBlock", res.data);
+        callback(res.data);
+      })
+      .catch((err) => {
+        logger("codeRun", err, true);
+        callback(err);
+      });
+  }
 };
 
 //---   Recommendations   ---//
