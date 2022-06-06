@@ -150,21 +150,21 @@ const module = {
     let returntext = levels.join(":");
 
     console.log("Human Time:", returntext);
-    while (returntext.startsWith(":00")) {
-      returntext = returntext.substring(3);
-    } // Remove Prepending 0s (eg. 00:00:00:01:00)
-    if (returntext.startsWith(":0")) {
-      returntext = returntext.substring(2);
-    } else {
-      returntext = returntext.substring(1);
-    } // Prevent Time Starting With 0 (eg. 01:00)
+    // while (returntext.startsWith(":00")) {
+    //   returntext = returntext.substring(3);
+    // } // Remove Prepending 0s (eg. 00:00:00:01:00)
+    // if (returntext.startsWith(":0")) {
+    //   returntext = returntext.substring(2);
+    // } else {
+    //   returntext = returntext.substring(1);
+    // } // Prevent Time Starting With 0 (eg. 01:00)
 
-    if (!returntext.includes(":")) {
-      if (returntext.length == 1) {
-        returntext = "0" + returntext; // Make tens digit in seconds always visible (eg. 0:09)
-      }
-      returntext = "0:" + returntext; // Make minutes visible as 0 when sub 60 seconds (eg. 0:51)
-    }
+    // if (!returntext.includes(":")) {
+    //   if (returntext.length == 1) {
+    //     returntext = "0" + returntext; // Make tens digit in seconds always visible (eg. 0:09)
+    //   }
+    //   returntext = "0:" + returntext; // Make minutes visible as 0 when sub 60 seconds (eg. 0:51)
+    // }
 
     return returntext;
   },
