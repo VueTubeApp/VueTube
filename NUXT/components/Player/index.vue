@@ -235,6 +235,21 @@ export default {
     this.vidSrc = this.sources[this.sources.length - 1].url;
     // TODO: detect orientation change and enter fullscreen
     // TODO: detect video loading state and send this.loading to play button :loading = loading
+
+    
+    this.$youtube.getSponsorBlock(this.$route.query.v, (data) => {
+      sponsorBlock = data.segment;
+    });
+
+    this.$refs.player.ontimeupdate = () => {
+      let vidTime = this.$refs.player.currentTime;
+      for (let i = 0; i < sponsorBlock.length; i++) {
+        if (vidTime > sponsorBlock[i][0] && vidTime < sponsorBlock[0][i]) {
+          this.$refs.player.currentTime = sponsorBlock[i][0];
+          break;
+        }
+      }
+    }
   },
   beforeDestroy() {
     if (this.isFullscreen) this.exitFullscreen();
