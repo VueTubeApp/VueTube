@@ -4,10 +4,13 @@
     text
     small
     color="white"
-    style="position: absolute; bottom: 0.25rem; right: 0.25rem"
+    style="position: absolute; right: 0.25rem"
+    :style="fullscreen ? 'bottom: 3.5rem' : 'bottom: 0.25rem'"
     @click.stop="$emit('fullscreen')"
   >
-    <v-icon>{{ fullscreen ? "mdi-fullscreen-exit" : "mdi-fullscreen" }}</v-icon>
+    <v-icon size="1.25rem">{{
+      fullscreen ? "mdi-fullscreen-exit" : "mdi-fullscreen"
+    }}</v-icon>
   </v-btn>
 </template>
 
