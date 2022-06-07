@@ -33,3 +33,5 @@ body:
           required: true
         - label: I will fill out all of the requested information in this form.
           required: true
+        - label: My question isn't asked in FAQ (Frequently Asked Questions).
+          required: true
