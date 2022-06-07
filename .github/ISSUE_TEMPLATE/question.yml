@@ -15,11 +15,11 @@ body:
       required: true
 
   - type: textarea
-    id: other-details
+    id: aditional-info
     attributes:
-      label: Other details
+      label: Aditional information
       placeholder: |
-        Additional details and attachments.
+        Additional useful information, for example, a screenshot.
 
   - type: checkboxes
     id: acknowledgements
@@ -27,7 +27,7 @@ body:
       label: Acknowledgements
       description: Your question will be closed if you haven't done these steps.
       options:
-        - label: I have searched the existing issues and this is a new ticket, **NOT** a duplicate or related to another open issue.
+        - label: I have searched the existing issues and this is a new question, **NOT** a duplicate or related to another open issue.
           required: true
         - label: I have written a short but informative title.
           required: true
