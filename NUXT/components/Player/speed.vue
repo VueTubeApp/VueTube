@@ -18,13 +18,25 @@
           {{ video.playbackRate }}X
         </v-btn>
       </template>
-      <v-card
-        v-touch="{
-          down: () => (sheet = false),
-        }"
-        class="background"
-      >
-        <v-subheader>Playback Speed</v-subheader>
+      <v-card class="background">
+        <v-subheader
+          v-touch="{
+            down: () => (sheet = false),
+          }"
+        >
+          Playback Speed
+          <v-btn
+            fab
+            text
+            small
+            color="white"
+            style="position: absolute; right: 0.25rem"
+            @click="sheet = false"
+          >
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </v-subheader>
+        <v-divider />
         <v-card-text style="height: 50vh" class="pa-0">
           <v-list-item
             v-for="sped in speeds"
