@@ -6,20 +6,21 @@
       :buffer-value="(block.segment[1] / video.duration) * 100"
       :value="(block.segment[0] / video.duration) * 100"
       style="
-        z-index: 4;
-        width: 100%;
-        background: transparent;
+        z-index: 3;
+        position: absolute;
         pointer-events: none;
+        background: transparent;
+        transform: translateY(50%);
       "
       :class="!fullscreen || controls ? '' : 'invisible'"
       background-color="white"
       background-opacity="1"
       color="transparent"
-      height="2"
+      :height="seeking ? 4 : 2"
       :style="
         fullscreen
-          ? 'width: calc(100% - 2rem); left: 1rem; position: absolute; bottom: 3rem;'
-          : 'width: 100%; left: 0; position: absolute; bottom: 0;'
+          ? 'width: calc(100% - 2rem); left: 1rem; bottom: 3.25rem;'
+          : 'width: 100%; left: 0; bottom: 1px;'
       "
     />
   </div>
@@ -30,6 +31,10 @@ export default {
   props: {
     video: {
       type: Object,
+      required: true,
+    },
+    seeking: {
+      type: Boolean,
       required: true,
     },
     videoid: {
@@ -70,7 +75,7 @@ export default {
                   vidTime <= sponsor.segment[1]
                 ) {
                   console.log("Skipping the sponsor");
-                  this.$youtube.showToast("Skipped sponsor")
+                  this.$youtube.showToast("Skipped sponsor");
                   vid.currentTime = sponsor.segment[1] + 1;
                 }
               });

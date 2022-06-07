@@ -13,12 +13,14 @@
       hide-details
       height="2"
       dense
+      color="transparent"
+      thumb-color="primary"
       track-color="transparent"
       :class="!controls && !fullscreen && !scrubbing ? 'invisible' : ''"
-      style="position: absolute; z-index: 3"
+      style="position: absolute; z-index: 4"
       :style="
         fullscreen
-          ? 'width: calc(100% - 2rem); left: 1rem; bottom: 3rem;'
+          ? 'width: calc(100% - 2rem); left: 1rem; bottom: 51px;'
           : 'width: calc(100% - 0.8rem); left: 0.4rem; bottom: 0;'
       "
       :thumb-size="0"

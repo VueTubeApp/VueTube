@@ -155,6 +155,7 @@
     <progressbar
       v-if="$refs.player"
       :video="$refs.player"
+      :seeking="seeking"
       :controls="controls"
       :fullscreen="isFullscreen"
       :current-time="$refs.player.currentTime"
@@ -172,6 +173,7 @@
     <sponsorblock
       v-if="$refs.player"
       :video="$refs.player"
+      :seeking="seeking"
       :videoid="videoid"
       :controls="controls"
       :fullscreen="isFullscreen"

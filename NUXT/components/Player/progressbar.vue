@@ -1,17 +1,22 @@
 <template>
   <v-progress-linear
-    style="width: 100%; background: #ffffff22"
+    style="
+      z-index: 2;
+      position: absolute;
+      background: #ffffff22;
+      transform: translateY(50%);
+    "
     background-opacity="0.5"
-    background-color="primary"
+    background-color="white"
     :buffer-value="buffered"
     :value="(currentTime / video.duration) * 100"
     :class="!fullscreen || controls ? '' : 'invisible'"
     color="primary"
-    height="2"
+    :height="seeking ? 4 : 2"
     :style="
       fullscreen
-        ? 'width: calc(100% - 2rem); left: 1rem; position: absolute; bottom: 3rem;'
-        : 'width: 100%'
+        ? 'width: calc(100% - 2rem); left: 1rem; bottom: 3.25rem;'
+        : 'width: 100%; left: 0; bottom: 1px;'
     "
   />
 </template>
@@ -20,6 +25,10 @@ export default {
   props: {
     video: {
       type: Object,
+      required: true,
+    },
+    seeking: {
+      type: Boolean,
       required: true,
     },
     fullscreen: {

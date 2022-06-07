@@ -22,7 +22,7 @@
       <v-card v-if="loaded" class="background rounded-0" flat>
         <div
           v-ripple
-          class="d-flex justify-space-between align-start px-3 pt-3"
+          class="d-flex justify-space-between align-start px-3 pt-4"
           @click="showMore = !showMore"
         >
           <div class="d-flex flex-column">
@@ -164,7 +164,7 @@
 
       <!-- Description -->
       <div v-if="showMore">
-        <div class="scroll-y ma-4">
+        <div class="scroll-y ma-4 pt-1">
           <slim-video-description-renderer
             :render="video.renderedData.description"
           />
