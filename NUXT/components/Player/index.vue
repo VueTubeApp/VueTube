@@ -263,13 +263,13 @@
     <seekbar
       v-if="$refs.player"
       v-show="!isFullscreen || controls"
-      :fullscreen="isFullscreen"
-      :video="$refs.player"
-      :sources="sources"
-      :controls="controls"
-      :current-time="$refs.player.currentTime"
-      :progress="progress"
       :duration="$refs.player.duration"
+      :fullscreen="isFullscreen"
+      :current-time="progress"
+      :video="$refs.player"
+      :controls="controls"
+      :sources="sources"
+      :seeking="seeking"
       @seeking="seeking = !seeking"
     />
     <sponsorblock
@@ -333,7 +333,6 @@ export default {
       contain: true,
       progress: 0,
       buffered: 0,
-      duration: 0,
       watched: 0,
       blocks: [],
       vidSrc: "",
@@ -356,10 +355,11 @@ export default {
       // console.log(e);
       if (vid.readyState >= 3) {
         vid.addEventListener("timeupdate", () => {
-          if (!this.seeking) this.progress = vid.currentTime;
+          if (!this.seeking) this.progress = vid.currentTime; // for seekbar
 
           // console.log("sb check", this.blocks);
           // iterate over data.segments array
+          // for sponsorblock
           if (this.blocks.length > 0)
             this.blocks.forEach((sponsor) => {
               let vidTime = vid.currentTime;

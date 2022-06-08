@@ -25,11 +25,11 @@
       "
       :thumb-size="0"
       :max="duration"
-      :value="progress"
-      @start="(scrubbing = true), $emit('seeking')"
-      @end="(scrubbing = false), $emit('seeking')"
+      :value="currentTime"
+      @start="$emit('seeking')"
+      @end="$emit('seeking')"
       @change="scrub($event)"
-      @input="scrubbing ? seek($event) : null"
+      @input="seeking ? seek($event) : null"
     >
       <template #thumb-label="{ value }">
         <div style="transform: translateY(-50%)">
@@ -77,17 +77,12 @@ export default {
       type: Number,
       required: true,
     },
-    progress: {
-      type: Number,
-      required: true,
-    },
     duration: {
       type: Number,
       required: true,
     },
   },
   data: () => ({
-    scrubbing: false,
     vidWrs: "",
   }),
   mounted() {
