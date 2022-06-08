@@ -19,7 +19,7 @@
       :height="seeking ? 4 : 2"
       :style="
         fullscreen
-          ? 'width: calc(100% - 2rem); left: 1rem; bottom: 3.25rem;'
+          ? 'width: calc(100% - 2rem); left: 1rem; bottom: 3.5rem;'
           : 'width: 100%; left: 0; bottom: 1px;'
       "
     />

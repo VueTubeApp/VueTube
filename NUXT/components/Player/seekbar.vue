@@ -20,7 +20,7 @@
       style="position: absolute; z-index: 4"
       :style="
         fullscreen
-          ? 'width: calc(100% - 2rem); left: 1rem; bottom: 51px;'
+          ? 'width: calc(100% - 2rem); left: 1rem; bottom: 55px;'
           : 'width: calc(100% - 0.5rem); left: 0.25rem; bottom: 0;'
       "
       :thumb-size="0"

@@ -70,23 +70,21 @@
     >
       <!-- top controls row -->
       <div
-        v-if="isFullscreen"
-        style="
-          position: absolute;
-          width: calc(100% - 12rem);
-          left: 3rem;
-          top: 0.5rem;
-        "
+        class="d-flex justify-center px-2"
+        style="position: absolute; width: 100%; top: 0.25rem"
       >
-        <h4>{{ video.title }}</h4>
-        <div style="color: #aaa; font-size: 0.75rem">
-          {{ video.channelName }}
+        <minimize />
+        <div v-if="isFullscreen" class="pt-2">
+          <h4>{{ video.title }}</h4>
+          <div style="color: #aaa; font-size: 0.75rem">
+            {{ video.channelName }}
+          </div>
         </div>
+        <v-spacer />
+        <loop />
+        <captions class="mx-2" />
+        <close />
       </div>
-      <minimize />
-      <loop />
-      <captions />
-      <close />
       <!-- top controls row end -->
 
       <!-- center controls row -->
@@ -132,25 +130,47 @@
       </div>
       <!-- center controls row end -->
 
+      <!-- time & fullscreen row -->
+      <div
+        class="d-flex justify-between align-center pl-4 pr-2"
+        style="position: absolute; width: 100%"
+        :style="isFullscreen ? 'bottom: 4.25rem' : 'bottom: 0.5rem'"
+      >
+        <watchtime
+          v-if="$refs.player"
+          :current-time="$refs.player.currentTime"
+          :duration="$refs.player.duration"
+        />
+        <v-spacer />
+        <fullscreen
+          style="z-index: 2"
+          :fullscreen="isFullscreen"
+          @fullscreen="
+            (controls = $refs.player.paused), handleFullscreenChange()
+          "
+        />
+      </div>
+      <!-- time & fullscreen row end -->
+
       <!-- bottom controls row -->
       <div
-        class="d-flex justify-between align-center pa-2"
-        style="position: absolute; width: 100%; bottom: 0"
+        class="d-flex justify-between align-center px-2"
+        style="position: absolute; width: 100%; bottom: 0.5rem"
       >
         <div v-if="isFullscreen">
-          <v-btn fab text small outlined color="white" disabled @click.stop="">
+          <v-btn fab text small color="white" class="mr-2" disabled>
             <v-icon>mdi-thumb-up-outline</v-icon>
           </v-btn>
-          <v-btn fab text small outlined color="white" disabled @click.stop="">
+          <v-btn fab text small color="white" class="mr-2" disabled>
             <v-icon>mdi-thumb-down-outline</v-icon>
           </v-btn>
-          <v-btn fab text small outlined color="white" disabled @click.stop="">
+          <v-btn fab text small color="white" class="mr-2" disabled>
             <v-icon>mdi-share-outline</v-icon>
           </v-btn>
-          <v-btn fab text small outlined color="white" disabled @click.stop="">
+          <v-btn fab text small color="white" class="mr-2" disabled>
             <v-icon>mdi-plus-box-multiple-outline</v-icon>
           </v-btn>
-          <v-btn fab text small outlined color="white" disabled @click.stop="">
+          <v-btn fab text small color="white" class="mr-2" disabled>
             <v-icon>mdi-comment-text-outline</v-icon>
           </v-btn>
         </div>
@@ -164,37 +184,17 @@
         />
         <speed
           v-if="$refs.player"
+          class="mx-2"
           :current-speed="$refs.player.playbackRate"
           @speed="$refs.player.playbackRate = $event"
         />
         <v-btn v-if="isFullscreen" fab text small disabled @click.stop="">
           <v-icon>mdi-cards-outline</v-icon>
         </v-btn>
-        <!-- placeholder for moving fullscreen button below -->
+        <!-- placeholder for moving fullscreen button above -->
         <v-btn v-else fab text small disabled> </v-btn>
       </div>
       <!-- bottom controls row -->
-
-      <!-- time & fullscreen row -->
-      <div
-        class="d-flex justify-between align-center pl-4 pr-2 py-2"
-        style="position: absolute; width: 100%"
-        :style="isFullscreen ? 'bottom: 3.5rem' : 'bottom: 0'"
-      >
-        <watchtime
-          v-if="$refs.player"
-          :current-time="$refs.player.currentTime"
-          :duration="$refs.player.duration"
-        />
-        <v-spacer />
-        <fullscreen
-          :fullscreen="isFullscreen"
-          @fullscreen="
-            (controls = $refs.player.paused), handleFullscreenChange()
-          "
-        />
-      </div>
-      <!-- time & fullscreen row end -->
     </div>
     <!-- controls container end -->
 
@@ -206,6 +206,15 @@
       :controls="controls"
       :buffered="buffered"
       :seeking="seeking"
+    />
+
+    <sponsorblock
+      v-if="$refs.player && blocks.length > 0"
+      :duration="$refs.player.duration"
+      :fullscreen="isFullscreen"
+      :controls="controls"
+      :seeking="seeking"
+      :blocks="blocks"
     />
 
     <seekbar
@@ -224,15 +233,6 @@
           $refs.player.currentTime = e;
         }
       "
-    />
-
-    <sponsorblock
-      v-if="$refs.player && blocks.length > 0"
-      :duration="$refs.player.duration"
-      :fullscreen="isFullscreen"
-      :controls="controls"
-      :seeking="seeking"
-      :blocks="blocks"
     />
   </div>
 </template>
@@ -388,7 +388,7 @@ export default {
 
 <style>
 .dim {
-  filter: brightness(42%);
+  filter: brightness(33%);
 }
 .invisible {
   opacity: 0;
