@@ -49,7 +49,7 @@
       <v-btn
         v-if="devmode"
         text
-        class="entry text-left text-capitalize"
+        class="entry text-left text-capitalize no-spacing"
         to="/mods/developer"
         :style="{
           borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
