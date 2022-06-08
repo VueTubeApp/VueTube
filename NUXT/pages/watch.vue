@@ -8,6 +8,7 @@
         ref="player"
         :video="video"
         :sources="sources"
+        :videoid="$route.query.v"
       />
     </div>
 
@@ -21,13 +22,13 @@
       <v-card v-if="loaded" class="background rounded-0" flat>
         <div
           v-ripple
-          class="d-flex justify-space-between align-start px-3 pt-3"
+          class="d-flex justify-space-between align-start px-3 pt-4"
           @click="showMore = !showMore"
         >
           <div class="d-flex flex-column">
             <v-card-title
               class="pa-0"
-              style="font-size: 0.95rem; line-height: 1.15rem"
+              style="font-size: 0.95rem; line-height: 1.15rem; overflow-wrap: break-word;"
               v-text="video.title"
               v-emoji
             />
@@ -163,7 +164,7 @@
 
       <!-- Description -->
       <div v-if="showMore">
-        <div class="scroll-y ma-4">
+        <div class="scroll-y ma-4 pt-1">
           <slim-video-description-renderer
             :render="video.renderedData.description"
           />
@@ -227,6 +228,7 @@
         hide-overlay
         persistent
         no-click-animation
+        style="z-index: 2 !important"
         attach="#content-container"
       >
         <mainCommentRenderer

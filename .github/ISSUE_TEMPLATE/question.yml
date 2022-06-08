@@ -1,0 +1,37 @@
+name: ❓ Question
+description: Ask a quesion related to VueTube
+labels: [question]
+body:
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Ask your question
+      description: What do you want to know?
+      placeholder: |
+        Example:
+          "How do I add a plugin?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: aditional-info
+    attributes:
+      label: Aditional information
+      placeholder: |
+        Additional useful information, for example, a screenshot.
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Acknowledgements
+      description: Your question will be closed if you haven't done these steps.
+      options:
+        - label: I have searched the existing issues and this is a new question, **NOT** a duplicate or related to another open issue.
+          required: true
+        - label: I have written a short but informative title.
+          required: true
+        - label: I will fill out all of the requested information in this form.
+          required: true
+        - label: My question isn't asked in FAQ (Frequently Asked Questions).
+          required: true

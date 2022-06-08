@@ -74,7 +74,11 @@
 
     <div
       style="transition: opacity 0.15s ease-in-out"
-      :style="controls ? 'opacity: 1;' : 'opacity: 0; pointer-events: none'"
+      :style="
+        controls && !seeking
+          ? 'opacity: 1;'
+          : 'opacity: 0; pointer-events: none'
+      "
     >
       <minimize />
       <loop />
@@ -143,7 +147,89 @@
         <v-icon size="1rem">mdi-fast-forward-5</v-icon>
       </v-btn>
 
-      <watchtime v-if="$refs.player" :video="$refs.player" />
+      <watchtime
+        v-if="$refs.player"
+        :video="$refs.player"
+        :fullscreen="isFullscreen"
+      />
+      <v-btn
+        v-if="isFullscreen"
+        fab
+        text
+        small
+        outlined
+        style="position: absolute; bottom: 0.25rem; left: 1rem"
+        color="white"
+        disabled
+        @click.stop=""
+      >
+        <v-icon>mdi-thumb-up-outline</v-icon>
+      </v-btn>
+      <v-btn
+        v-if="isFullscreen"
+        fab
+        text
+        small
+        outlined
+        style="position: absolute; bottom: 0.25rem; left: 4rem"
+        color="white"
+        disabled
+        @click.stop=""
+      >
+        <v-icon>mdi-thumb-down-outline</v-icon>
+      </v-btn>
+      <v-btn
+        v-if="isFullscreen"
+        fab
+        text
+        small
+        outlined
+        style="position: absolute; bottom: 0.25rem; left: 7rem"
+        color="white"
+        disabled
+        @click.stop=""
+      >
+        <v-icon>mdi-share-outline</v-icon>
+      </v-btn>
+      <v-btn
+        v-if="isFullscreen"
+        fab
+        text
+        small
+        outlined
+        style="position: absolute; bottom: 0.25rem; left: 10rem"
+        color="white"
+        disabled
+        @click.stop=""
+      >
+        <v-icon>mdi-plus-box-multiple-outline</v-icon>
+      </v-btn>
+      <v-btn
+        v-if="isFullscreen"
+        fab
+        text
+        small
+        outlined
+        style="position: absolute; bottom: 0.25rem; left: 13rem"
+        color="white"
+        disabled
+        @click.stop=""
+      >
+        <v-icon>mdi-comment-text-outline</v-icon>
+      </v-btn>
+
+      <v-btn
+        v-if="isFullscreen"
+        fab
+        text
+        small
+        style="position: absolute; bottom: 0.25rem; right: 0.25rem"
+        color="white"
+        disabled
+        @click.stop=""
+      >
+        <v-icon>mdi-cards-outline</v-icon>
+      </v-btn>
       <!-- // TODO: merge the bottom 2 into 1 reusable component -->
       <quality v-if="$refs.player" :video="$refs.player" :sources="sources" />
       <speed v-if="$refs.player" :video="$refs.player" />
@@ -151,8 +237,27 @@
         :fullscreen="isFullscreen"
         @fullscreen="(controls = $refs.player.paused), handleFullscreenChange()"
       />
+      <v-btn
+        v-if="isFullscreen"
+        fab
+        text
+        small
+        style="position: absolute; bottom: 0.25rem; right: 0.25rem"
+        color="white"
+        disabled
+        @click.stop=""
+      >
+        <v-icon>mdi-cards-outline</v-icon>
+      </v-btn>
     </div>
-    <!-- NOTE: breaks in fullscreen -->
+    <progressbar
+      v-if="$refs.player"
+      :video="$refs.player"
+      :seeking="seeking"
+      :controls="controls"
+      :fullscreen="isFullscreen"
+      :current-time="$refs.player.currentTime"
+    />
     <seekbar
       v-if="$refs.player"
       v-show="!isFullscreen || controls"
@@ -160,7 +265,16 @@
       :video="$refs.player"
       :sources="sources"
       :controls="controls"
+      :current-time="$refs.player.currentTime"
       @seeking="seeking = !seeking"
+    />
+    <sponsorblock
+      v-if="$refs.player"
+      :video="$refs.player"
+      :seeking="seeking"
+      :videoid="videoid"
+      :controls="controls"
+      :fullscreen="isFullscreen"
     />
   </div>
 </template>
@@ -176,8 +290,12 @@ import captions from "~/components/Player/captions.vue";
 import playpause from "~/components/Player/playpause.vue";
 import watchtime from "~/components/Player/watchtime.vue";
 import fullscreen from "~/components/Player/fullscreen.vue";
+import progressbar from "~/components/Player/progressbar.vue";
+import sponsorblock from "~/components/Player/sponsorblock.vue";
 export default {
   components: {
+    sponsorblock,
+    progressbar,
     fullscreen,
     watchtime,
     playpause,
@@ -198,6 +316,10 @@ export default {
       type: Object,
       required: true,
     },
+    videoid: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -213,21 +335,6 @@ export default {
     this.vidSrc = this.sources[this.sources.length - 1].url;
     // TODO: detect orientation change and enter fullscreen
     // TODO: detect video loading state and send this.loading to play button :loading = loading
-
-    
-    this.$youtube.getSponsorBlock(this.$route.query.v, (data) => {
-      sponsorBlock = data.segment;
-    });
-
-    this.$refs.player.ontimeupdate = () => {
-      let vidTime = this.$refs.player.currentTime;
-      for (let i = 0; i < sponsorBlock.length; i++) {
-        if (vidTime > sponsorBlock[i][0] && vidTime < sponsorBlock[0][i]) {
-          this.$refs.player.currentTime = sponsorBlock[i][0];
-          break;
-        }
-      }
-    }
   },
   beforeDestroy() {
     if (this.isFullscreen) this.exitFullscreen();

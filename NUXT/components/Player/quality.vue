@@ -18,13 +18,25 @@
           {{ sources.find((src) => src.url == video.src).qualityLabel }}
         </v-btn>
       </template>
-      <v-card
-        v-touch="{
-          down: () => (sheet = false),
-        }"
-        class="background"
-      >
-        <v-subheader>Quality for current video</v-subheader>
+      <v-card class="background">
+        <v-subheader
+          v-touch="{
+            down: () => (sheet = false),
+          }"
+        >
+          Quality for current video
+          <v-btn
+            fab
+            text
+            small
+            color="white"
+            style="position: absolute; right: 0.25rem"
+            @click="sheet = false"
+          >
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </v-subheader>
+        <v-divider />
         <v-card-text style="max-height: 50vh" class="pa-0">
           <v-list-item
             v-for="src in sources"
