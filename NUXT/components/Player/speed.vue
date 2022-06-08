@@ -2,6 +2,7 @@
   <div>
     <v-bottom-sheet
       v-model="sheet"
+      style="z-index: 999"
       :attach="$parent.$refs.vidcontainer"
       scrollable
     >
@@ -15,7 +16,7 @@
           v-bind="attrs"
           v-on="on"
         >
-          {{ video.playbackRate }}X
+          {{ currentSpeed }}X
         </v-btn>
       </template>
       <v-card class="background">
@@ -41,21 +42,19 @@
           <v-list-item
             v-for="sped in speeds"
             :key="sped"
-            @click="(sheet = false), (video.playbackRate = sped)"
+            @click="(sheet = false), $emit('speed', sped)"
           >
             <!-- // TODO: save playbackRate to localStorage and manage via store/video/index.js -->
             <v-list-item-avatar>
               <v-icon
                 :color="
-                  video.playbackRate === sped
+                  currentSpeed === sped
                     ? 'primary'
                     : $vuetify.theme.dark
                     ? 'background lighten-2'
                     : 'background darken-2'
                 "
-                v-text="
-                  video.playbackRate === sped ? 'mdi-check' : 'mdi-speedometer'
-                "
+                v-text="currentSpeed === sped ? 'mdi-check' : 'mdi-speedometer'"
               ></v-icon>
             </v-list-item-avatar>
             <v-list-item-title>{{ sped }}X</v-list-item-title>
@@ -68,7 +67,13 @@
 
 <script>
 export default {
-  props: ["video"],
+  props: {
+    currentSpeed: {
+      type: Number,
+      required: true,
+    },
+  },
+  emits: ["speed"],
   data: () => ({
     sheet: false,
     speeds: [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 3, 4, 8, 16],

@@ -232,8 +232,17 @@
         <v-icon>mdi-cards-outline</v-icon>
       </v-btn>
       <!-- // TODO: merge the bottom 2 into 1 reusable component -->
-      <quality v-if="$refs.player" :video="$refs.player" :sources="sources" />
-      <speed v-if="$refs.player" :video="$refs.player" />
+      <quality
+        v-if="$refs.player"
+        :sources="sources"
+        :current-source="$refs.player"
+        @quality="qualityHandler($event)"
+      />
+      <speed
+        v-if="$refs.player"
+        :current-speed="$refs.player.playbackRate"
+        @speed="$refs.player.playbackRate = $event"
+      />
       <fullscreen
         :fullscreen="isFullscreen"
         @fullscreen="(controls = $refs.player.paused), handleFullscreenChange()"
@@ -391,6 +400,12 @@ export default {
     if (this.isFullscreen) this.exitFullscreen();
   },
   methods: {
+    qualityHandler(q) {
+      console.log(q);
+      let time = this.$refs.player.currentTime;
+      this.$refs.player.src = q;
+      this.$refs.player.currentTime = time;
+    },
     handleFullscreenChange() {
       if (document?.fullscreenElement === this.$refs.vidcontainer) {
         this.exitFullscreen();

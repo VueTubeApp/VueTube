@@ -2,6 +2,7 @@
   <div>
     <v-bottom-sheet
       v-model="sheet"
+      style="z-index: 999"
       :attach="$parent.$refs.vidcontainer"
       scrollable
     >
@@ -15,7 +16,7 @@
           v-bind="attrs"
           v-on="on"
         >
-          {{ sources.find((src) => src.url == video.src).qualityLabel }}
+          {{ sources.find((src) => src.url == currentSource.src).qualityLabel }}
         </v-btn>
       </template>
       <v-card class="background">
@@ -37,23 +38,26 @@
           </v-btn>
         </v-subheader>
         <v-divider />
-        <v-card-text style="max-height: 50vh" class="pa-0">
+        <v-card-text
+          style="max-height: 50vh"
+          class="pa-0 d-flex flex-column-reverse"
+        >
           <v-list-item
             v-for="src in sources"
             :key="src"
-            @click="(sheet = false), (video.src = src.url)"
+            @click="(sheet = false), $emit('quality', src.url)"
           >
             <v-list-item-avatar>
               <v-icon
                 :color="
-                  video.src === src.url
+                  currentSource.src === src.url
                     ? 'primary'
                     : $vuetify.theme.dark
                     ? 'background lighten-2'
                     : 'background darken-2'
                 "
                 v-text="
-                  video.src === src.url
+                  currentSource.src === src.url
                     ? 'mdi-radiobox-marked'
                     : 'mdi-radiobox-blank'
                 "
@@ -71,7 +75,17 @@
 
 <script>
 export default {
-  props: ["video", "sources"],
+  props: {
+    currentSource: {
+      type: String,
+      required: true,
+    },
+    sources: {
+      type: Array,
+      required: true,
+    },
+  },
+  emits: ["quality"],
   data: () => ({
     sheet: false,
   }),
