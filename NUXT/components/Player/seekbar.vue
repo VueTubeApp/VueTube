@@ -21,7 +21,7 @@
       :style="
         fullscreen
           ? 'width: calc(100% - 2rem); left: 1rem; bottom: 51px;'
-          : 'width: calc(100% - 0.8rem); left: 0.4rem; bottom: 0;'
+          : 'width: calc(100% - 0.5rem); left: 0.25rem; bottom: 0;'
       "
       :thumb-size="0"
       :max="duration"
@@ -79,6 +79,10 @@ export default {
     },
     duration: {
       type: Number,
+      required: true,
+    },
+    seeking: {
+      type: Boolean,
       required: true,
     },
   },
