@@ -271,6 +271,11 @@
       :sources="sources"
       :seeking="seeking"
       @seeking="seeking = !seeking"
+      @scrub="
+        (e) => {
+          $refs.player.currentTime = e;
+        }
+      "
     />
     <sponsorblock
       v-if="$refs.player && blocks.length > 0"

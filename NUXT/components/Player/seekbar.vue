@@ -28,7 +28,7 @@
       :value="currentTime"
       @start="$emit('seeking')"
       @end="$emit('seeking')"
-      @change="scrub($event)"
+      @change="$emit('scrub', $event)"
       @input="seeking ? seek($event) : null"
     >
       <template #thumb-label="{ value }">
@@ -86,6 +86,7 @@ export default {
       required: true,
     },
   },
+  emits: ["scrub", "seeking"],
   data: () => ({
     vidWrs: "",
   }),
@@ -107,9 +108,6 @@ export default {
           this.video.clientWidth / 3,
           this.video.clientHeight / 3
         );
-    },
-    scrub(e) {
-      this.video.currentTime = e;
     },
     // TODO: better scrubbing preview (don't delet ples 🙏)
     // loadVideoFrames() {
