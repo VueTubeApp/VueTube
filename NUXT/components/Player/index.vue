@@ -38,8 +38,7 @@
       <h4>{{ video.title }}</h4>
       <div style="color: #aaa; font-size: 0.75rem">{{ video.channelName }}</div>
     </div>
-
-    <!-- // TODO: merge the bottom 2 into 1 reusable component -->
+    <!-- // TODO: merge the bottom 2 into 1 reusable component and add animation -->
     <v-btn
       text
       tile
@@ -85,67 +84,70 @@
       <captions />
       <close />
 
-      <v-btn
-        fab
-        text
-        small
-        style="
-          position: absolute;
-          top: calc(50% - 1.25rem);
-          left: calc(50% - 10rem);
-        "
-        color="white"
-        @click.stop="$refs.player.currentTime -= 5"
-      >
-        <v-icon size="1rem">mdi-rewind-5</v-icon>
-      </v-btn>
-      <v-btn
-        fab
-        text
-        style="
-          position: absolute;
-          top: calc(50% - 1.75rem);
-          left: calc(50% - 6.5rem);
-        "
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon size="2rem">mdi-skip-previous</v-icon>
-      </v-btn>
-      <playpause
-        v-if="$refs.player"
-        :video="$refs.player"
-        @close="controls = false"
-      />
-      <v-btn
-        fab
-        text
-        style="
-          position: absolute;
-          top: calc(50% - 1.75rem);
-          left: calc(50% + 3rem);
-        "
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon size="2rem">mdi-skip-next</v-icon>
-      </v-btn>
-      <v-btn
-        fab
-        text
-        small
-        style="
-          position: absolute;
-          top: calc(50% - 1.25rem);
-          left: calc(50% + 7rem);
-        "
-        color="white"
-        @click.stop="$refs.player.currentTime += 5"
-      >
-        <v-icon size="1rem">mdi-fast-forward-5</v-icon>
-      </v-btn>
+      <div>
+        <v-btn
+          fab
+          text
+          small
+          style="
+            position: absolute;
+            top: calc(50% - 1.25rem);
+            left: calc(50% - 10rem);
+          "
+          color="white"
+          @click.stop="$refs.player.currentTime -= 5"
+        >
+          <v-icon size="1rem">mdi-rewind-5</v-icon>
+        </v-btn>
+        <v-btn
+          fab
+          text
+          style="
+            position: absolute;
+            top: calc(50% - 1.75rem);
+            left: calc(50% - 6.5rem);
+          "
+          color="white"
+          disabled
+          @click.stop=""
+        >
+          <v-icon size="2rem">mdi-skip-previous</v-icon>
+        </v-btn>
+        <playpause
+          v-if="$refs.player"
+          :video="$refs.player"
+          @pause="$refs.player.pause()"
+          @play="$refs.player.play(), (controls = false)"
+        />
+        <v-btn
+          fab
+          text
+          style="
+            position: absolute;
+            top: calc(50% - 1.75rem);
+            left: calc(50% + 3rem);
+          "
+          color="white"
+          disabled
+          @click.stop=""
+        >
+          <v-icon size="2rem">mdi-skip-next</v-icon>
+        </v-btn>
+        <v-btn
+          fab
+          text
+          small
+          style="
+            position: absolute;
+            top: calc(50% - 1.25rem);
+            left: calc(50% + 7rem);
+          "
+          color="white"
+          @click.stop="$refs.player.currentTime += 5"
+        >
+          <v-icon size="1rem">mdi-fast-forward-5</v-icon>
+        </v-btn>
+      </div>
 
       <watchtime
         v-if="$refs.player"
