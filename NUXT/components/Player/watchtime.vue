@@ -3,18 +3,14 @@
     style="color: #fff; left: 1rem; font-size: 0.75rem; position: absolute"
     :style="fullscreen ? 'bottom: 4.25rem' : 'bottom: 1rem'"
   >
-    {{ watched }}
-    <span style="color: #aaa"> / {{ duration }} </span>
+    {{ $vuetube.humanTime(currentTime) }}
+    <span style="color: #aaa"> / {{ $vuetube.humanTime(duration) }} </span>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    video: {
-      type: Object,
-      required: true,
-    },
     fullscreen: {
       type: Boolean,
       required: true,
@@ -23,7 +19,7 @@ export default {
       type: Number,
       required: true,
     },
-    watched: {
+    currentTime: {
       type: Number,
       required: true,
     },

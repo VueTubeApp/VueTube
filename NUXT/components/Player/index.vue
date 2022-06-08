@@ -149,10 +149,9 @@
 
       <watchtime
         v-if="$refs.player"
-        :video="$refs.player"
+        :current-time="$refs.player.currentTime"
+        :duration="$refs.player.duration"
         :fullscreen="isFullscreen"
-        :watched="watched"
-        :duration="duration"
       />
       <v-btn
         v-if="isFullscreen"
@@ -357,8 +356,6 @@ export default {
       // console.log(e);
       if (vid.readyState >= 3) {
         vid.addEventListener("timeupdate", () => {
-          this.duration = this.$vuetube.humanTime(vid.duration);
-          this.watched = this.$vuetube.humanTime(vid.currentTime);
           if (!this.seeking) this.progress = vid.currentTime;
 
           // console.log("sb check", this.blocks);
