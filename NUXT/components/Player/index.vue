@@ -254,12 +254,12 @@
     </div>
     <progressbar
       v-if="$refs.player"
-      :video="$refs.player"
-      :seeking="seeking"
-      :controls="controls"
-      :fullscreen="isFullscreen"
       :current-time="$refs.player.currentTime"
+      :duration="$refs.player.duration"
+      :fullscreen="isFullscreen"
+      :controls="controls"
       :buffered="buffered"
+      :seeking="seeking"
     />
     <seekbar
       v-if="$refs.player"

@@ -9,7 +9,7 @@
     background-opacity="0.5"
     background-color="white"
     :buffer-value="buffered"
-    :value="(currentTime / video.duration) * 100"
+    :value="(currentTime / duration) * 100"
     :class="!fullscreen || controls ? '' : 'invisible'"
     color="primary"
     :height="seeking ? 4 : 2"
@@ -23,7 +23,7 @@
 <script>
 export default {
   props: {
-    video: {
+    duration: {
       type: Object,
       required: true,
     },
