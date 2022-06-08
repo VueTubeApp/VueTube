@@ -274,12 +274,11 @@
       @seeking="seeking = !seeking"
     />
     <sponsorblock
-      v-if="$refs.player"
-      :video="$refs.player"
-      :seeking="seeking"
-      :videoid="videoid"
-      :controls="controls"
+      v-if="$refs.player && blocks.length > 0"
+      :duration="$refs.player.duration"
       :fullscreen="isFullscreen"
+      :controls="controls"
+      :seeking="seeking"
       :blocks="blocks"
     />
   </div>
@@ -354,7 +353,7 @@ export default {
     });
 
     vid.addEventListener("loadeddata", (e) => {
-      // TODO: detect video loading state and send this.loading to play button :loading = loading
+      // TODO: detect video loading state and send this.loading to play button :loading = loading here
       // console.log(e);
       if (vid.readyState >= 3) {
         vid.addEventListener("timeupdate", () => {
@@ -362,7 +361,7 @@ export default {
           this.watched = this.$vuetube.humanTime(vid.currentTime);
           if (!this.seeking) this.progress = vid.currentTime;
 
-          // console.log("sb check", data);
+          // console.log("sb check", this.blocks);
           // iterate over data.segments array
           if (this.blocks.length > 0)
             this.blocks.forEach((sponsor) => {
@@ -378,6 +377,7 @@ export default {
               }
             });
         });
+        // TODO: detect video loading state and send this.loading to play button :loading = loading here
         vid.addEventListener("progress", () => {
           this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
         });

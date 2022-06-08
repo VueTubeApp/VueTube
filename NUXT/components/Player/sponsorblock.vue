@@ -23,22 +23,23 @@
           : 'width: 100%; left: 0; bottom: 1px;'
       "
     />
+    <!-- // TODO:background-color="colors[block.category]" -->
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    video: {
+    blocks: {
+      type: Array,
+      required: true,
+    },
+    duration: {
       type: Object,
       required: true,
     },
     seeking: {
       type: Boolean,
-      required: true,
-    },
-    videoid: {
-      type: String,
       required: true,
     },
     fullscreen: {
@@ -49,40 +50,19 @@ export default {
       type: Boolean,
       required: true,
     },
-    blocks: {
-      type: Array,
-      required: true,
-    },
   },
+  data: () => ({
+    colors: {
+      sponsor: "green",
+      selfpromo: "yellow",
+      exclusive_access: "teal",
+      interaction: "fuchsia",
+      poi_highlight: "deeppink",
+      intro: "lightblue",
+      outro: "blue",
+      music_offtopic: "orange",
+      filter: "purple",
+    },
+  }),
 };
 </script>
-
-<style>
-.sponsor {
-  color: green;
-}
-.selfpromo {
-  color: yellow;
-}
-.exclusive_access {
-  color: orange;
-}
-.interaction {
-  color: blue;
-}
-.intro {
-  color: purple;
-}
-.outro {
-  color: purple;
-}
-.music_offtopic {
-  color: red;
-}
-.poi_highlight {
-  color: #ff00ff;
-}
-.filler {
-  color: blue;
-}
-</style>
