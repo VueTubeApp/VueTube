@@ -77,23 +77,21 @@ export default {
       type: Number,
       required: true,
     },
+    progress: {
+      type: Number,
+      required: true,
+    },
+    duration: {
+      type: Number,
+      required: true,
+    },
   },
   data: () => ({
     scrubbing: false,
-    progress: 0,
-    duration: 0,
     vidWrs: "",
   }),
   mounted() {
     this.vidWrs = this.sources[1].url;
-    this.video.addEventListener("loadeddata", (e) => {
-      if (this.video.readyState >= 3) {
-        this.video.addEventListener("timeupdate", () => {
-          this.duration = this.video.duration;
-          if (!this.scrubbing) this.progress = this.currentTime;
-        });
-      }
-    });
   },
   methods: {
     seek(e) {
@@ -114,126 +112,126 @@ export default {
     scrub(e) {
       this.video.currentTime = e;
     },
-    // TODO: better scrubbing preview
-    loadVideoFrames() {
-      // Exit loop if desired number of frames have been extracted
-      if (this.frames.length >= frameCount) {
-        this.visibleFrame = 0;
+    // TODO: better scrubbing preview (don't delet ples 🙏)
+    // loadVideoFrames() {
+    //   // Exit loop if desired number of frames have been extracted
+    //   if (this.frames.length >= frameCount) {
+    //     this.visibleFrame = 0;
 
-        // Append all canvases to container div
-        this.frames.forEach((frame) => {
-          this.frameContainerElement.appendChild(frame);
-        });
-        return;
-      }
+    //     // Append all canvases to container div
+    //     this.frames.forEach((frame) => {
+    //       this.frameContainerElement.appendChild(frame);
+    //     });
+    //     return;
+    //   }
 
-      // If extraction hasn’t started, set desired time for first frame
-      if (this.frames.length === 0) {
-        this.requestedTime = 0;
-      } else {
-        this.requestedTime = this.requestedTime + this.frameTimestep;
-      }
+    //   // If extraction hasn’t started, set desired time for first frame
+    //   if (this.frames.length === 0) {
+    //     this.requestedTime = 0;
+    //   } else {
+    //     this.requestedTime = this.requestedTime + this.frameTimestep;
+    //   }
 
-      // Send seek request to video player for the next frame.
-      this.videoElement.currentTime = this.requestedTime;
-    },
-    extractFrame(videoWidth, videoHeight) {
-      // Create DOM canvas object
-      var canvas = document.createElement("canvas");
-      canvas.className = "video-scrubber-frame";
-      canvas.height = videoHeight;
-      canvas.width = videoWidth;
+    //   // Send seek request to video player for the next frame.
+    //   this.videoElement.currentTime = this.requestedTime;
+    // },
+    // extractFrame(videoWidth, videoHeight) {
+    //   // Create DOM canvas object
+    //   var canvas = document.createElement("canvas");
+    //   canvas.className = "video-scrubber-frame";
+    //   canvas.height = videoHeight;
+    //   canvas.width = videoWidth;
 
-      // Copy current frame to canvas
-      var context = canvas.getContext("2d");
-      context.drawImage(this.videoElement, 0, 0, videoWidth, videoHeight);
-      this.frames.push(canvas);
+    //   // Copy current frame to canvas
+    //   var context = canvas.getContext("2d");
+    //   context.drawImage(this.videoElement, 0, 0, videoWidth, videoHeight);
+    //   this.frames.push(canvas);
 
-      //  Load the next frame
-      loadVideoFrames();
-    },
-    prefetch_file(url, fetched_callback, progress_callback, error_callback) {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", url, true);
-      xhr.responseType = "blob";
+    //   //  Load the next frame
+    //   loadVideoFrames();
+    // },
+    // prefetch_file(url, fetched_callback, progress_callback, error_callback) {
+    //   var xhr = new XMLHttpRequest();
+    //   xhr.open("GET", url, true);
+    //   xhr.responseType = "blob";
 
-      xhr.addEventListener(
-        "load",
-        function () {
-          if (xhr.status === 200) {
-            var URL = window.URL || window.webkitURL;
-            var blob_url = URL.createObjectURL(xhr.response);
-            fetched_callback(blob_url);
-          } else {
-            error_callback();
-          }
-        },
-        false
-      );
+    //   xhr.addEventListener(
+    //     "load",
+    //     function () {
+    //       if (xhr.status === 200) {
+    //         var URL = window.URL || window.webkitURL;
+    //         var blob_url = URL.createObjectURL(xhr.response);
+    //         fetched_callback(blob_url);
+    //       } else {
+    //         error_callback();
+    //       }
+    //     },
+    //     false
+    //   );
 
-      var prev_pc = 0;
-      xhr.addEventListener("progress", function (event) {
-        if (event.lengthComputable) {
-          var pc = Math.round((event.loaded / event.total) * 100);
-          if (pc != prev_pc) {
-            prev_pc = pc;
-            progress_callback(pc);
-          }
-        }
-      });
-      xhr.send();
-    },
-    async extractFramesFromVideo(videoUrl, fps = 25) {
-      // fully download it first (no buffering):
-      console.log(videoUrl);
-      console.log(fps);
-      let videoBlob = await fetch(videoUrl, {
-        headers: { range: "bytes=0-567139" },
-      }).then((r) => r.blob());
-      console.log(videoBlob);
-      let videoObjectUrl = URL.createObjectURL(videoBlob);
-      let video = document.createElement("video");
+    //   var prev_pc = 0;
+    //   xhr.addEventListener("progress", function (event) {
+    //     if (event.lengthComputable) {
+    //       var pc = Math.round((event.loaded / event.total) * 100);
+    //       if (pc != prev_pc) {
+    //         prev_pc = pc;
+    //         progress_callback(pc);
+    //       }
+    //     }
+    //   });
+    //   xhr.send();
+    // },
+    // async extractFramesFromVideo(videoUrl, fps = 25) {
+    //   // fully download it first (no buffering):
+    //   console.log(videoUrl);
+    //   console.log(fps);
+    //   let videoBlob = await fetch(videoUrl, {
+    //     headers: { range: "bytes=0-567139" },
+    //   }).then((r) => r.blob());
+    //   console.log(videoBlob);
+    //   let videoObjectUrl = URL.createObjectURL(videoBlob);
+    //   let video = document.createElement("video");
 
-      let seekResolve;
-      video.addEventListener("seeked", async function () {
-        if (seekResolve) seekResolve();
-      });
+    //   let seekResolve;
+    //   video.addEventListener("seeked", async function () {
+    //     if (seekResolve) seekResolve();
+    //   });
 
-      video.src = videoObjectUrl;
+    //   video.src = videoObjectUrl;
 
-      // workaround chromium metadata bug (https://stackoverflow.com/q/38062864/993683)
-      while (
-        (video.duration === Infinity || isNaN(video.duration)) &&
-        video.readyState < 2
-      ) {
-        await new Promise((r) => setTimeout(r, 1000));
-        video.currentTime = 10000000 * Math.random();
-      }
-      let duration = video.duration;
+    //   // workaround chromium metadata bug (https://stackoverflow.com/q/38062864/993683)
+    //   while (
+    //     (video.duration === Infinity || isNaN(video.duration)) &&
+    //     video.readyState < 2
+    //   ) {
+    //     await new Promise((r) => setTimeout(r, 1000));
+    //     video.currentTime = 10000000 * Math.random();
+    //   }
+    //   let duration = video.duration;
 
-      let canvas = document.createElement("canvas");
-      let context = canvas.getContext("2d");
-      let [w, h] = [video.videoWidth, video.videoHeight];
-      canvas.width = w;
-      canvas.height = h;
+    //   let canvas = document.createElement("canvas");
+    //   let context = canvas.getContext("2d");
+    //   let [w, h] = [video.videoWidth, video.videoHeight];
+    //   canvas.width = w;
+    //   canvas.height = h;
 
-      let interval = 1;
-      let currentTime = 0;
+    //   let interval = 1;
+    //   let currentTime = 0;
 
-      while (currentTime < duration) {
-        video.currentTime = currentTime;
-        await new Promise((r) => (seekResolve = r));
+    //   while (currentTime < duration) {
+    //     video.currentTime = currentTime;
+    //     await new Promise((r) => (seekResolve = r));
 
-        context.drawImage(video, 0, 0, w, h);
-        let base64ImageData = canvas.toDataURL();
-        console.log(base64ImageData);
-        this.frames.push(base64ImageData);
+    //     context.drawImage(video, 0, 0, w, h);
+    //     let base64ImageData = canvas.toDataURL();
+    //     console.log(base64ImageData);
+    //     this.frames.push(base64ImageData);
 
-        currentTime += interval;
-      }
-      console.log("%c frames", "color: #00ff00");
-      console.log(this.frames);
-    },
+    //     currentTime += interval;
+    //   }
+    //   console.log("%c frames", "color: #00ff00");
+    //   console.log(this.frames);
+    // },
     // TODO: scrubbing preview end
   },
 };

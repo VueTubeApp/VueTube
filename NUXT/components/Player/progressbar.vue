@@ -43,19 +43,10 @@ export default {
       type: Boolean,
       required: true,
     },
-  },
-  data: () => ({
-    buffered: 0,
-  }),
-  mounted() {
-    this.video.addEventListener("loadeddata", (e) => {
-      if (this.video.readyState >= 3) {
-        this.video.addEventListener("progress", () => {
-          this.buffered =
-            (this.video.buffered.end(0) / this.video.duration) * 100;
-        });
-      }
-    });
+    buffered: {
+      type: Number,
+      required: true,
+    },
   },
 };
 </script>

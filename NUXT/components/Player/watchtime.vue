@@ -19,18 +19,14 @@ export default {
       type: Boolean,
       required: true,
     },
-  },
-  data() {
-    return {
-      watched: 0,
-      duration: 0,
-    };
-  },
-  mounted() {
-    this.video.addEventListener("timeupdate", () => {
-      this.duration = this.$vuetube.humanTime(this.video.duration);
-      this.watched = this.$vuetube.humanTime(this.video.currentTime);
-    });
+    duration: {
+      type: Number,
+      required: true,
+    },
+    watched: {
+      type: Number,
+      required: true,
+    },
   },
 };
 </script>

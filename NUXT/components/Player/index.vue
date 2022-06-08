@@ -151,6 +151,8 @@
         v-if="$refs.player"
         :video="$refs.player"
         :fullscreen="isFullscreen"
+        :watched="watched"
+        :duration="duration"
       />
       <v-btn
         v-if="isFullscreen"
@@ -257,6 +259,7 @@
       :controls="controls"
       :fullscreen="isFullscreen"
       :current-time="$refs.player.currentTime"
+      :buffered="buffered"
     />
     <seekbar
       v-if="$refs.player"
@@ -266,6 +269,8 @@
       :sources="sources"
       :controls="controls"
       :current-time="$refs.player.currentTime"
+      :progress="progress"
+      :duration="$refs.player.duration"
       @seeking="seeking = !seeking"
     />
     <sponsorblock
@@ -275,6 +280,7 @@
       :videoid="videoid"
       :controls="controls"
       :fullscreen="isFullscreen"
+      :blocks="blocks"
     />
   </div>
 </template>
@@ -327,14 +333,57 @@ export default {
       controls: false,
       seeking: false,
       contain: true,
+      progress: 0,
+      buffered: 0,
+      duration: 0,
+      watched: 0,
+      blocks: [],
       vidSrc: "",
     };
   },
   mounted() {
     console.log("sources", this.sources);
     this.vidSrc = this.sources[this.sources.length - 1].url;
+    let vid = this.$refs.player;
+
+    this.$youtube.getSponsorBlock(this.vidSrc, (data) => {
+      console.log("sbreturn", data);
+      if (Array.isArray(data)) {
+        this.blocks = data;
+      }
+    });
+
+    vid.addEventListener("loadeddata", (e) => {
+      // TODO: detect video loading state and send this.loading to play button :loading = loading
+      // console.log(e);
+      if (vid.readyState >= 3) {
+        vid.addEventListener("timeupdate", () => {
+          this.duration = this.$vuetube.humanTime(vid.duration);
+          this.watched = this.$vuetube.humanTime(vid.currentTime);
+          if (!this.seeking) this.progress = vid.currentTime;
+
+          // console.log("sb check", data);
+          // iterate over data.segments array
+          if (this.blocks.length > 0)
+            this.blocks.forEach((sponsor) => {
+              let vidTime = vid.currentTime;
+
+              if (
+                vidTime >= sponsor.segment[0] &&
+                vidTime <= sponsor.segment[1]
+              ) {
+                console.log("Skipping the sponsor");
+                this.$youtube.showToast("Skipped sponsor");
+                vid.currentTime = sponsor.segment[1] + 1;
+              }
+            });
+        });
+        vid.addEventListener("progress", () => {
+          this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
+        });
+      }
+    });
     // TODO: detect orientation change and enter fullscreen
-    // TODO: detect video loading state and send this.loading to play button :loading = loading
   },
   beforeDestroy() {
     if (this.isFullscreen) this.exitFullscreen();

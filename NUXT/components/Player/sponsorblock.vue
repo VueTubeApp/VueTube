@@ -49,41 +49,10 @@ export default {
       type: Boolean,
       required: true,
     },
-  },
-  data: () => ({
-    blocks: [],
-  }),
-  mounted() {
-    let vid = this.video;
-    let id = this.videoid;
-
-    vid.addEventListener("loadeddata", (e) => {
-      if (vid.readyState >= 3) {
-        this.$youtube.getSponsorBlock(id, (data) => {
-          console.log("sbreturn", data);
-          if (Array.isArray(data)) {
-            this.blocks = data;
-
-            // iterate over data.segments array
-            vid.addEventListener("timeupdate", () => {
-              // console.log("sb check", data);
-              data.forEach((sponsor) => {
-                let vidTime = vid.currentTime;
-
-                if (
-                  vidTime >= sponsor.segment[0] &&
-                  vidTime <= sponsor.segment[1]
-                ) {
-                  console.log("Skipping the sponsor");
-                  this.$youtube.showToast("Skipped sponsor");
-                  vid.currentTime = sponsor.segment[1] + 1;
-                }
-              });
-            });
-          }
-        });
-      }
-    });
+    blocks: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>
