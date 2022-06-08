@@ -12,7 +12,7 @@
     >
       <v-btn
         text
-        class="entry text-left text-capitalize"
+        class="entry text-left text-capitalize no-spacing"
         :to="item.to"
         :disabled="item.disabled"
         :style="{
