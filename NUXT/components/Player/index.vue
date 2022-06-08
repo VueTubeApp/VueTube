@@ -26,18 +26,6 @@
       :style="contain ? 'object-fit: contain;' : 'object-fit: cover;'"
     />
 
-    <div
-      v-if="isFullscreen && controls"
-      style="
-        position: absolute;
-        width: calc(100% - 12rem);
-        left: 3rem;
-        top: 0.5rem;
-      "
-    >
-      <h4>{{ video.title }}</h4>
-      <div style="color: #aaa; font-size: 0.75rem">{{ video.channelName }}</div>
-    </div>
     <!-- // TODO: merge the bottom 2 into 1 reusable component and add animation -->
     <v-btn
       text
@@ -71,6 +59,7 @@
       <v-icon>mdi-fast-forward</v-icon>
     </v-btn>
 
+    <!-- controls container -->
     <div
       style="transition: opacity 0.15s ease-in-out"
       :style="
@@ -79,38 +68,47 @@
           : 'opacity: 0; pointer-events: none'
       "
     >
+      <!-- top controls row -->
+      <div
+        v-if="isFullscreen"
+        style="
+          position: absolute;
+          width: calc(100% - 12rem);
+          left: 3rem;
+          top: 0.5rem;
+        "
+      >
+        <h4>{{ video.title }}</h4>
+        <div style="color: #aaa; font-size: 0.75rem">
+          {{ video.channelName }}
+        </div>
+      </div>
       <minimize />
       <loop />
       <captions />
       <close />
+      <!-- top controls row end -->
 
-      <div>
+      <!-- center controls row -->
+      <div
+        class="d-flex justify-center align-center"
+        style="
+          transform: translate(-50%, -50%);
+          position: absolute;
+          left: 50%;
+          top: 50%;
+        "
+      >
         <v-btn
           fab
           text
           small
-          style="
-            position: absolute;
-            top: calc(50% - 1.25rem);
-            left: calc(50% - 10rem);
-          "
           color="white"
           @click.stop="$refs.player.currentTime -= 5"
         >
           <v-icon size="1rem">mdi-rewind-5</v-icon>
         </v-btn>
-        <v-btn
-          fab
-          text
-          style="
-            position: absolute;
-            top: calc(50% - 1.75rem);
-            left: calc(50% - 6.5rem);
-          "
-          color="white"
-          disabled
-          @click.stop=""
-        >
+        <v-btn fab text color="white" class="px-4" disabled @click.stop="">
           <v-icon size="2rem">mdi-skip-previous</v-icon>
         </v-btn>
         <playpause
@@ -119,149 +117,87 @@
           @pause="$refs.player.pause()"
           @play="$refs.player.play(), (controls = false)"
         />
-        <v-btn
-          fab
-          text
-          style="
-            position: absolute;
-            top: calc(50% - 1.75rem);
-            left: calc(50% + 3rem);
-          "
-          color="white"
-          disabled
-          @click.stop=""
-        >
+        <v-btn fab text color="white" class="px-4" disabled @click.stop="">
           <v-icon size="2rem">mdi-skip-next</v-icon>
         </v-btn>
         <v-btn
           fab
           text
           small
-          style="
-            position: absolute;
-            top: calc(50% - 1.25rem);
-            left: calc(50% + 7rem);
-          "
           color="white"
           @click.stop="$refs.player.currentTime += 5"
         >
           <v-icon size="1rem">mdi-fast-forward-5</v-icon>
         </v-btn>
       </div>
+      <!-- center controls row end -->
 
-      <watchtime
-        v-if="$refs.player"
-        :current-time="$refs.player.currentTime"
-        :duration="$refs.player.duration"
-        :fullscreen="isFullscreen"
-      />
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        outlined
-        style="position: absolute; bottom: 0.25rem; left: 1rem"
-        color="white"
-        disabled
-        @click.stop=""
+      <!-- bottom controls row -->
+      <div
+        class="d-flex justify-between align-center pa-2"
+        style="position: absolute; width: 100%; bottom: 0"
       >
-        <v-icon>mdi-thumb-up-outline</v-icon>
-      </v-btn>
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        outlined
-        style="position: absolute; bottom: 0.25rem; left: 4rem"
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon>mdi-thumb-down-outline</v-icon>
-      </v-btn>
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        outlined
-        style="position: absolute; bottom: 0.25rem; left: 7rem"
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon>mdi-share-outline</v-icon>
-      </v-btn>
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        outlined
-        style="position: absolute; bottom: 0.25rem; left: 10rem"
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon>mdi-plus-box-multiple-outline</v-icon>
-      </v-btn>
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        outlined
-        style="position: absolute; bottom: 0.25rem; left: 13rem"
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon>mdi-comment-text-outline</v-icon>
-      </v-btn>
+        <div v-if="isFullscreen">
+          <v-btn fab text small outlined color="white" disabled @click.stop="">
+            <v-icon>mdi-thumb-up-outline</v-icon>
+          </v-btn>
+          <v-btn fab text small outlined color="white" disabled @click.stop="">
+            <v-icon>mdi-thumb-down-outline</v-icon>
+          </v-btn>
+          <v-btn fab text small outlined color="white" disabled @click.stop="">
+            <v-icon>mdi-share-outline</v-icon>
+          </v-btn>
+          <v-btn fab text small outlined color="white" disabled @click.stop="">
+            <v-icon>mdi-plus-box-multiple-outline</v-icon>
+          </v-btn>
+          <v-btn fab text small outlined color="white" disabled @click.stop="">
+            <v-icon>mdi-comment-text-outline</v-icon>
+          </v-btn>
+        </div>
+        <v-spacer />
+        <!-- // TODO: merge the bottom 2 into 1 reusable component -->
+        <quality
+          v-if="$refs.player"
+          :sources="sources"
+          :current-source="$refs.player"
+          @quality="qualityHandler($event)"
+        />
+        <speed
+          v-if="$refs.player"
+          :current-speed="$refs.player.playbackRate"
+          @speed="$refs.player.playbackRate = $event"
+        />
+        <v-btn v-if="isFullscreen" fab text small disabled @click.stop="">
+          <v-icon>mdi-cards-outline</v-icon>
+        </v-btn>
+        <!-- placeholder for moving fullscreen button below -->
+        <v-btn v-else fab text small disabled> </v-btn>
+      </div>
+      <!-- bottom controls row -->
 
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        style="position: absolute; bottom: 0.25rem; right: 0.25rem"
-        color="white"
-        disabled
-        @click.stop=""
+      <!-- time & fullscreen row -->
+      <div
+        class="d-flex justify-between align-center pl-4 pr-2 py-2"
+        style="position: absolute; width: 100%"
+        :style="isFullscreen ? 'bottom: 3.5rem' : 'bottom: 0'"
       >
-        <v-icon>mdi-cards-outline</v-icon>
-      </v-btn>
-      <!-- // TODO: merge the bottom 2 into 1 reusable component -->
-      <quality
-        v-if="$refs.player"
-        :sources="sources"
-        :current-source="$refs.player"
-        @quality="qualityHandler($event)"
-      />
-      <speed
-        v-if="$refs.player"
-        :current-speed="$refs.player.playbackRate"
-        @speed="$refs.player.playbackRate = $event"
-      />
-      <fullscreen
-        :fullscreen="isFullscreen"
-        @fullscreen="(controls = $refs.player.paused), handleFullscreenChange()"
-      />
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        style="position: absolute; bottom: 0.25rem; right: 0.25rem"
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon>mdi-cards-outline</v-icon>
-      </v-btn>
+        <watchtime
+          v-if="$refs.player"
+          :current-time="$refs.player.currentTime"
+          :duration="$refs.player.duration"
+        />
+        <v-spacer />
+        <fullscreen
+          :fullscreen="isFullscreen"
+          @fullscreen="
+            (controls = $refs.player.paused), handleFullscreenChange()
+          "
+        />
+      </div>
+      <!-- time & fullscreen row end -->
     </div>
+    <!-- controls container end -->
+
     <progressbar
       v-if="$refs.player"
       :current-time="$refs.player.currentTime"
@@ -271,6 +207,7 @@
       :buffered="buffered"
       :seeking="seeking"
     />
+
     <seekbar
       v-if="$refs.player"
       v-show="!isFullscreen || controls"
@@ -288,6 +225,7 @@
         }
       "
     />
+
     <sponsorblock
       v-if="$refs.player && blocks.length > 0"
       :duration="$refs.player.duration"

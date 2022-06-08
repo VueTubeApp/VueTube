@@ -16,7 +16,7 @@
       color="transparent"
       thumb-color="primary"
       track-color="transparent"
-      :class="!controls && !fullscreen && !scrubbing ? 'invisible' : ''"
+      :class="!controls && !fullscreen && !seeking ? 'invisible' : ''"
       style="position: absolute; z-index: 4"
       :style="
         fullscreen

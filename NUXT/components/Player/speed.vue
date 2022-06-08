@@ -7,15 +7,7 @@
       scrollable
     >
       <template #activator="{ on, attrs }">
-        <v-btn
-          fab
-          text
-          small
-          color="white"
-          style="position: absolute; bottom: 0.25rem; right: 6rem"
-          v-bind="attrs"
-          v-on="on"
-        >
+        <v-btn fab text small color="white" v-bind="attrs" v-on="on">
           {{ currentSpeed }}X
         </v-btn>
       </template>
@@ -26,14 +18,8 @@
           }"
         >
           Playback Speed
-          <v-btn
-            fab
-            text
-            small
-            color="white"
-            style="position: absolute; right: 0.25rem"
-            @click="sheet = false"
-          >
+          <v-spacer />
+          <v-btn fab text small color="white" @click="sheet = false">
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-subheader>

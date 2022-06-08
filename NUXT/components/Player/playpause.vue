@@ -3,7 +3,6 @@
     fab
     text
     large
-    style="position: absolute; top: calc(50% - 2rem); left: calc(50% - 2rem)"
     color="white"
     @click.stop="
       (paused = !video.paused), video.paused ? $emit('play') : $emit('pause')
