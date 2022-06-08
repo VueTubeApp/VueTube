@@ -30,35 +30,20 @@
     <v-btn
       text
       tile
-      style="
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
-      "
+      class="invisible"
+      style="position: absolute; top: 0; left: 0; width: 50%; height: 100%"
       @dblclick.stop="$refs.player.currentTime -= 10"
-    >
-      <v-icon>mdi-rewind</v-icon>
-    </v-btn>
+    />
 
     <v-btn
       text
       tile
-      style="
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 50%;
-        height: 100%;
-      "
+      class="invisible"
+      style="position: absolute; top: 0; left: 50%; width: 50%; height: 100%"
       @dblclick.stop="$refs.player.currentTime += 10"
-    >
-      <v-icon>mdi-fast-forward</v-icon>
-    </v-btn>
+    />
 
+    <!-- // TODO: add delay to allow for doubletap to skip animation above -->
     <!-- controls container -->
     <div
       style="transition: opacity 0.15s ease-in-out"
