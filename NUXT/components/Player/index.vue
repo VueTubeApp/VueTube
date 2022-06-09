@@ -371,9 +371,9 @@ export default {
         this.controls
           ? (clearTimeout(this.controls), (this.controls = false))
           : setTimeout(() => {
-              if (!this.seeking) {
+              if (!this.skipping) {
                 this.controls = setTimeout(() => {
-                  this.controls = false;
+                  if (!this.seeking) this.controls = false;
                 }, 2345);
               }
             }, 300);
