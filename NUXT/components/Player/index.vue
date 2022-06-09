@@ -21,11 +21,7 @@
         objectFit: contain ? 'contain' : 'cover',
         borderRadius:
           $store.state.tweaks.roundWatch && !isFullscreen
-            ? `
-          ${$store.state.tweaks.roundTweak / 3}rem
-          ${$store.state.tweaks.roundTweak / 3}rem
-          ${$store.state.tweaks.roundTweak / 12}rem
-          ${$store.state.tweaks.roundTweak / 12}rem !important`
+            ? `${$store.state.tweaks.roundTweak / 3}rem ${$store.state.tweaks.roundTweak / 3}rem 0rem 0rem !important`
             : '0',
       }"
       poster="https://media.discordapp.net/attachments/970793575153561640/974728851441729556/bam.png"
@@ -182,7 +178,7 @@
         <fullscreen
           style="z-index: 2"
           :fullscreen="isFullscreen"
-          @fullscreen="controlsHandler(), fullscreenHandler()"
+          @fullscreen="fullscreenHandler()"
         />
       </div>
       <!-- time & fullscreen row end -->
@@ -215,12 +211,14 @@
         <quality
           v-if="$refs.player"
           :sources="sources"
+          style="z-index: 77777"
           :current-source="$refs.player"
           @quality="qualityHandler($event)"
         />
         <speed
           v-if="$refs.player"
           class="mx-2"
+          style="z-index: 77777"
           :current-speed="$refs.player.playbackRate"
           @speed="$refs.player.playbackRate = $event"
         />

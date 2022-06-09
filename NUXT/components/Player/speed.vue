@@ -2,8 +2,8 @@
   <div>
     <v-bottom-sheet
       v-model="sheet"
-      style="z-index: 999"
       :attach="$parent.$refs.vidcontainer"
+      style="z-index: 777777"
       scrollable
     >
       <template #activator="{ on, attrs }">
