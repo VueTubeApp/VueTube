@@ -86,7 +86,7 @@
       style="width: 100%; top: 0.5rem; position: absolute; font-size: 0.66rem"
     >
       <v-icon small class="pr-2">mdi-rewind</v-icon>
-      Doubletap left or right to skip 10 seconds
+      Double tap left or right to skip 10 seconds
       <v-icon small class="pl-2">mdi-fast-forward</v-icon>
     </div>
 
