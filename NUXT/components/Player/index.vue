@@ -8,70 +8,89 @@
     }"
     class="d-flex flex-column"
     style="position: relative"
-    :style="{
-      borderRadius: $store.state.tweaks.roundWatch
-        ? `${$store.state.tweaks.roundTweak / 3}rem`
-        : '0',
-    }"
-    @click="controls = !controls"
   >
     <video
       ref="player"
       autoplay
       width="100%"
-      :height="isFullscreen ? '100%' : 'auto'"
       :src="vidSrc"
+      :height="isFullscreen ? '100%' : 'auto'"
       style="transition: filter 0.15s ease-in-out"
-      :class="controls || seeking ? 'dim' : ''"
-      :style="contain ? 'object-fit: contain;' : 'object-fit: cover;'"
+      :class="controls || seeking || skipping ? 'dim' : ''"
+      :style="{
+        objectFit: contain ? 'contain' : 'cover',
+        borderRadius:
+          $store.state.tweaks.roundWatch && !isFullscreen
+            ? `
+          ${$store.state.tweaks.roundTweak / 3}rem
+          ${$store.state.tweaks.roundTweak / 3}rem
+          ${$store.state.tweaks.roundTweak / 12}rem
+          ${$store.state.tweaks.roundTweak / 12}rem !important`
+            : '0',
+      }"
+      poster="https://media.discordapp.net/attachments/970793575153561640/974728851441729556/bam.png"
+      @click="controlsHandler()"
     />
-
-    <div
-      v-if="isFullscreen && controls"
-      style="
-        position: absolute;
-        width: calc(100% - 12rem);
-        left: 3rem;
-        top: 0.5rem;
-      "
-    >
-      <h4>{{ video.title }}</h4>
-      <div style="color: #aaa; font-size: 0.75rem">{{ video.channelName }}</div>
-    </div>
+    <!-- // NOTE: replace poster URL with "none" -->
 
     <!-- // TODO: merge the bottom 2 into 1 reusable component -->
     <v-btn
       text
       tile
+      color="white"
+      :class="skipping == -10 ? '' : 'invisible'"
       style="
-        opacity: 0;
-        position: absolute;
         top: 0;
         left: 0;
         width: 50%;
         height: 100%;
+        position: absolute;
+        transition: opacity 0.15s;
+        border-radius: 0 100vh 100vh 0;
+        text-transform: none;
+        font-size: 0.5rem;
       "
-      @dblclick.stop="$refs.player.currentTime -= 10"
+      @click="controlsHandler()"
+      @dblclick="skipHandler(-10)"
     >
       <v-icon>mdi-rewind</v-icon>
+      <!-- {{ skipping }} seconds -->
     </v-btn>
 
     <v-btn
       text
       tile
+      color="white"
+      :class="skipping == 10 ? '' : 'invisible'"
       style="
-        opacity: 0;
-        position: absolute;
         top: 0;
         left: 50%;
         width: 50%;
         height: 100%;
+        position: absolute;
+        transition: opacity 0.15s;
+        border-radius: 100vh 0 0 100vh;
+        text-transform: none;
+        font-size: 0.5rem;
       "
-      @dblclick.stop="$refs.player.currentTime += 10"
+      @click="controlsHandler()"
+      @dblclick="skipHandler(10)"
     >
       <v-icon>mdi-fast-forward</v-icon>
+      <!-- {{ skipping }} seconds] -->
     </v-btn>
 
+    <div
+      v-if="seeking"
+      class="d-flex justify-center"
+      style="width: 100%; top: 0.5rem; position: absolute; font-size: 0.66rem"
+    >
+      <v-icon small class="pr-2">mdi-rewind</v-icon>
+      Doubletap left or right to skip 10 seconds
+      <v-icon small class="pl-2">mdi-fast-forward</v-icon>
+    </div>
+
+    <!-- controls container -->
     <div
       style="transition: opacity 0.15s ease-in-out"
       :style="
@@ -80,201 +99,172 @@
           : 'opacity: 0; pointer-events: none'
       "
     >
-      <minimize />
-      <loop />
-      <captions />
-      <close />
+      <!-- top controls row -->
+      <div
+        style="position: absolute; width: 100%; top: 0.25rem"
+        class="d-flex justify-center px-2"
+      >
+        <minimize />
+        <div v-if="isFullscreen" class="pt-2" @click.self="controlsHandler()">
+          <h4>{{ video.title }}</h4>
+          <div style="color: #aaa; font-size: 0.75rem">
+            {{ video.channelName }}
+          </div>
+        </div>
+        <v-spacer />
+        <captions />
+        <loop
+          v-if="$refs.player"
+          class="mx-2"
+          :loop="$refs.player.loop"
+          @loop="$refs.player.loop = !$refs.player.loop"
+        />
+        <close />
+      </div>
+      <!-- top controls row end -->
 
-      <v-btn
-        fab
-        text
-        small
+      <!-- center controls row -->
+      <div
+        class="d-flex justify-center align-center"
         style="
+          transform: translate(-50%, -50%);
           position: absolute;
-          top: calc(50% - 1.25rem);
-          left: calc(50% - 10rem);
+          left: 50%;
+          top: 50%;
         "
-        color="white"
-        @click.stop="$refs.player.currentTime -= 5"
       >
-        <v-icon size="1rem">mdi-rewind-5</v-icon>
-      </v-btn>
-      <v-btn
-        fab
-        text
-        style="
-          position: absolute;
-          top: calc(50% - 1.75rem);
-          left: calc(50% - 6.5rem);
-        "
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon size="2rem">mdi-skip-previous</v-icon>
-      </v-btn>
-      <playpause
-        v-if="$refs.player"
-        :video="$refs.player"
-        @close="controls = false"
-      />
-      <v-btn
-        fab
-        text
-        style="
-          position: absolute;
-          top: calc(50% - 1.75rem);
-          left: calc(50% + 3rem);
-        "
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon size="2rem">mdi-skip-next</v-icon>
-      </v-btn>
-      <v-btn
-        fab
-        text
-        small
-        style="
-          position: absolute;
-          top: calc(50% - 1.25rem);
-          left: calc(50% + 7rem);
-        "
-        color="white"
-        @click.stop="$refs.player.currentTime += 5"
-      >
-        <v-icon size="1rem">mdi-fast-forward-5</v-icon>
-      </v-btn>
+        <v-btn
+          fab
+          text
+          small
+          color="white"
+          @click.stop="$refs.player.currentTime -= 5"
+        >
+          <v-icon size="1rem">mdi-rewind-5</v-icon>
+        </v-btn>
+        <v-btn fab text color="white" class="px-4" disabled>
+          <v-icon size="2rem">mdi-skip-previous</v-icon>
+        </v-btn>
+        <playpause
+          v-if="$refs.player"
+          :video="$refs.player"
+          @play="$refs.player.play()"
+          @pause="$refs.player.pause()"
+        />
+        <v-btn fab text color="white" class="px-4" disabled>
+          <v-icon size="2rem">mdi-skip-next</v-icon>
+        </v-btn>
+        <v-btn
+          fab
+          text
+          small
+          color="white"
+          @click.stop="$refs.player.currentTime += 5"
+        >
+          <v-icon size="1rem">mdi-fast-forward-5</v-icon>
+        </v-btn>
+      </div>
+      <!-- center controls row end -->
 
-      <watchtime
-        v-if="$refs.player"
-        :video="$refs.player"
-        :fullscreen="isFullscreen"
-      />
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        outlined
-        style="position: absolute; bottom: 0.25rem; left: 1rem"
-        color="white"
-        disabled
-        @click.stop=""
+      <!-- time & fullscreen row -->
+      <div
+        :style="isFullscreen ? 'bottom: 4.25rem' : 'bottom: 0.5rem'"
+        class="d-flex justify-between align-center pl-4 pr-2"
+        style="position: absolute; width: 100%"
+        @click.self="controlsHandler()"
       >
-        <v-icon>mdi-thumb-up-outline</v-icon>
-      </v-btn>
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        outlined
-        style="position: absolute; bottom: 0.25rem; left: 4rem"
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon>mdi-thumb-down-outline</v-icon>
-      </v-btn>
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        outlined
-        style="position: absolute; bottom: 0.25rem; left: 7rem"
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon>mdi-share-outline</v-icon>
-      </v-btn>
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        outlined
-        style="position: absolute; bottom: 0.25rem; left: 10rem"
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon>mdi-plus-box-multiple-outline</v-icon>
-      </v-btn>
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        outlined
-        style="position: absolute; bottom: 0.25rem; left: 13rem"
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon>mdi-comment-text-outline</v-icon>
-      </v-btn>
+        <watchtime
+          v-if="$refs.player"
+          :current-time="$refs.player.currentTime"
+          :duration="$refs.player.duration"
+        />
+        <v-spacer />
+        <fullscreen
+          style="z-index: 2"
+          :fullscreen="isFullscreen"
+          @fullscreen="controlsHandler(), fullscreenHandler()"
+        />
+      </div>
+      <!-- time & fullscreen row end -->
 
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        style="position: absolute; bottom: 0.25rem; right: 0.25rem"
-        color="white"
-        disabled
-        @click.stop=""
+      <!-- bottom controls row -->
+      <div
+        style="position: absolute; width: 100%; bottom: 0.5rem"
+        class="d-flex justify-between align-center px-2"
+        @click.self="controlsHandler()"
       >
-        <v-icon>mdi-cards-outline</v-icon>
-      </v-btn>
-      <!-- // TODO: merge the bottom 2 into 1 reusable component -->
-      <quality v-if="$refs.player" :video="$refs.player" :sources="sources" />
-      <speed v-if="$refs.player" :video="$refs.player" />
-      <fullscreen
-        :fullscreen="isFullscreen"
-        @fullscreen="(controls = $refs.player.paused), handleFullscreenChange()"
-      />
-      <v-btn
-        v-if="isFullscreen"
-        fab
-        text
-        small
-        style="position: absolute; bottom: 0.25rem; right: 0.25rem"
-        color="white"
-        disabled
-        @click.stop=""
-      >
-        <v-icon>mdi-cards-outline</v-icon>
-      </v-btn>
+        <div v-if="isFullscreen">
+          <v-btn fab text small color="white" class="mr-2" disabled>
+            <v-icon>mdi-thumb-up-outline</v-icon>
+          </v-btn>
+          <v-btn fab text small color="white" class="mr-2" disabled>
+            <v-icon>mdi-thumb-down-outline</v-icon>
+          </v-btn>
+          <v-btn fab text small color="white" class="mr-2" disabled>
+            <v-icon>mdi-share-outline</v-icon>
+          </v-btn>
+          <v-btn fab text small color="white" class="mr-2" disabled>
+            <v-icon>mdi-plus-box-multiple-outline</v-icon>
+          </v-btn>
+          <v-btn fab text small color="white" class="mr-2" disabled>
+            <v-icon>mdi-comment-text-outline</v-icon>
+          </v-btn>
+        </div>
+        <v-spacer />
+        <!-- // TODO: merge the bottom 2 into 1 reusable component -->
+        <quality
+          v-if="$refs.player"
+          :sources="sources"
+          :current-source="$refs.player"
+          @quality="qualityHandler($event)"
+        />
+        <speed
+          v-if="$refs.player"
+          class="mx-2"
+          :current-speed="$refs.player.playbackRate"
+          @speed="$refs.player.playbackRate = $event"
+        />
+        <v-btn v-if="isFullscreen" fab text small disabled @click.stop="">
+          <v-icon>mdi-cards-outline</v-icon>
+        </v-btn>
+        <!-- placeholder for moving fullscreen button above -->
+        <v-btn v-else fab text small disabled> </v-btn>
+      </div>
+      <!-- bottom controls row -->
     </div>
+    <!-- controls container end -->
+
     <progressbar
       v-if="$refs.player"
-      :video="$refs.player"
-      :seeking="seeking"
-      :controls="controls"
-      :fullscreen="isFullscreen"
       :current-time="$refs.player.currentTime"
+      :duration="$refs.player.duration"
+      :fullscreen="isFullscreen"
+      :controls="controls"
+      :buffered="buffered"
+      :seeking="seeking"
     />
+
+    <sponsorblock
+      v-if="$refs.player && blocks.length > 0"
+      :duration="$refs.player.duration"
+      :fullscreen="isFullscreen"
+      :controls="controls"
+      :seeking="seeking"
+      :blocks="blocks"
+    />
+
     <seekbar
       v-if="$refs.player"
       v-show="!isFullscreen || controls"
+      :duration="$refs.player.duration"
       :fullscreen="isFullscreen"
+      :current-time="progress"
       :video="$refs.player"
+      :controls="controls"
       :sources="sources"
-      :controls="controls"
-      :current-time="$refs.player.currentTime"
-      @seeking="seeking = !seeking"
-    />
-    <sponsorblock
-      v-if="$refs.player"
-      :video="$refs.player"
       :seeking="seeking"
-      :videoid="videoid"
-      :controls="controls"
-      :fullscreen="isFullscreen"
+      @seeking="seeking = !seeking"
+      @scrub="$refs.player.currentTime = $event"
     />
   </div>
 </template>
@@ -327,20 +317,91 @@ export default {
       controls: false,
       seeking: false,
       contain: true,
+      skipping: 0,
+      progress: 0,
+      buffered: 0,
+      watched: 0,
+      blocks: [],
       vidSrc: "",
     };
   },
   mounted() {
     console.log("sources", this.sources);
     this.vidSrc = this.sources[this.sources.length - 1].url;
+    let vid = this.$refs.player;
+
+    this.$youtube.getSponsorBlock(this.vidSrc, (data) => {
+      console.log("sbreturn", data);
+      if (Array.isArray(data)) {
+        this.blocks = data;
+      }
+    });
+
+    vid.addEventListener("loadeddata", (e) => {
+      // TODO: detect video loading state and send this.loading to play button :loading = loading here
+      // console.log(e);
+      if (vid.readyState >= 3) {
+        vid.addEventListener("timeupdate", () => {
+          if (!this.seeking) this.progress = vid.currentTime; // for seekbar
+
+          // console.log("sb check", this.blocks);
+          // iterate over data.segments array
+          // for sponsorblock
+          if (this.blocks.length > 0)
+            this.blocks.forEach((sponsor) => {
+              let vidTime = vid.currentTime;
+
+              if (
+                vidTime >= sponsor.segment[0] &&
+                vidTime <= sponsor.segment[1]
+              ) {
+                console.log("Skipping the sponsor");
+                this.$youtube.showToast("Skipped sponsor");
+                vid.currentTime = sponsor.segment[1] + 1;
+              }
+            });
+        });
+        // TODO: detect video loading state and send this.loading to play button :loading = loading here
+        vid.addEventListener("progress", () => {
+          this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
+        });
+      }
+    });
     // TODO: detect orientation change and enter fullscreen
-    // TODO: detect video loading state and send this.loading to play button :loading = loading
   },
   beforeDestroy() {
     if (this.isFullscreen) this.exitFullscreen();
   },
   methods: {
-    handleFullscreenChange() {
+    // TODO: make accumulative onclick after first dblclick (don't set timeout untill stopped clicking)
+    skipHandler(time) {
+      this.skipping = time;
+      setTimeout(() => {
+        this.skipping = false;
+      }, 500);
+
+      this.$refs.player.currentTime += time;
+    },
+    controlsHandler() {
+      if (!this.seeking)
+        this.controls
+          ? (clearTimeout(this.controls), (this.controls = false))
+          : setTimeout(() => {
+              if (!this.skipping) {
+                this.controls = setTimeout(() => {
+                  if (!this.seeking && !this.$refs.player.paused)
+                    this.controls = false;
+                }, 2345);
+              }
+            }, 250);
+    },
+    qualityHandler(q) {
+      console.log(q);
+      let time = this.$refs.player.currentTime;
+      this.$refs.player.src = q;
+      this.$refs.player.currentTime = time;
+    },
+    fullscreenHandler() {
       if (document?.fullscreenElement === this.$refs.vidcontainer) {
         this.exitFullscreen();
       } else {
@@ -382,7 +443,7 @@ export default {
 
 <style>
 .dim {
-  filter: brightness(42%);
+  filter: brightness(33%);
 }
 .invisible {
   opacity: 0;

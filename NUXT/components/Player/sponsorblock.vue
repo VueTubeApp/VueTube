@@ -6,7 +6,6 @@
       :buffer-value="(block.segment[1] / video.duration) * 100"
       :value="(block.segment[0] / video.duration) * 100"
       style="
-        z-index: 3;
         position: absolute;
         pointer-events: none;
         background: transparent;
@@ -19,26 +18,27 @@
       :height="seeking ? 4 : 2"
       :style="
         fullscreen
-          ? 'width: calc(100% - 2rem); left: 1rem; bottom: 3.25rem;'
+          ? 'width: calc(100% - 2rem); left: 1rem; bottom: 3.5rem;'
           : 'width: 100%; left: 0; bottom: 1px;'
       "
     />
+    <!-- // TODO:background-color="colors[block.category]" -->
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    video: {
+    blocks: {
+      type: Array,
+      required: true,
+    },
+    duration: {
       type: Object,
       required: true,
     },
     seeking: {
       type: Boolean,
-      required: true,
-    },
-    videoid: {
-      type: String,
       required: true,
     },
     fullscreen: {
@@ -51,69 +51,17 @@ export default {
     },
   },
   data: () => ({
-    blocks: [],
+    colors: {
+      sponsor: "green",
+      selfpromo: "yellow",
+      exclusive_access: "teal",
+      interaction: "fuchsia",
+      poi_highlight: "deeppink",
+      intro: "lightblue",
+      outro: "blue",
+      music_offtopic: "orange",
+      filter: "purple",
+    },
   }),
-  mounted() {
-    let vid = this.video;
-    let id = this.videoid;
-
-    vid.addEventListener("loadeddata", (e) => {
-      if (vid.readyState >= 3) {
-        this.$youtube.getSponsorBlock(id, (data) => {
-          console.log("sbreturn", data);
-          if (Array.isArray(data)) {
-            this.blocks = data;
-
-            // iterate over data.segments array
-            vid.addEventListener("timeupdate", () => {
-              // console.log("sb check", data);
-              data.forEach((sponsor) => {
-                let vidTime = vid.currentTime;
-
-                if (
-                  vidTime >= sponsor.segment[0] &&
-                  vidTime <= sponsor.segment[1]
-                ) {
-                  console.log("Skipping the sponsor");
-                  this.$youtube.showToast("Skipped sponsor");
-                  vid.currentTime = sponsor.segment[1] + 1;
-                }
-              });
-            });
-          }
-        });
-      }
-    });
-  },
 };
 </script>
-
-<style>
-.sponsor {
-  color: green;
-}
-.selfpromo {
-  color: yellow;
-}
-.exclusive_access {
-  color: orange;
-}
-.interaction {
-  color: blue;
-}
-.intro {
-  color: purple;
-}
-.outro {
-  color: purple;
-}
-.music_offtopic {
-  color: red;
-}
-.poi_highlight {
-  color: #ff00ff;
-}
-.filler {
-  color: blue;
-}
-</style>
