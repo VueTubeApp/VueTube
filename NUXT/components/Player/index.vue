@@ -69,16 +69,12 @@
 
     <div
       v-if="seeking"
-      style="
-        left: 50%;
-        top: 0.5rem;
-        position: absolute;
-        transform: translateX(-50%);
-      "
+      class="d-flex justify-center"
+      style="width: 100%; top: 0.5rem; position: absolute; font-size: 0.66rem"
     >
-      <v-icon small>mdi-rewind</v-icon>
+      <v-icon small class="pr-2">mdi-rewind</v-icon>
       Doubletap left or right to skip 10 seconds
-      <v-icon small>mdi-fast-forward</v-icon>
+      <v-icon small class="pl-2">mdi-fast-forward</v-icon>
     </div>
 
     <!-- controls container -->
@@ -135,7 +131,7 @@
           v-if="$refs.player"
           :video="$refs.player"
           @pause="$refs.player.pause()"
-          @play="$refs.player.play(), (controls = false)"
+          @play="$refs.player.play(), controlsHandler()"
         />
         <v-btn fab text color="white" class="px-4" disabled @click.stop="">
           <v-icon size="2rem">mdi-skip-next</v-icon>
@@ -369,12 +365,13 @@ export default {
 
       this.$refs.player.currentTime += time;
     },
+    // TODO: fix dis
     controlsHandler() {
       if (!this.seeking)
         this.controls
           ? (clearTimeout(this.controls), (this.controls = false))
           : setTimeout(() => {
-              if (!this.skipping) {
+              if (!this.seeking) {
                 this.controls = setTimeout(() => {
                   this.controls = false;
                 }, 2345);
