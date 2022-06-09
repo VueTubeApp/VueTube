@@ -40,11 +40,14 @@
         position: absolute;
         transition: opacity 0.15s;
         border-radius: 0 100vh 100vh 0;
+        text-transform: none;
+        font-size: 0.5rem;
       "
-      @click.self="controlsHandler()"
       @dblclick.stop="skipHandler(-10)"
+      @click.self="controlsHandler()"
     >
       <v-icon>mdi-rewind</v-icon>
+      <!-- {{ skipping }} seconds -->
     </v-btn>
 
     <v-btn
@@ -60,11 +63,14 @@
         position: absolute;
         transition: opacity 0.15s;
         border-radius: 100vh 0 0 100vh;
+        text-transform: none;
+        font-size: 0.5rem;
       "
-      @click.self="controlsHandler()"
       @dblclick.stop="skipHandler(10)"
+      @click.self="controlsHandler()"
     >
       <v-icon>mdi-fast-forward</v-icon>
+      <!-- {{ skipping }} seconds] -->
     </v-btn>
 
     <div
@@ -130,8 +136,8 @@
         <playpause
           v-if="$refs.player"
           :video="$refs.player"
+          @play="$refs.player.play()"
           @pause="$refs.player.pause()"
-          @play="$refs.player.play(), controlsHandler()"
         />
         <v-btn fab text color="white" class="px-4" disabled @click.stop="">
           <v-icon size="2rem">mdi-skip-next</v-icon>
@@ -163,7 +169,7 @@
         <fullscreen
           style="z-index: 2"
           :fullscreen="isFullscreen"
-          @fullscreen="(controls = $refs.player.paused), fullscreenHandler()"
+          @fullscreen="controlsHandler(), fullscreenHandler()"
         />
       </div>
       <!-- time & fullscreen row end -->
@@ -299,9 +305,9 @@ export default {
     return {
       isFullscreen: false,
       controls: false,
-      skipping: false,
       seeking: false,
       contain: true,
+      skipping: 0,
       progress: 0,
       buffered: 0,
       watched: 0,
@@ -357,23 +363,24 @@ export default {
     if (this.isFullscreen) this.exitFullscreen();
   },
   methods: {
+    // TODO: make accumulative onclick after first dblclick (don't set timeout untill stopped clicking)
     skipHandler(time) {
       this.skipping = time;
       setTimeout(() => {
         this.skipping = false;
-      }, 300);
+      }, 500);
 
       this.$refs.player.currentTime += time;
     },
-    // TODO: fix dis
     controlsHandler() {
       if (!this.seeking)
         this.controls
           ? (clearTimeout(this.controls), (this.controls = false))
           : setTimeout(() => {
-              if (!this.skipping) {
+              if (!this.skipping && !this.$refs.player.paused) {
                 this.controls = setTimeout(() => {
-                  if (!this.seeking) this.controls = false;
+                  if (!this.seeking && !this.$refs.player.paused)
+                    this.controls = false;
                 }, 2345);
               }
             }, 300);
