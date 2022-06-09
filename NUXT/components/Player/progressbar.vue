@@ -1,7 +1,6 @@
 <template>
   <v-progress-linear
     style="
-      z-index: 2;
       position: absolute;
       background: #ffffff22;
       transform: translateY(50%);

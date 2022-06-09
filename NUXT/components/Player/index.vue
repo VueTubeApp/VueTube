@@ -8,23 +8,30 @@
     }"
     class="d-flex flex-column"
     style="position: relative"
-    :style="{
-      borderRadius: $store.state.tweaks.roundWatch
-        ? `${$store.state.tweaks.roundTweak / 3}rem`
-        : '0',
-    }"
   >
     <video
       ref="player"
       autoplay
       width="100%"
-      :height="isFullscreen ? '100%' : 'auto'"
       :src="vidSrc"
+      :height="isFullscreen ? '100%' : 'auto'"
       style="transition: filter 0.15s ease-in-out"
       :class="controls || seeking || skipping ? 'dim' : ''"
-      :style="contain ? 'object-fit: contain;' : 'object-fit: cover;'"
-      @click.self="controlsHandler()"
+      :style="{
+        objectFit: contain ? 'contain' : 'cover',
+        borderRadius:
+          $store.state.tweaks.roundWatch && !isFullscreen
+            ? `
+          ${$store.state.tweaks.roundTweak / 3}rem
+          ${$store.state.tweaks.roundTweak / 3}rem
+          ${$store.state.tweaks.roundTweak / 12}rem
+          ${$store.state.tweaks.roundTweak / 12}rem !important`
+            : '0',
+      }"
+      poster="https://media.discordapp.net/attachments/970793575153561640/974728851441729556/bam.png"
+      @click="controlsHandler()"
     />
+    <!-- // NOTE: replace poster URL with "none" -->
 
     <!-- // TODO: merge the bottom 2 into 1 reusable component -->
     <v-btn
@@ -43,8 +50,8 @@
         text-transform: none;
         font-size: 0.5rem;
       "
-      @dblclick.stop="skipHandler(-10)"
-      @click.self="controlsHandler()"
+      @click="controlsHandler()"
+      @dblclick="skipHandler(-10)"
     >
       <v-icon>mdi-rewind</v-icon>
       <!-- {{ skipping }} seconds -->
@@ -66,8 +73,8 @@
         text-transform: none;
         font-size: 0.5rem;
       "
-      @dblclick.stop="skipHandler(10)"
-      @click.self="controlsHandler()"
+      @click="controlsHandler()"
+      @dblclick="skipHandler(10)"
     >
       <v-icon>mdi-fast-forward</v-icon>
       <!-- {{ skipping }} seconds] -->
@@ -94,19 +101,24 @@
     >
       <!-- top controls row -->
       <div
-        class="d-flex justify-center px-2"
         style="position: absolute; width: 100%; top: 0.25rem"
+        class="d-flex justify-center px-2"
       >
         <minimize />
-        <div v-if="isFullscreen" class="pt-2">
+        <div v-if="isFullscreen" class="pt-2" @click.self="controlsHandler()">
           <h4>{{ video.title }}</h4>
           <div style="color: #aaa; font-size: 0.75rem">
             {{ video.channelName }}
           </div>
         </div>
         <v-spacer />
-        <loop />
-        <captions class="mx-2" />
+        <captions />
+        <loop
+          v-if="$refs.player"
+          class="mx-2"
+          :loop="$refs.player.loop"
+          @loop="$refs.player.loop = !$refs.player.loop"
+        />
         <close />
       </div>
       <!-- top controls row end -->
@@ -130,7 +142,7 @@
         >
           <v-icon size="1rem">mdi-rewind-5</v-icon>
         </v-btn>
-        <v-btn fab text color="white" class="px-4" disabled @click.stop="">
+        <v-btn fab text color="white" class="px-4" disabled>
           <v-icon size="2rem">mdi-skip-previous</v-icon>
         </v-btn>
         <playpause
@@ -139,7 +151,7 @@
           @play="$refs.player.play()"
           @pause="$refs.player.pause()"
         />
-        <v-btn fab text color="white" class="px-4" disabled @click.stop="">
+        <v-btn fab text color="white" class="px-4" disabled>
           <v-icon size="2rem">mdi-skip-next</v-icon>
         </v-btn>
         <v-btn
@@ -156,9 +168,10 @@
 
       <!-- time & fullscreen row -->
       <div
+        :style="isFullscreen ? 'bottom: 4.25rem' : 'bottom: 0.5rem'"
         class="d-flex justify-between align-center pl-4 pr-2"
         style="position: absolute; width: 100%"
-        :style="isFullscreen ? 'bottom: 4.25rem' : 'bottom: 0.5rem'"
+        @click.self="controlsHandler()"
       >
         <watchtime
           v-if="$refs.player"
@@ -176,8 +189,9 @@
 
       <!-- bottom controls row -->
       <div
-        class="d-flex justify-between align-center px-2"
         style="position: absolute; width: 100%; bottom: 0.5rem"
+        class="d-flex justify-between align-center px-2"
+        @click.self="controlsHandler()"
       >
         <div v-if="isFullscreen">
           <v-btn fab text small color="white" class="mr-2" disabled>
@@ -250,11 +264,7 @@
       :sources="sources"
       :seeking="seeking"
       @seeking="seeking = !seeking"
-      @scrub="
-        (e) => {
-          $refs.player.currentTime = e;
-        }
-      "
+      @scrub="$refs.player.currentTime = $event"
     />
   </div>
 </template>

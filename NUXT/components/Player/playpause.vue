@@ -4,7 +4,7 @@
     text
     large
     color="white"
-    @click.stop="
+    @click="
       (paused = !video.paused), video.paused ? $emit('play') : $emit('pause')
     "
   >

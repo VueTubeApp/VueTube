@@ -6,7 +6,6 @@
       :buffer-value="(block.segment[1] / video.duration) * 100"
       :value="(block.segment[0] / video.duration) * 100"
       style="
-        z-index: 3;
         position: absolute;
         pointer-events: none;
         background: transparent;

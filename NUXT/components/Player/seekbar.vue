@@ -17,7 +17,7 @@
       thumb-color="primary"
       track-color="transparent"
       :class="!controls && !fullscreen && !seeking ? 'invisible' : ''"
-      style="position: absolute; z-index: 4"
+      style="position: absolute; z-index: 69420"
       :style="
         fullscreen
           ? 'width: calc(100% - 2rem); left: 1rem; bottom: 55px;'
