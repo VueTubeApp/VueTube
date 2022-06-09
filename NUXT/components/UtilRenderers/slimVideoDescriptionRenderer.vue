@@ -8,7 +8,7 @@
 <style scoped>
 .description {
   white-space: pre-line;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 </style>
 
