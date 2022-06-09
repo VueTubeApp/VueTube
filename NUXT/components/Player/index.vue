@@ -377,13 +377,13 @@ export default {
         this.controls
           ? (clearTimeout(this.controls), (this.controls = false))
           : setTimeout(() => {
-              if (!this.skipping && !this.$refs.player.paused) {
+              if (!this.skipping) {
                 this.controls = setTimeout(() => {
                   if (!this.seeking && !this.$refs.player.paused)
                     this.controls = false;
                 }, 2345);
               }
-            }, 300);
+            }, 250);
     },
     qualityHandler(q) {
       console.log(q);
