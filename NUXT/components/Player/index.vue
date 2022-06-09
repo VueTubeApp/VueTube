@@ -13,7 +13,6 @@
         ? `${$store.state.tweaks.roundTweak / 3}rem`
         : '0',
     }"
-    @click="controls = !controls"
   >
     <video
       ref="player"
@@ -22,28 +21,66 @@
       :height="isFullscreen ? '100%' : 'auto'"
       :src="vidSrc"
       style="transition: filter 0.15s ease-in-out"
-      :class="controls || seeking ? 'dim' : ''"
+      :class="controls || seeking || skipping ? 'dim' : ''"
       :style="contain ? 'object-fit: contain;' : 'object-fit: cover;'"
+      @click.self="controlsHandler()"
     />
 
-    <!-- // TODO: merge the bottom 2 into 1 reusable component and add animation -->
+    <!-- // TODO: merge the bottom 2 into 1 reusable component -->
     <v-btn
       text
       tile
-      class="invisible"
-      style="position: absolute; top: 0; left: 0; width: 50%; height: 100%"
-      @dblclick.stop="$refs.player.currentTime -= 10"
-    />
+      color="white"
+      :class="skipping == -10 ? '' : 'invisible'"
+      style="
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        transition: opacity 0.15s;
+        border-radius: 0 100vh 100vh 0;
+      "
+      @click.self="controlsHandler()"
+      @dblclick.stop="skipHandler(-10)"
+    >
+      <v-icon>mdi-rewind</v-icon>
+    </v-btn>
 
     <v-btn
       text
       tile
-      class="invisible"
-      style="position: absolute; top: 0; left: 50%; width: 50%; height: 100%"
-      @dblclick.stop="$refs.player.currentTime += 10"
-    />
+      color="white"
+      :class="skipping == 10 ? '' : 'invisible'"
+      style="
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        transition: opacity 0.15s;
+        border-radius: 100vh 0 0 100vh;
+      "
+      @click.self="controlsHandler()"
+      @dblclick.stop="skipHandler(10)"
+    >
+      <v-icon>mdi-fast-forward</v-icon>
+    </v-btn>
 
-    <!-- // TODO: add delay to allow for doubletap to skip animation above -->
+    <div
+      v-if="seeking"
+      style="
+        left: 50%;
+        top: 0.5rem;
+        position: absolute;
+        transform: translateX(-50%);
+      "
+    >
+      <v-icon small>mdi-rewind</v-icon>
+      Doubletap left or right to skip 10 seconds
+      <v-icon small>mdi-fast-forward</v-icon>
+    </div>
+
     <!-- controls container -->
     <div
       style="transition: opacity 0.15s ease-in-out"
@@ -130,9 +167,7 @@
         <fullscreen
           style="z-index: 2"
           :fullscreen="isFullscreen"
-          @fullscreen="
-            (controls = $refs.player.paused), handleFullscreenChange()
-          "
+          @fullscreen="(controls = $refs.player.paused), fullscreenHandler()"
         />
       </div>
       <!-- time & fullscreen row end -->
@@ -268,6 +303,7 @@ export default {
     return {
       isFullscreen: false,
       controls: false,
+      skipping: false,
       seeking: false,
       contain: true,
       progress: 0,
@@ -325,13 +361,33 @@ export default {
     if (this.isFullscreen) this.exitFullscreen();
   },
   methods: {
+    skipHandler(time) {
+      this.skipping = time;
+      setTimeout(() => {
+        this.skipping = false;
+      }, 300);
+
+      this.$refs.player.currentTime += time;
+    },
+    controlsHandler() {
+      if (!this.seeking)
+        this.controls
+          ? (clearTimeout(this.controls), (this.controls = false))
+          : setTimeout(() => {
+              if (!this.skipping) {
+                this.controls = setTimeout(() => {
+                  this.controls = false;
+                }, 2345);
+              }
+            }, 300);
+    },
     qualityHandler(q) {
       console.log(q);
       let time = this.$refs.player.currentTime;
       this.$refs.player.src = q;
       this.$refs.player.currentTime = time;
     },
-    handleFullscreenChange() {
+    fullscreenHandler() {
       if (document?.fullscreenElement === this.$refs.vidcontainer) {
         this.exitFullscreen();
       } else {
