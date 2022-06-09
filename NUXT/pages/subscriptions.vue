@@ -19,7 +19,3 @@
     </p>
   </center>
 </template>
-
-<script>
-export default {};
-</script>
