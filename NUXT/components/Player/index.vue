@@ -328,7 +328,7 @@ export default {
     this.vidSrc = this.sources[this.sources.length - 1].url;
     let vid = this.$refs.player;
 
-    this.$youtube.getSponsorBlock(this.vidSrc, (data) => {
+    this.$youtube.getSponsorBlock(this.video.id, (data) => {
       console.log("sbreturn", data);
       if (Array.isArray(data)) {
         this.blocks = data;
