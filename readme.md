@@ -45,6 +45,8 @@ To install please visit www.vuetube.app/install
 
 ## Plans
 
+<img src="https://raw.githubusercontent.com/gayolGate/VueTube/main/resources/plans.png" alt="VueTube icon" width="500"/>
+
 - 🔍 Advanced Search
 - 🗞️ Locally store watch history
 - 📺 A custom video player
