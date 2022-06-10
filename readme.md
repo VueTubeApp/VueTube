@@ -30,6 +30,8 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## Features
 
+<img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
+
 - 🎨 Themes: Light, Dark, OLED, All the colors of the rainbow
 - 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
 - ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
