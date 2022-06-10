@@ -8,6 +8,7 @@
     }"
     class="d-flex flex-column"
     style="position: relative"
+    :style="{ height: isFullscreen ? '100vh' : 'auto' }"
   >
     <video
       ref="player"
@@ -26,6 +27,7 @@
       }"
       poster="https://media.discordapp.net/attachments/970793575153561640/974728851441729556/bam.png"
       @click="controlsHandler()"
+      @loadedmetadata="checkDimensions()"
     />
     <!-- // NOTE: replace poster URL with "none" -->
 
@@ -178,7 +180,7 @@
         <fullscreen
           style="z-index: 2"
           :fullscreen="isFullscreen"
-          @fullscreen="fullscreenHandler()"
+          @fullscreen="fullscreenHandler(true)"
         />
       </div>
       <!-- time & fullscreen row end -->
@@ -312,6 +314,9 @@ export default {
   data() {
     return {
       isFullscreen: false,
+      fullscreenLock: false,
+      verticalFullscreen: false,
+      midRotation: false,
       controls: false,
       seeking: false,
       contain: true,
@@ -321,6 +326,7 @@ export default {
       watched: 0,
       blocks: [],
       vidSrc: "",
+      isVerticalVideo: false,
     };
   },
   mounted() {
@@ -365,10 +371,15 @@ export default {
         });
       }
     });
-    // TODO: detect orientation change and enter fullscreen
+  },
+  created() {
+    screen.orientation.addEventListener("change", () =>
+      this.fullscreenHandler(false)
+    );
   },
   beforeDestroy() {
     if (this.isFullscreen) this.exitFullscreen();
+    screen.orientation.removeEventListener("change");
   },
   methods: {
     // TODO: make accumulative onclick after first dblclick (don't set timeout untill stopped clicking)
@@ -399,35 +410,65 @@ export default {
       this.$refs.player.src = q;
       this.$refs.player.currentTime = time;
     },
-    fullscreenHandler() {
-      if (document?.fullscreenElement === this.$refs.vidcontainer) {
-        this.exitFullscreen();
+    checkDimensions() {
+      if (this.$refs.player.videoHeight > this.$refs.player.videoWidth) {
+        this.isVerticalVideo = true;
       } else {
-        this.openFullscreen();
+        this.isVerticalVideo = false;
       }
     },
-    exitFullscreen() {
-      const cancellFullScreen =
-        document.exitFullscreen ||
-        document.mozCancelFullScreen ||
-        document.webkitExitFullscreen ||
-        document.msExitFullscreen;
-      cancellFullScreen.call(document);
-      screen.orientation.lock("portrait");
-      screen.orientation.unlock();
+    fullscreenHandler(pressedFullscreenBtn) {
+      // Prevent fullscreen button press from being handled twice
+      // (once by pressing fullscreen button, another by the resulting rotation)
+      if (this.midRotation) {
+        this.midRotation = false;
+        return;
+      }
+      // Toggle fullscreen state
+      if (this.isFullscreen) {
+        this.exitFullscreen(pressedFullscreenBtn);
+      } else {
+        this.enterFullscreen(pressedFullscreenBtn);
+      }
+    },
+    exitFullscreen(unlock) {
+      if (unlock) {
+        if (this.verticalFullscreen) {
+          // Unset vertical fullscreen mode
+          screen.orientation.unlock();
+          this.fullscreenLock = false;
+          this.verticalFullscreen = false;
+        } else {
+          // Unset standard fullscreen mode
+          this.midRotation = true;
+          screen.orientation.lock("portrait");
+          this.fullscreenLock = true;
+          // Locks the rotation to portrait for two seconds,
+          // and will then rotate back to landscape if the
+          // user doesn't rotate first
+          setTimeout(() => {
+            this.fullscreenLock = false;
+            screen.orientation.unlock();
+          }, 2 * 1000);
+        }
+      }
       this.$vuetube.navigationBar.show();
       this.$vuetube.statusBar.show();
       this.isFullscreen = false;
     },
-    openFullscreen() {
-      const element = this.$refs.vidcontainer;
-      const requestFullScreen =
-        element.requestFullscreen ||
-        element.webkitRequestFullScreen ||
-        element.mozRequestFullScreen ||
-        element.msRequestFullScreen;
-      requestFullScreen.call(element);
-      screen.orientation.lock("landscape");
+    enterFullscreen(force) {
+      if (force) {
+        this.fullscreenLock = true;
+        if (this.isVerticalVideo) {
+          // Vertical fullscreen mode (vertical video only)
+          screen.orientation.lock("portrait");
+          this.verticalFullscreen = true;
+        } else {
+          // Standard fullscreen mode
+          this.midRotation = true;
+          screen.orientation.lock("landscape");
+        }
+      }
       this.$vuetube.navigationBar.hide();
       this.$vuetube.statusBar.hide();
       this.isFullscreen = true;
