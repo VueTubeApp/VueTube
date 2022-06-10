@@ -39,6 +39,8 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## Install
 
+<img src="https://raw.githubusercontent.com/gayolGate/VueTube/main/resources/install.png" alt="VueTube icon" width="500"/>
+
 To install please visit www.vuetube.app/install
 
 ## Plans
