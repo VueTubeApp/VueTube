@@ -3,8 +3,8 @@
     <v-progress-linear
       v-for="block in blocks"
       :key="block.UUID"
-      :buffer-value="(block.segment[1] / video.duration) * 100"
-      :value="(block.segment[0] / video.duration) * 100"
+      :buffer-value="(block.segment[1] / duration) * 100"
+      :value="(block.segment[0] / duration) * 100"
       style="
         position: absolute;
         pointer-events: none;
@@ -34,7 +34,7 @@ export default {
       required: true,
     },
     duration: {
-      type: Object,
+      type: Number,
       required: true,
     },
     seeking: {

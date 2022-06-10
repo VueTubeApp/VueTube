@@ -23,7 +23,7 @@
 export default {
   props: {
     duration: {
-      type: Object,
+      type: Number,
       required: true,
     },
     seeking: {

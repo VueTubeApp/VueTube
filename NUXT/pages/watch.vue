@@ -8,7 +8,6 @@
         ref="player"
         :video="video"
         :sources="sources"
-        :videoid="$route.query.v"
       />
     </div>
 

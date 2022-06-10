@@ -304,10 +304,6 @@ export default {
       type: Object,
       required: true,
     },
-    videoid: {
-      type: String,
-      required: true,
-    },
   },
   data() {
     return {
