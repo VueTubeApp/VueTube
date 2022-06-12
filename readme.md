@@ -30,7 +30,7 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## Features
 
-<img src="https://raw.githubusercontent.com/gayolGate/VueTube/main/resources/vuetube.png" alt="VueTube icon" width="500"/>
+<img src="/resources/vuetube.png" alt="VueTube icon" width="300"/>
 
 - 🎨 Themes: Light, Dark, OLED, All the colors of the rainbow
 - 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
@@ -39,13 +39,13 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## Install
 
-<img src="https://raw.githubusercontent.com/gayolGate/VueTube/main/resources/install.png" alt="VueTube icon" width="500"/>
+<img src="/resources/install.png" alt="VueTube icon" width="300"/>
 
 To install please visit www.vuetube.app/install
 
 ## Plans
 
-<img src="https://raw.githubusercontent.com/gayolGate/VueTube/main/resources/plans.png" alt="VueTube icon" width="500"/>
+<img src="/resources/plans.png" alt="VueTube icon" width="300"/>
 
 - 🔍 Advanced Search
 - 🗞️ Locally store watch history
