@@ -30,6 +30,8 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## Features
 
+<img src="/resources/vuetube.png" alt="VueTube icon" width="300"/>
+
 - 🎨 Themes: Light, Dark, OLED, All the colors of the rainbow
 - 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
 - ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
@@ -37,9 +39,13 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## Install
 
+<img src="/resources/install.png" alt="VueTube icon" width="300"/>
+
 To install please visit www.vuetube.app/install
 
 ## Plans
+
+<img src="/resources/plans.png" alt="VueTube icon" width="300"/>
 
 - 🔍 Advanced Search
 - 🗞️ Locally store watch history
