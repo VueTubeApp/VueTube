@@ -131,17 +131,8 @@
           top: 50%;
         "
       >
-        <v-btn
-          fab
-          text
-          small
-          color="white"
-          @click.stop="$refs.player.currentTime -= 5"
-        >
-          <v-icon size="1rem">mdi-rewind-5</v-icon>
-        </v-btn>
-        <v-btn fab text color="white" class="px-4" disabled>
-          <v-icon size="2rem">mdi-skip-previous</v-icon>
+        <v-btn fab text color="white" class="px-8" disabled>
+          <v-icon size="2rem" color="white">mdi-skip-previous</v-icon>
         </v-btn>
         <playpause
           v-if="$refs.player"
@@ -149,17 +140,8 @@
           @play="$refs.player.play()"
           @pause="$refs.player.pause()"
         />
-        <v-btn fab text color="white" class="px-4" disabled>
-          <v-icon size="2rem">mdi-skip-next</v-icon>
-        </v-btn>
-        <v-btn
-          fab
-          text
-          small
-          color="white"
-          @click.stop="$refs.player.currentTime += 5"
-        >
-          <v-icon size="1rem">mdi-fast-forward-5</v-icon>
+        <v-btn fab text color="white" class="px-8" disabled>
+          <v-icon size="2rem" color="white">mdi-skip-next</v-icon>
         </v-btn>
       </div>
       <!-- center controls row end -->

@@ -1,6 +1,6 @@
 <template>
   <v-btn fab text small @click="$emit('loop')">
-    <v-icon>{{ loop ? "mdi-sync-circle" : "mdi-sync" }}</v-icon>
+    <v-icon color="white">{{ loop ? "mdi-sync-circle" : "mdi-sync" }}</v-icon>
   </v-btn>
 </template>
 
