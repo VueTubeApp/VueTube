@@ -367,6 +367,12 @@ export default {
         dialogTitle: "Share video",
       });
     },
+    vlc() {
+      this.$youtube.showToast("Opening in VLC");
+      
+      // redirect to vlc://url
+      window.location.href = "vlc://" + this.video.availableResolutions[this.video.availableResolutions.length-1].url;
+    },
     sendWatchTime() {
       const player = this.$refs.player.getPlayer();
       const rt = Math.floor(Date.now() / 1000) - this.startTime;
@@ -434,6 +440,12 @@ export default {
             icon: "mdi-plus-box-multiple-outline",
             actionName: "enqueue",
             disabled: true,
+          },
+          {
+            name: "Open in VLC",
+            icon: "mdi-traffic-cone",
+            actionName: "vlc",
+            disabled: false,
           },
           // {
           //   name: "Quality",
