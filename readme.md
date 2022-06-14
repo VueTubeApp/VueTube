@@ -76,9 +76,9 @@ View on our website: www.vuetube.app/info/screenshots
   <summary> Or click here to display screenshots </summary>
 <br />
   
-<img src="https://vuetube.app/wtch.png" width="300">
-<img src="https://vuetube.app/stng.png" width="300">
-<img src="https://vuetube.app/srch.png" width="300">
+<img src="https://vuetube.app/wtch.png" width="400">
+<img src="https://vuetube.app/stng.png" width="400">
+<img src="https://vuetube.app/srch.png" width="400">
      
 </details>
 
