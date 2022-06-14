@@ -50,8 +50,15 @@ To install please visit www.vuetube.app/install
 <details>
   <summary>Or click here to display all versions avaiable</summary>
 <br />
-  
+
+### Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=/resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/946910031562027029/972164599816273930/VueTube-Canary-May-6-2022.apk><img id="im" width="200" src=/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=/resources/getstable.png></a>  |
+| ------------- | ------------- |  ------------- |
+| A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
+  
+
+### iOS
+| <a href=[https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip](https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip)><img id="im" width="200" src=/resources/getunstable.png></a>  | <a href=[https://cdn.discordapp.com/attachments/946910031562027029/972164599816273930/VueTube-Canary-May-6-2022.apk](https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa](https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa)><img id="im" width="200" src=/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=/resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
 | A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
   
