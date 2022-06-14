@@ -67,6 +67,7 @@ To install please visit www.vuetube.app/install
 View on our website: www.vuetube.app/info/screenshots
 
 <img src="https://vuetube.app/wtch.png" width="300">
+<img src="https://vuetube.app/stng.png" width="300">
 
 ### Technologies used
 
