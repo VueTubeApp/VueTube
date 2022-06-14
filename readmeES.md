@@ -41,7 +41,7 @@ Leer en otros idiomas: [English](readme.md)
 
 ## Instalar
 
-<img src="/resources/install.png" alt="VueTube icon" width="300"/>
+<img src="/resources/installES.PNG" alt="VueTube icon" width="300"/>
 
 Para instalar, por favor, visita www.vuetube.app/install
 
