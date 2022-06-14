@@ -32,7 +32,7 @@ Leer en otros idiomas: [English](readme.md)
 
 ## Características
 
-<img src="/resources/vuetubeES.png" alt="VueTube icon" width="300"/>
+<img src="/resources/vuetubeES.PNG" alt="VueTube icon" width="300"/>
 
 - 🎨 Temas: Claro, Oscuro, OLED, Todos los colores del arcoíris
 - 🖌️ Interfaz personalizable: ¡Puedes personalizar completamente el color principal, y otras partes de la interfaz para eliminar características que no usas!
