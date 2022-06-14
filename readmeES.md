@@ -47,6 +47,16 @@ Leer en otros idiomas: [English](readme.md)
 
 Para instalar, por favor, visita www.vuetube.app/install
 
+<details>
+  <summary>O haz clic aquí para mostrar todas las versiones disponibles</summary>
+<br />
+  
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=/resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/946910031562027029/972164599816273930/VueTube-Canary-May-6-2022.apk><img id="im" width="200" src=/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=/resources/getstable.png></a>  |
+| ------------- | ------------- |  ------------- |
+| Un montón de bugs, pero acceso anticipado a funciones | Menos bugs que la inestable, aún así más funciones que la estable | No disponible hasta que la app este más desarrollada |
+  
+</details>
+
 ## Planes
 
 <img src="/resources/plansES.PNG" alt="VueTube icon" width="300"/>
