@@ -53,6 +53,8 @@ export default {
   buildModules: ["@nuxtjs/vuetify"],
   modules: [],
 
+  ssr: false,
+
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
     treeShake: true,
