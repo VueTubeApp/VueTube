@@ -28,6 +28,8 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
+Read this in other languages: [Español](READMEes.md)
+
 ## Features
 
 <img src="/resources/vuetube.png" alt="VueTube icon" width="300"/>
