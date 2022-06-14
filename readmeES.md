@@ -47,7 +47,7 @@ Para instalar, por favor, visita www.vuetube.app/install
 
 ## Planes
 
-<img src="/resources/plans.png" alt="VueTube icon" width="300"/>
+<img src="/resources/plansES.PNG" alt="VueTube icon" width="300"/>
 
 - 🔍 Búsqueda avanzada
 - 🗞️ Historial de búsqueda local
