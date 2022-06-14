@@ -30,10 +30,6 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 Read this in other languages: [Español](readmeES.md)
 
-<hr>
-
-<hr>
-
 ## Features
 
 <img src="/resources/vuetube.png" alt="VueTube icon" width="300"/>
