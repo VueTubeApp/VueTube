@@ -28,7 +28,7 @@ Se pronuncia Viu Tuf (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Leer en otros idiomas: [English](README.md)
+Leer en otros idiomas: [English](readme.md)
 
 ## Características
 
