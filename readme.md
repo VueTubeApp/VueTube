@@ -31,6 +31,8 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 Read this in other languages: [Español](readmeES.md)
 
 <hr>
+Download now: <br />
+<br />
 <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=/resources/getunstable.png></a>
 <hr>
 
