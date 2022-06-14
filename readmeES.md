@@ -38,6 +38,8 @@ Leer en otros idiomas: [English](readme.md)
 - 🖌️ Interfaz personalizable: ¡Puedes personalizar completamente el color principal, y otras partes de la interfaz para eliminar características que no usas!
 - ⬆️ Actualizaciones automáticas: ¡Recibe una notificación cuando haya una actualización disponible y baja de versión si no te gusta!
 - 👁️ Protección contra el rastreo: No se envían datos desde tu dispositivo por defecto
+- 📺 Reproductor de vídeo personalizado
+- 👎 Return YouTube Dislike
 
 ## Instalar
 
@@ -51,7 +53,6 @@ Para instalar, por favor, visita www.vuetube.app/install
 
 - 🔍 Búsqueda avanzada
 - 🗞️ Historial de búsqueda local
-- 📺 Reproductor de vídeo personalizado
 - ✂️ Shorts (Cortos)
 - 🧑 Inicio de sesión con tu cuenta de Google
 - 🖼️ Modo Imagen en imagen
