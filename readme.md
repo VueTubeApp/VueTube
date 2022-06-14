@@ -38,6 +38,8 @@ Read this in other languages: [Español](readmeES.md)
 - 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
 - ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
 - 👁️ Tracking Protection: No telemetry is sent from your device by default
+- 📺 Custom video player
+- 👎 Return YouTube Dislike
 
 ## Install
 
@@ -51,7 +53,6 @@ To install please visit www.vuetube.app/install
 
 - 🔍 Advanced Search
 - 🗞️ Locally store watch history
-- 📺 A custom video player
 - ✂️ Shorts
 - 🧑 Google account sign in
 - 🖼️ Picture in picture mode
