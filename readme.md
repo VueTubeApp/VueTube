@@ -28,11 +28,11 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Read this in other languages: [Español](readmeES.md)
+Read this in other languages: [Español](readme.es.md)
 
 ## Features
 
-<img src="/resources/vuetube.png" alt="VueTube icon" width="300"/>
+<img src="./resources/features.svg" alt="VueTube icon" width="300"/>
 
 - 🎨 Themes: Light, Dark, OLED, All the colors of the rainbow
 - 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
@@ -43,7 +43,7 @@ Read this in other languages: [Español](readmeES.md)
 
 ## Install
 
-<img src="/resources/install.png" alt="VueTube icon" width="300"/>
+<img src="./resources/install.svg" alt="VueTube icon" width="300"/>
 
 To install please visit www.vuetube.app/install
 
@@ -66,7 +66,7 @@ To install please visit www.vuetube.app/install
 
 ## Plans
 
-<img src="/resources/plans.png" alt="VueTube icon" width="300"/>
+<img src="./resources/plans.svg" alt="VueTube icon" width="300"/>
 
 - 🔍 Advanced Search
 - 🗞️ Locally store watch history
