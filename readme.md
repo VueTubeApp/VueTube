@@ -31,9 +31,11 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 Read this in other languages: [Español](readmeES.md)
 
 <hr>
-Download now: <br />
-<br />
-<a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=/resources/getunstable.png></a>
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=/resources/getunstable.png></a>  | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=/resources/getcanary.png></a> | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=/resources/getstable.png></a>  |
+| ------------- | ------------- |  ------------- |
+| A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
+
 <hr>
 
 ## Features
