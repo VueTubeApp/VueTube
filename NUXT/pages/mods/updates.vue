@@ -14,23 +14,6 @@
             :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
             v-text="`• ${item.sha.substring(0, 7)}`"
           />
-          <v-spacer />
-          <v-chip
-            v-if="index == 0"
-            class="tags"
-            color="orange"
-            style="border-radius: 0.5rem; border: 2px var(--v-orange-base)"
-          >
-            Latest
-          </v-chip>
-          <v-chip
-            v-if="item.sha == installedVersion"
-            class="tags"
-            color="green"
-            style="border-radius: 0.5rem; border: 2px var(--v-green-base)"
-          >
-            Installed
-          </v-chip>
         </v-card-title>
 
         <div style="margin-left: 1em">
@@ -43,6 +26,8 @@
         </div>
 
         <v-card-actions>
+          <v-chip v-if="index == 0" class="tags" color="orange" style="border-radius: 0.5rem; border: 2px var(--v-orange-base)">Latest</v-chip>
+          <v-chip v-if="item.sha == installedVersion" class="tags" color="green" style="border-radius: 0.5rem; border: 2px var(--v-green-base)">Installed</v-chip>
           <v-spacer />
           <v-btn @click="openExternal(item)" class="background">
             <v-icon class="btn-icon">mdi-github</v-icon>View
