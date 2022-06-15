@@ -27,22 +27,22 @@ module.exports = {
 
   mods: {
     general: {
-      language: "Language"
+      language: "Język"
     },
     theme: {
-      normal: "Normal",
-      adaptive: "Adaptive",
+      normal: "Normalny",
+      adaptive: "Adaptacyjny",
       custom: "Custom",
-      dark: "Dark",
-      black: "Black",
-      darkmode: "Dark Mode",
-      darkmodetagline: "Bravo Six, Going Dark."
+      dark: "Ciemny",
+      black: "Czarny",
+      darkmode: "Tryb Ciemny",
+      darkmodetagline: "Brawo ty, przejdź na ciemną stronę mocy."
     },
     tweaks: {
-      fullscreen: "Fullscreen",
-      navbarblur: "Navbar Blur",
-      roundedcorners: "Rounded Corners",
-      roundthumbnails: "Round Thumbnails",
+      fullscreen: "Pełny Ekran",
+      navbarblur: "Rozmycie Paska Nawigacyjnego",
+      roundedcorners: "Zaokrąglone Krawędzie",
+      roundthumbnails: "Zaokrąglone Miniaturki",
       roundwatchpagecomponents: "Round Watch PAge Components",
       radius: "Radius"
     },
@@ -51,18 +51,18 @@ module.exports = {
     },
     updates: {
       install: "Install",
-      view: "View",
-      latest: "Latest",
-      installed: "Installed"
+      view: "Zobacz",
+      latest: "Najnowsza",
+      installed: "Zainstalowana"
     },
     logs: {
-      more: "More"
+      more: "Więcej"
     },
     
     about: {
-      appinformation: "Informacje O Aplikacji",
+      appinformation: "Informacje o aplikacji",
       appversion: "Wersja Aplikacji",
-      deviceinformation: "Informacje O Urządzeniu",
+      deviceinformation: "Informacje o Urządzeniu",
       platform: "Platforma",
       os: "System Operacyjny",
       model: "Model",
@@ -75,8 +75,8 @@ module.exports = {
 
   events: {
     welcome: "Witaj w VueTube",
-    tagline: "Przyszłość Streamingu Wideo",
-    next: "DALEJ",
+    tagline: "Przyszłośći Streamingu Wideo",
+    next: "Dalej",
     updated: "VueTube został zaktualizowany!",
     awesome: "Świetnie!",
   },
