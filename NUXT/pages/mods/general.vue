@@ -1,7 +1,7 @@
 <template>
   <div class="mainContainer pt-1">
     <v-card flat class="pb-5 background" :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'" :style="{borderRadius: `${roundTweak / 2}rem`}">
-      <v-card-title>{{ lang.mods.startup.defaultpage }}</v-card-title>
+      <v-card-title>{{ lang.mods.general.language }}</v-card-title>
       <v-card-text>
         <v-select v-model="page" background-color="background" :items="pages" label="Default Page" solo></v-select>
       </v-card-text>

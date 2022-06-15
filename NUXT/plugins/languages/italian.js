@@ -26,6 +26,9 @@ module.exports = {
   },
 
   mods: {
+    general: {
+      language: "Lingua"
+    },
     startup: {
       defaultpage: "Pagina Predefinita"
     },
