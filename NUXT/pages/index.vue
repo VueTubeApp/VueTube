@@ -24,7 +24,16 @@ export default {
     this.progressMsg = this.$lang("index").connecting;
 
     this.$store.commit("tweaks/initTweaks");
-    const theming = new Promise((resolve) =>
+
+    await this.theming;
+    await this.$youtube.getAPI();
+    await this.$vuetube.launchBackHandling();
+    this.progressMsg = this.$lang("index").launching;
+
+    this.$router.replace(`/${localStorage.getItem("startPage") || "home"}`); // Prevent user from navigating back to the splash screen
+  },
+  methods: {
+    theming() { return new Promise((resolve) =>
       // Set timeout is required for $vuetify.theme... dont ask me why -Front
       setTimeout(() => {
         this.$vuetify.theme.dark =
@@ -55,26 +64,12 @@ export default {
         // this.$vuetube.statusBar.setTransparent();
         resolve();
       }, 0)
-    );
-
-    await theming;
-    await this.$youtube.getAPI();
-    await this.$vuetube.launchBackHandling();
-    this.progressMsg = this.$lang("index").launching;
-
-    this.$router.replace(`/${localStorage.getItem("startPage") || "home"}`); // Prevent user from navigating back to the splash screen
-  },
-};
+    )}
+  }
+}
 </script>
 
 <style>
-.container {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 .intro {
   opacity: 0;
   transform: scale(0.5);

@@ -38,6 +38,14 @@ module.exports = {
       github: "GitHub",
       discord: "Discord"
     }
+  },
+
+  events: {
+    welcome: "Welcome to VueTube",
+    tagline: "The future of video streaming",
+    next: "Next",
+    updated: "VueTube Was Updated!",
+    awesome: "Awesome!"
   }
 
 
