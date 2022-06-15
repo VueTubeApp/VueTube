@@ -53,13 +53,13 @@
 ### Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/946910031562027029/972164599816273930/VueTube-Canary-May-6-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| バグが発生する可能性がありますのに最新の機能をいち早く試させります。 | unstable よりもバグが少ないが、stable よりも若干機能が多い。 | VueTubeが開発中のでこのバージョンは暫くダウンロードできない |
+| バグが発生する可能性があるのに最新の機能をいち早く試されます。 | unstable よりもバグが少ないが、stable よりも若干機能が多い。 | VueTubeが開発中のため、このバージョンは暫くダウンロードできない |
   
 
 ### iOS
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| バグが発生する可能性がありますのに最新の機能をいち早く試させります。 | unstable よりもバグが少ないが、stable よりも若干機能が多い。 | VueTubeが開発中のでこのバージョンは暫くダウンロードできない |
+| バグが発生する可能性があるのに最新の機能をいち早く試されます。 | unstable よりもバグが少ないが、stable よりも若干機能が多い。 | VueTubeが開発中のため、このバージョンは暫くダウンロードできない |
   
 </details>
 
