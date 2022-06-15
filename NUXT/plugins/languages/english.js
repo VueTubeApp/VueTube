@@ -26,6 +26,9 @@ module.exports = {
   },
 
   mods: {
+    startup: {
+      defaultpage: "Default Page"
+    },
     about: {
       appinformation: "App Information",
       appversion: "App Version",

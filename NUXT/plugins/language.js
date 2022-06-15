@@ -1,5 +1,5 @@
 function module(text) {
-  const selectedLanguage = localStorage.getItem(text) || "english";
+  const selectedLanguage = localStorage.getItem("language") || "english";
   const languagePack = require('./languages/'+selectedLanguage);
 
   if (!text) return languagePack;

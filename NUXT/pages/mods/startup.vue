@@ -1,7 +1,7 @@
 <template>
   <div class="mainContainer pt-1">
     <v-card flat class="pb-5 background" :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'" :style="{borderRadius: `${roundTweak / 2}rem`}">
-      <v-card-title>Default Page</v-card-title>
+      <v-card-title>{{ lang.mods.startup.defaultpage }}</v-card-title>
       <v-card-text>
         <v-select v-model="page" background-color="background" :items="pages" label="Default Page" solo></v-select>
       </v-card-text>
@@ -15,13 +15,14 @@
     computed: {
       roundTweak() {
         return this.$store.state.tweaks.roundTweak;
-      }
+      },
     },
 
     data() {
       return {
         page: "home",
         pages: [],
+        lang: { mods: { startup: {} } }
       };
     },
 
@@ -34,16 +35,17 @@
     mounted() {
       this.page = localStorage.getItem("startPage") || "home";
 
-      const langPack = this.$lang('global');
+      const lang = this.$lang(); this.lang = lang;
+
       this.pages = [{
         value: "home",
-        text: langPack.home
+        text: lang.global.home
       }, {
         value: "subscriptions",
-        text: langPack.subscriptions
+        text: lang.global.subscriptions
       }, {
         value: "library",
-        text: langPack.library
+        text: lang.global.library
       }];
     }
   };
