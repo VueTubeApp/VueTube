@@ -27,36 +27,36 @@ module.exports = {
 
   mods: {
     general: {
-      language: "Language"
+      language: "Idioma"
     },
     theme: {
       normal: "Normal",
-      adaptive: "Adaptive",
-      custom: "Custom",
-      dark: "Dark",
-      black: "Black",
-      darkmode: "Dark Mode",
-      darkmodetagline: "Bravo Six, Going Dark."
+      adaptive: "Adaptado",
+      custom: "Personalizado",
+      dark: "Oscuro",
+      black: "Negro",
+      darkmode: "Modo oscuro",
+      darkmodetagline: "Bravo Six, haciéndote oscuro."
     },
     tweaks: {
-      fullscreen: "Fullscreen",
-      navbarblur: "Navbar Blur",
-      roundedcorners: "Rounded Corners",
-      roundthumbnails: "Round Thumbnails",
-      roundwatchpagecomponents: "Round Watch PAge Components",
-      radius: "Radius"
+      fullscreen: "Pantalla completa",
+      navbarblur: "Desenfocar barra",
+      roundedcorners: "Esquinas redondeadas",
+      roundthumbnails: "Redondear miniaturas",
+      roundwatchpagecomponents: "Redondear componentes del vídeo",
+      radius: "Radio"
     },
     startup: {
       defaultpage: "Pagina predeterminada"
     },
     updates: {
-      install: "Install",
-      view: "View",
-      latest: "Latest",
-      installed: "Installed"
+      install: "Instalar",
+      view: "Ver",
+      latest: "Última",
+      installed: "Instalada"
     },
     logs: {
-      more: "More"
+      more: "Más"
     },
     
     about: {
