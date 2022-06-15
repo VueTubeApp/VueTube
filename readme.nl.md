@@ -4,6 +4,7 @@
   </a>
   </br>
   <sub>Logo gemaakt door <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>Translation by: <a href="https://github/Mcfly2340">@Mcfly2340</sub>
   </br>
   </br>
 <strong>Een Simpele FOSS video streaming client gericht op het recreëren van ALLE functies van hun respectievelijke apps (en meer)</strong>
