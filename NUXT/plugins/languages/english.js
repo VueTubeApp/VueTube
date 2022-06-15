@@ -1,42 +1,42 @@
 module.exports = {
-  name: "English",
+  name: "Polish",
 
   global: {
-    home: "Home",
-    subscriptions: "Subscriptions",
-    library: "Library"
+    home: "Główna",
+    subscriptions: "Subskrypcje",
+    library: "Biblioteka"
   },
 
   index: {
-    connecting: "Connecting",
-    launching: "Launching"
+    connecting: "Łączenie",
+    launching: "Uruchamianie"
   },
 
   settings: {
-    general: "General",
-    theme: "Theme",
-    player: "Player",
-    uitweaker: "UI Tweaker",
-    startupoptions: "Startup Options",
-    plugins: "Plugins",
-    updates: "Updates",
-    logs: "Logs",
-    about: "About",
-    devmode: "Registry Editor"
+    general: "Ogólne",
+    theme: "Motyw",
+    player: "Odtwarzacz",
+    uitweaker: "Interfejs Użytkownika",
+    startupoptions: "Opcje Uruchamiania",
+    plugins: "Rozszerzenia",
+    updates: "Aktualizacje",
+    logs: "Logi",
+    about: "Informacje",
+    devmode: "Edytor Rejestru"
   },
 
   mods: {
     startup: {
-      defaultpage: "Default Page"
+      defaultpage: "Strona Domyślna"
     },
     about: {
-      appinformation: "App Information",
-      appversion: "App Version",
-      deviceinformation: "Device Information",
-      platform: "Platform",
-      os: "Operating System",
+      appinformation: "Informacje O Aplikacji",
+      appversion: "Wersja Aplikacji",
+      deviceinformation: "Informacje O Urządzeniu",
+      platform: "Platforma",
+      os: "System Operacyjny",
       model: "Model",
-      manufacturer: "Manufacturer",
+      manufacturer: "Manufaktura",
       emulator: "Emulator",
       github: "GitHub",
       discord: "Discord"
@@ -44,11 +44,11 @@ module.exports = {
   },
 
   events: {
-    welcome: "Welcome to VueTube",
-    tagline: "The future of video streaming",
-    next: "Next",
-    updated: "VueTube Was Updated!",
-    awesome: "Awesome!"
+    welcome: "Witaj w VueTube",
+    tagline: "Przyszłość Streamingu Wideo",
+    next: "DALEJ",
+    updated: "VueTube został zaktualizowany!",
+    awesome: "Świetnie!"
   }
 
 
