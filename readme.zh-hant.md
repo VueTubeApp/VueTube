@@ -28,7 +28,8 @@
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-其他語言版本：[English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [日本語,](readme.ja.md) [עִברִית](readme.he.md)
+其他語言版本：[English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands](readme.nl.md)
+
 
 ## 功能
 
