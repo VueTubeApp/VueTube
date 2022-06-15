@@ -8,7 +8,7 @@ const packs = {
 function module(text, listPacks) {
 
   //---   List All Packs   ---//
-  if (listPacks) return packs;
+  if (listPacks === true) return packs;
 
   //---   Return Language Pack   ---//
   const selectedLanguage = localStorage.getItem("language") || "english";
