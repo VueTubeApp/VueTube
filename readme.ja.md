@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://vuetube.app/">
-    <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
+    <img src="./resources/readme-ja/vuetube.ja.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <sub>Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub><a href="https://github.com/afnzmn">@afnzmn</a>・ロゴ</sub>
   </br>
   </br>
 <strong>A simple FOSS video streaming client aimed to recreate ALL features from their respective apps (and more)</strong>
@@ -28,11 +28,11 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Read this in other languages: [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語](readme.ja.md)
+Read this in other languages: [Español](readme.es.md)
 
-## Features
+## 機能
 
-<img src="./resources/Features.svg" alt="VueTube icon" width="300"/>
+<img src="resources/readme-ja/Features.ja.svg" alt="VueTube icon" width="300"/>
 
 - 🎨 Themes: Light, Dark, OLED, All the colors of the rainbow
 - 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
@@ -41,9 +41,9 @@ Read this in other languages: [Español,](readme.es.md) [简体中文,](readme.z
 - 📺 Custom video player
 - 👎 Return YouTube Dislike
 
-## Install
+## インストール
 
-<img src="./resources/Install.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-ja/Install.ja.svg" alt="VueTube icon" width="400"/>
 
 To install please visit www.vuetube.app/install
 
@@ -64,9 +64,9 @@ To install please visit www.vuetube.app/install
   
 </details>
 
-## Plans
+## 計画
 
-<img src="./resources/Plans.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-ja/Plans.ja.svg" alt="VueTube icon" width="300"/>
 
 - 🔍 Advanced Search
 - 🗞️ Locally store watch history
