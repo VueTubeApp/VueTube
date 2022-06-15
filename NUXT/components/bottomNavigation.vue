@@ -74,24 +74,25 @@ export default {
       tabSelection: 0,
       tabs: [
         // TODO: pull from Vuex & localStorage for customizations
-        { name: "...", icon: "mdi-home", link: "/home" },
+        { name: "", icon: "mdi-home", link: "/home" },
         //{ name: "Shorts", icon: "mdi-lightning-bolt", link: "/shorts" },
         //{ name: "Upload", icon: "mdi-plus", link: "/upload" },
         {
-          name: "...",
+          name: "",
           icon: "mdi-youtube-subscription",
           link: "/subscriptions",
         },
-        { name: "...", icon: "mdi-view-list", link: "/library" },
+        { name: "", icon: "mdi-view-list", link: "/library" },
         // { name: "Settings", icon: "mdi-menu", link: "/settings" },
       ],
     };
   },
 
   mounted() {
-    this.tabs[0].name = this.$lang("global").home;
-    this.tabs[1].name = this.$lang("global").subscriptions;
-    this.tabs[2].name = this.$lang("global").library;
+    const lang = this.$lang("global");
+    this.tabs[0].name = lang.home;
+    this.tabs[1].name = lang.subscriptions;
+    this.tabs[2].name = lang.library;
   },
 };
 </script>
