@@ -12,7 +12,7 @@ function module(text, listPacks) {
 
   //---   Return Language Pack   ---//
   const selectedLanguage = localStorage.getItem("language") || "english";
-  const languagePack = packs(selectedLanguage);
+  const languagePack = require('./languages/'+selectedLanguage);
 
   if (!text) return languagePack;
   return languagePack[text];
