@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Italian",
+  name: "Italiano",
 
   global: {
     home: "Casa",
@@ -44,10 +44,10 @@ module.exports = {
   },
 
   events: {
-    welcome: "Welcome to VueTube",
-    tagline: "The future of video streaming",
+    welcome: "Benvenuto su VueTube",
+    tagline: "Il Futuro Dello Streaming Video",
     next: "Prossimo",
-    updated: "VueTube Was Updated!",
+    updated: "VueTube e Stato Aggiornato",
     awesome: "Imponente!"
   }
 
