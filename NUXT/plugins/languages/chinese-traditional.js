@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 module.exports = {
   name: "中文繁體",
 
