@@ -6,12 +6,14 @@
  */
 
 export default {
-  //---   Bettertube Stuff   ---//
+  //---   VueTube Stuff   ---//
   env: {
     appVersion: "dev-local",
   },
 
   target: "static",
+  ssr: false,
+
   plugins: [
     { src: "~/plugins/youtube", mode: "client" },
     { src: "~/plugins/vuetube", mode: "client" },
@@ -23,7 +25,7 @@ export default {
     dir: "../dist",
   },
 
-  //---   Bettertube Debugging   ---//
+  //---   VueTube Debugging   ---//
   server: {
     port: 80, // default: 3000 (Note: Running on ports below 1024 requires root privileges!)
     host: "0.0.0.0", // default: localhost,
@@ -52,8 +54,6 @@ export default {
 
   buildModules: ["@nuxtjs/vuetify"],
   modules: [],
-
-  ssr: false,
 
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
