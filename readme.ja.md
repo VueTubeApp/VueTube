@@ -1,14 +1,13 @@
 <p align="center">
   <a href="https://vuetube.app/">
-    <img src="./resources/readme-ja/vuetube.ja.svg" alt="VueTube icon" width="500"/>
+    <img src="./resources/readme-ja/VueTube.ja.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
   <sub><a href="https://github.com/afnzmn">@afnzmn</a>・ロゴ</sub>
   </br>
   </br>
-<strong>A simple FOSS video streaming client aimed to recreate ALL features from their respective apps (and more)</strong>
+<strong>自由でシンプルなビデオストリーミングクライアントは、それぞれのアプリのすべての機能を再現することを目的としています。</strong>
 </br>
-Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
@@ -28,39 +27,39 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Read this in other languages: [Español](readme.es.md)
+他の言語で読む：[English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文](readme.zh-hant.md)
 
 ## 機能
 
 <img src="resources/readme-ja/Features.ja.svg" alt="VueTube icon" width="300"/>
 
-- 🎨 Themes: Light, Dark, OLED, All the colors of the rainbow
-- 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
-- ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
-- 👁️ Tracking Protection: No telemetry is sent from your device by default
-- 📺 Custom video player
-- 👎 Return YouTube Dislike
+- 🎨 テーマ色をカスタマイズする：ライト系、 ダーク系、OLED、などなど
+- 🖌️ UIのカストマイズ：アクセントカラーをはじめ、UIをフルカスタマイズして、使用しない機能を削除できます！
+- ⬆️ 自動更新：アップデートのお知らせ＆気に入らなければダウングレードができます！
+- 👁️ トラッキング防止: 自分のデバイスから送信されるデータはデフォルトでは送信されません。
+- 📺 カスタムビデオプレーヤー
+- 👎 ユーチューブの低評価数を取得できます。
 
 ## インストール
 
 <img src="./resources/readme-ja/Install.ja.svg" alt="VueTube icon" width="400"/>
 
-To install please visit www.vuetube.app/install
+インストールはこちらからどうぞ: https://vuetube.app/install
 
 <details>
-  <summary>Or click here to display all versions avaiable</summary>
+  <summary>または、ここをクリックすると、使用可能なすべてのバージョンが表示されます</summary>
 <br />
 
 ### Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/946910031562027029/972164599816273930/VueTube-Canary-May-6-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
+| バグが発生する可能性がありますのに最新の機能をいち早く試させります。 | unstable よりもバグが少ないが、stable よりも若干機能が多い。 | VueTubeが開発中のでこのバージョンは暫くダウンロードできない |
   
 
 ### iOS
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
+| バグが発生する可能性がありますのに最新の機能をいち早く試させります。 | unstable よりもバグが少ないが、stable よりも若干機能が多い。 | VueTubeが開発中のでこのバージョンは暫くダウンロードできない |
   
 </details>
 
@@ -68,19 +67,18 @@ To install please visit www.vuetube.app/install
 
 <img src="./resources/readme-ja/Plans.ja.svg" alt="VueTube icon" width="300"/>
 
-- 🔍 Advanced Search
-- 🗞️ Locally store watch history
-- ✂️ Shorts
-- 🧑 Google account sign in
-- 🖼️ Picture in picture mode
-- and more!
+- 🔍 アドバンストサーチ
+- 🗞️ ウォッチ履歴のローカルストレージ
+- ✂️ ショート
+- 🧑 グーグルアカウントでログイン
+- 🖼️ Picture in Picture（PiP）機能
 
-## Screenshots
+## スクリーンショット
 
-View on our website: www.vuetube.app/info/screenshots
+ウェブサイトで見る: www.vuetube.app/info/screenshots
 
 <details>
-  <summary> Or click here to display screenshots </summary>
+  <summary> または、ここをクリックすると、スクリーンショットが表示されます </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -89,33 +87,23 @@ View on our website: www.vuetube.app/info/screenshots
      
 </details>
 
-### Technologies used
+### 使用技術
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
 
-### Why am I doing this?
+### 貢献方法
 
-Well this has been thrown around on the Return Youtube Dislike discord server for quite some time, so I figured that I should probably take a crack at it!
+貢献したい方はこちらを読んでください: www.vuetube.app/contributing
 
-### Want to contribute?
-
-Please read our website on how to do so: www.vuetube.app/contributing
-
-## Contributors
+## コントリビューター
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
 </a>
 
-<sub>Made with [contrib.rocks](https://contrib.rocks). </sub>
+<sub>[contrib.rocks](https://contrib.rocks)で作られた </sub>
 
-## Acknowledgements
+## 謝辞
 
-- Emojis by the [Twemoji team](https://twemoji.twitter.com/), Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- VueTube Logo by [@afnzmn](https://github.com/afnzmn)
-
-## Disclamer
-
-The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found at [www.youtube.com](https://www.youtube.com).
-
-Any trademark, service mark, trade name, or other intellectual property rights used in the VueTube project are owned by the respective owners.
+- 絵文字は[Twemoji](https://twemoji.twitter.com/)のものを使用しました。ライセンスは[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)です
+- VueTubeのロゴは[@afnzmn](https://github.com/afnzmn)によります。
