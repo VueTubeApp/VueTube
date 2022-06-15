@@ -30,7 +30,7 @@ export default {
     await this.$vuetube.launchBackHandling();
     this.progressMsg = this.$lang("index").launching;
 
-    this.$router.replace('/'+ localStorage.getItem("startPage") || "home"); // Prevent user from navigating back to the splash screen
+    this.$router.replace('/'+ (localStorage.getItem("startPage") || "home") ); // Prevent user from navigating back to the splash screen
   },
   methods: {
     theming() { return new Promise((resolve) =>
