@@ -3,7 +3,7 @@
     <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <sub>Logo por <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>Logo por <a href="https://github.com/afnzmn">@afnzmn</a>, traducción por <a href="https://github.com/gayolgate">@gayolgate</a></sub>
   </br>
   </br>
 <strong>Un cliente sencillo de streaming de vídeo FOSS diseñado para recrear TODAS las características de sus respectivas aplicaciones (y más) </strong>
