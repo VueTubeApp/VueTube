@@ -95,6 +95,10 @@
 
 貢献したい方はこちらを読んでください: www.vuetube.app/contributing
 
+## このアプリケーションを作った理由
+こういうの機能が「Return Youtube Dislike」というディスコードのサーバーで話題になり、
+何か作ってみようかなと思ったからです！
+
 ## コントリビューター
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
