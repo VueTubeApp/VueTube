@@ -141,31 +141,11 @@ const module = {
       Math.floor((((seconds % 31536000) % 86400) % 3600) % 60), //Seconds
     ];
     levels = levels.filter((level) => level !== null);
-
     for (let i = 1; i < levels.length; i++) {
       levels[i] = levels[i].toString().padStart(2, "0");
     }
-
     // join the array into a string with : as a separator
-    const returntext = levels.join(":");
-
-    console.log("Human Time:", returntext);
-    while (returntext.startsWith(":00")) {
-      returntext = returntext.substring(3);
-    } // Remove Prepending 0s (eg. 00:00:00:01:00)
-    if (returntext.startsWith(":0")) {
-      returntext = returntext.substring(2);
-    } else {
-      returntext = returntext.substring(1);
-    } // Prevent Time Starting With 0 (eg. 01:00)
-    
-    if (!returntext.includes(":")) {
-       if (returntext.length == 1) {
-           returntext = "0" + returntext; // Make tens digit in seconds always visible (eg. 0:09)
-       }
-       returntext = "0:" + returntext; // Make minutes visible as 0 when sub 60 seconds (eg. 0:51)
-    } 
-    
+    let returntext = levels.join(":");
     return returntext;
   },
   //---   End Convert Time To Human Readable String   ---//

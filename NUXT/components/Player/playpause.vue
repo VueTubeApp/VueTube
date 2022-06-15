@@ -3,11 +3,9 @@
     fab
     text
     large
-    style="position: absolute; top: calc(50% - 2rem); left: calc(50% - 2rem)"
     color="white"
-    @click.stop="
-      (paused = !video.paused),
-        video.paused ? (video.play(), $emit('close')) : video.pause()
+    @click="
+      (paused = !video.paused), video.paused ? $emit('play') : $emit('pause')
     "
   >
     <v-icon size="3.5rem">
@@ -18,8 +16,13 @@
 
 <script>
 export default {
-  props: ["video"],
-  emits: ["close"],
+  props: {
+    video: {
+      type: Object,
+      required: true,
+    },
+  },
+  emits: ["play", "pause"],
   data: () => ({
     paused: false,
   }),

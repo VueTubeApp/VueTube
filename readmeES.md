@@ -3,12 +3,12 @@
     <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <sub>Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>Logo por <a href="https://github.com/afnzmn">@afnzmn</a></sub>
   </br>
   </br>
-<strong>A simple FOSS video streaming client aimed to recreate ALL features from their respective apps (and more)</strong>
+<strong>Un cliente sencillo de streaming de vídeo FOSS diseñado para recrear TODAS las características de sus respectivas aplicaciones (y más) </strong>
 </br>
-Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
+Se pronuncia Viu Tuf (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
@@ -28,59 +28,52 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Read this in other languages: [Español](readmeES.md)
+Leer en otros idiomas: [English](readme.md)
 
-## Features
+## Características
 
-<img src="/resources/vuetube.png" alt="VueTube icon" width="300"/>
+<img src="/resources/vuetubeES.PNG" alt="VueTube icon" width="300"/>
 
-- 🎨 Themes: Light, Dark, OLED, All the colors of the rainbow
-- 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
-- ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
-- 👁️ Tracking Protection: No telemetry is sent from your device by default
-- 📺 Custom video player
+- 🎨 Temas: Claro, Oscuro, OLED, Todos los colores del arcoíris
+- 🖌️ Interfaz personalizable: ¡Puedes personalizar completamente el color principal, y otras partes de la interfaz para eliminar características que no usas!
+- ⬆️ Actualizaciones automáticas: ¡Recibe una notificación cuando haya una actualización disponible y baja de versión si no te gusta!
+- 👁️ Protección contra el rastreo: No se envían datos desde tu dispositivo por defecto
+- 📺 Reproductor de vídeo personalizado
 - 👎 Return YouTube Dislike
 
-## Install
+## Instalar
 
-<img src="/resources/install.png" alt="VueTube icon" width="300"/>
+<img src="/resources/installES.PNG" alt="VueTube icon" width="300"/>
 
-To install please visit www.vuetube.app/install
+Para instalar, por favor, visita www.vuetube.app/install
 
 <details>
-  <summary>Or click here to display all versions avaiable</summary>
+  <summary>O haz clic aquí para mostrar todas las versiones disponibles</summary>
 <br />
-
-### Android
+  
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=/resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/946910031562027029/972164599816273930/VueTube-Canary-May-6-2022.apk><img id="im" width="200" src=/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=/resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
-  
-
-### iOS
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=/resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=/resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
+| Un montón de bugs, pero acceso anticipado a funciones | Menos bugs que la inestable, aún así más funciones que la estable | No disponible hasta que la app este más desarrollada |
   
 </details>
 
-## Plans
+## Planes
 
-<img src="/resources/plans.png" alt="VueTube icon" width="300"/>
+<img src="/resources/plansES.PNG" alt="VueTube icon" width="300"/>
 
-- 🔍 Advanced Search
-- 🗞️ Locally store watch history
-- ✂️ Shorts
-- 🧑 Google account sign in
-- 🖼️ Picture in picture mode
-- and more!
+- 🔍 Búsqueda avanzada
+- 🗞️ Historial de búsqueda local
+- ✂️ Shorts (Cortos)
+- 🧑 Inicio de sesión con tu cuenta de Google
+- 🖼️ Modo Imagen en imagen
+- ¡y más!
 
-## Screenshots
+## Capturas de pantalla
 
-View on our website: www.vuetube.app/info/screenshots
+Echalas un vistazo en nuestro sitio web: www.vuetube.app/info/screenshots
 
 <details>
-  <summary> Or click here to display screenshots </summary>
+  <summary> O haz clic aquí para mostrar las capturas </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -89,33 +82,35 @@ View on our website: www.vuetube.app/info/screenshots
      
 </details>
 
-### Technologies used
+### Tecnologías usadas
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
 
-### Why am I doing this?
+### ¿Porque estoy haciendo esto?
 
-Well this has been thrown around on the Return Youtube Dislike discord server for quite some time, so I figured that I should probably take a crack at it!
+Bueno, esto ha estado en el servidor de Discord de Return YouTube Dislike durante bastante tiempo, ¡así que pensé que probablemente debería lanzarlo!
 
-### Want to contribute?
+### ¿Quieres contribuir?
 
-Please read our website on how to do so: www.vuetube.app/contributing
+Por favor, lee en nuestro sitio web cómo hacerlo: www.vuetube.app/contributing
 
-## Contributors
+## Colaboradores
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
 </a>
 
-<sub>Made with [contrib.rocks](https://contrib.rocks). </sub>
+<sub>Hecho con [contrib.rocks](https://contrib.rocks). </sub>
 
-## Acknowledgements
+## Agradecimientos
 
-- Emojis by the [Twemoji team](https://twemoji.twitter.com/), Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- VueTube Logo by [@afnzmn](https://github.com/afnzmn)
+- Emojis por el [equipo de Twemoji](https://twemoji.twitter.com/), Con licencia [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Logo de VueTube por [@afnzmn](https://github.com/afnzmn)
 
-## Disclamer
+## Aviso legal
 
-The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found at [www.youtube.com](https://www.youtube.com).
+El proyecto VueTube y sus contenidos no están afiliados, financiados, autorizados, respaldados o asociados de ninguna manera con YouTube, Google LLC o cualquiera de sus filiales y subsidiarias. El sitio web oficial de YouTube se encuentra en [www.youtube.com](https://www.youtube.com).
 
-Any trademark, service mark, trade name, or other intellectual property rights used in the VueTube project are owned by the respective owners.
+Cualquier marca comercial, de servicio, nombre comercial u otros derechos de propiedad intelectual utilizados en el proyecto VueTube son propiedad de sus respectivos dueños.
+
+En caso de conflicto entre las traducciones del aviso legal, tiene preferencia la versión en inglés.

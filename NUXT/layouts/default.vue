@@ -68,7 +68,7 @@
                 text
                 tile
                 dense
-                class="searchButton text-left text-none"
+                class="searchButton text-left text-none no-spacing"
                 @click="youtubeSearch(item)"
               >
                 <v-icon class="mr-5">mdi-magnify</v-icon>
@@ -325,6 +325,10 @@ div {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.no-spacing {
+  letter-spacing: 0px !important;
 }
 </style>
 
