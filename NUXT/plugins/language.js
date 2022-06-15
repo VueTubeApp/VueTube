@@ -2,7 +2,8 @@ const packs = {
   english: require('./languages/english'),
   spanish: require('./languages/spanish'),
   italian: require('./languages/italian'),
-  polish:  require('./languages/polish')
+  polish:  require('./languages/polish'),
+  "chinese-traditional": require('./languages/chinese-traditional')
 }
 
 function module(text, listPacks) {

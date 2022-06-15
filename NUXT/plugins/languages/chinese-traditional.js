@@ -29,8 +29,34 @@ module.exports = {
     general: {
       language: "語言"
     },
+    theme: {
+      normal: "Normal",
+      adaptive: "Adaptive",
+      custom: "Custom",
+      dark: "Dark",
+      black: "Black",
+      darkmode: "Dark Mode",
+      darkmodetagline: "Bravo Six, Going Dark."
+    },
+    tweaks: {
+      fullscreen: "Fullscreen",
+      navbarblur: "Navbar Blur",
+      roundedcorners: "Rounded Corners",
+      roundthumbnails: "Round Thumbnails",
+      roundwatchpagecomponents: "Round Watch PAge Components",
+      radius: "Radius"
+    },
     startup: {
       defaultpage: "默認頁"
+    },
+    updates: {
+      install: "Install",
+      view: "View",
+      latest: "Latest",
+      installed: "Installed"
+    },
+    logs: {
+      more: "More"
     },
     about: {
       appinformation: "程式資訊",

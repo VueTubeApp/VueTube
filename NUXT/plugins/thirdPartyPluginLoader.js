@@ -22,7 +22,7 @@ const module = {
   //---   List Plugins   ---//
   list: new Promise(async (resolve, reject) => {
 
-    await ensureStructure();
+    await ensureStructure;
 
     const plugins = await Filesystem.readdir({
       path: fs.plugins,
@@ -35,7 +35,7 @@ const module = {
 
   async addPlugin(content) {
 
-    await ensureStructure();
+    await ensureStructure;
     new Promise(async (resolve, reject) => {
       const fileName = require("./utils").getCpn(); // Im not sure what this is actually meant for but im using it as a random string generator
       console.log("Saving Plugin As"+ fileName)

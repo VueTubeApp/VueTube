@@ -1,9 +1,9 @@
 <template>
   <div class="mainContainer pt-1">
     <v-card flat class="pb-5 background" :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'" :style="{borderRadius: `${roundTweak / 2}rem`}">
-      <v-card-title>{{ lang.mods.general.language }}</v-card-title>
+      <v-card-title>{{ lang.language }}</v-card-title>
       <v-card-text>
-        <v-select v-model="page" background-color="background" :items="pages" label="Default Page" solo></v-select>
+        <v-select v-model="selectedLang" background-color="background" :items="langs" label="App Language" solo></v-select>
       </v-card-text>
     </v-card>
   </div>
@@ -20,22 +20,36 @@
 
     data() {
       return {
-        page: "home",
         langs: [],
-        lang: { mods: { startup: {} } }
+        lang: { mods: { general: { language: "" } } },
+        selectedLang: null
       };
     },
 
     watch: {
-      page: function (newVal) {
-        localStorage.setItem("startPage", newVal);
+      //---   Update Stored Language Value   ---//
+      selectedLang: function (newVal) {
+        const langs = this.$lang(null, true);
+        let lang = new String();
+        for (const i in langs) {
+          if (langs[i].name == newVal) {
+            lang = i;
+            console.log(lang)
+          }
+        }
+        localStorage.setItem("language", lang);
       },
+      //---   End Update Stored Language Value   ---//
     },
 
     mounted() {
-      this.langs = this.$lang(null, true);
+      const lang = this.$lang(); this.lang = lang.mods.general;
+      const langs = this.$lang(null, true);
+      for (const i in langs) {
+        this.langs.push(langs[i].name);
+      }
 
-      const lang = this.$lang(); this.lang = lang;
+      this.selectedLang = this.$lang().name;
 
 
       
