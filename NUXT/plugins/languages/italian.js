@@ -43,7 +43,7 @@ module.exports = {
       navbarblur: "Navbar Blur", // Note From Front: As a native english speaker, i don't know this one
       roundedcorners: "Spigolo Tondeggiante",
       roundthumbnails: "Anteprima Tondeggiante",
-      roundwatchpagecomponents: "Round Watch PAge Components",
+      roundwatchpagecomponents: "Componenti Rotondi Della Pagina Di Controllo",
       radius: "Raggio"
     },
     startup: {

@@ -26,14 +26,14 @@
         </div>
 
         <v-card-actions>
-          <v-chip v-if="index == 0" class="tags" color="orange" style="border-radius: 0.5rem; border: 2px var(--v-orange-base)">Latest</v-chip>
-          <v-chip v-if="item.sha == installedVersion" class="tags" color="green" style="border-radius: 0.5rem; border: 2px var(--v-green-base)">Installed</v-chip>
+          <v-chip v-if="index == 0" class="tags" color="orange" style="border-radius: 0.5rem; border: 2px var(--v-orange-base)">{{ lang.latest }}</v-chip>
+          <v-chip v-if="item.sha == installedVersion" class="tags" color="green" style="border-radius: 0.5rem; border: 2px var(--v-green-base)">{{ lang.installed }}</v-chip>
           <v-spacer />
           <v-btn @click="openExternal(item)" class="background">
-            <v-icon class="btn-icon">mdi-github</v-icon>View
+            <v-icon class="btn-icon">mdi-github</v-icon>{{ lang.view }}
           </v-btn>
           <v-btn disabled @click="install(item)">
-            <v-icon class="btn-icon">mdi-download</v-icon>Install
+            <v-icon class="btn-icon">mdi-download</v-icon>{{ lang.install }}
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -78,6 +78,7 @@ export default {
     return {
       commits: new Array(),
       installedVersion: process.env.appVersion,
+      lang: {}
     };
   },
   async mounted() {
@@ -88,6 +89,8 @@ export default {
     } else {
       console.log(commits);
     }
+
+    this.lang = this.$lang("mods").updates;
   },
   methods: {
     async openExternal(item) {

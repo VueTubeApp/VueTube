@@ -49,7 +49,7 @@
               class="pa-4 ma-2 rounded-lg"
               :value="$vuetify.theme.dark ? adaptiveDark : adaptiveLight"
             />
-            Adaptive
+            {{ lang.adaptive }}
           </div>
           <div class="text-center">
             <!-- Custom Background -->
@@ -142,13 +142,13 @@
         "
       >
         <div class="my-auto">
-          <div>Dark Mode</div>
+          <div>{{ lang.darkmode }}</div>
           <div
             class="background--text"
             :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
             style="font-size: 0.75rem; margin-top: -0.25rem !important"
           >
-            Bravo Six, Going Dark.
+            {{ lang.darkmodetagline }}
           </div>
         </div>
         <v-spacer />
@@ -186,7 +186,14 @@ export default {
       adaptiveDark: "",
       pickerState: false,
       pickerMode: "bg",
+      lang: {}
     };
+  },
+  mounted() {
+    this.lang = this.$lang("mods").theme;
+    this.backgroundsLight[0].name = this.lang.normal;
+    this.backgroundsDark[0].name = this.lang.dark;
+    this.backgroundsDark[1].name = this.lang.black;
   },
   watch: {
     // also triggers background and primary watcher, unless primary colors match
