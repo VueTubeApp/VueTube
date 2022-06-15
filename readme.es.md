@@ -28,11 +28,11 @@ Se pronuncia Viu Tuf (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Leer en otros idiomas: [English](readme.md)
+Leer en otros idiomas: [English,](readme.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語](readme.ja.md)
 
 ## Características
 
-<img src="/resources/vuetubeES.PNG" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-es/Features.es.svg" alt="VueTube icon" width="450"/>
 
 - 🎨 Temas: Claro, Oscuro, OLED, Todos los colores del arcoíris
 - 🖌️ Interfaz personalizable: ¡Puedes personalizar completamente el color principal, y otras partes de la interfaz para eliminar características que no usas!
@@ -43,7 +43,7 @@ Leer en otros idiomas: [English](readme.md)
 
 ## Instalar
 
-<img src="/resources/installES.PNG" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-es/Install.es.svg" alt="VueTube icon" width="300"/>
 
 Para instalar, por favor, visita www.vuetube.app/install
 
@@ -51,7 +51,7 @@ Para instalar, por favor, visita www.vuetube.app/install
   <summary>O haz clic aquí para mostrar todas las versiones disponibles</summary>
 <br />
   
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=/resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/946910031562027029/972164599816273930/VueTube-Canary-May-6-2022.apk><img id="im" width="200" src=/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=/resources/getstable.png></a>  |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/946910031562027029/972164599816273930/VueTube-Canary-May-6-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
 | Un montón de bugs, pero acceso anticipado a funciones | Menos bugs que la inestable, aún así más funciones que la estable | No disponible hasta que la app este más desarrollada |
   
@@ -59,7 +59,7 @@ Para instalar, por favor, visita www.vuetube.app/install
 
 ## Planes
 
-<img src="/resources/plansES.PNG" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-es/Plans.es.svg" alt="VueTube icon" width="300"/>
 
 - 🔍 Búsqueda avanzada
 - 🗞️ Historial de búsqueda local
