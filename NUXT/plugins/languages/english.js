@@ -43,7 +43,7 @@ module.exports = {
       navbarblur: "Navbar Blur",
       roundedcorners: "Rounded Corners",
       roundthumbnails: "Round Thumbnails",
-      roundwatchpagecomponents: "Round Watch PAge Components",
+      roundwatchpagecomponents: "Round Watch Page Components",
       radius: "Radius"
     },
     startup: {

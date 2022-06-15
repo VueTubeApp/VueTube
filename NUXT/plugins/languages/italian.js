@@ -30,33 +30,33 @@ module.exports = {
       language: "Lingua"
     },
     theme: {
-      normal: "Normal",
-      adaptive: "Adaptive",
-      custom: "Custom",
-      dark: "Dark",
-      black: "Black",
-      darkmode: "Dark Mode",
+      normal: "Normale",
+      adaptive: "Adattabile",
+      custom: "Abitudine",
+      dark: "Buio",
+      black: "Nero",
+      darkmode: "Modalità scura",
       darkmodetagline: "Bravo Six, Going Dark."
     },
     tweaks: {
-      fullscreen: "Fullscreen",
-      navbarblur: "Navbar Blur",
-      roundedcorners: "Rounded Corners",
-      roundthumbnails: "Round Thumbnails",
+      fullscreen: "A Schermo Intero",
+      navbarblur: "Navbar Blur", // Note From Front: As a native english speaker, i don't know this one
+      roundedcorners: "Spigolo Tondeggiante",
+      roundthumbnails: "Anteprima Tondeggiante",
       roundwatchpagecomponents: "Round Watch PAge Components",
-      radius: "Radius"
+      radius: "Raggio"
     },
     startup: {
       defaultpage: "Pagina Predefinita"
     },
     updates: {
-      install: "Install",
-      view: "View",
-      latest: "Latest",
-      installed: "Installed"
+      install: "Ultimo",
+      view: "Visionare",
+      latest: "Più Recente",
+      installed: "Installare"
     },
     logs: {
-      more: "More"
+      more: "Più"
     },
 
     about: {
