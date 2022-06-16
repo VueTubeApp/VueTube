@@ -4,10 +4,10 @@
   </a>
   </br>
   <sub>Logo oleh <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
-  <sub>Malay translation by <a href="https://github.com/AdamIskandarAI">@AdamIskandarAI</a></sub>
+  <sub>Terjemahan oleh <a href="https://github.com/AdamIskandarAI">@AdamIskandarAI</a></sub>
   </br>
   </br>
-<strong>Klien penstriman video FOSS ringkas bertujuan untuk mencipta semula SEMUA ciri daripada aplikasi masing-masing (dan banyak lagi).</strong>
+<strong>Sebuah klien penstriman video FOSS ringkas bertujuan untuk mencipta semula SEMUA ciri daripada aplikasi masing-masing (dan banyak lagi)</strong>
 </br>
 Disebut View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
@@ -30,7 +30,7 @@ Baca ini dalam bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简
 - 🎨 Tema: Cerah, Gelap, OLED, Semua warna pelangi
 - 🖌️ UI yang dibolehkan suaikan: Anda boleh menyesuaikan sepenuhnya warna aksen dan bahagian lain UI untuk mengalih keluar ciri yang anda tidak gunakan!
 - ⬆️ Kemaskini Auto: Anda akan dimaklumkan apabila kemas kini tersedia & turun taraf jika anda tidak menyukainya!
-- 👁️ Perlindungan Penjejak: Tiada telemetri dihantar daripada peranti anda secara lalai
+- 👁️ Perlindungan Penjejak: Tiada telemetri (maklumat peribadi) dihantar daripada peranti anda secara lalai
 - 📺 Pemain video kustom
 - 👎 Return YouTube Dislike
 
@@ -38,7 +38,7 @@ Baca ini dalam bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简
 
 <img src="./resources/readme-ms/Install.ms.svg" alt="VueTube icon" width="300"/>
 
-Untuk memasang sila lawati www.vuetube.app/install
+Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 <details>
   <summary>Atau klik di sini untuk memaparkan semua versi yang tersedia</summary>
@@ -47,13 +47,13 @@ Untuk memasang sila lawati www.vuetube.app/install
 ### Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada  stabil | Tidak tersedia sehingga aplikasi menjadi lebih membangun |
+| Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada stabil | Tidak tersedia sehingga aplikasi menjadi lebih berkembang |
   
 
 ### iOS
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada  stabil | Tidak tersedia sehingga aplikasi menjadi lebih membangun |
+| Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada stabil | Tidak tersedia sehingga aplikasi menjadi lebih berkembang |
   
 </details>
 
@@ -62,7 +62,7 @@ Untuk memasang sila lawati www.vuetube.app/install
 <img src="./resources/readme-ms/Plans.ms.svg" alt="VueTube icon" width="300"/>
 
 - 🔍 Carian lanjutan
-- 🗞️ Simpan sejarah tontonan secara setempat
+- 🗞️ Simpan sejarah tontonan secara setempat (pada peranti anda)
 - ✂️ Shorts
 - 🧑 Log masuk dengan akaun Google
 - 🖼️ Mod gambar dalam gambar
@@ -105,10 +105,10 @@ Sila baca di laman sesawang kami tentang bagaimana untuk melakukannya: www.vuetu
 ## Penghargaan
 
 - Emoji oleh kumpulan [Twemoji](https://twemoji.twitter.com/), Dilesenkan di bawah [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- VueTube Logo oleh [@afnzmn](https://github.com/afnzmn)
+- Logo VueTube oleh [@afnzmn](https://github.com/afnzmn)
 
 ## Penafian
 
-Projek VueTube dan kandungannya tidak bergabung dengan, dibiayai, diberi kuasa, disokong oleh, atau dalam apa jua cara dikaitkan dengan YouTube, Google LLC atau mana-mana sekutu dan anak syarikatnya.  Laman web rasmi YouTube boleh didapati di [www.youtube.com](https://www.youtube.com).
+Projek VueTube dan kandungannya tidak bergabung dengan, dibiayai, diberi izin, disokong oleh, atau dalam apa jua cara dikaitkan dengan YouTube, Google LLC atau mana-mana sekutu dan anak syarikatnya.  Laman web rasmi YouTube boleh didapati di [www.youtube.com](https://www.youtube.com).
 
 Sebarang tanda dagangan, tanda perkhidmatan, nama dagangan atau hak harta intelek lain yang digunakan dalam projek VueTube dimiliki oleh pemilik masing-masing.
