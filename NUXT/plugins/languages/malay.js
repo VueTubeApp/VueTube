@@ -2,7 +2,7 @@ module.exports = {
   name: "Bahasa Melayu",
 
   global: {
-    home: "Rumah",
+    home: "Laman Utama",
     subscriptions: "Langganan",
     library: "Pustaka"
   },
@@ -56,7 +56,7 @@ module.exports = {
       installed: "Dipasang"
     },
     logs: {
-      more: "More"
+      more: "Lagi"
     },
     about: {
       appinformation: "Maklumat Apl",
