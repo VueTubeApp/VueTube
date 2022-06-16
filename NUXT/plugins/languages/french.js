@@ -16,7 +16,7 @@ module.exports = {
     general: "Général",
     theme: "Thème",
     player: "Lecteur",
-    uitweaker: "Interface",
+    uitweaker: "Personnalisation d'Interface",
     startupoptions: "Options de démarrage",
     plugins: "Plugins",
     updates: "Mises à jour",
