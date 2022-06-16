@@ -15,12 +15,12 @@ module.exports = {
     settings: {
       general: "Algemeen",
       theme: "Thema",
-      player: "Video Player",
-      uitweaker: "Gebruikers Interface",
-      startupoptions: "Opstart Opties",
+      player: "Videospeler",
+      uitweaker: "Gebruikersinterface",
+      startupoptions: "Opstartopties",
       plugins: "Plugins",
       updates: "Updates",
-      logs: "Logs",
+      logs: "Logboeken",
       about: "Over",
       devmode: "Register Bewerken"
     },
@@ -42,9 +42,9 @@ module.exports = {
         fullscreen: "Volledig Scherm",
         navbarblur: "Vervaging Navigatiebalk",
         roundedcorners: "Afgeronde Hoeken",
-        roundthumbnails: "Ronde Hoeken In Video Afbeelding",
+        roundthumbnails: "Ronde Hoeken In Video Miniaturen",
         roundwatchpagecomponents: "Ronde Hoeken In Video Speler Componenten",
-        radius: "Radius"
+        radius: "Straal"
       },
       startup: {
         defaultpage: "Standaard Pagina"
@@ -59,9 +59,9 @@ module.exports = {
         more: "Meer"
       },
       about: {
-        appinformation: "App Informatie",
-        appversion: "App Versie",
-        deviceinformation: "Apparaat Informatie",
+        appinformation: "Applicatieinformatie",
+        appversion: "Applicatieversie",
+        deviceinformation: "Apparaatinformatie",
         platform: "Platform",
         os: "Besturingssysteem",
         model: "Model",
@@ -76,7 +76,7 @@ module.exports = {
       welcome: "Welkom bij VueTube",
       tagline: "De toekomst van videostreaming",
       next: "Volgende",
-      updated: "VueTube is Geupdate!",
+      updated: "VueTube is bijgewerkt!",
       awesome: "Geweldig!"
     }
   
