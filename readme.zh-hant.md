@@ -28,11 +28,11 @@
 <img src="./resources/readme-zh-hant/Features.zh-hant.svg" alt="VueTube icon" width="300"/>
 
 - 🎨 可自定義的主題：燈光、暗黑、OLED、或者是色彩豐富的主題
-- 🖌️ UI：可以完全自定義顏色，以及其他部分的UI以便移除您不使用的功能！
+- 🖌️ UI：可以完全自定義顏色、以及其他部分的UI以便移除您不使用的功能！
 - ⬆️ 自動升級：當有新版本可用時，您將會收到通知。
 - 👁️ 追蹤阻斷：默認情況下，VueTube不會發送任何電子跟蹤數據。
 - 📺 定製的HTML5視頻播放器
-- 👎利用Return Youtube Dislikes的API顯示YouTube的「踩一下」數據
+- 👎利用Return Youtube Dislikes的API顯示YouTube的「不喜歡」數據
 
 ## 下載
 
@@ -47,7 +47,7 @@
 ### Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| 有最新的功能，並且經常有可升級的版本。不過bug更常見。 | 比stable的板本有更新的功能，而且比unstable更穩定。不過還是會遇見錯誤的。 | 因為VueTube未完成開發階段，暫時無法下載Stable版本 |
+| 有最新的功能，並且經常有可升級的版本。不過bug更常見。 | 比stable的版本有更新的功能，而且比unstable更穩定。不過還是會遇見錯誤的。 | 因為VueTube未完成開發階段，暫時無法下載Stable版本 |
   
 
 ### iOS
@@ -57,7 +57,7 @@
   
 </details>
 
-## 计划
+## 計劃
 
 <img src="./resources/readme-zh-hant/Plans.zh-hant.svg" alt="VueTube icon" width="300"/>
 
@@ -88,7 +88,7 @@
 
 ### 如何提交代碼
 
-請閱讀我們的網站，如何提交代碼：www.vuetube.app/contributing
+請查讀我們的網站以了解提交代碼指南：www.vuetube.app/contributing
 
 ## 貢獻者 
 
@@ -101,10 +101,10 @@
 ## 鳴謝 
 
 - 感謝[Twemoji](https://twemoji.twitter.com/)提供的表情包。授權於[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- VueTube 徽標：[@afnzmn](https://github.com/afnzmn)
+- 感谢[@afnzmn](https://github.com/afnzmn)提供VueTube徽标
 
 ## 免責聲明
 
-本項目不附屬於、資助、授權、認可或以任何方式與YouTube，Google LLC或其任何關聯公司和附屬公司相關。YouTube的官方網站是：[www.youtube.com](https://www.youtube.com).
+本項目不附屬於、資助、授權、認可或以任何方式與YouTube、Google LLC或其任何有關。YouTube的官方網站是：[www.youtube.com](https://www.youtube.com).
 
-本中使用的任何商標、服務標誌、商品名稱或其他知識產權都屬於各自所有者。
+本項目中使用的任何商標、服務標誌、商品名稱或其他知識產權都屬於其各自所有者。

@@ -27,7 +27,7 @@
 <img src="./resources/readme-zh-hans/Features.zh-hans.svg" alt="VueTube icon" width="300"/>
 
 - 🎨 可自定义的主题：灯光、暗黑、OLED、或者是色彩丰富的主题
-- 🖌️ UI：可以完全自定义颜色，以及其他部分的UI以便移除您不使用的功能！
+- 🖌️ UI：可以完全自定义颜色、以及其他部分的UI以便移除您不使用的功能！
 - ⬆️ 自动升级：当有新版本可用时，您将会收到通知。
 - 👁️ 追踪阻断：默认情况下，VueTube不会发送任何电子跟踪数据。
 - 📺 定制的HTML5视频播放器
@@ -46,7 +46,7 @@
 ### Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| 有最新的功能，并且经常有可升级的版本。不过bug更常见。 | 比stable的板本有更新的功能，而且比unstable更稳定。不过还是会遇见错误的。 | 因为VueTube未完成开发阶段，暂时无法下载Stable版本 |
+| 有最新的功能，并且经常有可升级的版本。不过bug更常见。 | 比stable的版本有更新的功能，而且比unstable更稳定。不过还是会遇见错误的。 | 因为VueTube未完成开发阶段，暂时无法下载Stable版本 |
   
 
 ### iOS
@@ -87,7 +87,7 @@
 
 ### 如何提交代码
 
-请阅读我们的网站，如何提交代码：www.vuetube.app/contributing
+请查读我们的网站以了解提交代码指南：www.vuetube.app/contributing
 
 ## 贡献者 
 
@@ -99,11 +99,11 @@
 
 ## 鸣谢 
 
-- 感谢[Twemoji](https://twemoji.twitter.com/)提供的表情包。授权于[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- VueTube 徽标：[@afnzmn](https://github.com/afnzmn)
+- 感谢[Twemoji](https://twemoji.twitter.com/)提供的表情包。表情包授权于[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- 感谢[@afnzmn](https://github.com/afnzmn)提供VueTube徽标
 
 ## 免责声明
 
-本项目不附属于、资助、授权、认可或以任何方式与YouTube，Google LLC或其任何关联公司和附属公司相关。YouTube的官方网站是：[www.youtube.com](https://www.youtube.com).
+本项目不附属于、资助、授权、认可或以任何方式与YouTube、Google LLC或其任何有关。YouTube的官方网站是：[www.youtube.com](https://www.youtube.com).
 
-本中使用的任何商标、服务标志、商品名称或其他知识产权都属于各自所有者。
+本项目中使用的任何商标、服务标志、商品名称或其他知识产权都属于其各自所有者。
