@@ -4,12 +4,12 @@
   </a>
   </br>
   <sub>Лого од <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
-  <sub>Macedonian translation by <a href="https://github.com/Robotition">@Robotition</a></sub>
+  <sub>Македонски превод од <a href="https://github.com/Robotition">@Robotition</a></sub>
   </br>
   </br>
 <strong>Едноставна FOSS видео стриминг апликација со цел да ги рекреира сите карактеристики од соодветните апликации (и повеќе).</strong>
 </br>
-Се изговара Вју-Туб
+Се изговара Вју-Туб (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
@@ -21,7 +21,7 @@
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Прочитајте го ова на други јазици: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia](readme.id.md)
+Прочитајте го ова на други јазици: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia](readme.id.md) [Polski](readme.pl.md)
 
 ## Карактеристики
 

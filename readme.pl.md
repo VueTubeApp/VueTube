@@ -4,6 +4,7 @@
   </a>
   </br>
   <sub>Logo autorstwa <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>Polskie tłumaczenie <a href="https://github.com/Spiryt7">@Spiryt7</a></sub>
   </br>
   </br>
 <strong>Prosty klient FOSS strumieniowego przesyłania wideo, którego celem jest odtworzenie WSZYSTKICH funkcji z odpowiednich aplikacji (i znacznie więcej)</strong>
@@ -20,11 +21,11 @@ Wymawia się: View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Przeczytaj to w innych językach: [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski](readme.pl.md)
+Przeczytaj to w innych językach: [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski](readme.pl.md) [Polski](readme.pl.md)
 
 ## Funkcje
 
-<img src="./resources/Features.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pl/Features.pl.svg" alt="VueTube icon" width="300"/>
 
 - 🎨 Motywy: Jasny, Ciemny, OLED, Wszystkie kolory tęczy
 - 🖌️ Personalizacja interfejsu: Możesz w pełni dostosować kolor akcentu oraz inne części interfejsu użytkownika i usunąć funkcje, których nie używasz!
@@ -35,7 +36,7 @@ Przeczytaj to w innych językach: [Español,](readme.es.md) [简体中文,](read
 
 ## Instalacja
 
-<img src="./resources/Install.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pl/Install.pl.svg" alt="VueTube icon" width="300"/>
 
 Aby zainstalować aplikację, odwiedź www.vuetube.app/install
 
@@ -58,7 +59,7 @@ Aby zainstalować aplikację, odwiedź www.vuetube.app/install
 
 ## Plany
 
-<img src="./resources/Plans.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pl/Plans.pl.svg" alt="VueTube icon" width="300"/>
 
 - 🔍 Wyszukiwanie zaawansowane
 - 🗞️ Lokalna historia oglądania
