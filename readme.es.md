@@ -12,16 +12,8 @@ Se pronuncia Viu Tuf (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
-  <a href="https://github.com/VueTubeApp/VueTube/commits/main"><img src="https://img.shields.io/github/commit-activity/m/VueTubeApp/VueTube?label=Commits" alt="Commits"></img></a>
-  <a href="https://github.com/VueTubeApp/VueTube/issues" alt="Issues"><img src="https://img.shields.io/github/issues/VueTubeApp/VueTube"></img></a>
-  <a><img src="https://img.shields.io/github/languages/count/VueTubeApp/VueTube" alt="Languages"></img></a>
   <a href="https://github.com/VueTubeApp/VueTube/blob/main/LICENSE" alt="License"><img src="https://img.shields.io/github/license/VueTubeApp/VueTube"></img></a>
-  <a><img src="https://img.shields.io/github/stars/VueTubeApp/VueTube" alt="Stars"></img></a>
-  <a><img src="https://img.shields.io/snyk/vulnerabilities/github/VueTubeApp/VueTube" alt="Vulnerabilities"></img></a>
-  <a><img src="https://img.shields.io/librariesio/github/VueTubeApp/VueTube" alt="Dependencies"></img></a>
-  <a><img src="https://img.shields.io/tokei/lines/github/VueTubeApp/VueTube" alt="Lines"></img></a>
   <a href="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml" alt="CI"><img src="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml/badge.svg"></img></a>
-  <a href="https://vuetube.app" alt="Website"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fvuetube.app"></img></a>
   <a href="https://reddit.com/r/vuetube" alt="Reddit"><img src="https://img.shields.io/reddit/subreddit-subscribers/vuetube?label=r%2FVuetube&logo=reddit&logoColor=white"></img></a>
   <a href="https://t.me/VueTube" alt="Telegram"><img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fvuetube"></img></a>
   <a href="https://discord.gg/7P8KJrdd5W" alt="Discord"><img src="https://img.shields.io/discord/946587366242533377?label=Discord&style=flat&logo=discord&logoColor=white"></img></a>
