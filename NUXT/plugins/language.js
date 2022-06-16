@@ -1,8 +1,9 @@
 const packs = {
   english: require('./languages/english'),
-  spanish: require('./languages/spanish'),
   italian: require('./languages/italian'),
+  macedonian:  require('./languages/macedonian'),
   polish:  require('./languages/polish'),
+  spanish: require('./languages/spanish'),
   "chinese-traditional": require('./languages/chinese-traditional')
 }
 
