@@ -3,13 +3,13 @@
     <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <sub>Logo oleh <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
-  <sub>Terjemahan oleh <a href="https://github.com/AdamIskandarAI">@AdamIskandarAI</a></sub>
+  <sub>Logo por <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
+  <sub>tradução por <a href="https://github.com/LuanRT">@LuanRT</a></sub>
   </br>
   </br>
-<strong>Sebuah klien penstriman video FOSS ringkas bertujuan untuk mencipta semula SEMUA ciri daripada aplikasi masing-masing (dan banyak lagi)</strong>
+<strong>Um simples cliente de streaming FOSS com o objetivo de recriar TODAS as funções de seus aplicativos respectivos (e mais).</strong>
 </br>
-Disebut View Tube (<code>/ˈvjuːˌtjuːb/</code>)
+Se pronuncia View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
@@ -21,59 +21,59 @@ Disebut View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Baca ini dalam bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்](readme.ta.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia](readme.id.md)
+Leia isso em outras línguas: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Bahasa Indonesia](readme.id.md)
 
-## Ciri-ciri
+## Características
 
-<img src="./resources/readme-ms/Features.ms.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pt-br/Features.pt-br.svg" alt="VueTube icon" width="400"/>
 
-- 🎨 Tema: Cerah, Gelap, OLED, Semua warna pelangi
-- 🖌️ UI yang dibolehkan suaikan: Anda boleh menyesuaikan sepenuhnya warna aksen dan bahagian lain UI untuk mengalih keluar ciri yang anda tidak gunakan!
-- ⬆️ Kemaskini Auto: Anda akan dimaklumkan apabila kemas kini tersedia & turun taraf jika anda tidak menyukainya!
-- 👁️ Perlindungan Penjejak: Tiada telemetri (maklumat peribadi) dihantar daripada peranti anda secara lalai
-- 📺 Pemain video kustom
-- 👎 Return YouTube Dislike
+- 🎨 Temas: Claro, Escuro, OLED, Todas as cores do arco-íris
+- 🖌️ Interface Customizável: Te permite customizar cor de realce e outras partes da interface para remover funções que você não usa!
+- ⬆️ Atualização Automática: Seja notificado quando alguma atualização estiver disponível ou faça um downgrade se não gostar! 
+- 👁️ Sem Telemetria: Telemetria é desativada por padrão
+- 📺 Reprodutor Customizado
+- 👎 Suporta Return YouTube Dislike
 
-## Pasang
+## Instalação
 
-<img src="./resources/readme-ms/Install.ms.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pt-br/Install.pt-br.svg" alt="VueTube icon" width="350"/>
 
-Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
+Para instalar visite www.vuetube.app/install
 
 <details>
-  <summary>Atau klik di sini untuk memaparkan semua versi yang tersedia</summary>
+  <summary>Ou clique aqui para ver todas as versões disponíveis</summary>
 <br />
 
 ### Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada stabil | Tidak tersedia sehingga aplikasi menjadi lebih berkembang |
+| Muitos bugs, mas acesso antecipado a novas funções | Menos bugs, pode ter um pouco mais de funções do que a estável | Não disponível até que o app esteja mais maduro |
   
 
 ### iOS
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada stabil | Tidak tersedia sehingga aplikasi menjadi lebih berkembang |
+| Muitos bugs, mas acesso antecipado a novas funções | Menos bugs, pode ter um pouco mais de funções do que a estável | Não disponível até que o app esteja mais maduro |
   
 </details>
 
-## Pelan
+## Planos
 
-<img src="./resources/readme-ms/Plans.ms.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pt-br/Plans.pt-br.svg" alt="VueTube icon" width="300"/>
 
-- 🔍 Carian lanjutan
-- 🗞️ Simpan sejarah tontonan secara setempat (pada peranti anda)
+- 🔍 Procura Avançada
+- 🗞️ Guardar histórico localmente
 - ✂️ Shorts
-- 🧑 Log masuk dengan akaun Google
-- 🖼️ Mod gambar dalam gambar
-- dan lebih lagi!
+- 🧑 Login com conta do Google
+- 🖼️ Modo janela flutuante
+- e muito mais!
 
-## Tangkapan skrin
+## Capturas de tela
 
-Lihat tangkapan skrin pada laman sesawang kami: www.vuetube.app/info/screenshots
+Veja no nosso website: www.vuetube.app/info/screenshots
 
 <details>
-  <summary> Atau klik sini untuk tunjukkan tangkapan skrin </summary>
+  <summary> Ou clique aqui para vê-las </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -82,33 +82,33 @@ Lihat tangkapan skrin pada laman sesawang kami: www.vuetube.app/info/screenshots
      
 </details>
 
-### Teknologi yang digunakan
+### Tecnologias usadas
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
 
-### Kenapa saya melakukan ini?
+### Por que está fazendo isso?
 
-Idea ini telah dilontarkan pada pelayan Discord Return YouTube Dislike untuk sekian lama, jadi saya fikir saya mungkin perlu mencubanya!
+Bem, o projeto tava jogado no servidor do Return YouTube Dislike por bastante tempo, então resolvi dar um basta nisso!
 
-### Berminat untuk menyumbang?
+### Quer contribuir?
 
-Sila baca di laman sesawang kami tentang bagaimana untuk melakukannya: www.vuetube.app/contributing
+Por favor leia as instruções no nosso website: www.vuetube.app/contributing
 
-## Penyumbang
+## Contribuidores
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
 </a>
 
-<sub>Dibuat dengan [contrib.rocks](https://contrib.rocks). </sub>
+<sub>Feito com [contrib.rocks](https://contrib.rocks). </sub>
 
-## Penghargaan
+## Agradecimentos
 
-- Emoji oleh kumpulan [Twemoji](https://twemoji.twitter.com/), Dilesenkan di bawah [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- Logo VueTube oleh [@afnzmn](https://github.com/afnzmn)
+- Emojis por [Twemoji team](https://twemoji.twitter.com/), Licenciado com [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Logo VueTube por [@afnzmn](https://github.com/afnzmn)
 
-## Penafian
+## Aviso legal
 
-Projek VueTube dan kandungannya tidak bergabung dengan, dibiayai, diberi izin, disokong oleh, atau dalam apa jua cara dikaitkan dengan YouTube, Google LLC atau mana-mana sekutu dan anak syarikatnya.  Laman web rasmi YouTube boleh didapati di [www.youtube.com](https://www.youtube.com).
+O projeto VueTube e seus conteúdos não são afiliados, patrocinados, apoiados ou associados de forma alguma com YouTube, Google LLC ou qualquer de suas afiliadas ou subsidiárias. O site oficial do YouTube pode ser encontrado em [www.youtube.com](https://www.youtube.com).
 
-Sebarang tanda dagangan, tanda perkhidmatan, nama dagangan atau hak harta intelek lain yang digunakan dalam projek VueTube dimiliki oleh pemilik masing-masing.
+Qualquer serviço, marca registrada, ou propriedade intelectual usada no projeto VueTube são propriedade de seus respectivos donos.

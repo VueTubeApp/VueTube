@@ -2,27 +2,27 @@ module.exports = {
   name: "Italiano",
 
   global: {
-    home: "Casa",
-    subscriptions: "Abbonamento",
-    library: "Biblioteca"
+    home: "Home",
+    subscriptions: "Iscrizioni",
+    library: "Raccolta"
   },
 
   index: {
-    connecting: "Collegamento",
-    launching: "Lanciare"
+    connecting: "Connessione",
+    launching: "Avvio"
   },
 
   settings: {
     general: "Generale",
     theme: "Tema",
-    player: "Lettore",
-    uitweaker: "Mettere UI",
-    startupoptions: "Opzione Avvio",
-    plugins: "Aggiuntivo Componente",
-    updates: "Aggiornare",
+    player: "Player",
+    uitweaker: "Aspetto UI",
+    startupoptions: "Opzioni Avvio",
+    plugins: "Componenti Aggiuntivi",
+    updates: "Aggiornamenti",
     logs: "Registro",
-    about: "Chiedere Di",
-    devmode: "Editor Registro"
+    about: "Informazioni",
+    devmode: "Modalità Sviluppatore"
   },
 
   mods: {
@@ -31,18 +31,18 @@ module.exports = {
     },
     theme: {
       normal: "Normale",
-      adaptive: "Adattabile",
-      custom: "Abitudine",
-      dark: "Buio",
+      adaptive: "Adattivo",
+      custom: "Personalizzato",
+      dark: "Scuro",
       black: "Nero",
       darkmode: "Modalità scura",
-      darkmodetagline: "Bravo Six, Going Dark."
+      darkmodetagline: "Giovane Jedi, benvenuto al lato oscuro."
     },
     tweaks: {
-      fullscreen: "A Schermo Intero",
-      navbarblur: "Navbar Blur", // Note From Front: As a native english speaker, i don't know this one
-      roundedcorners: "Spigolo Tondeggiante",
-      roundthumbnails: "Anteprima Tondeggiante",
+      fullscreen: "Schermo Intero",
+      navbarblur: "Sfocatura Barra Di Navigazione",
+      roundedcorners: "Arrotondamento Spigoli",
+      roundthumbnails: "Anteprima Arrotondata",
       roundwatchpagecomponents: "Componenti Rotondi Della Pagina Di Controllo",
       radius: "Raggio"
     },
@@ -51,9 +51,9 @@ module.exports = {
     },
     updates: {
       install: "Ultimo",
-      view: "Visionare",
+      view: "Visualizza",
       latest: "Più Recente",
-      installed: "Installare"
+      installed: "Installato"
     },
     logs: {
       more: "Più"
@@ -62,11 +62,11 @@ module.exports = {
     about: {
       appinformation: "Informazioni Applicazione",
       appversion: "Versione Applicazione",
-      deviceinformation: "Informazioni Congegno",
+      deviceinformation: "Informazioni Dispositivo",
       platform: "Piattaforma",
       os: "Sistema Operativo",
       model: "Modello",
-      manufacturer: "Costruttore",
+      manufacturer: "Produttore",
       emulator: "Emulatore",
       github: "GitHub",
       discord: "Discord"
@@ -77,9 +77,10 @@ module.exports = {
     welcome: "Benvenuto su VueTube",
     tagline: "Il Futuro Dello Streaming Video",
     next: "Prossimo",
-    updated: "VueTube e Stato Aggiornato",
-    awesome: "Imponente!"
+    updated: "VueTube è Stato Aggiornato",
+    awesome: "Fantastico!"
   }
 
 
 }
+ 
