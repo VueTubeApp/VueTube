@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Polish",
+  name: "Polski",
 
   global: {
     home: "Główna",
@@ -26,13 +26,43 @@ module.exports = {
   },
 
   mods: {
+    general: {
+      language: "Język"
+    },
+    theme: {
+      normal: "Normalny",
+      adaptive: "Adaptacyjny",
+      custom: "Custom",
+      dark: "Ciemny",
+      black: "Czarny",
+      darkmode: "Tryb Ciemny",
+      darkmodetagline: "Brawo ty, przejdź na ciemną stronę mocy."
+    },
+    tweaks: {
+      fullscreen: "Pełny Ekran",
+      navbarblur: "Rozmycie Paska Nawigacyjnego",
+      roundedcorners: "Zaokrąglone Krawędzie",
+      roundthumbnails: "Zaokrąglone Miniaturki",
+      roundwatchpagecomponents: "Round Watch PAge Components",
+      radius: "Radius"
+    },
     startup: {
       defaultpage: "Strona Domyślna",
     },
+    updates: {
+      install: "Install",
+      view: "Zobacz",
+      latest: "Najnowsza",
+      installed: "Zainstalowana"
+    },
+    logs: {
+      more: "Więcej"
+    },
+    
     about: {
-      appinformation: "Informacje O Aplikacji",
+      appinformation: "Informacje o aplikacji",
       appversion: "Wersja Aplikacji",
-      deviceinformation: "Informacje O Urządzeniu",
+      deviceinformation: "Informacje o Urządzeniu",
       platform: "Platforma",
       os: "System Operacyjny",
       model: "Model",
@@ -45,8 +75,8 @@ module.exports = {
 
   events: {
     welcome: "Witaj w VueTube",
-    tagline: "Przyszłość Streamingu Wideo",
-    next: "DALEJ",
+    tagline: "Przyszłośći Streamingu Wideo",
+    next: "Dalej",
     updated: "VueTube został zaktualizowany!",
     awesome: "Świetnie!",
   },

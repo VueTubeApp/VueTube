@@ -25,7 +25,7 @@
         class="my-auto background--text"
         :class="$vuetify.theme.dark ? 'text--lighten-3' : 'text--darken-3'"
       >
-        Fullscreen (Soon™)
+        {{ lang.fullscreen }}
       </h3>
       <v-spacer />
       <v-switch
@@ -54,7 +54,7 @@
         class="my-auto background--text"
         :class="$vuetify.theme.dark ? 'text--lighten-3' : 'text--darken-3'"
       >
-        Navbar Blur (Soon™)
+        {{ lang.navbarblur }}
       </h3>
       <v-spacer />
       <v-switch
@@ -68,7 +68,7 @@
 
     <v-divider v-if="!roundTweak" />
 
-    <h3 class="ml-8 mt-8">Rounded Corners</h3>
+    <h3 class="ml-8 mt-8">{{ lang.roundedcorners }}</h3>
 
     <v-card
       flat
@@ -100,7 +100,7 @@
           class="my-auto background--text"
           :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
         >
-          Round Thumbnails
+          {{ lang.roundthumbnails }}
         </div>
         <v-spacer />
         <v-switch
@@ -128,7 +128,7 @@
           class="my-auto background--text"
           :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
         >
-          Round Watch Page Components
+          {{ lang.roundwatchpagecomponents }}
         </div>
         <v-spacer />
         <v-switch
@@ -143,7 +143,7 @@
         v-model="roundTweak"
         class="pr-4 pl-4 pt-4 pb-1 background"
         :max="4"
-        label="Radius"
+        :label="lang.radius"
         step=".25"
         thumb-size="64"
         :class="
@@ -167,6 +167,14 @@
 
 <script>
 export default {
+  data() {
+    return {
+      lang: {}
+    }
+  },
+  mounted() {
+    this.lang = this.$lang("mods").tweaks
+  },
   computed: {
     roundTweak: {
       get() {

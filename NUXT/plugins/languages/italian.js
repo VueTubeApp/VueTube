@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Italian",
+  name: "Italiano",
 
   global: {
     home: "Casa",
@@ -26,9 +26,39 @@ module.exports = {
   },
 
   mods: {
+    general: {
+      language: "Lingua"
+    },
+    theme: {
+      normal: "Normale",
+      adaptive: "Adattabile",
+      custom: "Abitudine",
+      dark: "Buio",
+      black: "Nero",
+      darkmode: "Modalità scura",
+      darkmodetagline: "Bravo Six, Going Dark."
+    },
+    tweaks: {
+      fullscreen: "A Schermo Intero",
+      navbarblur: "Navbar Blur", // Note From Front: As a native english speaker, i don't know this one
+      roundedcorners: "Spigolo Tondeggiante",
+      roundthumbnails: "Anteprima Tondeggiante",
+      roundwatchpagecomponents: "Componenti Rotondi Della Pagina Di Controllo",
+      radius: "Raggio"
+    },
     startup: {
       defaultpage: "Pagina Predefinita"
     },
+    updates: {
+      install: "Ultimo",
+      view: "Visionare",
+      latest: "Più Recente",
+      installed: "Installare"
+    },
+    logs: {
+      more: "Più"
+    },
+
     about: {
       appinformation: "Informazioni Applicazione",
       appversion: "Versione Applicazione",
@@ -44,10 +74,10 @@ module.exports = {
   },
 
   events: {
-    welcome: "Welcome to VueTube",
-    tagline: "The future of video streaming",
+    welcome: "Benvenuto su VueTube",
+    tagline: "Il Futuro Dello Streaming Video",
     next: "Prossimo",
-    updated: "VueTube Was Updated!",
+    updated: "VueTube e Stato Aggiornato",
     awesome: "Imponente!"
   }
 

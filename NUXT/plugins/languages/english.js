@@ -26,8 +26,37 @@ module.exports = {
   },
 
   mods: {
+    general: {
+      language: "Language"
+    },
+    theme: {
+      normal: "Normal",
+      adaptive: "Adaptive",
+      custom: "Custom",
+      dark: "Dark",
+      black: "Black",
+      darkmode: "Dark Mode",
+      darkmodetagline: "Bravo Six, Going Dark."
+    },
+    tweaks: {
+      fullscreen: "Fullscreen",
+      navbarblur: "Navbar Blur",
+      roundedcorners: "Rounded Corners",
+      roundthumbnails: "Round Thumbnails",
+      roundwatchpagecomponents: "Round Watch Page Components",
+      radius: "Radius"
+    },
     startup: {
       defaultpage: "Default Page"
+    },
+    updates: {
+      install: "Install",
+      view: "View",
+      latest: "Latest",
+      installed: "Installed"
+    },
+    logs: {
+      more: "More"
     },
     about: {
       appinformation: "App Information",

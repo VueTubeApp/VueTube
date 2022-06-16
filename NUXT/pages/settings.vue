@@ -78,8 +78,7 @@ export default {
         {
           name: "General",
           icon: "mdi-cog",
-          to: "",
-          disabled: true,
+          to: "/mods/general"
         },
         {
           name: "Theme",
@@ -105,7 +104,8 @@ export default {
         {
           name: "Plugins",
           icon: "mdi-puzzle",
-          to: "/mods/plugins"
+          to: "/mods/plugins",
+          disabled: true,
         },
         {
           name: "Updates",
