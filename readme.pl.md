@@ -108,6 +108,6 @@ Zapoznaj się z naszą stroną internetową, aby dowiedzieć się, jak to zrobi�
 
 ## Zastrzeżenie
 
-Projekt VueTube i jego zawartość nie są związane, finansowane, autoryzowane, popierane ani w żaden sposób kojarzone z YouTube, Google LLC ani żadną z jej spółek zależnych. Oficjalna strona YouTube znajduje się pod adresem [www.youtube.com](https://www.youtube.com).
+Projekt VueTube oraz jego zawartość nie są związane, finansowane, autoryzowane, popierane ani w żaden sposób kojarzone z YouTube, Google LLC ani żadną z jej spółek zależnych. Oficjalna strona YouTube znajduje się pod adresem [www.youtube.com](https://www.youtube.com).
 
-Wszelkie znaki towarowe, znaki usługowe, nazwy handlowe i inne prawa własności intelektualnej wykorzystane w projekcie VueTube należą do odpowiednich właścicieli.
+Wszelkie znaki towarowe, znaki usługowe, nazwy handlowe oraz inne prawa własności intelektualnej wykorzystane w projekcie VueTube należą do odpowiednich właścicieli.
