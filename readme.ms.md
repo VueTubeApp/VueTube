@@ -53,7 +53,7 @@ Untuk memasang sila lawati www.vuetube.app/install
 ### iOS
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
+| Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada  stabil | Tidak tersedia sehingga aplikasi menjadi lebih membangun |
   
 </details>
 
