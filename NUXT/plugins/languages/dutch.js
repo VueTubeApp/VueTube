@@ -22,7 +22,7 @@ module.exports = {
       updates: "Updates",
       logs: "Logboeken",
       about: "Over",
-      devmode: "Register Bewerken"
+      devmode: "Register bewerken"
     },
   
     mods: {
@@ -35,7 +35,7 @@ module.exports = {
         custom: "Aangepast",
         dark: "Donker",
         black: "Zwart",
-        darkmode: "Donkere Modus",
+        darkmode: "Donkere modus",
         darkmodetagline: "Bravo Six, Going Dark."
       },
       tweaks: {
