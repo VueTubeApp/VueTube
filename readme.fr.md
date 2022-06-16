@@ -4,7 +4,7 @@
   </a>
   </br>
   <sub>Logo par <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
-  <sub>Traduction française par <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>Traduction Française par <a href="https://github.com/afnzmn">@afnzmn</a></sub>
   </br>
   </br>
 <strong>Un simple client vidéo FOSS/SSOBL destiné à recréer TOUTES les fonctionnalités par leurs applications respectives (et plus).
@@ -22,7 +22,7 @@ Prononcé «View Tube»  (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Lire ceci dans d’autres langues: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [македонски](readme.mk.md)
+Lire ceci dans d’autres langues: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски](readme.mk.md)
 
 ## Fonctionnalités
 
