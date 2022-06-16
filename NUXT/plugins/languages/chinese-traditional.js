@@ -1,5 +1,5 @@
 module.exports = {
-  name: "中文繁體",
+  name: "繁體中文",
 
   global: {
     home: "主頁",
@@ -16,7 +16,7 @@ module.exports = {
     general: "一般",
     theme: "主題",
     player: "播放器",
-    uitweaker: "界面調較",
+    uitweaker: "介面調校",
     startupoptions: "啟動選項",
     plugins: "插件",
     updates: "更新",
@@ -30,37 +30,37 @@ module.exports = {
       language: "語言"
     },
     theme: {
-      normal: "Normal",
-      adaptive: "Adaptive",
-      custom: "Custom",
-      dark: "Dark",
-      black: "Black",
-      darkmode: "Dark Mode",
+      normal: "正常",
+      adaptive: "自適應",
+      custom: "自訂",
+      dark: "深色",
+      black: "黑色",
+      darkmode: "黑暗模式",
       darkmodetagline: "Bravo Six, Going Dark."
     },
     tweaks: {
-      fullscreen: "Fullscreen",
-      navbarblur: "Navbar Blur",
-      roundedcorners: "Rounded Corners",
-      roundthumbnails: "Round Thumbnails",
-      roundwatchpagecomponents: "Round Watch PAge Components",
-      radius: "Radius"
+      fullscreen: "全螢幕",
+      navbarblur: "導覽列模糊效果",
+      roundedcorners: "圓角",
+      roundthumbnails: "圓的縮圖",
+      roundwatchpagecomponents: "圓的觀看頁部件",
+      radius: "半徑"
     },
     startup: {
       defaultpage: "默認頁"
     },
     updates: {
-      install: "Install",
-      view: "View",
-      latest: "Latest",
-      installed: "Installed"
+      install: "安裝",
+      view: "查看",
+      latest: "最新",
+      installed: "已安裝"
     },
     logs: {
-      more: "More"
+      more: "更多"
     },
     about: {
-      appinformation: "程式資訊",
-      appversion: "程式版本",
+      appinformation: "應用程式資訊",
+      appversion: "應用程式版本",
       deviceinformation: "裝置資訊",
       platform: "平台",
       os: "作業系統",
