@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Français",
+  name: "Français FR",
 
   global: {
     home: "Accueil",
@@ -9,25 +9,25 @@ module.exports = {
 
   index: {
     connecting: "Connexion",
-    launching: "Lancement"
+    launching: "Démarrage"
   },
 
   settings: {
-    general: "Général",
+    general: "Paramètres Généraux",
     theme: "Thème",
-    player: "Lecteur",
-    uitweaker: "Personnalisation d'Interface",
+    player: "Lecteur vidéo",
+    uitweaker: "Personnalisation de l'Interface",
     startupoptions: "Options de démarrage",
-    plugins: "Plugins",
+    plugins: "Plug-ins",
     updates: "Mises à jour",
-    logs: "Logs",
+    logs: "Journaux",
     about: "À propos",
     devmode: "Éditeur de registre"
   },
 
   mods: {
     general: {
-      language: "Langage"
+      language: "Langue"
     },
     theme: {
       normal: "Normal",
@@ -36,14 +36,14 @@ module.exports = {
       dark: "Sombre",
       black: "Noir",
       darkmode: "Thème sombre",
-      darkmodetagline: "Bravo Six, Going Dark."
+      darkmodetagline: "Mode sombre activé !"
     },
     tweaks: {
       fullscreen: "Plein écran",
-      navbarblur: "Barre de navigation flou",
-      roundedcorners: "Coin arrondi",
+      navbarblur: "Barre de navigation floue",
+      roundedcorners: "Coins arrondis",
       roundthumbnails: "Miniatures arrondies",
-      roundwatchpagecomponents: "Page d'accueil arrondis",
+      roundwatchpagecomponents: "Page d'accueil arrondie",
       radius: "Rayon",
     },
     startup: {
@@ -52,28 +52,28 @@ module.exports = {
     updates: {
       install: "Installer",
       view: "Voir",
-      latest: "Plus récente",
-      installed: "Installée",
+      latest: "Plus récent",
+      installed: "Installé",
     },
     logs: {
       more: "Afficher plus",
     },
     about: {
-      appinformation: "Informations sur l'application",
-      appversion: "Version de l'application",
+      appinformation: "Informations sur l'appli",
+      appversion: "Version de l'appli",
       deviceinformation: "Informations sur l'appareil",
       platform: "Platforme",
       os: "Système d'exploitation",
       model: "Modèle",
       manufacturer: "Fabricant",
-      emulator: "Emulateur",
-      github: "Github",
+      emulator: "Émulateur",
+      github: "GitHub",
       discord: "Discord"
     }
   },
 
   events: {
-    welcome: "Bienvenue sur VueTube!",
+    welcome: "Bienvenue sur VueTube !",
     tagline: "Le futur du streaming vidéo.",
     next: "Suivant",
     updated: "VueTube a été mis à jour !",
