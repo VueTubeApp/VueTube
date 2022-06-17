@@ -12,6 +12,7 @@ const packs = {
   "chinese-traditional": require('./languages/chinese-traditional'),
   "chinese-simplified": require('./languages/chinese-simplified'),
   "brazilian-portuguese": require('./languages/brazilian-portuguese'),
+  indonesian: require('./languages/indonesian'),
 }
 
 function module(text, listPacks) {
