@@ -4,10 +4,10 @@
   </a>
   </br>
   <sub>Logo par <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
-  <sub>Traduction Française par <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>Traduction Française par <a href="https://github.com/afnzmn">@afnzmn</a> et édité par <a href="https://github.com/FAKlR">@FAKlR</sub>
   </br>
   </br>
-<strong>Un simple client vidéo FOSS/SSOBL destiné à recréer TOUTES les fonctionnalités par leurs applications respectives (et plus).
+<strong>Un simple client vidéo FOSS/SSOBL destiné à recréer TOUTES les fonctionnalités de leurs applications respectives (et plus).
 </strong>
 </br>
 Prononcé «View Tube»  (<code>/ˈvjuːˌtjuːb/</code>)
@@ -28,12 +28,12 @@ Lire ceci dans d’autres langues: [English,](readme.md) [Español,](readme.es.m
 
 <img src="./resources/readme-fr/Features.fr.svg" alt="VueTube icon" width="450"/>
 
-- 🎨 Thèmes: Claire, Sombre, Noir, Toutes les couleurs d’arc-en-ciel
+- 🎨 Thèmes: Claire, Sombre, Noir, Toutes les couleurs de l'arc-en-ciel
 - 🖌️ Interface Personnalisable: Tu peux personnaliser la couleur de thème, ou désactiver les autres parties de l’interface que tu n'utilises pas!
-- ⬆️ Mises à Jour Automatiques: Été notifié quand une mise à jour est disponible, et passe à des versions précédentes si tu n'aimes pas!
-- 👁️ Protection de Suivi:  Aucun de télémesure est envoyé de ton système par défaut
+- ⬆️ Mises à Jour Automatiques: Étre notifié quand une mise à jour est disponible, et passe à des versions précédentes si tu n'aimes pas!
+- 👁️ Protection de Suivi:  Aucunes télémesures n'est envoyé par ton appareil par défaut
 - 📺 Lecture de Vidéo Personnalisé
-- 👎 Ramener Youtube Dislike
+- 👎 Return Youtube Dislike
 
 ## Installation
 
@@ -54,7 +54,7 @@ Pour l’installation, visitez: www.vuetube.app/install
 ### iOS
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| Beaucoup de bugs, mais il y a accès précoce pour les fonctionnalités nouvelles | Moins de bugs que instable, plus de fonctionnalités que stable | N’est pas disponible jusqu'à l’application est plus développée |
+| Beaucoup de bugs, mais il y a accès anticipé pour les nouvelles fonctionnalités | Moins de bugs que instable, contient plus de fonctionnalités que stable | Indisponible jusqu'à ce que l’application soit plus développée |
   
 </details>
 
@@ -63,18 +63,18 @@ Pour l’installation, visitez: www.vuetube.app/install
 <img src="./resources/readme-fr/Plans.fr.svg" alt="VueTube icon" width="300"/>
 
 - 🔍 Recherche Avancée
-- 🗞️ Historique de regader locale
+- 🗞️ Historique de visionnage locale
 - ✂️ YouTube Shorts
 - 🧑 Se connecter avec Google
-- 🖼️ Mode Image-dans-Image (PiP)
+- 🖼️ Mode Image-dans-l'image (PiP)
 - et plus!
 
 ## Capture d’écrans
 
-Voyez sur notre site-web: www.vuetube.app/info/screenshots
+A Voir sur notre site-web: www.vuetube.app/info/screenshots
 
 <details>
-  <summary> Ou cliquez ici pour montrer des captures d’écrans </summary>
+  <summary> Ou cliquez ici pour voir des captures d’écrans </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -89,11 +89,11 @@ Voyez sur notre site-web: www.vuetube.app/info/screenshots
 
 ### Pourquoi fais-je ceci?
 
-Cette idée avait été parlé de dans le serveur Discord de Ramener Youtube Dislike pour quelque temps, alors j'ai pensé que je devrais essayer!
+Cette idée avait été discuté  sur le serveur Discord de Return Youtube Dislike pour quelque temps, alors j'ai pensé que je devrais essayer!
 
-### Veux-tu contribuer?
+### Vous voulez contribuer ?
 
-Lisez sur notre site-web pour savoir comment contribuer: www.vuetube.app/contributing
+Rendez vous sur notre site-web pour savoir comment contribuer: www.vuetube.app/contributing
 
 ## Contributeurs
 
@@ -112,4 +112,4 @@ Lisez sur notre site-web pour savoir comment contribuer: www.vuetube.app/contrib
 
 Le projet VueTube et son contenu ne sont pas affiliés, financés, autorisés, soutenus par, ou associés avec YouTube, Google LLC ou l'un de ses affiliés et subsidiaires. Le site-web officiel de Youtube peut être trouvé à [www.youtube.com](https://www.youtube.com).
 
-Toute marque déposée, marque services, nom commercial, ou autre droits de propriété intellectuelle utilisés dans le projet VueTube sont possèdent par leurs propriétaire respectifs.
+Toute marque déposée, marque services, nom commercial, ou autre droits de propriété intellectuelle utilisés dans le projet VueTube sont la propriété de leurs propriétaire respectifs.
