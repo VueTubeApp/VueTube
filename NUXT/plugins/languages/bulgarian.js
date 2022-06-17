@@ -18,7 +18,7 @@ module.exports = {
     player: "Плейър",
     uitweaker: "Опции За ПИ",
     startupoptions: "Опции За Стартиране",
-    plugins: "Допълнения",
+    plugins: "Разширения",
     updates: "Актуализации",
     logs: "Дневници",
     about: "Относно VueTube",
@@ -40,7 +40,7 @@ module.exports = {
     },
     tweaks: {
       fullscreen: "Цял Екран",
-      navbarblur: "Замъляване На Лентата",
+      navbarblur: "Замъгляване На Лентата",
       roundedcorners: "Заоблени Ъгли",
       roundthumbnails: "Заоблени  Снимки",
       roundwatchpagecomponents: "Заоблени Компоненти На Страницата За Гледане",

@@ -4,6 +4,7 @@
   </a>
   </br>
   <sub>Logo autorstwa <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>Polskie tłumaczenie <a href="https://github.com/Spiryt7">@Spiryt7</a></sub>
   </br>
   </br>
 <strong>Prosty klient FOSS strumieniowego przesyłania wideo, którego celem jest odtworzenie WSZYSTKICH funkcji z odpowiednich aplikacji (i znacznie więcej)</strong>
@@ -24,7 +25,7 @@ Przeczytaj to w innych językach: [English,](readme.md) [Español,](readme.es.md
 
 ## Funkcje
 
-<img src="./resources/Features.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pl/Features.pl.svg" alt="VueTube icon" width="300"/>
 
 - 🎨 Motywy: Jasny, Ciemny, OLED, Wszystkie kolory tęczy
 - 🖌️ Personalizacja interfejsu: Możesz w pełni dostosować kolor akcentu oraz inne części interfejsu użytkownika i usunąć funkcje, których nie używasz!
@@ -35,7 +36,7 @@ Przeczytaj to w innych językach: [English,](readme.md) [Español,](readme.es.md
 
 ## Instalacja
 
-<img src="./resources/Install.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pl/Install.pl.svg" alt="VueTube icon" width="300"/>
 
 Aby zainstalować aplikację, odwiedź www.vuetube.app/install
 
@@ -58,7 +59,7 @@ Aby zainstalować aplikację, odwiedź www.vuetube.app/install
 
 ## Plany
 
-<img src="./resources/Plans.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pl/Plans.pl.svg" alt="VueTube icon" width="300"/>
 
 - 🔍 Wyszukiwanie zaawansowane
 - 🗞️ Lokalna historia oglądania

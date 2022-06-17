@@ -4,12 +4,12 @@
   </a>
   </br>
   <sub>Лого од <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
-  <sub>Macedonian translation by <a href="https://github.com/Robotition">@Robotition</a></sub>
+  <sub>Македонски превод од <a href="https://github.com/Robotition">@Robotition</a></sub>
   </br>
   </br>
 <strong>Едноставна FOSS видео стриминг апликација со цел да ги рекреира сите карактеристики од соодветните апликации (и повеќе).</strong>
 </br>
-Се изговара Вју-Туб
+Се изговара Вју-Туб (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
