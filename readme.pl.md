@@ -25,7 +25,7 @@ Przeczytaj to w innych językach: [English,](readme.md) [Español,](readme.es.md
 
 ## Funkcje
 
-<img src="./resources/readme-pl/Features.pl.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pl/Features.pl.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Motywy: Jasny, Ciemny, OLED, Wszystkie kolory tęczy
 - 🖌️ Personalizacja interfejsu: Możesz w pełni dostosować kolor akcentu oraz inne części interfejsu użytkownika i usunąć funkcje, których nie używasz!
@@ -36,7 +36,7 @@ Przeczytaj to w innych językach: [English,](readme.md) [Español,](readme.es.md
 
 ## Instalacja
 
-<img src="./resources/readme-pl/Install.pl.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pl/Install.pl.svg" alt="VueTube icon" height="100"/>
 
 Aby zainstalować aplikację, odwiedź www.vuetube.app/install
 
@@ -59,7 +59,7 @@ Aby zainstalować aplikację, odwiedź www.vuetube.app/install
 
 ## Plany
 
-<img src="./resources/readme-pl/Plans.pl.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pl/Plans.pl.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Wyszukiwanie zaawansowane
 - 🗞️ Lokalna historia oglądania
