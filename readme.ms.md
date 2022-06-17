@@ -29,10 +29,10 @@ Baca ini dalam bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简
 
 - 🎨 Tema: Cerah, Gelap, OLED, Semua warna pelangi
 - 🖌️ UI yang dibolehkan suaikan: Anda boleh menyesuaikan sepenuhnya warna aksen dan bahagian lain UI untuk mengalih keluar ciri yang anda tidak gunakan!
-- ⬆️ Kemaskini Auto: Anda akan dimaklumkan apabila kemas kini tersedia & turun taraf jika anda tidak menyukainya!
+- ⬆️ Kemaskini Auto: Anda akan dimaklumkan apabila kemas kini tersedia & kembali ke versi lama jika anda tidak menyukainya!
 - 👁️ Perlindungan Penjejak: Tiada telemetri (maklumat peribadi) dihantar daripada peranti anda secara lalai
-- 📺 Pemain video kustom
-- 👎 Return YouTube Dislike
+- 📺 Pemain video yang boleh disesuaikan 
+- 👎 Return YouTube Dislike: Anda boleh melihat kiraan tidak suka pada hampir semua video
 
 ## Pasang
 
@@ -63,7 +63,7 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 - 🔍 Carian lanjutan
 - 🗞️ Simpan sejarah tontonan secara setempat (pada peranti anda)
-- ✂️ Shorts
+- ✂️ YouTube Shorts (video pendek)
 - 🧑 Log masuk dengan akaun Google
 - 🖼️ Mod gambar dalam gambar
 - dan lebih lagi!

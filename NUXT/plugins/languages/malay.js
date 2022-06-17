@@ -16,7 +16,7 @@ module.exports = {
     general: "Umum",
     theme: "Tema",
     player: "Pemain",
-    uitweaker: "Antara muka",
+    uitweaker: "Pelarasan UI",
     startupoptions: "Pilihan Permulaan",
     plugins: "Pemalam",
     updates: "Kemaskini",
@@ -32,7 +32,7 @@ module.exports = {
     theme: {
       normal: "Normal",
       adaptive: "Adaptif",
-      custom: "Kustom",
+      custom: "Sesuaikan",
       dark: "Gelap",
       black: "Hitam",
       darkmode: "Mod Gelap",
