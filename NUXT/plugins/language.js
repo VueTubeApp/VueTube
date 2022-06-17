@@ -1,10 +1,17 @@
 const packs = {
+  bulgarian: require('./languages/bulgarian'),
   english: require('./languages/english'),
+  french: require('./languages/french'),
+  german: require('./languages/german'),
   italian: require('./languages/italian'),
   macedonian:  require('./languages/macedonian'),
+  malay: require('./languages/malay'),
+  dutch: require('./languages/dutch'),
   polish:  require('./languages/polish'),
   spanish: require('./languages/spanish'),
-  "chinese-traditional": require('./languages/chinese-traditional')
+  "chinese-traditional": require('./languages/chinese-traditional'),
+  "chinese-simplified": require('./languages/chinese-simplified'),
+  "brazilian-portuguese": require('./languages/brazilian-portuguese'),
 }
 
 function module(text, listPacks) {

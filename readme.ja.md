@@ -6,7 +6,7 @@
   <sub><a href="https://github.com/afnzmn">@afnzmn</a>・ロゴ</sub>
   </br>
   </br>
-<strong>対応する各アプリケーションの機能を書き換えて使用可能な、シンプルなオープンソースビデオストリーミングクライアントです。 </strong>
+<strong>対応する各アプリケーションの機能を書き換る、シンプルなオープンソースビデオストリーミングクライアントです。 </strong>
 </br>
 </p>
 
@@ -14,12 +14,12 @@
   <a href="https://github.com/VueTubeApp/VueTube/blob/main/LICENSE" alt="License"><img src="https://img.shields.io/github/license/VueTubeApp/VueTube"></img></a>
   <a href="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml" alt="CI"><img src="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml/badge.svg"></img></a>
   <a href="https://reddit.com/r/vuetube" alt="Reddit"><img src="https://img.shields.io/reddit/subreddit-subscribers/vuetube?label=r%2FVuetube&logo=reddit&logoColor=white"></img></a>
-  <a href="https://t.me/VueTube" alt="Telegram"><img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fvuetube"></img></a>
+  <a href="https://t.me/VueTube" alt="Telegram"><img src="https://img.shields.io/endpoint?label=VueTube&url=https%3A%2F%2Ftelegram-badge-4mbpu8e0fit4.runkit.sh%2F%3Furl%3Dhttps%3A%2F%2Ft.me%2FVuetube"></img></a>
   <a href="https://discord.gg/7P8KJrdd5W" alt="Discord"><img src="https://img.shields.io/discord/946587366242533377?label=Discord&style=flat&logo=discord&logoColor=white"></img></a>
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-他の言語で読む：[English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro](readme.pt-br.md)
+他の言語で読む：[English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski](readme.pl.md)
 
 ## 機能
 
@@ -45,13 +45,13 @@
 ### Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| バグが発生する可能性があるのに最新の機能をいち早く試されます。 | unstable よりもバグが少ないが、stable よりも若干機能が多い。 | VueTubeが開発中のため、このバージョンは暫くダウンロードできない |
+| バグが発生する可能性があるけれど最新の機能をいち早く試されます。 | unstable よりもバグが少ないけれど、stable よりも若干機能が多い。 | VueTubeが開発中のため、このバージョンは暫くダウンロードできない |
   
 
 ### iOS
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| バグが発生する可能性があるのに最新の機能をいち早く試されます。 | unstable よりもバグが少ないが、stable よりも若干機能が多い。 | VueTubeが開発中のため、このバージョンは暫くダウンロードできない |
+| バグが発生する可能性がけれど最新の機能をいち早く試されます。 | unstable よりもバグが少ないが、stable よりも若干機能が多い。 | VueTubeが開発中のため、このバージョンは暫くダウンロードできない |
   
 </details>
 
@@ -83,14 +83,14 @@
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
 
-### 貢献方法
-
-貢献したい方はこちらを読んでください: www.vuetube.app/contributing
-
-## このアプリケーションを作った理由
+### このアプリケーションを作った理由
 こういう機能が「Return Youtube Dislike」というディスコードのサーバーで話題になり、
 
 何か作ってみようかなと思ったからです！
+
+### 貢献方法
+
+貢献したい方はこちらを読んでください: www.vuetube.app/contributing
 
 ## コントリビューター
 
@@ -103,4 +103,4 @@
 ## 謝辞
 
 - 絵文字は[Twemoji](https://twemoji.twitter.com/)のものを使用しました。ライセンスは[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)です
-- VueTubeのロゴは[@afnzmn](https://github.com/afnzmn)によります。
+- VueTubeのロゴは[@afnzmn](https://github.com/afnzmn)に作ってもらいました。

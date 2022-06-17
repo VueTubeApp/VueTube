@@ -4,30 +4,30 @@
   </a>
   </br>
   <sub>Лого од <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
-  <sub>Macedonian translation by <a href="https://github.com/Robotition">@Robotition</a></sub>
+  <sub>Македонски превод од <a href="https://github.com/Robotition">@Robotition</a></sub>
   </br>
   </br>
 <strong>Едноставна FOSS видео стриминг апликација со цел да ги рекреира сите карактеристики од соодветните апликации (и повеќе).</strong>
 </br>
-Се изговара Вју-Туб
+Се изговара Вју-Туб (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
   <a href="https://github.com/VueTubeApp/VueTube/blob/main/LICENSE" alt="License"><img src="https://img.shields.io/github/license/VueTubeApp/VueTube"></img></a>
   <a href="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml" alt="CI"><img src="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml/badge.svg"></img></a>
   <a href="https://reddit.com/r/vuetube" alt="Reddit"><img src="https://img.shields.io/reddit/subreddit-subscribers/vuetube?label=r%2FVuetube&logo=reddit&logoColor=white"></img></a>
-  <a href="https://t.me/VueTube" alt="Telegram"><img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fvuetube"></img></a>
+  <a href="https://t.me/VueTube" alt="Telegram"><img src="https://img.shields.io/endpoint?label=VueTube&url=https%3A%2F%2Ftelegram-badge-4mbpu8e0fit4.runkit.sh%2F%3Furl%3Dhttps%3A%2F%2Ft.me%2FVuetube"></img></a>
   <a href="https://discord.gg/7P8KJrdd5W" alt="Discord"><img src="https://img.shields.io/discord/946587366242533377?label=Discord&style=flat&logo=discord&logoColor=white"></img></a>
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Прочитајте го ова на други јазици: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Français,](readme.fr.md) [Português Brasileiro](readme.pt-br.md)
+Прочитајте го ова на други јазици: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski](readme.pl.md)
 
 ## Карактеристики
 
 <img src="./resources/readme-mk/Features.mk.svg" alt="VueTube icon" width="500"/>
 
-- 🎨 Лик: Светло, темно, OLED, сите бои на виножитото.
+- 🎨 Изглед: Светло, темно, OLED, сите бои на виножитото.
 - 🖌️ Приспособлив интерфејс: Можете целосно да ја приспособите акцентната боја и другите делови од интерфејсот за да ги отстраните функциите што не ги користите!
 - ⬆️ Автоматско ажурирање: Бидете известени кога нов апдејт е достапен и деградирајте го ако не ви се допаѓа!
 - 👁️ Заштита од следење: Стандардно не се испраќа телеметрија од вашиот уред.

@@ -39,12 +39,12 @@ module.exports = {
         darkmodetagline: "Bravo Six, Going Dark."
       },
       tweaks: {
-        fullscreen: "Volledig scherm",
-        navbarblur: "Vervaging navigatiebalk",
-        roundedcorners: "Afgeronde hoeken",
-        roundthumbnails: "Ronde hoeken in miniatuurafbeelding",
-        roundwatchpagecomponents: "Ronde hoeken in videospeler",
-        radius: "Radius"
+        fullscreen: "Volledig Scherm",
+        navbarblur: "Vervaging Navigatiebalk",
+        roundedcorners: "Afgeronde Hoeken",
+        roundthumbnails: "Ronde Hoeken In Video Miniaturen",
+        roundwatchpagecomponents: "Ronde Hoeken In Video Speler Componenten",
+        radius: "Straal"
       },
       startup: {
         defaultpage: "Standaard Pagina"
@@ -76,7 +76,7 @@ module.exports = {
       welcome: "Welkom bij VueTube",
       tagline: "De toekomst van videostreaming",
       next: "Volgende",
-      updated: "VueTube is geüpdatet!",
+      updated: "VueTube is bijgewerkt!",
       awesome: "Geweldig!"
     }
   

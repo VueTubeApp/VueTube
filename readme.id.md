@@ -3,12 +3,13 @@
     <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <sub>Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>Logo oleh <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
+  <sub>Terjemahan oleh <a href="https://github.com/QuickValve">@QuickValve</a></sub>
   </br>
   </br>
-<strong>A simple FOSS video streaming client aimed to recreate ALL features from their respective apps (and more)</strong>
+<strong>Sebuah klien video streaming FOSS yang bertujuan untuk membuat ulang SEMUA fitur dari aplikasi yang dibuat ulang fiturnya (dan lebih banyak lagi).</strong>
 </br>
-Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
+Disebut View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
@@ -20,59 +21,59 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Read this in other languages: [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski](readme.pl.md)
+Baca ini di bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Polski](readme.pl.md)
 
-## Features
+## Fitur
 
-<img src="./resources/Features.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-id/Features.id.svg" alt="VueTube icon" width="300"/>
 
-- 🎨 Themes: Light, Dark, OLED, All the colors of the rainbow
-- 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
-- ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
-- 👁️ Tracking Protection: No telemetry is sent from your device by default
-- 📺 Custom video player
+- 🎨 Tema: Terang, Gelap, OLED, Semua warna yang ada di dunia
+- 🖌️ UI yang bisa di sesuaikan: Kamu bisa menyesuaikan warna aksen, dan bagian UI lainnya untuk menonaktifkan fitur yang tidak anda gunakan!
+- ⬆️ Pembaharuan Otomatis: Kamu akan diberitahu saat pembaharuan baru tersedia & kembali ke versi lama jika kamu tidak menyukainya!
+- 👁️ Perlindungan dari Pelacakan: Tidak ada telemetri (informasi pribadi) yang dikirim dari perangkatmu secara bawaan
+- 📺 Pemutar video custom
 - 👎 Return YouTube Dislike
 
-## Install
+## Instalasi
 
-<img src="./resources/Install.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-id/Install.id.svg" alt="VueTube icon" width="300"/>
 
-To install please visit www.vuetube.app/install
+Untuk menginstal aplikasi silahkan kunjungi www.vuetube.app/install
 
 <details>
-  <summary>Or click here to display all versions available</summary>
+  <summary>Atau klik disini untuk menampilkan semua versi yang ada</summary>
 <br />
 
 ### Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
+| Banyak bug, tetapi akses awal ke fitur baru | Lebih sedikit bug dari unstable, sedikit lebih banyak fitur dari stable | Belum tersedia sampai aplikasi dikembangkan lebih jauh |
   
 
 ### iOS
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
+| Banyak bug, tetapi akses awal ke fitur baru | Lebih sedikit bug dari unstable, sedikit lebih banyak fitur dari stable | Belum tersedia sampai aplikasi dikembangkan lebih jauh |
   
 </details>
 
-## Plans
+## Rencana
 
-<img src="./resources/Plans.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-id/Plans.id.svg" alt="VueTube icon" width="300"/>
 
-- 🔍 Advanced Search
-- 🗞️ Locally store watch history
+- 🔍 Pencarian Lanjutan
+- 🗞️ Simpan riwayat tontonan secara lokal (di perangkatmu)
 - ✂️ Shorts
-- 🧑 Google account sign in
-- 🖼️ Picture in picture mode
-- and more!
+- 🧑 Masuk dengan akun Google
+- 🖼️ Mode picture-in-picture 
+- Dan masih banyak lagi!
 
-## Screenshots
+## Screenshot aplikasi
 
-View on our website: www.vuetube.app/info/screenshots
+Kunjungi website kami: www.vuetube.app/info/screenshots
 
 <details>
-  <summary> Or click here to display screenshots </summary>
+  <summary> Atau klik disini untuk menampilkan screenshot-screenshot aplikasi </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -81,33 +82,33 @@ View on our website: www.vuetube.app/info/screenshots
      
 </details>
 
-### Technologies used
+### Teknologi yang dipakai
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
 
-### Why am I doing this?
+### Kenapa saya melakukan ini?
 
-Well this has been thrown around on the Return Youtube Dislike discord server for quite some time, so I figured that I should probably take a crack at it!
+Ide ini telah dilempar di server discord Return Youtube Dislike untuk beberapa waktu, jadi saya pikir saya harus mencoba membuatnya!
 
-### Want to contribute?
+### Ingin berkontribusi?
 
-Please read our website on how to do so: www.vuetube.app/contributing
+Silakan baca website kami untuk cara melakukannya: www.vuetube.app/contributing
 
-## Contributors
+## Kontributor
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
 </a>
 
-<sub>Made with [contrib.rocks](https://contrib.rocks). </sub>
+<sub>Dibuat dengan [contrib.rocks](https://contrib.rocks). </sub>
 
-## Acknowledgements
+## Pengakuan / Penghargaan
 
-- Emojis by the [Twemoji team](https://twemoji.twitter.com/), Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- VueTube Logo by [@afnzmn](https://github.com/afnzmn)
+- Emoji oleh [tim Twemoji](https://twemoji.twitter.com/), Dilisensikan dibawah [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Logo VueTube oleh [@afnzmn](https://github.com/afnzmn)
 
-## Disclaimer
+## Peringatan
 
-The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found at [www.youtube.com](https://www.youtube.com).
+Proyek VueTube dan isinya tidak beraffiliasi dengan, didanai, diberi izin, didukung oleh, atau dengan cara apapun terkait dengan YouTube, Google LLC atau segala afiliasi dan anak perusahaannya. Website YouTube resmi bisa ditemukan di [www.youtube.com](https://www.youtube.com).
 
-Any trademark, service mark, trade name, or other intellectual property rights used in the VueTube project are owned by the respective owners.
+Semua merek dagang, merek jasa, atau properti intelektual lainnya yang dipakai di proyek VueTube dimiliki oleh pemiliknya masing-masing.

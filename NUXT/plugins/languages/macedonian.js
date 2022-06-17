@@ -14,7 +14,7 @@ module.exports = {
 
   settings: {
     general: "Општо",
-    theme: "Лик",
+    theme: "Изглед",
     player: "Плеер",
     uitweaker: "Интерфејс Твикер",
     startupoptions: "Опции за стартување",
@@ -60,7 +60,7 @@ module.exports = {
     },
     about: {
       appinformation: "Информации за апликацијата",
-      appversion: "Верзиј на апликацијата",
+      appversion: "Верзија на апликацијата",
       deviceinformation: "Информации за уредод",
       platform: "Платформа",
       os: "Оперативен Систем",

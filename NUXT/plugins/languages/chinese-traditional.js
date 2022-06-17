@@ -16,13 +16,13 @@ module.exports = {
     general: "一般",
     theme: "主題",
     player: "播放器",
-    uitweaker: "介面調校",
+    uitweaker: "介面調整",
     startupoptions: "啟動選項",
     plugins: "插件",
     updates: "更新",
-    logs: "日誌",
+    logs: "紀錄檔",
     about: "關於",
-    devmode: "登錄檔編輯"
+    devmode: "登錄檔編輯工具"
   },
 
   mods: {
@@ -47,7 +47,7 @@ module.exports = {
       radius: "半徑"
     },
     startup: {
-      defaultpage: "默認頁"
+      defaultpage: "預設頁"
     },
     updates: {
       install: "安裝",
@@ -74,10 +74,10 @@ module.exports = {
 
   events: {
     welcome: "歡迎來到 VueTube",
-    tagline: "流媒體的未來",
+    tagline: "影音串流的未來",
     next: "下一個",
-    updated: "VueTube 已更新!",
-    awesome: "真棒!"
+    updated: "VueTube 已更新！",
+    awesome: "真棒！"
   }
 
 

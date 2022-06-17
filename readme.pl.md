@@ -3,12 +3,13 @@
     <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <sub>Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>Logo autorstwa <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>Polskie tłumaczenie <a href="https://github.com/Spiryt7">@Spiryt7</a></sub>
   </br>
   </br>
-<strong>A simple FOSS video streaming client aimed to recreate ALL features from their respective apps (and more)</strong>
+<strong>Prosty klient FOSS strumieniowego przesyłania wideo, którego celem jest odtworzenie WSZYSTKICH funkcji z odpowiednich aplikacji (i znacznie więcej)</strong>
 </br>
-Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
+Wymawia się: View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
@@ -20,59 +21,59 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Read this in other languages: [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski](readme.pl.md)
+Przeczytaj to w innych językach: [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski](readme.pl.md)
 
-## Features
+## Funkcje
 
-<img src="./resources/Features.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pl/Features.pl.svg" alt="VueTube icon" width="300"/>
 
-- 🎨 Themes: Light, Dark, OLED, All the colors of the rainbow
-- 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
-- ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
-- 👁️ Tracking Protection: No telemetry is sent from your device by default
-- 📺 Custom video player
-- 👎 Return YouTube Dislike
+- 🎨 Motywy: Jasny, Ciemny, OLED, Wszystkie kolory tęczy
+- 🖌️ Personalizacja interfejsu: Możesz w pełni dostosować kolor akcentu oraz inne części interfejsu użytkownika i usunąć funkcje, których nie używasz!
+- ⬆️ Automatyczne aktualizacje: Otrzymuj powiadomienia o dostępności aktualizacji oraz odinstaluj aktualizację, jeśli Ci się nie podoba!
+- 👁️ Ochrona przed śledzeniem: Domyślnie przez aplikację nie są wysyłane żadne dane telemetryczne
+- 📺 Własny odtwarzacz wideo
+- 👎 Przywrócony licznik łapek w dół
 
-## Install
+## Instalacja
 
-<img src="./resources/Install.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pl/Install.pl.svg" alt="VueTube icon" width="300"/>
 
-To install please visit www.vuetube.app/install
+Aby zainstalować aplikację, odwiedź www.vuetube.app/install
 
 <details>
-  <summary>Or click here to display all versions available</summary>
+  <summary>Lub kliknij tutaj, aby wyświetlić wszystkie dostępne wersje</summary>
 <br />
 
 ### Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
+| Dużo błędów oraz wczesny dostęp do najnowszych funkcji | Mniej błędów niż w wersji niestabilnej, nieco więcej funkcji niż w wersji stabilnej | Niedostępna, dopóki aplikacja nie będzie bardziej rozwinięta |
   
 
 ### iOS
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
+| Dużo błędów oraz wczesny dostęp do najnowszych funkcji | Mniej błędów niż w wersji niestabilnej, nieco więcej funkcji niż w wersji stabilnej | Niedostępna, dopóki aplikacja nie będzie bardziej rozwinięta |
   
 </details>
 
-## Plans
+## Plany
 
-<img src="./resources/Plans.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pl/Plans.pl.svg" alt="VueTube icon" width="300"/>
 
-- 🔍 Advanced Search
-- 🗞️ Locally store watch history
+- 🔍 Wyszukiwanie zaawansowane
+- 🗞️ Lokalna historia oglądania
 - ✂️ Shorts
-- 🧑 Google account sign in
-- 🖼️ Picture in picture mode
-- and more!
+- 🧑 Logowanie przez konto Google
+- 🖼️ Tryb "obraz w obrazie"
+- i wiele więcej!
 
-## Screenshots
+## Zrzuty ekranu
 
-View on our website: www.vuetube.app/info/screenshots
+Zobacz na naszej stronie internetowej: www.vuetube.app/info/screenshots
 
 <details>
-  <summary> Or click here to display screenshots </summary>
+  <summary> Lub kliknij tutaj, aby wyświetlić zrzuty ekranu </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -81,33 +82,33 @@ View on our website: www.vuetube.app/info/screenshots
      
 </details>
 
-### Technologies used
+### Użyte technologie
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
 
-### Why am I doing this?
+### Dlaczego to robię?
 
-Well this has been thrown around on the Return Youtube Dislike discord server for quite some time, so I figured that I should probably take a crack at it!
+Od dłuższego czasu był to temat poruszany na serwerze discord Return Youtube Dislike, więc uznałem, że powinienem się za to zabrać!
 
-### Want to contribute?
+### Chcesz pomóc?
 
-Please read our website on how to do so: www.vuetube.app/contributing
+Zapoznaj się z naszą stroną internetową, aby dowiedzieć się, jak to zrobić: www.vuetube.app/contributing
 
-## Contributors
+## Współautorzy
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
 </a>
 
-<sub>Made with [contrib.rocks](https://contrib.rocks). </sub>
+<sub>Wykonane przy użyciu [contrib.rocks](https://contrib.rocks). </sub>
 
-## Acknowledgements
+## Podziękowania
 
-- Emojis by the [Twemoji team](https://twemoji.twitter.com/), Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- VueTube Logo by [@afnzmn](https://github.com/afnzmn)
+- Emotikony [Twemoji team](https://twemoji.twitter.com/), Licencjonowane w ramach [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- VueTube Logo autorstwa [@afnzmn](https://github.com/afnzmn)
 
-## Disclaimer
+## Zastrzeżenie
 
-The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found at [www.youtube.com](https://www.youtube.com).
+Projekt VueTube oraz jego zawartość nie są związane, finansowane, autoryzowane, popierane ani w żaden sposób kojarzone z YouTube, Google LLC ani żadną z jej spółek zależnych. Oficjalna strona YouTube znajduje się pod adresem [www.youtube.com](https://www.youtube.com).
 
-Any trademark, service mark, trade name, or other intellectual property rights used in the VueTube project are owned by the respective owners.
+Wszelkie znaki towarowe, znaki usługowe, nazwy handlowe oraz inne prawa własności intelektualnej wykorzystane w projekcie VueTube należą do odpowiednich właścicieli.
