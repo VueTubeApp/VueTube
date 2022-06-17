@@ -3,12 +3,12 @@
     <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <sub>徽标：<a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>Logo autorstwa <a href="https://github.com/afnzmn">@afnzmn</a></sub>
   </br>
   </br>
-<strong>轻巧的 FOSS 流媒体客户端</strong>
+<strong>Prosty klient FOSS strumieniowego przesyłania wideo, którego celem jest odtworzenie WSZYSTKICH funkcji z odpowiednich aplikacji (i znacznie więcej)</strong>
 </br>
-读音是 View Tube (<code>/ˈvjuːˌtjuːb/</code>)
+Wymawia się: View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
@@ -20,59 +20,59 @@
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-其他语言版本：[English,](readme.md) [Español,](readme.es.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia](readme.id.md)
+Przeczytaj to w innych językach: [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski](readme.pl.md)
 
-## 功能
+## Funkcje
 
-<img src="./resources/readme-zh-hans/Features.zh-hans.svg" alt="VueTube icon" height="100"/>
+<img src="./resources/Features.svg" alt="VueTube icon" width="300"/>
 
-- 🎨 可自定义的主题：灯光、暗黑、OLED、或者是色彩丰富的主题
-- 🖌️ UI：可以完全自定义颜色、以及其他部分的UI以便移除您不使用的功能！
-- ⬆️ 自动升级：当有新版本可用时，您将会收到通知。
-- 👁️ 追踪阻断：默认情况下，VueTube不会发送任何电子跟踪数据。
-- 📺 定制的HTML5视频播放器
-- 👎利用Return Youtube Dislikes的API显示YouTube的“踩一下”数据
+- 🎨 Motywy: Jasny, Ciemny, OLED, Wszystkie kolory tęczy
+- 🖌️ Personalizacja interfejsu: Możesz w pełni dostosować kolor akcentu oraz inne części interfejsu użytkownika i usunąć funkcje, których nie używasz!
+- ⬆️ Automatyczne aktualizacje: Otrzymuj powiadomienia o dostępności aktualizacji oraz odinstaluj aktualizację, jeśli Ci się nie podoba!
+- 👁️ Ochrona przed śledzeniem: Domyślnie przez aplikację nie są wysyłane żadne dane telemetryczne
+- 📺 Własny odtwarzacz wideo
+- 👎 Przywrócony licznik łapek w dół
 
-## 下载
+## Instalacja
 
-<img src="./resources/readme-zh-hans/Install.zh-hans.svg" alt="VueTube icon" height="100"/>
+<img src="./resources/Install.svg" alt="VueTube icon" width="300"/>
 
-请访问 www.vuetube.app/install 来下载 VueTube。
+Aby zainstalować aplikację, odwiedź www.vuetube.app/install
 
 <details>
-  <summary>或点击这里显示所有可用的版本</summary>
+  <summary>Lub kliknij tutaj, aby wyświetlić wszystkie dostępne wersje</summary>
 <br />
 
 ### Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| 有最新的功能，并且经常有可升级的版本。不过bug更常见。 | 比stable的版本有更新的功能，而且比unstable更稳定。不过还是会遇见错误的。 | 因为VueTube未完成开发阶段，暂时无法下载Stable版本 |
+| Dużo błędów oraz wczesny dostęp do najnowszych funkcji | Mniej błędów niż w wersji niestabilnej, nieco więcej funkcji niż w wersji stabilnej | Niedostępna, dopóki aplikacja nie będzie bardziej rozwinięta |
   
 
 ### iOS
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| 有最新的功能，并且经常有可升级的版本。不过bug更常见。 | 比stable的板本有更新的功能，而且比unstable更稳定。不过还是会遇见错误的。 | 因为VueTube未完成开发阶段，暂时无法下载Stable版本 |
+| Dużo błędów oraz wczesny dostęp do najnowszych funkcji | Mniej błędów niż w wersji niestabilnej, nieco więcej funkcji niż w wersji stabilnej | Niedostępna, dopóki aplikacja nie będzie bardziej rozwinięta |
   
 </details>
 
-## 计划
+## Plany
 
-<img src="./resources/readme-zh-hans/Plans.zh-hans.svg" alt="VueTube icon" height="100"/>
+<img src="./resources/Plans.svg" alt="VueTube icon" width="300"/>
 
-- 🔍 高级搜索功能
-- 🗞️ 本地存储观看历史
+- 🔍 Wyszukiwanie zaawansowane
+- 🗞️ Lokalna historia oglądania
 - ✂️ Shorts
-- 🧑 谷歌账号登录
-- 🖼️ 画中画模式
-- 以及更多！
+- 🧑 Logowanie przez konto Google
+- 🖼️ Tryb "obraz w obrazie"
+- i wiele więcej!
 
-## 截图
+## Zrzuty ekranu
 
-请访问 www.vuetube.app/info/screenshots
+Zobacz na naszej stronie internetowej: www.vuetube.app/info/screenshots
 
 <details>
-  <summary> 或点击这里显示截图  </summary>
+  <summary> Lub kliknij tutaj, aby wyświetlić zrzuty ekranu </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -81,29 +81,33 @@
      
 </details>
 
-### 使用的技术
+### Użyte technologie
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
 
-### 如何提交代码
+### Dlaczego to robię?
 
-请查读我们的网站以了解提交代码指南：www.vuetube.app/contributing
+Od dłuższego czasu był to temat poruszany na serwerze discord Return Youtube Dislike, więc uznałem, że powinienem się za to zabrać!
 
-## 贡献者 
+### Chcesz pomóc?
+
+Zapoznaj się z naszą stroną internetową, aby dowiedzieć się, jak to zrobić: www.vuetube.app/contributing
+
+## Współautorzy
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
 </a>
 
-<sub>使用[contrib.rocks](https://contrib.rocks)制作。</sub>
+<sub>Wykonane przy użyciu [contrib.rocks](https://contrib.rocks). </sub>
 
-## 鸣谢 
+## Podziękowania
 
-- 感谢[Twemoji](https://twemoji.twitter.com/)提供的表情包。表情包授权于[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- 感谢[@afnzmn](https://github.com/afnzmn)提供VueTube徽标
+- Emotikony [Twemoji team](https://twemoji.twitter.com/), Licencjonowane w ramach [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- VueTube Logo autorstwa [@afnzmn](https://github.com/afnzmn)
 
-## 免责声明
+## Zastrzeżenie
 
-本项目不附属于、资助、授权、认可或以任何方式与YouTube、Google LLC或其任何有关。YouTube的官方网站是：[www.youtube.com](https://www.youtube.com).
+Projekt VueTube oraz jego zawartość nie są związane, finansowane, autoryzowane, popierane ani w żaden sposób kojarzone z YouTube, Google LLC ani żadną z jej spółek zależnych. Oficjalna strona YouTube znajduje się pod adresem [www.youtube.com](https://www.youtube.com).
 
-本项目中使用的任何商标、服务标志、商品名称或其他知识产权都属于其各自所有者。
+Wszelkie znaki towarowe, znaki usługowe, nazwy handlowe oraz inne prawa własności intelektualnej wykorzystane w projekcie VueTube należą do odpowiednich właścicieli.
