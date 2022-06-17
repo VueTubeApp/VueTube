@@ -25,7 +25,7 @@ Baca ini di bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简体
 
 ## Fitur
 
-<img src="./resources/readme-id/Features.id.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-id/Features.id.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Tema: Terang, Gelap, OLED, Semua warna yang ada di dunia
 - 🖌️ UI yang bisa di sesuaikan: Kamu bisa menyesuaikan warna aksen, dan bagian UI lainnya untuk menonaktifkan fitur yang tidak anda gunakan!
@@ -36,7 +36,7 @@ Baca ini di bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简体
 
 ## Instalasi
 
-<img src="./resources/readme-id/Install.id.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-id/Install.id.svg" alt="VueTube icon" height="100"/>
 
 Untuk menginstal aplikasi silahkan kunjungi www.vuetube.app/install
 
@@ -59,7 +59,7 @@ Untuk menginstal aplikasi silahkan kunjungi www.vuetube.app/install
 
 ## Rencana
 
-<img src="./resources/readme-id/Plans.id.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-id/Plans.id.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Pencarian Lanjutan
 - 🗞️ Simpan riwayat tontonan secara lokal (di perangkatmu)

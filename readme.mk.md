@@ -25,7 +25,7 @@
 
 ## Карактеристики
 
-<img src="./resources/readme-mk/Features.mk.svg" alt="VueTube icon" width="500"/>
+<img src="./resources/readme-mk/Features.mk.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Лик: Светло, темно, OLED, сите бои на виножитото.
 - 🖌️ Приспособлив интерфејс: Можете целосно да ја приспособите акцентната боја и другите делови од интерфејсот за да ги отстраните функциите што не ги користите!
@@ -36,7 +36,7 @@
 
 ## Инстал
 
-<img src="./resources/readme-mk/Install.mk.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-mk/Install.mk.svg" alt="VueTube icon" height="100"/>
 
 За да инсталирате, посетете: www.vuetube.app/install
 
@@ -59,7 +59,7 @@
 
 ## Планови
 
-<img src="./resources/readme-mk/Plans.mk.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-mk/Plans.mk.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Напредно пребарување
 - 🗞️ Локално складирајте ја историјата на гледани видеа.

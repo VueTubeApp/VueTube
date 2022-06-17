@@ -26,7 +26,7 @@ Lire ceci dans d’autres langues: [English,](readme.md) [Español,](readme.es.m
 
 ## Fonctionnalités
 
-<img src="./resources/readme-fr/Features.fr.svg" alt="VueTube icon" width="450"/>
+<img src="./resources/readme-fr/Features.fr.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Thèmes: Claire, Sombre, Noir, Toutes les couleurs d’arc-en-ciel
 - 🖌️ Interface Personnalisable: Tu peux personnaliser la couleur de thème, ou désactiver les autres parties de l’interface que tu n'utilises pas!
@@ -37,7 +37,7 @@ Lire ceci dans d’autres langues: [English,](readme.md) [Español,](readme.es.m
 
 ## Installation
 
-<img src="./resources/readme-fr/Install.fr.svg" alt="VueTube icon" width="350"/>
+<img src="./resources/readme-fr/Install.fr.svg" alt="VueTube icon" height="100"/>
 
 Pour l’installation, visitez: www.vuetube.app/install
 
@@ -60,7 +60,7 @@ Pour l’installation, visitez: www.vuetube.app/install
 
 ## Projets
 
-<img src="./resources/readme-fr/Plans.fr.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-fr/Plans.fr.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Recherche Avancée
 - 🗞️ Historique de regader locale

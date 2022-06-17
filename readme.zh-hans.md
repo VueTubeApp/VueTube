@@ -24,7 +24,7 @@
 
 ## 功能
 
-<img src="./resources/readme-zh-hans/Features.zh-hans.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-zh-hans/Features.zh-hans.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 可自定义的主题：灯光、暗黑、OLED、或者是色彩丰富的主题
 - 🖌️ UI：可以完全自定义颜色、以及其他部分的UI以便移除您不使用的功能！
@@ -35,7 +35,7 @@
 
 ## 下载
 
-<img src="./resources/readme-zh-hans/Install.zh-hans.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-zh-hans/Install.zh-hans.svg" alt="VueTube icon" height="100"/>
 
 请访问 www.vuetube.app/install 来下载 VueTube。
 
@@ -58,7 +58,7 @@
 
 ## 计划
 
-<img src="./resources/readme-zh-hans/Plans.zh-hans.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-zh-hans/Plans.zh-hans.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 高级搜索功能
 - 🗞️ 本地存储观看历史

@@ -25,7 +25,7 @@ Lees dit in andere talen: [English,](readme.md) [Español,](readme.es.md) [简�
 
 ## Functies
 
-<img src="./resources/readme-nl/Features.nl.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-nl/Features.nl.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Thema's: Licht, Donker, OLED (Helemaal Zwart), Alle kleuren van de regenboog
 - 🖌️ Aanpasbare User Interface: Je kan de accentkleur volledig aanpassen, en andere delen van het UI om de dingen te verwijderen die je niet gebruikt!
@@ -36,7 +36,7 @@ Lees dit in andere talen: [English,](readme.md) [Español,](readme.es.md) [简�
 
 ## Installeren
 
-<img src="./resources/readme-nl/Install.nl.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-nl/Install.nl.svg" alt="VueTube icon" height="100"/>
 
 Om te installeren, ga naar www.vuetube.app/install
 
@@ -60,7 +60,7 @@ Om te installeren, ga naar www.vuetube.app/install
 
 ## Plannen
 
-<img src="./resources/readme-nl/Plans.nl.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-nl/Plans.nl.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Geavanceerd zoeken
 - 🗞️ Bewaar de gekeken video geschiedenis op je apparaat

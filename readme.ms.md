@@ -25,7 +25,7 @@ Baca ini dalam bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简
 
 ## Ciri-ciri
 
-<img src="./resources/readme-ms/Features.ms.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-ms/Features.ms.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Tema: Cerah, Gelap, OLED, Semua warna pelangi
 - 🖌️ UI yang dibolehkan suaikan: Anda boleh menyesuaikan sepenuhnya warna aksen dan bahagian lain UI untuk mengalih keluar ciri yang anda tidak gunakan!
@@ -36,7 +36,7 @@ Baca ini dalam bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简
 
 ## Pasang
 
-<img src="./resources/readme-ms/Install.ms.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-ms/Install.ms.svg" alt="VueTube icon" height="100"/>
 
 Untuk memasang sila lawati www.vuetube.app/install
 
@@ -59,7 +59,7 @@ Untuk memasang sila lawati www.vuetube.app/install
 
 ## Pelan
 
-<img src="./resources/readme-ms/Plans.ms.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-ms/Plans.ms.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Carian lanjutan
 - 🗞️ Simpan sejarah tontonan secara setempat

@@ -24,7 +24,7 @@ Read this in other languages: [Español,](readme.es.md) [简体中文,](readme.z
 
 ## Features
 
-<img src="./resources/Features.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/Features.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Themes: Light, Dark, OLED, All the colors of the rainbow
 - 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
@@ -35,7 +35,7 @@ Read this in other languages: [Español,](readme.es.md) [简体中文,](readme.z
 
 ## Install
 
-<img src="./resources/Install.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/Install.svg" alt="VueTube icon" height="100"/>
 
 To install please visit www.vuetube.app/install
 
@@ -58,7 +58,7 @@ To install please visit www.vuetube.app/install
 
 ## Plans
 
-<img src="./resources/Plans.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/Plans.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Advanced Search
 - 🗞️ Locally store watch history

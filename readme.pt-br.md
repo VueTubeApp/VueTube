@@ -25,7 +25,7 @@ Leia isso em outras línguas: [English,](readme.md) [Español,](readme.es.md) [�
 
 ## Características
 
-<img src="./resources/readme-pt-br/Features.pt-br.svg" alt="VueTube icon" width="400"/>
+<img src="./resources/readme-pt-br/Features.pt-br.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Temas: Claro, Escuro, OLED, Todas as cores do arco-íris
 - 🖌️ Interface Customizável: Te permite customizar cor de realce e outras partes da interface para remover funções que você não usa!
@@ -36,7 +36,7 @@ Leia isso em outras línguas: [English,](readme.md) [Español,](readme.es.md) [�
 
 ## Instalação
 
-<img src="./resources/readme-pt-br/Install.pt-br.svg" alt="VueTube icon" width="350"/>
+<img src="./resources/readme-pt-br/Install.pt-br.svg" alt="VueTube icon" height="100"/>
 
 Para instalar visite www.vuetube.app/install
 
@@ -59,7 +59,7 @@ Para instalar visite www.vuetube.app/install
 
 ## Planos
 
-<img src="./resources/readme-pt-br/Plans.pt-br.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-pt-br/Plans.pt-br.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Procura Avançada
 - 🗞️ Guardar histórico localmente

@@ -25,7 +25,7 @@
 
 ## 功能
 
-<img src="./resources/readme-zh-hant/Features.zh-hant.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-zh-hant/Features.zh-hant.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 可自定義的主題：燈光、暗黑、OLED、或者是色彩豐富的主題
 - 🖌️ UI：可以完全自定義顏色、以及其他部分的UI以便移除您不使用的功能！
@@ -36,7 +36,7 @@
 
 ## 下載
 
-<img src="./resources/readme-zh-hant/Install.zh-hant.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-zh-hant/Install.zh-hant.svg" alt="VueTube icon" height="100"/>
 
 請訪問 www.vuetube.app/install 來下載 VueTube。
 
@@ -59,7 +59,7 @@
 
 ## 計劃
 
-<img src="./resources/readme-zh-hant/Plans.zh-hant.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-zh-hant/Plans.zh-hant.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 高級搜索功能
 - 🗞️ 本地存儲觀看歷史

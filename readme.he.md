@@ -26,7 +26,7 @@
 ## פיצ'רים \ תכונות
 
   
-<img src="./resources/readme-he/Features.he.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-he/Features.he.svg" alt="VueTube icon" height="100"/>
 
   
   
@@ -39,7 +39,7 @@
 
 ## הורדה והתקנה
 
-<img style="right: 10px;" src="./resources/readme-he/Install.he.svg" alt="VueTube icon" width="300"/>
+<img style="right: 10px;" src="./resources/readme-he/Install.he.svg" alt="VueTube icon" height="100"/>
 
 כדי להתקין, תעברו לאתר הבא:  www.vuetube.app/install
 
@@ -60,7 +60,7 @@
 
 ## תוכניות לעתיד
 
-<img style="float: right;" src="./resources/readme-he/Plans.he.svg" alt="VueTube icon" width="300"/>
+<img style="float: right;" src="./resources/readme-he/Plans.he.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 חיפוש מתקדם
 - 🗞️ שמירת היסטורית הצפייה לוקלית

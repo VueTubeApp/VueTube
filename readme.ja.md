@@ -23,7 +23,7 @@
 
 ## 機能
 
-<img src="resources/readme-ja/Features.ja.svg" alt="VueTube icon" width="300"/>
+<img src="resources/readme-ja/Features.ja.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 テーマ色をカスタマイズする：ライト系、 ダーク系、OLED、などなど
 - 🖌️ UIのカストマイズ：アクセントカラーをはじめ、UIをフルカスタマイズして、使用しない機能を削除できます！
@@ -34,7 +34,7 @@
 
 ## インストール
 
-<img src="./resources/readme-ja/Install.ja.svg" alt="VueTube icon" width="400"/>
+<img src="./resources/readme-ja/Install.ja.svg" alt="VueTube icon" height="100"/>
 
 インストールはこちらからどうぞ: https://vuetube.app/install
 
@@ -57,7 +57,7 @@
 
 ## 計画
 
-<img src="./resources/readme-ja/Plans.ja.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-ja/Plans.ja.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 アドバンストサーチ
 - 🗞️ ウォッチ履歴のローカルストレージ

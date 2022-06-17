@@ -24,7 +24,7 @@ Leer en otros idiomas: [English,](readme.md) [简体中文,](readme.zh-hans.md) 
 
 ## Características
 
-<img src="./resources/readme-es/Features.es.svg" alt="VueTube icon" width="450"/>
+<img src="./resources/readme-es/Features.es.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Temas: Claro, Oscuro, OLED, Todos los colores del arcoíris
 - 🖌️ Interfaz personalizable: ¡Puedes personalizar completamente el color principal, y otras partes de la interfaz para eliminar características que no usas!
@@ -35,7 +35,7 @@ Leer en otros idiomas: [English,](readme.md) [简体中文,](readme.zh-hans.md) 
 
 ## Instalar
 
-<img src="./resources/readme-es/Install.es.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-es/Install.es.svg" alt="VueTube icon" height="100"/>
 
 Para instalar, por favor, visita www.vuetube.app/install
 
@@ -51,7 +51,7 @@ Para instalar, por favor, visita www.vuetube.app/install
 
 ## Planes
 
-<img src="./resources/readme-es/Plans.es.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-es/Plans.es.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Búsqueda avanzada
 - 🗞️ Historial de búsqueda local
