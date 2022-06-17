@@ -46,13 +46,13 @@
 ### 安卓/Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| 有最新的功能，并且经常有可升级的版本，但bug也最常见。 | bug比unstable较少，功能也比stable稍新 | 由于VueTube尚未完成开发，暂时未有Stable版本下载 |
+| 有最新的功能，并且经常有更新，但bug也最常见。 | bug比unstable较少，功能也比stable稍新 | 由于VueTube尚未完成开发，暂时未有Stable版本下载 |
   
 
 ### iOS
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| 有最新的功能，并且经常有可升级的版本，但bug也最常见。 | bug比unstable较少，功能也比stable稍新 | 由于VueTube尚未完成开发，暂时未有Stable版本下载 |
+| 有最新的功能，并且经常有更新，但bug也最常见。 | bug比unstable较少，功能也比stable稍新 | 由于VueTube尚未完成开发，暂时未有Stable版本下载 |
   
 </details>
 

@@ -47,13 +47,13 @@
 ### Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| 有最新的功能，並且經常有可升級的版本。但bug也最常見。 | bug比unstable較少，功能也比stable稍新。 | 由於VueTube尚未完成開發，暫時未有Stable版本下載 |
+| 有最新的功能，並且經常有更新，但bug也最常見。 | bug比unstable較少，功能也比stable稍新。 | 由於VueTube尚未完成開發，暫時未有Stable版本下載 |
   
 
 ### iOS
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| 有最新的功能，並且經常有可升級的版本。但bug也最常見。 | bug比unstable較少，功能也比stable稍新。 | 由於VueTube尚未完成開發，暫時未有Stable版本下載 |
+| 有最新的功能，並且經常有更新，但bug也最常見。 | bug比unstable較少，功能也比stable稍新。 | 由於VueTube尚未完成開發，暫時未有Stable版本下載 |
   
 </details>
 
@@ -101,7 +101,7 @@
 ## 鳴謝 
 
 - 感謝[Twemoji](https://twemoji.twitter.com/)提供的表情符號。授權於[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- 感谢[@afnzmn](https://github.com/afnzmn)提供VueTube徽标
+- 感謝[@afnzmn](https://github.com/afnzmn)提供VueTube標誌
 
 ## 免責聲明
 
