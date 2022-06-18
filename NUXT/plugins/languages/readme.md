@@ -46,4 +46,4 @@ You can’t add a file directly to VueTube repository, but you can do a fork. Th
 
 After you have done everything, go to Pull Requests on VueTube repository and make a new one clicking in “Compare across repositories”. Include a description about what have you changed. A VueTube admin will approve your changes and your translation will be implemented.
 
-<p align="center"> ¡Thank you for being interested on contributing! </p>
+<p align="center"> Thank you for being interested on contributing! </p>
