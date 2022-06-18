@@ -106,6 +106,7 @@ Sila baca di laman sesawang kami tentang bagaimana untuk melakukannya: www.vuetu
 
 - Emoji oleh kumpulan [Twemoji](https://twemoji.twitter.com/), Dilesenkan di bawah [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Logo VueTube oleh [@afnzmn](https://github.com/afnzmn)
+- Data kiraan tidak suka YouTube awam disediakan oleh [Return YouTube Dislike](https://returnyoutubedislike.com)
 
 ## Penafian
 
