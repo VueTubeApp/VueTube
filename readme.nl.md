@@ -106,6 +106,7 @@ Lees op onze website hoe je dit kunt doen: www.vuetube.app/contributing
 
 - Emojis door het [Twemoji team](https://twemoji.twitter.com/), Licentie onder [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - VueTube Logo gemaakt door [@afnzmn](https://github.com/afnzmn)
+- Openbare YouTube dislike gegevens verstrekt door [Return Youtube Dislike](https://returnyoutubedislike.com)
 
 ## Disclamer
 

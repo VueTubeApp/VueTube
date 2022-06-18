@@ -106,6 +106,7 @@ Zapoznaj się z naszą stroną internetową, aby dowiedzieć się, jak to zrobi�
 
 - Emotikony [Twemoji team](https://twemoji.twitter.com/), Licencjonowane w ramach [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - VueTube Logo autorstwa [@afnzmn](https://github.com/afnzmn)
+- Publiczne dane liczby łapek w dół dostarczane przez [Return YouTube Dislike](https://returnyoutubedislike.com).
 
 ## Zastrzeżenie
 
