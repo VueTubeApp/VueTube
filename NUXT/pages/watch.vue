@@ -8,6 +8,7 @@
         ref="player"
         :video="video"
         :sources="sources"
+        :thumbnails="thumbnails"
       />
     </div>
 
@@ -329,6 +330,9 @@ export default {
         this.sources = result.availableResolutions;
         console.log("Video info data", result);
         this.video = result;
+
+        //---   Set Thumbnails   ---//
+        this.thumbnails = result.metadata.contents[2].slimOwnerRenderer.thumbnail.thumbnails;
 
         //---   Content Stuff   ---//
         this.likes = result.metadata.likes.toLocaleString();

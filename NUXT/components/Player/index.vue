@@ -25,7 +25,7 @@
             ? `${$store.state.tweaks.roundTweak / 3}rem ${$store.state.tweaks.roundTweak / 3}rem 0rem 0rem !important`
             : '0',
       }"
-      poster="/LoadingPoster.jpg"
+      :poster="thumbnails[thumbnails.length - 1].url"
       @click="controlsHandler()"
       @loadedmetadata="checkDimensions()"
     />
@@ -282,6 +282,10 @@ export default {
   props: {
     sources: {
       type: Array,
+      required: true,
+    },
+    thumbnails: {
+      type: Object,
       required: true,
     },
     video: {
