@@ -4,7 +4,7 @@
   </a>
   </br>
   <sub>Logo par <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
-  <sub>Traduction Française par <a href="https://github.com/afnzmn">@afnzmn</a> et édité par <a href="https://github.com/FAKlR">@FAKlR</sub>
+  <sub>Traduction Française par <a href="https://github.com/afnzmn">@afnzmn</a> et édité par <a href="https://github.com/FAKlR">@FAKlR</a></sub>
   </br>
   </br>
 <strong>Un simple client vidéo FOSS/SSOBL destiné à recréer TOUTES les fonctionnalités de leurs applications respectives (et plus).
