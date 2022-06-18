@@ -93,6 +93,8 @@ Well this has been thrown around on the Return Youtube Dislike discord server fo
 
 Please read our website on how to do so: www.vuetube.app/contributing
 
+If you want to translate the app, [click here](/NUXT/plugins/languages) and read how to do it
+
 ## Contributors
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
