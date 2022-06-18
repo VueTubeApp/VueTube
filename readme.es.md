@@ -86,6 +86,8 @@ Bueno, esto ha estado en el servidor de Discord de Return YouTube Dislike durant
 
 Por favor, lee en nuestro sitio web cómo hacerlo: www.vuetube.app/contributing
 
+Si quieres traducir la app, [haz clic aquí](/NUXT/plugins/languages) y lee cómo hacerlo
+
 ## Colaboradores
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
