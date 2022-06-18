@@ -9,6 +9,7 @@ module.exports = {
 
   index: {
     connecting: "Conectando",
+    plugins: "Cargando complementos",
     launching: "Iniciando"
   },
 
@@ -78,7 +79,13 @@ module.exports = {
     tagline: "El futuro del streaming de vídeo",
     next: "Siguiente",
     updated: "¡VueTube se ha actualizado!",
-    awesome: "¡Increíble!"
+    awesome: "¡Increíble!",
+    langsetup: "¡Elige un idioma!",
+    featuresetup: "¡Elige algunas funciones!",
+    enableryd: "Activar Return YouTube Dislike",
+    enablespb: "Activar SponsorBlock",
+    thanks: "Gracias por usar VueTube",
+    enjoy: "Esperamos que tengas una buena experiencia"
   }
 
 
