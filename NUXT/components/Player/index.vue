@@ -25,7 +25,7 @@
             ? `${$store.state.tweaks.roundTweak / 3}rem ${$store.state.tweaks.roundTweak / 3}rem 0rem 0rem !important`
             : '0',
       }"
-      poster="https://media.discordapp.net/attachments/970793575153561640/974728851441729556/bam.png"
+      poster="/LoadingPoster.jpg"
       @click="controlsHandler()"
       @loadedmetadata="checkDimensions()"
     />
