@@ -104,7 +104,7 @@
 
 - 感谢[Twemoji](https://twemoji.twitter.com/)提供的表情符号。授权于[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - 感谢[@afnzmn](https://github.com/afnzmn)提供VueTube标志
-
+- 感谢[Return YouTube Dislike](returnyoutubedislike.com)提供的「踩一下」数据
 ## 免责声明
 
 本项目及其内容不隶属于 YouTube、Google LLC 或其任何关联公司和子公司，也不受其资助、授权、认可或以任何方式与之关联。 YouTube的官方网站是：[www.youtube.com](https://www.youtube.com).
