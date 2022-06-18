@@ -105,7 +105,7 @@ Please read our website on how to do so: www.vuetube.app/contributing
 
 - Emojis by the [Twemoji team](https://twemoji.twitter.com/), Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - VueTube Logo by [@afnzmn](https://github.com/afnzmn)
-- Public YouTube dislike data provided by [Return Youtube Dislike](returnyoutubedislike.com)
+- Public YouTube dislike data provided by [Return Youtube Dislike](https://returnyoutubedislike.com)
 ## Disclaimer
 
 The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found at [www.youtube.com](https://www.youtube.com).

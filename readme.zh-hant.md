@@ -102,7 +102,7 @@
 
 - 感謝[Twemoji](https://twemoji.twitter.com/)提供的表情符號。授權於[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - 感謝[@afnzmn](https://github.com/afnzmn)提供VueTube標誌
-- 感謝[Return YouTube Dislike](returnyoutubedislike.com)提供的「不喜歡」數據
+- 感謝[Return YouTube Dislike](https://returnyoutubedislike.com)提供的「不喜歡」數據
 ## 免責聲明
 
 本項目及其內容不隸屬於 YouTube、Google LLC 或其任何關聯公司和子公司，也不受其資助、授權、認可或以任何方式與之關聯。YouTube的官方網站是：[www.youtube.com](https://www.youtube.com).
