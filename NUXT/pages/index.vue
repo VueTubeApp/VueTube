@@ -30,7 +30,12 @@ export default {
     await this.$vuetube.launchBackHandling();
     this.progressMsg = this.$lang("index").launching;
 
-    this.$router.replace('/'+ (localStorage.getItem("startPage") || "home") ); // Prevent user from navigating back to the splash screen
+    if (localStorage.getItem("firstTimeSetupComplete")) {
+      this.$router.replace('/'+ (localStorage.getItem("startPage") || "home") ); // Normal Load
+    } else {
+      this.$router.replace('/activities/install'); // Load Into Setup
+    }
+    
   },
   methods: {
     theming() { return new Promise((resolve) =>
