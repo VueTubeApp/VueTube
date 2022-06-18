@@ -15,17 +15,17 @@ const packs = {
   indonesian: require('./languages/indonesian'),
 }
 
-function module(text, listPacks) {
+function module(subPack, listPacks) {
 
   //---   List All Packs   ---//
   if (listPacks === true) return packs;
 
   //---   Return Language Pack   ---//
   const selectedLanguage = localStorage.getItem("language") || "english";
-  const languagePack = require('./languages/'+selectedLanguage);
+  const languagePack = packs[selectedLanguage];
 
-  if (!text) return languagePack;
-  return languagePack[text];
+  if (!subPack) return languagePack;
+  return languagePack[subPack];
 
 }
 
