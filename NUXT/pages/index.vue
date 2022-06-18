@@ -30,6 +30,8 @@ export default {
     await this.$vuetube.launchBackHandling();
     this.progressMsg = this.$lang("index").launching;
 
+    localStorage.setItem("lastRunVersion", process.env.appVersion)
+
     if (localStorage.getItem("firstTimeSetupComplete")) {
       this.$router.replace('/'+ (localStorage.getItem("startPage") || "home") ); // Normal Load
     } else {
