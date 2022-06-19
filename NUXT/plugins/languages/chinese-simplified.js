@@ -36,7 +36,7 @@ module.exports = {
       dark: "深色",
       black: "黑色",
       darkmode: "黑暗模式",
-      darkmodetagline: "Bravo Six, Going Dark."
+      darkmodetagline: "不要温和地走进那个良夜……"
     },
     tweaks: {
       fullscreen: "全屏",
@@ -73,11 +73,17 @@ module.exports = {
   },
 
   events: {
-    welcome: "欢迎来到 VueTube",
+    welcome: "欢迎使用 VueTube",
     tagline: "流媒体的未来",
-    next: "下一个",
+    next: "下一步",
     updated: "VueTube 已更新！",
-    awesome: "真棒！"
+    awesome: "真棒！",
+    langsetup: "来选择一种语言吧！",
+    featuresetup: "来拣选一些功能吧！",
+    enableryd: "启用 Return YouTube Dislike",
+    enablespb: "启用 SponsorBlock",
+    thanks: "谢谢使用 VueTube",
+    enjoy: "祝你有一个愉快的体验"
   }
 
 
