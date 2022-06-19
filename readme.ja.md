@@ -105,3 +105,4 @@
 - 絵文字は[Twemoji](https://twemoji.twitter.com/)のものを使用しました。ライセンスは[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)です
 - VueTubeのロゴは[@afnzmn](https://github.com/afnzmn)に作ってもらいました
 - 低評価数は[Return Youtube Dislike](https://returnyoutubedislike.com)に提供していただいています
+- AjayとSponsorblockコミュニティはSponsorblock APIを提供していただいています。ライセンスは[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)です
