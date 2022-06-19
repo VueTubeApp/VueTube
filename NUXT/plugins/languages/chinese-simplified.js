@@ -13,7 +13,7 @@ module.exports = {
   },
 
   settings: {
-    general: "一般",
+    general: "常用",
     theme: "主题",
     player: "播放器",
     uitweaker: "界面调整",
