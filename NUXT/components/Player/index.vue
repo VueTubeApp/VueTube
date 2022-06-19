@@ -7,7 +7,7 @@
       down: () => (contain = true),
     }"
     class="d-flex flex-column"
-    style="position: relative"
+    style="position: relative; background-color: black"
     :style="{ height: isFullscreen ? '100vh' : 'auto' }"
   >
     <video
