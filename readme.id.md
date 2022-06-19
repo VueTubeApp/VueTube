@@ -28,7 +28,7 @@ Baca ini di bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简体
 <img src="./resources/readme-id/Features.id.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Tema: Terang, Gelap, OLED, Semua warna yang ada di dunia
-- 🖌️ UI yang bisa di sesuaikan: Kamu bisa menyesuaikan warna aksen, dan bagian UI lainnya untuk menonaktifkan fitur yang tidak anda gunakan!
+- 🖌️ UI yang bisa di sesuaikan: Kamu bisa menyesuaikan warna aksen, dan bagian UI lainnya untuk menonaktifkan fitur yang tidak kamu gunakan!
 - ⬆️ Pembaharuan Otomatis: Kamu akan diberitahu saat pembaharuan baru tersedia & kembali ke versi lama jika kamu tidak menyukainya!
 - 👁️ Perlindungan dari Pelacakan: Tidak ada telemetri (informasi pribadi) yang dikirim dari perangkatmu secara bawaan
 - 📺 Pemutar video custom
@@ -94,6 +94,8 @@ Ide ini telah dilempar di server discord Return Youtube Dislike untuk beberapa w
 
 Silakan baca website kami untuk cara melakukannya: www.vuetube.app/contributing
 
+Jika kamu ingin menerjemahkan aplikasi ini, [klik disini](/NUXT/plugins/languages) dan baca bagaimana cara melakukannya
+
 ## Kontributor
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
@@ -106,7 +108,7 @@ Silakan baca website kami untuk cara melakukannya: www.vuetube.app/contributing
 
 - Emoji oleh [tim Twemoji](https://twemoji.twitter.com/), Dilisensikan dibawah [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Logo VueTube oleh [@afnzmn](https://github.com/afnzmn)
-
+- Data dislike YouTube publik disediakan oleh [Return Youtube Dislike](https://returnyoutubedislike.com)
 ## Peringatan
 
 Proyek VueTube dan isinya tidak beraffiliasi dengan, didanai, diberi izin, didukung oleh, atau dengan cara apapun terkait dengan YouTube, Google LLC atau segala afiliasi dan anak perusahaannya. Website YouTube resmi bisa ditemukan di [www.youtube.com](https://www.youtube.com).
