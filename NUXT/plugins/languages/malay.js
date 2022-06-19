@@ -9,7 +9,7 @@ module.exports = {
 
   index: {
     connecting: "Menyambung",
-    plugins: "Memuatkan Pemalam"
+    plugins: "Memuatkan Pemalam",
     launching: "Memulakan"
   },
 
@@ -78,12 +78,12 @@ module.exports = {
     tagline: "Masa hadapan penstriman video",
     next: "Seterusnya",
     updated: "VueTube telah dikemaskini!",
-    awesome: "Hebat!"
-    langsetup: "Sila pilih bahasa anda"
-    featuresetup: "Sila pilih beberapa ciri"
-    enableryd: "Hidupkan Return YouTube Dislike"
-    enablespb: "Hidupkan SponsorBlock"
-    thanks: "Terima Kasih kerana Menggunakan VueTube"
+    awesome: "Hebat!",
+    langsetup: "Sila pilih bahasa anda",
+    featuresetup: "Sila pilih beberapa ciri",
+    enableryd: "Hidupkan Return YouTube Dislike",
+    enablespb: "Hidupkan SponsorBlock",
+    thanks: "Terima Kasih kerana Menggunakan VueTube",
     enjoy: "Kami harap anda mempunyai yang menakjubkan"
   }
 
