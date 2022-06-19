@@ -137,7 +137,7 @@ export default {
     CapacitorApp.addListener("appUrlOpen", (event) => {
       this.$logger("ExternalURL", event.url);
       // We only push to the route if there is a url present
-      linkParser(event.url);
+      const result = linkParser(event.url);
       if (result) this.$router.push(result.pathname + result.search);
     });
 

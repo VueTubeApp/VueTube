@@ -63,7 +63,7 @@ function linkParser(url) {
   if (url) {
     try {
       const slug = new URL(setHttp(url));
-      const host = slug.hostname.toLowerCase().replace(/^www\./, "");
+      const host = slug.hostname.toLowerCase().replace(/^(www|m)\./, "");
       if (host == "youtube.com") {
         result = slug;
       } else if (host == "youtu.be") {
