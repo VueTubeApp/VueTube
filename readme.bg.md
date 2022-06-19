@@ -105,6 +105,7 @@
 
 - Емоджита от [Twemoji team](https://twemoji.twitter.com/), лицензирани под [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Лого от [@afnzmn](https://github.com/afnzmn)
+- Данните за броя на нехаресванията са предоставени от [Return Youtube Dislike](https://returnyoutubedislike.com/)
 
 ## На вашето внимание
 
