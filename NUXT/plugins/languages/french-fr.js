@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Français FR",
+  name: "Français (France)",
 
   global: {
     home: "Accueil",
@@ -22,7 +22,7 @@ module.exports = {
     updates: "Mises à jour",
     logs: "Journaux",
     about: "À propos",
-    devmode: "Éditeur de registre"
+    devmode: "Éditeur du Registre"
   },
 
   mods: {
@@ -35,8 +35,8 @@ module.exports = {
       custom: "Personnalisé",
       dark: "Sombre",
       black: "Noir",
-      darkmode: "Thème sombre",
-      darkmodetagline: "Mode sombre activé !"
+      darkmode: "Mode Sombre",
+      darkmodetagline: "Bravo pour utiliser le mode sombre !"
     },
     tweaks: {
       fullscreen: "Plein écran",
@@ -52,18 +52,18 @@ module.exports = {
     updates: {
       install: "Installer",
       view: "Voir",
-      latest: "Plus récent",
-      installed: "Installé",
+      latest: "Version plus récente",
+      installed: "Version installée",
     },
     logs: {
       more: "Afficher plus",
     },
     about: {
-      appinformation: "Informations sur l'appli",
-      appversion: "Version de l'appli",
+      appinformation: "Informations sur l'application",
+      appversion: "Version",
       deviceinformation: "Informations sur l'appareil",
-      platform: "Platforme",
-      os: "Système d'exploitation",
+      platform: "Plateforme",
+      os: "Système d'exploitation (OS)",
       model: "Modèle",
       manufacturer: "Fabricant",
       emulator: "Émulateur",
@@ -79,8 +79,8 @@ module.exports = {
     updated: "VueTube a été mis à jour !",
     awesome: "Incroyable !",
     langsetup: "Commençons par sélectionner une langue !",
-    featuresetup: "Sélectionner des fonctionnalités: ",
-    enableryd: "Activer Return YouTube Dislike ",
+    featuresetup: "Sélectionnons des fonctionnalités !",
+    enableryd: "Activer Return YouTube Dislike (Retourner les Dislikes de YouTube)",
     enablespb: "Activer SponsorBlock",
     thanks: "Merci d'utiliser VueTube",
     enjoy: "Nous ésperons que vous apprécierez votre éxperience ! "
