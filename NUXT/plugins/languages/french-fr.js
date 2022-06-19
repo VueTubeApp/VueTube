@@ -77,7 +77,13 @@ module.exports = {
     tagline: "Le futur du streaming vidéo.",
     next: "Suivant",
     updated: "VueTube a été mis à jour !",
-    awesome: "Incroyable !"
+    awesome: "Incroyable !",
+    langsetup: "Commençons par sélectionner une langue !",
+    featuresetup: "Sélectionner des fonctionnalités: ",
+    enableryd: "Activer Return YouTube Dislike ",
+    enablespb: "Activer SponsorBlock",
+    thanks: "Merci d'utiliser VueTube",
+    enjoy: "Nous ésperons que vous apprécierez votre éxperience ! "
   }
 
 
