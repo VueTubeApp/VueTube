@@ -9,6 +9,7 @@ module.exports = {
 
   index: {
     connecting: "Menyambung",
+    plugins: "Memuatkan Pemalam"
     launching: "Memulakan"
   },
 
@@ -22,7 +23,7 @@ module.exports = {
     updates: "Kemaskini",
     logs: "Log",
     about: "Tentang",
-    devmode: "Editor Daftaran"
+    devmode: "Pilihan Pembangun"
   },
 
   mods: {
@@ -32,11 +33,11 @@ module.exports = {
     theme: {
       normal: "Normal",
       adaptive: "Adaptif",
-      custom: "Sesuaikan",
+      custom: "Tersuai",
       dark: "Gelap",
       black: "Hitam",
       darkmode: "Mod Gelap",
-      darkmodetagline: "Bravo Six, Menjadi Gelap."
+      darkmodetagline: "Selamat datang ke sisi gelap, Jedi muda."
     },
     tweaks: {
       fullscreen: "Skrin Penuh",
@@ -78,6 +79,12 @@ module.exports = {
     next: "Seterusnya",
     updated: "VueTube telah dikemaskini!",
     awesome: "Hebat!"
+    langsetup: "Sila pilih bahasa anda"
+    featuresetup: "Sila pilih beberapa ciri"
+    enableryd: "Hidupkan Return YouTube Dislike"
+    enablespb: "Hidupkan SponsorBlock"
+    thanks: "Terima Kasih kerana Menggunakan VueTube"
+    enjoy: "Kami harap anda mempunyai yang menakjubkan"
   }
 
 
