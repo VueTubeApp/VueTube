@@ -31,7 +31,8 @@ Read this in other languages: [English,](readme.md) [Español,](readme.es.md) [�
 - ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
 - 👁️ Tracking Protection: No telemetry is sent from your device by default
 - 📺 Custom video player
-- 👎 Return YouTube Dislike
+- 👎 Return YouTube Dislike - [*More info*](https://returnyoutubedislike.com)
+- 💰 SponsorBlock - [*More info*](https://sponsor.ajay.app)
 
 ## Install
 
