@@ -102,6 +102,8 @@ Si quieres traducir la app, [haz clic aquí](/NUXT/plugins/languages) y lee cóm
 - Emojis por el [equipo de Twemoji](https://twemoji.twitter.com/), Con licencia [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Logo de VueTube por [@afnzmn](https://github.com/afnzmn)
 - Estadísticas públicas de dislikes proporcionadas por [Return YouTube Dislike](https://returnyoutubedislike.com)
+- Ajay y su comunidad por proporcionarnos la [API de Sponsorblock](https://sponsor.ajay.app), Licenciada bajo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 
+
 
 ## Aviso legal
 
