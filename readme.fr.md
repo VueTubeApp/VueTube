@@ -4,10 +4,10 @@
   </a>
   </br>
   <sub>Logo par <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
-  <sub>Traduction Française par <a href="https://github.com/afnzmn">@afnzmn</a> et édité par <a href="https://github.com/FAKlR">@FAKlR</a></sub>
+  <sub>Traduction française par <a href="https://github.com/afnzmn">@afnzmn</a> et éditée par <a href="https://github.com/FAKlR">@FAKlR</a>, <a href="https://github.com/Robotition">@Robotition</a>, <a href="https://github.com/404-Program-not-found">@404-Program-not-found</a> et <a href="https://github.com/Zyborg777">@Zyborg777</a></sub>
   </br>
   </br>
-<strong>Un simple client vidéo FOSS/SSOBL destiné à recréer TOUTES les fonctionnalités de leurs applications respectives (et plus).
+<strong>Un simple client vidéo Open Source destiné à recréer TOUTES les fonctionnalités de leurs applications respectives (et plus).
 </strong>
 </br>
 Prononcé «View Tube»  (<code>/ˈvjuːˌtjuːb/</code>)
@@ -22,39 +22,40 @@ Prononcé «View Tube»  (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Lire ceci dans d’autres langues: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano](readme.it.md)
+Lire cette page dans d’autres langues : [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano](readme.it.md)
 
 ## Fonctionnalités
 
 <img src="./resources/readme-fr/Features.fr.svg" alt="VueTube icon" height="100"/>
 
-- 🎨 Thèmes: Claire, Sombre, Noir, Toutes les couleurs de l'arc-en-ciel
-- 🖌️ Interface Personnalisable: Tu peux personnaliser la couleur de thème, ou désactiver les autres parties de l’interface que tu n'utilises pas!
-- ⬆️ Mises à Jour Automatiques: Étre notifié quand une mise à jour est disponible, et passe à des versions précédentes si tu n'aimes pas!
-- 👁️ Protection de Suivi:  Aucunes télémesures n'est envoyé par ton appareil par défaut
-- 📺 Lecture de Vidéo Personnalisé
-- 👎 Return Youtube Dislike
+- 🎨 Thèmes : Clair, sombre, noir et toutes les couleurs de l'arc-en-ciel !
+- 🖌️ Interface personnalisable : Personnalisez la couleur des thèmes, ou désactivez d'autres parties de l’interface que vous n'utilisez pas
+- ⬆️ Mises à jour automatiques : Recevez une notification quand une mise à jour est disponible, et revenez à des versions antérieures si vous le souhaitez !
+- 👁️ Protection de suivi : Aucune donnée de télémétrie n'est envoyée depuis votre appareil par défaut
+- 📺 Lecteur vidéo personnalisé
+- 👎 Return YouTube Dislike (Retourner les Dislikes de YouTube) - [*Plus d'information*](https://returnyoutubedislike.com)
+- 💰 SponsorBlock - [*Plus d'information*](https://sponsor.ajay.app)
 
 ## Installation
 
 <img src="./resources/readme-fr/Install.fr.svg" alt="VueTube icon" height="100"/>
 
-Pour l’installation, visitez: www.vuetube.app/install
+Pour installer l'application, veuillez visiter [vuetube.app/install](www.vuetube.app/install)
 
 <details>
-  <summary>Ou cliquez ici pour toutes les versions disponibles</summary>
+  <summary>Ou cliquez ici pour voir toutes les versions disponibles</summary>
 <br />
 
 ### Android
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| Beaucoup de bugs, mais vous avez accès anticipé aux nouvelles fonctionnalités | Moins de bugs que Instable, tout en ayant plus de fonctionnalités que Stable | Indisponible pour l'instant |
+| Beaucoup de bugs, mais vous avez accès anticipé aux nouvelles fonctionnalités | Moins de bugs que l'instable, tout en ayant plus de fonctionnalités que la stable | Indisponible pour l'instant |
   
 
 ### iOS
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
-| Beaucoup de bugs, mais vous avez accès anticipé aux nouvelles fonctionnalités | Moins de bugs que Instable, tout en ayant plus de fonctionnalités que Stable | Indisponible pour l'instant |
+| Beaucoup de bugs, mais vous avez accès anticipé aux nouvelles fonctionnalités | Moins de bugs que l'instable, tout en ayant plus de fonctionnalités que la stable | Indisponible pour l'instant |
   
 </details>
 
@@ -62,10 +63,10 @@ Pour l’installation, visitez: www.vuetube.app/install
 
 <img src="./resources/readme-fr/Plans.fr.svg" alt="VueTube icon" height="100"/>
 
-- 🔍 Recherche Avancée
+- 🔍 Recherche avancée
 - 🗞️ Historique de visionnage local
-- ✂️ YouTube Shorts
-- 🧑 Se connecter avec Google
+- ✂️ YouTube Shorts (Courts)
+- 🧑 Connexion avec votre compte Google
 - 🖼️ Mode Image-dans-l'image (PiP)
 - Et plus !
 
@@ -89,11 +90,13 @@ A voir sur notre site web: www.vuetube.app/info/screenshots
 
 ### Pourquoi fais-je ceci ?
 
-Cette idée avait été discuté sur le serveur Discord de Return Youtube Dislike pour quelque temps, alors j'ai pensé que je devrais essayer!
+Ce projet avait été discuté sur le serveur Discord de Return YouTube Dislike pendant quelque temps, alors j'ai pensé que je devrais le lancer !
 
 ### Souhaitez-vous contribuer ?
 
-Rendez-vous sur notre site web pour savoir comment contribuer: www.vuetube.app/contributing
+S'il vous plaît, rendez-vous sur notre site web pour savoir comment le faire : www.vuetube.app/contributing
+
+Si vous voulez traduire l'application, [veuillez cliquer ici](/NUXT/plugins/languages) et lisez les instructions 
 
 ## Contributeurs
 
@@ -110,8 +113,8 @@ Rendez-vous sur notre site web pour savoir comment contribuer: www.vuetube.app/c
 - Données YouTube dislike publiques fournies par [Return Youtube Dislike](https://returnyoutubedislike.com)
 - Ajay et la communauté pour fournir le [Sponsorblock API](https://sponsor.ajay.app), autorisé par [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
-## Avertissement
+## Avis juridique
 
-Le projet VueTube et son contenu ne sont pas affiliés, financés, autorisés, soutenus par, ou associés avec YouTube, Google LLC ou l'un de ses affiliés et subsidiaires. Le site web officiel YouTube peut être consulté sur [www.youtube.com](https://www.youtube.com).
+Le projet VueTube et son contenu ne sont pas affiliés, financés, autorisés, soutenus par, ou associés avec YouTube, Google LLC ou l'un de ses affiliés et subsidiaires. Le site web officiel YouTube peut être consulté sur [youtube.com](https://www.youtube.com).
 
 Toute marque déposée, marque services, nom commercial, ou autre droits de propriété intellectuelle utilisés dans le projet VueTube sont la propriété de leurs propriétaire respectifs.
