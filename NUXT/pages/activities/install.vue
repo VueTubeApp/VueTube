@@ -76,8 +76,8 @@ import language from '~/components/Settings/language.vue';
             this.stage++;
 
             if (!this.$refs["stage"+this.stage]) {
-                localStorage.setItem("lastRunVersion", process.env.appVersion)
-                localStorage.setItem("firstTimeSetupComplete", true)
+                localStorage.setItem("lastRunVersion", process.env.appVersion);
+                localStorage.setItem("firstTimeSetupComplete", true);
                 this.$router.replace('/');
             }
 
