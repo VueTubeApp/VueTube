@@ -21,14 +21,17 @@ export default {
     progressMsg: "...",
   }),
   async mounted() {
-    //---   Update Screen   ---//
-    if (localStorage.getItem("lastRunVersion") != process.env.appVersion ) return this.$router.replace('/activities/update');
-
     //---   Init Stuff   ---//
     this.progressMsg = this.$lang("index").connecting;
     this.$store.commit("tweaks/initTweaks");
 
+    //---   Load Theming   ---//
     await this.theming();
+
+    //---   Update Screen   ---//
+    if (localStorage.getItem("lastRunVersion") != process.env.appVersion ) return this.$router.replace('/activities/update');
+
+    //---   Start Innertube Connection   ---//
     await this.$youtube.getAPI();
     await this.$vuetube.launchBackHandling();
     this.progressMsg = this.$lang("index").launching;
