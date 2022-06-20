@@ -105,6 +105,8 @@ Leggi sul nostro sito come fare: www.vuetube.app/contributing
 
 - Emojis dal [team Twemoji](https://twemoji.twitter.com/), Sotto licenza [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Logo VueTube di [@afnzmn](https://github.com/afnzmn)
+- Dati pubblici sui non mi piace forniti da [Return Youtube Dislike](https://returnyoutubedislike.com)
+- Ajay e la Community per aver fornito [Sponsorblock API](https://sponsor.ajay.app), Sotto licenza [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 
 
 ## Disclaimer
 
