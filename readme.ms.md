@@ -32,7 +32,8 @@ Baca ini dalam bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简
 - ⬆️ Kemaskini Auto: Anda akan dimaklumkan apabila kemas kini tersedia & kembali ke versi lama jika anda tidak menyukainya!
 - 👁️ Perlindungan Penjejak: Tiada telemetri (maklumat peribadi) dihantar daripada peranti anda secara lalai
 - 📺 Pemain video yang boleh disesuaikan 
-- 👎 Return YouTube Dislike: Anda boleh melihat kiraan tidak suka pada hampir semua video
+- 👎 Return YouTube Dislike: [*Maklumat lanjut*](https://returnyoutubedislike.com)
+- 💰SponsorBlock: [*Maklumat lanjut*](https://sponsor.ajay.app)
 
 ## Pasang
 
@@ -94,6 +95,8 @@ Idea ini telah dilontarkan pada pelayan Discord Return YouTube Dislike untuk sek
 
 Sila baca di laman sesawang kami tentang bagaimana untuk melakukannya: www.vuetube.app/contributing
 
+Sekiranya anda mahu menterjemahkan aplikasi ini, klik di [sini](https://github.com/VueTubeApp/VueTube/blob/main/NUXT/plugins/languages) dan baca bagaimana untuk melakukannya 
+
 ## Penyumbang
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
@@ -107,6 +110,7 @@ Sila baca di laman sesawang kami tentang bagaimana untuk melakukannya: www.vuetu
 - Emoji oleh kumpulan [Twemoji](https://twemoji.twitter.com/), Dilesenkan di bawah [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Logo VueTube oleh [@afnzmn](https://github.com/afnzmn)
 - Data kiraan tidak suka YouTube awam disediakan oleh [Return YouTube Dislike](https://returnyoutubedislike.com)
+- Ajay & Komuniti kerana menyediakan [API SponsorBlock](https://sponsor.ajay.app), Dilesenkan di bawah [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## Penafian
 
