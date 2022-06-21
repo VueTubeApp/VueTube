@@ -40,7 +40,7 @@ Lire cette page dans d’autres langues : [English,](readme.md) [Español,](read
 
 <img src="./resources/readme-fr/Install.fr.svg" alt="VueTube icon" height="100"/>
 
-Pour installer l'application, veuillez visiter [vuetube.app/install](www.vuetube.app/install)
+Pour installer l'application, veuillez visiter [vuetube.app/install](https://www.vuetube.app/install)
 
 <details>
   <summary>Ou cliquez ici pour voir toutes les versions disponibles</summary>
@@ -72,7 +72,7 @@ Pour installer l'application, veuillez visiter [vuetube.app/install](www.vuetube
 
 ## Captures d’écran
 
-A voir sur notre site web: www.vuetube.app/info/screenshots
+A voir sur notre site web : [vuetube.app/info/screenshots](https://www.vuetube.app/info/screenshots)
 
 <details>
   <summary> Ou cliquez ici pour voir des captures d’écran </summary>
@@ -94,7 +94,7 @@ Ce projet avait été discuté sur le serveur Discord de Return YouTube Dislike 
 
 ### Souhaitez-vous contribuer ?
 
-S'il vous plaît, rendez-vous sur notre site web pour savoir comment le faire : www.vuetube.app/contributing
+S'il vous plaît, rendez-vous sur notre site web pour savoir comment le faire : [vuetube.app/contributing](https://www.vuetube.app/contributing)
 
 Si vous voulez traduire l'application, [veuillez cliquer ici](/NUXT/plugins/languages) et lisez les instructions 
 
