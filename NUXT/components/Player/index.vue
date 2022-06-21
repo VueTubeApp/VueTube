@@ -3,12 +3,27 @@
   <div
     ref="vidcontainer"
     v-touch="{
-      up: () => (contain = false),
-      down: () => (contain = true),
+      up: () => {
+        if (!isFullscreen) fullscreenHandler(true);
+      },
+      down: () => {
+        if (isFullscreen) fullscreenHandler(true);
+      },
+      right: () => (contain = false),
+      left: () => (contain = true),
     }"
-    class="d-flex flex-column"
+    class="d-flex flex-column black"
     style="position: relative"
-    :style="{ height: isFullscreen ? '100vh' : 'auto' }"
+    :style="{
+      height: isFullscreen ? '100vh' : 'auto',
+      maxHeight: isFullscreen ? '' : '50vh',
+      borderRadius:
+        $store.state.tweaks.roundWatch && !isFullscreen
+          ? `${$store.state.tweaks.roundTweak / 3}rem ${
+              $store.state.tweaks.roundTweak / 3
+            }rem 0rem 0rem !important`
+          : '0',
+    }"
   >
     <video
       ref="player"
@@ -20,16 +35,18 @@
       :class="controls || seeking || skipping ? 'dim' : ''"
       :style="{
         objectFit: contain ? 'contain' : 'cover',
+        maxHeight: isFullscreen ? '' : '50vh',
         borderRadius:
           $store.state.tweaks.roundWatch && !isFullscreen
-            ? `${$store.state.tweaks.roundTweak / 3}rem ${$store.state.tweaks.roundTweak / 3}rem 0rem 0rem !important`
+            ? `${$store.state.tweaks.roundTweak / 3}rem ${
+                $store.state.tweaks.roundTweak / 3
+              }rem 0rem 0rem !important`
             : '0',
       }"
-      :poster="thumbnails[thumbnails.length - 1].url"
-      @click="controlsHandler()"
+      :poster="$youtube.getThumbnail($route.query.v, 'max', [])"
       @loadedmetadata="checkDimensions()"
+      @click="controlsHandler()"
     />
-    <!-- // NOTE: replace poster URL with "none" -->
 
     <!-- // TODO: merge the bottom 2 into 1 reusable component -->
     <v-btn
@@ -131,7 +148,7 @@
           top: 50%;
         "
       >
-        <v-btn fab text color="white" class="px-8" disabled>
+        <v-btn fab text color="white" class="mx-12" disabled>
           <v-icon size="2rem" color="white">mdi-skip-previous</v-icon>
         </v-btn>
         <playpause
@@ -140,7 +157,7 @@
           @play="$refs.player.play()"
           @pause="$refs.player.pause()"
         />
-        <v-btn fab text color="white" class="px-8" disabled>
+        <v-btn fab text color="white" class="mx-12" @click="$router.push(`/watch?v=${recommends.contents[0].videoWithContextRenderer.videoId}`)">
           <v-icon size="2rem" color="white">mdi-skip-next</v-icon>
         </v-btn>
       </div>
@@ -280,17 +297,16 @@ export default {
     loop,
   },
   props: {
+    video: {
+      type: Object,
+      required: true,
+    },
     sources: {
       type: Array,
       required: true,
     },
-    thumbnails: {
-      type: Object,
-      required: true,
-    },
-    video: {
-      type: Object,
-      required: true,
+    recommends: {
+      type: Array,
     },
   },
   data() {
@@ -313,6 +329,7 @@ export default {
   },
   mounted() {
     console.log("sources", this.sources);
+    console.log("recommends", this.recommends);
     this.vidSrc = this.sources[this.sources.length - 1].url;
     let vid = this.$refs.player;
 

@@ -29,7 +29,8 @@ export default {
     await this.theming();
 
     //---   Update Screen   ---//
-    if (localStorage.getItem("lastRunVersion") != process.env.appVersion ) return this.$router.replace('/activities/update');
+    if (localStorage.getItem("lastRunVersion") != process.env.appVersion)
+      return this.$router.replace("/activities/update");
 
     //---   Start Innertube Connection   ---//
     await this.$youtube.getAPI();
@@ -37,47 +38,48 @@ export default {
     this.progressMsg = this.$lang("index").launching;
 
     if (localStorage.getItem("firstTimeSetupComplete")) {
-      this.$router.replace('/'+ (localStorage.getItem("startPage") || "home") ); // Normal Load
+      this.$router.replace("/" + (localStorage.getItem("startPage") || "home")); // Normal Load
     } else {
-      this.$router.replace('/activities/install'); // Load Into Setup
+      this.$router.replace("/activities/install"); // Load Into Setup
     }
-    
   },
   methods: {
-    theming() { return new Promise((resolve) =>
-      // Set timeout is required for $vuetify.theme... dont ask me why -Front
-      setTimeout(() => {
-        this.$vuetify.theme.dark =
-          JSON.parse(localStorage.getItem("darkTheme")) === true;
-        if (localStorage.getItem("primaryDark") != null)
-          this.$vuetify.theme.themes.dark.primary =
-            localStorage.getItem("primaryDark");
-        if (localStorage.getItem("primaryLight") != null)
-          this.$vuetify.theme.themes.light.primary =
-            localStorage.getItem("primaryLight");
-        if (localStorage.getItem("backgroundDark") != null)
-          this.$vuetify.theme.themes.dark.background =
-            localStorage.getItem("backgroundDark");
-        if (localStorage.getItem("backgroundLight") != null)
-          this.$vuetify.theme.themes.light.background =
-            localStorage.getItem("backgroundLight");
+    theming() {
+      return new Promise((resolve) =>
+        // Set timeout is required for $vuetify.theme... dont ask me why -Front
+        setTimeout(() => {
+          this.$vuetify.theme.dark =
+            JSON.parse(localStorage.getItem("darkTheme")) === true;
+          if (localStorage.getItem("primaryDark") != null)
+            this.$vuetify.theme.themes.dark.primary =
+              localStorage.getItem("primaryDark");
+          if (localStorage.getItem("primaryLight") != null)
+            this.$vuetify.theme.themes.light.primary =
+              localStorage.getItem("primaryLight");
+          if (localStorage.getItem("backgroundDark") != null)
+            this.$vuetify.theme.themes.dark.background =
+              localStorage.getItem("backgroundDark");
+          if (localStorage.getItem("backgroundLight") != null)
+            this.$vuetify.theme.themes.light.background =
+              localStorage.getItem("backgroundLight");
 
-        this.$vuetube.navigationBar.setTheme(
-          this.$vuetify.theme.currentTheme.background,
-          !this.$vuetify.theme.dark
-        );
-        this.$vuetube.statusBar.setTheme(
-          this.$vuetify.theme.currentTheme.background,
-          this.$vuetify.theme.dark
-        );
+          this.$vuetube.navigationBar.setTheme(
+            this.$vuetify.theme.currentTheme.background,
+            !this.$vuetify.theme.dark
+          );
+          this.$vuetube.statusBar.setTheme(
+            this.$vuetify.theme.currentTheme.background,
+            this.$vuetify.theme.dark
+          );
 
-        // this.$vuetube.navigationBar.setTransparent();
-        // this.$vuetube.statusBar.setTransparent();
-        resolve();
-      }, 0)
-    )}
-  }
-}
+          // this.$vuetube.navigationBar.setTransparent();
+          // this.$vuetube.statusBar.setTransparent();
+          resolve();
+        }, 0)
+      );
+    },
+  },
+};
 </script>
 
 <style>
