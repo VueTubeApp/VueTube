@@ -2,9 +2,12 @@ module.exports = {
   name: "தமிழ்",
 
   global: {
-    home: "வீடு",
+    home: "ஹோம்",
     subscriptions: "ஸப்ஸ்க்ரிப்ஶந",
     library: "லாஇப்ரேரீ",
+    restart: "இப்போது மறுதொடக்கம்",
+    later: "பிறகு",
+    settingRestart: "இந்த அமைப்பை மாற்ற, அமைப்புகளைப் பயன்படுத்த, ஆப்ஸ மறுதொடக்கம் செய்ய வேண்டும்"
   },
 
   index: {
@@ -32,7 +35,7 @@ module.exports = {
     theme: {
       normal: "சாதாரண",
       adaptive: "தகவமைப்பு ",
-      custom: "புதிய",
+      custom: "கஸ்டம் ",
       dark: "இருள்",
       black: "கருப்பு",
       darkmode: "இருள் அமைப்பு",
