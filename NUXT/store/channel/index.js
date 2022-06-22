@@ -52,8 +52,10 @@ export const actions = {
         const featuredSection =
           channel.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.content.sectionListRenderer.contents.find(
             (i) => {
-              return Boolean(i?.shelfRenderer?.content?.horizontalListRenderer
-                ?.items[0].gridChannelRenderer);
+              return Boolean(
+                i?.shelfRenderer?.content?.horizontalListRenderer?.items[0]
+                  .gridChannelRenderer
+              );
             }
           );
         state.featuredChannels =
