@@ -4,7 +4,10 @@ module.exports = {
     global: {
       home: "Acasă",
       subscriptions: "Abonamente",
-      library: "Bibliotecă"
+      library: "Bibliotecă",
+      restart: "Repornește acum",
+      later: "Mai tărziu",
+      settingRestart: "Modificarea acestei setări necesită repornirea aplicației pentru ca setările să fie aplicate."
     },
   
     index: {
