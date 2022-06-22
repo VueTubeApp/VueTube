@@ -39,7 +39,7 @@
           <v-btn @click="openExternal(item)" class="background">
             <v-icon class="btn-icon">mdi-github</v-icon>{{ lang.view }}
           </v-btn>
-          <v-btn disabled @click="install(item)">
+          <v-btn @click="install(item, index)">
             <v-icon class="btn-icon">mdi-download</v-icon>{{ lang.install }}
           </v-btn>
         </v-card-actions>
@@ -101,10 +101,8 @@ export default {
       });
     },
 
-    install(item) {
-      this.$vuetube.getRuns(item, (data) => {
-        console.log(data);
-      });
+    install(item, index) {
+      this.$router.push(`/activities/packageInstaller?v=${index}`)
     },
   },
 };
