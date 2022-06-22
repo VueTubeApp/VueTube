@@ -12,7 +12,7 @@
           <span
             class="subtitle background--text"
             :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-            v-text="`• ${ new Date(item.published_at).toLocaleString() }`"
+            v-text="`• ${new Date(item.published_at).toLocaleString()}`"
           />
         </v-card-title>
 
@@ -90,7 +90,6 @@ export default {
   },
   async mounted() {
     this.releases = await this.$vuetube.releases;
-    
 
     this.lang = this.$lang("mods").updates;
   },
