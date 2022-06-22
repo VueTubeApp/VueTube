@@ -5,6 +5,9 @@ module.exports = {
     home: "Accueil",
     subscriptions: "Abonnements",
     library: "Bibliothèque",
+    restart: "Redémarrer maintenant",
+    later: "Plus tard",
+    settingRestart: "Redémarrage nécessaire pour appliquer le changement."
   },
 
   index: {
@@ -13,10 +16,10 @@ module.exports = {
   },
 
   settings: {
-    general: "Paramètres Généraux",
+    general: "Paramètres généraux",
     theme: "Thème",
     player: "Lecteur vidéo",
-    uitweaker: "Personnalisation de l'Interface",
+    uitweaker: "Personnalisation de l'interface",
     startupoptions: "Options de démarrage",
     plugins: "Plug-ins",
     updates: "Mises à jour",
