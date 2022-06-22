@@ -73,8 +73,6 @@
 </style>
 
 <script>
-import { Browser } from "@capacitor/browser";
-
 export default {
   computed: {
     roundTweak() {
@@ -95,14 +93,12 @@ export default {
     this.lang = this.$lang("mods").updates;
   },
   methods: {
-    async openExternal(item) {
-      await Browser.open({
-        url: item.html_url,
-      });
+    openExternal(item) {
+      this.$vuetube.openExternal(item.html_url,);
     },
 
     install(item, index) {
-      this.$router.push(`/activities/packageInstaller?v=${index}`)
+      this.$router.push(`/activities/packageInstaller?v=${index}`);
     },
   },
 };

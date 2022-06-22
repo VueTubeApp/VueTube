@@ -18,6 +18,12 @@ Vue.directive("emoji", {
 let backActions;
 
 const module = {
+
+  //---   Open External / Open In Browser   ---//
+  openExternal(url) {
+    window.open(url, '_blank');
+  },
+
   //---   Get GitHub Commits   ---//
   releases: new Promise((resolve, reject) => {
     Http.request({

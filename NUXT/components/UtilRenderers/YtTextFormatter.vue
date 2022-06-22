@@ -43,7 +43,6 @@
 </template>
 
 <script>
-import { Browser } from "@capacitor/browser";
 export default {
   props: {
     textRuns: {
@@ -52,8 +51,8 @@ export default {
     },
   },
   methods: {
-    async openExternal(url) {
-      await Browser.open({ url: url });
+    openExternal(url) {
+      this.$vuetube.openExternal(url);
     },
     async openInternal(url) {
       await this.$router.push(url);

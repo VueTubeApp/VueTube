@@ -88,7 +88,6 @@
 </template>
 
 <script>
-import { Browser } from "@capacitor/browser";
 import { Device } from "@capacitor/device";
 
 export default {
@@ -113,8 +112,8 @@ export default {
     this.lang = this.$lang().mods.about;
   },
   methods: {
-    async openExternal(url) {
-      await Browser.open({ url: url });
+    openExternal(url) {
+      this.$vuetube.openExternal(url);
     },
   },
 };

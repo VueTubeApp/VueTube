@@ -67,8 +67,8 @@
 
     methods: {
         dl(item) {
-            console.log(item.download_url)
-            window.open(item.download_url, '_blank');
+          window.open(item.download_url, '_blank');
+          this.$router.push(`/mods/updates`);
         }
     }
 
