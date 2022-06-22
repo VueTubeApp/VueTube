@@ -8,6 +8,7 @@
 export default {
   //---   VueTube Stuff   ---//
   env: {
+    release: "Unstable",
     appVersion: "dev-local",
   },
 
