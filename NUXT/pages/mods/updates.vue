@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-list-item v-for="(item, index) in commits" :key="index" class="my-1">
+    <v-list-item v-for="(item, index) in releases" :key="index" class="my-1">
       <v-card
         flat
         class="card my-2 background"
@@ -8,21 +8,16 @@
         :style="{ borderRadius: `${roundTweak / 2}rem` }"
       >
         <v-card-title style="padding: 0 0.25em 0 0.75em">
-          {{ item.author ? item.author.login : item.commit.author.name }}
+          {{ item.tag_name }}
           <span
             class="subtitle background--text"
             :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-            v-text="`• ${item.sha.substring(0, 7)}`"
+            v-text="`• ${ new Date(item.published_at).toLocaleString() }`"
           />
         </v-card-title>
 
         <div style="margin-left: 1em">
-          <div
-            class="date background--text"
-            :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-            v-text="new Date(item.commit.committer.date).toLocaleString()"
-          />
-          {{ item.commit.message }}
+          {{ item.body }}
         </div>
 
         <v-card-actions>
@@ -34,7 +29,7 @@
             >{{ lang.latest }}</v-chip
           >
           <v-chip
-            v-if="item.sha == installedVersion"
+            v-if="item == installedVersion"
             class="tags"
             color="green"
             style="border-radius: 0.5rem; border: 2px var(--v-green-base)"
@@ -88,19 +83,14 @@ export default {
   },
   data() {
     return {
-      commits: new Array(),
+      releases: new Array(),
       installedVersion: process.env.appVersion,
       lang: {},
     };
   },
   async mounted() {
-    const commits = await this.$vuetube.commits;
-    if (commits[0].sha) {
-      //If Commit Valid
-      this.commits = commits;
-    } else {
-      console.log(commits);
-    }
+    this.releases = await this.$vuetube.releases;
+    
 
     this.lang = this.$lang("mods").updates;
   },
