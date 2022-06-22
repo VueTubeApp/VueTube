@@ -5,6 +5,9 @@ module.exports = {
     home: "首页",
     subscriptions: "订阅内容",
     library: "媒体库",
+    restart: "重新启动",
+    later: "稍后",
+    settingRestart: "修改后的设置需要重新启动应用程序才会生效。"
   },
 
   index: {

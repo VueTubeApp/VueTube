@@ -5,6 +5,9 @@ module.exports = {
     home: "主頁",
     subscriptions: "訂閲項目",
     library: "媒體庫",
+    restart: "重新啟動",
+    later: "稍後",
+    settingRestart: "更改後的設定需要重新啟動應用程式才會生效。"
   },
 
   index: {
