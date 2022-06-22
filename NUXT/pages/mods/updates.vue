@@ -26,8 +26,20 @@
         </div>
 
         <v-card-actions>
-          <v-chip v-if="index == 0" class="tags" color="orange" style="border-radius: 0.5rem; border: 2px var(--v-orange-base)">{{ lang.latest }}</v-chip>
-          <v-chip v-if="item.sha == installedVersion" class="tags" color="green" style="border-radius: 0.5rem; border: 2px var(--v-green-base)">{{ lang.installed }}</v-chip>
+          <v-chip
+            v-if="index == 0"
+            class="tags"
+            color="orange"
+            style="border-radius: 0.5rem; border: 2px var(--v-orange-base)"
+            >{{ lang.latest }}</v-chip
+          >
+          <v-chip
+            v-if="item.sha == installedVersion"
+            class="tags"
+            color="green"
+            style="border-radius: 0.5rem; border: 2px var(--v-green-base)"
+            >{{ lang.installed }}</v-chip
+          >
           <v-spacer />
           <v-btn @click="openExternal(item)" class="background">
             <v-icon class="btn-icon">mdi-github</v-icon>{{ lang.view }}
@@ -78,7 +90,7 @@ export default {
     return {
       commits: new Array(),
       installedVersion: process.env.appVersion,
-      lang: {}
+      lang: {},
     };
   },
   async mounted() {

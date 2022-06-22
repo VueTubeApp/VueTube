@@ -21,41 +21,41 @@
 </p>
 
 לקרוא בשפות אחרות: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano](readme.it.md)
+
 <div style="float: right; right: 5px;">
   
 ## פיצ'רים \ תכונות
 
-  
 <img src="./resources/readme-he/Features.he.svg" alt="VueTube icon" height="100"/>
 
-  
-  
-
--  🎨 סטיילים: בהיר, קהה, אולד, וכל צבהי הקשת
--  🖌️ ממשק משתמש ניתן להתאמה אישית: אפשר גם להוריד את מה שאתם לא צריכים!
--  ⬆️ עדכונים אוטומטים, אפשר לשנות גרסה בחופשיות
--  👁️ הגנת מעקב: כברירת מחדל לא נשלח מידע ממכשירך
--  👎 מחזיר את הדיסלייק ביוטיוב
+- 🎨 סטיילים: בהיר, קהה, אולד, וכל צבהי הקשת
+- 🖌️ ממשק משתמש ניתן להתאמה אישית: אפשר גם להוריד את מה שאתם לא צריכים!
+- ⬆️ עדכונים אוטומטים, אפשר לשנות גרסה בחופשיות
+- 👁️ הגנת מעקב: כברירת מחדל לא נשלח מידע ממכשירך
+- 👎 מחזיר את הדיסלייק ביוטיוב
 
 ## הורדה והתקנה
 
 <img style="right: 10px;" src="./resources/readme-he/Install.he.svg" alt="VueTube icon" height="100"/>
 
-כדי להתקין, תעברו לאתר הבא:  www.vuetube.app/install
+כדי להתקין, תעברו לאתר הבא: www.vuetube.app/install
 
 <details style="float: right;">
   <summary>או תלחצו פה כדי לראות את כל הגרסאות ה</summary>
 <br />
 
 ### Android
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| הרבה באגים, אבל אפשר לנסות פיצ'רים חדשים | פחות באגים, ויותר פיצ'רים מגרסה היציבה | לא ניתנה להורדה עד שהאפליקציה תהיה יותר מוכנה  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| הרבה באגים, אבל אפשר לנסות פיצ'רים חדשים                                                                                                    | פחות באגים, ויותר פיצ'רים מגרסה היציבה                                                                                                                          | לא ניתנה להורדה עד שהאפליקציה תהיה יותר מוכנה                                                   |
 
 ### iOS
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| הרבה באגים, אבל אפשר לנסות פיצ'רים חדשים | פחות באגים, ויותר פיצ'רים מגרסה היציבה | לא ניתנה להורדה עד שהאפליקציה תהיה יותר מוכנה    
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| הרבה באגים, אבל אפשר לנסות פיצ'רים חדשים                                                                                                | פחות באגים, ויותר פיצ'רים מגרסה היציבה                                                                                                                                         | לא ניתנה להורדה עד שהאפליקציה תהיה יותר מוכנה                                                   |
+
 </details>
 
 ## תוכניות לעתיד
@@ -69,8 +69,6 @@
 - 🖼️ מודה של תמונה-בתוך-תמונה
 - ועוד!
 
-  
-  
 ## צילומי מסך
 
 בקרו באתרינו: www.vuetube.app/info/screenshots
@@ -93,15 +91,13 @@
 ### מדוע בנינו את זה?
 
 היה דיבור על לבנות משהו כזה בשרת דיסקורד של "החזרו את הדיסלייק ביוטיוב" / "Return Youtube Dislike" כבר די הרבה זמן, אז חשבתי לנסות!
-  
-  
+
 ### רוצה לעזור?
 
 תקרא\י את הדרך לתרום לנו פה: www.vuetube.app/contributing
 
 ## תורמים
 
-  
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
 </a>
@@ -118,4 +114,5 @@
 The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found at [www.youtube.com](https://www.youtube.com).
 
 Any trademark, service mark, trade name, or other intellectual property rights used in the VueTube project are owned by the respective owners.
+
 </div>

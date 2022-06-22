@@ -157,7 +157,17 @@
           @play="$refs.player.play()"
           @pause="$refs.player.pause()"
         />
-        <v-btn fab text color="white" class="mx-12" @click="$router.push(`/watch?v=${recommends.contents[0].videoWithContextRenderer.videoId}`)">
+        <v-btn
+          fab
+          text
+          color="white"
+          class="mx-12"
+          @click="
+            $router.push(
+              `/watch?v=${recommends.contents[0].videoWithContextRenderer.videoId}`
+            )
+          "
+        >
           <v-icon size="2rem" color="white">mdi-skip-next</v-icon>
         </v-btn>
       </div>

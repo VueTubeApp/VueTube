@@ -45,16 +45,17 @@ Untuk menginstal aplikasi silahkan kunjungi www.vuetube.app/install
 <br />
 
 ### Android
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Banyak bug, tetapi akses awal ke fitur baru | Lebih sedikit bug dari unstable, sedikit lebih banyak fitur dari stable | Belum tersedia sampai aplikasi dikembangkan lebih jauh |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Banyak bug, tetapi akses awal ke fitur baru                                                                                                 | Lebih sedikit bug dari unstable, sedikit lebih banyak fitur dari stable                                                                                         | Belum tersedia sampai aplikasi dikembangkan lebih jauh                                          |
 
 ### iOS
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Banyak bug, tetapi akses awal ke fitur baru | Lebih sedikit bug dari unstable, sedikit lebih banyak fitur dari stable | Belum tersedia sampai aplikasi dikembangkan lebih jauh |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| Banyak bug, tetapi akses awal ke fitur baru                                                                                             | Lebih sedikit bug dari unstable, sedikit lebih banyak fitur dari stable                                                                                                        | Belum tersedia sampai aplikasi dikembangkan lebih jauh                                          |
+
 </details>
 
 ## Rencana
@@ -65,7 +66,7 @@ Untuk menginstal aplikasi silahkan kunjungi www.vuetube.app/install
 - 🗞️ Simpan riwayat tontonan secara lokal (di perangkatmu)
 - ✂️ Shorts
 - 🧑 Masuk dengan akun Google
-- 🖼️ Mode picture-in-picture 
+- 🖼️ Mode picture-in-picture
 - Dan masih banyak lagi!
 
 ## Screenshot aplikasi
@@ -109,6 +110,7 @@ Jika kamu ingin menerjemahkan aplikasi ini, [klik disini](/NUXT/plugins/language
 - Emoji oleh [tim Twemoji](https://twemoji.twitter.com/), Dilisensikan dibawah [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Logo VueTube oleh [@afnzmn](https://github.com/afnzmn)
 - Data dislike YouTube publik disediakan oleh [Return Youtube Dislike](https://returnyoutubedislike.com)
+
 ## Peringatan
 
 Proyek VueTube dan isinya tidak beraffiliasi dengan, didanai, diberi izin, didukung oleh, atau dengan cara apapun terkait dengan YouTube, Google LLC atau segala afiliasi dan anak perusahaannya. Website YouTube resmi bisa ditemukan di [www.youtube.com](https://www.youtube.com).

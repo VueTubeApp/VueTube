@@ -4,12 +4,12 @@ module.exports = {
   global: {
     home: "Beranda",
     subscriptions: "Subscription",
-    library: "Koleksi"
+    library: "Koleksi",
   },
 
   index: {
     connecting: "Menghubungkan",
-    launching: "Meluncurkan"
+    launching: "Meluncurkan",
   },
 
   settings: {
@@ -22,12 +22,12 @@ module.exports = {
     updates: "Pembaharuan",
     logs: "Log",
     about: "Tentang",
-    devmode: "Editor Registri"
+    devmode: "Editor Registri",
   },
 
   mods: {
     general: {
-      language: "Bahasa"
+      language: "Bahasa",
     },
     theme: {
       normal: "Normal",
@@ -36,7 +36,7 @@ module.exports = {
       dark: "Gelap",
       black: "Hitam",
       darkmode: "Mode Gelap",
-      darkmodetagline: "Kegelapan menunggu di sisi lain."
+      darkmodetagline: "Kegelapan menunggu di sisi lain.",
     },
     tweaks: {
       fullscreen: "Layar Penuh",
@@ -44,19 +44,19 @@ module.exports = {
       roundedcorners: "Sudut Bulat",
       roundthumbnails: "Thumbnail Bulat",
       roundwatchpagecomponents: "Komponen Halaman Tontonan Bulat",
-      radius: "Radius"
+      radius: "Radius",
     },
     startup: {
-      defaultpage: "Halaman Bawaan"
+      defaultpage: "Halaman Bawaan",
     },
     updates: {
       install: "Instal",
       view: "Lihat",
       latest: "Terbaru",
-      installed: "Terinstal"
+      installed: "Terinstal",
     },
     logs: {
-      more: "Lebih"
+      more: "Lebih",
     },
     about: {
       appinformation: "Informasi Aplikasi",
@@ -68,8 +68,8 @@ module.exports = {
       manufacturer: "Pembuat",
       emulator: "Emulator",
       github: "GitHub",
-      discord: "Discord"
-    }
+      discord: "Discord",
+    },
   },
 
   events: {
@@ -77,8 +77,6 @@ module.exports = {
     tagline: "Masa depan video streaming",
     next: "Lanjut",
     updated: "VueTube Diperbaharui!",
-    awesome: "Luar Biasa!"
-  }
-
-
-}
+    awesome: "Luar Biasa!",
+  },
+};

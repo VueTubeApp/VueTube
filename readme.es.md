@@ -31,8 +31,8 @@ Leer en otros idiomas: [English,](readme.md) [Español,](readme.es.md) [简体�
 - ⬆️ Actualizaciones automáticas: ¡Recibe una notificación cuando haya una actualización disponible y baja de versión si no te gusta!
 - 👁️ Protección contra el rastreo: No se envían datos desde tu dispositivo por defecto
 - 📺 Reproductor de vídeo personalizado
-- 👎 Return YouTube Dislike - [*Más información*](https://returnyoutubedislike.com)
-- 💰 SponsorBlock - [*Más información*](https://sponsor.ajay.app)
+- 👎 Return YouTube Dislike - [_Más información_](https://returnyoutubedislike.com)
+- 💰 SponsorBlock - [_Más información_](https://sponsor.ajay.app)
 
 ## Instalar
 
@@ -102,8 +102,7 @@ Si quieres traducir la app, [haz clic aquí](/NUXT/plugins/languages) y lee cóm
 - Emojis por el [equipo de Twemoji](https://twemoji.twitter.com/), Con licencia [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Logo de VueTube por [@afnzmn](https://github.com/afnzmn)
 - Estadísticas públicas de dislikes proporcionadas por [Return YouTube Dislike](https://returnyoutubedislike.com)
-- Ajay y su comunidad por proporcionarnos la [API de Sponsorblock](https://sponsor.ajay.app), Licenciada bajo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 
-
+- Ajay y su comunidad por proporcionarnos la [API de Sponsorblock](https://sponsor.ajay.app), Licenciada bajo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## Aviso legal
 

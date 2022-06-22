@@ -31,8 +31,8 @@ Read this in other languages: [English,](readme.md) [Español,](readme.es.md) [�
 - ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
 - 👁️ Tracking Protection: No telemetry is sent from your device by default
 - 📺 Custom video player
-- 👎 Return YouTube Dislike - [*More info*](https://returnyoutubedislike.com)
-- 💰 SponsorBlock - [*More info*](https://sponsor.ajay.app)
+- 👎 Return YouTube Dislike - [_More info_](https://returnyoutubedislike.com)
+- 💰 SponsorBlock - [_More info_](https://sponsor.ajay.app)
 
 ## Install
 
@@ -45,16 +45,17 @@ To install please visit www.vuetube.app/install
 <br />
 
 ### Android
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| A lot of bugs, but early access to features                                                                                                 | Less bugs than unstable, slightly more features than stable                                                                                                     | Not available until the app becomes more developed                                              |
 
 ### iOS
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| A lot of bugs, but early access to features | Less bugs than unstable, slightly more features than stable | Not available until the app becomes more developed |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| A lot of bugs, but early access to features                                                                                             | Less bugs than unstable, slightly more features than stable                                                                                                                    | Not available until the app becomes more developed                                              |
+
 </details>
 
 ## Plans
@@ -109,7 +110,7 @@ If you want to translate the app, [click here](/NUXT/plugins/languages) and read
 - Emojis by the [Twemoji team](https://twemoji.twitter.com/), Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - VueTube Logo by [@afnzmn](https://github.com/afnzmn)
 - Public YouTube dislike data provided by [Return Youtube Dislike](https://returnyoutubedislike.com)
-- Ajay & Community for providing the [Sponsorblock API](https://sponsor.ajay.app), Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 
+- Ajay & Community for providing the [Sponsorblock API](https://sponsor.ajay.app), Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## Disclaimer
 

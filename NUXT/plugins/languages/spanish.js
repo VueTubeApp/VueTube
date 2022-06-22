@@ -4,13 +4,13 @@ module.exports = {
   global: {
     home: "Inicio",
     subscriptions: "Suscripciones",
-    library: "Librería"
+    library: "Librería",
   },
 
   index: {
     connecting: "Conectando",
     plugins: "Cargando complementos",
-    launching: "Iniciando"
+    launching: "Iniciando",
   },
 
   settings: {
@@ -23,12 +23,12 @@ module.exports = {
     updates: "Actualizaciones",
     logs: "Logs",
     about: "Acerca de",
-    devmode: "Editor del registro"
+    devmode: "Editor del registro",
   },
 
   mods: {
     general: {
-      language: "Idioma"
+      language: "Idioma",
     },
     theme: {
       normal: "Normal",
@@ -37,7 +37,7 @@ module.exports = {
       dark: "Oscuro",
       black: "Negro",
       darkmode: "Modo oscuro",
-      darkmodetagline: "Bravo Six, haciéndote oscuro."
+      darkmodetagline: "Bravo Six, haciéndote oscuro.",
     },
     tweaks: {
       fullscreen: "Pantalla completa",
@@ -45,21 +45,21 @@ module.exports = {
       roundedcorners: "Esquinas redondeadas",
       roundthumbnails: "Redondear miniaturas",
       roundwatchpagecomponents: "Redondear componentes del vídeo",
-      radius: "Radio"
+      radius: "Radio",
     },
     startup: {
-      defaultpage: "Pagina predeterminada"
+      defaultpage: "Pagina predeterminada",
     },
     updates: {
       install: "Instalar",
       view: "Ver",
       latest: "Última",
-      installed: "Instalada"
+      installed: "Instalada",
     },
     logs: {
-      more: "Más"
+      more: "Más",
     },
-    
+
     about: {
       appinformation: "Información de la app",
       appversion: "Versión de la app",
@@ -70,8 +70,8 @@ module.exports = {
       manufacturer: "Fabricante",
       emulator: "Emulador",
       github: "GitHub",
-      discord: "Discord"
-    }
+      discord: "Discord",
+    },
   },
 
   events: {
@@ -85,8 +85,6 @@ module.exports = {
     enableryd: "Activar Return YouTube Dislike",
     enablespb: "Activar SponsorBlock",
     thanks: "Gracias por usar VueTube",
-    enjoy: "Esperamos que tengas una buena experiencia"
-  }
-
-
-}
+    enjoy: "Esperamos que tengas una buena experiencia",
+  },
+};

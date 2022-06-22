@@ -305,9 +305,11 @@ class Innertube {
       response.data.output?.playabilityStatus?.status == ("ERROR" || undefined)
     )
       throw new Error(
-        `Could not get information for video: ${response.status_code ||
-        response.data.output?.playabilityStatus?.status
-        } - ${response.message || response.data.output?.playabilityStatus?.reason
+        `Could not get information for video: ${
+          response.status_code ||
+          response.data.output?.playabilityStatus?.status
+        } - ${
+          response.message || response.data.output?.playabilityStatus?.reason
         }`
       );
     const responseInfo = response.data.output;

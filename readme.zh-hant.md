@@ -22,7 +22,6 @@
 
 其他語言版本：[English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano](readme.it.md)
 
-
 ## 功能
 
 <img src="./resources/readme-zh-hant/Features.zh-hant.svg" alt="VueTube icon" height="100"/>
@@ -30,9 +29,9 @@
 - 🎨 可自訂的主題：明亮、黑暗、OLED、或者從彩虹中的任何顏色選擇！
 - 🖌️ 使用者介面：完全自訂強調色、以及介面的其他部分以便移除您不使用的功能！
 - ⬆️ 自動更新：有新版本可用時接收通知，如果您不喜歡也可以撤銷更新！
-- 👁️ 追蹤阻斷：VueTube預設不會傳送任何跟蹤數據
-- 📺 自家製的HTML5影片播放器
-- 👎 利用Return Youtube Dislikes的API帶回YouTube的「不喜歡」數據 — [更多信息](https://www.returnyoutubedislike.com/)
+- 👁️ 追蹤阻斷：VueTube 預設不會傳送任何跟蹤數據
+- 📺 自家製的 HTML5 影片播放器
+- 👎 利用 Return Youtube Dislikes 的 API 帶回 YouTube 的「不喜歡」數據 — [更多信息](https://www.returnyoutubedislike.com/)
 - 💰 SponsorBlock — [更多信息](https://sponsor.ajay.app/)
 
 ## 下載
@@ -46,16 +45,17 @@
 <br />
 
 ### Android
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| 有最新的功能，並且經常有更新，但bug也最常見。 | bug比unstable較少，功能也比stable稍新。 | 由於VueTube尚未完成開發，暫時未有Stable版本下載 |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| 有最新的功能，並且經常有更新，但 bug 也最常見。                                                                                             | bug 比 unstable 較少，功能也比 stable 稍新。                                                                                                                    | 由於 VueTube 尚未完成開發，暫時未有 Stable 版本下載                                             |
 
 ### iOS
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| 有最新的功能，並且經常有更新，但bug也最常見。 | bug比unstable較少，功能也比stable稍新。 | 由於VueTube尚未完成開發，暫時未有Stable版本下載 |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| 有最新的功能，並且經常有更新，但 bug 也最常見。                                                                                         | bug 比 unstable 較少，功能也比 stable 稍新。                                                                                                                                   | 由於 VueTube 尚未完成開發，暫時未有 Stable 版本下載                                             |
+
 </details>
 
 ## 未來計劃
@@ -65,7 +65,7 @@
 - 🔍 進階搜尋功能
 - 🗞️ 本地儲存觀看記錄
 - ✂️ Shorts
-- 🧑 Google帳戶登入
+- 🧑 Google 帳戶登入
 - 🖼️ 畫中畫模式
 - 以及更多！
 
@@ -91,7 +91,7 @@
 
 請移至我們的網站查閲提交代碼指南：www.vuetube.app/contributing
 
-## 貢獻者 
+## 貢獻者
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
@@ -99,15 +99,16 @@
 
 <sub>使用[contrib.rocks](https://contrib.rocks)製作。</sub>
 
-## 鳴謝 
+## 鳴謝
 
 - 感謝[Twemoji](https://twemoji.twitter.com/)提供的表情符號。授權於[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- 感謝[@afnzmn](https://github.com/afnzmn)提供VueTube標誌
+- 感謝[@afnzmn](https://github.com/afnzmn)提供 VueTube 標誌
 - 感謝[Return YouTube Dislike](https://returnyoutubedislike.com)提供的「不喜歡」數據
-- 感謝Ajay和Sponsorblock社群提供[Sponsorblock的API](http://sponsorblock.ajay.app/)。授權於[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 
+- 感謝 Ajay 和 Sponsorblock 社群提供[Sponsorblock 的 API](http://sponsorblock.ajay.app/)。授權於[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ## 免責聲明
 
-本項目及其內容不隸屬於 YouTube、Google LLC 或其任何關聯公司和子公司，也不受其資助、授權、認可或以任何方式與之關聯。YouTube的官方網站是：[www.youtube.com](https://www.youtube.com).
+本項目及其內容不隸屬於 YouTube、Google LLC 或其任何關聯公司和子公司，也不受其資助、授權、認可或以任何方式與之關聯。YouTube 的官方網站是：[www.youtube.com](https://www.youtube.com).
 
 本項目中使用的任何商標、服務標誌、商品名稱或其他知識產權均歸各自所有者所有。
 

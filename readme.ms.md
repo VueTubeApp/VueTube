@@ -31,9 +31,9 @@ Baca ini dalam bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简
 - 🖌️ UI yang dibolehkan suaikan: Anda boleh menyesuaikan sepenuhnya warna aksen dan bahagian lain UI untuk mengalih keluar ciri yang anda tidak gunakan!
 - ⬆️ Kemaskini Auto: Anda akan dimaklumkan apabila kemas kini tersedia & kembali ke versi lama jika anda tidak menyukainya!
 - 👁️ Perlindungan Penjejak: Tiada telemetri (maklumat peribadi) dihantar daripada peranti anda secara lalai
-- 📺 Pemain video yang boleh disesuaikan 
-- 👎 Return YouTube Dislike: [*Maklumat lanjut*](https://returnyoutubedislike.com)
-- 💰SponsorBlock: [*Maklumat lanjut*](https://sponsor.ajay.app)
+- 📺 Pemain video yang boleh disesuaikan
+- 👎 Return YouTube Dislike: [_Maklumat lanjut_](https://returnyoutubedislike.com)
+- 💰SponsorBlock: [_Maklumat lanjut_](https://sponsor.ajay.app)
 
 ## Pasang
 
@@ -46,16 +46,17 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 <br />
 
 ### Android
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada stabil | Tidak tersedia sehingga aplikasi menjadi lebih berkembang |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                               | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada stabil                                                                                        | Tidak tersedia sehingga aplikasi menjadi lebih berkembang                                       |
 
 ### iOS
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada stabil | Tidak tersedia sehingga aplikasi menjadi lebih berkembang |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                           | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada stabil                                                                                                       | Tidak tersedia sehingga aplikasi menjadi lebih berkembang                                       |
+
 </details>
 
 ## Pelan
@@ -95,7 +96,7 @@ Idea ini telah dilontarkan pada pelayan Discord Return YouTube Dislike untuk sek
 
 Sila baca di laman sesawang kami tentang bagaimana untuk melakukannya: www.vuetube.app/contributing
 
-Sekiranya anda mahu menterjemahkan aplikasi ini, klik di [sini](https://github.com/VueTubeApp/VueTube/blob/main/NUXT/plugins/languages) dan baca bagaimana untuk melakukannya 
+Sekiranya anda mahu menterjemahkan aplikasi ini, klik di [sini](https://github.com/VueTubeApp/VueTube/blob/main/NUXT/plugins/languages) dan baca bagaimana untuk melakukannya
 
 ## Penyumbang
 
@@ -114,6 +115,6 @@ Sekiranya anda mahu menterjemahkan aplikasi ini, klik di [sini](https://github.c
 
 ## Penafian
 
-Projek VueTube dan kandungannya tidak bergabung dengan, dibiayai, diberi izin, disokong oleh, atau dalam apa jua cara dikaitkan dengan YouTube, Google LLC atau mana-mana sekutu dan anak syarikatnya.  Laman web rasmi YouTube boleh didapati di [www.youtube.com](https://www.youtube.com).
+Projek VueTube dan kandungannya tidak bergabung dengan, dibiayai, diberi izin, disokong oleh, atau dalam apa jua cara dikaitkan dengan YouTube, Google LLC atau mana-mana sekutu dan anak syarikatnya. Laman web rasmi YouTube boleh didapati di [www.youtube.com](https://www.youtube.com).
 
 Sebarang tanda dagangan, tanda perkhidmatan, nama dagangan atau hak harta intelek lain yang digunakan dalam projek VueTube dimiliki oleh pemilik masing-masing.

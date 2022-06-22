@@ -29,7 +29,7 @@ Leia isso em outras línguas: [English,](readme.md) [Español,](readme.es.md) [�
 
 - 🎨 Temas: Claro, Escuro, OLED, Todas as cores do arco-íris
 - 🖌️ Interface Customizável: Te permite customizar cor de realce e outras partes da interface para remover funções que você não usa!
-- ⬆️ Atualização Automática: Seja notificado quando alguma atualização estiver disponível ou faça um downgrade se não gostar! 
+- ⬆️ Atualização Automática: Seja notificado quando alguma atualização estiver disponível ou faça um downgrade se não gostar!
 - 👁️ Sem Telemetria: Telemetria é desativada por padrão
 - 📺 Reprodutor Customizado
 - 👎 Suporta Return YouTube Dislike
@@ -45,16 +45,17 @@ Para instalar visite www.vuetube.app/install
 <br />
 
 ### Android
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Muitos bugs, mas acesso antecipado a novas funções | Menos bugs, pode ter um pouco mais de funções do que a estável | Não disponível até que o app esteja mais maduro |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Muitos bugs, mas acesso antecipado a novas funções                                                                                          | Menos bugs, pode ter um pouco mais de funções do que a estável                                                                                                  | Não disponível até que o app esteja mais maduro                                                 |
 
 ### iOS
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Muitos bugs, mas acesso antecipado a novas funções | Menos bugs, pode ter um pouco mais de funções do que a estável | Não disponível até que o app esteja mais maduro |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| Muitos bugs, mas acesso antecipado a novas funções                                                                                      | Menos bugs, pode ter um pouco mais de funções do que a estável                                                                                                                 | Não disponível até que o app esteja mais maduro                                                 |
+
 </details>
 
 ## Planos

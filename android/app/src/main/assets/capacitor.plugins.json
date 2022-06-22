@@ -1,46 +1,46 @@
 [
-	{
-		"pkg": "@capacitor-community/http",
-		"classpath": "com.getcapacitor.plugin.http.Http"
-	},
-	{
-		"pkg": "@capacitor/app",
-		"classpath": "com.capacitorjs.plugins.app.AppPlugin"
-	},
-	{
-		"pkg": "@capacitor/browser",
-		"classpath": "com.capacitorjs.plugins.browser.BrowserPlugin"
-	},
-	{
-		"pkg": "@capacitor/device",
-		"classpath": "com.capacitorjs.plugins.device.DevicePlugin"
-	},
-	{
-		"pkg": "@capacitor/filesystem",
-		"classpath": "com.capacitorjs.plugins.filesystem.FilesystemPlugin"
-	},
-	{
-		"pkg": "@capacitor/haptics",
-		"classpath": "com.capacitorjs.plugins.haptics.HapticsPlugin"
-	},
-	{
-		"pkg": "@capacitor/share",
-		"classpath": "com.capacitorjs.plugins.share.SharePlugin"
-	},
-	{
-		"pkg": "@capacitor/splash-screen",
-		"classpath": "com.capacitorjs.plugins.splashscreen.SplashScreenPlugin"
-	},
-	{
-		"pkg": "@capacitor/status-bar",
-		"classpath": "com.capacitorjs.plugins.statusbar.StatusBarPlugin"
-	},
-	{
-		"pkg": "@capacitor/toast",
-		"classpath": "com.capacitorjs.plugins.toast.ToastPlugin"
-	},
-	{
-		"pkg": "@hugotomazi/capacitor-navigation-bar",
-		"classpath": "br.com.tombus.capacitor.plugin.navigationbar.NavigationBarPlugin"
-	}
+  {
+    "pkg": "@capacitor-community/http",
+    "classpath": "com.getcapacitor.plugin.http.Http"
+  },
+  {
+    "pkg": "@capacitor/app",
+    "classpath": "com.capacitorjs.plugins.app.AppPlugin"
+  },
+  {
+    "pkg": "@capacitor/browser",
+    "classpath": "com.capacitorjs.plugins.browser.BrowserPlugin"
+  },
+  {
+    "pkg": "@capacitor/device",
+    "classpath": "com.capacitorjs.plugins.device.DevicePlugin"
+  },
+  {
+    "pkg": "@capacitor/filesystem",
+    "classpath": "com.capacitorjs.plugins.filesystem.FilesystemPlugin"
+  },
+  {
+    "pkg": "@capacitor/haptics",
+    "classpath": "com.capacitorjs.plugins.haptics.HapticsPlugin"
+  },
+  {
+    "pkg": "@capacitor/share",
+    "classpath": "com.capacitorjs.plugins.share.SharePlugin"
+  },
+  {
+    "pkg": "@capacitor/splash-screen",
+    "classpath": "com.capacitorjs.plugins.splashscreen.SplashScreenPlugin"
+  },
+  {
+    "pkg": "@capacitor/status-bar",
+    "classpath": "com.capacitorjs.plugins.statusbar.StatusBarPlugin"
+  },
+  {
+    "pkg": "@capacitor/toast",
+    "classpath": "com.capacitorjs.plugins.toast.ToastPlugin"
+  },
+  {
+    "pkg": "@hugotomazi/capacitor-navigation-bar",
+    "classpath": "br.com.tombus.capacitor.plugin.navigationbar.NavigationBarPlugin"
+  }
 ]

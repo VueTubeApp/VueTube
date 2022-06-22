@@ -4,12 +4,12 @@ module.exports = {
   global: {
     home: "வீடு",
     subscriptions: "ஸப்ஸ்க்ரிப்ஶந",
-    library: "லாஇப்ரேரீ"
+    library: "லாஇப்ரேரீ",
   },
 
   index: {
     connecting: "இணைக்கிறது",
-    launching: "திறக்கிறது"
+    launching: "திறக்கிறது",
   },
 
   settings: {
@@ -22,12 +22,12 @@ module.exports = {
     updates: "மேம்படுத்தல்கள்",
     logs: "பதிவுகள்",
     about: "பற்றி",
-    devmode: "டெவலப்பர்"
+    devmode: "டெவலப்பர்",
   },
 
   mods: {
     general: {
-      language: "மொழி"
+      language: "மொழி",
     },
     theme: {
       normal: "சாதாரண",
@@ -36,7 +36,7 @@ module.exports = {
       dark: "இருள்",
       black: "கருப்பு",
       darkmode: "இருள் அமைப்பு",
-      darkmodetagline: "நீங்கள் இருளில் செல்கிறீர்கள்.."
+      darkmodetagline: "நீங்கள் இருளில் செல்கிறீர்கள்..",
     },
     tweaks: {
       fullscreen: "முழு பார்வை",
@@ -44,19 +44,19 @@ module.exports = {
       roundedcorners: "சுற்று மூலைகள்",
       roundthumbnails: "சுற்று சிறு உருவங்கள்",
       roundwatchpagecomponents: "சுற்று கண்காணிப்பு பக்க கூறுகள்",
-      radius: "ஆரம்"
+      radius: "ஆரம்",
     },
     startup: {
-      defaultpage: "இயல்புநிலை பக்கம்"
+      defaultpage: "இயல்புநிலை பக்கம்",
     },
     updates: {
       install: "நிறுவு",
       view: "பார்",
       latest: "புதியது",
-      installed: "நிறுவப்பட்டுள்ளது"
+      installed: "நிறுவப்பட்டுள்ளது",
     },
     logs: {
-      more: "மேலும்"
+      more: "மேலும்",
     },
     about: {
       appinformation: "விண்ணப்ப தகவல்",
@@ -68,8 +68,8 @@ module.exports = {
       manufacturer: "உற்பத்தியாளர்",
       emulator: "எமுலேடர்",
       github: "GitHub",
-      discord: "Discord"
-    }
+      discord: "Discord",
+    },
   },
 
   events: {
@@ -83,8 +83,6 @@ module.exports = {
     enableryd: "Return YouTube Dislike ஐ இயக்கு",
     enablespb: "SponsorBlock ஐ இயக்கு",
     thanks: "VueTube ஐப் பயன்படுத்தியதற்கு நன்றி!",
-    enjoy: "மகிழுங்கள்!"
-  }
-
-
-}
+    enjoy: "மகிழுங்கள்!",
+  },
+};

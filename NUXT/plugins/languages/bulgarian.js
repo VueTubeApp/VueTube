@@ -4,12 +4,12 @@ module.exports = {
   global: {
     home: "Начална Страница",
     subscriptions: "Абонаменти",
-    library: "Библиотека"
+    library: "Библиотека",
   },
 
   index: {
     connecting: "Свързване",
-    launching: "Стартиране"
+    launching: "Стартиране",
   },
 
   settings: {
@@ -22,12 +22,12 @@ module.exports = {
     updates: "Актуализации",
     logs: "Дневници",
     about: "Относно VueTube",
-    devmode: "Редактор На Регистъра"
+    devmode: "Редактор На Регистъра",
   },
 
   mods: {
     general: {
-      language: "Език"
+      language: "Език",
     },
     theme: {
       normal: "Нормална",
@@ -36,7 +36,7 @@ module.exports = {
       dark: "Тъмна",
       black: "Черна",
       darkmode: "Тъмен Режим",
-      darkmodetagline: "Браво Шест, Навлизаме В Мрака."
+      darkmodetagline: "Браво Шест, Навлизаме В Мрака.",
     },
     tweaks: {
       fullscreen: "Цял Екран",
@@ -44,19 +44,19 @@ module.exports = {
       roundedcorners: "Заоблени Ъгли",
       roundthumbnails: "Заоблени  Снимки",
       roundwatchpagecomponents: "Заоблени Компоненти На Страницата За Гледане",
-      radius: "Радиус"
+      radius: "Радиус",
     },
     startup: {
-      defaultpage: "Страница По Подразбиране"
+      defaultpage: "Страница По Подразбиране",
     },
     updates: {
       install: "Инсталиране",
       view: "Преглед",
       latest: "Най-Нови",
-      installed: "Инсталирана"
+      installed: "Инсталирана",
     },
     logs: {
-      more: "Още"
+      more: "Още",
     },
     about: {
       appinformation: "Информация За Приложението",
@@ -68,8 +68,8 @@ module.exports = {
       manufacturer: "Производител",
       emulator: "Емулатор",
       github: "GitHub",
-      discord: "Discord"
-    }
+      discord: "Discord",
+    },
   },
 
   events: {
@@ -77,8 +77,6 @@ module.exports = {
     tagline: "Бъдещето На Видеострийминга",
     next: "Следващ",
     updated: "VueTube Беше Актуализиран!",
-    awesome: "Поздравления!"
-  }
-
-
-}
+    awesome: "Поздравления!",
+  },
+};
