@@ -7,7 +7,8 @@ module.exports = {
     library: "Library",
     restart: "Restart Now",
     later: "Later",
-    settingRestart: "Changing this setting requires the app to restart for the settings to be applied."
+    settingRestart:
+      "Changing this setting requires the app to restart for the settings to be applied.",
   },
 
   index: {
