@@ -61,9 +61,9 @@ To install please visit www.vuetube.app/install
 
 <img src="./resources/Plans.svg" alt="VueTube icon" height="100"/>
 
-- 🔍 Advanced Search
+- 🔍 Advanced Search: seach by video type, catagory, lenght, hashtag
 - 🗞️ Locally store watch history
-- ✂️ Shorts
+- ✂️ Shorts: share and watch short videos (15 seconds)  
 - 🧑 Google account sign in
 - 🖼️ Picture in picture mode
 - and more!
