@@ -29,7 +29,7 @@
             >{{ lang.latest }}</v-chip
           >
           <v-chip
-            v-if="item == installedVersion"
+            v-if="item.tag_name == installedVersion"
             class="tags"
             color="green"
             style="border-radius: 0.5rem; border: 2px var(--v-green-base)"

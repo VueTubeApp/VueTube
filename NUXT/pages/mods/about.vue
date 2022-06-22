@@ -25,7 +25,7 @@
       <v-card-title>{{ lang.appinformation }}</v-card-title>
       <v-card-text>
         <h3>{{ lang.appversion }}</h3>
-        {{ version.substring(0, 7) || "Unknown" }}
+        {{ version.substring(0, 7) || "Unknown" }}  ({{ release }})
       </v-card-text>
     </v-card>
     <!--   End App Information   -->
@@ -95,6 +95,7 @@ export default {
   data() {
     return {
       version: process.env.appVersion,
+      release: process.env.release,
       deviceInfo: "",
       lang: {},
     };

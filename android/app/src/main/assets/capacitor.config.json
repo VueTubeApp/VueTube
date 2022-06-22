@@ -1,26 +1,26 @@
 {
-  "appId": "com.Frontesque.vuetube",
-  "appName": "VueTube",
-  "webDir": "dist",
-  "bundledWebRuntime": false,
-  "server": {
-    "hostname": "youtube.com",
-    "androidScheme": "https"
-  },
-  "android": {
-    "backgroundColor": "#000000"
-  },
-  "ios": {
-    "backgroundColor": "#000000"
-  },
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 0,
-      "backgroundColor": "#000000",
-      "splashFullScreen": false,
-      "splashImmersive": false,
-      "launchAutoHide": true,
-      "showSpinner": false
-    }
-  }
+	"appId": "com.Frontesque.vuetube",
+	"appName": "VueTube",
+	"webDir": "dist",
+	"bundledWebRuntime": false,
+	"server": {
+		"hostname": "youtube.com",
+		"androidScheme": "https"
+	},
+	"android": {
+		"backgroundColor": "#000000"
+	},
+	"ios": {
+		"backgroundColor": "#000000"
+	},
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 0,
+			"backgroundColor": "#000000",
+			"splashFullScreen": false,
+			"splashImmersive": false,
+			"launchAutoHide": true,
+			"showSpinner": false
+		}
+	}
 }
