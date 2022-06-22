@@ -22,7 +22,7 @@ module.exports = {
     updates: "Updates",
     logs: "Logs",
     about: "Über",
-    devmode: "Registierungseditor",
+    devmode: "Registrierungseditor",
   },
 
   mods: {
@@ -40,7 +40,7 @@ module.exports = {
     },
     tweaks: {
       fullscreen: "Vollbild",
-      navbarblur: "Nvigationsleistenunschärfe",
+      navbarblur: "Navigationsleistenunschärfe",
       roundedcorners: "Runde Ecken",
       roundthumbnails: "Runde Thumbnails",
       roundwatchpagecomponents: "Runde Startseiten Komponenten",
@@ -61,7 +61,7 @@ module.exports = {
     about: {
       appinformation: "App Informationen",
       appversion: "App Version",
-      deviceinformation: "Gerät Informationen",
+      deviceinformation: "Geräteinformationen",
       platform: "Plattform",
       os: "Betriebssystem",
       model: "Modell",
