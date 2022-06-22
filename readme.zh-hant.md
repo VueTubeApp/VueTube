@@ -31,8 +31,8 @@
 - ⬆️ 自動更新：有新版本可用時接收通知，如果您不喜歡也可以撤銷更新！
 - 👁️ 追蹤阻斷：VueTube 預設不會傳送任何跟蹤數據
 - 📺 自家製的 HTML5 影片播放器
-- 👎 利用 Return Youtube Dislikes 的 API 帶回 YouTube 的「不喜歡」數據 — [更多信息](https://www.returnyoutubedislike.com/)
-- 💰 SponsorBlock — [更多信息](https://sponsor.ajay.app/)
+- 👎 利用 Return Youtube Dislike 的 API 帶回 YouTube 的「不喜歡」數據 — [更多資訊](https://www.returnyoutubedislike.com/)
+- 💰 SponsorBlock — [更多資訊](https://sponsor.ajay.app/)
 
 ## 下載
 
