@@ -5,9 +5,9 @@ module.exports = {
     home: "Home",
     subscriptions: "Subscriptions",
     library: "Library",
-    restart: "Restart Now",
+    restart: "Restart",
     later: "Later",
-    settingRestart: "Changing this setting requires the app to restart for the settings to be applied."
+    settingRestart: "Modifying this setting requires the app to restart for the changes to be applied."
   },
 
   index: {
