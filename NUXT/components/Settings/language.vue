@@ -35,8 +35,7 @@ export default {
   },
 
   mounted() {
-    const lang = this.$lang();
-    this.lang = lang.mods.general;
+    this.lang = this.$lang();
     const langs = this.$lang(null, true);
     for (const i in langs) {
       this.langs.push(langs[i].name);
