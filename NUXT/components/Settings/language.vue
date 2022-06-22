@@ -22,7 +22,7 @@ export default {
     //---   Update Stored Language Value   ---//
     selectedLang: function (newVal) {
       const langs = this.$lang(null, true);
-      let lang = new String();
+      let lang = String();
       for (const i in langs) {
         if (langs[i].name == newVal) {
           lang = i;
