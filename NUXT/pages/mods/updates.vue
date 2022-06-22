@@ -16,8 +16,8 @@
           />
         </v-card-title>
 
-        <div style="margin-left: 1em">
-          {{ item.body }}
+        <div style="margin-left: 1em; white-space: pre-line; margin-top: -1.5em;">
+          {{ item.body.trim() }}
         </div>
 
         <v-card-actions>
