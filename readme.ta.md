@@ -45,16 +45,17 @@
 <br />
 
 ### Android
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| நிறைய பிழைகள் உள்ளன, ஆனால் அம்சங்களுக்கான ஆரம்ப அணுகல் | நிலையற்றதை விட குறைவான பிழைகள், நிலையானதை விட சற்று கூடுதல் அம்சங்கள் | பயன்பாடு இன்னும் மேம்படுத்தப்படும் வரை கிடைக்காது |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| நிறைய பிழைகள் உள்ளன, ஆனால் அம்சங்களுக்கான ஆரம்ப அணுகல்                                                                                      | நிலையற்றதை விட குறைவான பிழைகள், நிலையானதை விட சற்று கூடுதல் அம்சங்கள்                                                                                           | பயன்பாடு இன்னும் மேம்படுத்தப்படும் வரை கிடைக்காது                                               |
 
 ### iOS
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| நிறைய பிழைகள் உள்ளன, ஆனால் அம்சங்களுக்கான ஆரம்ப அணுகல் | நிலையற்றதை விட குறைவான பிழைகள், நிலையானதை விட சற்று கூடுதல் அம்சங்கள் | பயன்பாடு இன்னும் மேம்படுத்தப்படும் வரை கிடைக்காது |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| நிறைய பிழைகள் உள்ளன, ஆனால் அம்சங்களுக்கான ஆரம்ப அணுகல்                                                                                  | நிலையற்றதை விட குறைவான பிழைகள், நிலையானதை விட சற்று கூடுதல் அம்சங்கள்                                                                                                          | பயன்பாடு இன்னும் மேம்படுத்தப்படும் வரை கிடைக்காது                                               |
+
 </details>
 
 ## திட்டங்கள்

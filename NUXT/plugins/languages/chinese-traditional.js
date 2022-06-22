@@ -4,12 +4,12 @@ module.exports = {
   global: {
     home: "主頁",
     subscriptions: "訂閲項目",
-    library: "媒體庫"
+    library: "媒體庫",
   },
 
   index: {
     connecting: "連接中",
-    launching: "啟動中"
+    launching: "啟動中",
   },
 
   settings: {
@@ -22,12 +22,12 @@ module.exports = {
     updates: "更新",
     logs: "紀錄檔",
     about: "關於",
-    devmode: "登錄檔編輯工具"
+    devmode: "登錄檔編輯工具",
   },
 
   mods: {
     general: {
-      language: "語言"
+      language: "語言",
     },
     theme: {
       normal: "正常",
@@ -36,7 +36,7 @@ module.exports = {
       dark: "深色",
       black: "黑色",
       darkmode: "黑暗模式",
-      darkmodetagline: "不要温和地走進那個良夜……"
+      darkmodetagline: "不要温和地走進那個良夜……",
     },
     tweaks: {
       fullscreen: "全螢幕",
@@ -44,19 +44,19 @@ module.exports = {
       roundedcorners: "圓角",
       roundthumbnails: "圓的縮圖",
       roundwatchpagecomponents: "圓的觀看頁部件",
-      radius: "半徑"
+      radius: "半徑",
     },
     startup: {
-      defaultpage: "預設頁"
+      defaultpage: "預設頁",
     },
     updates: {
       install: "安裝",
       view: "查看",
       latest: "最新",
-      installed: "已安裝"
+      installed: "已安裝",
     },
     logs: {
-      more: "更多"
+      more: "更多",
     },
     about: {
       appinformation: "應用程式資訊",
@@ -68,8 +68,8 @@ module.exports = {
       manufacturer: "製造商",
       emulator: "模擬器",
       github: "GitHub",
-      discord: "Discord"
-    }
+      discord: "Discord",
+    },
   },
 
   events: {
@@ -83,8 +83,6 @@ module.exports = {
     enableryd: "啟用 Return YouTube Dislike",
     enablespb: "啟用 SponsorBlock",
     thanks: "謝謝使用 VueTube",
-    enjoy: "祝你有一個愉快的體驗"
-  }
-
-
-}
+    enjoy: "祝你有一個愉快的體驗",
+  },
+};

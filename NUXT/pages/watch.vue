@@ -28,7 +28,11 @@
           <div class="d-flex flex-column">
             <v-card-title
               class="pa-0"
-              style="font-size: 0.95rem; line-height: 1.15rem; overflow-wrap: break-word;"
+              style="
+                font-size: 0.95rem;
+                line-height: 1.15rem;
+                overflow-wrap: break-word;
+              "
               v-text="video.title"
               v-emoji
             />

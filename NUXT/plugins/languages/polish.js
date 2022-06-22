@@ -27,7 +27,7 @@ module.exports = {
 
   mods: {
     general: {
-      language: "Język"
+      language: "Język",
     },
     theme: {
       normal: "Normalny",
@@ -36,7 +36,7 @@ module.exports = {
       dark: "Ciemny",
       black: "Czarny",
       darkmode: "Tryb Ciemny",
-      darkmodetagline: "Brawo ty, przejdź na ciemną stronę mocy."
+      darkmodetagline: "Brawo ty, przejdź na ciemną stronę mocy.",
     },
     tweaks: {
       fullscreen: "Pełny Ekran",
@@ -44,7 +44,7 @@ module.exports = {
       roundedcorners: "Zaokrąglone Krawędzie",
       roundthumbnails: "Zaokrąglone Miniaturki",
       roundwatchpagecomponents: "Zaokrąglone Elementy Interfejsu",
-      radius: "Promień"
+      radius: "Promień",
     },
     startup: {
       defaultpage: "Strona Domyślna",
@@ -53,12 +53,12 @@ module.exports = {
       install: "Zainstaluj",
       view: "Zobacz",
       latest: "Najnowsza",
-      installed: "Zainstalowana"
+      installed: "Zainstalowana",
     },
     logs: {
-      more: "Więcej"
+      more: "Więcej",
     },
-    
+
     about: {
       appinformation: "Informacje o Aplikacji",
       appversion: "Wersja Aplikacji",

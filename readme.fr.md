@@ -33,8 +33,8 @@ Lire cette page dans d’autres langues : [English,](readme.md) [Español,](read
 - ⬆️ Mises à jour automatiques : Recevez une notification quand une mise à jour est disponible, et revenez à des versions antérieures si vous le souhaitez !
 - 👁️ Protection de suivi : Aucune donnée de télémétrie n'est envoyée depuis votre appareil par défaut
 - 📺 Lecteur vidéo personnalisé
-- 👎 Return YouTube Dislike (Retourner les Dislikes de YouTube) - [*Plus d'information*](https://returnyoutubedislike.com)
-- 💰 SponsorBlock - [*Plus d'information*](https://sponsor.ajay.app)
+- 👎 Return YouTube Dislike (Retourner les Dislikes de YouTube) - [_Plus d'information_](https://returnyoutubedislike.com)
+- 💰 SponsorBlock - [_Plus d'information_](https://sponsor.ajay.app)
 
 ## Installation
 
@@ -47,16 +47,17 @@ Pour installer l'application, veuillez visiter [vuetube.app/install](https://www
 <br />
 
 ### Android
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Beaucoup de bugs, mais vous avez accès anticipé aux nouvelles fonctionnalités | Moins de bugs que l'instable, tout en ayant plus de fonctionnalités que la stable | Indisponible pour l'instant |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Beaucoup de bugs, mais vous avez accès anticipé aux nouvelles fonctionnalités                                                               | Moins de bugs que l'instable, tout en ayant plus de fonctionnalités que la stable                                                                               | Indisponible pour l'instant                                                                     |
 
 ### iOS
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Beaucoup de bugs, mais vous avez accès anticipé aux nouvelles fonctionnalités | Moins de bugs que l'instable, tout en ayant plus de fonctionnalités que la stable | Indisponible pour l'instant |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| Beaucoup de bugs, mais vous avez accès anticipé aux nouvelles fonctionnalités                                                           | Moins de bugs que l'instable, tout en ayant plus de fonctionnalités que la stable                                                                                              | Indisponible pour l'instant                                                                     |
+
 </details>
 
 ## Projets
@@ -96,7 +97,7 @@ Ce projet avait été discuté sur le serveur Discord de Return YouTube Dislike 
 
 S'il vous plaît, rendez-vous sur notre site web pour savoir comment le faire : [vuetube.app/contributing](https://www.vuetube.app/contributing)
 
-Si vous voulez traduire l'application, [veuillez cliquer ici](/NUXT/plugins/languages) et lisez les instructions 
+Si vous voulez traduire l'application, [veuillez cliquer ici](/NUXT/plugins/languages) et lisez les instructions
 
 ## Contributeurs
 

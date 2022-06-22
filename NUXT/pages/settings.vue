@@ -78,7 +78,7 @@ export default {
         {
           name: "General",
           icon: "mdi-cog",
-          to: "/mods/general"
+          to: "/mods/general",
         },
         {
           name: "Theme",

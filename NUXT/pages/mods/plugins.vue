@@ -1,12 +1,14 @@
 <template>
   <div>
-
-    <div style="margin: 1em;">
-      <v-btn style="width: 100%;" class="primary text-none" @click="pickFile()"><v-icon style="margin-right: 0.5em;">mdi-sd</v-icon> Install from storage</v-btn>
+    <div style="margin: 1em">
+      <v-btn style="width: 100%" class="primary text-none" @click="pickFile()"
+        ><v-icon style="margin-right: 0.5em">mdi-sd</v-icon> Install from
+        storage</v-btn
+      >
       <input type="file" id="filePicker" accept="js" />
     </div>
 
-    <center v-if="plugins.length == 0" style="margin-top: 2em;">
+    <center v-if="plugins.length == 0" style="margin-top: 2em">
       <v-icon size="50px">mdi-connection</v-icon>
       <h2>No plugins installed</h2>
     </center>
@@ -73,27 +75,25 @@ export default {
     //this.plugins = await this.$tppl.list;
 
     const vm = this;
-    document.getElementById('filePicker').onchange = async function() {
+    document.getElementById("filePicker").onchange = async function () {
       const file = document.getElementById("filePicker").files[0];
       const contents = await vm.readFileContent(file);
       await vm.$tppl.addPlugin(contents);
     };
-
-
   },
   methods: {
     readFileContent(file) {
-      const reader = new FileReader()
+      const reader = new FileReader();
       return new Promise((resolve, reject) => {
-        reader.onload = event => resolve(event.target.result)
-        reader.onerror = error => reject(error)
-        reader.readAsText(file)
-      })
+        reader.onload = (event) => resolve(event.target.result);
+        reader.onerror = (error) => reject(error);
+        reader.readAsText(file);
+      });
     },
 
     pickFile() {
       document.getElementById("filePicker").click();
-    }
-  }
+    },
+  },
 };
 </script>

@@ -44,16 +44,17 @@ Per installare visita www.vuetube.app/install
 <br />
 
 ### Android
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Molti bug, ma accesso anticipato alle funzionalità | Meno bug della versione instabile, leggermente più funzionalità della stabile | Non disponibile fino a quando l'app non sarà più sviluppata |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Molti bug, ma accesso anticipato alle funzionalità                                                                                          | Meno bug della versione instabile, leggermente più funzionalità della stabile                                                                                   | Non disponibile fino a quando l'app non sarà più sviluppata                                     |
 
 ### iOS
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Molti bug, ma accesso anticipato alle funzionalità | Meno bug della versione instabile, leggermente più funzionalità della stabile | Non disponibile fino a quando l'app non sarà più sviluppata |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| Molti bug, ma accesso anticipato alle funzionalità                                                                                      | Meno bug della versione instabile, leggermente più funzionalità della stabile                                                                                                  | Non disponibile fino a quando l'app non sarà più sviluppata                                     |
+
 </details>
 
 ## Piani futuri
@@ -101,12 +102,12 @@ Leggi sul nostro sito come fare: www.vuetube.app/contributing
 
 <sub>Creato con [contrib.rocks](https://contrib.rocks). </sub>
 
-## Ringraziamenti   
+## Ringraziamenti
 
 - Emojis dal [team Twemoji](https://twemoji.twitter.com/), Sotto licenza [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Logo VueTube di [@afnzmn](https://github.com/afnzmn)
 - Dati pubblici sui non mi piace forniti da [Return Youtube Dislike](https://returnyoutubedislike.com)
-- Ajay e la Community per aver fornito [Sponsorblock API](https://sponsor.ajay.app), Sotto licenza [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 
+- Ajay e la Community per aver fornito [Sponsorblock API](https://sponsor.ajay.app), Sotto licenza [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## Disclaimer
 

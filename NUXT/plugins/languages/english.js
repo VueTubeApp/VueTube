@@ -4,13 +4,13 @@ module.exports = {
   global: {
     home: "Home",
     subscriptions: "Subscriptions",
-    library: "Library"
+    library: "Library",
   },
 
   index: {
     connecting: "Connecting",
     plugins: "Loading Plugins",
-    launching: "Launching"
+    launching: "Launching",
   },
 
   settings: {
@@ -23,12 +23,12 @@ module.exports = {
     updates: "Updates",
     logs: "Logs",
     about: "About",
-    devmode: "Registry Editor"
+    devmode: "Registry Editor",
   },
 
   mods: {
     general: {
-      language: "Language"
+      language: "Language",
     },
     theme: {
       normal: "Normal",
@@ -37,7 +37,7 @@ module.exports = {
       dark: "Dark",
       black: "Black",
       darkmode: "Dark Mode",
-      darkmodetagline: "Bravo Six, Going Dark."
+      darkmodetagline: "Bravo Six, Going Dark.",
     },
     tweaks: {
       fullscreen: "Fullscreen",
@@ -45,19 +45,19 @@ module.exports = {
       roundedcorners: "Rounded Corners",
       roundthumbnails: "Round Thumbnails",
       roundwatchpagecomponents: "Round Watch Page Components",
-      radius: "Radius"
+      radius: "Radius",
     },
     startup: {
-      defaultpage: "Default Page"
+      defaultpage: "Default Page",
     },
     updates: {
       install: "Install",
       view: "View",
       latest: "Latest",
-      installed: "Installed"
+      installed: "Installed",
     },
     logs: {
-      more: "More"
+      more: "More",
     },
     about: {
       appinformation: "App Information",
@@ -69,8 +69,8 @@ module.exports = {
       manufacturer: "Manufacturer",
       emulator: "Emulator",
       github: "GitHub",
-      discord: "Discord"
-    }
+      discord: "Discord",
+    },
   },
 
   events: {
@@ -84,8 +84,6 @@ module.exports = {
     enableryd: "Enable Return YouTube Dislike",
     enablespb: "Enable SponsorBlock",
     thanks: "Thanks for Using VueTube",
-    enjoy: "We hope you have an amazing experience"
-  }
-
-
-}
+    enjoy: "We hope you have an amazing experience",
+  },
+};

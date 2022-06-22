@@ -37,7 +37,10 @@
           right: 0;
           width: 50%;
           height: 100%;
-          background: linear-gradient(var(--v-background-base) -1000%, #00000000 1000%);
+          background: linear-gradient(
+            var(--v-background-base) -1000%,
+            #00000000 1000%
+          );
         "
       >
         <div>420</div>
