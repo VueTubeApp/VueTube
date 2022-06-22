@@ -5,6 +5,9 @@ module.exports = {
     home: "Inicio",
     subscriptions: "Suscripciones",
     library: "Librería",
+    restart: "Reiniciar",
+    later: "Más tarde",
+    settingRestart: "Al modificar este ajuste, la app debe ser reiniciada para que los cambios se apliquen."
   },
 
   index: {
