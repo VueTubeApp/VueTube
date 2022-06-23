@@ -4,17 +4,17 @@ module.exports = {
   global: {
     home: "Почетна",
     subscriptions: "Претплати",
-    library: "Библиотека"
+    library: "Библиотека",
   },
 
   index: {
     connecting: "Поврзување",
-    launching: "Лансирање"
+    launching: "Лансирање",
   },
 
   settings: {
     general: "Општо",
-    theme: "Лик",
+    theme: "Изглед",
     player: "Плеер",
     uitweaker: "Интерфејс Твикер",
     startupoptions: "Опции за стартување",
@@ -22,12 +22,12 @@ module.exports = {
     updates: "Ажурирања",
     logs: "Дневници",
     about: "За VueTube",
-    devmode: "Уредувач на регистар"
+    devmode: "Уредувач на регистар",
   },
 
   mods: {
     general: {
-      language: "Јазик"
+      language: "Јазик",
     },
     theme: {
       normal: "Нормален",
@@ -36,7 +36,7 @@ module.exports = {
       dark: "Темен",
       black: "Црн",
       darkmode: "Темен Пежим",
-      darkmodetagline: "Браво Шес, Идеме Темно."
+      darkmodetagline: "Браво Шес, Идеме Темно.",
     },
     tweaks: {
       fullscreen: "Цел Екран",
@@ -44,23 +44,23 @@ module.exports = {
       roundedcorners: "Заоблени агли",
       roundthumbnails: "Заоблени слики",
       roundwatchpagecomponents: "Заоблени компоненти на страницата за гледање",
-      radius: "Радиус"
+      radius: "Радиус",
     },
     startup: {
-      defaultpage: "Стандардна страница"
+      defaultpage: "Стандардна страница",
     },
     updates: {
       install: "Инстал",
       view: "Погледај",
       latest: "Нај нова",
-      installed: "Инсталирана"
+      installed: "Инсталирана",
     },
     logs: {
-      more: "Повеќе"
+      more: "Повеќе",
     },
     about: {
       appinformation: "Информации за апликацијата",
-      appversion: "Верзиј на апликацијата",
+      appversion: "Верзија на апликацијата",
       deviceinformation: "Информации за уредод",
       platform: "Платформа",
       os: "Оперативен Систем",
@@ -68,8 +68,8 @@ module.exports = {
       manufacturer: "Производител",
       emulator: "Емулатор",
       github: "GitHub",
-      discord: "Discord"
-    }
+      discord: "Discord",
+    },
   },
 
   events: {
@@ -77,8 +77,6 @@ module.exports = {
     tagline: "Иднината на видео стриминг",
     next: "Следно",
     updated: "VueTube беше ажуриран!",
-    awesome: "Прекрасно!"
-  }
-
-
-}
+    awesome: "Прекрасно!",
+  },
+};

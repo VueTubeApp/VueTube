@@ -16,57 +16,57 @@ module.exports = {
     general: "Ogólne",
     theme: "Motyw",
     player: "Odtwarzacz",
-    uitweaker: "Interfejs Użytkownika",
+    uitweaker: "Dostosowanie Interfejsu",
     startupoptions: "Opcje Uruchamiania",
     plugins: "Rozszerzenia",
     updates: "Aktualizacje",
     logs: "Logi",
-    about: "Informacje",
+    about: "O Aplikacji",
     devmode: "Edytor Rejestru",
   },
 
   mods: {
     general: {
-      language: "Język"
+      language: "Język",
     },
     theme: {
       normal: "Normalny",
       adaptive: "Adaptacyjny",
-      custom: "Custom",
+      custom: "Niestandardowy",
       dark: "Ciemny",
       black: "Czarny",
       darkmode: "Tryb Ciemny",
-      darkmodetagline: "Brawo ty, przejdź na ciemną stronę mocy."
+      darkmodetagline: "Brawo ty, przejdź na ciemną stronę mocy.",
     },
     tweaks: {
       fullscreen: "Pełny Ekran",
       navbarblur: "Rozmycie Paska Nawigacyjnego",
       roundedcorners: "Zaokrąglone Krawędzie",
       roundthumbnails: "Zaokrąglone Miniaturki",
-      roundwatchpagecomponents: "Round Watch PAge Components",
-      radius: "Radius"
+      roundwatchpagecomponents: "Zaokrąglone Elementy Interfejsu",
+      radius: "Promień",
     },
     startup: {
       defaultpage: "Strona Domyślna",
     },
     updates: {
-      install: "Install",
+      install: "Zainstaluj",
       view: "Zobacz",
       latest: "Najnowsza",
-      installed: "Zainstalowana"
+      installed: "Zainstalowana",
     },
     logs: {
-      more: "Więcej"
+      more: "Więcej",
     },
-    
+
     about: {
-      appinformation: "Informacje o aplikacji",
+      appinformation: "Informacje o Aplikacji",
       appversion: "Wersja Aplikacji",
       deviceinformation: "Informacje o Urządzeniu",
       platform: "Platforma",
       os: "System Operacyjny",
       model: "Model",
-      manufacturer: "Manufaktura",
+      manufacturer: "Producent",
       emulator: "Emulator",
       github: "GitHub",
       discord: "Discord",
@@ -75,9 +75,9 @@ module.exports = {
 
   events: {
     welcome: "Witaj w VueTube",
-    tagline: "Przyszłośći Streamingu Wideo",
-    next: "Dalej",
-    updated: "VueTube został zaktualizowany!",
+    tagline: "Przyszłość Streamingu Wideo",
+    next: "Następny",
+    updated: "VueTube Został Zaktualizowany!",
     awesome: "Świetnie!",
   },
 };

@@ -4,7 +4,9 @@
     <div
       class="d-flex flex-column justify-end"
       style="
-        min-height: calc(100vh - 8rem - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
+        min-height: calc(
+          100vh - 8rem - env(safe-area-inset-top) - env(safe-area-inset-bottom)
+        ) !important;
       "
     >
       <!-- ----Background Colors---- -->
@@ -186,7 +188,7 @@ export default {
       adaptiveDark: "",
       pickerState: false,
       pickerMode: "bg",
-      lang: {}
+      lang: {},
     };
   },
   mounted() {

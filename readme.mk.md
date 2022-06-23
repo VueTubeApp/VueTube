@@ -4,30 +4,30 @@
   </a>
   </br>
   <sub>Лого од <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
-  <sub>Macedonian translation by <a href="https://github.com/Robotition">@Robotition</a></sub>
+  <sub>Македонски превод од <a href="https://github.com/Robotition">@Robotition</a></sub>
   </br>
   </br>
 <strong>Едноставна FOSS видео стриминг апликација со цел да ги рекреира сите карактеристики од соодветните апликации (и повеќе).</strong>
 </br>
-Се изговара Вју-Туб
+Се изговара Вју-Туб (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
   <a href="https://github.com/VueTubeApp/VueTube/blob/main/LICENSE" alt="License"><img src="https://img.shields.io/github/license/VueTubeApp/VueTube"></img></a>
   <a href="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml" alt="CI"><img src="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml/badge.svg"></img></a>
   <a href="https://reddit.com/r/vuetube" alt="Reddit"><img src="https://img.shields.io/reddit/subreddit-subscribers/vuetube?label=r%2FVuetube&logo=reddit&logoColor=white"></img></a>
-  <a href="https://t.me/VueTube" alt="Telegram"><img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fvuetube"></img></a>
+  <a href="https://t.me/VueTube" alt="Telegram"><img src="https://img.shields.io/endpoint?label=VueTube&url=https%3A%2F%2Ftelegram-badge-4mbpu8e0fit4.runkit.sh%2F%3Furl%3Dhttps%3A%2F%2Ft.me%2FVuetube"></img></a>
   <a href="https://discord.gg/7P8KJrdd5W" alt="Discord"><img src="https://img.shields.io/discord/946587366242533377?label=Discord&style=flat&logo=discord&logoColor=white"></img></a>
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Прочитајте го ова на други јазици: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia](readme.id.md)
+Прочитајте го ова на други јазици: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano](readme.it.md)
 
 ## Карактеристики
 
-<img src="./resources/readme-mk/Features.mk.svg" alt="VueTube icon" width="500"/>
+<img src="./resources/readme-mk/Features.mk.svg" alt="VueTube icon" height="100"/>
 
-- 🎨 Лик: Светло, темно, OLED, сите бои на виножитото.
+- 🎨 Изглед: Светло, темно, OLED, сите бои на виножитото.
 - 🖌️ Приспособлив интерфејс: Можете целосно да ја приспособите акцентната боја и другите делови од интерфејсот за да ги отстраните функциите што не ги користите!
 - ⬆️ Автоматско ажурирање: Бидете известени кога нов апдејт е достапен и деградирајте го ако не ви се допаѓа!
 - 👁️ Заштита од следење: Стандардно не се испраќа телеметрија од вашиот уред.
@@ -36,7 +36,7 @@
 
 ## Инстал
 
-<img src="./resources/readme-mk/Install.mk.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-mk/Install.mk.svg" alt="VueTube icon" height="100"/>
 
 За да инсталирате, посетете: www.vuetube.app/install
 
@@ -45,21 +45,22 @@
 <br />
 
 ### Android
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Многу грешки, но ран пристап до функциите. | Помалку грешки од нестабилна, малку повеќе функции од стабилна. | Не е достапна додека апликацијата не стане поразвиена. |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Многу грешки, но ран пристап до функциите.                                                                                                  | Помалку грешки од нестабилна, малку повеќе функции од стабилна.                                                                                                 | Не е достапна додека апликацијата не стане поразвиена.                                          |
 
 ### iOS
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Многу грешки, но ран пристап до функциите. | Помалку грешки од нестабилна, малку повеќе функции од стабилна. | Не е достапна додека апликацијата не стане поразвиена. |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| Многу грешки, но ран пристап до функциите.                                                                                              | Помалку грешки од нестабилна, малку повеќе функции од стабилна.                                                                                                                | Не е достапна додека апликацијата не стане поразвиена.                                          |
+
 </details>
 
 ## Планови
 
-<img src="./resources/readme-mk/Plans.mk.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-mk/Plans.mk.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Напредно пребарување
 - 🗞️ Локално складирајте ја историјата на гледани видеа.

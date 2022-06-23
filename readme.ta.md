@@ -16,16 +16,16 @@
   <a href="https://github.com/VueTubeApp/VueTube/blob/main/LICENSE" alt="License"><img src="https://img.shields.io/github/license/VueTubeApp/VueTube"></img></a>
   <a href="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml" alt="CI"><img src="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml/badge.svg"></img></a>
   <a href="https://reddit.com/r/vuetube" alt="Reddit"><img src="https://img.shields.io/reddit/subreddit-subscribers/vuetube?label=r%2FVuetube&logo=reddit&logoColor=white"></img></a>
-  <a href="https://t.me/VueTube" alt="Telegram"><img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fvuetube"></img></a>
+  <a href="https://t.me/VueTube" alt="Telegram"><img src="https://img.shields.io/endpoint?label=VueTube&url=https%3A%2F%2Ftelegram-badge-4mbpu8e0fit4.runkit.sh%2F%3Furl%3Dhttps%3A%2F%2Ft.me%2FVuetube"></img></a>
   <a href="https://discord.gg/7P8KJrdd5W" alt="Discord"><img src="https://img.shields.io/discord/946587366242533377?label=Discord&style=flat&logo=discord&logoColor=white"></img></a>
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-நீங்கள் இதை மற்ற மொழிகளில் பார்க்கலாம்: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia](readme.id.md)
+நீங்கள் இதை மற்ற மொழிகளில் பார்க்கலாம்: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano](readme.it.md)
 
 ## அம்சங்கள்
 
-<img src="./resources/readme-ta/Features.ta.svg" alt="VueTube icon" width="400"/>
+<img src="./resources/readme-ta/Features.ta.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 தீம்கள்: ஒளி, இருள், OLED, வானவில்லின் அனைத்து வண்ணங்களும்
 - 🖌️ தனிப்பயனாக்கக்கூடிய UI: நீங்கள் பயன்படுத்தாத அம்சங்களை அகற்ற, உச்சரிப்பு நிறத்தையும் UI இன் பிற பகுதிகளையும் முழுமையாகத் தனிப்பயனாக்கலாம்!
@@ -36,7 +36,7 @@
 
 ## பதிவிறக்கம்
 
-<img src="./resources/readme-ta/Install.ta.svg" alt="VueTube icon" width="400"/>
+<img src="./resources/readme-ta/Install.ta.svg" alt="VueTube icon" height="100"/>
 
 பதிவிறக்க, www.vuetube.app/install க்குச் செல்லவும்
 
@@ -45,21 +45,22 @@
 <br />
 
 ### Android
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| நிறைய பிழைகள் உள்ளன, ஆனால் அம்சங்களுக்கான ஆரம்ப அணுகல் | நிலையற்றதை விட குறைவான பிழைகள், நிலையானதை விட சற்று கூடுதல் அம்சங்கள் | பயன்பாடு இன்னும் மேம்படுத்தப்படும் வரை கிடைக்காது |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| நிறைய பிழைகள் உள்ளன, ஆனால் அம்சங்களுக்கான ஆரம்ப அணுகல்                                                                                      | நிலையற்றதை விட குறைவான பிழைகள், நிலையானதை விட சற்று கூடுதல் அம்சங்கள்                                                                                           | பயன்பாடு இன்னும் மேம்படுத்தப்படும் வரை கிடைக்காது                                               |
 
 ### iOS
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| நிறைய பிழைகள் உள்ளன, ஆனால் அம்சங்களுக்கான ஆரம்ப அணுகல் | நிலையற்றதை விட குறைவான பிழைகள், நிலையானதை விட சற்று கூடுதல் அம்சங்கள் | பயன்பாடு இன்னும் மேம்படுத்தப்படும் வரை கிடைக்காது |
-  
+
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| நிறைய பிழைகள் உள்ளன, ஆனால் அம்சங்களுக்கான ஆரம்ப அணுகல்                                                                                  | நிலையற்றதை விட குறைவான பிழைகள், நிலையானதை விட சற்று கூடுதல் அம்சங்கள்                                                                                                          | பயன்பாடு இன்னும் மேம்படுத்தப்படும் வரை கிடைக்காது                                               |
+
 </details>
 
 ## திட்டங்கள்
 
-<img src="./resources/readme-ta/Plans.ta.svg" alt="VueTube icon" width="400"/>
+<img src="./resources/readme-ta/Plans.ta.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 மேம்பட்ட தேடல்
 - 🗞️ உள்ளூர் ஸ்டோர் கண்காணிப்பு வரலாறு

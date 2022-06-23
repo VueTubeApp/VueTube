@@ -4,12 +4,12 @@ module.exports = {
   global: {
     home: "Início",
     subscriptions: "Inscrições",
-    library: "Biblioteca"
+    library: "Biblioteca",
   },
 
   index: {
     connecting: "Conectando",
-    launching: "Iniciando"
+    launching: "Iniciando",
   },
 
   settings: {
@@ -22,12 +22,12 @@ module.exports = {
     updates: "Atualizações",
     logs: "Logs",
     about: "Sobre",
-    devmode: "Editor de registro"
+    devmode: "Editor de registro",
   },
 
   mods: {
     general: {
-      language: "Idioma"
+      language: "Idioma",
     },
     theme: {
       normal: "Normal",
@@ -36,7 +36,7 @@ module.exports = {
       dark: "Escuro",
       black: "Preto",
       darkmode: "Modo Escuro",
-      darkmodetagline: "Bravo Six, Escurecendo."
+      darkmodetagline: "Bravo Six, Escurecendo.",
     },
     tweaks: {
       fullscreen: "Tela Cheia",
@@ -44,19 +44,19 @@ module.exports = {
       roundedcorners: "Bordas Arredondadas",
       roundthumbnails: "Arredondar Thumbnails",
       roundwatchpagecomponents: "Arredondar elementos da tela de reprodução",
-      radius: "Grau"
+      radius: "Grau",
     },
     startup: {
-      defaultpage: "Página Padrão"
+      defaultpage: "Página Padrão",
     },
     updates: {
       install: "Instalar",
       view: "Ver",
       latest: "Última",
-      installed: "Instalado"
+      installed: "Instalado",
     },
     logs: {
-      more: "Mais"
+      more: "Mais",
     },
     about: {
       appinformation: "Informação do App",
@@ -68,8 +68,8 @@ module.exports = {
       manufacturer: "Fabricante",
       emulator: "Emulador",
       github: "GitHub",
-      discord: "Discord"
-    }
+      discord: "Discord",
+    },
   },
 
   events: {
@@ -77,6 +77,6 @@ module.exports = {
     tagline: "O futuro de streaming de video",
     next: "Próximo",
     updated: "VueTube atualizado com sucesso!",
-    awesome: "Incrível!"
-  }
-}
+    awesome: "Incrível!",
+  },
+};

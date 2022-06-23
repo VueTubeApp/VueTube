@@ -25,7 +25,7 @@
       <v-card-title>{{ lang.appinformation }}</v-card-title>
       <v-card-text>
         <h3>{{ lang.appversion }}</h3>
-        {{ version.substring(0, 7) || "Unknown" }}
+        {{ version.substring(0, 7) || "Unknown" }}  ({{ release }})
       </v-card-text>
     </v-card>
     <!--   End App Information   -->
@@ -39,9 +39,7 @@
       "
       :style="{ borderRadius: `${roundTweak / 2}rem` }"
     >
-      <v-card-title>{{
-        lang.deviceinformation
-      }}</v-card-title>
+      <v-card-title>{{ lang.deviceinformation }}</v-card-title>
       <v-card-text>
         <h3>{{ lang.platform }}</h3>
         {{ deviceInfo.platform || "Unknown" }}<br />
@@ -90,13 +88,13 @@
 </template>
 
 <script>
-import { Browser } from "@capacitor/browser";
 import { Device } from "@capacitor/device";
 
 export default {
   data() {
     return {
       version: process.env.appVersion,
+      release: process.env.release,
       deviceInfo: "",
       lang: {},
     };
@@ -114,8 +112,8 @@ export default {
     this.lang = this.$lang().mods.about;
   },
   methods: {
-    async openExternal(url) {
-      await Browser.open({ url: url });
+    openExternal(url) {
+      this.$vuetube.openExternal(url);
     },
   },
 };

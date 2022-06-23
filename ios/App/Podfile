@@ -11,7 +11,6 @@ def capacitor_pods
   pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
   pod 'CapacitorCommunityHttp', :path => '..\..\node_modules\@capacitor-community\http'
   pod 'CapacitorApp', :path => '..\..\node_modules\@capacitor\app'
-  pod 'CapacitorBrowser', :path => '..\..\node_modules\@capacitor\browser'
   pod 'CapacitorDevice', :path => '..\..\node_modules\@capacitor\device'
   pod 'CapacitorFilesystem', :path => '..\..\node_modules\@capacitor\filesystem'
   pod 'CapacitorHaptics', :path => '..\..\node_modules\@capacitor\haptics'

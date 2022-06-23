@@ -15,27 +15,28 @@ Se pronuncia Viu Tuf (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://github.com/VueTubeApp/VueTube/blob/main/LICENSE" alt="License"><img src="https://img.shields.io/github/license/VueTubeApp/VueTube"></img></a>
   <a href="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml" alt="CI"><img src="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml/badge.svg"></img></a>
   <a href="https://reddit.com/r/vuetube" alt="Reddit"><img src="https://img.shields.io/reddit/subreddit-subscribers/vuetube?label=r%2FVuetube&logo=reddit&logoColor=white"></img></a>
-  <a href="https://t.me/VueTube" alt="Telegram"><img src="https://img.shields.io/endpoint?color=neon&style=flat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fvuetube"></img></a>
+  <a href="https://t.me/VueTube" alt="Telegram"><img src="https://img.shields.io/endpoint?label=VueTube&url=https%3A%2F%2Ftelegram-badge-4mbpu8e0fit4.runkit.sh%2F%3Furl%3Dhttps%3A%2F%2Ft.me%2FVuetube"></img></a>
   <a href="https://discord.gg/7P8KJrdd5W" alt="Discord"><img src="https://img.shields.io/discord/946587366242533377?label=Discord&style=flat&logo=discord&logoColor=white"></img></a>
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Leer en otros idiomas: [English,](readme.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia](readme.id.md)
+Leer en otros idiomas: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano](readme.it.md)
 
 ## Características
 
-<img src="./resources/readme-es/Features.es.svg" alt="VueTube icon" width="450"/>
+<img src="./resources/readme-es/Features.es.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Temas: Claro, Oscuro, OLED, Todos los colores del arcoíris
 - 🖌️ Interfaz personalizable: ¡Puedes personalizar completamente el color principal, y otras partes de la interfaz para eliminar características que no usas!
 - ⬆️ Actualizaciones automáticas: ¡Recibe una notificación cuando haya una actualización disponible y baja de versión si no te gusta!
 - 👁️ Protección contra el rastreo: No se envían datos desde tu dispositivo por defecto
 - 📺 Reproductor de vídeo personalizado
-- 👎 Return YouTube Dislike
+- 👎 Return YouTube Dislike - [_Más información_](https://returnyoutubedislike.com)
+- 💰 SponsorBlock - [_Más información_](https://sponsor.ajay.app)
 
 ## Instalar
 
-<img src="./resources/readme-es/Install.es.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-es/Install.es.svg" alt="VueTube icon" height="100"/>
 
 Para instalar, por favor, visita www.vuetube.app/install
 
@@ -51,7 +52,7 @@ Para instalar, por favor, visita www.vuetube.app/install
 
 ## Planes
 
-<img src="./resources/readme-es/Plans.es.svg" alt="VueTube icon" width="300"/>
+<img src="./resources/readme-es/Plans.es.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Búsqueda avanzada
 - 🗞️ Historial de búsqueda local
@@ -86,6 +87,8 @@ Bueno, esto ha estado en el servidor de Discord de Return YouTube Dislike durant
 
 Por favor, lee en nuestro sitio web cómo hacerlo: www.vuetube.app/contributing
 
+Si quieres traducir la app, [haz clic aquí](/NUXT/plugins/languages) y lee cómo hacerlo
+
 ## Colaboradores
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
@@ -98,6 +101,8 @@ Por favor, lee en nuestro sitio web cómo hacerlo: www.vuetube.app/contributing
 
 - Emojis por el [equipo de Twemoji](https://twemoji.twitter.com/), Con licencia [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Logo de VueTube por [@afnzmn](https://github.com/afnzmn)
+- Estadísticas públicas de dislikes proporcionadas por [Return YouTube Dislike](https://returnyoutubedislike.com)
+- Ajay y su comunidad por proporcionarnos la [API de Sponsorblock](https://sponsor.ajay.app), Licenciada bajo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## Aviso legal
 

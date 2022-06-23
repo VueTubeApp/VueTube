@@ -41,9 +41,9 @@ body:
     attributes:
       label: VueTube version
       description: |
-        You can find your VueTube version in **Settings**.
+        You can find your VueTube version in **Settings/About** within the app.
       placeholder: |
-        Example: "1.0"
+        Example: "619c416"
     validations:
       required: true
 
@@ -55,6 +55,17 @@ body:
         You can find this somewhere in your Android settings.
       placeholder: |
         Example: "Android 12"
+    validations:
+      required: true
+      
+  - type: input
+    id: device-type
+    attributes:
+      label: Device
+      description: |
+        The make and model of your device.
+      placeholder: |
+        Example: "Google Pixel 6 Pro"
     validations:
       required: true
 

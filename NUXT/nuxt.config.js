@@ -8,6 +8,7 @@
 export default {
   //---   VueTube Stuff   ---//
   env: {
+    release: "Unstable",
     appVersion: "dev-local",
   },
 
@@ -65,11 +66,11 @@ export default {
       },
       themes: {
         light: {
-          primary: "#E57373",
+          primary: "#016a49",
           background: "#ffffff",
         },
         dark: {
-          primary: "#B71C1C",
+          primary: "#7CD6AF",
           background: "#000000",
         },
       },
