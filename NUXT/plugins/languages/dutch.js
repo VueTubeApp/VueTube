@@ -4,7 +4,10 @@ module.exports = {
     global: {
       home: "Home",
       subscriptions: "Abonnementen",
-      library: "Bibliotheek"
+      library: "Bibliotheek",
+      restart: "Start nu opnieuw op",
+      later: "Later",
+      settingRestart: "Het wijzigen van deze instelling vereist dat de app opnieuw wordt opgestart om de instellingen toe te passen."
     },
   
     index: {
