@@ -20,13 +20,13 @@ module.exports = {
     general: "Ümumi",
     theme: "Mövzu",
     player: "Oynadıcı",
-    uitweaker: "UI Çimdikləmə",
+    uitweaker: "UI Tənzimləyici",
     startupoptions: "Başlatma Seçimləri",
     plugins: "Əlavələr",
     updates: "Yeniləmələr",
     logs: "Jurnallar",
     about: "Haqqında",
-    devmode: "Reyestr redaktoru",
+    devmode: "Qeyd redaktoru",
   },
 
   mods: {
@@ -40,7 +40,7 @@ module.exports = {
       dark: "Qaranlıq",
       black: "Qara",
       darkmode: "Qaranlıq rejim",
-      darkmodetagline: "Bravo, Qaranlıq işlənir." ,
+      darkmodetagline: "Bravo, Qaranlıqdır." ,
     },
     tweaks: {
       fullscreen: "Tam ekran",
