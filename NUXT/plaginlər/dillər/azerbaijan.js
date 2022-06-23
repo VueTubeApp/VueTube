@@ -12,7 +12,7 @@ module.exports = {
 
   index: {
     connecting: "Qoşulur",
-    plugins: "Pluginlər yüklənir",
+    plugins: "Əlavələr yüklənir",
     launching: "Başladılır",
   },
 
@@ -22,7 +22,7 @@ module.exports = {
     player: "Oynadıcı",
     uitweaker: "UI Çimdikləmə",
     startupoptions: "Başlatma Seçimləri",
-    plugins: "Pluginlər",
+    plugins: "Əlavələr",
     updates: "Yeniləmələr",
     logs: "Jurnallar",
     about: "Haqqında",
