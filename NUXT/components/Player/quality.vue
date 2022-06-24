@@ -8,7 +8,11 @@
     >
       <template #activator="{ on, attrs }">
         <v-btn fab text small color="white" v-bind="attrs" v-on="on">
-          {{ sources.find((src) => src.url == currentSource.src).qualityLabel }}
+          {{
+            sources.find((src) => src.url == currentSource.src).qualityLabel
+              ? sources.find((src) => src.url == currentSource.src).qualityLabel
+              : sources.find((src) => src.url == currentSource.src).quality
+          }}
         </v-btn>
       </template>
       <v-card class="background">
@@ -31,6 +35,7 @@
           <v-list-item
             v-for="src in sources"
             :key="src"
+            two-line
             @click="(sheet = false), $emit('quality', src.url)"
           >
             <v-list-item-avatar>
@@ -49,9 +54,16 @@
                 "
               ></v-icon>
             </v-list-item-avatar>
-            <v-list-item-title>
-              {{ src.qualityLabel }} ({{ src.quality }})
-            </v-list-item-title>
+            <v-list-item-content>
+              <v-list-item-title>
+                {{ src.qualityLabel ? src.qualityLabel : "" }} ({{
+                  src.quality
+                }}) {{ src.bitrate }}bps
+              </v-list-item-title>
+              <v-list-item-subtitle>
+                {{ src.mimeType }} {{ src.averageBitrate }}
+              </v-list-item-subtitle>
+            </v-list-item-content>
           </v-list-item>
         </v-card-text>
       </v-card>

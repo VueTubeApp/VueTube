@@ -3,12 +3,6 @@
   <div
     ref="vidcontainer"
     v-touch="{
-      up: () => {
-        if (!isFullscreen) fullscreenHandler(true);
-      },
-      down: () => {
-        if (isFullscreen) fullscreenHandler(true);
-      },
       right: () => (contain = false),
       left: () => (contain = true),
     }"
@@ -27,6 +21,15 @@
   >
     <video
       ref="player"
+      v-touch="{
+        up: () => {
+          if (!isFullscreen) fullscreenHandler(true);
+        },
+        down: () => {
+          if (isFullscreen) fullscreenHandler(true);
+        },
+      }"
+      mediagroup="vuetubecute"
       autoplay
       width="100%"
       :src="vidSrc"
@@ -47,9 +50,18 @@
       @loadedmetadata="checkDimensions()"
       @click="controlsHandler()"
     />
+    <audio ref="audio" mediagroup="vuetubecute" :src="audSrc" />
 
     <!-- // TODO: merge the bottom 2 into 1 reusable component -->
     <v-btn
+      v-touch="{
+        up: () => {
+          if (!isFullscreen) fullscreenHandler(true);
+        },
+        down: () => {
+          if (isFullscreen) fullscreenHandler(true);
+        },
+      }"
       text
       tile
       color="white"
@@ -73,6 +85,14 @@
     </v-btn>
 
     <v-btn
+      v-touch="{
+        up: () => {
+          if (!isFullscreen) fullscreenHandler(true);
+        },
+        down: () => {
+          if (isFullscreen) fullscreenHandler(true);
+        },
+      }"
       text
       tile
       color="white"
@@ -154,10 +174,20 @@
         <playpause
           v-if="$refs.player"
           :video="$refs.player"
-          @play="$refs.player.play()"
-          @pause="$refs.player.pause()"
+          @play="$refs.player.play(), $refs.audio.play()"
+          @pause="$refs.player.pause(), $refs.audio.pause()"
         />
-        <v-btn fab text color="white" class="mx-12" @click="$router.push(`/watch?v=${recommends.contents[0].videoWithContextRenderer.videoId}`)">
+        <v-btn
+          fab
+          text
+          color="white"
+          class="mx-12"
+          @click="
+            $router.push(
+              `/watch?v=${recommends.contents[0].videoWithContextRenderer.videoId}`
+            )
+          "
+        >
           <v-icon size="2rem" color="white">mdi-skip-next</v-icon>
         </v-btn>
       </div>
@@ -221,7 +251,10 @@
           class="mx-2"
           style="z-index: 77777"
           :current-speed="$refs.player.playbackRate"
-          @speed="$refs.player.playbackRate = $event"
+          @speed="
+            ($refs.player.playbackRate = $event),
+              ($refs.audio.playbackRate = $event)
+          "
         />
         <v-btn v-if="isFullscreen" fab text small disabled @click.stop="">
           <v-icon>mdi-cards-outline</v-icon>
@@ -263,7 +296,9 @@
       :sources="sources"
       :seeking="seeking"
       @seeking="seeking = !seeking"
-      @scrub="$refs.player.currentTime = $event"
+      @scrub="
+        ($refs.player.currentTime = $event), ($refs.audio.currentTime = $event)
+      "
     />
   </div>
 </template>
@@ -324,13 +359,15 @@ export default {
       watched: 0,
       blocks: [],
       vidSrc: "",
+      audSrc: "",
       isVerticalVideo: false,
     };
   },
   mounted() {
     console.log("sources", this.sources);
     console.log("recommends", this.recommends);
-    this.vidSrc = this.sources[this.sources.length - 1].url;
+    this.audSrc = this.sources[this.sources.length - 1].url;
+    this.vidSrc = this.sources[0].url;
     let vid = this.$refs.player;
 
     this.$youtube.getSponsorBlock(this.video.id, (data) => {
@@ -344,6 +381,8 @@ export default {
       // TODO: detect video loading state and send this.loading to play button :loading = loading here
       // console.log(e);
       if (vid.readyState >= 3) {
+        this.$refs.audio.currentTime = vid.currentTime;
+        this.$refs.audio.play();
         vid.addEventListener("timeupdate", () => {
           if (!this.seeking) this.progress = vid.currentTime; // for seekbar
 
@@ -361,9 +400,12 @@ export default {
                 console.log("Skipping the sponsor");
                 this.$youtube.showToast("Skipped sponsor");
                 vid.currentTime = sponsor.segment[1] + 1;
+                this.$refs.audio.currentTime = vid.currentTime;
               }
             });
         });
+        // TODO: handle buffering with audio track
+        // TODO: handle video ending with a "replay" button if not on loop
         // TODO: detect video loading state and send this.loading to play button :loading = loading here
         vid.addEventListener("progress", () => {
           this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
@@ -389,6 +431,7 @@ export default {
       }, 500);
 
       this.$refs.player.currentTime += time;
+      this.$refs.audio.currentTime += time;
     },
     controlsHandler() {
       if (!this.seeking)
@@ -406,8 +449,12 @@ export default {
     qualityHandler(q) {
       console.log(q);
       let time = this.$refs.player.currentTime;
+      let speed = this.$refs.player.playbackRate;
       this.$refs.player.src = q;
+      this.$refs.audio.currentTime = time;
       this.$refs.player.currentTime = time;
+      this.$refs.player.playbackRate = speed;
+      this.$refs.audio.playbackRate = speed;
     },
     checkDimensions() {
       if (this.$refs.player.videoHeight > this.$refs.player.videoWidth) {
