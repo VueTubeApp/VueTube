@@ -41,7 +41,7 @@
 請訪問 www.vuetube.app/install 來下載 VueTube。
 
 <details>
-  <summary>或點擊這裏顯示所有可用的版本</summary>
+  <summary>或按此顯示所有可用的版本</summary>
 <br />
 
 ### Android
@@ -74,7 +74,7 @@
 在我們的網站上查看：www.vuetube.app/info/screenshots
 
 <details>
-  <summary> 或點擊這裏顯示截圖  </summary>
+  <summary> 或按此顯示截圖  </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -87,9 +87,15 @@
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
 
-### 如何提交代碼
+### 為什麼要開發這應用程式？
 
-請移至我們的網站查閲提交代碼指南：www.vuetube.app/contributing
+開發這應用程式的主意其實已在 Return YouTube Dislike 的 Discord 上討論一段時間了，因此我覺得我應該要嘗試一下！
+
+### 如何貢獻
+
+如您想貢獻原始碼，請移至我們的網站查閲貢獻原始碼指南：www.vuetube.app/contributing
+
+如您想翻譯此應用程式，請[按此](/NUXT/plugins/languages)查閲翻譯指南
 
 ## 貢獻者
 
