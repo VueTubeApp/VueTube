@@ -112,6 +112,14 @@ If you want to translate the app, [click here](/NUXT/plugins/languages) and read
 - Public YouTube dislike data provided by [Return Youtube Dislike](https://returnyoutubedislike.com)
 - Ajay & Community for providing the [Sponsorblock API](https://sponsor.ajay.app), Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
+## Donate
+
+VueTube is and always will be free and opensource, but you can support our devs with a donation that will help to mantain the project.
+
+[Donate in Ko-Fi.com](https://ko-fi.com/vuetube)
+
+[Donate PickleNik in GitHub](https://github.com/sponsors/PickleNik)
+
 ## Disclaimer
 
 The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found at [www.youtube.com](https://www.youtube.com).
