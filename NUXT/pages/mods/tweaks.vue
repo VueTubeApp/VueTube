@@ -3,7 +3,9 @@
   <div
     class="d-flex flex-column justify-end"
     style="
-      min-height: calc(100vh - 8rem - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
+      min-height: calc(
+        100vh - 8rem - env(safe-area-inset-top) - env(safe-area-inset-bottom)
+      ) !important;
     "
   >
     <!-- TODO: outer radius -->
@@ -169,11 +171,11 @@
 export default {
   data() {
     return {
-      lang: {}
-    }
+      lang: {},
+    };
   },
   mounted() {
-    this.lang = this.$lang("mods").tweaks
+    this.lang = this.$lang("mods").tweaks;
   },
   computed: {
     roundTweak: {

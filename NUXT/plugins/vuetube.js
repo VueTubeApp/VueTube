@@ -18,11 +18,17 @@ Vue.directive("emoji", {
 let backActions;
 
 const module = {
+
+  //---   Open External / Open In Browser   ---//
+  openExternal(url) {
+    window.open(url, '_blank');
+  },
+
   //---   Get GitHub Commits   ---//
-  commits: new Promise((resolve, reject) => {
+  releases: new Promise((resolve, reject) => {
     Http.request({
       method: "GET",
-      url: `${constants.URLS.VT_GITHUB}/commits`,
+      url: `${constants.URLS.VT_GITHUB}/releases`,
       params: {},
     })
       .then((res) => {
@@ -32,22 +38,6 @@ const module = {
         reject(err);
       });
   }),
-
-  getRuns(item, callback) {
-    let url = `${constants.URLS.VT_GITHUB}/commits/${item.sha}/check-runs`;
-
-    Http.request({
-      method: "GET",
-      url: url,
-      params: {},
-    })
-      .then((res) => {
-        callback(res.data);
-      })
-      .catch((err) => {
-        callback(err);
-      });
-  },
 
   haptics: {
     async hapticsImpactHeavy(x) {

@@ -23,7 +23,7 @@
           <v-expansion-panel
             class="background"
             :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
-            :style="{borderRadius: `${roundTweak / 2}rem`}"
+            :style="{ borderRadius: `${roundTweak / 2}rem` }"
           >
             <v-expansion-panel-header>{{ lang.more }}</v-expansion-panel-header>
             <v-expansion-panel-content class="logContent" v-text="item.data" />
@@ -58,19 +58,19 @@ export default {
   computed: {
     roundTweak() {
       return this.$store.state.tweaks.roundTweak;
-    }
+    },
   },
   data() {
     return {
       logs: new Array(),
-      lang: {}
+      lang: {},
     };
   },
   mounted() {
     const logs = this.$youtube.logs;
     this.logs = logs;
 
-    this.lang = this.$lang("mods").logs
+    this.lang = this.$lang("mods").logs;
   },
 };
 </script>

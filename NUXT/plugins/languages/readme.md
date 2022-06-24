@@ -2,23 +2,23 @@
 
 ## ⛔️ Rules and advices
 
-- **Please do not use Internet translators** 
+- **Please do not use Internet translators**
 
 Translations made automatically are not allowed in VueTube. You need to know and understand both English and the language you're translating to guarantee a good result. Please do not contribute using Google Translator or similars.
 
-*Example: "Enable Return Youtube Dislike integration" should be translated to Spanish as "Activar la integración de Return YouTube Dislike", but an automatic translation could be "Activar integración Devolver los No me gusta de Youtube", and that doesn't sounds natural.*
+_Example: "Enable Return Youtube Dislike integration" should be translated to Spanish as "Activar la integración de Return YouTube Dislike", but an automatic translation could be "Activar integración Devolver los No me gusta de Youtube", and that doesn't sounds natural._
 
 - **Consider leaving some words in English**
 
 Some words might sound better in English. For example, depending of the grade of English casual words in your language, you can consider not translating "Plugins", "Dislike", etc.
 
-*Example: Instead of translating "Hide Dislikes" to French as "Masquer Je n'aime", you can use "Masquer Dislikes".*
+_Example: Instead of translating "Hide Dislikes" to French as "Masquer Je n'aime", you can use "Masquer Dislikes"._
 
 - **The name of the language should be in the target language, not in English**
 
-*Example: "日本語" instead of "Japanese", "Italiano" instead of "Italian" and "Русский" instead of "Russian".
+\*Example: "日本語" instead of "Japanese", "Italiano" instead of "Italian" and "Русский" instead of "Russian".
 
-That doesn't apply to the file name (polish.js, dutch.js, indonesian.js), but it does to *"name: example"* section.
+That doesn't apply to the file name (polish.js, dutch.js, indonesian.js), but it does to _"name: example"_ section.
 
 ## 🟢 How to do the translation
 
@@ -35,9 +35,9 @@ Only translate the text into quotation marks ("). For example, if the translatio
 It's easy and intuitive. Also there are different sections:
 
 **settings: { <br/>
-    general: "General", <br/>
-    theme: "Theme",**
-    
+general: "General", <br/>
+theme: "Theme",**
+
 Don't touch the section name, in this case, "settings".
 
 ## 💻 How to edit and pull request

@@ -4,12 +4,12 @@ module.exports = {
   global: {
     home: "Start",
     subscriptions: "Abos",
-    library: "Mediathek"
+    library: "Mediathek",
   },
 
   index: {
     connecting: "Verbinden",
-    launching: "Starten"
+    launching: "Starten",
   },
 
   settings: {
@@ -22,12 +22,12 @@ module.exports = {
     updates: "Updates",
     logs: "Logs",
     about: "Über",
-    devmode: "Registierungseditor"
+    devmode: "Registrierungseditor",
   },
 
   mods: {
     general: {
-      language: "Sprache"
+      language: "Sprache",
     },
     theme: {
       normal: "Normal",
@@ -36,40 +36,40 @@ module.exports = {
       dark: "Dunkel",
       black: "Schwarz",
       darkmode: "Dunkler Modus",
-      darkmodetagline: "Bravo Sechs, Lichter aus."
+      darkmodetagline: "Bravo Sechs, Lichter aus.",
     },
     tweaks: {
       fullscreen: "Vollbild",
-      navbarblur: "Nvigationsleistenunschärfe",
+      navbarblur: "Navigationsleistenunschärfe",
       roundedcorners: "Runde Ecken",
       roundthumbnails: "Runde Thumbnails",
       roundwatchpagecomponents: "Runde Startseiten Komponenten",
-      radius: "Radius"
+      radius: "Radius",
     },
     startup: {
-      defaultpage: "Standard Seite"
+      defaultpage: "Standard Seite",
     },
     updates: {
       install: "Installieren",
       view: "Anschauen",
       latest: "Neuste",
-      installed: "Installiert"
+      installed: "Installiert",
     },
     logs: {
-      more: "Mehr"
+      more: "Mehr",
     },
     about: {
       appinformation: "App Informationen",
       appversion: "App Version",
-      deviceinformation: "Gerät Informationen",
+      deviceinformation: "Geräteinformationen",
       platform: "Plattform",
       os: "Betriebssystem",
       model: "Modell",
       manufacturer: "Hersteller",
       emulator: "Emulator",
       github: "GitHub",
-      discord: "Discord"
-    }
+      discord: "Discord",
+    },
   },
 
   events: {
@@ -77,8 +77,6 @@ module.exports = {
     tagline: "Die Zukunft des Videostreaming",
     next: "Nächste",
     updated: "VueTube wurde aktualisiert!",
-    awesome: "Cool!"
-  }
-
-
-}
+    awesome: "Cool!",
+  },
+};

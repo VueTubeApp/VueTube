@@ -4,30 +4,33 @@ module.exports = {
   global: {
     home: "Accueil",
     subscriptions: "Abonnements",
-    library: "Bibliothèque"
+    library: "Bibliothèque",
+    restart: "Redémarrer maintenant",
+    later: "Plus tard",
+    settingRestart: "Redémarrage nécessaire pour appliquer le changement."
   },
 
   index: {
     connecting: "Connexion",
-    launching: "Démarrage"
+    launching: "Démarrage",
   },
 
   settings: {
-    general: "Paramètres Généraux",
+    general: "Paramètres généraux",
     theme: "Thème",
     player: "Lecteur vidéo",
-    uitweaker: "Personnalisation de l'Interface",
+    uitweaker: "Personnalisation de l'interface",
     startupoptions: "Options de démarrage",
     plugins: "Plug-ins",
     updates: "Mises à jour",
     logs: "Journaux",
     about: "À propos",
-    devmode: "Éditeur du Registre"
+    devmode: "Éditeur du Registre",
   },
 
   mods: {
     general: {
-      language: "Langue"
+      language: "Langue",
     },
     theme: {
       normal: "Normal",
@@ -36,7 +39,7 @@ module.exports = {
       dark: "Sombre",
       black: "Noir",
       darkmode: "Mode Sombre",
-      darkmodetagline: "Bravo pour utiliser le mode sombre !"
+      darkmodetagline: "Bravo pour utiliser le mode sombre !",
     },
     tweaks: {
       fullscreen: "Plein écran",
@@ -47,7 +50,7 @@ module.exports = {
       radius: "Rayon",
     },
     startup: {
-      defaultpage: "Page par défaut"
+      defaultpage: "Page par défaut",
     },
     updates: {
       install: "Installer",
@@ -68,8 +71,8 @@ module.exports = {
       manufacturer: "Fabricant",
       emulator: "Émulateur",
       github: "GitHub",
-      discord: "Discord"
-    }
+      discord: "Discord",
+    },
   },
 
   events: {
@@ -80,11 +83,10 @@ module.exports = {
     awesome: "Incroyable !",
     langsetup: "Commençons par sélectionner une langue !",
     featuresetup: "Sélectionnons des fonctionnalités !",
-    enableryd: "Activer Return YouTube Dislike (Retourner les Dislikes de YouTube)",
+    enableryd:
+      "Activer Return YouTube Dislike (Retourner les Dislikes de YouTube)",
     enablespb: "Activer SponsorBlock",
     thanks: "Merci d'utiliser VueTube",
-    enjoy: "Nous ésperons que vous apprécierez votre éxperience ! "
-  }
-
-
-}
+    enjoy: "Nous ésperons que vous apprécierez votre éxperience ! ",
+  },
+};

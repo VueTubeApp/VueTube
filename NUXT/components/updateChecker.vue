@@ -37,9 +37,10 @@ export default {
   },
 
   async mounted() {
-    const commits = await this.$vuetube.commits;
+    const releases = await this.$vuetube.releases;
     const appVersion = process.env.appVersion;
-    if (appVersion !== commits[0].sha && appVersion !== "dev-local") {
+    const appChannel = process.env.release;
+    if (appVersion !== releases[0].tag_name && appVersion !== "dev-local" && appChannel !== "Unstable") {
       this.updateSnackbar = true;
     }
   },

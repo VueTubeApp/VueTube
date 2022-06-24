@@ -4,12 +4,15 @@ module.exports = {
   global: {
     home: "首页",
     subscriptions: "订阅内容",
-    library: "媒体库"
+    library: "媒体库",
+    restart: "重新启动",
+    later: "稍后",
+    settingRestart: "此设置修改后需要重新启动应用程序才会生效。"
   },
 
   index: {
     connecting: "连接中",
-    launching: "启动中"
+    launching: "启动中",
   },
 
   settings: {
@@ -22,12 +25,12 @@ module.exports = {
     updates: "更新",
     logs: "日志",
     about: "关于",
-    devmode: "注册表编辑工具"
+    devmode: "注册表编辑工具",
   },
 
   mods: {
     general: {
-      language: "语言"
+      language: "语言",
     },
     theme: {
       normal: "正常",
@@ -36,7 +39,7 @@ module.exports = {
       dark: "深色",
       black: "黑色",
       darkmode: "黑暗模式",
-      darkmodetagline: "不要温和地走进那个良夜……"
+      darkmodetagline: "不要温和地走进那个良夜……",
     },
     tweaks: {
       fullscreen: "全屏",
@@ -44,19 +47,19 @@ module.exports = {
       roundedcorners: "圆角",
       roundthumbnails: "圆的缩图",
       roundwatchpagecomponents: "圆的观看页部件",
-      radius: "半径"
+      radius: "半径",
     },
     startup: {
-      defaultpage: "默认页"
+      defaultpage: "默认页",
     },
     updates: {
       install: "安装",
       view: "查看",
       latest: "最新",
-      installed: "已安装"
+      installed: "已安装",
     },
     logs: {
-      more: "更多"
+      more: "更多",
     },
     about: {
       appinformation: "应用程序信息",
@@ -68,8 +71,8 @@ module.exports = {
       manufacturer: "制造商",
       emulator: "模拟器",
       github: "GitHub",
-      discord: "Discord"
-    }
+      discord: "Discord",
+    },
   },
 
   events: {
@@ -83,8 +86,6 @@ module.exports = {
     enableryd: "启用 Return YouTube Dislike",
     enablespb: "启用 SponsorBlock",
     thanks: "谢谢使用 VueTube",
-    enjoy: "祝你有一个愉快的体验"
-  }
-
-
-}
+    enjoy: "祝你有一个愉快的体验",
+  },
+};

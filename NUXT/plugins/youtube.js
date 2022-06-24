@@ -81,7 +81,7 @@ const searchModule = {
   },
   showToast(text) {
     Toast.show({ text: text });
-  }
+  },
 };
 
 //---   Recommendations   ---//

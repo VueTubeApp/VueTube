@@ -4,12 +4,12 @@ module.exports = {
   global: {
     home: "Home",
     subscriptions: "Iscrizioni",
-    library: "Raccolta"
+    library: "Raccolta",
   },
 
   index: {
     connecting: "Connessione",
-    launching: "Avvio"
+    launching: "Avvio",
   },
 
   settings: {
@@ -22,12 +22,12 @@ module.exports = {
     updates: "Aggiornamenti",
     logs: "Registro",
     about: "Informazioni",
-    devmode: "Modalità Sviluppatore"
+    devmode: "Modalità Sviluppatore",
   },
 
   mods: {
     general: {
-      language: "Lingua"
+      language: "Lingua",
     },
     theme: {
       normal: "Normale",
@@ -36,7 +36,7 @@ module.exports = {
       dark: "Scuro",
       black: "Nero",
       darkmode: "Modalità scura",
-      darkmodetagline: "Giovane Jedi, benvenuto al lato oscuro."
+      darkmodetagline: "Giovane Jedi, benvenuto al lato oscuro.",
     },
     tweaks: {
       fullscreen: "Schermo Intero",
@@ -44,19 +44,19 @@ module.exports = {
       roundedcorners: "Arrotondamento Spigoli",
       roundthumbnails: "Anteprima Arrotondata",
       roundwatchpagecomponents: "Componenti Rotondi Della Pagina Di Controllo",
-      radius: "Raggio"
+      radius: "Raggio",
     },
     startup: {
-      defaultpage: "Pagina Predefinita"
+      defaultpage: "Pagina Predefinita",
     },
     updates: {
       install: "Ultimo",
       view: "Visualizza",
       latest: "Più Recente",
-      installed: "Installato"
+      installed: "Installato",
     },
     logs: {
-      more: "Più"
+      more: "Più",
     },
 
     about: {
@@ -69,8 +69,8 @@ module.exports = {
       manufacturer: "Produttore",
       emulator: "Emulatore",
       github: "GitHub",
-      discord: "Discord"
-    }
+      discord: "Discord",
+    },
   },
 
   events: {
@@ -78,9 +78,6 @@ module.exports = {
     tagline: "Il Futuro Dello Streaming Video",
     next: "Prossimo",
     updated: "VueTube è Stato Aggiornato",
-    awesome: "Fantastico!"
-  }
-
-
-}
- 
+    awesome: "Fantastico!",
+  },
+};
