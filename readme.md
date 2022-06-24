@@ -4,9 +4,10 @@
   </a>
   </br>
   <sub>Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>English Readme contributors: <a href="https://github.com/404-Program-not-found">@404-Program-not-found</a>, <a href="https://github.com/Frontesque">@Frontesque</a>, <a href="https://github.com/gayolGate">@gayolGate</a>, <a href="https://github.com/ThatOneCalculator">@ThatOneCalculator</a>, <a href="https://github.com/afnzmn">@afnzmn</a>, <a href="https://github.com/tired6488">@tired6488</a>, <a href="https://github.com/DARKDRAGON532">@DARKDRAGON532</a>, <a href="https://github.com/PickleNik">@PickleNik</a> and <a href="https://github.com/Zyborg777">@Zyborg777</a></sub>
   </br>
   </br>
-<strong>A simple FOSS video streaming client aimed to recreate ALL features from their respective apps (and more)</strong>
+<strong>A simple and open source video streaming client aimed to recreate ALL the features from their respective apps (and more!)</strong>
 </br>
 Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
@@ -20,16 +21,16 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Read this in other languages: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano](readme.it.md)
+Read this page in other languages: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano](readme.it.md)
 
 ## Features
 
 <img src="./resources/Features.svg" alt="VueTube icon" height="100"/>
 
-- 🎨 Themes: Light, Dark, OLED, All the colors of the rainbow
-- 🖌️ Customizable UI: You can fully customize the accent color, and other parts of the UI to remove features that you don't use!
-- ⬆️ Auto Update: Be notified when an update is available & downgrade if you dislike it!
-- 👁️ Tracking Protection: No telemetry is sent from your device by default
+- 🎨 Themes: Light, dark, OLED and all the colors of the rainbow!
+- 🖌️ Customizable UI: Customize the themes or even disable some parts of the UI that you don't use
+- ⬆️ Auto updates: Be notified when an update is available & downgrade if you don't like it!
+- 👁️ Tracking protection: No telemetry data is sent from your device by default
 - 📺 Custom video player
 - 👎 Return YouTube Dislike - [_More info_](https://returnyoutubedislike.com)
 - 💰 SponsorBlock - [_More info_](https://sponsor.ajay.app)
@@ -38,23 +39,23 @@ Read this in other languages: [English,](readme.md) [Español,](readme.es.md) [�
 
 <img src="./resources/Install.svg" alt="VueTube icon" height="100"/>
 
-To install please visit www.vuetube.app/install
+To install the app, please visit [vuetube.app/install](https://www.vuetube.app/install)
 
 <details>
-  <summary>Or click here to display all versions available</summary>
+  <summary>Or click here to see all the versions available</summary>
 <br />
 
 ### Android
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| A lot of bugs, but early access to features                                                                                                 | Less bugs than unstable, slightly more features than stable                                                                                                     | Not available until the app becomes more developed                                              |
+| Pretty unstable, but you get early access to new features                                                                                                 | Less bugs than unstable while having more features than stable                                                                                                     | Not available yet                                              |
 
 ### iOS
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| A lot of bugs, but early access to features                                                                                             | Less bugs than unstable, slightly more features than stable                                                                                                                    | Not available until the app becomes more developed                                              |
+| Pretty unstable, but you get early access to new features                                                                                                | Less bugs than unstable while having more features than stable                                                                                                                    | Not available yet                                              |
 
 </details>
 
@@ -62,19 +63,19 @@ To install please visit www.vuetube.app/install
 
 <img src="./resources/Plans.svg" alt="VueTube icon" height="100"/>
 
-- 🔍 Advanced Search
-- 🗞️ Locally store watch history
-- ✂️ Shorts
-- 🧑 Google account sign in
-- 🖼️ Picture in picture mode
-- and more!
+- 🔍 Advanced search
+- 🗞️ Local watch history
+- ✂️ YouTube Shorts (small videos that last anywhere from 15 to 60 seconds)
+- 🧑 Signing in with your Google account
+- 🖼️ Picture-in-Picture mode (PiP)
+- And more!
 
 ## Screenshots
 
-View on our website: www.vuetube.app/info/screenshots
+[View them on our website](https://www.vuetube.app/info/screenshots)
 
 <details>
-  <summary> Or click here to display screenshots </summary>
+  <summary> Or click here to see the screenshots </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -89,13 +90,13 @@ View on our website: www.vuetube.app/info/screenshots
 
 ### Why am I doing this?
 
-Well this has been thrown around on the Return Youtube Dislike discord server for quite some time, so I figured that I should probably take a crack at it!
+Well, this has been thrown around on the Return YouTube Dislike Discord server for quite some time, so I figured that I should probably give it a try!
 
 ### Want to contribute?
 
-Please read our website on how to do so: www.vuetube.app/contributing
+Please read our website on how to do so: [vuetube.app/contributing](https://www.vuetube.app/contributing)
 
-If you want to translate the app, [click here](/NUXT/plugins/languages) and read how to do it
+If you want to translate the app, [click here](/NUXT/plugins/languages) and read the instructions
 
 ## Contributors
 
@@ -122,6 +123,6 @@ VueTube is and always will be free and open source, but you can support our devs
 
 ## Disclaimer
 
-The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found at [www.youtube.com](https://www.youtube.com).
+The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found at [youtube.com](https://www.youtube.com).
 
 Any trademark, service mark, trade name, or other intellectual property rights used in the VueTube project are owned by the respective owners.
