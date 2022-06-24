@@ -5,6 +5,9 @@ module.exports = {
     home: "Główna",
     subscriptions: "Subskrypcje",
     library: "Biblioteka",
+    restart: "Uruchom Ponownie",
+    later: "Nie Teraz",
+    settingRestart: " Zmiana tego ustawienia wymaga ponownego uruchomienia aplikacji w celu zastosowania zmian."
   },
 
   index: {
@@ -41,7 +44,7 @@ module.exports = {
     tweaks: {
       fullscreen: "Pełny Ekran",
       navbarblur: "Rozmycie Paska Nawigacyjnego",
-      roundedcorners: "Zaokrąglone Krawędzie",
+      roundedcorners: "Zaokrąglenie Krawędzi",
       roundthumbnails: "Zaokrąglone Miniaturki",
       roundwatchpagecomponents: "Zaokrąglone Elementy Interfejsu",
       radius: "Promień",
@@ -50,7 +53,7 @@ module.exports = {
       defaultpage: "Strona Domyślna",
     },
     updates: {
-      install: "Zainstaluj",
+      install: "Instaluj",
       view: "Zobacz",
       latest: "Najnowsza",
       installed: "Zainstalowana",
@@ -76,7 +79,7 @@ module.exports = {
   events: {
     welcome: "Witaj w VueTube",
     tagline: "Przyszłość Streamingu Wideo",
-    next: "Następny",
+    next: "Dalej",
     updated: "VueTube Został Zaktualizowany!",
     awesome: "Świetnie!",
   },
