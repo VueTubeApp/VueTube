@@ -5,7 +5,7 @@ module.exports = {
     home: "홈",
     subscriptions: "구독",
     library: "라이브러리",
-    restart: "다시 시작",
+    restart: "재시작",
     later: "나중에",
     settingRestart: "이 설정을 수정하려면 응용 프로그램을 다시 시작해야 변경 사항이 적용됩니다."
   },
