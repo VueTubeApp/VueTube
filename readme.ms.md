@@ -113,6 +113,14 @@ Sekiranya anda mahu menterjemahkan aplikasi ini, klik di [sini](https://github.c
 - Data kiraan tidak suka YouTube awam disediakan oleh [Return YouTube Dislike](https://returnyoutubedislike.com)
 - Ajay & Komuniti kerana menyediakan [API SponsorBlock](https://sponsor.ajay.app), Dilesenkan di bawah [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
+## Derma
+
+VueTube adalah dan sentiasa akan percuma dan sumber terbuka, tetapi anda boleh menyokong pembangun kami dengan derma yang akan membantu untuk mengekalkan projek ini.
+
+[Derma di Ko-Fi.com](https://ko-fi.com/vuetube) (Rasmi)
+
+[Derma kepada PickleNik di GitHub](https://github.com/sponsors/PickleNik) (Penyelenggara)
+
 ## Penafian
 
 Projek VueTube dan kandungannya tidak bergabung dengan, dibiayai, diberi izin, disokong oleh, atau dalam apa jua cara dikaitkan dengan YouTube, Google LLC atau mana-mana sekutu dan anak syarikatnya. Laman web rasmi YouTube boleh didapati di [www.youtube.com](https://www.youtube.com).
