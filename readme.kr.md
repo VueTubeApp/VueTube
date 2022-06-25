@@ -34,13 +34,13 @@ View Tube 발음 기호 (<code>/ˈvjuːˌtjuːb/</code>)
 - 👁️ 추적 방지(보호): 추적 가능한 데이터를 전송하지 않아요!
 - 📺 커스텀 비디오 플레이어
 - 👎 Return YouTube Dislike(유튜브 싫어요 숫자 표시) - [_추가 정보_](https://returnyoutubedislike.com)
-- 💰 SponsorBlock(스폰서,간접광고 차단) - [_추가 정보_](https://sponsor.ajay.app)
+- 💰 SponsorBlock(스폰서, 간접광고 차단) - [_추가 정보_](https://sponsor.ajay.app)
 
 ## 설치
 
 <img src="./resources/Install.svg" alt="VueTube icon" height="100"/>
 
-[vuetube.app/install](https://www.vuetube.app/install) 에서 다운로드 받을 수 있습니다
+[vuetube.app/install](https://www.vuetube.app/install) 에서 다운로드할 수 있습니다
 
 <details>
   <summary>또는 여기를 클릭해서 사용 가능한 모든 버전을 확인하세요 </summary>
@@ -50,13 +50,13 @@ View Tube 발음 기호 (<code>/ˈvjuːˌtjuːb/</code>)
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| 상당히 불안정 합니다, 하지만 더 많은 기능을 먼저 사용할 수 있습니다                                                                                                 | unstable(불안정) 버전보다 버그가 적습니다, 하지만 stable(안정) 버전보다 많은 기능을 사용할 수 있습니다                                                                                                     | 아직 사용할 수 없습니다                                              |
+| 상당히 불안정합니다, 하지만 더 많은 기능을 먼저 사용할 수 있습니다                                                                                                 | unstable(불안정) 버전보다 버그가 적습니다, 하지만 stable(안정) 버전보다 많은 기능을 사용할 수 있습니다                                                                                                     | 아직 사용할 수 없습니다                                              |
 
 ### iOS
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| 상당히 불안정 합니다, 하지만 더 많은 기능을 먼저 사용할 수 있습니다                                                                                                 | unstable(불안정) 버전보다 버그가 적습니다, 하지만 stable(안정) 버전보다 많은 기능을 사용할 수 있습니다                                                                                                     | 아직 사용할 수 없습니다                                              |
+| 상당히 불안정합니다, 하지만 더 많은 기능을 먼저 사용할 수 있습니다                                                                                                 | unstable(불안정) 버전보다 버그가 적습니다, 하지만 stable(안정) 버전보다 많은 기능을 사용할 수 있습니다                                                                                                     | 아직 사용할 수 없습니다                                              |
 
 </details>
 
@@ -89,9 +89,10 @@ View Tube 발음 기호 (<code>/ˈvjuːˌtjuːb/</code>)
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
 
-### Why am I doing this?
+### 이 프로그램을 만든 이유?
 
-Well, this has been thrown around on the Return YouTube Dislike Discord server for quite some time, so I figured that I should probably give it a try!
+Return YouTube Dislike 디스코드 서버에서 꽤 오랜 기간 동안 화재되었던 기능들이 있었지요,
+저는.. 그 기능들로 한번 도전해 봐야겠다고 생각했어요, 그게 시작이었지요!
 
 ### 기여하고 싶으신가요?
 
@@ -126,4 +127,4 @@ VueTube는 항상 무료이며 오픈소스예요!, 도네이션으로 개발자
 
 VueTube 프로젝트 및 해당 콘텐츠는 YouTube, Google LLC 또는 그 계열사 및 자회사와 제휴, 자금 지원, 승인, 보증 또는 어떤 식으로든 관련되지 않습니다. YouTube 공식 웹사이트는 [youtube.com](https://www.youtube.com) 입니다.
 
-VueTube 프로젝트에 사용된 모든 상표, 서비스 마크, 상호 또는 기타 지적 재산권은 해당 소유자의 소유입니다.
+VueTube 프로젝트에 사용된 모든 상표, 서비스마크, 상호 또는 기타 지적 재산권은 해당 소유자의 소유입니다.
