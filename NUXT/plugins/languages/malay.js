@@ -5,6 +5,9 @@ module.exports = {
     home: "Laman Utama",
     subscriptions: "Langganan",
     library: "Pustaka",
+    restart: "Mulakan semula",
+    later: "Kemudian",
+    settingRestart: "Penukaran tetapan ini memerlukan apl mulakan semula untuk menggunakan tetapan."
   },
 
   index: {

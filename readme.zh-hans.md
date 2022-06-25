@@ -89,11 +89,13 @@
 
 ### 为什么要开发这应用程序？
 
-开发这应用程序的主意其实已在 Return YouTube Dislike 的 discord 上讨论一段时间了，因此我觉得我应该要尝试一下！
+开发这应用程序的主意其实已在 Return YouTube Dislike 的 Discord 上讨论一段时间了，因此我觉得我应该要尝试一下！
 
-### 如何提交代码
+### 如何贡献
 
-请访问我们的网站查閲提交代码指南：www.vuetube.app/contributing
+如您想提交代码，请访问我们的网站查閲提交代码指南：www.vuetube.app/contributing
+
+如您想翻译此应用程序，请[点击这里](/NUXT/plugins/languages)查阅翻译指南
 
 ## 贡献者
 
