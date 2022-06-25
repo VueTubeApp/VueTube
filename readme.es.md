@@ -104,6 +104,14 @@ Si quieres traducir la app, [haz clic aquí](/NUXT/plugins/languages) y lee cóm
 - Estadísticas públicas de dislikes proporcionadas por [Return YouTube Dislike](https://returnyoutubedislike.com)
 - Ajay y su comunidad por proporcionarnos la [API de Sponsorblock](https://sponsor.ajay.app), Licenciada bajo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
+## Donar
+
+VueTube es y siempre será gratuito y de código abierto, pero puedes apoyar a nuestros desarrolladores con una donación que servirá para mantener el proyecto.
+
+[Donar en Ko-Fi.com](https://ko-fi.com/vuetube) (Official)
+
+[Donar a PickleNik en GitHub](https://github.com/sponsors/PickleNik) (Maintainer)
+
 ## Aviso legal
 
 El proyecto VueTube y sus contenidos no están afiliados, financiados, autorizados, respaldados o asociados de ninguna manera con YouTube, Google LLC o cualquiera de sus filiales y subsidiarias. El sitio web oficial de YouTube se encuentra en [www.youtube.com](https://www.youtube.com).
