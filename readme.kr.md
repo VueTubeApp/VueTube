@@ -91,8 +91,9 @@ View Tube 발음 기호 (<code>/ˈvjuːˌtjuːb/</code>)
 
 ### 이 프로그램을 만든 이유?
 
-Return YouTube Dislike 디스코드 서버에서 꽤 오랜 기간 동안 화재되었던 기능들이 있었지요,
-저는.. 그 기능들로 한번 도전해 봐야겠다고 생각했어요, 그게 시작이었지요!
+Return YouTube Dislike 디스코드 서버에서 꽤 오랜 기간 동안 화재되었던 기능들이 있었어요,
+</br>
+저는.. 그 기능들로 한번 도전해 봐야겠다고 생각했어요, 그게 시작이였죠!
 
 ### 기여하고 싶으신가요?
 
@@ -106,7 +107,7 @@ Vuetube를 번역하고 싶으신가요?, [여기를 클릭](/NUXT/plugins/langu
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
 </a>
 
-<sub>[contrib.rocks](https://contrib.rocks)를 사용하여 제작되었습니다. </sub>
+<sub>[contrib.rocks](https://contrib.rocks) 를 사용하여 제작되었습니다. </sub>
 
 ## 감사의 말
 
@@ -117,7 +118,9 @@ Vuetube를 번역하고 싶으신가요?, [여기를 클릭](/NUXT/plugins/langu
 
 ## 후원
 
-VueTube는 항상 무료이며 오픈소스예요!, 도네이션으로 개발자를 지원할 수 있어요(프로젝트를 유지하는데 정말 많은 도움이 됩니다 항상 감사합니다)!
+VueTube는 항상 무료이며 오픈소스입니다, 도네이션으로 개발자를 지원할 수 있어요!
+</br>
+프로젝트를 유지하는데 많은 도움이 됩니다 정말 감사합니다!
 
 [Ko-Fi.com에서 후원](https://ko-fi.com/vuetube) (공식)
 

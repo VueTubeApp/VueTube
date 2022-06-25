@@ -12,7 +12,7 @@ module.exports = {
 
   index: {
     connecting: "연결 중",
-    plugins: "플러그인 로드 중",
+    plugins: "플러그인 불러오는 중",
     launching: "시작 중",
   },
 
@@ -36,7 +36,7 @@ module.exports = {
     theme: {
       normal: "기본",
       adaptive: "적응형",
-      custom: "사용자 정의",
+      custom: "커스텀",
       dark: "다크",
       black: "블랙",
       darkmode: "다크 모드",
@@ -46,8 +46,8 @@ module.exports = {
       fullscreen: "전체 화면",
       navbarblur: "탐색 표시줄 흐리게",
       roundedcorners: "둥근 모서리",
-      roundthumbnails: "둥근 썸네일",
-      roundwatchpagecomponents: "둥근 영상 하단 구성 요소",
+      roundthumbnails: "썸네일 둥글게",
+      roundwatchpagecomponents: "영상 하단 구성 요소 둥글게",
       radius: "반경",
     },
     startup: {
@@ -78,16 +78,16 @@ module.exports = {
 
   events: {
     welcome: "VueTube에 오신 것을 환영합니다",
-    tagline: "비디오 스트리밍의 미래",
+    tagline: "VueTube는 항상 무료이며 오픈소스입니다",
     next: "다음",
     updated: "VueTube가 업데이트되었어요!",
-    awesome: "대박!",
+    awesome: "확인",
     langsetup: "언어를 선택해주세요!",
     featuresetup: "이제 추가 기능을 선택해주세요!",
-    enableryd: "Return YouTube Dislike 활성화",
-    enablespb: "SponsorBlock 활성화",
+    enableryd: "Return YouTube Dislike(유튜브 싫어요 숫자 표시) 활성화",
+    enablespb: "SponsorBlock(스폰서, 간접광고 차단) 활성화",
     thanks: "VueTube를 사용해 주셔서 감사합니다",
-    enjoy: "즐거운 경험 되시길 바라겠습니다",
+    enjoy: "즐거운 경험 가득하길 바랍니다",
     packageinstaller: "다운로드할 패키지 선택"
   },
 };
