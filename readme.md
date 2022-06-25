@@ -115,7 +115,7 @@ If you want to translate the app, [click here](/NUXT/plugins/languages) and read
 
 ## Donate
 
-VueTube is and always will be free and open source, but you can support our devs with a donation that will help to mantain the project.
+VueTube is and always will be free and open source, but you can support our devs with a donation that will help to maintain the project.
 
 [Donate on Ko-Fi.com](https://ko-fi.com/vuetube) (Official)
 

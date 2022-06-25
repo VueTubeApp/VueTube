@@ -3,10 +3,11 @@
     <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <sub>標誌：<a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>標誌：<a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
+  <sub>繁體中文 Readme 貢獻者：<a href="https://github.com/404-Program-not-found">@404-Program-not-found</a>, <a href="https://github.com/nokanol45">@nokanol45</a>, <a href="https://github.com/afnzmn">@afnzmn</a></sub>
   </br>
   </br>
-<strong>輕巧的 FOSS 影音串流客戶端，旨在再造不同影音串流應用程式的所有功能（以及更多）</strong>
+<strong>輕巧的開放原始碼影音串流客戶端，旨在再造不同影音串流應用程式的所有功能（以及更多！）</strong>
 </br>
 讀音是 View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
@@ -26,8 +27,8 @@
 
 <img src="./resources/readme-zh-hant/Features.zh-hant.svg" alt="VueTube icon" height="100"/>
 
-- 🎨 可自訂的主題：明亮、黑暗、OLED、或者從彩虹中的任何顏色選擇！
-- 🖌️ 使用者介面：完全自訂強調色、以及介面的其他部分以便移除您不使用的功能！
+- 🎨 主題：明亮、黑暗、OLED、以及彩虹中的任何顏色！
+- 🖌️ 可自訂的使用者介面：自訂主題，甚至停用您不使用的一些介面
 - ⬆️ 自動更新：有新版本可用時接收通知，如果您不喜歡也可以撤銷更新！
 - 👁️ 追蹤阻斷：VueTube 預設不會傳送任何跟蹤數據
 - 📺 自家製的 HTML5 影片播放器
@@ -41,7 +42,7 @@
 請訪問 www.vuetube.app/install 來下載 VueTube。
 
 <details>
-  <summary>或按此顯示所有可用的版本</summary>
+  <summary>或按此查看所有可用的版本</summary>
 <br />
 
 ### Android
@@ -64,9 +65,9 @@
 
 - 🔍 進階搜尋功能
 - 🗞️ 本地儲存觀看記錄
-- ✂️ Shorts
+- ✂️ Shorts（大概 15 至 60 秒長的短片）
 - 🧑 Google 帳戶登入
-- 🖼️ 畫中畫模式
+- 🖼️ 畫中畫模式（PiP）
 - 以及更多！
 
 ## 截圖
@@ -74,7 +75,7 @@
 在我們的網站上查看：www.vuetube.app/info/screenshots
 
 <details>
-  <summary> 或按此顯示截圖  </summary>
+  <summary> 或按此查看截圖  </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -111,6 +112,14 @@
 - 感謝[@afnzmn](https://github.com/afnzmn)提供 VueTube 標誌
 - 感謝[Return YouTube Dislike](https://returnyoutubedislike.com)提供的「不喜歡」數據
 - 感謝 Ajay 和 Sponsorblock 社群提供[Sponsorblock 的 API](http://sponsorblock.ajay.app/)。授權於[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+## 捐款
+
+VueTube 永遠是自由且開源的，但您仍可捐款以支持我們的開發人員，幫助維護這個項目。
+
+[在 Ko-Fi.com 上捐款](https://ko-fi.com/vuetube) (官方)
+
+[在 GitHub 上捐款給 PickleNik](https://github.com/sponsors/PickleNik) (維護者)
 
 ## 免責聲明
 
