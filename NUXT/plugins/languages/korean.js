@@ -40,7 +40,7 @@ module.exports = {
       dark: "다크",
       black: "블랙",
       darkmode: "다크 모드",
-      darkmodetagline: "브라보 식스... 어둠속으로...",
+      darkmodetagline: "브라보 식스... 어둠속으로.",
     },
     tweaks: {
       fullscreen: "전체 화면",
