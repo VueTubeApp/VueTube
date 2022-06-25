@@ -3,7 +3,7 @@
     <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <sub>Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
   <sub>English Readme contributors: <a href="https://github.com/404-Program-not-found">@404-Program-not-found</a>, <a href="https://github.com/Frontesque">@Frontesque</a>, <a href="https://github.com/gayolGate">@gayolGate</a>, <a href="https://github.com/ThatOneCalculator">@ThatOneCalculator</a>, <a href="https://github.com/afnzmn">@afnzmn</a>, <a href="https://github.com/tired6488">@tired6488</a>, <a href="https://github.com/DARKDRAGON532">@DARKDRAGON532</a>, <a href="https://github.com/PickleNik">@PickleNik</a> and <a href="https://github.com/Zyborg777">@Zyborg777</a></sub>
   </br>
   </br>
@@ -117,9 +117,9 @@ If you want to translate the app, [click here](/NUXT/plugins/languages) and read
 
 VueTube is and always will be free and open source, but you can support our devs with a donation that will help to mantain the project.
 
-[Donate on Ko-Fi.com](https://ko-fi.com/vuetube)
+[Donate on Ko-Fi.com](https://ko-fi.com/vuetube) (Official)
 
-[Donate to PickleNik on GitHub](https://github.com/sponsors/PickleNik)
+[Donate to PickleNik on GitHub](https://github.com/sponsors/PickleNik) (Maintainer)
 
 ## Disclaimer
 
