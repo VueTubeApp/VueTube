@@ -81,7 +81,7 @@ module.exports = {
     tagline: "VueTube는 항상 무료이며 오픈소스입니다",
     next: "다음",
     updated: "VueTube가 업데이트되었어요!",
-    awesome: "대박!",
+    awesome: "확인",
     langsetup: "언어를 선택해주세요!",
     featuresetup: "이제 추가 기능을 선택해주세요!",
     enableryd: "Return YouTube Dislike(유튜브 싫어요 숫자 표시) 활성화",
