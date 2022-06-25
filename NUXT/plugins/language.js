@@ -13,6 +13,7 @@ const packs = {
   "chinese-simplified": require("./languages/chinese-simplified"),
   "brazilian-portuguese": require("./languages/brazilian-portuguese"),
   indonesian: require("./languages/indonesian"),
+  korean: require("./languages/korean"),
 };
 
 function module(subPack, listPacks) {
