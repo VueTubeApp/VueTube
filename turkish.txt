@@ -6,7 +6,7 @@ module.exports = {
     subscriptions: "Abonelikler",
     library: "Kitaplık",
     restart: "Yeniden Başlat",
-    later: "Sonra",
+    later: "Daha Sonra",
     settingRestart: "Bu ayarın değiştirilmesi, değişikliklerin uygulanabilmesi için uygulamanın yeniden başlatılmasını gerektirir."
   },
 
@@ -20,7 +20,7 @@ module.exports = {
     general: "Genel",
     theme: "Tema",
     player: "Oynatıcı",
-    uitweaker: "Arayüz Özelleştirici",
+    uitweaker: "UI Düzenleyici",
     startupoptions: "Başlangıç Ayarları",
     plugins: "Eklentiler",
     updates: "Güncellemeler",
@@ -84,7 +84,7 @@ module.exports = {
     awesome: "Harika!",
     langsetup: "Haydi Bir Dil Seç!",
     featuresetup: "Haydi Birkaç Özellik Seç!",
-    enableryd: "YouTube Beğenmeme Özelliğini Geri Getirmeyi Etkinleştir",
+    enableryd: "Return YouTube Dislike'ı Etkinleştir",
     enablespb: "SponsorBlock'u Etkinleştir",
     thanks: "VueTube'u Kullandığın için Teşekkürler",
     enjoy: "Umarız harika bir deneyim yaşarsınız",
