@@ -1,10 +1,10 @@
 <p align="center">
   <a href="https://vuetube.app/">
-    <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
+    <img src="https://cdn.discordapp.com/attachments/819655079447363659/990686682804264970/Group_4_6.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
   <sub>標誌：<a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
-  <sub>繁體中文 Readme 貢獻者：<a href="https://github.com/404-Program-not-found">@404-Program-not-found</a>, <a href="https://github.com/nokanol45">@nokanol45</a>, <a href="https://github.com/afnzmn">@afnzmn</a></sub>
+  <sub>繁體中文 Readme 貢獻者：<a href="https://github.com/404-Program-not-found">@404-Program-not-found</a>, <a href="https://github.com/nokanol45">@nokanol45</a>
   </br>
   </br>
 <strong>輕巧的開放原始碼影音串流客戶端，旨在再造不同影音串流應用程式的所有功能（以及更多！）</strong>
