@@ -1,11 +1,9 @@
 <p align="center">
   <a href="https://vuetube.app/">
-    <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
+    <img src="https://cdn.discordapp.com/attachments/819655079447363659/990686682804264970/Group_4_6.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
   <sub>Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
-  <sub>English Readme contributors: <a href="https://github.com/404-Program-not-found">@404-Program-not-found</a>, <a href="https://github.com/Frontesque">@Frontesque</a>, <a href="https://github.com/gayolGate">@gayolGate</a>, <a href="https://github.com/ThatOneCalculator">@ThatOneCalculator</a>, <a href="https://github.com/afnzmn">@afnzmn</a>, <a href="https://github.com/tired6488">@tired6488</a>, <a href="https://github.com/DARKDRAGON532">@DARKDRAGON532</a>, <a href="https://github.com/PickleNik">@PickleNik</a> and <a href="https://github.com/Zyborg777">@Zyborg777</a></sub>
-  </br>
   </br>
 <strong>A simple and open source video streaming client aimed to recreate ALL the features from their respective apps (and more!)</strong>
 </br>
