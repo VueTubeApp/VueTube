@@ -73,7 +73,7 @@ module.exports = {
       emulator: "Emulator",
       github: "GitHub",
       discord: "Discord"
-    }
+    },
   },
 
   events: {
@@ -87,8 +87,7 @@ module.exports = {
     enableryd: "Return YouTube Dislike aanzetten",
     enablespb: "SponsorBlock aanzetten",
     thanks: "Bedankt dat je VueTube gebruikt",
-    enjoy: "We hopen dat je een geweldige ervaring hebt"
-  }
-
-
-}
+    enjoy: "We hopen dat je een geweldige ervaring hebt",
+    packageinstaller: "Selecteer een bestand om te downloaden"
+  },
+};
