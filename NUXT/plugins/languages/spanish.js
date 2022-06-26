@@ -89,5 +89,6 @@ module.exports = {
     enablespb: "Activar SponsorBlock",
     thanks: "Gracias por usar VueTube",
     enjoy: "Esperamos que tengas una buena experiencia",
+    packageinstaller: "Elige un paquete para descargar"
   },
 };
