@@ -84,8 +84,8 @@ module.exports = {
     awesome: "Hebat!",
     langsetup: "Sila pilih bahasa anda",
     featuresetup: "Sila pilih beberapa ciri",
-    enableryd: "Hidupkan Return YouTube Dislike",
-    enablespb: "Hidupkan SponsorBlock",
+    enableryd: "Dayakan Return YouTube Dislike",
+    enablespb: "Dayakan SponsorBlock",
     thanks: "Terima Kasih kerana Menggunakan VueTube",
     enjoy: "Kami harap anda mempunyai pengalaman yang menakjubkan",
     packageinstaller: "Pilih salah satu pakej untuk dimuat turun"
