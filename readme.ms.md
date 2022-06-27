@@ -64,15 +64,15 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 <img src="./resources/readme-ms/Plans.ms.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Carian lanjutan
-- 🗞️ Simpan sejarah tontonan secara setempat (pada peranti anda)
-- ✂️ YouTube Shorts (video pendek)
+- 🗞️ Sejarah tontonan tempatan (dalam peranti anda)
+- ✂️ YouTube Shorts (video pendek yang berdurasi 15 hingga 60 saat)
 - 🧑 Log masuk dengan akaun Google
-- 🖼️ Mod gambar dalam gambar
+- 🖼️ Mod gambar dalam gambar (video dimainkan dalam tetingkap kecil)
 - dan lebih lagi!
 
 ## Tangkapan skrin
 
-Lihat tangkapan skrin pada laman sesawang kami: www.vuetube.app/info/screenshots
+[Lihat ia pada laman sesawang kami](www.vuetube.app/info/screenshots)
 
 <details>
   <summary> Atau klik sini untuk tunjukkan tangkapan skrin </summary>
