@@ -7,7 +7,7 @@ module.exports = {
     library: "Pustaka",
     restart: "Mulakan semula",
     later: "Kemudian",
-    settingRestart: "Penukaran tetapan ini memerlukan apl mulakan semula untuk menggunakan tetapan."
+    settingRestart: "Mengubah tetapan ini memerlukan apl untuk memulakan semula untuk mengaplikasikan tetapan."
   },
 
   index: {
@@ -87,6 +87,7 @@ module.exports = {
     enableryd: "Hidupkan Return YouTube Dislike",
     enablespb: "Hidupkan SponsorBlock",
     thanks: "Terima Kasih kerana Menggunakan VueTube",
-    enjoy: "Kami harap anda mempunyai yang menakjubkan",
+    enjoy: "Kami harap anda mempunyai pengalaman yang menakjubkan",
+    packageinstaller: "Pilih salah satu pakej untuk dimuat turun"
   },
 };
