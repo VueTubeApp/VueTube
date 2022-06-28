@@ -12,6 +12,7 @@ module.exports = {
 
   index: {
     connecting: "連接中",
+    plugins: "載入插件中",
     launching: "啟動中",
   },
 
@@ -87,5 +88,6 @@ module.exports = {
     enablespb: "啟用 SponsorBlock",
     thanks: "謝謝使用 VueTube",
     enjoy: "祝你有一個愉快的體驗",
+    packageinstaller: "選擇要下載的套件"
   },
 };
