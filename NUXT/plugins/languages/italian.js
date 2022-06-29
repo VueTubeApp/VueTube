@@ -5,10 +5,14 @@ module.exports = {
     home: "Home",
     subscriptions: "Iscrizioni",
     library: "Raccolta",
+    restart: "Riavvia ora",
+    later: "Più tardi",
+    settingRestart: "Cambiare questa impostazione richiede il riavvio dell'applicazione affinché le modifiche vengano applicate."
   },
 
   index: {
     connecting: "Connessione",
+    plugins: "Caricamento Componenti Aggiuntivi",
     launching: "Avvio",
   },
 
@@ -58,7 +62,6 @@ module.exports = {
     logs: {
       more: "Più",
     },
-
     about: {
       appinformation: "Informazioni Applicazione",
       appversion: "Versione Applicazione",
@@ -79,5 +82,12 @@ module.exports = {
     next: "Prossimo",
     updated: "VueTube è Stato Aggiornato",
     awesome: "Fantastico!",
+    langsetup: "Scegliamo una lingua!",
+    featuresetup: "Scegliamo alcune feature!",
+    enableryd: "Abilita Return YouTube Dislike",
+    enablespb: "Abilita SponsorBlock",
+    thanks: "Grazie per aver utilizzato VueTube",
+    enjoy: "Ci auguriamo che avrai un'esperienza straordinaria",
   },
 };
+ 
