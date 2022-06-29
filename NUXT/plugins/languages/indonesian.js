@@ -80,7 +80,7 @@ module.exports = {
     welcome: "Selamat Datang di VueTube",
     tagline: "Masa depan video streaming",
     next: "Lanjut",
-    updated: "VueTube Diperbaharui!",
+    updated: "VueTube diperbarui!",
     awesome: "Luar Biasa!",
     langsetup: "Ayo Pilih Bahasa!",
     featuresetup: "Ayo Pilih Beberapa Fitur!",
