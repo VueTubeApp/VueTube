@@ -5,10 +5,14 @@ module.exports = {
     home: "Beranda",
     subscriptions: "Subscription",
     library: "Koleksi",
+    restart: "Mulai ulang",
+    later: "Nanti",
+    settingRestart: "Memodifikasi pengaturan ini membutuhkan tindakan mulai ulang aplikasi untuk menerapkan perubahan.",
   },
 
   index: {
     connecting: "Menghubungkan",
+    plugins: "Memuat Plugin",
     launching: "Meluncurkan",
   },
 
@@ -19,7 +23,7 @@ module.exports = {
     uitweaker: "Pengatur UI",
     startupoptions: "Opsi Startup",
     plugins: "Plugin",
-    updates: "Pembaharuan",
+    updates: "Pembaruan",
     logs: "Log",
     about: "Tentang",
     devmode: "Editor Registri",
@@ -78,5 +82,12 @@ module.exports = {
     next: "Lanjut",
     updated: "VueTube Diperbaharui!",
     awesome: "Luar Biasa!",
+    langsetup: "Ayo Pilih Bahasa!",
+    featuresetup: "Ayo Pilih Beberapa Fitur!",
+    enableryd: "Hidupkan Return YouTube Dislike",
+    enablespb: "Hidupkan SponsorBlock",
+    thanks: "Terima Kasih telah menggunakan VueTube",
+    enjoy: "Kami harap kamu mendapatkan pengalaman yang luar biasa",
+    packageinstaller: "Pilih Paket untuk diunduh",
   },
 };
