@@ -3,10 +3,14 @@
     <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <sub>Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
+  <details>
+  <summary>Show Readme credits</summary>
+  
+   <sub>VueTube Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
   <sub>English Readme contributors: <a href="https://github.com/404-Program-not-found">@404-Program-not-found</a>, <a href="https://github.com/Frontesque">@Frontesque</a>, <a href="https://github.com/gayolGate">@gayolGate</a>, <a href="https://github.com/ThatOneCalculator">@ThatOneCalculator</a>, <a href="https://github.com/afnzmn">@afnzmn</a>, <a href="https://github.com/tired6488">@tired6488</a>, <a href="https://github.com/DARKDRAGON532">@DARKDRAGON532</a>, <a href="https://github.com/PickleNik">@PickleNik</a> and <a href="https://github.com/Zyborg777">@Zyborg777</a></sub>
-  </br>
-  </br>
+</details>
+
+<p align="center">
 <strong>A simple and open source video streaming client aimed to recreate ALL the features from their respective apps (and more!)</strong>
 </br>
 Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
