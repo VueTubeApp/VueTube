@@ -3,10 +3,14 @@
     <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <sub>Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
+  <details>
+  <summary>Show Readme credits</summary>
+  
+   <sub>VueTube Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
   <sub>English Readme contributors: <a href="https://github.com/404-Program-not-found">@404-Program-not-found</a>, <a href="https://github.com/Frontesque">@Frontesque</a>, <a href="https://github.com/gayolGate">@gayolGate</a>, <a href="https://github.com/ThatOneCalculator">@ThatOneCalculator</a>, <a href="https://github.com/afnzmn">@afnzmn</a>, <a href="https://github.com/tired6488">@tired6488</a>, <a href="https://github.com/DARKDRAGON532">@DARKDRAGON532</a>, <a href="https://github.com/PickleNik">@PickleNik</a> and <a href="https://github.com/Zyborg777">@Zyborg777</a></sub>
-  </br>
-  </br>
+</details>
+
+<p align="center">
 <strong>A simple and open source video streaming client aimed to recreate ALL the features from their respective apps (and more!)</strong>
 </br>
 Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
@@ -21,19 +25,20 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Read this page in other languages: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어](readme.kr.md),[Tiếng Việt](readme.vi.md)
+
+**Read this page in other languages**: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어](readme.kr.md),[Tiếng Việt](readme.vi.md)
 
 ## Features
 
 <img src="./resources/Features.svg" alt="VueTube icon" height="100"/>
 
-- 🎨 Themes: Light, dark, OLED and all the colors of the rainbow!
-- 🖌️ Customizable UI: Customize the themes or even disable some parts of the UI that you don't use
-- ⬆️ Auto updates: Be notified when an update is available & downgrade if you don't like it!
-- 👁️ Tracking protection: No telemetry data is sent from your device by default
-- 📺 Custom video player
-- 👎 Return YouTube Dislike - [_More info_](https://returnyoutubedislike.com)
-- 💰 SponsorBlock - [_More info_](https://sponsor.ajay.app)
+- 🎨 **Themes:** Light, dark, OLED and all the colors of the rainbow!
+- 🖌️ **Customizable UI:** Customize the themes or even disable some parts of the UI that you don't use.
+- ⬆️ **Auto updates:** Be notified when an update is available & downgrade if you don't like it!
+- 👁️ **Tracking protection:** No telemetry data is sent from your device by default. Privacy is neccesary!
+- 📺 **Custom video player:** A player integrated in the application with everything you need to be happy, such as 16x speed.
+- 👎 **Return YouTube Dislike** - [_More info_](https://returnyoutubedislike.com)
+- 💰 **SponsorBlock** - [_More info_](https://sponsor.ajay.app)
 
 ## Install
 
@@ -63,11 +68,12 @@ To install the app, please visit [vuetube.app/install](https://www.vuetube.app/i
 
 <img src="./resources/Plans.svg" alt="VueTube icon" height="100"/>
 
-- 🔍 Advanced search
-- 🗞️ Local watch history
-- ✂️ YouTube Shorts (small videos that last anywhere from 15 to 60 seconds)
-- 🧑 Signing in with your Google account
-- 🖼️ Picture-in-Picture mode (PiP)
+- 🔍 **Advanced search:** Sort results by date, duration, likes or any other factor.
+- 🗞️ **Local watch history:** Get your last viewed videos without logging in.
+- ✂️ **YouTube Shorts:** Small videos that last anywhere from 15 to 60 seconds.
+- 🧑 **Signing in with your Google account**: Login to have a full experience by voting and commenting on videos and subscribing to channels.
+- 🖼️ **Picture-in-Picture mode (PiP):** Allows you to watch videos in a floating window when using another app.
+- 🧩 **Plugins:** Install third party plugins made by community with useful features!
 - And more!
 
 ## Screenshots
