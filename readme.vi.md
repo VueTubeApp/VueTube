@@ -3,17 +3,13 @@
     <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <details>
-  <summary>Show Readme credits</summary>
-  
-   <sub>VueTube Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
+  <sub>Logo by <a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
   <sub>English Readme contributors: <a href="https://github.com/404-Program-not-found">@404-Program-not-found</a>, <a href="https://github.com/Frontesque">@Frontesque</a>, <a href="https://github.com/gayolGate">@gayolGate</a>, <a href="https://github.com/ThatOneCalculator">@ThatOneCalculator</a>, <a href="https://github.com/afnzmn">@afnzmn</a>, <a href="https://github.com/tired6488">@tired6488</a>, <a href="https://github.com/DARKDRAGON532">@DARKDRAGON532</a>, <a href="https://github.com/PickleNik">@PickleNik</a> and <a href="https://github.com/Zyborg777">@Zyborg777</a></sub>
-</details>
-
-<p align="center">
-<strong>A simple and open source video streaming client aimed to recreate ALL the features from their respective apps (and more!)</strong>
+  </br>
+  </br>
+<strong>Một ứng dụng phát trực tuyến video mã nguồn mở và đơn giản nhằm tạo lại TẤT CẢ các tính năng từ các ứng dụng tương ứng (và nhiều hơn nữa!)</strong>
 </br>
-Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
+Giới thiệu View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
@@ -25,63 +21,61 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
+Đọc trang này trong các ngôn ngữ khác: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어](readme.kr.md), [Tiếng Việt](readme.vi.md)
 
-**Read this page in other languages**: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어](readme.kr.md),[Tiếng Việt](readme.vi.md)
-
-## Features
+## Tính năng
 
 <img src="./resources/Features.svg" alt="VueTube icon" height="100"/>
 
-- 🎨 **Themes:** Light, dark, OLED and all the colors of the rainbow!
-- 🖌️ **Customizable UI:** Customize the themes or even disable some parts of the UI that you don't use.
-- ⬆️ **Auto updates:** Be notified when an update is available & downgrade if you don't like it!
-- 👁️ **Tracking protection:** No telemetry data is sent from your device by default. Privacy is neccesary!
-- 📺 **Custom video player:** A player integrated in the application with everything you need to be happy, such as 16x speed.
-- 👎 **Return YouTube Dislike** - [_More info_](https://returnyoutubedislike.com)
-- 💰 **SponsorBlock** - [_More info_](https://sponsor.ajay.app)
+- 🎨 Chủ đề: Sáng, tối và nhứng màu sắc của cầu vồng!
+- 🖌️ Tùy chinht UI: Tùy chỉnh giao diện, kể cả tắt những phần bạn hổng có dùng
+- ⬆️ Tự động cập nhật: Nhận thông báo khi cập nhật hoặc hạ cấp nếu bận hổng có thích!
+- 👁️ Bảo vệ khỏi theo dõi: Không có dữ liệu nào từ thiết bị của bạn gửi đến máy chủ từ xa!
+- 📺 Trình phát tùy chỉnh
+- 👎 Return YouTube Dislike - [_More info_](https://returnyoutubedislike.com)
+- 💰 SponsorBlock - [_More info_](https://sponsor.ajay.app)
 
-## Install
+## Cài đặt
 
 <img src="./resources/Install.svg" alt="VueTube icon" height="100"/>
 
-To install the app, please visit [vuetube.app/install](https://www.vuetube.app/install)
+Để cài đặt hãy ghé thăm [vuetube.app/install](https://www.vuetube.app/install)
 
 <details>
-  <summary>Or click here to see all the versions available</summary>
+  <summary>Hay nhấn vào đây để xem những phiên bản có sắn</summary>
 <br />
 
 ### Android
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Pretty unstable, but you get early access to new features                                                                                                 | Less bugs than unstable while having more features than stable                                                                                                     | Not available yet                                              |
+| Hơi bất ổn định xíu nhưng được tận hưởng tính năng mới                                                                                                | Ít lỗi hơn bản unstable nhưng có nhiều tính năng hơn bản stable                                                                                                     | Chưa có sẵn đâu nha                                              |
 
 ### iOS
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| Pretty unstable, but you get early access to new features                                                                                                | Less bugs than unstable while having more features than stable                                                                                                                    | Not available yet                                              |
+| Hơi bất ổn định xíu nhưng được tận hưởng tính năng mới                                                                                                | Ít lỗi hơn bản unstable nhưng có nhiều tính năng hơn bản stable                                                                                                                    | Chưa có sẵn đâu nha                                              |
 
 </details>
 
-## Plans
+## Kế hoạch
 
 <img src="./resources/Plans.svg" alt="VueTube icon" height="100"/>
 
-- 🔍 **Advanced search:** Sort results by date, duration, likes or any other factor.
-- 🗞️ **Local watch history:** Get your last viewed videos without logging in.
-- ✂️ **YouTube Shorts:** Small videos that last anywhere from 15 to 60 seconds.
-- 🧑 **Signing in with your Google account**: Login to have a full experience by voting and commenting on videos and subscribing to channels.
-- 🖼️ **Picture-in-Picture mode (PiP):** Allows you to watch videos in a floating window when using another app.
-- 🧩 **Plugins:** Install third party plugins made by community with useful features!
-- And more!
+- 🔍 Tìm kiếm nâng cao
+- 🗞️ Lịch sử xem nội bộ
+- ✂️ YouTube Shorts (video ngắn từ 15 đến 60 giây)
+- 🧑 Đăng nhập với tài khoản Google của bạn
+- 🖼️ Chế độ Picture-in-Picture (PiP)
+- Và nhiều hơn nữa!
 
-## Screenshots
+## Ảnh chụp màn hình
 
-[View them on our website](https://www.vuetube.app/info/screenshots)
+[Xem trên website của chúng tôi](https://www.vuetube.app/info/screenshots)
 
 <details>
-  <summary> Or click here to see the screenshots </summary>
+  <summary> Hoặc nhấn vào đây để xem ảnh chụp màn hình </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -90,45 +84,45 @@ To install the app, please visit [vuetube.app/install](https://www.vuetube.app/i
      
 </details>
 
-### Technologies used
+### Công nghệ đã được sử dụng
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
 
-### Why am I doing this?
+### Tại sao tôi lại làm cái này?
 
-Well, this has been thrown around on the Return YouTube Dislike Discord server for quite some time, so I figured that I should probably give it a try!
+Chà, điều này đã xuất hiện trên Discord Server Return YouTube Dislike trong một thời gian khá dài, vì vậy tôi nghĩ rằng tôi có thể nên thử nó!
 
-### Want to contribute?
+### Bạn muốn đóng góp không?
 
-Please read our website on how to do so: [vuetube.app/contributing](https://www.vuetube.app/contributing)
+Đọc trên website của chúng tôi để xem: [vuetube.app/contributing](https://www.vuetube.app/contributing)
 
-If you want to translate the app, [click here](/NUXT/plugins/languages) and read the instructions
+Nếu bạn muốn dịch ứng dụng, [nhấn vào đây](/NUXT/plugins/languages) và đọc hướng dẫn
 
-## Contributors
+## Những người đóng góp
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
 </a>
 
-<sub>Made with [contrib.rocks](https://contrib.rocks). </sub>
+<sub>Được thực hiện với [contrib.rocks](https://contrib.rocks). </sub>
 
-## Acknowledgements
+## Sự nhìn nhận
 
-- Emojis by the [Twemoji team](https://twemoji.twitter.com/), Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- VueTube Logo by [@afnzmn](https://github.com/afnzmn)
-- Public YouTube dislike data provided by [Return Youtube Dislike](https://returnyoutubedislike.com)
-- Ajay & Community for providing the [Sponsorblock API](https://sponsor.ajay.app), Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+- Emojis bởi [Twemoji team](https://twemoji.twitter.com/), Giấy phép [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Logo của VueTube bởi [@afnzmn](https://github.com/afnzmn)
+- Dữ liệu Dislike của Youtube bởi [Return Youtube Dislike](https://returnyoutubedislike.com)
+- [Sponsorblock API](https://sponsor.ajay.app) bởi Ajay & Cộng đồng, Giấy phép [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-## Donate
+## Ủng hộ
 
-VueTube is and always will be free and open source, but you can support our devs with a donation that will help to maintain the project.
+VueTube sẽ mãi miễn phí và mã nguồn mở, nhưng bạn có thể ủng hộ nhà phát triển để giúp duy trì dự án này.
 
-[Donate on Ko-Fi.com](https://ko-fi.com/vuetube) (Official)
+[Ủng hộ trên Ko-Fi.com](https://ko-fi.com/vuetube) (Official)
 
-[Donate to PickleNik on GitHub](https://github.com/sponsors/PickleNik) (Maintainer)
+[Donate cho PickleNik trên GitHub](https://github.com/sponsors/PickleNik) (Người duy trì)
 
-## Disclaimer
+## Miễn trừ trách nhiệm
 
-The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found at [youtube.com](https://www.youtube.com).
+Dự án VueTube và nội dung của nó không liên quan, được tài trờ, được ủy quyền, xác nhận bởi hay liên quan gì đến YouTube, Google LLC hay bất cứ thứ gì liên quan. Trang web chính thức của Youtube là [youtube.com](https://www.youtube.com).
 
-Any trademark, service mark, trade name, or other intellectual property rights used in the VueTube project are owned by the respective owners.
+Mọi nhãn hiệu, nhãn hiệu dịch vụ, tên thương mại hoặc các quyền sở hữu trí tuệ khác được sử dụng trong dự án VueTube đều thuộc sở hữu của các chủ sở hữu tương ứng.
