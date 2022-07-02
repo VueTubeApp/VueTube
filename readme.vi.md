@@ -21,11 +21,11 @@ Giới thiệu View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Đọc trang này trong các ngôn ngữ khác: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어](readme.kr.md), [Tiếng Việt](readme.vi.md)
+Đọc trang này trong các ngôn ngữ khác: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt](readme.vi.md)
 
 ## Tính năng
 
-<img src="./resources/Features.svg" alt="VueTube icon" height="100"/>
+<img src="./resources/readme-vi/Features.vi.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Chủ đề: Sáng, tối và nhứng màu sắc của cầu vồng!
 - 🖌️ Tùy chinht UI: Tùy chỉnh giao diện, kể cả tắt những phần bạn hổng có dùng
@@ -37,7 +37,7 @@ Giới thiệu View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## Cài đặt
 
-<img src="./resources/Install.svg" alt="VueTube icon" height="100"/>
+<img src="./resources/readme-vi/Install.vi.svg" alt="VueTube icon" height="100"/>
 
 Để cài đặt hãy ghé thăm [vuetube.app/install](https://www.vuetube.app/install)
 
@@ -49,19 +49,19 @@ Giới thiệu View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Hơi bất ổn định xíu nhưng được tận hưởng tính năng mới                                                                                                | Ít lỗi hơn bản unstable nhưng có nhiều tính năng hơn bản stable                                                                                                     | Chưa có sẵn đâu nha                                              |
+| Hơi bất ổn định xíu nhưng được tận hưởng tính năng mới                                                                                      | Ít lỗi hơn bản unstable nhưng có nhiều tính năng hơn bản stable                                                                                                 | Chưa có sẵn đâu nha                                                                             |
 
 ### iOS
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| Hơi bất ổn định xíu nhưng được tận hưởng tính năng mới                                                                                                | Ít lỗi hơn bản unstable nhưng có nhiều tính năng hơn bản stable                                                                                                                    | Chưa có sẵn đâu nha                                              |
+| Hơi bất ổn định xíu nhưng được tận hưởng tính năng mới                                                                                  | Ít lỗi hơn bản unstable nhưng có nhiều tính năng hơn bản stable                                                                                                                | Chưa có sẵn đâu nha                                                                             |
 
 </details>
 
 ## Kế hoạch
 
-<img src="./resources/Plans.svg" alt="VueTube icon" height="100"/>
+<img src="./resources/readme-vi/Plans.vi.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Tìm kiếm nâng cao
 - 🗞️ Lịch sử xem nội bộ
