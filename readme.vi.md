@@ -9,7 +9,7 @@
   </br>
 <strong>Một ứng dụng phát trực tuyến video mã nguồn mở và đơn giản nhằm tạo lại TẤT CẢ các tính năng từ các ứng dụng tương ứng (và nhiều hơn nữa!)</strong>
 </br>
-Giới thiệu VueTube (<code>/ˈvjuːˌtjuːb/</code>)
+Phát âm View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
