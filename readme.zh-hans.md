@@ -7,7 +7,7 @@
   <summary>显示 Readme 贡献名单</summary>
 
    <sub>标志：<a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
-  <sub>简体中文 Readme 贡献者：<a href="https://github.com/404-Program-not-found">@404-Program-not-found</a>, <a href="https://github.com/nokanol45">@nokanol45</a></sub>
+  <sub>简体中文 Readme 贡献者：<a href="https://github.com/404-Program-not-found">@404-Program-not-found</a> 和 <a href="https://github.com/nokanol45">@nokanol45</a></sub>
   </details>
   
 <p align="center">
