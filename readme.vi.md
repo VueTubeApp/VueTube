@@ -9,7 +9,7 @@
   </br>
 <strong>Một ứng dụng phát trực tuyến video mã nguồn mở và đơn giản nhằm tạo lại TẤT CẢ các tính năng từ các ứng dụng tương ứng (và nhiều hơn nữa!)</strong>
 </br>
-Giới thiệu View Tube (<code>/ˈvjuːˌtjuːb/</code>)
+Giới thiệu VueTube (<code>/ˈvjuːˌtjuːb/</code>)
 </p>
 
 <p align="center">
@@ -42,7 +42,7 @@ Giới thiệu View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 Để cài đặt hãy ghé thăm [vuetube.app/install](https://www.vuetube.app/install)
 
 <details>
-  <summary>Hay nhấn vào đây để xem những phiên bản có sắn</summary>
+  <summary>Hay nhấn vào đây để xem những phiên bản có sẵn</summary>
 <br />
 
 ### Android
