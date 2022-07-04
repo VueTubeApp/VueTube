@@ -3,10 +3,14 @@
     <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <sub>标志：<a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
-  <sub>简体中文 Readme 贡献者：<a href="https://github.com/404-Program-not-found">@404-Program-not-found</a>, <a href="https://github.com/nokanol45">@nokanol45</a>, <a href="https://github.com/afnzmn">@afnzmn</a></sub>
-  </br>
-  </br>
+  <details>
+  <summary>显示 Readme 贡献名单</summary>
+
+   <sub>标志：<a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
+  <sub>简体中文 Readme 贡献者：<a href="https://github.com/404-Program-not-found">@404-Program-not-found</a> 和 <a href="https://github.com/nokanol45">@nokanol45</a></sub>
+  </details>
+  
+<p align="center">
 <strong>轻巧的开放源代码流媒体客户端，旨在再造不同流媒体应用程序的所有功能（以及更多！）</strong>
 </br>
 读音是 View Tube (<code>/ˈvjuːˌtjuːb/</code>)
@@ -27,27 +31,26 @@
 
 <img src="./resources/readme-zh-hans/Features.zh-hans.svg" alt="VueTube icon" height="100"/>
 
-- 🎨 主题：明亮、黑暗、OLED，以及彩虹中的任何颜色！
-- 🖌️ 可自定义的使用者界面：自定义主题，甚至停用您不使用的一些界面
-- ⬆️ 自动更新：有新版本可用时接收通知，如果您不喜欢也可以撤销更新！
-- 👁️ 追踪阻断：VueTube 默认不会发送任何跟踪数据
-- 📺 自家制的 HTML5 影片播放器
-- 👎 利用 Return Youtube Dislike 的 API 带回 YouTube 的「踩一下」数据 — [更多信息](https://www.returnyoutubedislike.com/)
-- 💰 SponsorBlock — [更多信息](https://sponsor.ajay.app/)
+- 🎨 **主题**：明亮、黑暗、OLED，以及彩虹中的任何颜色！
+- 🖌️ **自定义使用者界面**：自定义主题，甚至停用您不使用的一些界面。
+- ⬆️ **自动更新**：有新版本可用时接收通知，如果您不喜欢也可以撤销更新！
+- 👁️ **追踪阻断**：VueTube 默认不会发送任何跟踪数据。
+- 📺 **自家制的 HTML5 视频播放器**：内置在应用程序的播放器，拥有您所需的任何功能，例如 16 倍速。
+- 👎 **Return YouTube Dislike**：利用 Return YouTube Dislike 的 API 带回 YouTube 的「踩一下」数据 — [_更多信息_](https://returnyoutubedislike.com)
+- 💰 **SponsorBlock**：利用 SponsorBlock 的 API 跳过赞助广告 — [_更多信息_](https://sponsor.ajay.app)
 
 ## 下载
 
 <img src="./resources/readme-zh-hans/Install.zh-hans.svg" alt="VueTube icon" height="100"/>
 
-请访问 www.vuetube.app/install 下载 VueTube。
-
+请访问 [vuetube.app/install](https://www.vuetube.app/install) 来下载 VueTube。
 <details>
   <summary>或点击这里查看所有可用的版本</summary>
 <br />
 
 ### 安卓/Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | 有最新的功能，并且经常有更新，但 bug 也最常见。                                                                                             | bug 比 unstable 较少，功能也比 stable 稍新                                                                                                                      | 由于 VueTube 尚未完成开发，暂时未有 Stable 版本下载                                             |
 
@@ -63,16 +66,17 @@
 
 <img src="./resources/readme-zh-hans/Plans.zh-hans.svg" alt="VueTube icon" height="100"/>
 
-- 🔍 进阶搜索功能
-- 🗞️ 本地存储观看记录
-- ✂️ Shorts（大概 15 至 60 秒长的短视频）
-- 🧑 谷歌账号登录
-- 🖼️ 画中画模式（PiP）
+- 🔍 **进阶搜索**：以日期、时长、「顶一下」数目等项目筛选搜索结果。
+- 🗞️ **本地存储观看记录**：不用登录也可以查阅先前观看过的视频。
+- ✂️ **YouTube Shorts**：大概 15 至 60 秒长的短视频。
+- 🧑 **谷歌帐号登录**：登录以订阅频道、在视频下留下评论和参与投票，获得最全面的体验。
+- 🖼️ **画中画模式（PiP）**：使用其他应用程序时在悬浮式窗口中观看视频。
+- 🧩 **插件**：安装由 VueTube 社区开发的第三方插件，取得更多功能！
 - 以及更多！
 
 ## 截图
 
-在我们的网站上查看：www.vuetube.app/info/screenshots
+[在我们的网站上查看](https://www.vuetube.app/info/screenshots)
 
 <details>
   <summary> 或点击这里查看截图  </summary>
@@ -94,7 +98,7 @@
 
 ### 如何贡献
 
-如您想提交代码，请访问我们的网站查閲提交代码指南：www.vuetube.app/contributing
+如您想提交代码，请访问我们的网站查閲提交代码指南：[vuetube.app/contributing](https://www.vuetube.app/contributing)
 
 如您想翻译此应用程序，请[点击这里](/NUXT/plugins/languages)查阅翻译指南
 
