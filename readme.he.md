@@ -20,13 +20,13 @@
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-לקרוא בשפות אחרות: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
+לקרוא בשפות אחרות: [English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
 
 <div style="float: right; right: 5px;">
   
 ## פיצ'רים \ תכונות
 
-<img src="./resources/readme-he/Features.he.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-he/Features.he.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 סטיילים: בהיר, קהה, אולד, וכל צבהי הקשת
 - 🖌️ ממשק משתמש ניתן להתאמה אישית: אפשר גם להוריד את מה שאתם לא צריכים!
@@ -36,7 +36,7 @@
 
 ## הורדה והתקנה
 
-<img style="right: 10px;" src="./resources/readme-he/Install.he.svg" alt="VueTube icon" height="100"/>
+<img style="right: 10px;" src="/resources/readme-he/Install.he.svg" alt="VueTube icon" height="100"/>
 
 כדי להתקין, תעברו לאתר הבא: www.vuetube.app/install
 
@@ -60,7 +60,7 @@
 
 ## תוכניות לעתיד
 
-<img style="float: right;" src="./resources/readme-he/Plans.he.svg" alt="VueTube icon" height="100"/>
+<img style="float: right;" src="/resources/readme-he/Plans.he.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 חיפוש מתקדם
 - 🗞️ שמירת היסטורית הצפייה לוקלית
