@@ -25,11 +25,11 @@
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-其他語言版本：[English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
+其他語言版本：[English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
 
 ## 功能
 
-<img src="./resources/readme-zh-hant/Features.zh-hant.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-zh-hant/Features.zh-hant.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 **主題**：明亮、黑暗、OLED，以及彩虹中的任何顏色！
 - 🖌️ **自訂使用者介面**：自訂主題，甚至停用您不使用的一些介面。
@@ -41,7 +41,7 @@
 
 ## 下載
 
-<img src="./resources/readme-zh-hant/Install.zh-hant.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-zh-hant/Install.zh-hant.svg" alt="VueTube icon" height="100"/>
 
 請訪問 [vuetube.app/install](https://www.vuetube.app/install) 來下載 VueTube。
 
@@ -65,7 +65,7 @@
 
 ## 未來計劃
 
-<img src="./resources/readme-zh-hant/Plans.zh-hant.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-zh-hant/Plans.zh-hant.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 **進階搜尋**：以日期、時長、「喜歡」數目等項目篩選搜尋結果。
 - 🗞️ **本地儲存觀看記錄**：不用登入也可以查閲先前觀看過的影片。

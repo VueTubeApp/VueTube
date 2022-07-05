@@ -25,11 +25,11 @@
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-其他语言版本：[English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
+其他语言版本：[English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
 
 ## 功能
 
-<img src="./resources/readme-zh-hans/Features.zh-hans.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-zh-hans/Features.zh-hans.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 **主题**：明亮、黑暗、OLED，以及彩虹中的任何颜色！
 - 🖌️ **自定义使用者界面**：自定义主题，甚至停用您不使用的一些界面。
@@ -41,7 +41,7 @@
 
 ## 下载
 
-<img src="./resources/readme-zh-hans/Install.zh-hans.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-zh-hans/Install.zh-hans.svg" alt="VueTube icon" height="100"/>
 
 请访问 [vuetube.app/install](https://www.vuetube.app/install) 来下载 VueTube。
 <details>
@@ -64,7 +64,7 @@
 
 ## 未来计划
 
-<img src="./resources/readme-zh-hans/Plans.zh-hans.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-zh-hans/Plans.zh-hans.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 **进阶搜索**：以日期、时长、「顶一下」数目等项目筛选搜索结果。
 - 🗞️ **本地存储观看记录**：不用登录也可以查阅先前观看过的视频。

@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://vuetube.app/">
-    <img src="./resources/readme-ja/VueTube.ja.svg" alt="VueTube icon" width="500"/>
+    <img src="/resources/readme-ja/VueTube.ja.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
   <sub><a href="https://github.com/afnzmn">@afnzmn</a>・ロゴ</sub>
@@ -19,11 +19,11 @@
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-他の言語で読む：[English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
+他の言語で読む：[English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
 
 ## 機能
 
-<img src="resources/readme-ja/Features.ja.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ja/Features.ja.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 テーマ色をカスタマイズする：ライト系、 ダーク系、OLED、などなど
 - 🖌️ UI のカストマイズ：アクセントカラーをはじめ、UI をフルカスタマイズして、使用しない機能を削除できます！
@@ -35,7 +35,7 @@
 
 ## インストール
 
-<img src="./resources/readme-ja/Install.ja.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ja/Install.ja.svg" alt="VueTube icon" height="100"/>
 
 インストールはこちらからどうぞ: https://vuetube.app/install
 
@@ -59,7 +59,7 @@
 
 ## 計画
 
-<img src="./resources/readme-ja/Plans.ja.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ja/Plans.ja.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 アドバンストサーチ
 - 🗞️ ウォッチ履歴のローカルストレージ

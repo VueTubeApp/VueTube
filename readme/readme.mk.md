@@ -21,11 +21,11 @@
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Прочитајте го ова на други јазици: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
+Прочитајте го ова на други јазици: [English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
 
 ## Карактеристики
 
-<img src="./resources/readme-mk/Features.mk.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-mk/Features.mk.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Изглед: Светло, темно, OLED, сите бои на виножитото.
 - 🖌️ Приспособлив интерфејс: Можете целосно да ја приспособите акцентната боја и другите делови од интерфејсот за да ги отстраните функциите што не ги користите!
@@ -36,7 +36,7 @@
 
 ## Инстал
 
-<img src="./resources/readme-mk/Install.mk.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-mk/Install.mk.svg" alt="VueTube icon" height="100"/>
 
 За да инсталирате, посетете: www.vuetube.app/install
 
@@ -60,7 +60,7 @@
 
 ## Планови
 
-<img src="./resources/readme-mk/Plans.mk.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-mk/Plans.mk.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Напредно пребарување
 - 🗞️ Локално складирајте ја историјата на гледани видеа.

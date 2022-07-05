@@ -21,11 +21,11 @@ Disebut View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Baca ini dalam bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
+Baca ini dalam bahasa lain: [English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
 
 ## Ciri-ciri
 
-<img src="./resources/readme-ms/Features.ms.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ms/Features.ms.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Tema: Cerah, Gelap, OLED, Semua warna pelangi
 - 🖌️ UI yang dibolehkan suaikan: Anda boleh menyesuaikan sepenuhnya warna aksen dan bahagian lain UI untuk mengalih keluar ciri yang anda tidak gunakan!
@@ -37,7 +37,7 @@ Baca ini dalam bahasa lain: [English,](readme.md) [Español,](readme.es.md) [简
 
 ## Pasang
 
-<img src="./resources/readme-ms/Install.ms.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ms/Install.ms.svg" alt="VueTube icon" height="100"/>
 
 Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
@@ -61,7 +61,7 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 ## Pelan
 
-<img src="./resources/readme-ms/Plans.ms.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ms/Plans.ms.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Carian lanjutan
 - 🗞️ Sejarah tontonan tempatan (dalam peranti anda)

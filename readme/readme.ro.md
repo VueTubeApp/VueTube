@@ -21,11 +21,11 @@ Pronunțat View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Citește aceastea în alte limbii: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
+Citește aceastea în alte limbii: [English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
 
 ## Caracteristici
 
-<img src="./resources/readme-ro/Features.ro.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ro/Features.ro.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Tema: Lumina, Întuneric, OLED, Toate culorile curcubeului
 - 🖌️ UI personalizat: Poți personaliza complet culoarea accentul și alte părți ale UI pentru a elimina caracteristică pe care nu le utilizați!
@@ -37,7 +37,7 @@ Citește aceastea în alte limbii: [English,](readme.md) [Español,](readme.es.m
 
 ## Instalarea
 
-<img src="./resources/readme-ro/Install.ro.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ro/Install.ro.svg" alt="VueTube icon" height="100"/>
 
 Pentru a instala vă rugam sa vizitați [vuetube.app/install](https://www.vuetube.app/install)
 
@@ -61,7 +61,7 @@ Pentru a instala vă rugam sa vizitați [vuetube.app/install](https://www.vuetub
 
 ## Planuri
 
-<img src="./resources/readme-ro/Plans.ro.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ro/Plans.ro.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Căutarea avansat
 - 🗞️ Istoricul vizionărilor local
