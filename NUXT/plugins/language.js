@@ -6,6 +6,7 @@ const packs = {
   "chinese-traditional": require("./languages/chinese-traditional"),
   dutch: require("./languages/dutch"),
   english: require("./languages/english"),
+  estonian: require("./languages/estonian"),
   "french-fr": require("./languages/french-fr"),
   german: require("./languages/german"),
   indonesian: require("./languages/indonesian"),
@@ -19,7 +20,7 @@ const packs = {
   spanish: require("./languages/spanish"),
   tamil: require("./languages/tamil"),
   turkish: require("./languages/turkish"),
-  estonian: require("./languages/estonian"),
+  ukrainian: require("./languages/ukrainian"),
 };
 
 function module(subPack, listPacks) {
