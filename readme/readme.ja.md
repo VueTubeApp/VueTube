@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://vuetube.app/">
-    <img src="./resources/readme-ja/VueTube.ja.svg" alt="VueTube icon" width="500"/>
+    <img src="/resources/readme-ja/VueTube.ja.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
   <sub><a href="https://github.com/afnzmn">@afnzmn</a>・ロゴ</sub>
