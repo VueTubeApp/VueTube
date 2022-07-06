@@ -30,18 +30,8 @@
       }"
     >
       <div
-        class="d-flex flex-column justify-center align-center"
-        style="
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 50%;
-          height: 100%;
-          background: linear-gradient(
-            var(--v-background-base) -1000%,
-            #00000000 1000%
-          );
-        "
+        class="d-flex flex-column justify-center align-center background-opaque"
+        style="position: absolute; top: 0; right: 0; width: 50%; height: 100%"
       >
         <div>420</div>
         <v-icon>mdi-playlist-play</v-icon>

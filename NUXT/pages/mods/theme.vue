@@ -1,14 +1,7 @@
 <template>
   <client-only>
     <!-- !IMPORTANT: don't let autoformatter format this style to multiline or else it breaks ¯\_(ツ)_/¯ -->
-    <div
-      class="d-flex flex-column justify-end"
-      style="
-        min-height: calc(
-          100vh - 8rem - env(safe-area-inset-top) - env(safe-area-inset-bottom)
-        ) !important;
-      "
-    >
+    <div class="container-max-height d-flex flex-column justify-end">
       <!-- ----Background Colors---- -->
       <v-radio-group v-model="$vuetify.theme.currentTheme.background">
         <div
@@ -191,12 +184,6 @@ export default {
       lang: {},
     };
   },
-  mounted() {
-    this.lang = this.$lang("mods").theme;
-    this.backgroundsLight[0].name = this.lang.normal;
-    this.backgroundsDark[0].name = this.lang.dark;
-    this.backgroundsDark[1].name = this.lang.black;
-  },
   watch: {
     // also triggers background and primary watcher, unless primary colors match
     "$vuetify.theme.dark"(value) {
@@ -234,6 +221,12 @@ export default {
           this.$vuetify.theme.currentTheme.background = this.adaptiveLight;
       }
     },
+  },
+  mounted() {
+    this.lang = this.$lang("mods").theme;
+    this.backgroundsLight[0].name = this.lang.normal;
+    this.backgroundsDark[0].name = this.lang.dark;
+    this.backgroundsDark[1].name = this.lang.black;
   },
   beforeMount() {
     this.adapt();
