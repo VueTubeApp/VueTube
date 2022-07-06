@@ -22,7 +22,7 @@
       <v-card v-if="loaded" class="background rounded-0" flat>
         <div
           v-ripple
-          class="d-flex justify-space-between align-start px-3 pt-4"
+          class="d-flex justify-space-between align-start px-4 pt-4"
           @click="showMore = !showMore"
         >
           <div class="d-flex flex-column">
@@ -56,28 +56,69 @@
           <v-icon class="ml-4" v-if="showMore">mdi-chevron-up</v-icon>
           <v-icon class="ml-4" v-else>mdi-chevron-down</v-icon>
         </div>
-        <div class="d-flex pl-4">
+        <div class="d-flex mt-3">
           <v-btn
-            v-for="(item, index) in interactions"
+            v-for="(item, index) in interactions.slice(0, 2)"
             :key="index"
             text
-            fab
-            class="vertical-button mx-1"
+            class="mr-0 px-3 my-0"
             elevation="0"
-            style="
-              width: 4.2rem !important;
-              height: 4.2rem !important;
-              text-transform: none !important;
+            style="height: 2.5rem !important; text-transform: none !important"
+            :class="
+              $store.state.tweaks.roundWatch &&
+              $store.state.tweaks.roundTweak > 0
+                ? $vuetify.theme.dark
+                  ? 'background lighten-1'
+                  : 'background darken-1'
+                : ''
             "
+            :style="{
+              borderRadius: $store.state.tweaks.roundWatch
+                ? `${$store.state.tweaks.roundTweak / 2}rem`
+                : '0',
+              margin:
+                $store.state.tweaks.roundWatch &&
+                $store.state.tweaks.roundTweak > 0
+                  ? '1rem'
+                  : '0',
+            }"
             :disabled="item.disabled"
             @click="callMethodByName(item.actionName)"
           >
-            <v-icon v-text="item.icon" />
-            <div
-              class="mt-1"
-              style="font-size: 0.6rem"
-              v-text="item.value || item.name"
-            />
+            <v-icon class="mr-2" size="0.75rem" v-text="item.icon" />
+            <div style="font-size: 0.7rem" v-text="item.value || item.name" />
+          </v-btn>
+          <v-spacer></v-spacer>
+          <v-btn
+            v-for="(item, index) in interactions.slice(2, 4)"
+            :key="index"
+            text
+            class="ml-0 px-3 my-0"
+            elevation="0"
+            style="height: 2.5rem !important; text-transform: none !important"
+            :class="
+              $store.state.tweaks.roundWatch &&
+              $store.state.tweaks.roundTweak > 0
+                ? $vuetify.theme.dark
+                  ? 'background lighten-1'
+                  : 'background darken-1'
+                : ''
+            "
+            :style="{
+              borderRadius: $store.state.tweaks.roundWatch
+                ? `${$store.state.tweaks.roundTweak / 2}rem`
+                : '0',
+              margin:
+                $store.state.tweaks.roundWatch &&
+                $store.state.tweaks.roundTweak > 0
+                  ? '1rem'
+                  : '0',
+            }"
+            :disabled="item.disabled"
+            @click="callMethodByName(item.actionName)"
+          >
+            <v-icon class="mr-2" size="0.75rem" v-text="item.icon" />
+            <div style="font-size: 0.7rem" v-text="item.value || item.name" />
           </v-btn>
           <!--   End Scrolling Div For Interactions   --->
           <!-- <hr /> -->
