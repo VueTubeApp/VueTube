@@ -29,7 +29,7 @@
 
 ## 功能
 
-<img src="/resources/readme-zh-hans/Features.zh-hans.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-zh-hans/Features.zh-hans.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 **主题**：明亮、黑暗、OLED，以及彩虹中的任何颜色！
 - 🖌️ **自定义使用者界面**：自定义主题，甚至停用您不使用的一些界面。
@@ -41,7 +41,7 @@
 
 ## 下载
 
-<img src="/resources/readme-zh-hans/Install.zh-hans.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-zh-hans/Install.zh-hans.svg" alt="VueTube icon" height="100"/>
 
 请访问 [vuetube.app/install](https://www.vuetube.app/install) 来下载 VueTube。
 <details>
@@ -50,13 +50,13 @@
 
 ### 安卓/Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | 有最新的功能，并且经常有更新，但 bug 也最常见。                                                                                             | bug 比 unstable 较少，功能也比 stable 稍新                                                                                                                      | 由于 VueTube 尚未完成开发，暂时未有 Stable 版本下载                                             |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | 有最新的功能，并且经常有更新，但 bug 也最常见。                                                                                         | bug 比 unstable 较少，功能也比 stable 稍新                                                                                                                                     | 由于 VueTube 尚未完成开发，暂时未有 Stable 版本下载                                             |
 
@@ -64,7 +64,7 @@
 
 ## 未来计划
 
-<img src="/resources/readme-zh-hans/Plans.zh-hans.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-zh-hans/Plans.zh-hans.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 **进阶搜索**：以日期、时长、「顶一下」数目等项目筛选搜索结果。
 - 🗞️ **本地存储观看记录**：不用登录也可以查阅先前观看过的视频。

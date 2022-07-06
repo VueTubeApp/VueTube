@@ -25,7 +25,7 @@ Baca ini dalam bahasa lain: [English,](/readme.md) [Español,](readme.es.md) [�
 
 ## Ciri-ciri
 
-<img src="/resources/readme-ms/Features.ms.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ms/Features.ms.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Tema: Cerah, Gelap, OLED, Semua warna pelangi
 - 🖌️ UI yang dibolehkan suaikan: Anda boleh menyesuaikan sepenuhnya warna aksen dan bahagian lain UI untuk mengalih keluar ciri yang anda tidak gunakan!
@@ -37,7 +37,7 @@ Baca ini dalam bahasa lain: [English,](/readme.md) [Español,](readme.es.md) [�
 
 ## Pasang
 
-<img src="/resources/readme-ms/Install.ms.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ms/Install.ms.svg" alt="VueTube icon" height="100"/>
 
 Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
@@ -47,13 +47,13 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 ### Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                               | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada stabil                                                                                        | Tidak tersedia sehingga aplikasi menjadi lebih berkembang                                       |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                           | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada stabil                                                                                                       | Tidak tersedia sehingga aplikasi menjadi lebih berkembang                                       |
 
@@ -61,7 +61,7 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 ## Pelan
 
-<img src="/resources/readme-ms/Plans.ms.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ms/Plans.ms.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Carian lanjutan
 - 🗞️ Sejarah tontonan tempatan (dalam peranti anda)

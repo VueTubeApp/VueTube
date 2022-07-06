@@ -29,7 +29,7 @@ Se pronuncia Viu Tuf (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## Características
 
-<img src="/resources/readme-es/Features.es.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-es/Features.es.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 **Temas:** Claro, Oscuro, OLED y todos los colores del arcoíris
 - 🖌️ **Interfaz personalizable:** Puedes personalizar completamente el color principal, y otras partes de la interfaz para eliminar características que no usas.
@@ -41,7 +41,7 @@ Se pronuncia Viu Tuf (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## Instalar
 
-<img src="/resources/readme-es/Install.es.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-es/Install.es.svg" alt="VueTube icon" height="100"/>
 
 Para instalar, por favor, visita www.vuetube.app/install
 
@@ -49,7 +49,7 @@ Para instalar, por favor, visita www.vuetube.app/install
   <summary>O haz clic aquí para mostrar todas las versiones disponibles</summary>
 <br />
   
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a>  |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a>  |
 | ------------- | ------------- |  ------------- |
 | Un montón de bugs, pero acceso anticipado a funciones | Menos bugs que la inestable, aún así más funciones que la estable | No disponible hasta que la app este más desarrollada |
   
@@ -57,7 +57,7 @@ Para instalar, por favor, visita www.vuetube.app/install
 
 ## Planes
 
-<img src="/resources/readme-es/Plans.es.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-es/Plans.es.svg" alt="VueTube icon" height="100"/>
 
 - **🔍 Búsqueda avanzada:** Ordena los resultados por fecha, duración, likes o cualquier otro factor.
 - **🗞️ Historial de búsqueda local:** Obtén tus últimos vídeos vistos sin iniciar sesión.

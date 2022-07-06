@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://vuetube.app/">
-    <img src="/resources/readme-ja/VueTube.ja.svg" alt="VueTube icon" width="500"/>
+    <img src="../resources/readme-ja/VueTube.ja.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
   <sub><a href="https://github.com/afnzmn">@afnzmn</a>・ロゴ</sub>
@@ -23,7 +23,7 @@
 
 ## 機能
 
-<img src="/resources/readme-ja/Features.ja.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ja/Features.ja.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 テーマ色をカスタマイズする：ライト系、 ダーク系、OLED、などなど
 - 🖌️ UI のカストマイズ：アクセントカラーをはじめ、UI をフルカスタマイズして、使用しない機能を削除できます！
@@ -35,7 +35,7 @@
 
 ## インストール
 
-<img src="/resources/readme-ja/Install.ja.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ja/Install.ja.svg" alt="VueTube icon" height="100"/>
 
 インストールはこちらからどうぞ: https://vuetube.app/install
 
@@ -45,13 +45,13 @@
 
 ### Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | バグが発生する可能性があるけれど最新の機能をいち早く試されます。                                                                            | unstable よりもバグが少ないけれど、stable よりも若干機能が多い。                                                                                                | VueTube が開発中のため、このバージョンは暫くダウンロードできない                                |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | バグが発生する可能性がけれど最新の機能をいち早く試されます。                                                                            | unstable よりもバグが少ないが、stable よりも若干機能が多い。                                                                                                                   | VueTube が開発中のため、このバージョンは暫くダウンロードできない                                |
 
@@ -59,7 +59,7 @@
 
 ## 計画
 
-<img src="/resources/readme-ja/Plans.ja.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ja/Plans.ja.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 アドバンストサーチ
 - 🗞️ ウォッチ履歴のローカルストレージ
