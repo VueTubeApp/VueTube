@@ -24,7 +24,7 @@ Leggi questo in altre lingue: [English,](/readme.md) [Español,](readme.es.md) [
 
 ## Features
 
-<img src="/resources/readme-it/Features.it.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-it/Features.it.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Temi: Chiaro, Scuro, OLED, Tutti i colori dell'arcobaleno
 - 🖌️ UI personalizzabile: Puoi personalizzare completamente il colore e altre parti dell'interfaccia utente per rimuovere le funzionalità che non usi!
@@ -35,7 +35,7 @@ Leggi questo in altre lingue: [English,](/readme.md) [Español,](readme.es.md) [
 
 ## Installa
 
-<img src="/resources/readme-it/Install.it.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-it/Install.it.svg" alt="VueTube icon" height="100"/>
 
 Per installare visita www.vuetube.app/install
 
@@ -45,13 +45,13 @@ Per installare visita www.vuetube.app/install
 
 ### Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Molti bug, ma accesso anticipato alle funzionalità                                                                                          | Meno bug della versione instabile, leggermente più funzionalità della stabile                                                                                   | Non disponibile fino a quando l'app non sarà più sviluppata                                     |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Molti bug, ma accesso anticipato alle funzionalità                                                                                      | Meno bug della versione instabile, leggermente più funzionalità della stabile                                                                                                  | Non disponibile fino a quando l'app non sarà più sviluppata                                     |
 
@@ -59,7 +59,7 @@ Per installare visita www.vuetube.app/install
 
 ## Piani futuri
 
-<img src="/resources/readme-it/Plans.it.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-it/Plans.it.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Ricerca Avanzata
 - 🗞️ Cronologia visualizzazioni archiviata localmente

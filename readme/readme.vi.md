@@ -25,7 +25,7 @@ Phát âm View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## Tính năng
 
-<img src="/resources/readme-vi/Features.vi.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-vi/Features.vi.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Chủ đề: Sáng, tối và nhứng màu sắc của cầu vồng!
 - 🖌️ Tùy chinht UI: Tùy chỉnh giao diện, kể cả tắt những phần bạn hổng có dùng
@@ -37,7 +37,7 @@ Phát âm View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## Cài đặt
 
-<img src="/resources/readme-vi/Install.vi.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-vi/Install.vi.svg" alt="VueTube icon" height="100"/>
 
 Để cài đặt hãy ghé thăm [vuetube.app/install](https://www.vuetube.app/install)
 
@@ -47,13 +47,13 @@ Phát âm View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 ### Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Hơi bất ổn định xíu nhưng được tận hưởng tính năng mới                                                                                      | Ít lỗi hơn bản unstable nhưng có nhiều tính năng hơn bản stable                                                                                                 | Chưa có sẵn đâu nha                                                                             |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Hơi bất ổn định xíu nhưng được tận hưởng tính năng mới                                                                                  | Ít lỗi hơn bản unstable nhưng có nhiều tính năng hơn bản stable                                                                                                                | Chưa có sẵn đâu nha                                                                             |
 
@@ -61,7 +61,7 @@ Phát âm View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## Kế hoạch
 
-<img src="/resources/readme-vi/Plans.vi.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-vi/Plans.vi.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Tìm kiếm nâng cao
 - 🗞️ Lịch sử xem nội bộ

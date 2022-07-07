@@ -29,7 +29,7 @@
 
 ## 功能
 
-<img src="/resources/readme-zh-hant/Features.zh-hant.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-zh-hant/Features.zh-hant.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 **主題**：明亮、黑暗、OLED，以及彩虹中的任何顏色！
 - 🖌️ **自訂使用者介面**：自訂主題，甚至停用您不使用的一些介面。
@@ -41,7 +41,7 @@
 
 ## 下載
 
-<img src="/resources/readme-zh-hant/Install.zh-hant.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-zh-hant/Install.zh-hant.svg" alt="VueTube icon" height="100"/>
 
 請訪問 [vuetube.app/install](https://www.vuetube.app/install) 來下載 VueTube。
 
@@ -51,13 +51,13 @@
 
 ### Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | 有最新的功能，並且經常有更新，但 bug 也最常見。                                                                                             | bug 比 unstable 較少，功能也比 stable 稍新。                                                                                                                    | 由於 VueTube 尚未完成開發，暫時未有 Stable 版本下載                                             |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | 有最新的功能，並且經常有更新，但 bug 也最常見。                                                                                         | bug 比 unstable 較少，功能也比 stable 稍新。                                                                                                                                   | 由於 VueTube 尚未完成開發，暫時未有 Stable 版本下載                                             |
 
@@ -65,7 +65,7 @@
 
 ## 未來計劃
 
-<img src="/resources/readme-zh-hant/Plans.zh-hant.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-zh-hant/Plans.zh-hant.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 **進階搜尋**：以日期、時長、「喜歡」數目等項目篩選搜尋結果。
 - 🗞️ **本地儲存觀看記錄**：不用登入也可以查閲先前觀看過的影片。

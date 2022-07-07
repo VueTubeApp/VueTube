@@ -26,7 +26,7 @@ View Tube 발음 기호 (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## 특징
 
-<img src="/resources/readme-kr/Features.kr.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-kr/Features.kr.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 테마: 라이트, 다크, OLED 및 무지개의 모든 색상!
 - 🖌️ 커스텀 가능한 UI: 테마를 커스텀하거나 사용하지 않는 UI의 일부를 비활성화할 수도 있어요
@@ -38,7 +38,7 @@ View Tube 발음 기호 (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## 설치
 
-<img src="/resources/readme-kr/Install.kr.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-kr/Install.kr.svg" alt="VueTube icon" height="100"/>
 
 [vuetube.app/install](https://www.vuetube.app/install) 에서 다운로드할 수 있습니다
 
@@ -48,13 +48,13 @@ View Tube 발음 기호 (<code>/ˈvjuːˌtjuːb/</code>)
 
 ### 안드로이드
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | 상당히 불안정합니다, 하지만 더 많은 기능을 먼저 사용할 수 있습니다                                                                          | unstable(불안정) 버전보다 버그가 적습니다, 하지만 stable(안정) 버전보다 많은 기능을 사용할 수 있습니다                                                          | 아직 사용할 수 없습니다                                                                         |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | 상당히 불안정합니다, 하지만 더 많은 기능을 먼저 사용할 수 있습니다                                                                      | unstable(불안정) 버전보다 버그가 적습니다, 하지만 stable(안정) 버전보다 많은 기능을 사용할 수 있습니다                                                                         | 아직 사용할 수 없습니다                                                                         |
 
@@ -62,7 +62,7 @@ View Tube 발음 기호 (<code>/ˈvjuːˌtjuːb/</code>)
 
 ## 업데이트 계획
 
-<img src="/resources/readme-kr/Plans.kr.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-kr/Plans.kr.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 고급 검색 지원
 - 🗞️ 로컬 시청 기록 지원

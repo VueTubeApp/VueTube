@@ -25,7 +25,7 @@ Citește aceastea în alte limbii: [English,](/readme.md) [Español,](readme.es.
 
 ## Caracteristici
 
-<img src="/resources/readme-ro/Features.ro.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ro/Features.ro.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Tema: Lumina, Întuneric, OLED, Toate culorile curcubeului
 - 🖌️ UI personalizat: Poți personaliza complet culoarea accentul și alte părți ale UI pentru a elimina caracteristică pe care nu le utilizați!
@@ -37,7 +37,7 @@ Citește aceastea în alte limbii: [English,](/readme.md) [Español,](readme.es.
 
 ## Instalarea
 
-<img src="/resources/readme-ro/Install.ro.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ro/Install.ro.svg" alt="VueTube icon" height="100"/>
 
 Pentru a instala vă rugam sa vizitați [vuetube.app/install](https://www.vuetube.app/install)
 
@@ -47,13 +47,13 @@ Pentru a instala vă rugam sa vizitați [vuetube.app/install](https://www.vuetub
 
 ### Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Destul de instabil, dar vei avea acess din timp la caracteristicii noi                                                                      | Mai puțin bug-uri decât instabil, având mai multe caracteristici decât stabile                                                                                  | Nu este disponibil încă                                                                         |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Destul de instabil, dar vei avea acess din timp la caracteristicii noi                                                                  | Mai puțin bug-uri decât instabil, având mai multe caracteristici decât stabile                                                                                                 | Nu este disponibil încă                                                                         |
 
@@ -61,7 +61,7 @@ Pentru a instala vă rugam sa vizitați [vuetube.app/install](https://www.vuetub
 
 ## Planuri
 
-<img src="/resources/readme-ro/Plans.ro.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ro/Plans.ro.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Căutarea avansat
 - 🗞️ Istoricul vizionărilor local
