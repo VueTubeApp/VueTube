@@ -3,10 +3,14 @@
     <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
   </a>
   </br>
-  <sub>Logo oleh <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
-  <sub>Terjemahan oleh <a href="https://github.com/AdamIskandarAI">@AdamIskandarAI</a></sub>
-  </br>
-  </br>
+  <details>
+  <summary>Tunjukkan kredit Readme</summary>
+  
+   <sub>Logo oleh <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
+  <sub>Penyumbang-penyumbang Readme Bahasa Melayu: <a href="https://github.com/AdamIskandarAI">@AdamIskandarAI</a></sub>
+</details>
+
+<p align="center">
 <strong>Sebuah klien penstriman video FOSS ringkas bertujuan untuk mencipta semula SEMUA ciri daripada aplikasi masing-masing (dan banyak lagi)</strong>
 </br>
 Disebut View Tube (<code>/ˈvjuːˌtjuːb/</code>)
@@ -25,19 +29,19 @@ Baca ini dalam bahasa lain: [English,](/readme.md) [Español,](readme.es.md) [�
 
 ## Ciri-ciri
 
-<img src="/resources/readme-ms/Features.ms.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ms/Features.ms.svg" alt="VueTube icon" height="100"/>
 
-- 🎨 Tema: Cerah, Gelap, OLED, Semua warna pelangi
-- 🖌️ UI yang dibolehkan suaikan: Anda boleh menyesuaikan sepenuhnya warna aksen dan bahagian lain UI untuk mengalih keluar ciri yang anda tidak gunakan!
-- ⬆️ Kemaskini Auto: Anda akan dimaklumkan apabila kemas kini tersedia & kembali ke versi lama jika anda tidak menyukainya!
-- 👁️ Perlindungan Penjejak: Tiada telemetri (maklumat peribadi) dihantar daripada peranti anda secara lalai
-- 📺 Pemain video yang boleh disesuaikan
-- 👎 Return YouTube Dislike: [_Maklumat lanjut_](https://returnyoutubedislike.com)
-- 💰SponsorBlock: [_Maklumat lanjut_](https://sponsor.ajay.app)
+- 🎨 **Tema:** Cerah, Gelap, OLED, dan semua warna pelangi!
+- 🖌️ **UI yang dibolehkan suaikan:** Sesuaikan tema ataupun nyahdayakan beberapa bahagian UI yang anda tidak gunakan.
+- ⬆️ **Kemaskini Auto:** Anda akan dimaklumkan apabila kemas kini tersedia & kembali ke versi lama jika anda tidak menyukainya!
+- 👁️ **Perlindungan Penjejak:** Tiada telemetri (maklumat peribadi) dihantar daripada peranti anda secara lalai. Privasi adalah penting!
+- 📺 **Pemain video yang boleh disesuaikan:**
+- 👎 **Return YouTube Dislike:** [_Maklumat lanjut dalam Bahasa Inggeris_](https://returnyoutubedislike.com)
+- 💰 **SponsorBlock:** [_Maklumat lanjut dalam Bahasa Inggeris_](https://sponsor.ajay.app)
 
 ## Pasang
 
-<img src="/resources/readme-ms/Install.ms.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ms/Install.ms.svg" alt="VueTube icon" height="100"/>
 
 Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
@@ -47,28 +51,29 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 ### Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                               | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada stabil                                                                                        | Tidak tersedia sehingga aplikasi menjadi lebih berkembang                                       |
+| Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                            | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                                                      | Tidak tersedia lagi                                                                             |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| Banyak pepijat, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                           | Kurang pepijat daripada tidak stabil, lebih sedikit ciri daripada stabil                                                                                                       | Tidak tersedia sehingga aplikasi menjadi lebih berkembang                                       |
+| Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                        | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                                                                     | Tidak tersedia lagi                                                                             |
 
 </details>
 
 ## Pelan
 
-<img src="/resources/readme-ms/Plans.ms.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ms/Plans.ms.svg" alt="VueTube icon" height="100"/>
 
-- 🔍 Carian lanjutan
-- 🗞️ Sejarah tontonan tempatan (dalam peranti anda)
-- ✂️ YouTube Shorts (video pendek yang berdurasi 15 hingga 60 saat)
-- 🧑 Log masuk dengan akaun Google
-- 🖼️ Mod gambar dalam gambar (video dimainkan dalam tetingkap kecil)
-- dan lebih lagi!
+- 🔍 **Carian lanjutan:** Susun hasil mengikut tarikh, tempoh, suka atau apa-apa faktor lain.
+- 🗞️ **Sejarah tontonan tempatan:** Dapatkan semula video tontonan terakhir anda tanpa log masuk.
+- ✂️ **YouTube Shorts:** Video pendek yang berdurasi dari 15 hingga 60 saat
+- 🧑 **Log masuk dengan akaun Google anda:** Log masuk untuk mendapatkan pengalaman penuh dengan mengundi dan mengulas pada video dan melanggan saluran.
+- 🖼️ **Mod gambar dalam gambar:** Membolehkan anda menonton video dalam tetingkap terapung apabila menggunakan aplikasi lain. [Maklumat lanjut](https://support.google.com/youtube/answer/7552722?co=GENIE.Platform=Android&hl=en#zippy=%2Cturn-on-picture-in-picture%2Cwho-can-use-picture-in-picture) (dalam Bahasa Inggeris)
+- 🧩 **Pemalam (Plugin):** Pasang pemalam pihak ketiga yang dibuat oleh komuniti dengan ciri-ciri yang berguna!
+- Dan lebih lagi!
 
 ## Tangkapan skrin
 
