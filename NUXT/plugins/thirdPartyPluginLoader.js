@@ -25,13 +25,18 @@ const module = {
   list: new Promise(async (resolve, reject) => {
     await ensureStructure;
 
-    const plugins = await Filesystem.readdir({
+    Filesystem.readdir({
       path: fs.plugins,
       directory: APP_DIRECTORY,
-    }).catch((err) => {
+    })
+    .then(res => {
+      resolve(res);
+    })
+    .catch(err => {
       reject(err);
     });
-    resolve(plugins);
+
+
   }),
 
   async addPlugin(content) {
@@ -40,7 +45,7 @@ const module = {
       const fileName = require("./utils").getCpn(); // Im not sure what this is actually meant for but im using it as a random string generator
       console.log("Saving Plugin As" + fileName);
       await Filesystem.writeFile({
-        path: fs.plugins + "/" + fileName + ".js",
+        path: fs.plugins + fileName + ".js",
         directory: APP_DIRECTORY,
         data: content,
         encoding: Encoding.UTF8,

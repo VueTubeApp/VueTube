@@ -5,7 +5,7 @@
         ><v-icon style="margin-right: 0.5em">mdi-sd</v-icon> Install from
         storage</v-btn
       >
-      <input type="file" id="filePicker" accept="js" />
+      <input type="file" id="filePicker" accept="js,.js" />
     </div>
 
     <center v-if="plugins.length == 0" style="margin-top: 2em">
@@ -30,6 +30,8 @@
       }"
     >
       <div>
+        {{ plugin }}
+        <!--
         <v-card-title class="pa-0">
           {{ plugin.manifest.name }}
           {{ plugin.manifest.version }}
@@ -44,6 +46,7 @@
         <v-card-text class="pa-0">
           {{ plugin.manifest.description }}
         </v-card-text>
+        -->
       </div>
       <v-switch
         disabled
@@ -80,6 +83,9 @@ export default {
       const contents = await vm.readFileContent(file);
       await vm.$tppl.addPlugin(contents);
     };
+
+    this.plugins = this.$tppl.list;
+    console.log(this.plugins)
   },
   methods: {
     readFileContent(file) {

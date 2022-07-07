@@ -18,7 +18,7 @@ const ytApiVal = {
 };
 
 const filesystem = {
-  plugins: "plugins",
+  plugins: "plugins/",
 };
 
 module.exports = {
