@@ -27,11 +27,10 @@
         >
           <div class="d-flex flex-column">
             <v-card-title
-              class="pa-0"
+              class="pa-0 text-wrap"
               style="
                 font-size: 0.95rem;
                 line-height: 1.15rem;
-                overflow-wrap: break-word;
               "
               v-text="video.title"
               v-emoji
@@ -565,5 +564,9 @@ export default {
 
 .keep-spaces {
   white-space: pre-wrap;
+}
+
+.v-card__title {
+  word-break: break-word;
 }
 </style>
