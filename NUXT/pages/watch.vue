@@ -22,7 +22,7 @@
       <v-card v-if="loaded" class="background rounded-0" flat>
         <div
           v-ripple
-          class="d-flex justify-space-between align-start pa-4"
+          class="d-flex justify-space-between align-start px-4 pt-4"
           @click="showMore = !showMore"
         >
           <div class="d-flex flex-column">
