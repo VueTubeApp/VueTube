@@ -99,7 +99,7 @@ To install the app, please visit [vuetube.app/install](https://www.vuetube.app/i
 **General** | **Player** | [**Extractor**](https://github.com/VueTubeApp/VueTube-Extractor) |
 :-: | :-: | :-: |
 🟢 Comments (100%) | 🟢 Play / Pause (100%) | 🟢 Search Autocomplete (100%) |
-🟢 Description (100%) | 🟢 Tap to show/hide controls (100%) | 🟢 Home page (100%) |
+🟢 Description (100%) | 🟢 Tap to show / hide controls (100%) | 🟢 Home page (100%) |
 🟢 Home Page (100%) | 🟠 Seekbar / Scrubber (80%) | 🟢 Search (100%)
 🟢 RYD Integration (100%) | 🟠 Fullscreen (80%) | 🟠 Video Information (60%) |
 🟢 Themes (100%) | 🟠 Resolution Picker (50%) | 🔴 Channels (0%) |
