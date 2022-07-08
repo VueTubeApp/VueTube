@@ -89,6 +89,39 @@ To install the app, please visit [vuetube.app/install](https://www.vuetube.app/i
      
 </details>
 
+## Progress
+
+<details>
+  <summary> Click here to display progress </summary>
+
+ <br>
+ 
+**General** | **Player** | [**Extractor**](https://github.com/VueTubeApp/VueTube-Extractor) |
+:-: | :-: | :-: |
+🟢 Comments (100%) | 🟢 Play / Pause (100%) | 🟢 Search Autocomplete (100%) |
+🟢 Description (100%) | 🟢 Tap to show/hide controls (100%) | 🟢 Home page (100%) |
+🟢 Home Page (100%) | 🟠 Seekbar / Scrubber (80%) | 🟢 Search (100%)
+🟢 RYD Integration (100%) | 🟠 Fullscreen (80%) | 🟠 Video Information (60%) |
+🟢 Themes (100%) | 🟠 Resolution Picker (50%) | 🔴 Channels (0%) |
+🟢 Watch Page (100%) | 🔴 Miniplayer (0%) | 🔴 Comments (0%) |
+🟠 Sponsorblock Integration (95%) | 🔴 Background Play (0%) | 🔴 Live Chat (0%) |
+🟠 Auto Update (50%) | 🔴 Picture in Picture (0%) | 🔴 Trending content (0%)
+🟠 Channel Page (50%) |  🔴 Captions (0%) | 🔴 Interactions (0%) |
+🟠 Community Posts (10%) | 🔴 Cards (0%) | 🔴 Playlists (0%) |
+🟠 Customizable Shorts UI (10%) |  | 🔴 Notifications (0%)
+🟠 Customizable YT Music UI (10%) |  | 🔴 Login (0%)
+🟠 Customizable UI (30%) |  |  |
+🟠 Libraries Page (10%) |  |  |
+🟠 Replies (50%) |  |  |
+🟠 Third Party Plugins (40%) |  |  |
+🟠 VueTube Player (See progress to the right) |  |  |
+🟠 VueTube Extractor (See progress to the right) |  |  |
+🔴 Local Watch History (0%) |  |  |
+🔴 Subscriptions Page (0%) |  |  |
+🔴 Other Platform Support (0%) |  |  |
+  
+</details>
+
 ### Technologies used
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
