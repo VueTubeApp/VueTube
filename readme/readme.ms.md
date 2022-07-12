@@ -35,7 +35,7 @@ Baca ini dalam bahasa lain: [English,](/readme.md) [Español,](readme.es.md) [�
 - 🖌️ **UI yang dibolehkan suaikan:** Sesuaikan tema ataupun nyahdayakan beberapa bahagian UI yang anda tidak gunakan.
 - ⬆️ **Kemaskini Auto:** Anda akan dimaklumkan apabila kemas kini tersedia & kembali ke versi lama jika anda tidak menyukainya!
 - 👁️ **Perlindungan Penjejak:** Tiada telemetri (maklumat peribadi) dihantar daripada peranti anda secara lalai. Privasi adalah penting!
-- 📺 **Pemain video yang boleh disesuaikan:**
+- 📺 **Pemain video yang boleh disesuaikan:** Pemain video yang diintegrasikan dalam aplikasi dengan semua yang anda perlukan untuk bergembira, seperti kelajuan 16x.
 - 👎 **Return YouTube Dislike:** [_Maklumat lanjut dalam Bahasa Inggeris_](https://returnyoutubedislike.com)
 - 💰 **SponsorBlock:** [_Maklumat lanjut dalam Bahasa Inggeris_](https://sponsor.ajay.app)
 
@@ -69,8 +69,8 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 - 🔍 **Carian lanjutan:** Susun hasil mengikut tarikh, tempoh, suka atau apa-apa faktor lain.
 - 🗞️ **Sejarah tontonan tempatan:** Dapatkan semula video tontonan terakhir anda tanpa log masuk.
-- ✂️ **YouTube Shorts:** Video pendek yang berdurasi dari 15 hingga 60 saat
-- 🧑 **Log masuk dengan akaun Google anda:** Log masuk untuk mendapatkan pengalaman penuh dengan mengundi dan mengulas pada video dan melanggan saluran.
+- ✂️ **YouTube Shorts:** Video pendek yang berdurasi dari 15 hingga 60 saat.
+- 🧑 **Log masuk dengan akaun Google anda:** Log masuk untuk mendapatkan pengalaman penuh dengan mengundi dan komen pada video dan melanggan saluran.
 - 🖼️ **Mod gambar dalam gambar:** Membolehkan anda menonton video dalam tetingkap terapung apabila menggunakan aplikasi lain. [Maklumat lanjut](https://support.google.com/youtube/answer/7552722?co=GENIE.Platform=Android&hl=en#zippy=%2Cturn-on-picture-in-picture%2Cwho-can-use-picture-in-picture) (dalam Bahasa Inggeris)
 - 🧩 **Pemalam (Plugin):** Pasang pemalam pihak ketiga yang dibuat oleh komuniti dengan ciri-ciri yang berguna!
 - Dan lebih lagi!
@@ -101,7 +101,7 @@ Idea ini telah dilontarkan pada pelayan Discord Return YouTube Dislike untuk sek
 
 Sila baca di laman sesawang kami tentang bagaimana untuk melakukannya: www.vuetube.app/contributing
 
-Sekiranya anda mahu menterjemahkan aplikasi ini, klik di [sini](https://github.com/VueTubeApp/VueTube/blob/main/NUXT/plugins/languages) dan baca bagaimana untuk melakukannya
+Sekiranya anda mahu menterjemahkan aplikasi ini, klik di [sini](https://github.com/VueTubeApp/VueTube/blob/main/NUXT/plugins/languages) dan baca bagaimana untuk melakukannya.
 
 ## Penyumbang
 
