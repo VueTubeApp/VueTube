@@ -1,10 +1,10 @@
 <template>
   <div>
     <div style="margin: 1em">
-      <v-btn style="width: 100%" class="primary text-none" @click="pickFile()"
-        ><v-icon style="margin-right: 0.5em">mdi-sd</v-icon> Install from
-        storage</v-btn
-      >
+      <v-btn style="width: 100%" class="primary text-none" @click="pickFile()">
+        <v-icon style="margin-right: 0.5em">mdi-sd</v-icon>
+        Install from storage
+      </v-btn>
       <input type="file" id="filePicker" accept="js,.js" />
     </div>
 
@@ -13,49 +13,20 @@
       <h2>No plugins installed</h2>
     </center>
 
-    <!-- sorry for the mess, I will make a dumb (styles only) standardized card component later - Nik -->
-    <div
-      v-for="(plugin, index) in plugins"
-      :key="index"
-      flat
-      class="card d-flex mb-4 background"
-      :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
-      :style="{
-        borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
-        margin: $store.state.tweaks.roundTweak > 0 ? '0 1rem' : '0',
-        padding:
-          $store.state.tweaks.roundTweak > 0
-            ? '.75rem 0rem .75rem 1rem'
-            : '.75rem .75rem .75rem 1.5rem',
-      }"
-    >
-      <div>
-        {{ plugin }}
-        <!--
-        <v-card-title class="pa-0">
-          {{ plugin.manifest.name }}
-          {{ plugin.manifest.version }}
-        </v-card-title>
-        <v-card-text
-          class="pa-0 mb-3 background--text"
-          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-        >
-          by {{ plugin.manifest.author }}
-          {{ plugin.manifest.license ? `(${plugin.manifest.license})` : "" }}
-        </v-card-text>
-        <v-card-text class="pa-0">
-          {{ plugin.manifest.description }}
-        </v-card-text>
-        -->
-      </div>
-      <v-switch
-        disabled
-        style="pointer-events: none"
-        class="my-0"
-        persistent-hint
-        inset
-      />
-    </div>
+    <!--   Plugin List Renderer   -->
+    <v-card v-for="(plugin, index) in plugins" :key="index">
+      <v-card-title>{{ plugin }}</v-card-title>
+
+      <v-card-actions>
+        <v-btn style="width: 100%" class="error text-none" @click="remove(plugin)">
+          <v-icon style="margin-right: 0.5em">mdi-delete</v-icon>
+          Uninstall
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+    <!--   End Plugin List Renderer   -->
+
+
   </div>
 </template>
 
@@ -82,19 +53,21 @@ export default {
       const file = document.getElementById("filePicker").files[0];
       const contents = await vm.readFileContent(file);
       await vm.$tppl.addPlugin(contents);
+      this.rebuildList();
     };
 
-    this.plugins = this.$tppl.list;
-    console.log(this.plugins)
+    this.rebuildList();
+    
   },
   methods: {
-    readFileContent(file) {
-      const reader = new FileReader();
-      return new Promise((resolve, reject) => {
-        reader.onload = (event) => resolve(event.target.result);
-        reader.onerror = (error) => reject(error);
-        reader.readAsText(file);
-      });
+    async rebuildList() {
+      const pluginsData = await this.$tppl.list;
+      this.plugins = pluginsData.files;
+    },
+
+    async remove(plugin) {
+      await this.$tppl.removePlugin(plugin);
+      this.rebuildList();
     },
 
     pickFile() {

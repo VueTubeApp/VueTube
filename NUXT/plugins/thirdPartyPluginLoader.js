@@ -50,8 +50,21 @@ const module = {
         data: content,
         encoding: Encoding.UTF8,
       });
+      resolve();
     });
   },
+
+  async removePlugin(name) {
+    await ensureStructure;
+    new Promise(async (resolve, reject) => {
+      await Filesystem.deleteFile({
+        path: fs.plugins + name,
+        directory: APP_DIRECTORY,
+      });
+      resolve();
+    });
+  },
+
 };
 
 //---   Start   ---//
