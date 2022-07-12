@@ -1,1 +1,1 @@
-cd .\NUXT\; npm run generate; cd ..; npx cap sync
+cd .\NUXT\; npm run generate; cd ..; npx cap sync android
