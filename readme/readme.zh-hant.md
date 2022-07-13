@@ -4,7 +4,7 @@
   </a>
   </br>
   <details>
-  <summary>顯示 Readme 貢獻名單</summary>
+  <summary>查看 Readme 貢獻名單</summary>
 
    <sub>標誌：<a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
   <sub>繁體中文 Readme 貢獻者：<a href="https://github.com/404-Program-not-found">@404-Program-not-found</a> 和 <a href="https://github.com/nokanol45">@nokanol45</a></sub>
@@ -87,6 +87,39 @@
 <img src="https://vuetube.app/stng.png" width="400">
 <img src="https://vuetube.app/srch.png" width="400">
      
+</details>
+
+## 進度
+
+<details>
+  <summary> 按此查看進度 </summary>
+
+ <br>
+ 
+**一般** | **播放器** | [**提取器**](https://github.com/VueTubeApp/VueTube-Extractor) |
+:-: | :-: | :-: |
+🟢 評論 (100%) | 🟢 播放 / 暫停 (100%) | 🟢 自動完成搜尋 (100%) |
+🟢 描述 (100%) | 🟢 輕按顯示／隱藏控制項目 (100%) | 🟢 主頁 (100%) |
+🟢 主頁 (100%) | 🟠 進度條／滑動條 (80%) | 🟢 搜尋 (100%)
+🟢 內置 RYD (100%) | 🟠 全螢幕 (80%) | 🟠 影片資訊 (60%) |
+🟢 主題 (100%) | 🟠 畫質選擇 (50%) | 🔴 頻道 (0%) |
+🟢 觀看頁 (100%) | 🔴 迷你播放器 (0%) | 🔴 評論 (0%) |
+🟠 內置 Sponsorblock (95%) | 🔴 背景播放 (0%) | 🔴 即時通訊 (0%) |
+🟠 自動更新 (50%) | 🔴 畫中畫 (0%) | 🔴 熱門內容 (0%)
+🟠 頻道頁 (50%) |  🔴 字幕 (0%) | 🔴 互動 (0%) |
+🟠 社群帖子 (10%) | 🔴 資訊卡 (0%) | 🔴 播放清單 (0%) |
+🟠 可自訂的 Shorts 介面 (10%) |  | 🔴 通知 (0%)
+🟠 可自訂的 YT Music 介面 (10%) |  | 🔴 登入 (0%)
+🟠 可自訂的介面 (30%) |  |  |
+🟠 媒體庫頁 (10%) |  |  |
+🟠 評論回覆 (50%) |  |  |
+🟠 第三方插件 (40%) |  |  |
+🟠 VueTube 播放器 (參見右邊進度) |  |  |
+🟠 VueTube 提取器 (參見右邊進度) |  |  |
+🔴 本地儲存觀看記錄 (0%) |  |  |
+🔴 訂閲項目頁 |  |  |
+🔴 支援其他平台 (0%) |  |  |
+  
 </details>
 
 ### 使用的技術
