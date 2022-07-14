@@ -7,7 +7,7 @@ module.exports = {
     library: "Pustaka",
     restart: "Mulakan semula",
     later: "Kemudian",
-    settingRestart: "Mengubah tetapan ini memerlukan apl untuk memulakan semula untuk mengaplikasikan tetapan."
+    settingRestart: "Mengubah tetapan ini memerlukan apl mulakan semula untuk mengaplikasikan tetapan."
   },
 
   index: {
@@ -40,7 +40,7 @@ module.exports = {
       dark: "Gelap",
       black: "Hitam",
       darkmode: "Mod Gelap",
-      darkmodetagline: "Selamat datang ke sisi gelap, Jedi muda.",
+      darkmodetagline: "Lepaskan kuasa sisi gelap, Jedi muda.",
     },
     tweaks: {
       fullscreen: "Skrin Penuh",
