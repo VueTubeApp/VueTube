@@ -22,16 +22,15 @@
       <v-card v-if="loaded" class="background rounded-0" flat>
         <div
           v-ripple
-          class="d-flex justify-space-between align-start px-3 pt-4"
+          class="d-flex justify-space-between align-start px-4 pt-4"
           @click="showMore = !showMore"
         >
           <div class="d-flex flex-column">
             <v-card-title
-              class="pa-0"
+              class="pa-0 text-wrap"
               style="
                 font-size: 0.95rem;
                 line-height: 1.15rem;
-                overflow-wrap: break-word;
               "
               v-text="video.title"
               v-emoji
@@ -56,7 +55,26 @@
           <v-icon class="ml-4" v-if="showMore">mdi-chevron-up</v-icon>
           <v-icon class="ml-4" v-else>mdi-chevron-down</v-icon>
         </div>
-        <div class="d-flex pl-4">
+        <div
+          class="d-flex px-4"
+          :class="
+            $store.state.tweaks.roundWatch && $store.state.tweaks.roundTweak > 0
+              ? $vuetify.theme.dark
+                ? 'background lighten-1'
+                : 'background darken-1'
+              : ''
+          "
+          :style="{
+            borderRadius: $store.state.tweaks.roundWatch
+              ? `${$store.state.tweaks.roundTweak / 2}rem`
+              : '0',
+            margin:
+              $store.state.tweaks.roundWatch &&
+              $store.state.tweaks.roundTweak > 0
+                ? '1rem'
+                : '0',
+          }"
+        >
           <v-btn
             v-for="(item, index) in interactions"
             :key="index"
@@ -546,5 +564,9 @@ export default {
 
 .keep-spaces {
   white-space: pre-wrap;
+}
+
+.v-card__title {
+  word-break: break-word;
 }
 </style>

@@ -21,11 +21,11 @@ Wymawia się: View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Przeczytaj to w innych językach: [English,](readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano](readme.it.md)
+Przeczytaj to w innych językach: [English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
 
 ## Funkcje
 
-<img src="./resources/readme-pl/Features.pl.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-pl/Features.pl.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 Motywy: Jasny, Ciemny, OLED, Wszystkie kolory tęczy
 - 🖌️ Personalizacja interfejsu: Możesz w pełni dostosować kolor akcentu oraz inne części interfejsu użytkownika i usunąć funkcje, których nie używasz!
@@ -36,7 +36,7 @@ Przeczytaj to w innych językach: [English,](readme.md) [Español,](readme.es.md
 
 ## Instalacja
 
-<img src="./resources/readme-pl/Install.pl.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-pl/Install.pl.svg" alt="VueTube icon" height="100"/>
 
 Aby zainstalować aplikację, odwiedź www.vuetube.app/install
 
@@ -46,13 +46,13 @@ Aby zainstalować aplikację, odwiedź www.vuetube.app/install
 
 ### Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Dużo błędów oraz wczesny dostęp do najnowszych funkcji                                                                                      | Mniej błędów niż w wersji niestabilnej, nieco więcej funkcji niż w wersji stabilnej                                                                             | Niedostępna, dopóki aplikacja nie będzie bardziej rozwinięta                                    |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Dużo błędów oraz wczesny dostęp do najnowszych funkcji                                                                                  | Mniej błędów niż w wersji niestabilnej, nieco więcej funkcji niż w wersji stabilnej                                                                                            | Niedostępna, dopóki aplikacja nie będzie bardziej rozwinięta                                    |
 
@@ -60,7 +60,7 @@ Aby zainstalować aplikację, odwiedź www.vuetube.app/install
 
 ## Plany
 
-<img src="./resources/readme-pl/Plans.pl.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-pl/Plans.pl.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 Wyszukiwanie zaawansowane
 - 🗞️ Lokalna historia oglądania

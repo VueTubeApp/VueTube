@@ -245,6 +245,14 @@ export default {
   margin: 0 !important;
 }
 
+.container-max-height {
+  min-height: calc(
+    100vh - 8rem - env(safe-area-inset-top) - env(safe-area-inset-bottom)
+  ) !important;
+}
+.background-opaque {
+  background: linear-gradient(var(--v-background-base) -1000%, #00000000 1000%);
+}
 .border-primary {
   border: 2px solid var(--v-primary-base) !important;
 }

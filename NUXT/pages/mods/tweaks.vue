@@ -1,13 +1,6 @@
 <template>
   <!-- !IMPORTANT: don't let autoformatter format this style to multiline or else it breaks ¯\_(ツ)_/¯ -->
-  <div
-    class="d-flex flex-column justify-end"
-    style="
-      min-height: calc(
-        100vh - 8rem - env(safe-area-inset-top) - env(safe-area-inset-bottom)
-      ) !important;
-    "
-  >
+  <div class="container-max-height d-flex flex-column justify-end">
     <!-- TODO: outer radius -->
     <!-- TODO: Dense Navbar -->
     <!-- TODO: Disable Top Bar -->
@@ -174,9 +167,6 @@ export default {
       lang: {},
     };
   },
-  mounted() {
-    this.lang = this.$lang("mods").tweaks;
-  },
   computed: {
     roundTweak: {
       get() {
@@ -202,6 +192,9 @@ export default {
         this.$store.commit("tweaks/setRoundWatch", value);
       },
     },
+  },
+  mounted() {
+    this.lang = this.$lang("mods").tweaks;
   },
 };
 </script>

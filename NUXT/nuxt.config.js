@@ -66,11 +66,11 @@ export default {
       },
       themes: {
         light: {
-          primary: "#016a49",
+          primary: "#136458",
           background: "#ffffff",
         },
         dark: {
-          primary: "#7CD6AF",
+          primary: "#00d7cd",
           background: "#000000",
         },
       },

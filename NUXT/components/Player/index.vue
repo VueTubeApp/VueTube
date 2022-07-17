@@ -2,10 +2,6 @@
   <!-- // TODO: down: () => minimize, -->
   <div
     ref="vidcontainer"
-    v-touch="{
-      right: () => (contain = false),
-      left: () => (contain = true),
-    }"
     class="d-flex flex-column black"
     style="position: relative"
     :style="{
@@ -61,6 +57,8 @@
         down: () => {
           if (isFullscreen) fullscreenHandler(true);
         },
+        right: () => (contain = true),
+        left: () => (contain = false),
       }"
       text
       tile
@@ -92,6 +90,8 @@
         down: () => {
           if (isFullscreen) fullscreenHandler(true);
         },
+        right: () => (contain = false),
+        left: () => (contain = true),
       }"
       text
       tile
