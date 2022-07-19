@@ -21,7 +21,7 @@ module.exports = {
     player: "Lecteur vidéo",
     uitweaker: "Personnalisation de l'interface",
     startupoptions: "Options de démarrage",
-    plugins: "Plug-ins",
+    plugins: "Plugins",
     updates: "Mises à jour",
     logs: "Journaux",
     about: "À propos",
@@ -55,7 +55,7 @@ module.exports = {
     updates: {
       install: "Installer",
       view: "Voir",
-      latest: "Version plus récente",
+      latest: "Dernière MÀJ",
       installed: "Version installée",
     },
     logs: {
@@ -84,9 +84,10 @@ module.exports = {
     langsetup: "Commençons par sélectionner une langue !",
     featuresetup: "Sélectionnons des fonctionnalités !",
     enableryd:
-      "Activer Return YouTube Dislike (Retourner les Dislikes de YouTube)",
+      "Activer les dislikes",
     enablespb: "Activer SponsorBlock",
     thanks: "Merci d'utiliser VueTube",
-    enjoy: "Nous ésperons que vous apprécierez votre éxperience ! ",
+    enjoy: "Nous espérons que vous apprécierez votre expérience ! ",
+    packageinstaller: "Sélectionne un paquet à télécharger"
   },
 };
