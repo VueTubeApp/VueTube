@@ -84,10 +84,10 @@ module.exports = {
     langsetup: "Commençons par sélectionner une langue !",
     featuresetup: "Sélectionnons des fonctionnalités !",
     enableryd:
-      "Activer les dislikes",
+      "Activer Return YouTube Dislike (Retourner les Dislikes de YouTube)",
     enablespb: "Activer SponsorBlock",
     thanks: "Merci d'utiliser VueTube",
     enjoy: "Nous espérons que vous apprécierez votre expérience ! ",
-    packageinstaller: "Sélectionne un paquet à télécharger"
+    packageinstaller: "Sélectionne un paquet à télécharger",
   },
 };
