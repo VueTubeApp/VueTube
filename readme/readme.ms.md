@@ -89,6 +89,39 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
      
 </details>
 
+## Kemajuan
+
+<details>
+  <summary> Klik sini untuk tunjukkan kemajuan pembangunan apl VueTube </summary>
+
+ <br>
+ 
+**Umum** | **Pemain** | [**Pengekstrak (Extractor)**](https://github.com/VueTubeApp/VueTube-Extractor) |
+:-: | :-: | :-: |
+🟢 Komen (100%) | 🟢 Main / Jeda (100%) | 🟢 Autolengkap carian (100%) |
+🟢 Huraian video (description) (100%) | 🟢 Ketik untuk tunjuk / sorok kawalan video (100%) | 🟢 Laman utama (100%) |
+🟢 Laman Utama (100%) | 🟠 Seekbar / Scrubber (80%) | 🟢 Carian (100%)
+🟢 Pengintegrasian RYD (100%) | 🟠 Skrin Penuh (80%) | 🟠 Maklumat Video (60%) |
+🟢 Tema (100%) | 🟠 Pemilih Resolusi (720p, HD) (50%) | 🔴 Saluran (0%) |
+🟢 Halaman Tonton (100%) | 🔴 Mini-pemain (0%) | 🔴 Komen (0%) |
+🟠 Pengintegrasian SponsorBlock (95%) | 🔴 Main video di latar belakang (0%) | 🔴 Sembang Langsung (0%) |
+🟠 Auto Kemaskini (50%) | 🔴 Picture in Picture (0%) | 🔴 Kandungan Trending (0%)
+🟠 Halaman Saluran (50%) |  🔴 Kapsyen / Sarikata (0%) | 🔴 Interaksi (0%) |
+🟠 Hantaran Komuniti (10%) | 🔴 Kad (0%) | 🔴 Senarai Main (0%) |
+🟠 Shorts UI yang Dibolehsuai (10%) |  | 🔴 Notifikasi (0%)
+🟠 YT Music UI yang Dibolehsuai (10%) |  | 🔴 Log masuk (0%)
+🟠 UI yang Dibolehsuai (30%) |  |  |
+🟠 Halaman Pustaka (10%) |  |  |
+🟠 Balasan Komen (50%) |  |  |
+🟠 Pemalam (Plugins) pihak ketiga (40%) |  |  |
+🟠 Pemain VueTube (Lihat kemajuan di tengah) |  |  |
+🟠 Pengekstrak (Extractor) VueTube (Lihat kemajuan di sebelah kanan) |  |  |
+🔴 Sejarah Tontonan Setempat (0%) |  |  |
+🔴 Halaman Langganan (0%) |  |  |
+🔴 Sokongan Platform Lain (0%) |  |  |
+  
+</details>
+
 ### Teknologi yang digunakan
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
