@@ -4,7 +4,7 @@
   </a>
   </br>
   <details>
-  <summary>显示 Readme 贡献名单</summary>
+  <summary>查看 Readme 贡献名单</summary>
 
    <sub>标志：<a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
   <sub>简体中文 Readme 贡献者：<a href="https://github.com/404-Program-not-found">@404-Program-not-found</a> 和 <a href="https://github.com/nokanol45">@nokanol45</a></sub>
@@ -86,6 +86,39 @@
 <img src="https://vuetube.app/stng.png" width="400">
 <img src="https://vuetube.app/srch.png" width="400">
      
+</details>
+
+## 进度
+
+<details>
+  <summary> 点击这里查看进度 </summary>
+
+ <br>
+ 
+**通常** | **播放器** | [**提取器**](https://github.com/VueTubeApp/VueTube-Extractor) |
+:-: | :-: | :-: |
+🟢 评论 (100%) | 🟢 播放 / 暂停 (100%) | 🟢 自动完成搜索 (100%) |
+🟢 描述 (100%) | 🟢 轻按显示／隐藏控制项目 (100%) | 🟢 首页 (100%) |
+🟢 首页 (100%) | 🟠 进度条／滑动条 (80%) | 🟢 搜索 (100%)
+🟢 内置 RYD (100%) | 🟠 全屏 (80%) | 🟠 视频信息 (60%) |
+🟢 主题 (100%) | 🟠 画质选择 (50%) | 🔴 频道 (0%) |
+🟢 观看页 (100%) | 🔴 迷你播放器 (0%) | 🔴 评论 (0%) |
+🟠 内置 Sponsorblock (95%) | 🔴 背景播放 (0%) | 🔴 即时通讯 (0%) |
+🟠 自动更新 (50%) | 🔴 画中画 (0%) | 🔴 热门内容 (0%)
+🟠 频道页 (50%) |  🔴 字幕 (0%) | 🔴 互动 (0%) |
+🟠 社区帖子 (10%) | 🔴 信息卡 (0%) | 🔴 播放列表 (0%) |
+🟠 可自定义的 Shorts 界面 (10%) |  | 🔴 通知 (0%)
+🟠 可自定义的 YT Music 界面 (10%) |  | 🔴 登录 (0%)
+🟠 可自定义的界面 (30%) |  |  |
+🟠 媒体库页 (10%) |  |  |
+🟠 评论回覆 (50%) |  |  |
+🟠 第三方插件 (40%) |  |  |
+🟠 VueTube 播放器 (参见右方进度) |  |  |
+🟠 VueTube 提取器 (参见右方进度) |  |  |
+🔴 本地存储观看记录 (0%) |  |  |
+🔴 订阅项目页 |  |  |
+🔴 支援其他平台 (0%) |  |  |
+  
 </details>
 
 ### 使用的技术
