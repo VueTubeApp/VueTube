@@ -27,13 +27,10 @@
         >
           <div class="d-flex flex-column">
             <v-card-title
-              class="pa-0 text-wrap"
-              style="
-                font-size: 0.95rem;
-                line-height: 1.15rem;
-              "
-              v-text="video.title"
               v-emoji
+              class="pa-0 text-wrap"
+              style="font-size: 0.95rem; line-height: 1.15rem"
+              v-text="video.title"
             />
             <v-card-text
               style="font-size: 0.75rem"
@@ -52,8 +49,8 @@
               </div>
             </v-card-text>
           </div>
-          <v-icon class="ml-4" v-if="showMore">mdi-chevron-up</v-icon>
-          <v-icon class="ml-4" v-else>mdi-chevron-down</v-icon>
+          <v-icon v-if="showMore" class="ml-4">mdi-chevron-up</v-icon>
+          <v-icon v-else class="ml-4">mdi-chevron-down</v-icon>
         </div>
         <div
           class="d-flex px-4"

@@ -217,26 +217,13 @@
       <!-- bottom controls row -->
       <div
         style="position: absolute; width: 100%; bottom: 0.5rem"
-        class="d-flex justify-between align-center px-2"
+        class="debug d-flex justify-between align-center px-2"
         @click.self="controlsHandler()"
       >
-        <div v-if="isFullscreen">
-          <v-btn fab text small color="white" class="mr-2" disabled>
-            <v-icon>mdi-thumb-up-outline</v-icon>
-          </v-btn>
-          <v-btn fab text small color="white" class="mr-2" disabled>
-            <v-icon>mdi-thumb-down-outline</v-icon>
-          </v-btn>
-          <v-btn fab text small color="white" class="mr-2" disabled>
-            <v-icon>mdi-share-outline</v-icon>
-          </v-btn>
-          <v-btn fab text small color="white" class="mr-2" disabled>
-            <v-icon>mdi-plus-box-multiple-outline</v-icon>
-          </v-btn>
-          <v-btn fab text small color="white" class="mr-2" disabled>
-            <v-icon>mdi-comment-text-outline</v-icon>
-          </v-btn>
-        </div>
+        <fscontrols
+          :is-fullscreen="isFullscreen"
+          :vertical-fullscreen="verticalFullscreen"
+        />
         <v-spacer />
         <!-- // TODO: merge the bottom 2 into 1 reusable component -->
         <quality
@@ -313,6 +300,7 @@ import minimize from "~/components/Player/minimize.vue";
 import captions from "~/components/Player/captions.vue";
 import playpause from "~/components/Player/playpause.vue";
 import watchtime from "~/components/Player/watchtime.vue";
+import fscontrols from "~/components/Player/fscontrols.vue";
 import fullscreen from "~/components/Player/fullscreen.vue";
 import progressbar from "~/components/Player/progressbar.vue";
 import sponsorblock from "~/components/Player/sponsorblock.vue";
@@ -321,6 +309,7 @@ export default {
     sponsorblock,
     progressbar,
     fullscreen,
+    fscontrols,
     watchtime,
     playpause,
     captions,
