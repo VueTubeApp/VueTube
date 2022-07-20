@@ -199,6 +199,7 @@ export default {
 
       if (this.search === true) {
         if (query) {
+          this.$store.commit("search/setLoading", true);
           this.$router.push(`/search?q=${query}`);
           this.search = false;
         }

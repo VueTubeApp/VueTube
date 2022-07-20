@@ -52,6 +52,7 @@
       v-if="$route.name !== 'settings' && !$route.path.includes('/mods')"
       icon
       tile
+      :loading="$store.state.search.loading"
       class="ml-3 my-auto fill-height"
       style="border-radius: 0.25rem !important"
       @click="$emit('search-btn', text)"
