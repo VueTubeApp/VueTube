@@ -53,7 +53,7 @@
           <v-icon v-else class="ml-4">mdi-chevron-down</v-icon>
         </div>
         <div
-          class="d-flex px-4"
+          class="d-flex justify-space-around"
           :class="
             $store.state.tweaks.roundWatch && $store.state.tweaks.roundTweak > 0
               ? $vuetify.theme.dark
@@ -77,7 +77,7 @@
             :key="index"
             text
             fab
-            class="vertical-button mx-1"
+            class="vertical-button"
             elevation="0"
             style="
               width: 4.2rem !important;
