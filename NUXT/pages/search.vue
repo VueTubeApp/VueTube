@@ -36,6 +36,7 @@ export default {
   },
   methods: {
     getSearch() {
+      this.$store.commit("search/setLoading", true); // in case navigated to the page not from top bar
       const searchQuestion = this.$route.query.q;
       this.$youtube.search(searchQuestion).then((response) => {
         this.$store.commit("search/setLoading", false);
