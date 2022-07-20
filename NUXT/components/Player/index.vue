@@ -217,7 +217,7 @@
       <!-- bottom controls row -->
       <div
         style="position: absolute; width: 100%; bottom: 0.5rem"
-        class="debug d-flex justify-between align-center px-2"
+        class="d-flex justify-between align-center px-2"
         @click.self="controlsHandler()"
       >
         <fscontrols
