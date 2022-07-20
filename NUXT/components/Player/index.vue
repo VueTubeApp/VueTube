@@ -20,6 +20,7 @@
       v-touch="{
         up: () => {
           if (!isFullscreen) fullscreenHandler(true);
+          else if (verticalFullscreen) shortNext();
         },
         down: () => {
           if (isFullscreen) fullscreenHandler(true);
@@ -30,9 +31,16 @@
       width="100%"
       :src="vidSrc"
       :height="isFullscreen ? '100%' : 'auto'"
-      style="transition: filter 0.15s ease-in-out"
-      :class="controls || seeking || skipping ? 'dim' : ''"
+      style="transition: filter 0.15s ease-in-out, transform 0.15s linear"
+      :class="
+        controls || seeking || skipping
+          ? verticalFullscreen
+            ? 'dim-ish'
+            : 'dim'
+          : ''
+      "
       :style="{
+        transform: shortTransition ? 'translateY(-100%)' : '',
         objectFit: contain ? 'contain' : 'cover',
         maxHeight: isFullscreen ? '' : '50vh',
         borderRadius:
@@ -53,6 +61,7 @@
       v-touch="{
         up: () => {
           if (!isFullscreen) fullscreenHandler(true);
+          else if (verticalFullscreen) shortNext();
         },
         down: () => {
           if (isFullscreen) fullscreenHandler(true);
@@ -86,6 +95,7 @@
       v-touch="{
         up: () => {
           if (!isFullscreen) fullscreenHandler(true);
+          else if (verticalFullscreen) shortNext();
         },
         down: () => {
           if (isFullscreen) fullscreenHandler(true);
@@ -168,7 +178,14 @@
           top: 50%;
         "
       >
-        <v-btn fab text color="white" class="mx-12" disabled>
+        <v-btn
+          v-if="!verticalFullscreen"
+          fab
+          text
+          color="white"
+          class="mx-12"
+          disabled
+        >
           <v-icon size="2rem" color="white">mdi-skip-previous</v-icon>
         </v-btn>
         <playpause
@@ -178,6 +195,7 @@
           @pause="$refs.player.pause(), $refs.audio.pause()"
         />
         <v-btn
+          v-if="!verticalFullscreen"
           fab
           text
           color="white"
@@ -337,6 +355,7 @@ export default {
     return {
       isFullscreen: false,
       fullscreenLock: false,
+      shortTransition: false,
       verticalFullscreen: false,
       midRotation: false,
       controls: false,
@@ -412,6 +431,14 @@ export default {
     screen.orientation.removeEventListener("change");
   },
   methods: {
+    shortNext() {
+      this.shortTransition = true;
+      setTimeout(() => {
+        this.$router.push(
+          `/watch?v=${this.recommends.contents[0].videoWithContextRenderer.videoId}`
+        );
+      }, 150);
+    },
     // TODO: make accumulative onclick after first dblclick (don't set timeout untill stopped clicking)
     skipHandler(time) {
       this.skipping = time;
@@ -448,6 +475,8 @@ export default {
     checkDimensions() {
       if (this.$refs.player.videoHeight > this.$refs.player.videoWidth) {
         this.isVerticalVideo = true;
+        this.fullscreenHandler(true);
+        this.controlsHandler();
       } else {
         this.isVerticalVideo = false;
       }
@@ -518,6 +547,9 @@ export default {
 <style>
 .dim {
   filter: brightness(33%);
+}
+.dim-ish {
+  filter: brightness(66%);
 }
 .invisible {
   opacity: 0;
