@@ -7,7 +7,7 @@ module.exports = {
     library: "Pustaka",
     restart: "Mulakan semula",
     later: "Kemudian",
-    settingRestart: "Mengubah tetapan ini memerlukan apl mulakan semula untuk mengaplikasikan tetapan."
+    settingRestart: "Mengubah tetapan ini memerlukan apl untuk dimulakan semula untuk menerapkan tetapan."
   },
 
   index: {
