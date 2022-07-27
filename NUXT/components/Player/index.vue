@@ -374,9 +374,14 @@ export default {
   mounted() {
     console.log("sources", this.sources);
     console.log("recommends", this.recommends);
-    this.audSrc = this.sources[this.sources.length - 1].url;
-    this.vidSrc = this.sources[0].url;
     let vid = this.$refs.player;
+
+    // TODO: this.$store.state.player.quality, check if exists and select the closest one
+    if (this.$store.state.player.preload) this.prebuffer(this.sources[0].url);
+    else {
+      this.audSrc = this.sources[this.sources.length - 1].url;
+      this.vidSrc = this.sources[0].url;
+    }
 
     this.$youtube.getSponsorBlock(this.video.id, (data) => {
       console.log("sbreturn", data);
@@ -389,8 +394,8 @@ export default {
       // TODO: detect video loading state and send this.loading to play button :loading = loading here
       // console.log(e);
       if (vid.readyState >= 3) {
-        this.$refs.audio.currentTime = vid.currentTime;
         this.$refs.audio.play();
+        this.$refs.audio.currentTime = vid.currentTime;
         vid.addEventListener("timeupdate", () => {
           if (!this.seeking) this.progress = vid.currentTime; // for seekbar
 
@@ -415,6 +420,7 @@ export default {
         // TODO: handle buffering with audio track
         // TODO: handle video ending with a "replay" button if not on loop
         // TODO: detect video loading state and send this.loading to play button :loading = loading here
+        // TODO: split buffering into multiple sections as it should be for back/forth scrubbing
         vid.addEventListener("progress", () => {
           this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
         });
@@ -431,6 +437,46 @@ export default {
     screen.orientation.removeEventListener("change");
   },
   methods: {
+    prebuffer(url) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", url, true);
+      xhr.responseType = "blob";
+
+      xhr.addEventListener(
+        "load",
+        function () {
+          if (xhr.status === 200) {
+            console.log(window.URL || window.webkitURL);
+            var URL = window.URL || window.webkitURL;
+            var blob_url = URL.createObjectURL(xhr.response);
+
+            console.log(xhr.response);
+            console.log(blob_url);
+
+            // NOTE: blob resolves, no CORS issues. But blob_url is broken because https://youtube.com is the window.URL
+            this.vidSrc = blob_url;
+            console.log("pre-fetched", xhr);
+          } else {
+            console.error("errorred", xhr.status);
+          }
+        },
+        false
+      );
+
+      var prev_pc = 0;
+      // TODO: big progress overlay (##%) to replace controls while loading if pre-buffering is enabled
+      xhr.addEventListener("progress", function (event) {
+        if (event.lengthComputable) {
+          var pc = Math.round((event.loaded / event.total) * 100);
+          if (pc != prev_pc) {
+            prev_pc = pc; // ##%
+            console.log("buffering progress", pc);
+          }
+        }
+      });
+
+      xhr.send();
+    },
     shortNext() {
       this.shortTransition = true;
       setTimeout(() => {

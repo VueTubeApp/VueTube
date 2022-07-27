@@ -109,7 +109,7 @@ export default {
           this.video.clientHeight / 3
         );
     },
-    // TODO: better scrubbing preview (don't delet ples 🙏)
+    // TODO: better scrubbing preview start
     // loadVideoFrames() {
     //   // Exit loop if desired number of frames have been extracted
     //   if (this.frames.length >= frameCount) {
@@ -146,37 +146,6 @@ export default {
 
     //   //  Load the next frame
     //   loadVideoFrames();
-    // },
-    // prefetch_file(url, fetched_callback, progress_callback, error_callback) {
-    //   var xhr = new XMLHttpRequest();
-    //   xhr.open("GET", url, true);
-    //   xhr.responseType = "blob";
-
-    //   xhr.addEventListener(
-    //     "load",
-    //     function () {
-    //       if (xhr.status === 200) {
-    //         var URL = window.URL || window.webkitURL;
-    //         var blob_url = URL.createObjectURL(xhr.response);
-    //         fetched_callback(blob_url);
-    //       } else {
-    //         error_callback();
-    //       }
-    //     },
-    //     false
-    //   );
-
-    //   var prev_pc = 0;
-    //   xhr.addEventListener("progress", function (event) {
-    //     if (event.lengthComputable) {
-    //       var pc = Math.round((event.loaded / event.total) * 100);
-    //       if (pc != prev_pc) {
-    //         prev_pc = pc;
-    //         progress_callback(pc);
-    //       }
-    //     }
-    //   });
-    //   xhr.send();
     // },
     // async extractFramesFromVideo(videoUrl, fps = 25) {
     //   // fully download it first (no buffering):
