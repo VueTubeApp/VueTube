@@ -1,6 +1,5 @@
 <template>
   <client-only>
-    <!-- !IMPORTANT: don't let autoformatter format this style to multiline or else it breaks ¯\_(ツ)_/¯ -->
     <div class="container-max-height d-flex flex-column justify-end">
       <!-- ----Background Colors---- -->
       <v-radio-group v-model="$vuetify.theme.currentTheme.background">

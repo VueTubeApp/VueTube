@@ -377,7 +377,7 @@ export default {
     let vid = this.$refs.player;
 
     // TODO: this.$store.state.player.quality, check if exists and select the closest one
-    if (this.$store.state.player.preload) this.prebuffer(this.sources[0].url);
+    if (this.$store.state.player.prebuffer) this.prebuffer(this.sources[0].url);
     else {
       this.audSrc = this.sources[this.sources.length - 1].url;
       this.vidSrc = this.sources[0].url;
@@ -444,20 +444,15 @@ export default {
 
       xhr.addEventListener(
         "load",
-        function () {
+        () => {
           if (xhr.status === 200) {
-            console.log(window.URL || window.webkitURL);
-            var URL = window.URL || window.webkitURL;
-            var blob_url = URL.createObjectURL(xhr.response);
-
-            console.log(xhr.response);
-            console.log(blob_url);
-
-            // NOTE: blob resolves, no CORS issues. But blob_url is broken because https://youtube.com is the window.URL
-            this.vidSrc = blob_url;
-            console.log("pre-fetched", xhr);
+            var blob = xhr.response;
+            this.blobToDataURL(blob, (dataurl) => {
+              console.log(dataurl);
+              this.vidSrc = dataurl;
+            });
           } else {
-            console.error("errorred", xhr.status);
+            console.error("errorred pre-fetch", xhr.status);
           }
         },
         false
@@ -465,7 +460,7 @@ export default {
 
       var prev_pc = 0;
       // TODO: big progress overlay (##%) to replace controls while loading if pre-buffering is enabled
-      xhr.addEventListener("progress", function (event) {
+      xhr.addEventListener("progress", (event) => {
         if (event.lengthComputable) {
           var pc = Math.round((event.loaded / event.total) * 100);
           if (pc != prev_pc) {
@@ -476,6 +471,13 @@ export default {
       });
 
       xhr.send();
+    },
+    blobToDataURL(blob, callback) {
+      var a = new FileReader();
+      a.onload = function (e) {
+        callback(e.target.result);
+      };
+      a.readAsDataURL(blob);
     },
     shortNext() {
       this.shortTransition = true;

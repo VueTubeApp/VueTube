@@ -1,6 +1,7 @@
 export const state = () => ({
   loop: null,
-  speed: null,
+  speed: 1,
+  speedAutosave: null,
   preload: null,
   quality: null,
   // qualityAutoSwitch: null,
@@ -14,7 +15,10 @@ export const mutations = {
     state.loop = payload;
   },
   setSpeed(state, payload) {
-    state.loading = payload;
+    state.speed = payload;
+  },
+  setSpeedAutosave(state, payload) {
+    state.speedAutosave = payload;
   },
   setPreload(state, payload) {
     state.preload = payload;

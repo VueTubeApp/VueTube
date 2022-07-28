@@ -1,10 +1,9 @@
 <template>
-  <!-- !IMPORTANT: don't let autoformatter format this style to multiline or else it breaks ¯\_(ツ)_/¯ -->
   <div class="container-max-height d-flex flex-column justify-end">
-    <!-- TODO: outer radius -->
-    <!-- TODO: Dense Navbar -->
-    <!-- TODO: Disable Top Bar -->
-    <!-- TODO: Top and Bottom bar color selection -->
+    <!-- // TODO: outer radius -->
+    <!-- // TODO: Dense Navbar -->
+    <!-- // TODO: Disable Top Bar -->
+    <!-- // TODO: Top and Bottom bar color selection -->
     <v-card
       flat
       class="mx-4 my-2 px-4 py-2 d-flex flex-row justify-between background"
@@ -151,7 +150,7 @@
       >
         <template #thumb-label="{ value }">
           <div
-            class="pa-4 background text-red red-text red--text"
+            class="pa-4 background"
             :style="{ borderRadius: value * 3 + 'px !important' }"
           ></div>
         </template>

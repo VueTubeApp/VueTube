@@ -88,8 +88,7 @@ export default {
         {
           name: "Player",
           icon: "mdi-motion-play-outline",
-          to: "",
-          disabled: true,
+          to: "/mods/player",
         },
         {
           name: "UI Tweaker",
