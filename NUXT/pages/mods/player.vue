@@ -101,9 +101,11 @@
         <speed
           class="background mr-1 px-4 d-flex justify-center align-center"
           style="
-            z-index: 77777;
             font-size: 1.5rem !important;
             font-weight: bold !important;
+            color: black !important;
+            background: red;
+            text-shadow: 0 0 2rem green;
           "
           :current-speed="speed"
           :class="

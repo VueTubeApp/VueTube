@@ -7,7 +7,14 @@
       scrollable
     >
       <template #activator="{ on, attrs }">
-        <v-btn fab text small color="white" v-bind="attrs" v-on="on">
+        <v-btn
+          fab
+          text
+          small
+          :color="$route.name === 'watch' ? 'white' : ''"
+          v-bind="attrs"
+          v-on="on"
+        >
           {{ currentSpeed }}X
         </v-btn>
       </template>

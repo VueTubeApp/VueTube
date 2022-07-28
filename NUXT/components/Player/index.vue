@@ -250,19 +250,19 @@
         <quality
           v-if="$refs.player"
           :sources="sources"
-          style="z-index: 77777"
           :current-source="$refs.player"
           @quality="qualityHandler($event)"
         />
         <speed
           v-if="$refs.player"
           class="mx-2"
-          style="z-index: 77777"
           :current-speed="$refs.player.playbackRate"
           @speed="
             ($refs.player.playbackRate = $event),
               ($refs.audio.playbackRate = $event),
-              $store.commit('player/setSpeed', $event)
+              $store.state.player.speedAutosave
+                ? $store.commit('player/setSpeed', $event)
+                : {}
           "
         />
         <v-btn v-if="isFullscreen" fab text small disabled @click.stop="">
