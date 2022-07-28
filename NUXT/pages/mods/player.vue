@@ -43,6 +43,23 @@
         class="mt-0"
         inset
       />
+      <br />
+      <v-slider
+        v-model="speed"
+        step=".25"
+        thumb-size="64"
+        style="transition-duration: 0.3s; transition-property: all"
+        :rules="[(s) => s <= 4 || 'Might cause issues with buffering.']"
+        :min="0.25"
+        :max="16"
+        @input="$vuetube.haptics.hapticsImpactLight(0)"
+      >
+        <template #thumb-label="{ value }">
+          <b class="background--text" style="font-size: 1.15rem">
+            {{ value.toFixed(2) }}x
+          </b>
+        </template>
+      </v-slider>
     </v-card> -->
 
     <v-divider v-if="!$store.state.tweaks.roundTweak" />

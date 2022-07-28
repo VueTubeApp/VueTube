@@ -135,7 +135,7 @@
       </v-card>
       <v-slider
         v-model="roundTweak"
-        class="pr-4 pl-4 pt-4 pb-1 background"
+        class="pr-8 pl-4 pt-3 pb-0 background"
         :max="4"
         :label="lang.radius"
         step=".25"

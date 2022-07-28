@@ -12,7 +12,7 @@
     "
     :style="{
       borderRadius: $store.state.tweaks.roundThumb
-        ? `${$store.state.tweaks.roundTweak / 2}rem`
+        ? `${$store.state.tweaks.roundTweak / 3}rem`
         : '0',
     }"
     flat
@@ -25,7 +25,7 @@
       :class="$vuetify.theme.dark ? 'lighten-3' : 'darken-3'"
       :style="{
         borderRadius: $store.state.tweaks.roundThumb
-          ? `${$store.state.tweaks.roundTweak / 2}rem`
+          ? `${$store.state.tweaks.roundTweak / 3}rem`
           : '0',
       }"
     >
