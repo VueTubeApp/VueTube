@@ -5,8 +5,6 @@ export const state = () => ({
 });
 export const mutations = {
   initTweaks(state) {
-    // NOTE: localStorage is not reactive, so it will only be used on first load
-    // currently called on mounted() in pages/index.vue
     if (process.client) {
       state.roundTweak = JSON.parse(localStorage.getItem("roundTweak")) || 0;
       state.roundThumb =

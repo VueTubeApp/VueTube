@@ -162,7 +162,10 @@
           v-if="$refs.player"
           class="mx-2"
           :loop="$refs.player.loop"
-          @loop="$refs.player.loop = !$refs.player.loop"
+          @loop="
+            ($refs.player.loop = !$refs.player.loop),
+              ($refs.audio.loop = !$refs.audio.loop)
+          "
         />
         <close />
       </div>
@@ -258,7 +261,8 @@
           :current-speed="$refs.player.playbackRate"
           @speed="
             ($refs.player.playbackRate = $event),
-              ($refs.audio.playbackRate = $event)
+              ($refs.audio.playbackRate = $event),
+              $store.commit('player/setSpeed', $event)
           "
         />
         <v-btn v-if="isFullscreen" fab text small disabled @click.stop="">
@@ -396,6 +400,8 @@ export default {
       if (vid.readyState >= 3) {
         this.$refs.audio.play();
         this.$refs.audio.currentTime = vid.currentTime;
+        this.$refs.player.playbackRate = this.$store.state.player.speed;
+        this.$refs.audio.playbackRate = this.$store.state.player.speed;
         vid.addEventListener("timeupdate", () => {
           if (!this.seeking) this.progress = vid.currentTime; // for seekbar
 

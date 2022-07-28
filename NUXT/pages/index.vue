@@ -24,6 +24,7 @@ export default {
     //---   Init Stuff   ---//
     this.progressMsg = this.$lang("index").connecting;
     this.$store.commit("tweaks/initTweaks");
+    this.$store.commit("player/initPlayer");
 
     //---   Load Theming   ---//
     await this.theming();
