@@ -191,7 +191,7 @@
     <v-divider v-if="!$store.state.tweaks.roundTweak" />
 
     <h3 class="ml-8 mt-8">
-      <v-icon class="mb-1 mr-1">mdi-youtube</v-icon>
+      <v-icon class="mb-1 mr-1">mdi-play-network-outline</v-icon>
       Quality <b class="ml-1">&middot;</b> 1080p
     </h3>
 
