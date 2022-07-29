@@ -187,6 +187,87 @@
         </v-slider>
       </v-card>
     </v-card>
+
+    <v-divider v-if="!$store.state.tweaks.roundTweak" />
+
+    <h3 class="ml-8 mt-8">
+      <v-icon class="mb-1 mr-1">mdi-cog-play</v-icon>
+      Other
+    </h3>
+    <v-card
+      flat
+      class="mx-4 mt-2 mb-6 background d-flex flex-row"
+      style="overflow: hidden"
+      :style="{
+        borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
+      }"
+    >
+      <v-card
+        v-for="(toggl, i) in toggles"
+        :key="i"
+        flat
+        class="mr-1 px-4 py-6 d-flex flex-column align-center background"
+        style="width: calc(100% / 4) !important"
+        :class="
+          $store.state.tweaks.roundTweak > 0
+            ? $vuetify.theme.dark
+              ? 'lighten-1'
+              : 'darken-1'
+            : ''
+        "
+        :style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 12}rem`,
+        }"
+      >
+        <v-icon
+          class="background--text"
+          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+          >{{ toggl.icon }}</v-icon
+        >
+        <span
+          class="background--text mt-1"
+          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+          >{{ toggl.name }}</span
+        >
+      </v-card>
+      <v-card
+        flat
+        class="px-4 py-6 d-flex flex-column align-center"
+        style="width: calc(100% / 4) !important"
+        :class="
+          $store.state.tweaks.roundTweak > 0
+            ? $vuetify.theme.dark
+              ? loop
+                ? 'primary darken-4'
+                : 'background lighten-1'
+              : loop
+              ? 'primary lighten-4'
+              : 'background darken-1'
+            : ''
+        "
+        :style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 12}rem`,
+        }"
+        @click="loop = !loop"
+      >
+        <v-icon
+          style="transition: transform 0.5s"
+          :style="{
+            transform: loop ? 'rotate(180deg)' : '',
+          }"
+        >
+          {{ loop ? "mdi-sync-circle" : "mdi-sync" }}
+        </v-icon>
+        <span class="mt-1">Loop</span>
+      </v-card>
+    </v-card>
+
+    <!-- <v-divider v-if="!$store.state.tweaks.roundTweak" />
+
+    <h3 class="ml-8 mt-8">
+      <v-icon class="mb-1 mr-1">mdi-youtube</v-icon>
+      Quality
+    </h3> -->
   </div>
 </template>
 
@@ -197,10 +278,29 @@ export default {
   components: {
     speed,
   },
-  data: function () {
-    return this.initializeState();
-  },
+  data: () => ({
+    toggles: [
+      {
+        value: "captions",
+        name: "Captions",
+        icon: "mdi-closed-caption-outline",
+      },
+      {
+        value: "autoskip",
+        name: "Autoskip",
+        icon: "mdi-skip-next-outline",
+      },
+      {
+        value: "mute",
+        name: "Mute",
+        icon: "mdi-volume-off",
+      },
+    ],
+  }),
   computed: {
+    getthis(name) {
+      return this[name] || false;
+    },
     loop: {
       get() {
         return this.$store.state.player.loop;
@@ -240,41 +340,6 @@ export default {
       set(value) {
         this.$store.commit("player/setPreloadUpTo", value);
       },
-    },
-  },
-  methods: {
-    initializeState() {
-      return {
-        toggles: [
-          {
-            value: false,
-            name: "Captions",
-            icon: "mdi-closed-caption",
-            disabled: true,
-          },
-          {
-            value: false,
-            name: "Autoskip",
-            icon: "mdi-skip-next",
-            disabled: true,
-          },
-          {
-            action: () => {},
-            value: false,
-            name: "Mute",
-            icon: "mdi-volume-off",
-            disabled: true,
-          },
-          {
-            action: () => {
-              this.loop = !this.loop;
-            },
-            value: this.loop,
-            name: "Loop",
-            icon: "mdi-sync-circle",
-          },
-        ],
-      };
     },
   },
 };

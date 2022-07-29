@@ -169,7 +169,8 @@
           :loop="$refs.player.loop"
           @loop="
             ($refs.player.loop = !$refs.player.loop),
-              ($refs.audio.loop = !$refs.audio.loop)
+              ($refs.audio.loop = !$refs.audio.loop),
+              $store.commit('player/setLoop', $event)
           "
         />
         <close />
@@ -421,8 +422,10 @@ export default {
       if (vid.readyState >= 3) {
         this.$refs.audio.play();
         this.$refs.audio.currentTime = vid.currentTime;
-        this.$refs.player.playbackRate = this.$store.state.player.speed;
         this.$refs.audio.playbackRate = this.$store.state.player.speed;
+        this.$refs.player.playbackRate = this.$store.state.player.speed;
+        this.$refs.player.loop = this.$store.state.player.loop;
+        this.$refs.audio.loop = this.$store.state.player.loop;
         vid.addEventListener("timeupdate", () => {
           if (!this.seeking) this.progress = vid.currentTime; // for seekbar
 

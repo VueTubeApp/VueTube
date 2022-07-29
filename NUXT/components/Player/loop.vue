@@ -1,6 +1,11 @@
 <template>
   <v-btn fab text small @click="$emit('loop')">
-    <v-icon color="white">{{ loop ? "mdi-sync-circle" : "mdi-sync" }}</v-icon>
+    <v-icon
+      color="white"
+      style="transition: transform 0.5s"
+      :style="{ transform: loop ? 'rotate(180deg)' : '' }"
+      >{{ loop ? "mdi-sync-circle" : "mdi-sync" }}</v-icon
+    >
   </v-btn>
 </template>
 
