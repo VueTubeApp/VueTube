@@ -6,7 +6,7 @@
     <!-- // TODO: Top and Bottom bar color selection -->
     <v-card
       flat
-      class="mx-4 my-2 px-4 py-2 d-flex flex-row justify-between background"
+      class="mx-4 my-2 px-4 py-2 d-flex flex-row background"
       style="transition-duration: 0.3s; transition-property: border-radius"
       :class="
         roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
@@ -35,7 +35,7 @@
 
     <v-card
       flat
-      class="mx-4 my-2 px-4 py-2 d-flex flex-row justify-between background"
+      class="mx-4 my-2 px-4 py-2 d-flex flex-row background"
       style="transition-duration: 0.3s; transition-property: border-radius"
       :class="
         roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
@@ -79,7 +79,7 @@
       <!-- margin: $store.state.tweaks.roundTweak > 0 ? '0 1rem' : '0', -->
       <v-card
         flat
-        class="mb-1 px-4 py-2 d-flex flex-row justify-between background"
+        class="mb-1 px-4 py-2 d-flex flex-row background"
         :class="
           roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
         "
@@ -107,7 +107,7 @@
       </v-card>
       <v-card
         flat
-        class="mb-1 px-4 py-2 d-flex flex-row justify-between background"
+        class="mb-1 px-4 py-2 d-flex flex-row background"
         :class="
           roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
         "
@@ -151,7 +151,7 @@
         <template #thumb-label="{ value }">
           <div
             class="pa-4 background"
-            :style="{ borderRadius: value * 3 + 'px !important' }"
+            :style="{ borderRadius: value * 3.5 + 'px !important' }"
           ></div>
         </template>
       </v-slider>

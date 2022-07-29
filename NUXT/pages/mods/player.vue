@@ -6,63 +6,92 @@
     <!-- // TODO: quality auto-adjustment settings -->
     <!-- // TODO: Data saver -->
     <!-- // TODO: Player UI -->
-    <!-- <v-divider v-if="!$store.state.tweaks.roundTweak" />
+
+    <v-divider v-if="!$store.state.tweaks.roundTweak" />
 
     <h3 class="ml-8 mt-8">
       <v-icon class="mb-1 mr-1">mdi-play-speed</v-icon>
-      Preload
+      Preload (UNSTABLE)
     </h3>
 
     <v-card
       flat
-      class="mx-4 my-2 pa-4 d-flex flex-row justify-between background"
-      :class="
-        $store.state.tweaks.roundTweak > 0
-          ? $vuetify.theme.dark
-            ? 'lighten-1'
-            : 'darken-1'
-          : ''
-      "
+      class="mx-4 mt-2 mb-8 background"
       :style="{
-        borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
+        border: preload
+          ? `2.1px solid var(--v-primary-base) !important`
+          : '2.1px solid var(--v-background-base)',
+        borderRadius: `${$store.state.tweaks.roundTweak / 1.9}rem`,
       }"
-      @click="(preload = !preload), $vuetube.haptics.hapticsImpactLight(1)"
     >
-      <div>
-        Pre-buffer video data before playback to avoid buffering pauses.
-        <b class="red--text">(can be data intensive it high quality presets)</b>
-        <br />
-        <br />
-        <hr class="primary mr-6" style="opacity: 0.25" />
-        <span class="overline">Buffering threshold: 15%</span>
-      </div>
-      <v-spacer />
-      <v-switch
-        v-model="preload"
-        style="pointer-events: none"
-        class="mt-0"
-        inset
-      />
-      <br />
+      <v-card
+        flat
+        class="pa-4 d-flex flex-row background"
+        :class="
+          $store.state.tweaks.roundTweak > 0
+            ? $vuetify.theme.dark
+              ? 'lighten-1'
+              : 'darken-1'
+            : ''
+        "
+        :style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
+        }"
+        @click="(preload = !preload), $vuetube.haptics.hapticsImpactLight(1)"
+      >
+        <div class="pr-4">
+          <div style="font-size: 0.75rem">
+            Pre-buffer video data before playback to avoid buffering pauses.
+            <b class="primary--text">
+              (can be data intensive at high quality presets)
+            </b>
+          </div>
+          <div
+            :class="preload ? 'primary' : 'background'"
+            class="my-3 mr-6 rounded-right"
+            style="width: 100%; height: 2px; margin-left: -1.1rem"
+          />
+          <div>Buffering Threshold &middot; {{ preloadUpTo }}%</div>
+          <div
+            class="background--text"
+            :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+            style="font-size: 0.75rem"
+          >
+            The video will start playing after this much of the video is loaded.
+            <b class="red--text">(doesn't work yet)</b>
+          </div>
+        </div>
+        <v-switch
+          v-model="preload"
+          style="pointer-events: none"
+          class="mt-0"
+          inset
+        />
+      </v-card>
       <v-slider
-        v-model="speed"
-        step=".25"
-        thumb-size="64"
-        style="transition-duration: 0.3s; transition-property: all"
-        :rules="[(s) => s <= 4 || 'Might cause issues with buffering.']"
-        :min="0.25"
-        :max="16"
+        v-show="preload"
+        v-model="preloadUpTo"
+        :min="1"
+        :max="100"
+        thumb-label
+        persistent-hint
+        height="20"
+        :hint="preloadUpTo <= 10 || 'This can take a very long time.'"
+        class="pt-4 px-0 pb-1"
+        track-color="background"
+        thumb-color="primary background--text"
+        style="z-index: 69420; position: absolute; bottom: -1.83rem"
+        :style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 4}rem`,
+          width: `calc(100% - 2rem - ${$store.state.tweaks.roundTweak}rem)`,
+          left: `${$store.state.tweaks.roundTweak / 2 + 1}rem`,
+        }"
         @input="$vuetube.haptics.hapticsImpactLight(0)"
       >
-        <template #thumb-label="{ value }">
-          <b class="background--text" style="font-size: 1.15rem">
-            {{ value.toFixed(2) }}x
-          </b>
-        </template>
       </v-slider>
-    </v-card> -->
+    </v-card>
 
-    <v-divider v-if="!$store.state.tweaks.roundTweak" />
+    <v-divider v-if="!$store.state.tweaks.roundTweak && !preload" />
 
     <h3 class="ml-8 mt-8">
       <v-icon class="mb-1 mr-1">mdi-speedometer</v-icon>
@@ -79,7 +108,7 @@
     >
       <v-card
         flat
-        class="mb-1 pa-4 d-flex flex-row justify-between background"
+        class="mb-1 pa-4 d-flex flex-row background"
         :class="
           $store.state.tweaks.roundTweak > 0
             ? $vuetify.theme.dark
@@ -114,16 +143,9 @@
           inset
         />
       </v-card>
-      <v-card flat class="d-flex flex-row justify-between background">
+      <v-card flat class="d-flex flex-row background">
         <speed
           class="background mr-1 px-4 d-flex justify-center align-center"
-          style="
-            font-size: 1.5rem !important;
-            font-weight: bold !important;
-            color: black !important;
-            background: red;
-            text-shadow: 0 0 2rem green;
-          "
           :current-speed="speed"
           :class="
             $store.state.tweaks.roundTweak > 0
@@ -142,7 +164,6 @@
           step=".25"
           thumb-size="64"
           class="pa-0 pt-5 pl-6 pb-2 ma-0 background"
-          style="transition-duration: 0.3s; transition-property: all"
           :rules="[(s) => s <= 4 || 'Might cause issues with buffering.']"
           :min="0.25"
           :max="16"
@@ -176,7 +197,18 @@ export default {
   components: {
     speed,
   },
+  data: function () {
+    return this.initializeState();
+  },
   computed: {
+    loop: {
+      get() {
+        return this.$store.state.player.loop;
+      },
+      set(value) {
+        this.$store.commit("player/setLoop", value);
+      },
+    },
     speed: {
       get() {
         return this.$store.state.player.speed;
@@ -200,6 +232,49 @@ export default {
       set(value) {
         this.$store.commit("player/setPreload", value);
       },
+    },
+    preloadUpTo: {
+      get() {
+        return this.$store.state.player.preloadUpTo;
+      },
+      set(value) {
+        this.$store.commit("player/setPreloadUpTo", value);
+      },
+    },
+  },
+  methods: {
+    initializeState() {
+      return {
+        toggles: [
+          {
+            value: false,
+            name: "Captions",
+            icon: "mdi-closed-caption",
+            disabled: true,
+          },
+          {
+            value: false,
+            name: "Autoskip",
+            icon: "mdi-skip-next",
+            disabled: true,
+          },
+          {
+            action: () => {},
+            value: false,
+            name: "Mute",
+            icon: "mdi-volume-off",
+            disabled: true,
+          },
+          {
+            action: () => {
+              this.loop = !this.loop;
+            },
+            value: this.loop,
+            name: "Loop",
+            icon: "mdi-sync-circle",
+          },
+        ],
+      };
     },
   },
 };

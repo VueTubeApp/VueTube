@@ -33,8 +33,12 @@
       :height="isFullscreen ? '100%' : 'auto'"
       style="transition: filter 0.15s ease-in-out, transform 0.15s linear"
       :class="
-        controls || seeking || skipping
-          ? verticalFullscreen
+        controls ||
+        seeking ||
+        skipping ||
+        ($store.state.player.preload && buffered < 100)
+          ? verticalFullscreen &&
+            !($store.state.player.preload && buffered < 100)
             ? 'dim-ish'
             : 'dim'
           : ''
@@ -137,6 +141,7 @@
 
     <!-- controls container -->
     <div
+      v-if="$refs.player && $refs.player.currentSrc"
       style="transition: opacity 0.15s ease-in-out"
       :style="
         controls && !seeking
@@ -248,7 +253,7 @@
         <v-spacer />
         <!-- // TODO: merge the bottom 2 into 1 reusable component -->
         <quality
-          v-if="$refs.player"
+          v-if="$refs.player && $refs.player.currentSrc"
           :sources="sources"
           :current-source="$refs.player"
           @quality="qualityHandler($event)"
@@ -309,6 +314,22 @@
         ($refs.player.currentTime = $event), ($refs.audio.currentTime = $event)
       "
     />
+
+    <v-progress-circular
+      v-if="$store.state.player.preload && buffered < 100"
+      style="
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+      "
+      :value="buffered"
+      color="primary"
+      :rotate="-90"
+      :size="64"
+    >
+      <b>{{ buffered }}%</b>
+    </v-progress-circular>
   </div>
 </template>
 
@@ -381,7 +402,7 @@ export default {
     let vid = this.$refs.player;
 
     // TODO: this.$store.state.player.quality, check if exists and select the closest one
-    if (this.$store.state.player.prebuffer) this.prebuffer(this.sources[0].url);
+    if (this.$store.state.player.preload) this.prebuffer(this.sources[0].url);
     else {
       this.audSrc = this.sources[this.sources.length - 1].url;
       this.vidSrc = this.sources[0].url;
@@ -439,26 +460,29 @@ export default {
     );
   },
   beforeDestroy() {
+    this.xhr.abort();
     if (this.isFullscreen) this.exitFullscreen();
     screen.orientation.removeEventListener("change");
   },
   methods: {
     prebuffer(url) {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", url, true);
-      xhr.responseType = "blob";
+      this.xhr = new XMLHttpRequest();
+      this.xhr.open("GET", url, true);
+      this.xhr.responseType = "blob";
 
-      xhr.addEventListener(
+      this.xhr.addEventListener(
         "load",
         () => {
-          if (xhr.status === 200) {
-            var blob = xhr.response;
+          if (this.xhr.status === 200) {
+            var blob = this.xhr.response;
+            console.error(this.xhr);
             this.blobToDataURL(blob, (dataurl) => {
               console.log(dataurl);
               this.vidSrc = dataurl;
+              this.buffered = 100;
             });
           } else {
-            console.error("errorred pre-fetch", xhr.status);
+            console.error("errorred pre-fetch", this.xhr.status);
           }
         },
         false
@@ -466,17 +490,18 @@ export default {
 
       var prev_pc = 0;
       // TODO: big progress overlay (##%) to replace controls while loading if pre-buffering is enabled
-      xhr.addEventListener("progress", (event) => {
+      this.xhr.addEventListener("progress", (event) => {
         if (event.lengthComputable) {
           var pc = Math.round((event.loaded / event.total) * 100);
           if (pc != prev_pc) {
             prev_pc = pc; // ##%
-            console.log("buffering progress", pc);
+            if (pc < 100) this.buffered = pc;
+            console.warn(this.xhr);
           }
         }
       });
 
-      xhr.send();
+      this.xhr.send();
     },
     blobToDataURL(blob, callback) {
       var a = new FileReader();

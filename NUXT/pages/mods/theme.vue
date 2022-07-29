@@ -126,7 +126,7 @@
       <v-divider v-if="!$store.state.tweaks.roundTweak" />
       <v-card
         flat
-        class="d-flex flex-row justify-between mx-4 mb-4 pa-4 background"
+        class="d-flex flex-row mx-4 mb-4 pa-4 background"
         :class="
           $store.state.tweaks.roundTweak > 0
             ? $vuetify.theme.dark

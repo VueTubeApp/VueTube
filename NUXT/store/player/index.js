@@ -3,6 +3,7 @@ export const state = () => ({
   speed: 1,
   speedAutosave: null,
   preload: null,
+  preloadUpTo: 100,
   // quality: null,
   // qualityAutoSwitch: null,
   // shortFullscreen: null,
@@ -20,6 +21,8 @@ export const mutations = {
         (JSON.parse(localStorage.getItem("speedAutosave")) === false)
       );
       state.preload = JSON.parse(localStorage.getItem("preload")) === true; // defaults to false
+      state.preloadUpTo =
+        JSON.parse(localStorage.getItem("preloadUpTo")) || 100; // defaults to 100(percent)
     }
   },
   setLoop(state, payload) {
@@ -37,5 +40,9 @@ export const mutations = {
   setPreload(state, payload) {
     state.preload = payload;
     localStorage.setItem("preload", payload);
+  },
+  setPreloadUpTo(state, payload) {
+    state.preloadUpTo = payload;
+    localStorage.setItem("preloadUpTo", payload);
   },
 };
