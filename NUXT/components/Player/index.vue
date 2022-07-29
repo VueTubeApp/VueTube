@@ -406,7 +406,7 @@ export default {
     if (this.$store.state.player.preload) this.prebuffer(this.sources[0].url);
     else {
       this.audSrc = this.sources[this.sources.length - 1].url;
-      this.vidSrc = this.sources[0].url;
+      this.vidSrc = this.sources[3].url;
     }
 
     this.$youtube.getSponsorBlock(this.video.id, (data) => {

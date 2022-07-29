@@ -53,7 +53,7 @@
           <v-icon v-else class="ml-4">mdi-chevron-down</v-icon>
         </div>
         <div
-          class="d-flex justify-space-between"
+          class="d-flex justify-space-around"
           :class="
             $store.state.tweaks.roundWatch && $store.state.tweaks.roundTweak > 0
               ? $vuetify.theme.dark

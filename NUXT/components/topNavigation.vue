@@ -63,11 +63,17 @@
       v-show="!search"
       icon
       tile
-      class="ml-4 mr-2 my-auto fill-height"
-      style="border-radius: 0.25rem !important"
-      to="/settings"
+      class="ml-4 mr-2 my-auto fill-height rounded-xl"
+      :style="$route.name !== 'settings' ? '' : 'transform: rotate(180deg)'"
+      @click="
+        $route.path.includes('settings') || $route.path.includes('/tweaks')
+          ? $router.go(-1)
+          : $router.push('/settings')
+      "
     >
-      <v-icon>mdi-cog-outline</v-icon>
+      <v-icon>{{
+        $route.name !== "settings" ? "mdi-cog-outline" : "mdi-close"
+      }}</v-icon>
     </v-btn>
   </v-card>
 </template>

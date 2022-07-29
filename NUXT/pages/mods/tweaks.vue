@@ -4,7 +4,7 @@
     <!-- // TODO: Dense Navbar -->
     <!-- // TODO: Disable Top Bar -->
     <!-- // TODO: Top and Bottom bar color selection -->
-    <v-card
+    <!-- <v-card
       flat
       class="mx-4 my-2 px-4 py-2 d-flex flex-row background"
       style="transition-duration: 0.3s; transition-property: border-radius"
@@ -29,11 +29,11 @@
         persistent-hint
         inset
       />
-    </v-card>
+    </v-card> -->
 
-    <v-divider v-if="!roundTweak" />
+    <!-- <v-divider v-if="!roundTweak" /> -->
 
-    <v-card
+    <!-- <v-card
       flat
       class="mx-4 my-2 px-4 py-2 d-flex flex-row background"
       style="transition-duration: 0.3s; transition-property: border-radius"
@@ -58,7 +58,7 @@
         persistent-hint
         inset
       />
-    </v-card>
+    </v-card> -->
 
     <v-divider v-if="!roundTweak" />
 
@@ -66,7 +66,7 @@
 
     <v-card
       flat
-      class="mx-4 my-2 background"
+      class="mx-4 mt-2 mb-6 background"
       style="
         transition-duration: 0.3s;
         transition-property: border-radius;

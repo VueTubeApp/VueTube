@@ -191,6 +191,104 @@
     <v-divider v-if="!$store.state.tweaks.roundTweak" />
 
     <h3 class="ml-8 mt-8">
+      <v-icon class="mb-1 mr-1">mdi-youtube</v-icon>
+      Quality <b class="ml-1">&middot;</b> 1080p
+    </h3>
+
+    <v-card
+      flat
+      class="mx-4 my-2 background"
+      style="overflow: hidden"
+      :style="{
+        borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
+      }"
+    >
+      <v-card
+        flat
+        class="pa-4 d-flex flex-row justify-space-between background"
+        :class="
+          $store.state.tweaks.roundTweak > 0
+            ? $vuetify.theme.dark
+              ? 'lighten-1'
+              : 'darken-1'
+            : ''
+        "
+        :style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 8}rem`,
+        }"
+      >
+        <div>
+          <div>
+            <v-icon class="mb-1 mr-1" v-text="'mdi-video-outline'" />Video Codec
+          </div>
+          <div
+            class="background--text pr-4"
+            :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+            style="font-size: 0.75rem"
+          >
+            Just pick VP9
+          </div>
+        </div>
+        <div
+          class="background d-flex flex-row justify-end rounded-lg"
+          style="max-width: content-width; overflow: hidden"
+          :style="{
+            borderRadius: `${$store.state.tweaks.roundTweak / 3}rem`,
+          }"
+          slider-size="0"
+        >
+          <v-tab active-class="primary darken-4">AVC</v-tab>
+          <v-tab active-class="primary darken-4">VP9</v-tab>
+        </div>
+      </v-card>
+      <marquee class="background--text mt-2">
+        <b class="primary pa-2 rounded-xl">
+          still in progress, not functional yet.
+        </b>
+      </marquee>
+      <v-card
+        flat
+        class="pa-4 d-flex flex-row justify-space-between background"
+        :class="
+          $store.state.tweaks.roundTweak > 0
+            ? $vuetify.theme.dark
+              ? 'lighten-1'
+              : 'darken-1'
+            : ''
+        "
+        :style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 8}rem`,
+        }"
+      >
+        <div
+          class="background d-flex flex-row justify-end rounded-lg"
+          style="max-width: content-width; overflow: hidden"
+          :style="{
+            borderRadius: `${$store.state.tweaks.roundTweak / 3}rem`,
+          }"
+          slider-size="0"
+        >
+          <v-tab active-class="primary darken-4">OGG OPUS</v-tab>
+          <v-tab active-class="primary darken-4">MP4 MP4a</v-tab>
+        </div>
+        <div class="d-flex flex-column align-end">
+          <div>
+            <v-icon class="mb-1 mr-1" v-text="'mdi-music-note'" />Audio Codec
+          </div>
+          <div
+            class="background--text"
+            :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+            style="font-size: 0.75rem"
+          >
+            OGG is better
+          </div>
+        </div>
+      </v-card>
+    </v-card>
+
+    <v-divider v-if="!$store.state.tweaks.roundTweak" />
+
+    <h3 class="ml-8 mt-8">
       <v-icon class="mb-1 mr-1">mdi-cog-play</v-icon>
       Other
     </h3>
@@ -261,13 +359,6 @@
         <span class="mt-1">Loop</span>
       </v-card>
     </v-card>
-
-    <!-- <v-divider v-if="!$store.state.tweaks.roundTweak" />
-
-    <h3 class="ml-8 mt-8">
-      <v-icon class="mb-1 mr-1">mdi-youtube</v-icon>
-      Quality
-    </h3> -->
   </div>
 </template>
 
