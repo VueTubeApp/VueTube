@@ -17,12 +17,22 @@
     </center>
 
     <center class="container hidden" ref="stage2">
+      <v-autocomplete
+      label="API"
+      :items="items"
+      style="border-top-right-radius: 1rem !important; border-top-left-radius: 1rem !important; box-shadow: none !important"
+      solo
+      filled
+      class="mx-8"
+      ></v-autocomplete>
+    </center>
+
+    <center class="container hidden" ref="stage3">
       <h1>{{ lang.featuresetup }}</h1>
       <v-checkbox disabled v-model="ryd" :label="lang.enableryd" />
       <v-checkbox disabled v-model="sponsorBlock" :label="lang.enablespb" />
     </center>
-
-    <center class="container hidden" ref="stage3">
+    <center class="container hidden" ref="stage4">
       <h1>{{ lang.thanks }}</h1>
       <h3>{{ lang.enjoy }}</h3>
     </center>
@@ -68,6 +78,7 @@ export default {
 
       ryd: true,
       sponsorBlock: true,
+      items: ["odysee.com","youtube.com","twitch.tv","onlyfans.com/vuegirl"]
     };
   },
   mounted() {
