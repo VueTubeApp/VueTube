@@ -78,7 +78,7 @@ export default {
 
       ryd: true,
       sponsorBlock: true,
-      items: ["odysee.com","youtube.com","twitch.tv","onlyfans.com/vuegirl"]
+      items: ["youtube.com", "twitch.tv", "odysee.com"]
     };
   },
   mounted() {
