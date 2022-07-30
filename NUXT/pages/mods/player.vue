@@ -80,7 +80,7 @@
         class="pt-4 px-0 pb-1"
         track-color="background"
         thumb-color="primary background--text"
-        style="z-index: 69420; position: absolute; bottom: -1.83rem"
+        style="z-index: 69420; position: absolute; bottom: -1.82rem"
         :style="{
           borderRadius: `${$store.state.tweaks.roundTweak / 4}rem`,
           width: `calc(100% - 2rem - ${$store.state.tweaks.roundTweak}rem)`,
@@ -188,7 +188,7 @@
       </v-card>
     </v-card>
 
-    <v-divider v-if="!$store.state.tweaks.roundTweak" />
+    <!-- <v-divider v-if="!$store.state.tweaks.roundTweak" />
 
     <h3 class="ml-8 mt-8">
       <v-icon class="mb-1 mr-1">mdi-play-network-outline</v-icon>
@@ -284,7 +284,7 @@
           </div>
         </div>
       </v-card>
-    </v-card>
+    </v-card> -->
 
     <v-divider v-if="!$store.state.tweaks.roundTweak" />
 
@@ -292,6 +292,7 @@
       <v-icon class="mb-1 mr-1">mdi-cog-play</v-icon>
       Other
     </h3>
+
     <v-card
       flat
       class="mx-4 mt-2 mb-6 background d-flex flex-row"
