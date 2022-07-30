@@ -5,16 +5,20 @@ module.exports = {
     home: "Start",
     subscriptions: "Abos",
     library: "Mediathek",
+    restart: "Neustart",
+    later: "Later",
+    settingRestart: "Neustart erforderlich, damit Änderungen an diesen Einstellungen aktiv werden."
   },
 
   index: {
     connecting: "Verbinden",
+    plugins: "Loading Plugins",
     launching: "Starten",
   },
 
   settings: {
     general: "Allgemein",
-    theme: "Gestaltung",
+    theme: "Theme",
     player: "Videoplayer",
     uitweaker: "UI Optimierer",
     startupoptions: "Startoptionen",
@@ -40,7 +44,7 @@ module.exports = {
     },
     tweaks: {
       fullscreen: "Vollbild",
-      navbarblur: "Navigationsleistenunschärfe",
+      navbarblur: "Navigationsleiste unscharf",
       roundedcorners: "Runde Ecken",
       roundthumbnails: "Runde Thumbnails",
       roundwatchpagecomponents: "Runde Startseiten Komponenten",
@@ -74,9 +78,16 @@ module.exports = {
 
   events: {
     welcome: "Wilkommen bei VueTube",
-    tagline: "Die Zukunft des Videostreaming",
+    tagline: "Die Zukunft des Videostreamings",
     next: "Nächste",
     updated: "VueTube wurde aktualisiert!",
     awesome: "Cool!",
+    langsetup: "Lass uns eine Sprache aussuchen!",
+    featuresetup: "Lass uns ein paar Funktionen aussuchen!",
+    enableryd: "Return Youtube Dislike aktivieren",
+    enablespb: "SponsorBlock aktivieren"
+    thanks: "Danke, dass du VueTube nutzt.",
+    enjoy: "Wir hoffen, es gefällt dir",
+    packageinstaller: "Package zum Download auswählen"
   },
 };
