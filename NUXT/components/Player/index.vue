@@ -474,7 +474,7 @@ export default {
         });
 
         // buffering detection & sync
-        let threshold = 3; //ms after which user perceives buffering
+        let threshold = 100; //ms after which user perceives buffering
 
         vid.addEventListener("waiting", () => {
           if (!vid.paused) {
