@@ -469,7 +469,7 @@ export default {
             clearTimeout(this.bufferingDetected);
             this.bufferingDetected = false;
           }
-          if (this.$refs.audio.paused) this.$refs.audio.play();
+          if (this.$refs.audio.paused && !vid.paused) this.$refs.audio.play();
           this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
         });
 
