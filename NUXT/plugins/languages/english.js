@@ -79,7 +79,15 @@ module.exports = {
       discord: "Discord",
     },
   },
-
+  
+channel: {
+    about: {
+      description: "Description",
+      links: "Links",
+      moreinfo: "More info",
+    },
+  },
+  
   events: {
     welcome: "Welcome to VueTube",
     tagline: "The future of video streaming",
