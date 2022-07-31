@@ -4,6 +4,7 @@
     text
     large
     color="white"
+    :loading="buffering"
     @click="
       (paused = !video.paused), video.paused ? $emit('play') : $emit('pause')
     "
@@ -20,6 +21,10 @@ export default {
     video: {
       type: Object,
       required: true,
+    },
+    buffering: {
+      type: Boolean,
+      required: false,
     },
   },
   emits: ["play", "pause"],

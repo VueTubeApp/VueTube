@@ -200,6 +200,7 @@
         <playpause
           v-if="$refs.player"
           :video="$refs.player"
+          :buffering="bufferingDetected"
           @play="$refs.player.play(), $refs.audio.play()"
           @pause="$refs.player.pause(), $refs.audio.pause()"
         />
@@ -395,6 +396,7 @@ export default {
       vidSrc: "",
       audSrc: "",
       isVerticalVideo: false,
+      bufferingDetected: false,
     };
   },
   mounted() {
@@ -417,10 +419,17 @@ export default {
     });
 
     vid.addEventListener("loadeddata", (e) => {
-      // TODO: detect video loading state and send this.loading to play button :loading = loading here
       // console.log(e);
+      // if (vid.networkState === vid.NETWORK_LOADING) {
+      //   // The user agent is actively trying to download data.
+      // }
+
+      // if (vid.readyState < vid.HAVE_FUTURE_DATA) {
+      //   // There is not enough data to keep playing from this point
+      // }
       if (vid.readyState >= 3) {
         this.$refs.audio.play();
+        this.bufferingDetected = false;
         this.$refs.audio.currentTime = vid.currentTime;
         this.$refs.audio.playbackRate = this.$store.state.player.speed;
         this.$refs.player.playbackRate = this.$store.state.player.speed;
@@ -447,12 +456,29 @@ export default {
               }
             });
         });
-        // TODO: handle buffering with audio track
-        // TODO: handle video ending with a "replay" button if not on loop
-        // TODO: detect video loading state and send this.loading to play button :loading = loading here
+        // TODO: handle video ending with a "replay" button instead of <playpause /> if not on loop
         // TODO: split buffering into multiple sections as it should be for back/forth scrubbing
         vid.addEventListener("progress", () => {
           this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
+        });
+
+        // buffering detection & sync
+        let threshold = 300; //ms after which user perceives buffering
+
+        vid.addEventListener("waiting", () => {
+          this.bufferingDetected = setTimeout(() => {
+            this.bufferingDetected = true;
+            this.$refs.audio.pause();
+            //show buffering
+          }, threshold);
+        });
+        vid.addEventListener("playing", () => {
+          if (this.bufferingDetected != false) {
+            clearTimeout(this.bufferingDetected);
+            this.$refs.audio.currentTime = vid.currentTime;
+            this.$refs.audio.play();
+            this.bufferingDetected = false;
+          }
         });
       }
     });
@@ -492,7 +518,6 @@ export default {
       );
 
       var prev_pc = 0;
-      // TODO: big progress overlay (##%) to replace controls while loading if pre-buffering is enabled
       this.xhr.addEventListener("progress", (event) => {
         if (event.lengthComputable) {
           var pc = Math.round((event.loaded / event.total) * 100);
@@ -506,6 +531,7 @@ export default {
 
       this.xhr.send();
     },
+    // !NOTE: (BUG) too big to process for 1080p vids over 2 minutes
     blobToDataURL(blob, callback) {
       var a = new FileReader();
       a.onload = function (e) {
@@ -546,6 +572,8 @@ export default {
     },
     qualityHandler(q) {
       console.log(q);
+      this.$refs.audio.pause();
+      this.bufferingDetected = true;
       let time = this.$refs.player.currentTime;
       let speed = this.$refs.player.playbackRate;
       this.$refs.player.src = q;
