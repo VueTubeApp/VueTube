@@ -202,7 +202,12 @@
           :video="$refs.player"
           :buffering="bufferingDetected"
           @play="$refs.player.play(), $refs.audio.play()"
-          @pause="$refs.player.pause(), $refs.audio.pause()"
+          @pause="
+            $refs.player.pause(),
+              $refs.audio.pause(),
+              clearTimeout(bufferingDetected),
+              (bufferingDetected = false)
+          "
         />
         <v-btn
           v-if="!verticalFullscreen"
@@ -459,25 +464,33 @@ export default {
         // TODO: handle video ending with a "replay" button instead of <playpause /> if not on loop
         // TODO: split buffering into multiple sections as it should be for back/forth scrubbing
         vid.addEventListener("progress", () => {
+          if (this.bufferingDetected) {
+            this.$refs.audio.currentTime = vid.currentTime;
+            clearTimeout(this.bufferingDetected);
+            this.bufferingDetected = false;
+          }
+          if (this.$refs.audio.paused) this.$refs.audio.play();
           this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
         });
 
         // buffering detection & sync
-        let threshold = 300; //ms after which user perceives buffering
+        let threshold = 3; //ms after which user perceives buffering
 
         vid.addEventListener("waiting", () => {
-          this.bufferingDetected = setTimeout(() => {
-            this.bufferingDetected = true;
-            this.$refs.audio.pause();
-            //show buffering
-          }, threshold);
+          if (!vid.paused) {
+            this.bufferingDetected = setTimeout(() => {
+              this.bufferingDetected = true;
+              this.$refs.audio.pause();
+              //show buffering
+            }, threshold);
+          }
         });
         vid.addEventListener("playing", () => {
           if (this.bufferingDetected != false) {
             clearTimeout(this.bufferingDetected);
             this.$refs.audio.currentTime = vid.currentTime;
-            this.$refs.audio.play();
             this.bufferingDetected = false;
+            this.$refs.audio.play();
           }
         });
       }
@@ -572,8 +585,6 @@ export default {
     },
     qualityHandler(q) {
       console.log(q);
-      this.$refs.audio.pause();
-      this.bufferingDetected = true;
       let time = this.$refs.player.currentTime;
       let speed = this.$refs.player.playbackRate;
       this.$refs.player.src = q;
