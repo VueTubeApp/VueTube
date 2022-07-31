@@ -15,7 +15,11 @@ module.exports = {
     plugins: "Loading Plugins",
     launching: "Launching",
   },
-
+  
+  watch: {
+    subscribe: "Subscribe",
+  },
+  
   settings: {
     general: "General",
     theme: "Theme",
