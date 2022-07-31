@@ -85,9 +85,9 @@ module.exports = {
     langsetup: "Lass uns eine Sprache aussuchen!",
     featuresetup: "Lass uns ein paar Funktionen aussuchen!",
     enableryd: "Return Youtube Dislike aktivieren",
-    enablespb: "SponsorBlock aktivieren"
+    enablespb: "SponsorBlock aktivieren",
     thanks: "Danke, dass du VueTube nutzt.",
     enjoy: "Wir hoffen, es gefällt dir",
-    packageinstaller: "Package zum Download auswählen"
+    packageinstaller: "Package zum Download auswählen",
   },
 };
