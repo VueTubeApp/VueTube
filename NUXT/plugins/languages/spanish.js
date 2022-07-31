@@ -15,6 +15,10 @@ module.exports = {
     plugins: "Cargando complementos",
     launching: "Iniciando",
   },
+  
+  watch: {
+    subscribe: "Suscribirse",
+  },
 
   settings: {
     general: "General",
