@@ -10,7 +10,6 @@
         pointer-events: none;
         background: transparent;
         transform: translateY(50%);
-        box-shadow: 0 0 1rem 1rem red;
       "
       :class="!fullscreen || controls ? '' : 'invisible'"
       :background-color="colors[block.category]"

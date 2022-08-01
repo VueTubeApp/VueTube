@@ -441,7 +441,7 @@ export default {
 
     // TODO: detect this.isMusic from the video or channel metadata instead of just SB segments
 
-    vid.addEventListener("loadeddata", (e) => {
+    this.$refs.player.addEventListener("loadeddata", (e) => {
       // console.log(e);
       // if (vid.networkState === vid.NETWORK_LOADING) {
       //   // The user agent is actively trying to download data.
@@ -465,7 +465,7 @@ export default {
 
         this.$refs.player.loop = this.$store.state.player.loop;
         this.$refs.audio.loop = this.$store.state.player.loop;
-        vid.addEventListener("timeupdate", () => {
+        this.$refs.player.addEventListener("timeupdate", () => {
           if (!this.seeking) this.progress = vid.currentTime; // for seekbar
 
           // console.log("sb check", this.blocks);
@@ -488,7 +488,7 @@ export default {
         });
         // TODO: handle video ending with a "replay" button instead of <playpause /> if not on loop
         // TODO: split buffering into multiple sections as it should be for back/forth scrubbing
-        vid.addEventListener("progress", () => {
+        this.$refs.player.addEventListener("progress", () => {
           if (this.bufferingDetected) {
             this.$refs.audio.currentTime = vid.currentTime;
             clearTimeout(this.bufferingDetected);
@@ -501,7 +501,7 @@ export default {
         // buffering detection & sync
         let threshold = 250; //ms after which user perceives buffering
 
-        vid.addEventListener("waiting", () => {
+        this.$refs.player.addEventListener("waiting", () => {
           if (!vid.paused) {
             this.bufferingDetected = setTimeout(() => {
               this.bufferingDetected = true;
@@ -510,7 +510,7 @@ export default {
             }, threshold);
           }
         });
-        vid.addEventListener("playing", () => {
+        this.$refs.player.addEventListener("playing", () => {
           if (this.bufferingDetected != false) {
             clearTimeout(this.bufferingDetected);
             this.$refs.audio.currentTime = vid.currentTime;
@@ -531,8 +531,9 @@ export default {
   },
   methods: {
     cleanup() {
-      this.xhr.abort();
+      if (this.xhr) this.xhr.abort();
       if (this.isFullscreen) this.exitFullscreen();
+      if (this.bufferingDetected) clearTimeout(this.bufferingDetected);
       screen.orientation.removeEventListener("change");
       this.$refs.player.removeEventListener("loadeddata");
       this.$refs.player.removeEventListener("timeupdate");
