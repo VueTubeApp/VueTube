@@ -12,6 +12,7 @@ module.exports = {
 
   index: {
     connecting: "Łączenie",
+    plugins: "Ładowanie Rozszerzeń",
     launching: "Uruchamianie",
   },
 
@@ -20,7 +21,7 @@ module.exports = {
     theme: "Motyw",
     player: "Odtwarzacz",
     uitweaker: "Dostosowanie Interfejsu",
-    startupoptions: "Opcje Uruchamiania",
+    startupoptions: "Uruchamianie",
     plugins: "Rozszerzenia",
     updates: "Aktualizacje",
     logs: "Logi",
@@ -46,7 +47,7 @@ module.exports = {
       navbarblur: "Rozmycie Paska Nawigacyjnego",
       roundedcorners: "Zaokrąglenie Krawędzi",
       roundthumbnails: "Zaokrąglone Miniaturki",
-      roundwatchpagecomponents: "Zaokrąglone Elementy Interfejsu",
+      roundwatchpagecomponents: "Zaokrąglenie Elementów Interfejsu",
       radius: "Promień",
     },
     startup: {
@@ -82,5 +83,12 @@ module.exports = {
     next: "Dalej",
     updated: "VueTube Został Zaktualizowany!",
     awesome: "Świetnie!",
+    langsetup: "Wybierzmy Język!",
+    featuresetup: "Zobaczmy jakieś funkcje!",
+    enableryd: "Włącz Return YouTube Dislike",
+    enablespb: "Włącz SponsorBlocka",
+    thanks: "Dziękujemy za korzystanie z VueTube",
+    enjoy: "Mamy nadzieję że korzystanie z aplikacji jest świetne",
+    packageinstaller: "Wybierz zawartość do pobrania"
   },
 };
