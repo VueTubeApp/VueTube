@@ -317,7 +317,6 @@ export default {
     $route: {
       deep: true,
       handler(newRt, oldRt) {
-        this.$refs.player.cleanup();
         if (newRt.query.v && newRt.query.v != oldRt.query.v) {
           // Exit fullscreen if currently in fullscreen
           // if (this.$refs.player) this.$refs.player.webkitExitFullscreen();

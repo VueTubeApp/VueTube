@@ -405,14 +405,6 @@ export default {
       isMusic: false,
     };
   },
-  watch: {
-    $route: {
-      deep: true,
-      handler() {
-        this.cleanup();
-      },
-    },
-  },
   mounted() {
     console.log("sources", this.sources);
     console.log("recommends", this.recommends);
@@ -481,8 +473,8 @@ export default {
               ) {
                 console.log("Skipping the sponsor");
                 this.$youtube.showToast("Skipped sponsor");
-                vid.currentTime = sponsor.segment[1] + 1;
-                this.$refs.audio.currentTime = vid.currentTime;
+                this.$refs.player.currentTime = sponsor.segment[1] + 1;
+                this.$refs.audio.currentTime = this.$refs.player.currentTime;
               }
             });
         });
@@ -494,7 +486,7 @@ export default {
             clearTimeout(this.bufferingDetected);
             this.bufferingDetected = false;
           }
-          if (this.$refs.audio.paused && !vid.paused) this.$refs.audio.play();
+          if (this.$refs.audio.paused && !this.$refs.player.paused) this.$refs.audio.play();
           this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
         });
 
@@ -502,7 +494,7 @@ export default {
         let threshold = 250; //ms after which user perceives buffering
 
         this.$refs.player.addEventListener("waiting", () => {
-          if (!vid.paused) {
+          if (!this.$refs.player.paused) {
             this.bufferingDetected = setTimeout(() => {
               this.bufferingDetected = true;
               this.$refs.audio.pause();
@@ -535,11 +527,11 @@ export default {
       if (this.isFullscreen) this.exitFullscreen();
       if (this.bufferingDetected) clearTimeout(this.bufferingDetected);
       screen.orientation.removeEventListener("change");
-      this.$refs.player.removeEventListener("loadeddata");
-      this.$refs.player.removeEventListener("timeupdate");
-      this.$refs.player.removeEventListener("progress");
-      this.$refs.player.removeEventListener("waiting");
-      this.$refs.player.removeEventListener("playing");
+      //! this.$refs.player.removeEventListener("loadeddata"); // NOTE: needs a function to be passed as the 2nd argument, but breaks if called with vue method as the 2nd argument in mounted()
+      // this.$refs.player.removeEventListener("timeupdate");
+      this.$refs.player.removeEventListener("progress", () => {});
+      this.$refs.player.removeEventListener("waiting", () => {});
+      this.$refs.player.removeEventListener("playing", () => {});
     },
     prebuffer(url) {
       this.xhr = new XMLHttpRequest();
