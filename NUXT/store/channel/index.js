@@ -31,7 +31,7 @@ export const actions = {
     this.$youtube
       .getChannel(channelRequest)
       .then((channel) => {
-        // console.log(channel);
+        // console.warn(channel);
         state.loading = false;
         state.banner =
           channel.header.channelMobileHeaderRenderer.channelHeader.elementRenderer.newElement.type.componentType.model.channelHeaderModel.channelBanner?.image.sources[0].url;

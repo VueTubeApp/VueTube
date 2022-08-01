@@ -10,9 +10,10 @@
         pointer-events: none;
         background: transparent;
         transform: translateY(50%);
+        box-shadow: 0 0 1rem 1rem red;
       "
       :class="!fullscreen || controls ? '' : 'invisible'"
-      background-color="white"
+      :background-color="colors[block.category]"
       background-opacity="1"
       color="transparent"
       :height="seeking ? 4 : 2"
@@ -22,7 +23,6 @@
           : 'width: 100%; left: 0; bottom: 1px;'
       "
     />
-    <!-- // TODO:background-color="colors[block.category]" -->
   </div>
 </template>
 

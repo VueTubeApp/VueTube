@@ -400,9 +400,18 @@ export default {
       blocks: [],
       vidSrc: "",
       audSrc: "",
-      isVerticalVideo: false,
+      isVerticalVideo: false, // maybe rename(refactor everywhere used) to isShort
       bufferingDetected: false,
+      isMusic: false,
     };
+  },
+  watch: {
+    $route: {
+      deep: true,
+      handler() {
+        this.cleanup();
+      },
+    },
   },
   mounted() {
     console.log("sources", this.sources);
@@ -410,18 +419,27 @@ export default {
     let vid = this.$refs.player;
 
     // TODO: this.$store.state.player.quality, check if exists and select the closest one
-    if (this.$store.state.player.preload) this.prebuffer(this.sources[0].url);
+    if (this.$store.state.player.preload) this.prebuffer(this.sources[5].url);
     else {
       this.audSrc = this.sources[this.sources.length - 1].url;
-      this.vidSrc = this.sources[3].url;
+      this.vidSrc = this.sources[5].url;
     }
 
     this.$youtube.getSponsorBlock(this.video.id, (data) => {
-      console.log("sbreturn", data);
+      // console.warn("sbreturn", data);
       if (Array.isArray(data)) {
         this.blocks = data;
+        data.find((block) => {
+          if (block.category === "music_offtopic") {
+            this.isMusic = true;
+            this.$refs.audio.playbackRate = 1;
+            this.$refs.player.playbackRate = 1;
+          }
+        });
       }
     });
+
+    // TODO: detect this.isMusic from the video or channel metadata instead of just SB segments
 
     vid.addEventListener("loadeddata", (e) => {
       // console.log(e);
@@ -436,8 +454,15 @@ export default {
         this.$refs.audio.play();
         this.bufferingDetected = false;
         this.$refs.audio.currentTime = vid.currentTime;
-        this.$refs.audio.playbackRate = this.$store.state.player.speed;
-        this.$refs.player.playbackRate = this.$store.state.player.speed;
+
+        if (!this.isMusic) {
+          this.$refs.audio.playbackRate = this.$store.state.player.speed;
+          this.$refs.player.playbackRate = this.$store.state.player.speed;
+        } else {
+          this.$refs.audio.playbackRate = 1;
+          this.$refs.player.playbackRate = 1;
+        }
+
         this.$refs.player.loop = this.$store.state.player.loop;
         this.$refs.audio.loop = this.$store.state.player.loop;
         vid.addEventListener("timeupdate", () => {
@@ -474,7 +499,7 @@ export default {
         });
 
         // buffering detection & sync
-        let threshold = 100; //ms after which user perceives buffering
+        let threshold = 250; //ms after which user perceives buffering
 
         vid.addEventListener("waiting", () => {
           if (!vid.paused) {
@@ -502,11 +527,19 @@ export default {
     );
   },
   beforeDestroy() {
-    this.xhr.abort();
-    if (this.isFullscreen) this.exitFullscreen();
-    screen.orientation.removeEventListener("change");
+    this.cleanup();
   },
   methods: {
+    cleanup() {
+      this.xhr.abort();
+      if (this.isFullscreen) this.exitFullscreen();
+      screen.orientation.removeEventListener("change");
+      this.$refs.player.removeEventListener("loadeddata");
+      this.$refs.player.removeEventListener("timeupdate");
+      this.$refs.player.removeEventListener("progress");
+      this.$refs.player.removeEventListener("waiting");
+      this.$refs.player.removeEventListener("playing");
+    },
     prebuffer(url) {
       this.xhr = new XMLHttpRequest();
       this.xhr.open("GET", url, true);
@@ -537,7 +570,7 @@ export default {
           if (pc != prev_pc) {
             prev_pc = pc; // ##%
             if (pc < 100) this.buffered = pc;
-            console.warn(this.xhr);
+            // console.warn(this.xhr);
           }
         }
       });
