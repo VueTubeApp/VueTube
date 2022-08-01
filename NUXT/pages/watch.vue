@@ -170,7 +170,7 @@
             </div>
           </div>
           <div class="primary--text" style="text-transform: uppercase">
-            subscribe
+            {{ lang.subscribe }}
           </div>
         </v-card>
       </div>

@@ -15,7 +15,11 @@ module.exports = {
     plugins: "Loading Plugins",
     launching: "Launching",
   },
-
+  
+  watch: {
+    subscribe: "Subscribe",
+  },
+  
   settings: {
     general: "General",
     theme: "Theme",
@@ -75,7 +79,15 @@ module.exports = {
       discord: "Discord",
     },
   },
-
+  
+channel: {
+    about: {
+      description: "Description",
+      links: "Links",
+      moreinfo: "More info",
+    },
+  },
+  
   events: {
     welcome: "Welcome to VueTube",
     tagline: "The future of video streaming",
