@@ -83,7 +83,7 @@ Per installare visita www.vuetube.app/install
      
 </details>
 
-## Progress
+## Progressi
 
 <details>
   <summary> Clicca qui per mostrare i progressi </summary>
