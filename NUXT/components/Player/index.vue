@@ -687,7 +687,7 @@ export default {
       this.$vuetube.statusBar.hide();
       this.isFullscreen = true;
 
-      //---   Fix pressing back button in fullscreen exiting the player   ---//
+      //---   Fix pressing back button in fullscreen exiting the watch page   ---//
       this.$vuetube.addBackAction(new backType(
         () => { this.exitFullscreen(true); },
         () => { return this.isFullscreen; }
