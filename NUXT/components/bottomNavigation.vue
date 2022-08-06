@@ -1,5 +1,5 @@
 <template>
-  <div class="bottomNav background">
+  <div class="bottomNav background" v-if="!$route.path.includes('/mods')">
     <v-divider v-if="!$store.state.tweaks.roundTweak" />
     <v-bottom-navigation
       v-model="tabSelection"
