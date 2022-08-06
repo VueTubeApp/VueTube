@@ -4,7 +4,7 @@ module.exports = {
   global: {
     home: "Ana Sayfa",
     subscriptions: "Abonelikler",
-    library: "Kütüphane",
+    library: "Kitaplık",
     restart: "Yeniden Başlat",
     later: "Daha sonra",
     settingRestart: "Bu ayarın değiştirilmesi, değişikliklerin uygulanabilmesi için uygulamanın yeniden başlatılmasını gerektirir."
@@ -13,7 +13,7 @@ module.exports = {
   index: {
     connecting: "Bağlanıyor",
     plugins: "Eklentiler Yükleniyor",
-    launching: "Başlatma",
+    launching: "Başlatılıyor",
   },
 
   settings: {
@@ -21,12 +21,12 @@ module.exports = {
     theme: "Tema",
     player: "Oynatıcı",
     uitweaker: "UI Düzenleyici",
-    startupoptions: "Başlatma Seçenekleri",
+    startupoptions: "Başlangıç Seçenekleri",
     plugins: "Eklentiler",
     updates: "Güncellemeler",
     logs: "Günlükler",
     about: "Hakkında",
-    devmode: "Kayıt düzenleyici",
+    devmode: "Kayıt Düzenleyici",
   },
 
   mods: {
@@ -35,7 +35,7 @@ module.exports = {
     },
     theme: {
       normal: "Normal",
-      adaptive: "Adaptif",
+      adaptive: "Uyarlamalı",
       custom: "Özel",
       dark: "Karanlık",
       black: "Siyah",
@@ -43,7 +43,7 @@ module.exports = {
       darkmodetagline: "Bravo Altı, Karanlık Oluyor.",
     },
     tweaks: {
-      fullscreen: "Tam ekran",
+      fullscreen: "Tam Ekran",
       navbarblur: "Gezinme Çubuğu Bulanıklığı",
       roundedcorners: "Yuvarlatılmış Köşeler",
       roundthumbnails: "Yuvarlak Küçük Resimler",
@@ -54,10 +54,10 @@ module.exports = {
       defaultpage: "Varsayılan Sayfa",
     },
     updates: {
-      install: "Kurun",
-      view: "Bak",
-      latest: "En sonuncu",
-      installed: "Kuruldu",
+      install: "Yükle",
+      view: "Görüntüle",
+      latest: "En son",
+      installed: "Yüklendi",
     },
     logs: {
       more: "Daha fazla",
@@ -70,7 +70,7 @@ module.exports = {
       os: "İşletim Sistemi",
       model: "Modeli",
       manufacturer: "Üretici Firma",
-      emulator: "Emulator",
+      emulator: "Emulatör",
       github: "GitHub",
       discord: "Discord",
     },
@@ -81,12 +81,12 @@ module.exports = {
     tagline: "Video akışının geleceği",
     next: "Sonraki",
     updated: "VueTube Güncellendi!",
-    awesome: "Mükemmel!",
+    awesome: "Harika!",
     langsetup: "Bir Dil Seçelim!",
     featuresetup: "Bazı Özellikleri Seçelim!",
     enableryd: "Return YouTube Dislike'ı Etkinleştir",
-    enablespb: "SponsorBlok'u Etkinleştir",
-    thanks: "VueTube'u Kullandığınız İçin Teşekkürler",
+    enablespb: "SponsorBlock'u Etkinleştir",
+    thanks: "VueTube'u kullandığınız için teşekkürler",
     enjoy: "Umarız harika bir deneyim yaşarsınız",
     packageinstaller: "İndirilecek Paketi Seçin"
   },
