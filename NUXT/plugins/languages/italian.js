@@ -54,10 +54,17 @@ module.exports = {
       defaultpage: "Pagina Predefinita",
     },
     updates: {
-      install: "Installa",
-      view: "Visualizza",
-      latest: "Più Recente",
-      installed: "Installato",
+      checking: "Verifica aggiornamenti",
+      available: "Aggiornamento disponibile",
+      noupdate: "Nessun aggiornamento disponibile",
+      noupdatemessage: "Stai utilizzando la versione più recente di VueTube. Ricontrolla più tardi per gli aggiornamenti.",
+
+      installed: "Versione installata",
+      latest: "Ultima Versione",
+
+      okay: "Ok",
+      update: "Aggiorna",
+      later: "Più tardi",
     },
     logs: {
       more: "Più",
@@ -90,4 +97,5 @@ module.exports = {
     enjoy: "Ci auguriamo che tu abbia un'esperienza straordinaria",
   },
 };
+ 
  
