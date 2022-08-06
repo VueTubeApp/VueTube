@@ -116,6 +116,15 @@ export default {
         .catch((error) => this.$logger("Home Page (Nav Refresh)", error, true));
     },
   },
+
+  watch: {
+    $route() {
+      if (this.$route.path == "/search") {
+        this.text = this.$route.query.q;
+      }
+    },
+  },
+
 };
 </script>
 
