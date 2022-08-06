@@ -29,7 +29,7 @@ export default {
   //---   VueTube Debugging   ---//
   server: {
     port: 3000, // default: 3000 (Note: Running on ports below 1024 requires root privileges!)
-    host: "0.0.0.0", // default: localhost,
+    host: "localhost", // default: localhost,
     timing: false,
   },
 
