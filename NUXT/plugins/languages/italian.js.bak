@@ -54,7 +54,7 @@ module.exports = {
       defaultpage: "Pagina Predefinita",
     },
     updates: {
-      install: "Installa",
+      install: "Ultimo",
       view: "Visualizza",
       latest: "Più Recente",
       installed: "Installato",
@@ -87,7 +87,7 @@ module.exports = {
     enableryd: "Abilita Return YouTube Dislike",
     enablespb: "Abilita SponsorBlock",
     thanks: "Grazie per aver utilizzato VueTube",
-    enjoy: "Ci auguriamo che tu abbia un'esperienza straordinaria",
+    enjoy: "Ci auguriamo che avrai un'esperienza straordinaria",
   },
 };
  
