@@ -31,35 +31,36 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 <img src="./resources/Features.svg" alt="VueTube icon" height="100"/>
 
-- 🎨 **Themes:** Light, dark, OLED and all the colors of the rainbow!
-- 🖌️ **Customizable UI:** Customize the themes or even disable some parts of the UI that you don't use.
-- ⬆️ **Auto updates:** Be notified when an update is available & downgrade if you don't like it!
-- 👁️ **Tracking protection:** No telemetry data is sent from your device by default. Privacy is neccesary!
-- 📺 **Custom video player:** A player integrated in the application with everything you need to be happy, such as 16x speed.
-- 👎 **Return YouTube Dislike** - [_More info_](https://returnyoutubedislike.com)
-- 💰 **SponsorBlock** - [_More info_](https://sponsor.ajay.app)
+- 🎨 **Themes:** Light, dark, OLED and all the colors of the rainbow! Set the accent and background color according to your preferences.
+- 🖌️ **Customizable UI:** Customize buttons, corners and disable parts of the UI that you don't use to get an optimal experience.
+- ⬆️ **Auto updates:** Be notified when an update is available, download through the app and downgrade if you don't like it!
+- 👁️ **Tracking protection:** No telemetry data is sent from your device by default and we don't use external APIs. Privacy is neccesary!
+- 📺 **Custom video player:** There is a player integrated in the application with everything you need to be happy, such as 16x speed.
+- 🌍 **Translations:** App is avaiable in more than 25 languages! Default language is determined according to your device configuration.
+- 👎 **Return YouTube Dislike** - Enable dislike counters in videos again. [_More info_](https://returnyoutubedislike.com)
+- 💰 **SponsorBlock** - Skip automatically sponsors and annoying segments in videos. [_More info_](https://sponsor.ajay.app)
 
 ## Install
 
 <img src="./resources/Install.svg" alt="VueTube icon" height="100"/>
 
-To install the app, please visit [vuetube.app/install](https://www.vuetube.app/install)
+To install the app, please visit [vuetube.app/install](https://www.vuetube.app/install) or check below all versions avaiable:
 
 <details>
-  <summary>Or click here to see all the versions available</summary>
+  <summary>🖱️ Click to display versions </summary>
 <br />
 
 ### Android
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Pretty unstable, but you get early access to new features                                                                                   | Less bugs than unstable while having more features than stable                                                                                                  | Not available yet                                                                               |
+| Pretty unstable, but you get early access to new features.                                                                                   | Less bugs than unstable while having more features than stable.                                                                                                  | Not available yet.                                                                               |
 
 ### iOS
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| Pretty unstable, but you get early access to new features                                                                               | Less bugs than unstable while having more features than stable                                                                                                                 | Not available yet                                                                               |
+| Pretty unstable, but you get early access to new features.                                                                               | Less bugs than unstable while having more features than stable.                                                                                                                 | Not available yet.                                                                               |
 
 </details>
 
@@ -69,18 +70,20 @@ To install the app, please visit [vuetube.app/install](https://www.vuetube.app/i
 
 - 🔍 **Advanced search:** Sort results by date, duration, likes or any other factor.
 - 🗞️ **Local watch history:** Get your last viewed videos without logging in.
-- ✂️ **YouTube Shorts:** Small videos that last anywhere from 15 to 60 seconds.
+- ✂️ **YouTube Shorts:** Small vertical videos that last anywhere from 15 to 60 seconds.
 - 🧑 **Signing in with your Google account**: Login to have a full experience by voting and commenting on videos and subscribing to channels.
 - 🖼️ **Picture-in-Picture mode (PiP):** Allows you to watch videos in a floating window when using another app.
 - 🧩 **Plugins:** Install third party plugins made by community with useful features!
 - And more!
 
+You can suggest your own feature opening a feature request issue in this repository.
+
 ## Screenshots
 
-[View them on our website](https://www.vuetube.app/info/screenshots)
+[View them on our website](https://www.vuetube.app/info/screenshots) or click below to display them.
 
 <details>
-  <summary> Or click here to see the screenshots </summary>
+  <summary> 🖱️ Click to display screenshots </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -92,7 +95,7 @@ To install the app, please visit [vuetube.app/install](https://www.vuetube.app/i
 ## Progress
 
 <details>
-  <summary> Click here to display progress </summary>
+  <summary> 🖱️ Click to display progress </summary>
 
  <br>
  
@@ -126,34 +129,34 @@ To install the app, please visit [vuetube.app/install](https://www.vuetube.app/i
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
 
-### Why am I doing this?
+### Why are we doing this?
 
-Well, this has been thrown around on the Return YouTube Dislike Discord server for quite some time, so I figured that I should probably give it a try!
+VueTube was made with the aim of providing to the Internet a free, opensource and complete cross-platform alternative to Big Tech, with highly customizable options and login avaiable. The project was growing, attracting thousands of users and contributors all around the world. You can join us and contribute to this project in any kind of way...
 
 ### Want to contribute?
 
-Please read our website on how to do so: [vuetube.app/contributing](https://www.vuetube.app/contributing)
+Thank you for being interested on contributing! Please read our website on how to do so: [vuetube.app/contributing](https://www.vuetube.app/contributing).
 
-If you want to translate the app, [click here](/NUXT/plugins/languages) and read the instructions
+If you want to translate the app, [click here](/NUXT/plugins/languages) and read the instructions. If GitHub is hard or uncomfortable to you, you can also send the fields translated in a text file on our [Discord](https://vuetube.app/discord) and we will implement them. Don't worry!
 
-## Contributors
+## GitHub Contributors
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
 </a>
 
-<sub>Made with [contrib.rocks](https://contrib.rocks). </sub>
+<sub>Dashboard made automatically with [contrib.rocks](https://contrib.rocks). </sub>
 
 ## Acknowledgements
 
-- Emojis by the [Twemoji team](https://twemoji.twitter.com/), Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- VueTube Logo by [@afnzmn](https://github.com/afnzmn)
-- Public YouTube dislike data provided by [Return Youtube Dislike](https://returnyoutubedislike.com)
-- Ajay & Community for providing the [Sponsorblock API](https://sponsor.ajay.app), Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+- Emojis by the [Twemoji team](https://twemoji.twitter.com/), Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+- VueTube Logo by [@afnzmn](https://github.com/afnzmn).
+- Public YouTube dislike data provided by [Return Youtube Dislike](https://returnyoutubedislike.com).
+- Ajay & Community for providing the [Sponsorblock API](https://sponsor.ajay.app), Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ## Donate
 
-VueTube is and always will be free and open source, but you can support our devs with a donation that will help to maintain the project.
+VueTube is and always will be free and open source, but you can support our devs with a donation that will help to maintain the project and develop new features. Every kind of help is welcome! These are the donating options avaiable:
 
 [Donate on Ko-Fi.com](https://ko-fi.com/vuetube) (Official)
 
@@ -164,3 +167,9 @@ VueTube is and always will be free and open source, but you can support our devs
 The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found at [youtube.com](https://www.youtube.com).
 
 Any trademark, service mark, trade name, or other intellectual property rights used in the VueTube project are owned by the respective owners.
+
+<hr>
+
+<p align="center">
+<sub>VueTube, making people happy and inspiring their hearts since 2022.</sub>
+</p>
