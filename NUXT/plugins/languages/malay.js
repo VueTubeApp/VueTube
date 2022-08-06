@@ -54,10 +54,17 @@ module.exports = {
       defaultpage: "Halaman Lalai",
     },
     updates: {
-      install: "Pasang",
-      view: "Lihat",
-      latest: "Terkini",
-      installed: "Dipasang",
+      checking: "Menyemak kemaskini",
+      available: "Kemaskini Tersedia",
+      noupdate: "Tiada kemaskini tersedia",
+      noupdatemessage: "Anda sedang menggunakan versi terkini VueTube. Sila periksa kemudian untuk kemaskini.",
+
+      installed: "Versi Dipasang",
+      latest: "Versi Terkini",
+
+      okay: "OK",
+      update: "Kemaskini",
+      later: "Kemudian",
     },
     logs: {
       more: "Lagi",
