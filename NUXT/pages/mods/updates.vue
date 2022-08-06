@@ -1,105 +1,73 @@
 <template>
-  <div>
-    <v-list-item v-for="(item, index) in releases" :key="index" class="my-1">
-      <v-card
-        flat
-        class="card my-2 background"
-        :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
-        :style="{ borderRadius: `${roundTweak / 2}rem` }"
-      >
-        <v-card-title style="padding: 0 0.25em 0 0.75em">
-          {{ item.tag_name }}
-          <span
-            class="subtitle background--text"
-            :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-            v-text="`• ${ new Date(item.published_at).toLocaleString() }`"
-          />
-        </v-card-title>
+  <div style="padding: 2em;">
+    <v-icon x-large color="primary" style="padding-bottom: 0.25em;">mdi-cellphone-arrow-down</v-icon>
+    
+    <div v-if="status == 'checking'">
+      <h1>{{ lang.checking }}</h1>
+      <div>{{ lang.installed }}: {{ installedVersion }}</div>
+      <center>
+        <v-progress-circular indeterminate color="primary" size="75" style="padding-top: 10em;" />
+      </center>
+    </div>
 
-        <div style="margin-left: 1em; white-space: pre-line; margin-top: -1.5em;">
-          {{ item.body.trim() }}
-        </div>
+    <div v-if="status == 'latest'">
+      <h1>{{ lang.noupdate }}</h1>
+      <p>{{ lang.noupdatemessage }}</p>
+      <div class="bottom">
+        <v-btn rounded color="primary" @click="$router.go(-1)">{{ lang.okay }}</v-btn>
+      </div>
+    </div>
 
-        <v-card-actions>
-          <v-chip
-            v-if="index == 0"
-            class="tags"
-            color="orange"
-            style="border-radius: 0.5rem; border: 2px var(--v-orange-base)"
-            >{{ lang.latest }}</v-chip
-          >
-          <v-chip
-            v-if="item.tag_name == installedVersion"
-            class="tags"
-            color="green"
-            style="border-radius: 0.5rem; border: 2px var(--v-green-base)"
-            >{{ lang.installed }}</v-chip
-          >
-          <v-spacer />
-          <v-btn @click="openExternal(item)" class="background">
-            <v-icon class="btn-icon">mdi-github</v-icon>{{ lang.view }}
-          </v-btn>
-          <v-btn @click="install(item, index)">
-            <v-icon class="btn-icon">mdi-download</v-icon>{{ lang.install }}
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-list-item>
+    <div v-if="status == 'available'">
+      <h1>{{ lang.available }}</h1>
+      <div>{{ lang.installed }}: {{ installedVersion }}</div>
+      <div>{{ lang.latest }}: {{ latestVersion.tag_name }}</div>
+      <div class="bottom">
+        <v-btn rounded @click="$router.go(-1)">{{ lang.later }}</v-btn>
+        <v-btn rounded color="primary">{{ lang.update }}</v-btn>
+      </div>
+    </div>
+
   </div>
 </template>
 
 <style scoped>
-.card {
-  width: 100%;
-}
-
-.subtitle {
-  margin: 0.4em;
-  font-size: 0.75em;
-  transform: translateY(5%);
-}
-
-.date {
-  transform: translateY(-40%);
-}
-
-.btn-icon {
-  margin-right: 0.25em;
-}
-
-.tags {
-  margin-left: 0.5em;
+.bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 2em;
 }
 </style>
 
 <script>
 export default {
-  computed: {
-    roundTweak() {
-      return this.$store.state.tweaks.roundTweak;
-    },
-  },
+  layout: "empty",
   data() {
     return {
-      releases: new Array(),
       installedVersion: process.env.appVersion,
+      latestVersion: "",
       lang: {},
+      status: "checking"
     };
   },
   async mounted() {
-    this.releases = await this.$vuetube.releases;
-    
-
+    //---   Setup Lang Pack   ---//
     this.lang = this.$lang("mods").updates;
-  },
-  methods: {
-    openExternal(item) {
-      this.$vuetube.openExternal(item.html_url,);
-    },
 
-    install(item, index) {
-      this.$router.push(`/activities/packageInstaller?v=${index}`);
-    },
-  },
+    //---   Get Latest Version   ---//
+    const releases = await this.$vuetube.releases;
+    this.latestVersion = releases[0];
+
+    //---   Wait like 2 seconds because if people don't see loading, they think it didn't refresh properly   ---//
+    await require("~/plugins/utils").delay(2000);
+
+    //---   Kick Off Update Notice   ---//
+    if (this.latestVersion.tag_name != this.installedVersion) {
+      this.status = "available";
+    } else {
+      this.status = "latest";
+    }
+  }
 };
 </script>

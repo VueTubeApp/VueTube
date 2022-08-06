@@ -54,10 +54,17 @@ module.exports = {
       defaultpage: "Default Page",
     },
     updates: {
-      install: "Install",
-      view: "View",
-      latest: "Latest",
-      installed: "Installed",
+      checking: "Checking for updates",
+      available: "Update available",
+      noupdate: "No updates available",
+      noupdatemessage: "You're using the most recent version of VueTube. Check back later for updates.",
+
+      installed: "Installed Version",
+      latest: "Latest Version",
+
+      okay: "Okay",
+      update: "Update",
+      later: "Later",
     },
     logs: {
       more: "More",
