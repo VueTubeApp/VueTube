@@ -24,7 +24,7 @@
       <div>{{ lang.latest }}: {{ latestVersion.tag_name }}</div>
       <div class="bottom">
         <v-btn rounded @click="$router.go(-1)">{{ lang.later }}</v-btn>
-        <v-btn rounded color="primary">{{ lang.update }}</v-btn>
+        <v-btn rounded color="primary" @click="update()">{{ lang.update }}</v-btn>
       </div>
     </div>
 
@@ -41,6 +41,8 @@
 </style>
 
 <script>
+import { Device } from "@capacitor/device";
+
 export default {
   layout: "empty",
   data() {
@@ -67,6 +69,27 @@ export default {
       this.status = "available";
     } else {
       this.status = "latest";
+    }
+  },
+
+  methods: {
+    async update() {
+      const device = await Device.getInfo();
+      const platform = device.platform;
+
+      let downloads = new Array();
+      for (const i in this.latestVersion.assets) {
+        const asset = this.latestVersion.assets[i];
+        downloads.push(asset.browser_download_url);
+      }
+      console.log(downloads)
+
+      if (platform == "ios") {
+        window.open(downloads.filter(m => m.includes('.ipa'))[0], '_blank');
+      } else {
+        window.open(downloads.filter(m => m.includes('.apk'))[0], '_blank');
+      }
+
     }
   }
 };
