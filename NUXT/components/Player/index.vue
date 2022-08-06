@@ -354,6 +354,9 @@ import fscontrols from "~/components/Player/fscontrols.vue";
 import fullscreen from "~/components/Player/fullscreen.vue";
 import progressbar from "~/components/Player/progressbar.vue";
 import sponsorblock from "~/components/Player/sponsorblock.vue";
+
+import backType from "~/plugins/classes/backType";
+
 export default {
   components: {
     sponsorblock,
@@ -683,6 +686,13 @@ export default {
       this.$vuetube.navigationBar.hide();
       this.$vuetube.statusBar.hide();
       this.isFullscreen = true;
+
+      //---   Fix pressing back button in fullscreen exiting the player   ---//
+      this.$vuetube.addBackAction(new backType(
+        () => { this.exitFullscreen(true); },
+        () => { return this.isFullscreen; }
+      ));
+
     },
     getPlayer() {
       return this.$refs.player;
