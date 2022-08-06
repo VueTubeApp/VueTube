@@ -24,9 +24,9 @@ module.exports = {
     startupoptions: "Opciones de inicio",
     plugins: "Complementos",
     updates: "Actualizaciones",
-    logs: "Logs",
+    logs: "Registros",
     about: "Acerca de",
-    devmode: "Editor del registro",
+    devmode: "Editor de registros",
   },
 
   mods: {
@@ -40,7 +40,7 @@ module.exports = {
       dark: "Oscuro",
       black: "Negro",
       darkmode: "Modo oscuro",
-      darkmodetagline: "Bravo Six, haciéndote oscuro.",
+      darkmodetagline: "Pasáte al lado oscuro.",
     },
     tweaks: {
       fullscreen: "Pantalla completa",
@@ -54,10 +54,17 @@ module.exports = {
       defaultpage: "Pagina predeterminada",
     },
     updates: {
-      install: "Instalar",
-      view: "Ver",
-      latest: "Última",
-      installed: "Instalada",
+      checking: "Buscando actualizaciones",
+      available: "Actualización disponible",
+      noupdate: "No hay nuevas actualizaciones",
+      noupdatemessage: "Estás usando la versión más reciente de VueTube. Vuelve más tarde para buscar actualizaciones.",
+
+      installed: "Versión instalada",
+      latest: "Última versión",
+
+      okay: "OK",
+      update: "Actualizar",
+      later: "Más tarde",
     },
     logs: {
       more: "Más",
