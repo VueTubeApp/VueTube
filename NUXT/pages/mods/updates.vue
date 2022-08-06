@@ -22,6 +22,9 @@
       <h1>{{ lang.available }}</h1>
       <div>{{ lang.installed }}: {{ installedVersion }}</div>
       <div>{{ lang.latest }}: {{ latestVersion.tag_name }}</div>
+      <div style="margin-top: 3em; color: #999;"><b>Changelog</b></div>
+      <p style="white-space: pre-line;  color: #999;">{{ latestVersion.body.trim() }}</p>
+      <p></p>
       <div class="bottom">
         <v-btn rounded @click="$router.go(-1)">{{ lang.later }}</v-btn>
         <v-btn rounded color="primary" @click="update()">{{ lang.update }}</v-btn>
