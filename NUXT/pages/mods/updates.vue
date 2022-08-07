@@ -35,11 +35,9 @@
       <div style="margin-top: 1em; color: #999;"><b>Changelog</b></div>
       <p style="white-space: pre-line;  color: #999;">{{ latestVersion.body.trim() }}</p>
 
-      <div class="bottom">
-        <v-btn rounded @click="$router.go(-1)">{{ lang.later }}</v-btn>
-        <v-btn rounded color="primary" @click="install()">{{ lang.update }}</v-btn>
-      </div>
-      <div class="bottom">
+      <v-progress-linear indeterminate color="primary" v-if="downloading" style="position: absolute; top: 0; width: 100%; left: 0;" />
+
+      <div class="bottom" v-if="!downloading">
         <v-btn rounded @click="$router.go(-1)">{{ lang.later }}</v-btn>
         <v-btn rounded color="primary" @click="install()">{{ lang.update }}</v-btn>
       </div>
@@ -130,8 +128,9 @@ export default {
     },
 
     async install() {
-      
-      window.open(this.update.browser_download_url, '_blank');
+      this.downloading = true;
+      await this.$vuetube.update(this.update.browser_download_url).catch(() => { this.downloading = false; });
+      //window.open(this.update.browser_download_url, '_blank');
 
     }
   }
