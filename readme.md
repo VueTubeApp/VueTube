@@ -36,7 +36,7 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 - ⬆️ **Auto updates:** Be notified when an update is available, download through the app and downgrade if you don't like it!
 - 👁️ **Tracking protection:** No telemetry data is sent from your device by default and we don't use external APIs. Privacy is neccesary!
 - 📺 **Custom video player:** There is a player integrated in the application with everything you need to be happy, such as 16x speed.
-- 🌍 **Translations:** App is avaiable in more than 25 languages! Default language is determined according to your device configuration.
+- 🌍 **Translations:** App is available in more than 25 languages! Default language is determined according to your device configuration.
 - 👎 **Return YouTube Dislike** - Enable dislike counters in videos again. [_More info_](https://returnyoutubedislike.com)
 - 💰 **SponsorBlock** - Skip automatically sponsors and annoying segments in videos. [_More info_](https://sponsor.ajay.app)
 
