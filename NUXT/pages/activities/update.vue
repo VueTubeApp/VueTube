@@ -1,43 +1,24 @@
 <template>
-  <div>
-    <center class="container">
-      <v-img
-        src="/icon.svg"
-        width="10rem"
-        height="10rem"
-        :class="$vuetify.theme.dark ? '' : 'invert'"
-      />
-      <h1>{{ lang.updated }}</h1>
-      <p>
-        <span class="version">{{ oldVer }}</span>
-        <v-icon>mdi-arrow-right</v-icon>
-        <span class="version">{{ newVer }}</span>
-      </p>
-    </center>
+  <div style="padding: 2em;">
 
-    <v-btn @click="okay()" class="rounded-xl primary nextButton"
-      >{{ lang.awesome }}
-      <v-icon style="margin-left: 0.5em">mdi-arrow-right</v-icon></v-btn
-    >
+
+    <v-icon x-large color="primary" style="padding-bottom: 0.25em;">mdi-cellphone-arrow-down</v-icon>
+    <h1>{{ lang.updated }}</h1>
+    <p>{{ oldVer }} <v-icon>mdi-arrow-right</v-icon> {{ newVer }}</p>
+    <div class="bottom">
+      <v-btn rounded color="primary" @click="$router.go(-1)">{{ lang.awesome }}</v-btn>
+    </div>
+
+
   </div>
 </template>
 
 <style scoped>
-.nextButton {
+.bottom {
   position: absolute;
-  bottom: 1em;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.container {
-  width: 100%;
-}
-
-.version {
-  background: rgba(100, 100, 100, 0.5);
-  border-radius: 3px;
-  padding: 3px;
+  bottom: 0;
+  right: 0;
+  padding: 2em;
 }
 </style>
 
