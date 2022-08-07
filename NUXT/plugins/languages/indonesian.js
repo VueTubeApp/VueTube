@@ -8,6 +8,7 @@ module.exports = {
     restart: "Mulai ulang",
     later: "Nanti",
     settingRestart: "Memodifikasi pengaturan ini membutuhkan tindakan mulai ulang aplikasi untuk menerapkan perubahan.",
+    okay: "Oke"
   },
 
   index: {
@@ -54,10 +55,17 @@ module.exports = {
       defaultpage: "Halaman Bawaan",
     },
     updates: {
-      install: "Instal",
-      view: "Lihat",
-      latest: "Terbaru",
-      installed: "Terinstal",
+      checking: "Memeriksa pembaruan",
+      available: "Pembaruan tersedia",
+      noupdate: "Tidak ada pembaruan tersedia",
+      noupdatemessage: "Kamu menggunakan versi terbaru VueTube. Cek lagi nanti untuk pembaruan.",
+
+      installed: "Versi Terinstal",
+      latest: "Versi Terbaru",
+
+      okay: "Oke",
+      update: "Perbarui",
+      later: "Nanti",
     },
     logs: {
       more: "Lebih",
