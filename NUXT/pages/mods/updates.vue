@@ -65,7 +65,7 @@ export default {
     this.latestVersion = releases[0];
 
     //---   Wait like 2 seconds because if people don't see loading, they think it didn't refresh properly   ---//
-    await require("~/plugins/utils").delay(2000);
+    if (!this.$route.query.nowait) await require("~/plugins/utils").delay(2000);
 
     //---   Kick Off Update Notice   ---//
     if (this.latestVersion.tag_name != this.installedVersion) {

@@ -7,7 +7,8 @@ module.exports = {
     library: "Library",
     restart: "Restart",
     later: "Later",
-    settingRestart: "Modifying this setting requires the app to restart for the changes to be applied."
+    settingRestart: "Modifying this setting requires the app to restart for the changes to be applied.",
+    okay: "Okay"
   },
 
   index: {
@@ -87,8 +88,8 @@ module.exports = {
     welcome: "Welcome to VueTube",
     tagline: "The future of video streaming",
     next: "Next",
-    updated: "VueTube Was Updated!",
-    awesome: "Awesome!",
+    updated: "VueTube was updated",
+    awesome: "Awesome",
     langsetup: "Let's Pick a Language!",
     featuresetup: "Let's Pick Some Features!",
     enableryd: "Enable Return YouTube Dislike",
