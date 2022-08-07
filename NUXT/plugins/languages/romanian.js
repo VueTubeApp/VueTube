@@ -94,7 +94,7 @@ module.exports = {
     enableryd: "Activați Return YouTube Dislike",
     enablespb: "Activați SponsorBlock",
     thanks: "Va mulțumin că folosiți VueTube!",
-    enjoy: "Sperăm să vă bucurați de experiența dumneavoastră!"
+    enjoy: "Sperăm să vă bucurați de experiența dumneavoastră!",
     packageinstaller: "Alegeți un pachet de descărcat"
   },
 };

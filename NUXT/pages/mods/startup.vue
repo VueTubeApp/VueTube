@@ -14,6 +14,7 @@
           :items="pages"
           label="Default Page"
           solo
+          rounded
         ></v-select>
       </v-card-text>
     </v-card>
