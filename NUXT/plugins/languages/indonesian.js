@@ -8,6 +8,7 @@ module.exports = {
     restart: "Mulai ulang",
     later: "Nanti",
     settingRestart: "Memodifikasi pengaturan ini membutuhkan tindakan mulai ulang aplikasi untuk menerapkan perubahan.",
+    okay: "OK"
   },
 
   index: {
