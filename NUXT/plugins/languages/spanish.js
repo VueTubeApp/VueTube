@@ -7,7 +7,8 @@ module.exports = {
     library: "Librería",
     restart: "Reiniciar",
     later: "Más tarde",
-    settingRestart: "Al modificar este ajuste, la app debe ser reiniciada para que los cambios se apliquen."
+    settingRestart: "Al modificar este ajuste, la app debe ser reiniciada para que los cambios se apliquen.",
+    okay: "OK"
   },
 
   index: {
@@ -54,6 +55,7 @@ module.exports = {
       defaultpage: "Pagina predeterminada",
     },
     updates: {
+      updating: "Descargando actualización",
       checking: "Buscando actualizaciones",
       available: "Actualización disponible",
       noupdate: "No hay nuevas actualizaciones",
@@ -61,8 +63,13 @@ module.exports = {
 
       installed: "Versión instalada",
       latest: "Última versión",
+      
+      published: "Publicada en",
+      users: "Usuarios",
+      size: "Tamaño de la versión",
 
       okay: "OK",
+      refresh: "Recargar",
       update: "Actualizar",
       later: "Más tarde",
     },
