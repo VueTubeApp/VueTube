@@ -4,7 +4,7 @@ import { Filesystem, Directory, Encoding } from "@capacitor/filesystem";
 
 module = (url) => {
   return new Promise(async (resolve, reject) => {
-    
+
     //---   Download File From GitHub & Save to Memory/RAM   ---//
     const data = await Http.get({
       url: url,
