@@ -6,7 +6,7 @@
     <h1>{{ lang.updated }}</h1>
     <p>{{ oldVer }} <v-icon>mdi-arrow-right</v-icon> {{ newVer }}</p>
     <div class="bottom">
-      <v-btn rounded color="primary" @click="$router.go(-1)">{{ lang.awesome }}</v-btn>
+      <v-btn rounded color="primary" @click="okay()">{{ lang.awesome }}</v-btn>
     </div>
 
 
