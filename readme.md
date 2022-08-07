@@ -47,7 +47,14 @@ Features
 - 👎 **Return YouTube Dislike** - Enable dislike counters in videos again. [_More info_](https://returnyoutubedislike.com)
 - 💰 **SponsorBlock** - Skip automatically sponsors and annoying segments in videos. [_More info_](https://sponsor.ajay.app)
 
-## Install
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_install.png"
+      height="30"
+      width="30">
+</sub>
+Install
+</h2>
 
 <img src="./resources/Install.svg" alt="VueTube icon" height="100"/>
 
