@@ -27,7 +27,14 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 **Read this page in other languages**: [English,](readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română](/readme/readme.ro.md)
 
-## Features
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_features.png"
+      height="30"
+      width="30">
+</sub>
+Features
+</h2>
 
 <img src="./resources/Features.svg" alt="VueTube icon" height="100"/>
 
@@ -40,7 +47,14 @@ Pronounced View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 - 👎 **Return YouTube Dislike** - Enable dislike counters in videos again. [_More info_](https://returnyoutubedislike.com)
 - 💰 **SponsorBlock** - Skip automatically sponsors and annoying segments in videos. [_More info_](https://sponsor.ajay.app)
 
-## Install
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_install.png"
+      height="30"
+      width="30">
+</sub>
+Install
+</h2>
 
 <img src="./resources/Install.svg" alt="VueTube icon" height="100"/>
 
@@ -64,7 +78,14 @@ To install the app, please visit [vuetube.app/install](https://www.vuetube.app/i
 
 </details>
 
-## Plans
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_plans.png"
+      height="30"
+      width="30">
+</sub>
+Plans
+</h2>
 
 <img src="./resources/Plans.svg" alt="VueTube icon" height="100"/>
 
