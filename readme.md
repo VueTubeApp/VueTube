@@ -78,7 +78,14 @@ To install the app, please visit [vuetube.app/install](https://www.vuetube.app/i
 
 </details>
 
-## Plans
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_plans.png"
+      height="30"
+      width="30">
+</sub>
+Plans
+</h2>
 
 <img src="./resources/Plans.svg" alt="VueTube icon" height="100"/>
 
