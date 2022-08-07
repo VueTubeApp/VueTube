@@ -55,6 +55,7 @@ module.exports = {
       defaultpage: "Default Page",
     },
     updates: {
+      updating: "Downloading update",
       checking: "Checking for updates",
       available: "Update available",
       noupdate: "No updates available",
@@ -63,7 +64,12 @@ module.exports = {
       installed: "Installed Version",
       latest: "Latest Version",
 
+      published: "Published",
+      users: "Users",
+      size: "Update Size",
+
       okay: "Okay",
+      refresh: "Refresh",
       update: "Update",
       later: "Later",
     },

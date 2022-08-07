@@ -14,20 +14,34 @@
       <h1>{{ lang.noupdate }}</h1>
       <p>{{ lang.noupdatemessage }}</p>
       <div class="bottom">
+        <v-btn rounded @click="getLatest">{{ lang.refresh }}</v-btn>
         <v-btn rounded color="primary" @click="$router.go(-1)">{{ lang.okay }}</v-btn>
       </div>
     </div>
 
     <div v-if="status == 'available'">
-      <h1>{{ lang.available }}</h1>
+      <h1 v-if="!downloading">{{ lang.available }}</h1>
+      <h1 v-if="downloading">{{ lang.updating }}</h1>
       <div>{{ lang.installed }}: {{ installedVersion }}</div>
       <div>{{ lang.latest }}: {{ latestVersion.tag_name }}</div>
-      <div style="margin-top: 3em; color: #999;"><b>Changelog</b></div>
+
+      <div style="margin-top: 1em; color: #999;">
+        <div>{{ lang.published }}: {{ new Date(update.created_at).toLocaleString() }}</div>
+        <div>{{ lang.size }}: {{ require("~/plugins/utils").humanFileSize(update.size) }}</div>
+        <div>{{ lang.users }}: {{ update.download_count }}</div>
+      </div>
+
+
+      <div style="margin-top: 1em; color: #999;"><b>Changelog</b></div>
       <p style="white-space: pre-line;  color: #999;">{{ latestVersion.body.trim() }}</p>
-      <p></p>
+
       <div class="bottom">
         <v-btn rounded @click="$router.go(-1)">{{ lang.later }}</v-btn>
-        <v-btn rounded color="primary" @click="update()">{{ lang.update }}</v-btn>
+        <v-btn rounded color="primary" @click="install()">{{ lang.update }}</v-btn>
+      </div>
+      <div class="bottom">
+        <v-btn rounded @click="$router.go(-1)">{{ lang.later }}</v-btn>
+        <v-btn rounded color="primary" @click="install()">{{ lang.update }}</v-btn>
       </div>
     </div>
 
@@ -53,45 +67,71 @@ export default {
       installedVersion: process.env.appVersion,
       latestVersion: "",
       lang: {},
-      status: "checking"
+      status: "checking",
+      update: {},
+      downloading: false,
     };
   },
   async mounted() {
     //---   Setup Lang Pack   ---//
     this.lang = this.$lang("mods").updates;
 
-    //---   Get Latest Version   ---//
-    const releases = await this.$vuetube.releases;
-    this.latestVersion = releases[0];
-
-    //---   Wait like 2 seconds because if people don't see loading, they think it didn't refresh properly   ---//
-    if (!this.$route.query.nowait) await require("~/plugins/utils").delay(2000);
-
-    //---   Kick Off Update Notice   ---//
-    if (this.latestVersion.tag_name != this.installedVersion) {
-      this.status = "available";
-    } else {
-      this.status = "latest";
-    }
+    this.getLatest();
   },
 
   methods: {
-    async update() {
+
+    async getUpdate() {
       const device = await Device.getInfo();
       const platform = device.platform;
 
+      //---   Put all strings into 1 array   ---//
       let downloads = new Array();
       for (const i in this.latestVersion.assets) {
         const asset = this.latestVersion.assets[i];
         downloads.push(asset.browser_download_url);
       }
-      console.log(downloads)
 
+      //---   Pick String For Platform From Above Array   ---//
       if (platform == "ios") {
-        window.open(downloads.filter(m => m.includes('.ipa'))[0], '_blank');
+        this.update = downloads.filter(m => m.includes('.ipa'))[0];
       } else {
-        window.open(downloads.filter(m => m.includes('.apk'))[0], '_blank');
+        this.update = downloads.filter(m => m.includes('.apk'))[0];
       }
+
+      //---   Set Update As Full Data   ---//
+      for (const i in this.latestVersion.assets) {
+        const asset = this.latestVersion.assets[i];
+        if (asset.browser_download_url == this.update) {
+          return this.update = asset;
+        }
+      }
+
+    },
+
+    async getLatest() {
+       //---   Get Latest Version   ---//
+      this.status = "checking";
+      const releases = await this.$vuetube.releases;
+      this.latestVersion = releases[0];
+
+      //---   Wait like 2 seconds because if people don't see loading, they think it didn't refresh properly   ---//
+      if (!this.$route.query.nowait) await require("~/plugins/utils").delay(2000);
+
+      //---   Get Proper File   ---//
+      this.getUpdate();
+
+      //---   Kick Off Update Notice   ---//
+      if (this.latestVersion.tag_name != this.installedVersion) {
+        this.status = "available";
+      } else {
+        this.status = "latest";
+      }
+    },
+
+    async install() {
+      
+      window.open(this.update.browser_download_url, '_blank');
 
     }
   }
