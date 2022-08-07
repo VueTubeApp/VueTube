@@ -6,6 +6,7 @@
     :items="langs"
     label="App Language"
     solo
+    rounded
   />
 
   <v-dialog v-model="restart" width="500">
