@@ -54,10 +54,17 @@ module.exports = {
       defaultpage: "預設頁",
     },
     updates: {
-      install: "安裝",
-      view: "查看",
-      latest: "最新",
-      installed: "已安裝",
+      checking: "檢查更新中",
+      available: "有更新可用",
+      noupdate: "沒有更新可用",
+      noupdatemessage: "您正在使用最新版本的 VueTube。您可稍後再回來查看更新。",
+
+      installed: "目前版本",
+      latest: "最新版本",
+
+      okay: "確定",
+      update: "更新",
+      later: "稍後",
     },
     logs: {
       more: "更多",
