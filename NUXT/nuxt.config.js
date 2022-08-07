@@ -21,6 +21,7 @@ export default {
     { src: "~/plugins/ryd", mode: "client" },
     { src: "~/plugins/thirdPartyPluginLoader", mode: "client" },
     { src: "~/plugins/language", mode: "client" },
+    { src: "~/plugins/update", mode: "client" },
   ],
   generate: {
     dir: "../dist",

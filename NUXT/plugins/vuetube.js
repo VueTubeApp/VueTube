@@ -140,20 +140,6 @@ const module = {
   },
   //---   End Convert Time To Human Readable String   ---//
 
-  update(url) {
-    return new Promise(async (resolve, reject) => {
-      const data = await Http.request({
-        method: "GET",
-        url: url
-      }).catch((err) => { reject(err); })
-
-      console.log(data)
-
-    })
-  }
-
-
-
 };
 
 //---   Start   ---//

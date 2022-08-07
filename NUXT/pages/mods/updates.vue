@@ -129,7 +129,7 @@ export default {
 
     async install() {
       this.downloading = true;
-      await this.$vuetube.update(this.update.browser_download_url).catch(() => { this.downloading = false; });
+      await this.$update(this.update.browser_download_url).catch(() => { this.downloading = false; });
       //window.open(this.update.browser_download_url, '_blank');
 
     }
