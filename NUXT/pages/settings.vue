@@ -129,7 +129,7 @@ export default {
     this.settingsItems[4].name = this.$lang("settings").startupoptions;
     this.settingsItems[5].name = this.$lang("settings").plugins;
     this.settingsItems[6].name = this.$lang("settings").updates;
-    this.settingsItems[8].name = this.$lang("settings").about;
+    this.settingsItems[7].name = this.$lang("settings").about;
     this.devmodebuttonname = this.$lang("settings").devmode;
 
     this.devmode = localStorage.getItem("devmode");
