@@ -7,11 +7,13 @@ module.exports = {
     library: "Bibliothèque",
     restart: "Redémarrer maintenant",
     later: "Plus tard",
-    settingRestart: "Redémarrage nécessaire pour appliquer le changement."
+    settingRestart: "Redémarrage nécessaire pour appliquer les changements.",
+    okay: "OK"
   },
 
   index: {
     connecting: "Connexion",
+    plugins: "Chargement des Plugins",
     launching: "Démarrage",
   },
 
@@ -25,7 +27,7 @@ module.exports = {
     updates: "Mises à jour",
     logs: "Journaux",
     about: "À propos",
-    devmode: "Éditeur du Registre",
+    devmode: "Mode Développeur",
   },
 
   mods: {
@@ -39,11 +41,11 @@ module.exports = {
       dark: "Sombre",
       black: "Noir",
       darkmode: "Mode Sombre",
-      darkmodetagline: "Bravo pour utiliser le mode sombre !",
+      darkmodetagline: "Ici Bravo Six, Silence Radio",
     },
     tweaks: {
       fullscreen: "Plein écran",
-      navbarblur: "Barre de navigation floue",
+      navbarblur: "Barre de navigation floutée",
       roundedcorners: "Coins arrondis",
       roundthumbnails: "Miniatures arrondies",
       roundwatchpagecomponents: "Page d'accueil arrondie",
@@ -53,10 +55,23 @@ module.exports = {
       defaultpage: "Page par défaut",
     },
     updates: {
-      install: "Installer",
-      view: "Voir",
-      latest: "Dernière MÀJ",
-      installed: "Version installée",
+      updating: "Téléchargement de la MÀJ",
+      checking: "Recherche de MÀJs",
+      available: "MÀJ disponible",
+      noupdate: "Aucune MÀJ disponible",
+      noupdatemessage: "Vous utilisez la dernière verison de VueTube. Revenez plus tard pour d'éventuelles MÀJs",
+      
+      installed: "Version Installée",
+      latest: "Dernière Version",
+
+      published: "Publiée le",
+      users: "Utilisateurs",
+      size: "Taille de la MÀJ",
+
+      okay: "OK",
+      refresh: "Rafraîchir",
+      update: "Mettre à jour",
+      later: "Plus tard",
     },
     logs: {
       more: "Afficher plus",
@@ -83,11 +98,10 @@ module.exports = {
     awesome: "Incroyable !",
     langsetup: "Commençons par sélectionner une langue !",
     featuresetup: "Sélectionnons des fonctionnalités !",
-    enableryd:
-      "Activer Return YouTube Dislike (Retourner les Dislikes de YouTube)",
+    enableryd: "Activer Return YouTube Dislike (Retourner les Dislikes de YouTube)",
     enablespb: "Activer SponsorBlock",
     thanks: "Merci d'utiliser VueTube",
-    enjoy: "Nous espérons que vous apprécierez votre expérience ! ",
-    packageinstaller: "Sélectionne un paquet à télécharger",
+    enjoy: "Nous espérons que vous apprécierez votre expérience",
+    packageinstaller: "Sélectionnez un paquet à télécharger"
   },
 };
