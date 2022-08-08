@@ -55,6 +55,7 @@ module.exports = {
       defaultpage: "Halaman Bawaan",
     },
     updates: {
+      updating: "Mengunduh pembaruan",
       checking: "Memeriksa pembaruan",
       available: "Pembaruan tersedia",
       noupdate: "Tidak ada pembaruan tersedia",
@@ -68,6 +69,7 @@ module.exports = {
       size: "Ukuran Pembaruan",
 
       okay: "OK",
+      refresh: "Segarkan",
       update: "Perbarui",
       later: "Nanti",
     },
