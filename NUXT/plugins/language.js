@@ -1,14 +1,17 @@
 const packs = {
+  arabic: require("./languages/arabic"),
   azerbaijan: require("./languages/azerbaijan"),
   "brazilian-portuguese": require("./languages/brazilian-portuguese"),
   bulgarian: require("./languages/bulgarian"),
   "chinese-simplified": require("./languages/chinese-simplified"),
   "chinese-traditional": require("./languages/chinese-traditional"),
+  czech: require("./languages/czech"),
   dutch: require("./languages/dutch"),
   english: require("./languages/english"),
   estonian: require("./languages/estonian"),
   "french-fr": require("./languages/french-fr"),
   german: require("./languages/german"),
+  hindi: require("./languages/hindi"),
   indonesian: require("./languages/indonesian"),
   italian: require("./languages/italian"),
   korean: require("./languages/korean"),
@@ -21,6 +24,7 @@ const packs = {
   tamil: require("./languages/tamil"),
   turkish: require("./languages/turkish"),
   ukrainian: require("./languages/ukrainian"),
+  vietnamese: require("./languages/vietnamese"),
 };
 
 function module(subPack, listPacks) {
