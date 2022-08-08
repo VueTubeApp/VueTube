@@ -118,7 +118,7 @@
               <v-icon>mdi-plus</v-icon>
             </v-btn>
             <br />
-            Custom
+            {{ lang.custom }}
           </div>
         </div>
       </v-radio-group>
