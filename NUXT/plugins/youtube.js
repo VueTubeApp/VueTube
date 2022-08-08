@@ -7,16 +7,6 @@ import { Buffer } from "buffer";
 import iconv from "iconv-lite";
 import { Toast } from "@capacitor/toast";
 
-//---   Logger Function   ---//
-function logger(func, data, isError = false) {
-  searchModule.logs.unshift({
-    name: func,
-    time: Date.now(),
-    data: data,
-    error: isError,
-  });
-}
-
 function getEncoding(contentType) {
   const re = /charset=([^()<>@,;:\"/[\]?.=\s]*)/i;
   const content = re.exec(contentType);
@@ -40,11 +30,9 @@ const searchModule = {
         const buffer = Buffer.from(res.data, "base64");
         // convert res.data from iso-8859-1 to utf-8
         const data = iconv.decode(buffer, getEncoding(contentType));
-        logger(constants.LOGGER_NAMES.autoComplete, data);
         callback(data);
       })
       .catch((err) => {
-        logger(constants.LOGGER_NAMES.autoComplete, err, true);
         callback(err);
       });
   },
@@ -56,11 +44,9 @@ const searchModule = {
       params: { videoId: id },
     })
       .then((res) => {
-        logger("rydData", res.data);
         callback(res.data);
       })
       .catch((err) => {
-        logger("codeRun", err, true);
         callback(err);
       });
   },
@@ -71,11 +57,9 @@ const searchModule = {
       params: { videoID: id },
     })
       .then((res) => {
-        logger("sponsorBlock", res.data);
         callback(res.data);
       })
       .catch((err) => {
-        logger("codeRun", err, true);
         callback(err);
       });
   },
@@ -95,7 +79,6 @@ const innertubeModule = {
     if (!InnertubeAPI) {
       InnertubeAPI = await Innertube.createAsync(
         (message, isError, shortMessage) => {
-          logger(constants.LOGGER_NAMES.innertube, message, isError);
           if (shortMessage) {
             Toast.show({ text: shortMessage });
           }
@@ -109,7 +92,6 @@ const innertubeModule = {
     try {
       return await InnertubeAPI.VidInfoAsync(id);
     } catch (error) {
-      logger(constants.LOGGER_NAMES.watch, error, true);
     }
   },
 
@@ -132,7 +114,6 @@ const innertubeModule = {
       const response = await InnertubeAPI.getChannelAsync(url);
       return response.data;
     } catch (error) {
-      logger(constants.LOGGER_NAMES.channel, error, true);
     }
   },
 
@@ -197,7 +178,6 @@ const innertubeModule = {
       const response = await InnertubeAPI.getSearchAsync(query);
       return response.contents.sectionListRenderer;
     } catch (err) {
-      logger(constants.LOGGER_NAMES.search, err, true);
     }
   },
 
@@ -209,7 +189,5 @@ const innertubeModule = {
 //---   Start   ---//
 export default ({ app }, inject) => {
   inject("youtube", { ...searchModule, ...innertubeModule });
-  inject("logger", logger);
   inject("rendererUtils", rendererUtils);
 };
-logger(constants.LOGGER_NAMES.init, "Program Started");

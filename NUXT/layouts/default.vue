@@ -135,7 +135,6 @@ export default {
 
     // ---   External URL Handling   --- //
     CapacitorApp.addListener("appUrlOpen", (event) => {
-      this.$logger("ExternalURL", event.url);
       // We only push to the route if there is a url present
       const result = linkParser(event.url);
       if (result) this.$router.push(result.pathname + result.search);
@@ -191,11 +190,6 @@ export default {
 
     searchBtn(text) {
       const query = text;
-
-      this.$logger(
-        constants.LOGGER_NAMES.search,
-        "Query: " + query + " this.search: " + this.search
-      );
 
       if (this.search === true) {
         if (query) {

@@ -68,7 +68,7 @@ export default {
         .then((result) => {
           if (result) this.recommends = [result];
         })
-        .catch((error) => this.$logger("Home Page", error, true));
+        .catch(error => {});
     }
   },
 };

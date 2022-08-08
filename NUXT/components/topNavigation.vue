@@ -113,7 +113,7 @@ export default {
           console.log(result);
           if (result) this.$store.commit("updateRecommendedVideos", [result]);
         })
-        .catch((error) => this.$logger("Home Page (Nav Refresh)", error, true));
+        .catch(error => {});
     },
   },
 

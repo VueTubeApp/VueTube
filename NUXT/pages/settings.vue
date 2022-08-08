@@ -113,11 +113,6 @@ export default {
           to: "/mods/updates",
         },
         {
-          name: "Logs",
-          icon: "mdi-text-box-outline",
-          to: "/mods/logs",
-        },
-        {
           name: "About",
           icon: "mdi-information-outline",
           to: "/mods/about",

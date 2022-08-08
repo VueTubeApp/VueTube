@@ -25,15 +25,6 @@ module.exports = {
   URLS: url,
   YT_API_VALUES: ytApiVal,
   fs: filesystem,
-  LOGGER_NAMES: {
-    search: "Search",
-    autoComplete: "AutoComplete",
-    watch: "Watch",
-    recommendations: "Recommendations",
-    init: "Initialize",
-    innertube: "Innertube",
-    channel: "Channel",
-  },
 
   INNERTUBE_HEADER: (info) => {
     let headers = {

@@ -355,7 +355,6 @@ export default {
         this.interactions[0].value = result.metadata.likes.toLocaleString();
         this.loaded = true;
         this.recommends = result.renderedData.recommendations;
-        // .catch((error) => this.$logger("Watch", error, true));
         console.log("recommendations:", this.recommends);
 
         //---   API WatchTime call   ---//
