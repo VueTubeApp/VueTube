@@ -27,7 +27,7 @@ module.exports = {
     updates: "Actualizaciones",
     logs: "Registros",
     about: "Acerca de",
-    devmode: "Editor de registros",
+    devmode: "Modo de desarrollador",
   },
 
   mods: {
