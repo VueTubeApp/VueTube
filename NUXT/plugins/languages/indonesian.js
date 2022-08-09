@@ -27,7 +27,7 @@ module.exports = {
     updates: "Pembaruan",
     logs: "Log",
     about: "Tentang",
-    devmode: "Editor Registri",
+    devmode: "Mode pengembang",
   },
 
   mods: {
