@@ -7,7 +7,7 @@ module.exports = {
     library: "라이브러리",
     restart: "재시작",
     later: "나중에",
-    settingRestart: "이 설정을 수정하려면 응용 프로그램을 다시 시작해야 변경 사항이 적용됩니다."
+    settingRestart: "이 설정을 수정하려면 애플리케이션을 다시 시작해야 변경 사항이 적용됩니다."
   },
 
   index: {
@@ -26,7 +26,7 @@ module.exports = {
     updates: "업데이트",
     logs: "로그",
     about: "정보",
-    devmode: "레지스트리 편집기",
+    devmode: "개발자 모드",
   },
 
   mods: {
@@ -40,7 +40,7 @@ module.exports = {
       dark: "다크",
       black: "블랙",
       darkmode: "다크 모드",
-      darkmodetagline: "브라보 식스, 어둠속으로...",
+      darkmodetagline: "브라보 식스, 어둠 속으로...",
     },
     tweaks: {
       fullscreen: "전체 화면",
@@ -54,10 +54,23 @@ module.exports = {
       defaultpage: "시작 화면",
     },
     updates: {
-      install: "설치",
-      view: "보기",
-      latest: "최신",
-      installed: "설치됨",
+      updating: "업데이트 다운로드 중",
+      checking: "업데이트 확인 중",
+      available: "사용 가능한 업데이트가 있습니다",
+      noupdate: "사용 가능한 업데이트가 없습니다",
+      noupdatemessage: "VueTube의 최신 버전을 사용하고 있습니다. 나중에 다시 확인해주세요.",
+
+      installed: "설치된 버전",
+      latest: "최신 버전",
+
+      published: "게시 일자",
+      users: "사용자 수",
+      size: "업데이트 용량",
+
+      okay: "확인",
+      refresh: "새로고침",
+      update: "업데이트",
+      later: "나중에",
     },
     logs: {
       more: "더보기",
