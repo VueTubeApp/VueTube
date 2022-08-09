@@ -35,8 +35,25 @@ function module(subPack, listPacks) {
   const selectedLanguage = localStorage.getItem("language") || "english";
   const languagePack = packs[selectedLanguage];
 
+  //---   Send Full Language Pack   ---//
   if (!subPack) return languagePack;
-  return languagePack[subPack];
+  //---   Allow Subpack Fallback   ---//
+  let builtSubPack = new Object();
+  for (const i in packs.english[subPack]) {
+    const englishEntry = packs.english[subPack][i];
+    const entry = languagePack[subPack][i];
+
+    if (!entry) {
+      builtSubPack[i] = englishEntry;
+    } else {
+      builtSubPack[i] = entry;
+    }
+
+
+  }
+  //---   Return Built Subpack   ---//
+  console.log("RETURNING:",builtSubPack)
+  return builtSubPack;
 }
 
 export default ({ app }, inject) => {
