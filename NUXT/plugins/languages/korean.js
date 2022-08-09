@@ -26,7 +26,7 @@ module.exports = {
     updates: "업데이트",
     logs: "로그",
     about: "정보",
-    devmode: "레지스트리 편집기",
+    devmode: "개발자 모드",
   },
 
   mods: {
