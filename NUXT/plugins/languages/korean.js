@@ -54,10 +54,23 @@ module.exports = {
       defaultpage: "시작 화면",
     },
     updates: {
-      install: "설치",
-      view: "보기",
-      latest: "최신",
-      installed: "설치됨",
+      updating: "Downloading update",
+      checking: "Checking for updates",
+      available: "Update available",
+      noupdate: "No updates available",
+      noupdatemessage: "You're using the most recent version of VueTube. Check back later for updates.",
+
+      installed: "Installed Version",
+      latest: "Latest Version",
+
+      published: "Published",
+      users: "Users",
+      size: "Update Size",
+
+      okay: "Okay",
+      refresh: "Refresh",
+      update: "Update",
+      later: "Later",
     },
     logs: {
       more: "더보기",
