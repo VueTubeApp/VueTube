@@ -7,7 +7,7 @@ module.exports = {
     library: "라이브러리",
     restart: "재시작",
     later: "나중에",
-    settingRestart: "이 설정을 수정하려면 응용 프로그램을 다시 시작해야 변경 사항이 적용됩니다."
+    settingRestart: "이 설정을 수정하려면 애플리케이션을 다시 시작해야 변경 사항이 적용됩니다."
   },
 
   index: {
@@ -40,7 +40,7 @@ module.exports = {
       dark: "다크",
       black: "블랙",
       darkmode: "다크 모드",
-      darkmodetagline: "브라보 식스, 어둠속으로...",
+      darkmodetagline: "브라보 식스, 어둠 속으로...",
     },
     tweaks: {
       fullscreen: "전체 화면",
