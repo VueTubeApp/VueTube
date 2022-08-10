@@ -22,15 +22,20 @@ export default {
       humanDuration: 0,
     }
   },
+  methods: {
+    calcDuration() {
+      this.humanDuration = this.$vuetube.humanTime(this.duration);
+    }
+  },
   mounted() {
-    //---   Only set video duration when 'this.duration' becomes defined   ---//
+    //---   Only call 'calcDuration()' when 'this.duration' becomes defined   ---//
     const durationTimer = setInterval(() => {
       if (this.duration) {
-        this.humanDuration = this.$vuetube.humanTime(this.duration);
+        this.calcDuration();
         return clearInterval(durationTimer);
       }
     }, 100);
-    //---   END Only set video duration when 'this.duration' becomes defined   ---//
+    //---   END Only call 'calcDuration()' when 'this.duration' becomes defined   ---//
   }
 };
 </script>
