@@ -8,6 +8,7 @@ module.exports = {
     restart: "Uruchomić Ponownie?",
     later: "Nie Teraz",
     settingRestart: " Zmiana tego ustawienia wymaga ponownego uruchomienia aplikacji w celu zastosowania zmian."
+    okay: "Ok"
   },
 
   index: {
@@ -26,7 +27,7 @@ module.exports = {
     updates: "Aktualizacje",
     logs: "Logi",
     about: "Informacje",
-    devmode: "Edytor Rejestru",
+    devmode: "Opcje Programisty",
   },
 
   mods: {
@@ -54,10 +55,23 @@ module.exports = {
       defaultpage: "Strona Domyślna",
     },
     updates: {
-      install: "Instaluj",
-      view: "Zobacz",
-      latest: "Najnowsza",
+      updating: "Pobieranie aktualizacji",
+      checking: "Sprawdzam dostępność aktualizacji...",
+      available: "Aktualizacje dostępne",
+      noupdate: "Brak dostępnych aktualizacji",
+      noupdatemessage: "Korzystasz z najnowszej wersji VueTube. Spróbuj ponownie później.",
+
       installed: "Zainstalowana",
+      latest: "Najnowsza",
+
+      published: "Udostępniona",
+      users: "Użytkownicy",
+      size: "Rozmiar Aktualizacji",
+
+      okay: "Ok",
+      refresh: "Odśwież",
+      update: "Aktualizuj",
+      later: "Nie Teraz",
     },
     logs: {
       more: "Więcej",
