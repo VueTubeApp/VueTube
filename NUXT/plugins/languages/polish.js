@@ -5,7 +5,7 @@ module.exports = {
     home: "Główna",
     subscriptions: "Subskrypcje",
     library: "Biblioteka",
-    restart: "Uruchom Ponownie",
+    restart: "Uruchomić Ponownie?",
     later: "Nie Teraz",
     settingRestart: " Zmiana tego ustawienia wymaga ponownego uruchomienia aplikacji w celu zastosowania zmian."
   },
@@ -20,12 +20,12 @@ module.exports = {
     general: "Ogólne",
     theme: "Motyw",
     player: "Odtwarzacz",
-    uitweaker: "Dostosowanie Interfejsu",
+    uitweaker: "Interfejs",
     startupoptions: "Uruchamianie",
     plugins: "Rozszerzenia",
     updates: "Aktualizacje",
     logs: "Logi",
-    about: "O Aplikacji",
+    about: "Informacje",
     devmode: "Edytor Rejestru",
   },
 
@@ -46,8 +46,8 @@ module.exports = {
       fullscreen: "Pełny Ekran",
       navbarblur: "Rozmycie Paska Nawigacyjnego",
       roundedcorners: "Zaokrąglenie Krawędzi",
-      roundthumbnails: "Zaokrąglone Miniaturki",
-      roundwatchpagecomponents: "Zaokrąglenie Elementów Interfejsu",
+      roundthumbnails: "Zaokrąglone Miniaturki Filmów",
+      roundwatchpagecomponents: "Ogólne Zaokrąglenie Interfejsu",
       radius: "Promień",
     },
     startup: {
@@ -64,9 +64,9 @@ module.exports = {
     },
 
     about: {
-      appinformation: "Informacje o Aplikacji",
+      appinformation: "O Aplikacji",
       appversion: "Wersja Aplikacji",
-      deviceinformation: "Informacje o Urządzeniu",
+      deviceinformation: "O Urządzeniu",
       platform: "Platforma",
       os: "System Operacyjny",
       model: "Model",
@@ -81,14 +81,14 @@ module.exports = {
     welcome: "Witaj w VueTube",
     tagline: "Przyszłość Streamingu Wideo",
     next: "Dalej",
-    updated: "VueTube Został Zaktualizowany!",
+    updated: "Aplikacja Została Zaktualizowana!",
     awesome: "Świetnie!",
     langsetup: "Wybierzmy Język!",
     featuresetup: "Zobaczmy jakieś funkcje!",
     enableryd: "Włącz Return YouTube Dislike",
     enablespb: "Włącz SponsorBlocka",
     thanks: "Dziękujemy za korzystanie z VueTube",
-    enjoy: "Mamy nadzieję że korzystanie z aplikacji jest świetne",
+    enjoy: "Mamy nadzieję że korzystanie z aplikacji jest przyjemne",
     packageinstaller: "Wybierz zawartość do pobrania"
   },
 };
