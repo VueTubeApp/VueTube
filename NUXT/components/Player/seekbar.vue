@@ -46,7 +46,7 @@
             }"
           ></canvas>
           <div class="text-center pb-4" style="font-size: 0.8rem">
-            <b>{{ $vuetube.humanTime(value) }}</b>
+            <b v-if="seeking">{{ $vuetube.humanTime(value) }}</b>
           </div>
         </div>
       </template>

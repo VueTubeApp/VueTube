@@ -49,6 +49,7 @@ export default {
   watch: {
     controls(newVal) {
       if (newVal) { // controls are VISIBLE
+        this.updateWatchTime(); // Call to immediately update
         this.runWatchTimeUpdates = setInterval(this.updateWatchTime, 250);
       } else { // Controls are INVISIBLE
         clearInterval(this.runWatchTimeUpdates);
