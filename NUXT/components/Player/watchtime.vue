@@ -50,7 +50,7 @@ export default {
     controls(newVal) {
       if (newVal) { // controls are VISIBLE
         this.updateWatchTime(); // Call to immediately update
-        this.runWatchTimeUpdates = setInterval(this.updateWatchTime, 250);
+        this.runWatchTimeUpdates = setInterval(this.updateWatchTime, 500);
       } else { // Controls are INVISIBLE
         clearInterval(this.runWatchTimeUpdates);
       }
