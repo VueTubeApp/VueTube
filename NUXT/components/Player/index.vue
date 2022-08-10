@@ -237,6 +237,7 @@
           v-if="$refs.player"
           :current-time="$refs.player.currentTime"
           :duration="$refs.player.duration"
+          :controls="controls"
         />
         <v-spacer />
         <fullscreen

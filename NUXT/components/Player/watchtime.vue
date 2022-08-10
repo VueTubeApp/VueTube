@@ -1,6 +1,6 @@
 <template>
   <div style="color: #fff; font-size: 0.75rem">
-    {{ $vuetube.humanTime(currentTime) }}
+    {{ humanWatchTime }}
     <span style="color: #aaa"> / {{ humanDuration }} </span>
   </div>
 </template>
@@ -16,10 +16,17 @@ export default {
       type: Number,
       required: true,
     },
+    controls: {
+      type: Boolean,
+      required: true,
+    },
   },
   data() {
     return {
-      humanDuration: 0,
+      humanWatchTime: "0:00",
+      humanDuration: "0:00",
+
+      runWatchTimeUpdates: null
     }
   },
   mounted() {
@@ -31,6 +38,23 @@ export default {
       }
     }, 100);
     //---   END Only show end duration when 'this.duration' becomes defined   ---//
+  },
+
+  methods: {
+    updateWatchTime() {
+      this.humanWatchTime = this.$vuetube.humanTime(this.currentTime);
+    }
+  },
+
+  watch: {
+    controls(newVal) {
+      if (newVal) { // controls are VISIBLE
+        this.runWatchTimeUpdates = setInterval(this.updateWatchTime, 250);
+      } else { // Controls are INVISIBLE
+        clearInterval(this.runWatchTimeUpdates);
+      }
+    }
   }
+
 };
 </script>
