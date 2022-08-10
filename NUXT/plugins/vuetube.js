@@ -138,6 +138,7 @@ const module = {
     }
     // join the array into a string with : as a sepatrator
     let returntext = levels.join(":");
+    console.log(returntext);
     return returntext;
   },
   //---   End Convert Time To Human Readable String   ---//
