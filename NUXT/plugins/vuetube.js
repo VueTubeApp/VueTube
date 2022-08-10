@@ -130,11 +130,13 @@ const module = {
       Math.floor((((seconds % 31536000) % 86400) % 3600) / 60), //Minutes
       Math.floor((((seconds % 31536000) % 86400) % 3600) % 60), //Seconds
     ];
-    levels = levels.filter((level) => level !== null);
+    levels = levels.filter((level, levelIndex) => level !== null || (levelIndex > 0 && levels[levelIndex - 1]));
+
     for (let i = 1; i < levels.length; i++) {
+      if (!levels[i]) levels[i] = 0
       levels[i] = levels[i].toString().padStart(2, "0");
     }
-    // join the array into a string with : as a separator
+    // join the array into a string with : as a sepatrator
     let returntext = levels.join(":");
     return returntext;
   },
