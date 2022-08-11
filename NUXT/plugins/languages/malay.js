@@ -62,6 +62,10 @@ module.exports = {
       installed: "Versi Dipasang",
       latest: "Versi Terkini",
 
+      published: "Diterbitkan",
+      users: "Pengguna",
+      size: "Saiz kemaskini",
+
       okay: "OK",
       update: "Kemaskini",
       later: "Kemudian",
