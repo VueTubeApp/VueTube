@@ -27,43 +27,65 @@ Disebut View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 
 Baca ini dalam bahasa lain: [English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [Magyar,](readme.hu.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
 
-## Ciri-ciri
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_features.png"
+      height="30"
+      width="30">
+</sub>
+Ciri-ciri
+</h2>
 
 <img src="../resources/readme-ms/Features.ms.svg" alt="VueTube icon" height="100"/>
 
-- 🎨 **Tema:** Cerah, Gelap, OLED, dan semua warna pelangi!
-- 🖌️ **UI yang dibolehkan suaikan:** Sesuaikan tema ataupun nyahdayakan beberapa bahagian UI yang anda tidak gunakan.
-- ⬆️ **Kemaskini Auto:** Anda akan dimaklumkan apabila kemas kini tersedia & kembali ke versi lama jika anda tidak menyukainya!
-- 👁️ **Perlindungan Penjejak:** Tiada telemetri (maklumat peribadi) dihantar daripada peranti anda secara lalai. Privasi adalah penting!
-- 📺 **Pemain video yang boleh disesuaikan:** Pemain video yang diintegrasikan dalam aplikasi dengan semua yang anda perlukan untuk bergembira, seperti kelajuan 16x.
-- 👎 **Return YouTube Dislike:** [_Maklumat lanjut dalam Bahasa Inggeris_](https://returnyoutubedislike.com)
-- 💰 **SponsorBlock:** [_Maklumat lanjut dalam Bahasa Inggeris_](https://sponsor.ajay.app)
+- 🎨 **Tema:** Cerah, Gelap, OLED, dan semua warna pelangi! Tetapkan warna aksen dan latar belakang mengikut pilihan anda.
+- 🖌️ **UI yang diboleh suaikan:** Sesuaikan butang, sudut dan nyahdayakan beberapa bahagian UI yang anda tidak gunakan untuk mendapat pengalaman optimum.
+- ⬆️ **Kemaskini Auto:** Anda akan dimaklumkan apabila kemas kini tersedia, muat turun melalui aplikasi dan kembali ke versi lama jika anda tidak menyukainya!
+- 👁️ **Perlindungan Penjejak:** Tiada telemetri (maklumat peribadi) dihantar daripada peranti anda secara lalai dan kami tidak menggunakan API luaran. Privasi adalah satu keperluan!
+- 📺 **Pemain video tersuai:** Pemain video yang diintegrasikan dalam aplikasi dengan semua yang anda perlukan untuk bergembira, seperti kelajuan 16x.
+- 🌍 **Terjemahan:** Aplikasi ini tersedia dalam lebih daripada 25 bahasa! Bahasa aplikasi ditentukan berdasarkan konfigurasi peranti anda.
+- 👎 **Return YouTube Dislike:** - Hidupkan semula *dislike counter* (kiraan tidak suka) dalam video. [_Maklumat lanjut dalam Bahasa Inggeris_](https://returnyoutubedislike.com)
+- 💰 **SponsorBlock:** - Langkau penaja dan segmen yang menjengkelkan dalam video secara automatik. [_Maklumat lanjut dalam Bahasa Inggeris_](https://sponsor.ajay.app)
 
-## Pasang
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_install.png"
+      height="30"
+      width="30">
+</sub>
+Pasang
+</h2>
 
 <img src="../resources/readme-ms/Install.ms.svg" alt="VueTube icon" height="100"/>
 
 Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 <details>
-  <summary>Atau klik di sini untuk memaparkan semua versi yang tersedia</summary>
+  <summary> 🖱️Klik di sini untuk menunjukkan semua versi </summary>
 <br />
 
 ### Android
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                            | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                                                      | Tidak tersedia lagi                                                                             |
+| Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                            | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                                                      | Belum tersedia lagi                                                                             |
 
 ### iOS
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                        | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                                                                     | Tidak tersedia lagi                                                                             |
+| Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                        | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                                                                     | Belum tersedia lagi                                                                             |
 
 </details>
 
-## Pelan
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_plans.png"
+      height="30"
+      width="30">
+</sub>
+Pelan
+</h2>
 
 <img src="../resources/readme-ms/Plans.ms.svg" alt="VueTube icon" height="100"/>
 
@@ -75,12 +97,14 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 - 🧩 **Pemalam (Plugin):** Pasang pemalam pihak ketiga yang dibuat oleh komuniti dengan ciri-ciri yang berguna!
 - Dan lebih lagi!
 
+Anda boleh mencadangkan fungsi baru dengan membuka isu fungsi baru dalam repositori ini.
+
 ## Tangkapan skrin
 
-[Lihat ia pada laman sesawang kami](www.vuetube.app/info/screenshots)
+[Lihat ia pada laman sesawang kami](www.vuetube.app/info/screenshots) atau klik di bawah untuk menunjukkannya
 
 <details>
-  <summary> Atau klik sini untuk tunjukkan tangkapan skrin </summary>
+  <summary> 🖱️Klik di sini untuk menunjukkan tangkapan skrin </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -92,7 +116,7 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 ## Kemajuan
 
 <details>
-  <summary> Klik sini untuk tunjukkan kemajuan pembangunan apl VueTube </summary>
+  <summary> 🖱️ Klik di sini untuk tunjukkan kemajuan </summary>
 
  <br>
  
@@ -126,23 +150,24 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 <a href="https://capacitorjs.com/solution/vue"><img src="https://cdn.discordapp.com/attachments/953538236716814356/955694368742834176/Capacitator-Dark.svg" height=40/></a> <a href="https://vuetifyjs.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/973719873467342908/Vuetify-Dark.svg" height=40/></a> <a href="https://nuxtjs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/NuxtJS-Dark.svg" height=40/></a> <a href="https://vuejs.org/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/VueJS-Dark.svg" height=40/></a> <a href="https://javascript.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/JavaScript.svg" height=40/></a> <a href="https://java.com/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Java-Dark.svg" height=40/></a> <a href="https://gradle.com/"><img src="https://cdn.discordapp.com/attachments/810799100940255260/955691550560636958/Gradle.svg" height=40/></a> <a href="https://developer.apple.com/swift/"><img src="https://github.com/tandpfun/skill-icons/raw/main/icons/Swift.svg" height=40/></a>
 
-### Kenapa saya melakukan ini?
+### Mengapa kami melakukan ini?
 
-Idea ini telah dilontarkan pada pelayan Discord Return YouTube Dislike untuk sekian lama, jadi saya fikir saya mungkin perlu mencubanya!
+VueTube dibuat dengan tujuan untuk menyediakan sebuah alternatif yang percuma, sumber terbuka dan merentas platform kepada **_Big Tech_**, dengan pilihan yang dibolehsuaikan dan log masuk tersedia. Projek ini telah berkembang dan menarik perhatian ribuan pengguna dan penyumbang dari seluruh dunia. Anda boleh sertai kami dan menyumbang kepada projek ini dalam apa-apa cara...
 
 ### Berminat untuk menyumbang?
 
-Sila baca di laman sesawang kami tentang bagaimana untuk melakukannya: www.vuetube.app/contributing
+Terima kasih kerana berminat untuk menyumbang! Sila baca di laman sesawang kami untuk mengetahui bagaimana anda boleh melakukannya:
+[vuetube.app/contributing](https://www.vuetube.app/contributing)
 
-Sekiranya anda mahu menterjemahkan aplikasi ini, klik di [sini](https://github.com/VueTubeApp/VueTube/blob/main/NUXT/plugins/languages) dan baca bagaimana untuk melakukannya.
+Sekiranya anda mahu menterjemahkan aplikasi ini, [klik di sini](/NUXT/plugins/languages) dan baca arahan. Jika GitHub itu sukar atau anda tidak selesa menggunakannya, anda boleh hantarkan medan yang diterjemahkan dalam satu fail teks pada [pelayan Discord](https://vuetube.app/discord) kami dan kami akan melaksanakannya. Jangan bimbang!
 
-## Penyumbang
+## Penyumbang GitHub
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
 </a>
 
-<sub>Dibuat dengan [contrib.rocks](https://contrib.rocks). </sub>
+<sub>Papan pemuka dibuat secara automatik dengan [contrib.rocks](https://contrib.rocks). </sub>
 
 ## Penghargaan
 
@@ -153,7 +178,7 @@ Sekiranya anda mahu menterjemahkan aplikasi ini, klik di [sini](https://github.c
 
 ## Derma
 
-VueTube adalah dan sentiasa akan percuma dan sumber terbuka, tetapi anda boleh menyokong pembangun kami dengan derma yang akan membantu untuk mengekalkan projek ini.
+VueTube adalah dan sentiasa akan percuma dan sumber terbuka, tetapi anda boleh menyokong pembangun kami dengan derma yang akan membantu untuk mmengekalkan projek ini dan membangunkan ciri-ciri baru. Sebarang jenis pertolongan adalah sangat dialu-alukan! Berikut adalah pilihan memderma yang tersedia:
 
 [Derma di Ko-Fi.com](https://ko-fi.com/vuetube) (Rasmi)
 
@@ -164,3 +189,9 @@ VueTube adalah dan sentiasa akan percuma dan sumber terbuka, tetapi anda boleh m
 Projek VueTube dan kandungannya tidak bergabung dengan, dibiayai, diberi izin, disokong oleh, atau dalam apa jua cara dikaitkan dengan YouTube, Google LLC atau mana-mana sekutu dan anak syarikatnya. Laman web rasmi YouTube boleh didapati di [www.youtube.com](https://www.youtube.com).
 
 Sebarang tanda dagangan, tanda perkhidmatan, nama dagangan atau hak harta intelek lain yang digunakan dalam projek VueTube dimiliki oleh pemilik masing-masing.
+
+<hr>
+
+<p align="center">
+<sub>VueTube, membuat semua orang gembira dan menginspirasikan hati mereka sejak 2022.</sub>
+</p>
