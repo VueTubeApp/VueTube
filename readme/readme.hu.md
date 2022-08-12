@@ -36,7 +36,7 @@ Kiejtése View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 Funkciók
 </h2>
 
-<img src="./resources/readme-hu/Features.hu.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-hu/Features.hu.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 **Témák:** Világos, sötét, OLED és az összes színe a szivárványnak! Állítsa be az árnyalatot és a háttérszínt ízlésének megfelelően.
 - 🖌️ **Testreszabható UI:** Gombok testreszabása, sarkok és kapcsolja ki a felhasználói felület azon részeit, amelyeket nem használ az optimális élmény érdekében.
@@ -56,7 +56,7 @@ Funkciók
 Letöltés
 </h2>
 
-<img src="./resources/readme-hu/Install.hu.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-hu/Install.hu.svg" alt="VueTube icon" height="100"/>
 
 Az alkalmazás telepítéséhez látogasson el erre az oldalra [vuetube.app/install](https://www.vuetube.app/install) vagy nézze meg lent az összes elérhető verziót :
 
@@ -87,7 +87,7 @@ Az alkalmazás telepítéséhez látogasson el erre az oldalra [vuetube.app/inst
 Tervek
 </h2>
 
-<img src="./resources/readme-hu/Plans.hu.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-hu/Plans.hu.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 **Részletes keresés:** Az keresési eredményeket dátum, időtartalom, kedvelések vagy bármely más tényező szerint rendezheti.
 - 🗞️ **Lokális megtekintési előzmények:** Megtekintheti az utoljára megtekintett videóit egy fiokba való bejelentkezés nélkül.
