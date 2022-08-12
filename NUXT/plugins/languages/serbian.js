@@ -8,7 +8,7 @@ module.exports = {
     restart: "Restart",
     later: "Kasnije",
     settingRestart: "Izmena ovog podešavanja zahteva ponovo pokretanje aplikacije kako bi promene bile sačuvane.",
-    okay: "Ok"
+    okay: "Ok",
   },
 
   index: {
@@ -102,6 +102,6 @@ module.exports = {
     enablespb: "Uključi SponsorBlock",
     thanks: "Hvala što koristiš VueTube",
     enjoy: "Nadamo se da ćeš imati neverovatno iskustvo",
-    packageinstaller: "Izaberite paket za preuzimanje"
+    packageinstaller: "Izaberite paket za preuzimanje",
   },
 };
