@@ -59,7 +59,7 @@ module.exports = {
       checking: "Provera novije verzije",
       available: "Dostupna je nova verzija",
       noupdate: "Nema novih ažuriranja",
-      noupdatemessage: "Koristite najnoviju verziju. Proverite ponovo kosnije",
+      noupdatemessage: "Koristite najnoviju verziju. Proverite ponovo kasnije",
 
       installed: "Instalirana verzija",
       latest: "Najnovija verzija",
