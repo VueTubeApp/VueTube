@@ -7,7 +7,7 @@ module.exports = {
     library: "Biblioteka",
     restart: "Uruchomić Ponownie?",
     later: "Nie Teraz",
-    settingRestart: " Zmiana tego ustawienia wymaga ponownego uruchomienia aplikacji w celu zastosowania zmian."
+    settingRestart: " Zmiana tego ustawienia wymaga ponownego uruchomienia aplikacji w celu zastosowania zmian.",
     okay: "Ok"
   },
 
