@@ -29,7 +29,7 @@ Baca ini dalam bahasa lain: [English,](/readme.md) [EspaÃ±ol,](readme.es.md) [ç®
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_features.png"
+<img  src="../resources/readme_icon_features.png"
       height="30"
       width="30">
 </sub>
@@ -49,7 +49,7 @@ Ciri-ciri
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_install.png"
+<img  src="../resources/readme_icon_install.png"
       height="30"
       width="30">
 </sub>
@@ -80,7 +80,7 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_plans.png"
+<img  src="../resources/readme_icon_plans.png"
       height="30"
       width="30">
 </sub>
