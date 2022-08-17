@@ -4,7 +4,7 @@
     
     <div v-if="status == 'checking'">
       <h1>{{ lang.checking }}</h1>
-      <div>{{ lang.installed }}: {{ installedVersion }}</div>
+      <div>{{ lang.installed }}: {{ version.substring(0, 7) || "Unknown" }}  ({{ release }})</div>
       <center>
         <v-progress-circular indeterminate color="primary" size="75" style="padding-top: 10em;" />
       </center>
@@ -22,7 +22,7 @@
     <div v-if="status == 'available'">
       <h1 v-if="!downloading">{{ lang.available }}</h1>
       <h1 v-if="downloading">{{ lang.updating }}</h1>
-      <div>{{ lang.installed }}: {{ installedVersion }}</div>
+      <div>{{ lang.installed }}: {{ version.substring(0, 7) || "Unknown" }}  ({{ release }})</div>
       <div>{{ lang.latest }}: {{ latestVersion.tag_name }}</div>
 
       <div style="margin-top: 1em; color: #999;">
