@@ -7,8 +7,9 @@ module.exports = {
     library: "Library",
     restart: "Restart",
     later: "Later",
-    settingRestart: "Modifying this setting requires the app to restart for the changes to be applied.",
-    okay: "Okay"
+    settingRestart:
+      "Modifying this setting requires the app to restart for the changes to be applied.",
+    okay: "Okay",
   },
 
   index: {
@@ -59,7 +60,8 @@ module.exports = {
       checking: "Checking for updates",
       available: "Update available",
       noupdate: "No updates available",
-      noupdatemessage: "You're using the most recent version of VueTube. Check back later for updates.",
+      noupdatemessage:
+        "You're using the most recent version of VueTube. Check back later for updates.",
 
       installed: "Installed Version",
       latest: "Latest Version",
@@ -102,6 +104,6 @@ module.exports = {
     enablespb: "Enable SponsorBlock",
     thanks: "Thanks for Using VueTube",
     enjoy: "We hope you have an amazing experience",
-    packageinstaller: "Select a Package to Download"
+    packageinstaller: "Select a Package to Download",
   },
 };
