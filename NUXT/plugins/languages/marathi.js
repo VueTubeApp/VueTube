@@ -40,7 +40,7 @@ module.exports = {
       adaptive: "अनुकूली",
       custom: "कस्टम",
       dark: "डार्क",
-      black: "काला",
+      black: "काळा",
       darkmode: "डार्क मोड",
       darkmodetagline: "ब्रावो सिक्स, गोइंग डार्क।",
     },
@@ -63,7 +63,7 @@ module.exports = {
       noupdatemessage:
         "तुम्ही VueTube ची नवीनतम आवृत्ती वापरत आहात. अपडेटसाठी नंतर परत तपासा.",
 
-      installed: "इइन्स्टॉल केलेली आवृत्ती",
+      installed: "इंस्टॉल केलेली आवृत्ती",
       latest: "नवीनतम आवृत्ती",
 
       okay: "ठीक आहे",
