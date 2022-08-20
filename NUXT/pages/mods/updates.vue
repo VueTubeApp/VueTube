@@ -27,7 +27,13 @@
       <p>{{ lang.noupdatemessage }}</p>
       <div class="bottom">
         <v-btn rounded @click="getLatest">{{ lang.refresh }}</v-btn>
-        <v-btn rounded color="primary" @click="$router.go(-1)">
+        <v-btn
+          rounded
+          depressed
+          color="primary"
+          class="background--text"
+          @click="$router.go(-1)"
+        >
           {{ lang.okay }}
         </v-btn>
       </div>
@@ -82,9 +88,8 @@
         <v-btn
           rounded
           depressed
-          class="ml-2"
+          class="background--text ml-2"
           color="primary"
-          :class="$vuetify.theme.dark ? 'background--text' : 'white--text'"
           @click="install()"
         >
           {{ lang.update }}
