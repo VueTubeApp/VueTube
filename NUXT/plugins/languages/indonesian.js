@@ -25,7 +25,7 @@ module.exports = {
     startupoptions: "Opsi Startup",
     plugins: "Plugin",
     updates: "Pembaruan",
-    logs: "Log",
+    logs: "Catatan",
     about: "Tentang",
     devmode: "Mode pengembang",
   },
@@ -37,7 +37,7 @@ module.exports = {
     theme: {
       normal: "Normal",
       adaptive: "Adaptif",
-      custom: "Custom",
+      custom: "Kustom",
       dark: "Gelap",
       black: "Hitam",
       darkmode: "Mode Gelap",
