@@ -7,8 +7,10 @@
     <div v-if="status == 'checking'">
       <h1>{{ lang.checking }}</h1>
       <div>
-        {{ lang.installed }}: {{ version.substring(0, 7) || "Unknown" }}
-        {{ release }}
+        {{ lang.installed }}:
+        {{ installedVersion.substring(0, 7) || "Unknown" }}
+        <!-- (release) -->
+        ({{ latestVersion.tag_name }})
       </div>
       <center>
         <v-progress-circular
@@ -35,8 +37,10 @@
       <h1 v-if="!downloading">{{ lang.available }}</h1>
       <h1 v-if="downloading">{{ lang.updating }}</h1>
       <div>
-        {{ lang.installed }}: {{ version.substring(0, 7) || "Unknown" }}
-        {{ release }}
+        {{ lang.installed }}:
+        {{ installedVersion.substring(0, 7) || "Unknown" }}
+        <!-- (release) -->
+        ({{ latestVersion.tag_name }})
       </div>
       <div>{{ lang.latest }}: {{ latestVersion.tag_name }}</div>
 
@@ -65,11 +69,22 @@
       />
 
       <div v-if="!downloading" class="bottom">
-        <v-btn rounded @click="$router.go(-1)">{{ lang.later }}</v-btn>
         <v-btn
           rounded
+          depressed
+          :class="
+            $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
+          "
+          @click="$router.go(-1)"
+        >
+          {{ lang.later }}
+        </v-btn>
+        <v-btn
+          rounded
+          depressed
+          class="ml-2"
           color="primary"
-          :dark="!$vuetify.theme.dark"
+          :class="$vuetify.theme.dark ? 'background--text' : 'white--text'"
           @click="install()"
         >
           {{ lang.update }}
