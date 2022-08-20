@@ -12,6 +12,7 @@ const packs = {
   "french-fr": require("./languages/french-fr"),
   german: require("./languages/german"),
   hindi: require("./languages/hindi"),
+  marathi: require("./languages/marathi"),
   hungarian: require("./languages/hungarian"),
   indonesian: require("./languages/indonesian"),
   italian: require("./languages/italian"),
