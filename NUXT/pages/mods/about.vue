@@ -22,10 +22,13 @@
       "
       :style="{ borderRadius: `${roundTweak / 2}rem` }"
     >
-      <v-card-title><v-icon style="margin-right: 0.5em;">mdi-cog-box</v-icon>{{ lang.appinformation }}</v-card-title>
+      <v-card-title>
+        <v-icon style="margin-right: 0.5em">mdi-cog-box</v-icon>
+        {{ lang.appinformation }}
+      </v-card-title>
       <v-card-text>
         <h3>{{ lang.appversion }}</h3>
-        {{ version.substring(0, 7) || "Unknown" }}  ({{ release }})
+        {{ version.substring(0, 7) || "Unknown" }} ({{ release }})
       </v-card-text>
     </v-card>
     <!--   End App Information   -->
@@ -39,7 +42,10 @@
       "
       :style="{ borderRadius: `${roundTweak / 2}rem` }"
     >
-      <v-card-title><v-icon style="margin-right: 0.5em;">mdi-cellphone-information</v-icon>{{ lang.deviceinformation }}</v-card-title>
+      <v-card-title
+        ><v-icon style="margin-right: 0.5em">mdi-cellphone-information</v-icon
+        >{{ lang.deviceinformation }}</v-card-title
+      >
       <v-card-text>
         <h3>{{ lang.platform }}</h3>
         {{ deviceInfo.platform || "Unknown" }}<br />
