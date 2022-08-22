@@ -99,8 +99,8 @@ import { Device } from "@capacitor/device";
 export default {
   data() {
     return {
-      version: process.env.appVersion,
-      release: process.env.release,
+      version: process.env.version,
+      release: process.env.channel,
       deviceInfo: "",
       lang: {},
     };

@@ -92,7 +92,7 @@ export default {
       this.stage++;
 
       if (!this.$refs["stage" + this.stage]) {
-        localStorage.setItem("lastRunVersion", process.env.appVersion);
+        localStorage.setItem("lastRunVersion", process.env.version);
         localStorage.setItem("firstTimeSetupComplete", true);
         this.$router.replace("/");
       }

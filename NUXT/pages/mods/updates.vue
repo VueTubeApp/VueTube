@@ -9,8 +9,7 @@
       <div>
         {{ lang.installed }}:
         {{ installedVersion.substring(0, 7) || "Unknown" }}
-        <!-- (release) -->
-        ({{ latestVersion.tag_name }})
+        ({{ installedChannel }})
       </div>
       <center>
         <v-progress-circular
@@ -45,8 +44,7 @@
       <div>
         {{ lang.installed }}:
         {{ installedVersion.substring(0, 7) || "Unknown" }}
-        <!-- (release) -->
-        ({{ latestVersion.tag_name }})
+        ({{ installedChannel }})
       </div>
       <div>{{ lang.latest }}: {{ latestVersion.tag_name }}</div>
 
@@ -106,7 +104,8 @@ export default {
   layout: "empty",
   data() {
     return {
-      installedVersion: process.env.appVersion,
+      installedVersion: process.env.version,
+      installedChannel: process.env.channel,
       latestVersion: "",
       lang: {},
       status: "checking",

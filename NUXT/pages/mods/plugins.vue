@@ -42,7 +42,7 @@ export default {
   data() {
     return {
       plugins: [],
-      installedVersion: process.env.appVersion,
+      installedVersion: process.env.version,
     };
   },
   async mounted() {

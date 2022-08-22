@@ -30,7 +30,7 @@ export default {
     await this.theming();
 
     //---   Update Screen   ---//
-    if ( (localStorage.getItem("lastRunVersion") != null) && (localStorage.getItem("lastRunVersion") != process.env.appVersion) ) return this.$router.replace("/activities/update");
+    if ( (localStorage.getItem("lastRunVersion") != null) && (localStorage.getItem("lastRunVersion") != process.env.version) ) return this.$router.replace("/activities/update");
 
     //---   Start Innertube Connection   ---//
     await this.$youtube.getAPI();
