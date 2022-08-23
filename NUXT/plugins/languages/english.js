@@ -102,7 +102,7 @@ module.exports = {
       confirmdelete: "Confirm delete",
       areyousure: "Are you sure that you want to delete",
       delete: "Delete",
-      change: "Change"
+      change: "Change",
     },
   },
 
