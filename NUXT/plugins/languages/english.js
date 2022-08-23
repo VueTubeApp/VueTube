@@ -90,6 +90,20 @@ module.exports = {
       github: "GitHub",
       discord: "Discord",
     },
+    developer: {
+      registryeditor: "Registry editor",
+      registrywarning: "CHANGING ENTRIES MAY CAUSE YOUR APP TO BREAK!",
+      createentry: "Create entry",
+      createentryfull: "Create registry entry",
+      cancel: "Cancel",
+      create: "Create",
+      key: "Key",
+      value: "Value",
+      confirmdelete: "Confirm delete",
+      areyousure: "Are you sure that you want to delete",
+      delete: "Delete",
+      change: "Change"
+    },
   },
 
   events: {
