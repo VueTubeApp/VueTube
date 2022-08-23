@@ -89,6 +89,20 @@ module.exports = {
       github: "GitHub",
       discord: "Discord",
     },
+    developer: {
+      registryeditor: "Editor del registro",
+      registrywarning: "¡CAMBIAR ENTRADAS PODRÍA ROMPER LA APLICACIÓN!",
+      createentry: "Crear entrada",
+      createentryfull: "Crear entrada del registro",
+      cancel: "Cancelar",
+      create: "Crear",
+      key: "Clave",
+      value: "Valor",
+      confirmdelete: "Confirmar borrado",
+      areyousure: "¿Estás seguro de que quieres eliminar",
+      delete: "Borrar",
+      change: "Cambiar",
+    },
   },
 
   events: {
