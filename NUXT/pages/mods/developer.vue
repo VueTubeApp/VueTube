@@ -120,7 +120,11 @@
 </template>
 
 <script>
+import language from "~/components/Settings/language.vue";
 export default {
+  components: {
+    language,
+  },
   computed: {
     roundTweak() {
       return this.$store.state.tweaks.roundTweak;
@@ -129,6 +133,7 @@ export default {
 
   data() {
     return {
+      lang: { mods: { general: { language: "" } } },
       keys: [],
 
       selectedKey: null,
@@ -140,6 +145,8 @@ export default {
   },
   mounted() {
     this.syncRegistry();
+    const lang = this.$lang();
+    this.lang = lang.mods.general;
   },
 
   methods: {
