@@ -2,9 +2,9 @@
   <div>
     <!--   Top Notice   -->
     <center style="margin: 2em">
-      <h1>Registry Editor</h1>
+      <h1>{{ lang.registryeditor }}</h1>
       <v-alert text outlined type="warning">
-        CHANGING ENTRIES MAY CAUSE YOUR APP TO BREAK!
+        {{ lang.registrywarning }}
       </v-alert>
     </center>
 
@@ -18,7 +18,7 @@
         "
       >
         <v-icon style="margin-right: 0.25em">mdi-plus</v-icon>
-        Create Entry
+        {{ lang.createentry }}
       </v-btn>
     </center>
 
@@ -53,18 +53,18 @@
           $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
         "
       >
-        <v-card-title class="text-h5">Confirm Delete</v-card-title>
+        <v-card-title class="text-h5">{{ lang.confirmdelete }}</v-card-title>
         <v-card-text
-          >Are you sure that you want to delete
+          >{{ lang.areyousure }}
           <span class="highlight" v-text="selectedKey" />?</v-card-text
         >
         <v-divider />
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="primary" text @click="deleteDialog = false"
-            >Cancel</v-btn
+            >{{ lang.cancel }}</v-btn
           >
-          <v-btn color="primary" text @click="deleteKey()">Delete</v-btn>
+          <v-btn color="primary" text @click="deleteKey()">{{ lang.delete }}</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -84,8 +84,8 @@
         <v-divider />
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="editDialog = false">Cancel</v-btn>
-          <v-btn color="primary" text @click="updateKey()">Change</v-btn>
+          <v-btn color="primary" text @click="editDialog = false">{{ lang.cancel }}</v-btn>
+          <v-btn color="primary" text @click="updateKey()">{{ lang.change }}</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -98,12 +98,12 @@
           $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
         "
       >
-        <v-card-title class="text-h5">Create Registry Entry</v-card-title>
+        <v-card-title class="text-h5">{{ lang.createentryfull }}</v-card-title>
         <v-card-text>
-          <v-text-field v-model="selectedKey" label="Key" solo />
+          <v-text-field v-model="selectedKey" label="{{ lang.key }}" solo />
           <v-text-field
             v-model="selectedKeyData"
-            label="Value"
+            label="{{ lang.value }}"
             solo
             style="margin-bottom: -2em"
           />
@@ -111,8 +111,8 @@
         <v-divider />
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="addDialog = false">Cancel</v-btn>
-          <v-btn color="primary" text @click="createKey()">Create</v-btn>
+          <v-btn color="primary" text @click="addDialog = false">{{ lang.cancel }}</v-btn>
+          <v-btn color="primary" text @click="createKey()">{{ lang.create }}</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
