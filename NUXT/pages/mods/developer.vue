@@ -122,9 +122,6 @@
 <script>
 import language from "~/components/Settings/language.vue";
 export default {
-  components: {
-    language,
-  },
   computed: {
     roundTweak() {
       return this.$store.state.tweaks.roundTweak;
