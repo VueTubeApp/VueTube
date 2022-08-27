@@ -29,14 +29,14 @@ Baca ini dalam bahasa lain: [English,](/readme.md) [Español,](readme.es.md) [�
 
 <h2 align="left">
 <sub>
-<img  src="./resources/readme_icon_features.png"
+<img  src="/resources/readme_icon_features.png"
       height="30"
       width="30">
 </sub>
 Ciri-ciri
 </h2>
 
-<img src="./resources/readme-ms/Features.ms.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ms/Features.ms.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 **Tema:** Cerah, Gelap, OLED, dan semua warna pelangi! Tetapkan warna aksen dan latar belakang mengikut pilihan anda.
 - 🖌️ **UI yang diboleh suaikan:** Sesuaikan butang, sudut dan nyahdayakan beberapa bahagian UI yang anda tidak gunakan untuk mendapat pengalaman optimum.
@@ -49,14 +49,14 @@ Ciri-ciri
 
 <h2 align="left">
 <sub>
-<img  src="./resources/readme_icon_install.png"
+<img  src="/resources/readme_icon_install.png"
       height="30"
       width="30">
 </sub>
 Pasang
 </h2>
 
-<img src="./resources/readme-ms/Install.ms.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ms/Install.ms.svg" alt="VueTube icon" height="100"/>
 
 Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
@@ -80,14 +80,14 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 <h2 align="left">
 <sub>
-<img  src="../resources/readme_icon_plans.png"
+<img  src="/resources/readme_icon_plans.png"
       height="30"
       width="30">
 </sub>
 Pelan
 </h2>
 
-<img src="./resources/readme-ms/Plans.ms.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ms/Plans.ms.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 **Carian lanjutan:** Susun hasil mengikut tarikh, tempoh, suka atau apa-apa faktor lain.
 - 🗞️ **Sejarah tontonan tempatan:** Dapatkan semula video tontonan terakhir anda tanpa log masuk.
