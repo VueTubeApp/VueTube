@@ -20,18 +20,16 @@ export default {
   components: {
     language,
   },
+  data() {
+    return {
+      lang: {},
+    };
+  },
   computed: {
     roundTweak() {
       return this.$store.state.tweaks.roundTweak;
     },
   },
-
-  data() {
-    return {
-      lang: { mods: { general: { language: "" } } },
-    };
-  },
-
   mounted() {
     const lang = this.$lang();
     this.lang = lang.mods.general;

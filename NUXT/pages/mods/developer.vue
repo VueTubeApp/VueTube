@@ -61,10 +61,12 @@
         <v-divider />
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="deleteDialog = false"
-            >{{ lang.cancel }}</v-btn
-          >
-          <v-btn color="primary" text @click="deleteKey()">{{ lang.delete }}</v-btn>
+          <v-btn color="primary" text @click="deleteDialog = false">
+            {{ lang.cancel }}
+          </v-btn>
+          <v-btn color="primary" text @click="deleteKey()">
+            {{ lang.delete }}
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -84,8 +86,12 @@
         <v-divider />
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="editDialog = false">{{ lang.cancel }}</v-btn>
-          <v-btn color="primary" text @click="updateKey()">{{ lang.change }}</v-btn>
+          <v-btn color="primary" text @click="editDialog = false">
+            {{ lang.cancel }}
+          </v-btn>
+          <v-btn color="primary" text @click="updateKey()">
+            {{ lang.change }}
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -111,8 +117,12 @@
         <v-divider />
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="addDialog = false">{{ lang.cancel }}</v-btn>
-          <v-btn color="primary" text @click="createKey()">{{ lang.create }}</v-btn>
+          <v-btn color="primary" text @click="addDialog = false">
+            {{ lang.cancel }}
+          </v-btn>
+          <v-btn color="primary" text @click="createKey()">
+            {{ lang.create }}
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -120,17 +130,10 @@
 </template>
 
 <script>
-import language from "~/components/Settings/language.vue";
 export default {
-  computed: {
-    roundTweak() {
-      return this.$store.state.tweaks.roundTweak;
-    },
-  },
-
   data() {
     return {
-      lang: { mods: { general: { language: "" } } },
+      lang: {},
       keys: [],
 
       selectedKey: null,
@@ -140,10 +143,15 @@ export default {
       addDialog: false,
     };
   },
+  computed: {
+    roundTweak() {
+      return this.$store.state.tweaks.roundTweak;
+    },
+  },
   mounted() {
     this.syncRegistry();
     const lang = this.$lang();
-    this.lang = lang.mods.general;
+    this.lang = lang.mods.developer;
   },
 
   methods: {
