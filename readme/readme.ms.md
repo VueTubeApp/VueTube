@@ -29,14 +29,14 @@ Baca ini dalam bahasa lain: [English,](/readme.md) [Español,](readme.es.md) [�
 
 <h2 align="left">
 <sub>
-<img  src="../resources/readme_icon_features.png"
+<img  src="/resources/readme_icon_features.png"
       height="30"
       width="30">
 </sub>
 Ciri-ciri
 </h2>
 
-<img src="../resources/readme-ms/Features.ms.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ms/Features.ms.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 **Tema:** Cerah, Gelap, OLED, dan semua warna pelangi! Tetapkan warna aksen dan latar belakang mengikut pilihan anda.
 - 🖌️ **UI yang diboleh suaikan:** Sesuaikan butang, sudut dan nyahdayakan beberapa bahagian UI yang anda tidak gunakan untuk mendapat pengalaman optimum.
@@ -49,14 +49,14 @@ Ciri-ciri
 
 <h2 align="left">
 <sub>
-<img  src="../resources/readme_icon_install.png"
+<img  src="/resources/readme_icon_install.png"
       height="30"
       width="30">
 </sub>
 Pasang
 </h2>
 
-<img src="../resources/readme-ms/Install.ms.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ms/Install.ms.svg" alt="VueTube icon" height="100"/>
 
 Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
@@ -66,13 +66,13 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 ### Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                            | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                                                      | Belum tersedia lagi                                                                             |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                        | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                                                                     | Belum tersedia lagi                                                                             |
 
@@ -80,14 +80,14 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 <h2 align="left">
 <sub>
-<img  src="../resources/readme_icon_plans.png"
+<img  src="/resources/readme_icon_plans.png"
       height="30"
       width="30">
 </sub>
 Pelan
 </h2>
 
-<img src="../resources/readme-ms/Plans.ms.svg" alt="VueTube icon" height="100"/>
+<img src="/resources/readme-ms/Plans.ms.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 **Carian lanjutan:** Susun hasil mengikut tarikh, tempoh, suka atau apa-apa faktor lain.
 - 🗞️ **Sejarah tontonan tempatan:** Dapatkan semula video tontonan terakhir anda tanpa log masuk.
@@ -156,8 +156,7 @@ VueTube dibuat dengan tujuan untuk menyediakan sebuah alternatif yang percuma, s
 
 ### Berminat untuk menyumbang?
 
-Terima kasih kerana berminat untuk menyumbang! Sila baca di laman sesawang kami untuk mengetahui bagaimana anda boleh melakukannya:
-[vuetube.app/contributing](https://www.vuetube.app/contributing)
+Terima kasih kerana berminat untuk menyumbang! Sila baca di laman sesawang kami untuk mengetahui bagaimana anda boleh melakukannya: [vuetube.app/contributing](https://www.vuetube.app/contributing)
 
 Sekiranya anda mahu menterjemahkan aplikasi ini, [klik di sini](/NUXT/plugins/languages) dan baca arahan. Jika GitHub itu sukar atau anda tidak selesa menggunakannya, anda boleh hantarkan medan yang diterjemahkan dalam satu fail teks pada [pelayan Discord](https://vuetube.app/discord) kami dan kami akan melaksanakannya. Jangan bimbang!
 
@@ -189,6 +188,27 @@ VueTube adalah dan sentiasa akan percuma dan sumber terbuka, tetapi anda boleh m
 Projek VueTube dan kandungannya tidak bergabung dengan, dibiayai, diberi izin, disokong oleh, atau dalam apa jua cara dikaitkan dengan YouTube, Google LLC atau mana-mana sekutu dan anak syarikatnya. Laman web rasmi YouTube boleh didapati di [www.youtube.com](https://www.youtube.com).
 
 Sebarang tanda dagangan, tanda perkhidmatan, nama dagangan atau hak harta intelek lain yang digunakan dalam projek VueTube dimiliki oleh pemilik masing-masing.
+
+## Repositori VueTube yang lain
+
+<details>
+  <summary> 🖱️Klik untuk menunjukkan repositori </summary>
+
+<br>
+
+[![VueTube Extractor](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Extractor)](https://github.com/VueTubeApp/VueTube-Extractor)
+
+**VueTube Extractor** ialah sejenis pustaka yang direka untuk mengekstrak data dari perkhidmatan penstriman, direka untuk digunakan dengan apl VueTube.
+
+[![VueTube Translator](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Translator)](https://github.com/VueTubeApp/VueTube-Translator)
+
+**VueTube Translator** ialah sejenis alat untuk menterjemahkan medan fail GitHub seperti JSON atau JS dan mengeksport hasil dengan struktur yang betul. Ia dibuat untuk membantu penterjemah-penterjemah VueTube tetapi ia boleh digunakan untuk tujuan lain.
+
+[![VueTube HTTP](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=vuetube-http)](https://github.com/VueTubeApp/vuetube-http)
+
+**VueTube HTTP** ialah sejenis pemalam (_plugin_) untuk permintaan HTTP _native_, muat naik/turun fail, dan pengurusan kuki. Ia adalah sejenis _fork_ daripada [projek HTTP asal](https://github.com/capacitor-community/http) daripada Capacitor Community dengan sedikit penambahan daripada kumpulan VueTube.
+
+</details>
 
 <hr>
 

@@ -7,7 +7,8 @@ module.exports = {
     library: "Pustaka",
     restart: "Mulakan semula",
     later: "Kemudian",
-    settingRestart: "Mengubah tetapan ini memerlukan apl untuk dimulakan semula untuk menerapkan tetapan."
+    settingRestart: "Mengubah tetapan ini memerlukan apl untuk dimulakan semula untuk menerapkan tetapan.",
+   okay: "OK",
   },
 
   index: {
@@ -67,6 +68,7 @@ module.exports = {
       size: "Saiz kemaskini",
 
       okay: "OK",
+      refresh: "Muat semula",
       update: "Kemaskini",
       later: "Kemudian",
     },
@@ -92,7 +94,7 @@ module.exports = {
     tagline: "Masa hadapan penstriman video",
     next: "Seterusnya",
     updated: "VueTube telah dikemaskini!",
-    awesome: "Hebat!",
+    awesome: "Hebat",
     langsetup: "Sila pilih bahasa anda",
     featuresetup: "Sila pilih beberapa ciri",
     enableryd: "Dayakan Return YouTube Dislike",
