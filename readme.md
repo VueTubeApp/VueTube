@@ -99,7 +99,14 @@ Plans
 
 You can suggest your own feature opening a feature request issue in this repository.
 
-## Screenshots
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_screenshots.png"
+      height="30"
+      width="30">
+</sub>
+Screenshots
+</h2>
 
 [View them on our website](https://www.vuetube.app/info/screenshots) or click below to display them.
 
@@ -113,7 +120,29 @@ You can suggest your own feature opening a feature request issue in this reposit
      
 </details>
 
-## Progress
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_community.png"
+      height="30"
+      width="30">
+</sub>
+Community
+</h2>
+
+We use several different platforms to connect with our community. You can actively participate in the development of VueTube or simply keep up to date with all the news joining these groups: 
+
+- Discord server (https://vuetube.app/discord)
+- Telegram group (https://t.me/vuetube)
+- Reddit page (https://www.reddit.com/r/vuetube)
+
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_progress.png"
+      height="30"
+      width="30">
+</sub>
+Progress
+</h2>
 
 <details>
   <summary> 🖱️ Click to display progress </summary>
@@ -160,7 +189,14 @@ Thank you for being interested on contributing! Please read our website on how t
 
 If you want to translate the app, [click here](/NUXT/plugins/languages) and read the instructions. If GitHub is hard or uncomfortable to you, you can also send the fields translated in a text file on our [Discord](https://vuetube.app/discord) and we will implement them. Don't worry!
 
-## GitHub Contributors
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_github.png"
+      height="30"
+      width="30">
+</sub>
+GitHub contributors
+</h2>
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
@@ -168,14 +204,28 @@ If you want to translate the app, [click here](/NUXT/plugins/languages) and read
 
 <sub>Dashboard made automatically with [contrib.rocks](https://contrib.rocks). </sub>
 
-## Acknowledgements
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_acknowledgements.png"
+      height="30"
+      width="30">
+</sub>
+Acknowledgements
+</h2>
 
 - Emojis by the [Twemoji team](https://twemoji.twitter.com/), Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 - VueTube Logo by [@afnzmn](https://github.com/afnzmn).
 - Public YouTube dislike data provided by [Return Youtube Dislike](https://returnyoutubedislike.com).
 - Ajay & Community for providing the [Sponsorblock API](https://sponsor.ajay.app), Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-## Donate
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_donate.png"
+      height="30"
+      width="30">
+</sub>
+Donate
+</h2>
 
 VueTube is and always will be free and open source, but you can support our devs with a donation that will help to maintain the project and develop new features. Every kind of help is welcome! These are the donating options avaiable:
 
@@ -183,13 +233,27 @@ VueTube is and always will be free and open source, but you can support our devs
 
 [Donate to PickleNik on GitHub](https://github.com/sponsors/PickleNik) (Maintainer)
 
-## Disclaimer
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_disclaimer.png"
+      height="30"
+      width="30">
+</sub>
+Disclaimer
+</h2>
 
 The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found at [youtube.com](https://www.youtube.com).
 
 Any trademark, service mark, trade name, or other intellectual property rights used in the VueTube project are owned by the respective owners.
 
-## Other VueTube repos
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_otherrepos.png"
+      height="30"
+      width="30">
+</sub>
+Other VueTube repos
+</h2>
 
 <details>
   <summary> 🖱️ Click to display repos </summary>
