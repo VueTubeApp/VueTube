@@ -120,7 +120,14 @@ Screenshots
      
 </details>
 
-## Community
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_community.png"
+      height="30"
+      width="30">
+</sub>
+Community
+</h2>
 
 We use several different platforms to connect with our community. You can actively participate in the development of VueTube or simply keep up to date with all the news joining these groups: 
 
