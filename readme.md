@@ -135,7 +135,14 @@ We use several different platforms to connect with our community. You can active
 - Telegram group (https://t.me/vuetube)
 - Reddit page (https://www.reddit.com/r/vuetube)
 
-## Progress
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_progress.png"
+      height="30"
+      width="30">
+</sub>
+Progress
+</h2>
 
 <details>
   <summary> 🖱️ Click to display progress </summary>
