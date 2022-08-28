@@ -233,7 +233,14 @@ VueTube is and always will be free and open source, but you can support our devs
 
 [Donate to PickleNik on GitHub](https://github.com/sponsors/PickleNik) (Maintainer)
 
-## Disclaimer
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_disclaimer.png"
+      height="30"
+      width="30">
+</sub>
+Disclaimer
+</h2>
 
 The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found at [youtube.com](https://www.youtube.com).
 
