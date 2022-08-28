@@ -113,6 +113,14 @@ You can suggest your own feature opening a feature request issue in this reposit
      
 </details>
 
+## Community
+
+We use several different platforms to connect with our community. You can actively participate in the development of VueTube or simply keep up to date with all the news joining these groups: 
+
+- Discord server (https://vuetube.app/discord)
+- Telegram group (https://t.me/vuetube)
+- Reddit page (https://www.reddit.com/r/vuetube)
+
 ## Progress
 
 <details>
