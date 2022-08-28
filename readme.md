@@ -246,7 +246,14 @@ The VueTube project and its contents are not affiliated with, funded, authorized
 
 Any trademark, service mark, trade name, or other intellectual property rights used in the VueTube project are owned by the respective owners.
 
-## Other VueTube repos
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_otherrepos.png"
+      height="30"
+      width="30">
+</sub>
+Other VueTube repos
+</h2>
 
 <details>
   <summary> 🖱️ Click to display repos </summary>
