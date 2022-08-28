@@ -189,7 +189,14 @@ Thank you for being interested on contributing! Please read our website on how t
 
 If you want to translate the app, [click here](/NUXT/plugins/languages) and read the instructions. If GitHub is hard or uncomfortable to you, you can also send the fields translated in a text file on our [Discord](https://vuetube.app/discord) and we will implement them. Don't worry!
 
-## GitHub Contributors
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_github.png"
+      height="30"
+      width="30">
+</sub>
+GitHub contributors
+</h2>
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
