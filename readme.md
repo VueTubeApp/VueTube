@@ -99,7 +99,14 @@ Plans
 
 You can suggest your own feature opening a feature request issue in this repository.
 
-## Screenshots
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_screenshots.png"
+      height="30"
+      width="30">
+</sub>
+Screenshots
+</h2>
 
 [View them on our website](https://www.vuetube.app/info/screenshots) or click below to display them.
 
