@@ -106,10 +106,10 @@
       >
         <v-card-title class="text-h5">{{ lang.createentryfull }}</v-card-title>
         <v-card-text>
-          <v-text-field v-model="selectedKey" label="{{ lang.key }}" solo />
+          <v-text-field v-model="selectedKey" label="lang.key" solo />
           <v-text-field
             v-model="selectedKeyData"
-            label="{{ lang.value }}"
+            label="lang.value"
             solo
             style="margin-bottom: -2em"
           />
