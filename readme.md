@@ -204,7 +204,14 @@ GitHub contributors
 
 <sub>Dashboard made automatically with [contrib.rocks](https://contrib.rocks). </sub>
 
-## Acknowledgements
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_acknowledgements.png"
+      height="30"
+      width="30">
+</sub>
+Acknowledgements
+</h2>
 
 - Emojis by the [Twemoji team](https://twemoji.twitter.com/), Licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 - VueTube Logo by [@afnzmn](https://github.com/afnzmn).
