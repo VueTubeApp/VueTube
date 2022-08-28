@@ -218,7 +218,14 @@ Acknowledgements
 - Public YouTube dislike data provided by [Return Youtube Dislike](https://returnyoutubedislike.com).
 - Ajay & Community for providing the [Sponsorblock API](https://sponsor.ajay.app), Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-## Donate
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_donate.png"
+      height="30"
+      width="30">
+</sub>
+Donate
+</h2>
 
 VueTube is and always will be free and open source, but you can support our devs with a donation that will help to maintain the project and develop new features. Every kind of help is welcome! These are the donating options avaiable:
 
