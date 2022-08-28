@@ -88,6 +88,20 @@ module.exports = {
       github: "GitHub",
       discord: "Discord",
     },
+    developer: {
+      registryeditor: "Editor registri",
+      registrywarning: "MENGUBAH ENTRI DAPAT MENYEBABKAN APLIKASI ANDA RUSAK!",
+      createentry: "Buat entri",
+      createentryfull: "Buat entri registri",
+      cancel: "Batal",
+      create: "Buat",
+      key: "Kunci",
+      value: "Nilai",
+      confirmdelete: "Konfirmasi penghapusan",
+      areyousure: "Apakah kamu yakin ingin menghapus",
+      delete: "Hapus",
+      change: "Ubah",
+    },
   },
 
   events: {
