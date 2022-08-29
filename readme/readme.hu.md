@@ -99,7 +99,14 @@ Tervek
 
 Tudsz ajánlani funkciókat egy funkció kérés issue-val a projekt repository-ával.
 
-## Képernyőképek
+<h2 align="left">
+<sub>
+<img  src="https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/readme_icon_screenshots.png"
+      height="30"
+      width="30">
+</sub>
+Képernyőképek
+</h2>
 
 [Nézze meg őket a weboldalunkon](https://www.vuetube.app/info/screenshots) vagy nyomjon rá a lenti szövegre.
 
@@ -113,7 +120,29 @@ Tudsz ajánlani funkciókat egy funkció kérés issue-val a projekt repository-
      
 </details>
 
-## Folyamat
+<h2 align="left">
+<sub>
+<img  src="https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/readme_icon_community.png"
+      height="30"
+      width="30">
+</sub>
+Közösség
+</h2>
+
+Számos különböző platformot használunk a közösségünkkel való kapcsolattartásra. Aktívan részt vehet a VueTube fejlesztésében, vagy egyszerűen csak értesülhet az összes hírről az alábbi csoportokhoz csatlakozva: 
+
+- Discord szerver (https://vuetube.app/discord)
+- Telegram group (https://t.me/vuetube)
+- Subreddit (https://www.reddit.com/r/vuetube)
+
+<h2 align="left">
+<sub>
+<img  src="https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/readme_icon_progress.png"
+      height="30"
+      width="30">
+</sub>
+Folyamat
+</h2>
 
 <details>
   <summary> 🖱️ Kattintson ide a folyamat megjelenítéséhez </summary>
@@ -160,7 +189,14 @@ Köszönjük, hogy érdeklődik a közreműködés iránt! Kérjük, olvassa el 
 
 Ha le szeretné fordítani az alkalmazást, [nyomjon ide](/NUXT/plugins/languages) és olvassa el az instrukciókat. Ha a GitHub használata nehéz vagy kényelmetlen számára, a mezőket szöveges fájlban is elküldheti a mi [Discordunkon](https://vuetube.app/discord) és mi megvalósítjuk őket. Ne aggódj!
 
-## GitHub Contributors
+<h2 align="left">
+<sub>
+<img  src="https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/readme_icon_github.png"
+      height="30"
+      width="30">
+</sub>
+Github Contributorok
+</h2>
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
@@ -168,14 +204,28 @@ Ha le szeretné fordítani az alkalmazást, [nyomjon ide](/NUXT/plugins/language
 
 <sub>A műszerfal automatikusan készült ezzel: [contrib.rocks](https://contrib.rocks). </sub>
 
-## Köszönetnyilvánítás
+<h2 align="left">
+<sub>
+<img  src="https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/readme_icon_acknowledgements.png"
+      height="30"
+      width="30">
+</sub>
+Köszönetnyilvánítás
+</h2>
 
 - Emojik [Twemoji team](https://twemoji.twitter.com/) által, [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) alatt engedélyezett.
 - VueTube Logo [@afnzmn](https://github.com/afnzmn) által.
 - Publikus YouTube dislike adat [Return Youtube Dislike](https://returnyoutubedislike.com) által.
 - Ajay & közzössége által [Sponsorblock API](https://sponsor.ajay.app), [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) alatt engedélyezett.
 
-## Támogatás
+<h2 align="left">
+<sub>
+<img  src="https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/readme_icon_donate.png"
+      height="30"
+      width="30">
+</sub>
+Támogatás
+</h2>
 
 A VueTube ingyenes és nyílt forráskódú lesz örökké, de ez nem azt jelenti, hogy nem támogathatsz minket egy adománnyal amely segít fenntartani a projektet és új funkciókat fejleszteni. Mindenféle segítséget szívesen fogadunk! Ezek az adományozási lehetőségek:
 
@@ -183,7 +233,14 @@ A VueTube ingyenes és nyílt forráskódú lesz örökké, de ez nem azt jelent
 
 [Donate PickleNik-nek GitHub-on](https://github.com/sponsors/PickleNik) (Karbantartó)
 
-## Figyelmeztető
+<h2 align="left">
+<sub>
+<img  src="https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/readme_icon_disclaimer.png"
+      height="30"
+      width="30">
+</sub>
+Figyelmeztető
+</h2>
 
 A VueTube projekt és annak tartalma nem kapcsolódik a YouTube-hoz, a Google LLC-hez vagy annak leányvállalataihoz, nem finanszírozza, nem engedélyezi, nem támogatja, illetve semmilyen módon nem kapcsolódik azokhoz. A hivatalos YouTube webhely a [youtube.com](https://www.youtube.com) címen található.
 
@@ -191,6 +248,36 @@ A VueTube projektben használt bármely védjegy, szolgáltatási védjegy, kere
 
 <hr>
 
+<h2 align="left">
+<sub>
+<img  src="https://github.com/VueTubeApp/VueTube/blob/main/resources/readme_icon_otherrepos.png?raw=true"
+      height="30"
+      width="30">
+</sub>
+Egyéb VueTube repók
+</h2>
+
+<details>
+  <summary> 🖱️ Kattintson a repók megjelenítéséhez </summary>
+
+<br>
+
+[![VueTube Extractor](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Extractor)](https://github.com/VueTubeApp/VueTube-Extractor)
+
+**VueTube Extractor** egy olyan könyvtár, amely adatok kinyerésére szolgál a streaming szolgáltatásokból, és a VueTube alkalmazásban használható.
+
+[![VueTube Translator](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Translator)](https://github.com/VueTubeApp/VueTube-Translator)
+
+**VueTube Translator** egy eszköz a Github-fájlok (például JSON vagy JS) mezőinek lefordításához, és az eredmény exportálásához a megfelelő szerkezettel. A VueTube fordítók segítésére hozták létre, de bármilyen más célra is használható.
+
+[![VueTube HTTP](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=vuetube-http)](https://github.com/VueTubeApp/vuetube-http)
+
+**VueTube HTTP** egy beépülő modul natív HTTP-kérésekhez, fájlletöltésekhez/-feltöltésekhez és cookie-kezeléshez. Ez a Capacitor Community [eredeti HTTP-projektjének](https://github.com/capacitor-community/http) elágazása, a VueTube csapatának kiegészítésével.
+
+</details>
+
+<hr>
+
 <p align="center">
-<sub>VueTube, boldoggá teszi az embereket és lelkesíti a szívüket 2022 óta.</sub>
+<sub>VueTube, amely 2022 óta teszi boldoggá az embereket, és inspirálja a szívüket.</sub>
 </p>
