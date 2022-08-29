@@ -34,8 +34,8 @@ export default {
 
   async mounted() {
     const releases = await this.$vuetube.releases;
-    const appVersion = process.env.appVersion;
-    const appChannel = process.env.release;
+    const appVersion = process.env.version;
+    const appChannel = process.env.channel;
     if (appVersion !== releases[0].tag_name && appVersion !== "dev-local" && appChannel !== "Unstable") {
       this.updateSnackbar = true;
     }

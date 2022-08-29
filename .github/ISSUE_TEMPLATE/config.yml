@@ -2,10 +2,10 @@ blank_issues_enabled: false
 contact_links:
   - name: 💬 Discord
     url: https://vuetube.app/discord
-    about: Join the Discord server to chat and ask questions
+    about: Join the Discord server to chat and ask questions (recommended)
   - name: 💬 Telegram
     url: https://t.me/vuetube
     about: Join the Telegram group to chat and ask questions
-  - name: 💬 VueTube website
+  - name: 🌐 VueTube website
     url: https://vuetube.app/
     about: For example, to check FAQ before asking frecuently asked questions (wait... then they won't be frequently asked questions?)

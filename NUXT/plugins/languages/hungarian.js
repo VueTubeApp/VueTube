@@ -7,8 +7,9 @@ module.exports = {
     library: "Könyvtár",
     restart: "Újraindítás",
     later: "Később",
-    settingRestart: "Ennek a beállításnak az igénybevételéhez újra kell indítani az applikációt.",
-    okay: "Oké"
+    settingRestart:
+      "Ennek a beállításnak az igénybevételéhez újra kell indítani az applikációt.",
+    okay: "Oké",
   },
 
   index: {
@@ -35,7 +36,7 @@ module.exports = {
       language: "Nyelv",
     },
     theme: {
-      normal: "Normal",
+      normal: "Normál",
       adaptive: "Alkalmazkodó",
       custom: "Egyéni",
       dark: "Sötét",
@@ -59,7 +60,8 @@ module.exports = {
       checking: "Frissítések keresése",
       available: "Frissítés elérhető",
       noupdate: "Nincs elérhető frissítés",
-      noupdatemessage: "A legújabb verzióját használod a VueTube-nak. Nézz vissza később a frissítésekért.",
+      noupdatemessage:
+        "A legújabb verzióját használod a VueTube-nak. Nézz vissza később a frissítésekért.",
 
       installed: "Telepített Verzió",
       latest: "Legújabb Verzió",
@@ -87,6 +89,20 @@ module.exports = {
       emulator: "Emulátor",
       github: "GitHub",
       discord: "Discord",
+    },
+    developer: {
+      registryeditor: "Beállításszerkesztő",
+      registrywarning: "A BEJEGYZÉSEK MÓDOSÍTÁSA AZ ALKALMAZÁS NEM MŰKÖDÉSÉT OKOZHATJA!",
+      createentry: "Bejegyzés létrehozása",
+      createentryfull: "Beállításszerkesztő létrehozása",
+      cancel: "Mégse",
+      create: "Létrehozás",
+      key: "Kulcs",
+      value: "Érték",
+      confirmdelete: "Törlés jóváhagyása",
+      areyousure: "Biztos benne, hogy törölni szeretné?",
+      delete: "Törlés",
+      change: "Változás",
     },
   },
 

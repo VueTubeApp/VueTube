@@ -40,11 +40,11 @@ export default {
     this.lang = this.$lang("events");
 
     this.oldVer = localStorage.getItem("lastRunVersion").substring(0, 7);
-    this.newVer = process.env.appVersion.substring(0, 7);
+    this.newVer = process.env.version.substring(0, 7);
   },
   methods: {
     okay() {
-      localStorage.setItem("lastRunVersion", process.env.appVersion);
+      localStorage.setItem("lastRunVersion", process.env.version);
       this.$router.replace("/");
     },
   },
