@@ -276,5 +276,5 @@ Otros repositorios de VueTube
 <hr>
 
 <p align="center">
-<img src="resources/bottom_banner_readme.png" width="800">
+<img src="/resources/bottom_banner_readme.png" width="800">
 </p>
