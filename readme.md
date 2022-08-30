@@ -58,7 +58,7 @@ Install
 
 <img src="./resources/Install.svg" alt="VueTube icon" height="100"/>
 
-To install the app, please visit [vuetube.app/install](https://www.vuetube.app/install) or check below all versions avaiable:
+To install the app, please visit [vuetube.app/install](https://www.vuetube.app/install) or check below all versions available:
 
 <details>
   <summary>🖱️ Click to display versions </summary>
@@ -97,7 +97,7 @@ Plans
 - 🧩 **Plugins:** Install third party plugins made by community with useful features!
 - And more!
 
-You can suggest your own feature opening a feature request issue in this repository.
+You can suggest your own feature by opening a feature request issue in this repository.
 
 <h2 align="left">
 <sub>
@@ -181,7 +181,7 @@ Progress
 
 ### Why are we doing this?
 
-VueTube was made with the aim of providing to the Internet a free, opensource and complete cross-platform alternative to Big Tech, with highly customizable options and login avaiable. The project was growing, attracting thousands of users and contributors all around the world. You can join us and contribute to this project in any kind of way...
+VueTube was made with the aim of providing to the Internet a free, open source and complete cross-platform alternative to Big Tech, with highly customizable options and login available. The project was growing, attracting thousands of users and contributors all around the world. You can join us and contribute to this project in any kind of way...
 
 ### Want to contribute?
 
@@ -266,7 +266,7 @@ Other VueTube repos
 
 [![VueTube Translator](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Translator)](https://github.com/VueTubeApp/VueTube-Translator)
 
-**VueTube Translator** is a tool for translating fields of Github files like JSON or JS and export the result with the correct structure. It was created to help VueTube translators but it can be used for any other purpose.
+**VueTube Translator** is a tool for translating fields of GitHub files like JSON or JS and export the result with the correct structure. It was created to help VueTube translators but it can be used for any other purpose.
 
 [![VueTube HTTP](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=vuetube-http)](https://github.com/VueTubeApp/vuetube-http)
 
