@@ -99,7 +99,14 @@ Pelan
 
 Anda boleh mencadangkan fungsi baru dengan membuka isu fungsi baru dalam repositori ini.
 
-## Tangkapan skrin
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_screenshots.png"
+      height="30"
+      width="30">
+</sub>
+Tangkapan skrin
+</h2>
 
 [Lihat ia pada laman sesawang kami](www.vuetube.app/info/screenshots) atau klik di bawah untuk menunjukkannya
 
@@ -113,7 +120,29 @@ Anda boleh mencadangkan fungsi baru dengan membuka isu fungsi baru dalam reposit
      
 </details>
 
-## Kemajuan
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_community.png"
+      height="30"
+      width="30">
+</sub>
+Komuniti
+</h2>
+
+Kami menggunakan beberapa platform yang berbeza untuk berhubung dengan komuniti kami. Anda boleh menyertai secara aktif dalam pembangunan VueTube atau mengikuti perkembangan terkini VueTube dengan menyertai kumpulan-kumpulan berikut: 
+
+- Pelayan Discord (_Discord server_) (https://vuetube.app/discord)
+- Kumpulan Telegram (https://t.me/vuetube)
+- Halaman Reddit (subreddit) (https://www.reddit.com/r/vuetube)
+
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_progress.png"
+      height="30"
+      width="30">
+</sub>
+Kemajuan
+</h2>
 
 <details>
   <summary> 🖱️ Klik di sini untuk tunjukkan kemajuan </summary>
@@ -160,7 +189,14 @@ Terima kasih kerana berminat untuk menyumbang! Sila baca di laman sesawang kami 
 
 Sekiranya anda mahu menterjemahkan aplikasi ini, [klik di sini](/NUXT/plugins/languages) dan baca arahan. Jika GitHub itu sukar atau anda tidak selesa menggunakannya, anda boleh hantarkan medan yang diterjemahkan dalam satu fail teks pada [pelayan Discord](https://vuetube.app/discord) kami dan kami akan melaksanakannya. Jangan bimbang!
 
-## Penyumbang GitHub
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_github.png"
+      height="30"
+      width="30">
+</sub>
+Penyumbang-penyumbang GitHub
+</h2>
 
 <a href="https://github.com/VueTubeApp/VueTube/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=VueTubeApp/VueTube" />
@@ -168,14 +204,28 @@ Sekiranya anda mahu menterjemahkan aplikasi ini, [klik di sini](/NUXT/plugins/la
 
 <sub>Papan pemuka dibuat secara automatik dengan [contrib.rocks](https://contrib.rocks). </sub>
 
-## Penghargaan
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_acknowledgements.png"
+      height="30"
+      width="30">
+</sub>
+Penghargaan
+</h2>
 
-- Emoji oleh kumpulan [Twemoji](https://twemoji.twitter.com/), Dilesenkan di bawah [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Emoji oleh pasukan [Twemoji](https://twemoji.twitter.com/), Dilesenkan di bawah [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Logo VueTube oleh [@afnzmn](https://github.com/afnzmn)
 - Data kiraan tidak suka YouTube awam disediakan oleh [Return YouTube Dislike](https://returnyoutubedislike.com)
 - Ajay & Komuniti kerana menyediakan [API SponsorBlock](https://sponsor.ajay.app), Dilesenkan di bawah [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-## Derma
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_donate.png"
+      height="30"
+      width="30">
+</sub>
+Derma
+</h2>
 
 VueTube adalah dan sentiasa akan percuma dan sumber terbuka, tetapi anda boleh menyokong pembangun kami dengan derma yang akan membantu untuk mmengekalkan projek ini dan membangunkan ciri-ciri baru. Sebarang jenis pertolongan adalah sangat dialu-alukan! Berikut adalah pilihan memderma yang tersedia:
 
@@ -183,13 +233,27 @@ VueTube adalah dan sentiasa akan percuma dan sumber terbuka, tetapi anda boleh m
 
 [Derma kepada PickleNik di GitHub](https://github.com/sponsors/PickleNik) (Penyelenggara)
 
-## Penafian
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_disclaimer.png"
+      height="30"
+      width="30">
+</sub>
+Penafian
+</h2>
 
 Projek VueTube dan kandungannya tidak bergabung dengan, dibiayai, diberi izin, disokong oleh, atau dalam apa jua cara dikaitkan dengan YouTube, Google LLC atau mana-mana sekutu dan anak syarikatnya. Laman web rasmi YouTube boleh didapati di [www.youtube.com](https://www.youtube.com).
 
 Sebarang tanda dagangan, tanda perkhidmatan, nama dagangan atau hak harta intelek lain yang digunakan dalam projek VueTube dimiliki oleh pemilik masing-masing.
 
-## Repositori VueTube yang lain
+<h2 align="left">
+<sub>
+<img  src="resources/readme_icon_otherrepos.png"
+      height="30"
+      width="30">
+</sub>
+Repo-repo VueTube yang lain
+</h2>
 
 <details>
   <summary> 🖱️Klik untuk menunjukkan repositori </summary>
