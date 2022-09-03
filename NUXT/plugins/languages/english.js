@@ -53,6 +53,8 @@ module.exports = {
   mods: {
     general: {
       language: "Language",
+      backup: "Backup",
+      restore: "Restore"
     },
     theme: {
       normal: "Normal",
