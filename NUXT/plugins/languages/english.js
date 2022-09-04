@@ -12,6 +12,25 @@ module.exports = {
     okay: "Okay",
   },
 
+  pages: {
+    index: "",
+    home: "Home",
+    library: "Library",
+    search: "Search",
+    settings: "Settings",
+    subscriptions: "Subscriptions",
+    watch: "Watch",
+    about: "About",
+    developer: "Developer",
+    general: "General",
+    player: "Player",
+    plugins: "Plugins",
+    startup: "Startup",
+    theme: "Theme",
+    tweaks: "Tweaks",
+    updates: "Updates"
+  },
+
   index: {
     connecting: "Connecting",
     plugins: "Loading Plugins",
@@ -34,6 +53,8 @@ module.exports = {
   mods: {
     general: {
       language: "Language",
+      backup: "Backup",
+      restore: "Restore"
     },
     theme: {
       normal: "Normal",

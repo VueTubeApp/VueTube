@@ -11,6 +11,7 @@
     <!--   Add New Key Button   -->
     <center>
       <v-btn
+      rounded
         @click="
           addDialog = !addDialog;
           selectedKey = null;

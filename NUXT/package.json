@@ -12,12 +12,12 @@
   "dependencies": {
     "@capacitor/splash-screen": "^1.2.2",
     "@capacitor/status-bar": "^1.0.8",
-    "core-js": "^3.19.3",
+    "core-js": "^3.25.0",
     "nuxt": "^2.15.8",
-    "vue": "^2.6.14",
-    "vue-server-renderer": "^2.6.14",
-    "vue-template-compiler": "^2.6.14",
-    "vuetify": "^2.6.1",
+    "vue": "^2.7.10",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10",
+    "vuetify": "^2.6.9",
     "webpack": "^4.46.0"
   },
   "devDependencies": {
@@ -26,7 +26,7 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^8.2.0",
     "prettier": "^2.5.1"
   }

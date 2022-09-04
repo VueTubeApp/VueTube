@@ -7,7 +7,8 @@ module.exports = {
     library: "Videoteka",
     restart: "Restart",
     later: "Kasnije",
-    settingRestart: "Izmena ovog podešavanja zahteva ponovo pokretanje aplikacije kako bi promene bile sačuvane.",
+    settingRestart: 
+    "Izmena ovog podešavanja zahteva ponovo pokretanje aplikacije kako bi promene bile sačuvane.",
     okay: "Ok",
   },
 
@@ -59,7 +60,8 @@ module.exports = {
       checking: "Provera novije verzije",
       available: "Dostupna je nova verzija",
       noupdate: "Nema novih ažuriranja",
-      noupdatemessage: "Koristite najnoviju verziju. Proverite ponovo kasnije",
+      noupdatemessage: 
+        "Koristite najnoviju verziju. Proverite ponovo kasnije",
 
       installed: "Instalirana verzija",
       latest: "Najnovija verzija",
@@ -88,6 +90,20 @@ module.exports = {
       github: "GitHub",
       discord: "Discord",
     },
+    developer: {
+        registryeditor: "Editor registra",
+        registrywarning: "IZMENA OVOG UNOSA MOŽE DA IZAZOVE NESTABILNOST APLIKACIJE!",
+        createentry: "Kreirajte unos",
+        createentryfull: "Kreirajte unos u registru",
+        cancel: "Otkaži",
+        create: "Napravi",
+        key: "Ključ",
+        value: "Vrednost",
+        confirmdelete: "Potvrditi brisanje",
+        areyousure: "Da li ste sigurni da želite da obrišete",
+        delete: "Obriši",
+        change: "Promeni",
+      },
   },
 
   events: {
