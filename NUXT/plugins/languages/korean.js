@@ -54,7 +54,7 @@ module.exports = {
     general: {
       language: "언어",
       backup: "백업",
-      restore: "복원"
+      restore: "복원",
     },
     theme: {
       normal: "기본",
