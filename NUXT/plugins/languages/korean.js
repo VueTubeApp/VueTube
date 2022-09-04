@@ -28,8 +28,9 @@ module.exports = {
     startup: "시작 옵션",
     theme: "테마",
     tweaks: "UI 트윅",
-    updates: "업데이트"
+    updates: "업데이트",
   },
+  
   index: {
     connecting: "연결 중",
     plugins: "플러그인 불러오는 중",
