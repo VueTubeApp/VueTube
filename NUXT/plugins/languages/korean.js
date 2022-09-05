@@ -12,6 +12,25 @@ module.exports = {
     okay: "확인",
   },
 
+  pages: {
+    index: "",
+    home: "홈",
+    library: "라이브러리",
+    search: "검색",
+    settings: "설정",
+    subscriptions: "구독",
+    watch: "시청",
+    about: "정보",
+    developer: "개발자 모드",
+    general: "일반",
+    player: "플레이어",
+    plugins: "플러그인",
+    startup: "시작 옵션",
+    theme: "테마",
+    tweaks: "UI 트윅",
+    updates: "업데이트",
+  },
+
   index: {
     connecting: "연결 중",
     plugins: "플러그인 불러오는 중",
@@ -34,6 +53,8 @@ module.exports = {
   mods: {
     general: {
       language: "언어",
+      backup: "백업",
+      restore: "복원",
     },
     theme: {
       normal: "기본",
