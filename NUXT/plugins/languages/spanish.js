@@ -52,6 +52,8 @@ pages: {
   mods: {
     general: {
       language: "Idioma",
+      backup: "Copia de seguridad",
+      restore: "Restaurar"
     },
     theme: {
       normal: "Normal",
