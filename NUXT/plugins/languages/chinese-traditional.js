@@ -7,7 +7,27 @@ module.exports = {
     library: "媒體庫",
     restart: "重新啟動",
     later: "稍後",
-    settingRestart: "此設定更改後需要重新啟動應用程式才會生效。"
+    settingRestart: "此設定更改後需要重新啟動應用程式才會生效。",
+    okay: "確定",
+  },
+
+  pages: {
+    index: "",
+    home: "主頁",
+    library: "媒體庫",
+    search: "搜尋",
+    settings: "設定",
+    subscriptions: "訂閲項目",
+    watch: "觀看",
+    about: "關於",
+    developer: "開發人員",
+    general: "一般",
+    player: "播放器",
+    plugins: "插件",
+    startup: "啟動",
+    theme: "主題",
+    tweaks: "介面調整",
+    updates: "更新"
   },
 
   index: {
@@ -26,12 +46,14 @@ module.exports = {
     updates: "更新",
     logs: "紀錄檔",
     about: "關於",
-    devmode: "登錄檔編輯工具",
+    devmode: "開發人員模式",
   },
 
   mods: {
     general: {
       language: "語言",
+      backup: "備份",
+      restore: "從備份回復",
     },
     theme: {
       normal: "正常",
@@ -54,6 +76,7 @@ module.exports = {
       defaultpage: "預設頁",
     },
     updates: {
+      updating: "下載更新中",
       checking: "檢查更新中",
       available: "有更新可用",
       noupdate: "沒有更新可用",
@@ -62,7 +85,12 @@ module.exports = {
       installed: "目前版本",
       latest: "最新版本",
 
+      published: "發佈日期",
+      users: "用家數目",
+      size: "更新大小",
+
       okay: "確定",
+      refresh: "重新整理",
       update: "更新",
       later: "稍後",
     },
@@ -81,20 +109,34 @@ module.exports = {
       github: "GitHub",
       discord: "Discord",
     },
+    developer: {
+      registryeditor: "登錄檔編輯工具",
+      registrywarning: "更改項目可能會令應用程式損毀！",
+      createentry: "加入項目",
+      createentryfull: "加入登錄檔項目",
+      cancel: "取消",
+      create: "加入",
+      key: "鍵",
+      value: "值項",
+      confirmdelete: "確定刪除",
+      areyousure: "您確定要刪除",
+      delete: "刪除",
+      change: "更改",
+    },
   },
 
   events: {
     welcome: "歡迎使用 VueTube",
     tagline: "影音串流的未來",
     next: "下一步",
-    updated: "VueTube 已更新！",
+    updated: "VueTube 已更新",
     awesome: "真棒！",
     langsetup: "來選擇一種語言吧！",
     featuresetup: "來揀選一些功能吧！",
     enableryd: "啟用 Return YouTube Dislike",
     enablespb: "啟用 SponsorBlock",
     thanks: "謝謝使用 VueTube",
-    enjoy: "祝你有一個愉快的體驗",
-    packageinstaller: "選擇要下載的套件"
+    enjoy: "祝您有一個愉快的體驗",
+    packageinstaller: "選擇要下載的套件",
   },
 };

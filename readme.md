@@ -277,5 +277,5 @@ Other VueTube repos
 <hr>
 
 <p align="center">
-<sub>VueTube, making people happy and inspiring their hearts since 2022.</sub>
+<img src="resources/bottom_banner_readme.png" width="800">
 </p>

@@ -7,7 +7,28 @@ module.exports = {
     library: "라이브러리",
     restart: "재시작",
     later: "나중에",
-    settingRestart: "이 설정을 수정하려면 애플리케이션을 다시 시작해야 변경 사항이 적용됩니다."
+    settingRestart:
+      "이 설정을 수정하려면 애플리케이션을 다시 시작해야 변경 사항이 적용됩니다.",
+    okay: "확인",
+  },
+
+  pages: {
+    index: "",
+    home: "홈",
+    library: "라이브러리",
+    search: "검색",
+    settings: "설정",
+    subscriptions: "구독",
+    watch: "시청",
+    about: "정보",
+    developer: "개발자 모드",
+    general: "일반",
+    player: "플레이어",
+    plugins: "플러그인",
+    startup: "시작 옵션",
+    theme: "테마",
+    tweaks: "UI 트윅",
+    updates: "업데이트",
   },
 
   index: {
@@ -32,6 +53,8 @@ module.exports = {
   mods: {
     general: {
       language: "언어",
+      backup: "백업",
+      restore: "복원",
     },
     theme: {
       normal: "기본",
@@ -58,7 +81,8 @@ module.exports = {
       checking: "업데이트 확인 중",
       available: "사용 가능한 업데이트가 있습니다",
       noupdate: "사용 가능한 업데이트가 없습니다",
-      noupdatemessage: "VueTube의 최신 버전을 사용하고 있습니다. 나중에 다시 확인해주세요.",
+      noupdatemessage:
+        "VueTube의 최신 버전을 사용하고 있습니다. 나중에 다시 확인해주세요.",
 
       installed: "설치된 버전",
       latest: "최신 버전",
@@ -86,6 +110,20 @@ module.exports = {
       emulator: "에뮬레이터",
       github: "GitHub",
       discord: "Discord",
+    },
+    developer: {
+      registryeditor: "레지스트리 편집기",
+      registrywarning: "엔트리 변경 시 애플리케이션이 정상적으로 작동하지 않을 수 있습니다!",
+      createentry: "엔트리 생성",
+      createentryfull: "레지스트리 엔트리 생성",
+      cancel: "취소",
+      create: "생성",
+      key: "키",
+      value: "값",
+      confirmdelete: "삭제 확인",
+      areyousure: "정말로 삭제하시겠습니까?",
+      delete: "삭제",
+      change: "변경",
     },
   },
 
