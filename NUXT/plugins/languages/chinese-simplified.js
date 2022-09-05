@@ -7,7 +7,27 @@ module.exports = {
     library: "媒体库",
     restart: "重新启动",
     later: "稍后",
-    settingRestart: "此设置修改后需要重新启动应用程序才会生效。"
+    settingRestart: "此设置修改后需要重新启动应用程序才会生效。",
+    okay: "确定",
+  },
+
+  pages: {
+    index: "",
+    home: "首页",
+    library: "媒体库",
+    search: "搜索",
+    settings: "设置",
+    subscriptions: "订阅内容",
+    watch: "观看",
+    about: "关于",
+    developer: "开发者",
+    general: "常用",
+    player: "播放器",
+    plugins: "插件",
+    startup: "启动选项",
+    theme: "主题",
+    tweaks: "界面调整",
+    updates: "更新"
   },
 
   index: {
@@ -26,12 +46,14 @@ module.exports = {
     updates: "更新",
     logs: "日志",
     about: "关于",
-    devmode: "注册表编辑工具",
+    devmode: "开发者模式",
   },
 
   mods: {
     general: {
       language: "语言",
+      backup: "备份",
+      restore: "从备份回复",
     },
     theme: {
       normal: "正常",
@@ -54,6 +76,7 @@ module.exports = {
       defaultpage: "默认页",
     },
     updates: {
+      updating: "下载更新中",
       checking: "检查更新中",
       available: "有更新可用",
       noupdate: "没有更新可用",
@@ -62,9 +85,14 @@ module.exports = {
       installed: "目前版本",
       latest: "最新版本",
 
+      published: "发布日期",
+      users: "用家数目",
+      size: "更新大小",
+
       okay: "確定",
+      refresh: "刷新",
       update: "更新",
-      later: "稍後",
+      later: "稍后",
     },
     logs: {
       more: "更多",
@@ -81,20 +109,34 @@ module.exports = {
       github: "GitHub",
       discord: "Discord",
     },
+    developer: {
+      registryeditor: "注册表编辑工具",
+      registrywarning: "更改项目可能会令应用程序损毁！",
+      createentry: "加入项目",
+      createentryfull: "加入注册表项目",
+      cancel: "取消",
+      create: "加入",
+      key: "键",
+      value: "值项",
+      confirmdelete: "确认删除",
+      areyousure: "您确认要删除",
+      delete: "删除",
+      change: "更改",
+    },
   },
 
   events: {
     welcome: "欢迎使用 VueTube",
     tagline: "流媒体的未来",
     next: "下一步",
-    updated: "VueTube 已更新！",
+    updated: "VueTube 已更新",
     awesome: "真棒！",
     langsetup: "来选择一种语言吧！",
     featuresetup: "来拣选一些功能吧！",
     enableryd: "启用 Return YouTube Dislike",
     enablespb: "启用 SponsorBlock",
     thanks: "谢谢使用 VueTube",
-    enjoy: "祝你有一个愉快的体验",
+    enjoy: "祝您有一个愉快的体验",
     packageinstaller: "选择要下载的应用包"
   },
 };
