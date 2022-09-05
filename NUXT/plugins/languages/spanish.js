@@ -11,6 +11,25 @@ module.exports = {
     okay: "OK"
   },
 
+pages: {
+    index: "",
+    home: "Inicio",
+    library: "Librería",
+    search: "Búsqueda",
+    settings: "Ajustes",
+    subscriptions: "Suscripciones",
+    watch: "Ver",
+    about: "Acerca de",
+    developer: "Desarrollador",
+    general: "General",
+    player: "Reproductor",
+    plugins: "Complementos",
+    startup: "Opciones de inicio",
+    theme: "Tema",
+    tweaks: "Interfaz",
+    updates: "Actualizaciones"
+  },
+
   index: {
     connecting: "Conectando",
     plugins: "Cargando complementos",
