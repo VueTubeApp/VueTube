@@ -4,7 +4,7 @@
   </a>
   </br>
   <details>
-  <summary>Readme'de katkıya bulunanları göster</summary>
+  <summary>Readme'ye katkıda bulunanları göster</summary>
   
    <sub>VueTube Logosu <a href="https://github.com/afnzmn">@afnzmn</a> tarafından yapılmıştır</sub> </br>
   <sub>Türkçe Readme'ye katkı sağlayan kişiler: <a href="https://github.com/kyoyacchi">@kyoyacchi</a <a href="https://github.com/vixpr">@vixpr</a> 
@@ -50,7 +50,7 @@ bir oynatıcı uygulamaya entegre edilmiştir, 16x hız gibi.
 Uygulamayı yüklemek için lütfen [vuetube.app/install](https://www.vuetube.app/install) adresini ziyaret edin.
 
 <details>
-  <summary>Ya da mevcut olan tüm sürümleri görmek için buraya tıklayın.</summary>
+  <summary>Ya da mevcut olan tüm sürümleri görmek için buraya tıklayın</summary>
 <br/>
 
 ### Android
@@ -84,7 +84,7 @@ Uygulamayı yüklemek için lütfen [vuetube.app/install](https://www.vuetube.ap
 [Web sitemizde görüntüleyin](https://www.vuetube.app/info/screenshots)
 
 <details>
-  <summary> Ya da ekran görüntülerini görüntülemek için buraya basın. </summary>
+  <summary> Ya da ekran görüntülerini görüntülemek için buraya basın </summary>
 <br />
   
 <img src="https://vuetube.app/wtch.png" width="400">
@@ -96,7 +96,7 @@ Uygulamayı yüklemek için lütfen [vuetube.app/install](https://www.vuetube.ap
 ## İlerleme
 
 <details>
-  <summary> İlerlemeyi görmek için buraya tıklayın. </summary>
+  <summary> İlerlemeyi görmek için buraya tıklayın </summary>
 
  <br>
  
