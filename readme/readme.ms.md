@@ -227,7 +227,7 @@ Penghargaan
 Derma
 </h2>
 
-VueTube adalah dan sentiasa akan percuma dan sumber terbuka, tetapi anda boleh menyokong pembangun kami dengan derma yang akan membantu untuk mmengekalkan projek ini dan membangunkan ciri-ciri baru. Sebarang jenis pertolongan adalah sangat dialu-alukan! Berikut adalah pilihan memderma yang tersedia:
+VueTube adalah dan sentiasa akan percuma dan sumber terbuka, tetapi anda boleh menyokong pembangun kami dengan derma yang akan membantu untuk mengekalkan projek ini dan membangunkan ciri-ciri baru. Sebarang jenis pertolongan adalah sangat dialu-alukan! Berikut adalah pilihan menderma yang tersedia:
 
 [Derma di Ko-Fi.com](https://ko-fi.com/vuetube) (Rasmi)
 
