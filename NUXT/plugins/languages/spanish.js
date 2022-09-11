@@ -53,6 +53,7 @@ pages: {
     general: {
       language: "Idioma",
       backup: "Copia de seguridad",
+      backupinfo: "Haz una copia de seguridad de tus ajustes o restáuralos",
       restore: "Restaurar"
     },
     theme: {
