@@ -54,6 +54,7 @@ module.exports = {
     general: {
       language: "Language",
       backup: "Backup",
+      backupinfo: "Backup or restore your application settings",
       restore: "Restore"
     },
     theme: {
