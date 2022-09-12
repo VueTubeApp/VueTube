@@ -12,6 +12,25 @@ module.exports = {
     okay: "Oké",
   },
 
+  pages: {
+    index: "",
+    home: "Home",
+    library: "Könyvtár",
+    search: "Keresés",
+    settings: "Beállítások",
+    subscriptions: "Feliratkozások",
+    watch: "Megtekintés",
+    about: "Rólunk",
+    developer: "Fejlesztő",
+    general: "General",
+    player: "Lejátszó",
+    plugins: "Pluginok",
+    startup: "Elindításkor",
+    theme: "Téma",
+    tweaks: "Tweakek",
+    updates: "Frissítés"
+  },
+
   index: {
     connecting: "Csatlakozás",
     plugins: "Pluginok betöltése",
@@ -34,6 +53,8 @@ module.exports = {
   mods: {
     general: {
       language: "Nyelv",
+      backup: "Backup",
+      restore: "Visszaállítás"
     },
     theme: {
       normal: "Normál",
