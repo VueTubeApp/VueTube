@@ -64,13 +64,26 @@ To install the app, please visit [vuetube.app/install](https://www.vuetube.app/i
   <summary>🖱️ Click to display versions </summary>
 <br />
 
-### Android
+<h3 align="left">
+<sub>
+<img  src="resources/readme_icon_android.png"
+      height="20"
+      width="20">
+</sub>
+Android
+</h3>
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Pretty unstable, but you get early access to new features.                                                                                   | Less bugs than unstable while having more features than stable.                                                                                                  | Not available yet.                                                                               |
-
-### iOS
+<h3 align="left">
+<sub>
+<img  src="resources/readme_icon_ios.png"
+      height="20"
+      width="20">
+</sub>
+iOS
+</h3>
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
