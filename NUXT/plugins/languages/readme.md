@@ -1,4 +1,6 @@
-# App translations guide
+# Guide for translating the app
+
+If you want to translate documentation instead, check the [guide for translating the documentation](/readme/readme-translation-guide.md).
 
 ## ⛔️ Rules and advices
 
@@ -47,3 +49,8 @@ You can’t add a file directly to VueTube repository, but you can do a fork. Th
 After you have done everything, go to Pull Requests on VueTube repository and make a new one clicking in “Compare across repositories”. Include a description about what have you changed. A VueTube admin will approve your changes and your translation will be implemented.
 
 <p align="center"> Thank you for being interested on contributing! </p>
+
+<br>
+<br>
+
+**Note:** We rely on your good faith. As a community project, many of our maintainers are not native speakers of the languages that the community has provided. We will do our best to review your translations, but we are heavily dependent on the community to provide us with quality translations. In cases where disagreements arise between translators, we may be forced to mediate and make a decision regardless of our team's proficiency in the language. As such, we ask that disagreements between translators be solved in a civil manner without the need for moderation.
