@@ -1,6 +1,6 @@
 # Guide for translating the app
 
-If you want to translate documentation instead, check the [guide for translating the documentation](/readme/readme-translation-guide.md).
+If you want to translate the documentation instead, check the [guide for translating the documentation](/readme/readme.md).
 
 ## ⛔️ Rules and advices
 
@@ -8,7 +8,7 @@ If you want to translate documentation instead, check the [guide for translating
 
 Translations made automatically are not allowed in VueTube. You need to know and understand both English and the language you're translating to guarantee a good result. Please do not contribute using Google Translator or similars.
 
-_Example: "Enable Return Youtube Dislike integration" should be translated to Spanish as "Activar la integración de Return YouTube Dislike", but an automatic translation could be "Activar integración Devolver los No me gusta de Youtube", and that doesn't sounds natural._
+_Example: "Enable Return Youtube Dislike integration" should be translated to Spanish as "Activar la integración de Return YouTube Dislike", but an automatic translation could be "Activar integración Devolver los No me gusta de Youtube", and that doesn't sound natural._
 
 - **Consider leaving some words in English**
 
