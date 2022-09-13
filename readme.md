@@ -76,6 +76,8 @@ To install the app, please visit [vuetube.app/install](https://www.vuetube.app/i
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Pretty unstable, but you get early access to new features.                                                                               | Less bugs than unstable while having more features than stable.                                                                                                                 | Not available yet.                                                                               |
 
+(Apple does not officially support sideloading, i.e. the installation of applications with just the file without them being uploaded to the company's official shop. It is necessary to use advanced methods to install VueTube on iPhone / iPad devices)
+
 </details>
 
 <h2 align="left">
@@ -187,7 +189,7 @@ VueTube was made with the aim of providing to the Internet a free, open source a
 
 Thank you for being interested on contributing! Please read our website on how to do so: [vuetube.app/contributing](https://www.vuetube.app/contributing).
 
-If you want to translate the app, [click here](/NUXT/plugins/languages) and read the instructions. If GitHub is hard or uncomfortable to you, you can also send the fields translated in a text file on our [Discord](https://vuetube.app/discord) and we will implement them. Don't worry!
+If you want to translate the app, [click here](/NUXT/plugins/languages/readme.md) and read the instructions. If GitHub is hard or uncomfortable to you, you can also send the fields translated in a text file on our [Discord](https://vuetube.app/discord) and we will implement them. Don't worry!
 
 <h2 align="left">
 <sub>
