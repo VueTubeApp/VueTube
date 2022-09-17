@@ -26,19 +26,22 @@ That doesn't apply to the file name (polish.js, dutch.js, indonesian.js), but it
 
 There are different fields. This is an example of a field:
 
-**home: "Home"**
+`home: "Home"`
 
 Never touch the text previous the double dot (:). That is an indicator of what part is being translated. If you modify it, it won't work.
 
 Only translate the text into quotation marks ("). For example, if the translation of "Home" is "Vue", the result will be:
 
-**home: "Vue"**
+`home: "Vue"`
 
 It's easy and intuitive. Also there are different sections:
 
-**settings: { <br/>
-general: "General", <br/>
-theme: "Theme",**
+```
+settings: {
+  general: "General",
+  theme: "Theme"
+}
+```
 
 Don't touch the section name, in this case, "settings".
 
