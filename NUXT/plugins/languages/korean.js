@@ -122,7 +122,7 @@ module.exports = {
       key: "키",
       value: "값",
       confirmdelete: "삭제 확인",
-      areyousure: "정말로 해당 항목를 삭제하시겠습니까? 엔트리 :",
+      areyousure: "정말로 해당 항목을 삭제하시겠습니까? 엔트리 :",
       delete: "삭제",
       change: "변경",
     },
