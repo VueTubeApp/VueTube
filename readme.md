@@ -64,17 +64,33 @@ To install the app, please visit [vuetube.app/install](https://www.vuetube.app/i
   <summary>🖱️ Click to display versions </summary>
 <br />
 
-### Android
+<h3 align="left">
+<sub>
+<img  src="resources/readme_icon_android.png"
+      height="20"
+      width="20">
+</sub>
+Android
+</h3>
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Pretty unstable, but you get early access to new features.                                                                                   | Less bugs than unstable while having more features than stable.                                                                                                  | Not available yet.                                                                               |
 
-### iOS
+<h3 align="left">
+<sub>
+<img  src="resources/readme_icon_ios.png"
+      height="20"
+      width="20">
+</sub>
+iOS
+</h3>
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Pretty unstable, but you get early access to new features.                                                                               | Less bugs than unstable while having more features than stable.                                                                                                                 | Not available yet.                                                                               |
+
+(Apple does not officially support sideloading, i.e. the installation of applications with just the file without them being uploaded to the company's official shop. It is necessary to use advanced methods to install VueTube on iPhone / iPad devices)
 
 </details>
 
@@ -187,7 +203,7 @@ VueTube was made with the aim of providing to the Internet a free, open source a
 
 Thank you for being interested on contributing! Please read our website on how to do so: [vuetube.app/contributing](https://www.vuetube.app/contributing).
 
-If you want to translate the app, [click here](/NUXT/plugins/languages) and read the instructions. If GitHub is hard or uncomfortable to you, you can also send the fields translated in a text file on our [Discord](https://vuetube.app/discord) and we will implement them. Don't worry!
+If you want to translate the app, [click here](/NUXT/plugins/languages/readme.md) and read the instructions. If GitHub is hard or uncomfortable to you, you can also send the fields translated in a text file on our [Discord](https://vuetube.app/discord) and we will implement them. Don't worry!
 
 <h2 align="left">
 <sub>
