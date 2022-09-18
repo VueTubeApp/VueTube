@@ -54,6 +54,7 @@ module.exports = {
     general: {
       language: "Nyelv",
       backup: "Backup",
+      backupinfo: "Backuppold vagy Restorold a beállításaidat",
       restore: "Visszaállítás"
     },
     theme: {
