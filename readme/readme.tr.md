@@ -7,7 +7,7 @@
   <summary>Readme'ye katkıda bulunanları göster</summary>
   
    <sub>VueTube Logosu <a href="https://github.com/afnzmn">@afnzmn</a> tarafından yapılmıştır</sub> </br>
-  <sub>Türkçe Readme'ye katkı sağlayan kişiler: <a href="https://github.com/kyoyacchi">@kyoyacchi</a <a href="https://github.com/vixpr">@vixpr</a> 
+  <sub>Türkçe Readme'ye katkı sağlayan kişiler: <a href="https://github.com/kyoyacchi">@kyoyacchi
 
 </details>
 
@@ -32,12 +32,12 @@ Telaffuzu View Tube'dur.(<code>/ˈvjuːˌtjuːb/</code>)
 
 ## Özellikler
 
-<img src="./resources/Features.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/Features.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 **Temalar:** Aydınlık, Karanlık, OLED ve gökkuşağının tüm renkleri!
 - 🖌️ **Özelleştirilebilir UI:** Temaları özelleştirin veya kullanmadığınız UI kısımlarını devre dışı bırakın!
 - ⬆️ **Otomatik güncelleme:** Bir güncelleme mevcut olduğunda bildirim alın ve hoşunuza gitmezse eski bir sürümünü yükleyin!
-- 👁️ **İzleme koruması:** Varsayılan olarak hiçbir telemetre verisi gönderilmez. Gizlilik önceliğimizdir!
+- 👁️ **İzleme koruması:** Varsayılan olarak hiçbir telemetre verisi gönderilmez. Gizlilik gereklidir!
 - 📺 **Özel video oynatıcısı:** Mutlu olacağınız 
 bir oynatıcı uygulamaya entegre edilmiştir, 16x hız gibi.
 - 👎 **Return YouTube Dislike** - [_Daha fazla bilgi için tıklayın_](https://returnyoutubedislike.com)
@@ -45,7 +45,7 @@ bir oynatıcı uygulamaya entegre edilmiştir, 16x hız gibi.
 
 ## Yükleme
 
-<img src="./resources/Install.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/Install.svg" alt="VueTube icon" height="100"/>
 
 Uygulamayı yüklemek için lütfen [vuetube.app/install](https://www.vuetube.app/install) adresini ziyaret edin.
 
@@ -69,7 +69,7 @@ Uygulamayı yüklemek için lütfen [vuetube.app/install](https://www.vuetube.ap
 
 ## Planlanan Özellikler
 
-<img src="./resources/Plans.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/Plans.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 **Gelişmiş arama:** Sonuçları tarih , süre, beğeni ile sıralama veya daha başka özellik.
 - 🗞️ **Yerel izleme geçmişi:** Giriş yapmadan son izlediğiniz videolara erişin.
@@ -102,14 +102,14 @@ Uygulamayı yüklemek için lütfen [vuetube.app/install](https://www.vuetube.ap
  
 **Genel** | **Oynatıcı** | [**Extractor**](https://github.com/VueTubeApp/VueTube-Extractor) |
 :-: | :-: | :-: |
-🟢 Yorumlar (100%) | 🟢 Oynat / Durdur (100%) | 🟢 Arama Otomatik Tamamlama (100%) |
+🟢 Yorumlar (100%) | 🟢 Oynatma / Durdurma (100%) | 🟢 Arama Otomatik Tamamlama (100%) |
 🟢 Açıklama (100%) | 🟢 Göstermek için bas / kontrolleri gizle (100%) | 🟢 Ana sayfa (100%) |
 🟢 Ana Sayfa (100%) | 🟠 Arama Çubuğu / Scrubber (80%) | 🟢 Arama (100%)
-🟢 RYD Entegresi (100%) | 🟠 Fullscreen (80%) | 🟠 Video Information (60%) |
-🟢 Themes (100%) | 🟠 Çözünürlük Seçici (50%) | 🔴 Kanallar (0%) |
+🟢 RYD Entegresi (100%) | 🟠 Tam Ekran (80%) | 🟠 Video Information (60%) |
+🟢 Temalar (100%) | 🟠 Çözünürlük Seçici (50%) | 🔴 Kanallar (0%) |
 🟢 İzleme Sayfası (100%) | 🔴 Minioynatıcı (0%) | 🔴 Yorumlar (0%) |
 🟠 Sponsorblock Entegresi (95%) | 🔴 Arkaplanda Oynatma (0%) | 🔴 Canlı Sohbet (0%) |
-🟠 Otomatik Güncelleme (50%) | 🔴 Resim içinde Resim (0%) | 🔴 Trend içerikler (0%)
+🟠 Otomatik Güncelleme (50%) | 🔴 Resim içinde Resim (0%) | 🔴 Trend İçerikler (0%)
 🟠 Kanal Sayfası (50%) |  🔴 Altyazılar (0%) | 🔴 Etkileşim (0%) |
 🟠 Topluluk Gönderileri (10%) | 🔴 Kartlar (0%) | 🔴 Oynatma Listeleri (0%) |
 🟠 Özelleştirilebilir Shorts UI (10%) |  | 🔴 Bildirimler (0%)
@@ -117,7 +117,7 @@ Uygulamayı yüklemek için lütfen [vuetube.app/install](https://www.vuetube.ap
 🟠 Özelleştirilebilir UI (30%) |  |  |
 🟠 Kitaplık Sayfası (10%) |  |  |
 🟠 Yanıtlar (50%) |  |  |
-🟠 Üçüncü Parti Eklentiler (40%) |  |  |
+🟠 Üçüncü Taraf Eklentiler (40%) |  |  |
 🟠 VueTube Player (Sağdaki ilerlemeye bakın) |  |  |
 🟠 VueTube Extractor (Sağdaki ilerlemeye bakın) |  |  |
 🔴 Yerel İzleme Geçmişi (0%) |  |  |
