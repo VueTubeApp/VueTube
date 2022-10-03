@@ -1,6 +1,7 @@
 # Guide for translating the documentation
 
 If you want to translate the app instead, check the [guide for translating the app](/NUXT/plugins/languages/readme.md).
+Additionally, please refer to the [offical translator's guide for VueTube](https://vuetube.app/contributing/translation.html) for more information
 
 ## ⛔️ Rules and advices
 
