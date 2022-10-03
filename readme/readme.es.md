@@ -276,5 +276,5 @@ Otros repositorios de VueTube
 <hr>
 
 <p align="center">
-<sub>VueTube, haciendo a la gente feliz e iluminando sus corazones desde 2022.</sub>
+<img src="/resources/readme-es/bottom_banner_readme.png" width="800">
 </p>

@@ -279,5 +279,5 @@ Egyéb VueTube repók
 <hr>
 
 <p align="center">
-<sub>VueTube, amely 2022 óta teszi boldoggá az embereket, és inspirálja a szívüket.</sub>
+<img src="../resources/readme-hu/bottom_banner_readme.png" width="800">
 </p>

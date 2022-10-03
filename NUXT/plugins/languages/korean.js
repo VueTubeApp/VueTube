@@ -54,6 +54,7 @@ module.exports = {
     general: {
       language: "언어",
       backup: "백업",
+      backupinfo: "애플리케이션 설정을 백업 또는 복원합니다",
       restore: "복원",
     },
     theme: {
@@ -121,7 +122,7 @@ module.exports = {
       key: "키",
       value: "값",
       confirmdelete: "삭제 확인",
-      areyousure: "정말로 삭제하시겠습니까?",
+      areyousure: "정말로 해당 항목을 삭제하시겠습니까? 엔트리 :",
       delete: "삭제",
       change: "변경",
     },
@@ -139,6 +140,6 @@ module.exports = {
     enablespb: "SponsorBlock(스폰서, 간접광고 차단) 활성화",
     thanks: "VueTube를 사용해 주셔서 감사합니다",
     enjoy: "즐거운 경험 가득하길 바랍니다",
-    packageinstaller: "다운로드할 패키지 선택"
+    packageinstaller: "다운로드할 패키지 선택",
   },
 };

@@ -22,10 +22,10 @@
     >
       <v-card-title>{{ lang.backup }}</v-card-title>
       <v-card-text>
-        <p>Backup or restore your application settings</p>
+        <p>{{ lang.backupinfo }}</p>
       </v-card-text>
       <v-card-actions>
-        <v-btn rounded color="primary darken-2" @click="registryBackup">{{ lang.backup }}</v-btn>
+        <v-btn rounded depressed class="background--text ml-2" color="primary" @click="registryBackup">{{ lang.backup }}</v-btn>
         <v-btn rounded @click="registryRestore">{{ lang.restore }}</v-btn>
       </v-card-actions>
     </v-card>
