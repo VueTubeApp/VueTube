@@ -29,14 +29,14 @@
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_features.png"
+<img  src="../resources/readme_icon_features.png"
       height="30"
       width="30">
 </sub>
 Особливості
 </h2>
 
-<img src="./resources/Features.svg" alt="VueTube icon" height="100"/>
+<img src="./../resources/Features.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 **Теми:** Світла, темна, OLED і всі кольори веселки! Встановіть колір акценту та фону відповідно до ваших уподобань.
 - 🖌️ **Персоналізація інтерфейсу:** Налаштуйте кнопки, кути та вимкніть частини інтерфейсу, які ви не використовуєте.
@@ -49,14 +49,14 @@
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_install.png"
+<img  src="../resources/readme_icon_install.png"
       height="30"
       width="30">
 </sub>
 Інсталяція
 </h2>
 
-<img src="./resources/Install.svg" alt="VueTube icon" height="100"/>
+<img src="./../resources/Install.svg" alt="VueTube icon" height="100"/>
 
 Щоб інсталювати програму, перейдіть на сторінку [vuetube.app/install](https://www.vuetube.app/install) або перегляньте нижче доступні версії:
 
@@ -66,27 +66,27 @@
 
 <h3 align="left">
 <sub>
-<img  src="resources/readme_icon_android.png"
+<img  src="../resources/readme_icon_android.png"
       height="20"
       width="20">
 </sub>
 Android
 </h3>
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=./../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- |------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | Досить нестабільна, але ви отримуєте ранній доступ до нових функцій.                                                                        | Менше помилок, ніж нестабільний білд, але має більше функцій, ніж стабільний.                                                | Ще не доступний.                                                                                |
 
 <h3 align="left">
 <sub>
-<img  src="resources/readme_icon_ios.png"
+<img  src="../resources/readme_icon_ios.png"
       height="20"
       width="20">
 </sub>
 iOS
 </h3>
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |-------------------------------------------------------------------------------------------------|
 | Досить нестабільна, але ви отримуєте ранній доступ до нових функцій.                                                                    | Менше помилок, ніж нестабільний білд, але має більше функцій, ніж стабільний.                                                                                                  | Ще не доступний.                                                                                |
 
@@ -96,14 +96,14 @@ iOS
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_plans.png"
+<img  src="../resources/readme_icon_plans.png"
       height="30"
       width="30">
 </sub>
 Майбутні плани
 </h2>
 
-<img src="./resources/Plans.svg" alt="VueTube icon" height="100"/>
+<img src="./../resources/Plans.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 **Розширений пошук:** Сортування результатів за датою, тривалістю, уподобаннями або будь-яким іншим критерієм.
 - 🗞️ **Історія переглядів:** Використовуйте останні переглянуті відео без входу.
@@ -117,7 +117,7 @@ iOS
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_screenshots.png"
+<img  src="../resources/readme_icon_screenshots.png"
       height="30"
       width="30">
 </sub>
@@ -138,7 +138,7 @@ iOS
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_community.png"
+<img  src="../resources/readme_icon_community.png"
       height="30"
       width="30">
 </sub>
@@ -152,7 +152,7 @@ iOS
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_progress.png"
+<img  src="../resources/readme_icon_progress.png"
       height="30"
       width="30">
 </sub>
@@ -206,7 +206,7 @@ VueTube було створено з метою надати Інтернету 
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_github.png"
+<img  src="../resources/readme_icon_github.png"
       height="30"
       width="30">
 </sub>
@@ -221,7 +221,7 @@ VueTube було створено з метою надати Інтернету 
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_acknowledgements.png"
+<img  src="../resources/readme_icon_acknowledgements.png"
       height="30"
       width="30">
 </sub>
@@ -235,7 +235,7 @@ VueTube було створено з метою надати Інтернету 
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_donate.png"
+<img  src="../resources/readme_icon_donate.png"
       height="30"
       width="30">
 </sub>
@@ -250,7 +250,7 @@ VueTube є і завжди буде безкоштовним і відкрити
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_disclaimer.png"
+<img  src="../resources/readme_icon_disclaimer.png"
       height="30"
       width="30">
 </sub>
@@ -263,7 +263,7 @@ VueTube є і завжди буде безкоштовним і відкрити
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_otherrepos.png"
+<img  src="../resources/readme_icon_otherrepos.png"
       height="30"
       width="30">
 </sub>
@@ -292,5 +292,5 @@ VueTube є і завжди буде безкоштовним і відкрити
 <hr>
 
 <p align="center">
-<img src="resources/bottom_banner_readme.png" width="800">
+<img src="../resources/bottom_banner_readme.png" width="800">
 </p>
