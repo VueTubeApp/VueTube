@@ -21,41 +21,15 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      humanWatchTime: "0:00",
-      humanDuration: "0:00",
-
-      runWatchTimeUpdates: null
-    }
+  computed: {
+    humanDuration() {
+      if (this.duration) return this.$vuetube.humanTime(this.duration);
+      return "0:00";
+    },
+    humanWatchTime() {
+      if (this.currentTime) return this.$vuetube.humanTime(this.currentTime);
+      return "0:00";
+    },
   },
-  mounted() {
-    //---   Only show end duration when 'this.duration' becomes defined   ---//
-    const durationTimer = setInterval(() => {
-      if (this.duration) {
-        this.humanDuration = this.$vuetube.humanTime(this.duration);
-        return clearInterval(durationTimer);
-      }
-    }, 100);
-    //---   END Only show end duration when 'this.duration' becomes defined   ---//
-  },
-
-  methods: {
-    updateWatchTime() {
-      this.humanWatchTime = this.$vuetube.humanTime(this.currentTime);
-    }
-  },
-
-  watch: {
-    controls(newVal) {
-      if (newVal) { // controls are VISIBLE
-        this.updateWatchTime(); // Call to immediately update
-        this.runWatchTimeUpdates = setInterval(this.updateWatchTime, 500);
-      } else { // Controls are INVISIBLE
-        clearInterval(this.runWatchTimeUpdates);
-      }
-    }
-  }
-
 };
 </script>
