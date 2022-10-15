@@ -22,7 +22,7 @@ View Tube 발음 기호 (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-다른 언어로 이 페이지 보기: [English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [Magyar,](readme.hu.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română,](/readme/readme.ro.md) [Українська](/readme/readme.ua.md)
+다른 언어로 이 페이지 보기: [English,](../readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська,](/readme/readme.ua.md) [Türkçe](/readme/readme.tr.md/)
 
 ## 특징
 
@@ -49,14 +49,14 @@ View Tube 발음 기호 (<code>/ˈvjuːˌtjuːb/</code>)
 ### 안드로이드
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
-| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| 상당히 불안정합니다, 하지만 더 많은 기능을 먼저 사용할 수 있습니다                                                                          | unstable(불안정) 버전보다 버그가 적습니다, 하지만 stable(안정) 버전보다 많은 기능을 사용할 수 있습니다                                                          | 아직 사용할 수 없습니다                                                                         |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 상당히 불안정합니다, 하지만 더 많은 기능을 먼저 사용할 수 있습니다                                                                           | unstable(불안정) 버전보다 버그가 적습니다, 하지만 stable(안정) 버전보다 많은 기능을 사용할 수 있습니다                                                           | 아직 사용할 수 없습니다                                                                          |
 
 ### iOS
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
-| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| 상당히 불안정합니다, 하지만 더 많은 기능을 먼저 사용할 수 있습니다                                                                      | unstable(불안정) 버전보다 버그가 적습니다, 하지만 stable(안정) 버전보다 많은 기능을 사용할 수 있습니다                                                                         | 아직 사용할 수 없습니다                                                                         |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 상당히 불안정합니다, 하지만 더 많은 기능을 먼저 사용할 수 있습니다                                                                       | unstable(불안정) 버전보다 버그가 적습니다, 하지만 stable(안정) 버전보다 많은 기능을 사용할 수 있습니다                                                                          | 아직 사용할 수 없습니다                                                                          |
 
 </details>
 

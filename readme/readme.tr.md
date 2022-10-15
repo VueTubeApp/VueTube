@@ -28,7 +28,7 @@ Telaffuzu View Tube'dur.(<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-**Bu yazıyı farklı dillerde okuyun**: [English,](readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська](/readme/readme.ua.md)
+**Bu yazıyı farklı dillerde okuyun**: [English,](../readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська,](/readme/readme.ua.md) [Türkçe](/readme/readme.tr.md/)
 
 ## Özellikler
 
@@ -38,8 +38,8 @@ Telaffuzu View Tube'dur.(<code>/ˈvjuːˌtjuːb/</code>)
 - 🖌️ **Özelleştirilebilir UI:** Temaları özelleştirin veya kullanmadığınız UI kısımlarını devre dışı bırakın!
 - ⬆️ **Otomatik güncelleme:** Bir güncelleme mevcut olduğunda bildirim alın ve hoşunuza gitmezse eski bir sürümünü yükleyin!
 - 👁️ **İzleme koruması:** Varsayılan olarak hiçbir telemetre verisi gönderilmez. Gizlilik gereklidir!
-- 📺 **Özel video oynatıcısı:** Mutlu olacağınız 
-bir oynatıcı uygulamaya entegre edilmiştir, 16x hız gibi.
+- 📺 **Özel video oynatıcısı:** Mutlu olacağınız
+  bir oynatıcı uygulamaya entegre edilmiştir, 16x hız gibi.
 - 👎 **Return YouTube Dislike** - [_Daha fazla bilgi için tıklayın_](https://returnyoutubedislike.com)
 - 💰 **SponsorBlock** - [_Daha fazla bilgi için tıklayın_](https://sponsor.ajay.app)
 
@@ -57,13 +57,13 @@ Uygulamayı yüklemek için lütfen [vuetube.app/install](https://www.vuetube.ap
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Oldukça kararsız, ama yeni özelliklere daha erken erişirsiniz.                                                                                   | Kararlı olandan daha fazla özellikleri olmasına rağmen daha az bug içerir ve kararsızdır.                                                                                           | Henüz mevcut değil.                                                                               |
+| Oldukça kararsız, ama yeni özelliklere daha erken erişirsiniz.                                                                              | Kararlı olandan daha fazla özellikleri olmasına rağmen daha az bug içerir ve kararsızdır.                                                                       | Henüz mevcut değil.                                                                             |
 
 ### iOS
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| Oldukça kararsız, ama yeni özelliklere daha erken erişirsiniz.                                                                                  | Kararlı olandan daha fazla özellikleri olmasına rağmen daha az bug içerir ve kararsızdır.                                                                                                                 | Henüz mevcut değil.                                                                               |
+| Oldukça kararsız, ama yeni özelliklere daha erken erişirsiniz.                                                                          | Kararlı olandan daha fazla özellikleri olmasına rağmen daha az bug içerir ve kararsızdır.                                                                                      | Henüz mevcut değil.                                                                             |
 
 </details>
 
@@ -153,11 +153,11 @@ Uygulamayı çevirmek istiyorsanız, [buraya tıklayın](/NUXT/plugins/languages
 - [Twemoji team](https://twemoji.twitter.com/), [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) Lisansı altındadır.
 - VueTube Logosu için [@afnzmn](https://github.com/afnzmn)'e
 - Herkese açık YouTube dislike verisini sağlayan [Return Youtube Dislike](https://returnyoutubedislike.com)'a
-- Ajay & Community [Sponsorblock API](https://sponsor.ajay.app), [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) Lisansı altındadır. 
+- Ajay & Community [Sponsorblock API](https://sponsor.ajay.app), [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) Lisansı altındadır.
 
 ## Bağış
 
-VueTube her zaman ücretsiz ve açık kaynaklı olacaktır. Geliştiricilerimizi projeyi geliştirmeleri adına bağış yaparak destekleyebilirsiniz. 
+VueTube her zaman ücretsiz ve açık kaynaklı olacaktır. Geliştiricilerimizi projeyi geliştirmeleri adına bağış yaparak destekleyebilirsiniz.
 
 [Ko-Fi.com üzerinden bağış yapın](https://ko-fi.com/vuetube) (Resmi)
 
@@ -166,6 +166,5 @@ VueTube her zaman ücretsiz ve açık kaynaklı olacaktır. Geliştiricilerimizi
 ## Sorumluluk Reddi (Disclaimer)
 
 VueTube projesi ve içeriği; YouTube, Google LLC veya bağlı kuruluşlara ve iştiraklere ile bağlantılı, finanse edilmiş, yetkilendirilmiş, onaylanmış veya herhangi bir şekilde ilişkili değildir. Resmi YouTube web sitesi [youtube.com](https://www.youtube.com) adresinde bulunabilir.
-
 
 VueTube projesinde kullanılan her türlü ticari marka, hizmet markası, ticari ad veya diğer fikri mülkiyet hakları ilgili sahiplerine aittir.

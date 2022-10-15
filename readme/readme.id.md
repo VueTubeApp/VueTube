@@ -21,7 +21,7 @@ Dilafalkan View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-**Baca halaman ini di bahasa lain**: [English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [Magyar,](readme.hu.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română,](/readme/readme.ro.md) [Українська](/readme/readme.ua.md)
+**Baca halaman ini di bahasa lain**: [English,](../readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська,](/readme/readme.ua.md) [Türkçe](/readme/readme.tr.md/)
 
 ## Fitur
 
@@ -49,14 +49,14 @@ Untuk menginstal aplikasi, silakan kunjungi [vuetube.app/install](https://www.vu
 ### Android
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
-| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Banyak bug, tapi kamu mendapatkan akses awal ke fitur baru.                                                                                                 | Lebih sedikit bug dari unstable, sedikit lebih banyak fitur dari stable.                                                                                         | Belum tersedia.                                          |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Banyak bug, tapi kamu mendapatkan akses awal ke fitur baru.                                                                                  | Lebih sedikit bug dari unstable, sedikit lebih banyak fitur dari stable.                                                      | Belum tersedia.                                                                                  |
 
 ### iOS
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
-| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| Banyak bug, tapi kamu mendapatkan akses awal ke fitur baru.                                                                                             | Lebih sedikit bug dari unstable, sedikit lebih banyak fitur dari stable.                                                                                                        | Belum tersedia.                                          |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Banyak bug, tapi kamu mendapatkan akses awal ke fitur baru.                                                                              | Lebih sedikit bug dari unstable, sedikit lebih banyak fitur dari stable.                                                                                                        | Belum tersedia.                                                                                  |
 
 </details>
 
@@ -71,7 +71,7 @@ Untuk menginstal aplikasi, silakan kunjungi [vuetube.app/install](https://www.vu
 - 🧩 **Plugin**: Instal plugin pihak ketiga yang dibuat oleh komunitas dengan berbagai fitur yang bermanfaat!
 - Dan masih banyak lagi!
 
-Kamu dapat menyarankan fitur kamu sendiri dengan membuka *issues* di repositori ini.
+Kamu dapat menyarankan fitur kamu sendiri dengan membuka _issues_ di repositori ini.
 
 ## Tangkapan layar
 
@@ -116,7 +116,7 @@ Jika kamu ingin menerjemahkan aplikasi ini, [klik disini](/NUXT/plugins/language
 - Data publik dislike YouTube disediakan oleh [Return Youtube Dislike](https://returnyoutubedislike.com).
 - Ajay & komunitas untuk menyediakan [API Sponsorblock](https://sponsor.ajay.app), Dilisensikan dibawah [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-## Donasi 
+## Donasi
 
 VueTube akan selalu gratis dan sumber terbuka, tapi kamu dapat mendukung pengembang kami dengan donasi yang akan membantu memelihara proyek dan mengembangkan fitur baru. Setiap jenis bantuan diterima! Berikut opsi donasi yang tersedia:
 

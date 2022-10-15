@@ -25,7 +25,7 @@ Disebut View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Baca ini dalam bahasa lain: [English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [Magyar,](readme.hu.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română,](/readme/readme.ro.md) [Українська](/readme/readme.ua.md)
+Baca ini dalam bahasa lain: [English,](../readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська,](/readme/readme.ua.md) [Türkçe](/readme/readme.tr.md/)
 
 <h2 align="left">
 <sub>
@@ -44,7 +44,7 @@ Ciri-ciri
 - 👁️ **Perlindungan Penjejak:** Tiada telemetri (maklumat peribadi) dihantar daripada peranti anda secara lalai dan kami tidak menggunakan API luaran. Privasi adalah satu keperluan!
 - 📺 **Pemain video tersuai:** Pemain video yang diintegrasikan dalam aplikasi dengan semua yang anda perlukan untuk bergembira, seperti kelajuan 16x.
 - 🌍 **Terjemahan:** Aplikasi ini tersedia dalam lebih daripada 25 bahasa! Bahasa aplikasi ditentukan berdasarkan konfigurasi peranti anda.
-- 👎 **Return YouTube Dislike:** - Hidupkan semula *dislike counter* (kiraan tidak suka) dalam video. [_Maklumat lanjut dalam Bahasa Inggeris_](https://returnyoutubedislike.com)
+- 👎 **Return YouTube Dislike:** - Hidupkan semula _dislike counter_ (kiraan tidak suka) dalam video. [_Maklumat lanjut dalam Bahasa Inggeris_](https://returnyoutubedislike.com)
 - 💰 **SponsorBlock:** - Langkau penaja dan segmen yang menjengkelkan dalam video secara automatik. [_Maklumat lanjut dalam Bahasa Inggeris_](https://sponsor.ajay.app)
 
 <h2 align="left">
@@ -67,8 +67,8 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 ### Android
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
-| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                            | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                                                      | Belum tersedia lagi                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                            | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                   | Belum tersedia lagi                                                                             |
 
 ### iOS
 
@@ -129,7 +129,7 @@ Tangkapan skrin
 Komuniti
 </h2>
 
-Kami menggunakan beberapa platform yang berbeza untuk berhubung dengan komuniti kami. Anda boleh menyertai secara aktif dalam pembangunan VueTube atau mengikuti perkembangan terkini VueTube dengan menyertai kumpulan-kumpulan berikut: 
+Kami menggunakan beberapa platform yang berbeza untuk berhubung dengan komuniti kami. Anda boleh menyertai secara aktif dalam pembangunan VueTube atau mengikuti perkembangan terkini VueTube dengan menyertai kumpulan-kumpulan berikut:
 
 - Pelayan Discord (_Discord server_) (https://vuetube.app/discord)
 - Kumpulan Telegram (https://t.me/vuetube)
