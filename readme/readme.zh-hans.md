@@ -6,8 +6,9 @@
   <details>
   <summary>显示 Readme 贡献名单</summary>
 
-   <sub>标志：<a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
-  <sub>简体中文 Readme 贡献者：<a href="https://github.com/404-Program-not-found">@404-Program-not-found</a> 和 <a href="https://github.com/nokanol45">@nokanol45</a></sub>
+<sub>标志：<a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
+<sub>简体中文 Readme 贡献者：<a href="https://github.com/404-Program-not-found">@404-Program-not-found</a> 和 <a href="https://github.com/nokanol45">@nokanol45</a></sub>
+
   </details>
   
 <p align="center">
@@ -25,7 +26,7 @@
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-其他语言版本：[English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [Magyar,](readme.hu.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română,](/readme/readme.ro.md) [Українська](/readme/readme.ua.md)
+其他语言版本：[English,](../readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська,](/readme/readme.ua.md) [Türkçe](/readme/readme.tr.md/)
 
 <h2 align="left">
 <sub>
@@ -41,7 +42,7 @@
 - 🎨 **主题**：明亮、黑暗、OLED，以及彩虹中的任何颜色！您可根据您的喜好选择强调色和背景色。
 - 🖌️ **自定义使用者界面**：自定义主题，甚至停用您不使用的一些界面，以获得最佳体验。
 - ⬆️ **自动更新**：有新版本可用时接收通知，如果您不喜欢也可以撤销更新！
-- 👁️ **追踪阻断**：VueTube 默认不会发送任何跟踪数据，亦不使用任何外部API。隐私是必要的！
+- 👁️ **追踪阻断**：VueTube 默认不会发送任何跟踪数据，亦不使用任何外部 API。隐私是必要的！
 - 📺 **自家制的 HTML5 视频播放器**：内置在应用程序的播放器，拥有您所需的任何功能，例如 16 倍速。
 - 🌍 **翻译**： 本应用程序支持超过 25 种语言！默认语言因您的设备配置而定。
 - 👎 **Return YouTube Dislike** - 带回视频的「踩一下」指标。[_更多资讯_](https://returnyoutubedislike.com)
@@ -67,14 +68,14 @@
 ### 安卓/Android
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
-| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| 有最新的功能，并且经常有更新，但 bug 也最常见。                                                                                             | bug 比 unstable 较少，功能也比 stable 稍新。                                                                                                                    | 暂时未有 Stable 版本可用。                                             |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 有最新的功能，并且经常有更新，但 bug 也最常见。                                                                                              | bug 比 unstable 较少，功能也比 stable 稍新。                                                                                  | 暂时未有 Stable 版本可用。                                                                       |
 
 ### iOS
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
-| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| 有最新的功能，并且经常有更新，但 bug 也最常见。                                                                                         | bug 比 unstable 较少，功能也比 stable 稍新。                                                                                                                                   | 暂时未有 Stable 版本可用。                                             |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 有最新的功能，并且经常有更新，但 bug 也最常见。                                                                                          | bug 比 unstable 较少，功能也比 stable 稍新。                                                                                                                                    | 暂时未有 Stable 版本可用。                                                                       |
 
 </details>
 
@@ -98,6 +99,7 @@
 - 以及更多！
 
 你可在此软件存储库发布「功能请求」(feature request) 议题来建议新功能。
+
 <h2 align="left">
 <sub>
 <img  src="../resources/readme_icon_screenshots.png"
@@ -246,6 +248,7 @@ VueTube 永远是自由且开源的，但您仍可捐款以支持我们的开发
 本项目中使用的任何商标、服务标志、商品名称或其他知识产权均归各自所有者所有。
 
 如本文与英文版本有任何差异，以英文版本为准。
+
 <h2 align="left">
 <sub>
 <img  src="../resources/readme_icon_otherrepos.png"
@@ -266,7 +269,7 @@ VueTube 永远是自由且开源的，但您仍可捐款以支持我们的开发
 
 [![VueTube Translator](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Translator)](https://github.com/VueTubeApp/VueTube-Translator)
 
-**VueTube 翻译器** 是一个用来翻译 GitHub 上的 JSON 或JS 档等的字段和以正确的结构汇出结果的工具。此工具为辅助 VueTube 翻译者为设，但亦可用作其他用途。
+**VueTube 翻译器** 是一个用来翻译 GitHub 上的 JSON 或 JS 档等的字段和以正确的结构汇出结果的工具。此工具为辅助 VueTube 翻译者为设，但亦可用作其他用途。
 
 [![VueTube HTTP](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=vuetube-http)](https://github.com/VueTubeApp/vuetube-http)
 

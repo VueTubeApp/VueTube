@@ -25,7 +25,7 @@
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-**Read this page in other languages**: [English,](readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română](/readme/readme.ro.md)
+**Read this page in other languages**: [English,](../readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська,](/readme/readme.ua.md) [Türkçe](/readme/readme.tr.md/)
 
 <h2 align="left">
 <sub>
@@ -74,8 +74,8 @@ Android
 </h3>
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=./../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./../resources/getstable.png></a> |
-| ------------------------------------------------------------------------------------------------------------------------------------------- |------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| Досить нестабільна, але ви отримуєте ранній доступ до нових функцій.                                                                        | Менше помилок, ніж нестабільний білд, але має більше функцій, ніж стабільний.                                                | Ще не доступний.                                                                                |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Досить нестабільна, але ви отримуєте ранній доступ до нових функцій.                                                                           | Менше помилок, ніж нестабільний білд, але має більше функцій, ніж стабільний.                                                   | Ще не доступний.                                                                                   |
 
 <h3 align="left">
 <sub>
@@ -87,8 +87,8 @@ iOS
 </h3>
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./../resources/getstable.png></a> |
-| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |-------------------------------------------------------------------------------------------------|
-| Досить нестабільна, але ви отримуєте ранній доступ до нових функцій.                                                                    | Менше помилок, ніж нестабільний білд, але має більше функцій, ніж стабільний.                                                                                                  | Ще не доступний.                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Досить нестабільна, але ви отримуєте ранній доступ до нових функцій.                                                                       | Менше помилок, ніж нестабільний білд, але має більше функцій, ніж стабільний.                                                                                                     | Ще не доступний.                                                                                   |
 
 (Apple офіційно не підтримує sideloading, тобто установку додатків лише з файлом без їх завантаження в офіційний магазин компанії. Для встановлення VueTube на пристроях iPhone / iPad необхідно використовувати розширені методи)
 
@@ -146,6 +146,7 @@ iOS
 </h2>
 
 Ми використовуємо кілька різних платформ для зв’язку з нашою спільнотою. Ви можете брати активну участь у розробці VueTube або просто бути в курсі всіх новин, приєднавшись до цих груп:
+
 - Discord сервер (https://vuetube.app/discord)
 - Telegram група (https://t.me/vuetube)
 - Reddit сторінка (https://www.reddit.com/r/vuetube)
