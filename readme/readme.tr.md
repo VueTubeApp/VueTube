@@ -55,13 +55,13 @@ Uygulamayı yüklemek için lütfen [vuetube.app/install](https://www.vuetube.ap
 
 ### Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.3/VueTube-Canary-June-22-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Oldukça kararsız, ama yeni özelliklere daha erken erişirsiniz.                                                                              | Kararlı olandan daha fazla özellikleri olmasına rağmen daha az bug içerir ve kararsızdır.                                                                       | Henüz mevcut değil.                                                                             |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Oldukça kararsız, ama yeni özelliklere daha erken erişirsiniz.                                                                          | Kararlı olandan daha fazla özellikleri olmasına rağmen daha az bug içerir ve kararsızdır.                                                                                      | Henüz mevcut değil.                                                                             |
 
@@ -105,9 +105,9 @@ Uygulamayı yüklemek için lütfen [vuetube.app/install](https://www.vuetube.ap
 🟢 Yorumlar (100%) | 🟢 Oynatma / Durdurma (100%) | 🟢 Arama Otomatik Tamamlama (100%) |
 🟢 Açıklama (100%) | 🟢 Göstermek için bas / kontrolleri gizle (100%) | 🟢 Ana sayfa (100%) |
 🟢 Ana Sayfa (100%) | 🟠 Arama Çubuğu / Scrubber (80%) | 🟢 Arama (100%)
-🟢 RYD Entegresi (100%) | 🟠 Tam Ekran (80%) | 🟠 Video Information (60%) |
+🟢 RYD Entegresi (100%) | 🟠 Tam Ekran (80%) | 🟠 Video Bilgisi (60%) |
 🟢 Temalar (100%) | 🟠 Çözünürlük Seçici (50%) | 🔴 Kanallar (0%) |
-🟢 İzleme Sayfası (100%) | 🔴 Minioynatıcı (0%) | 🔴 Yorumlar (0%) |
+🟢 İzleme Sayfası (100%) | 🔴 Mini oynatıcı (0%) | 🔴 Yorumlar (0%) |
 🟠 Sponsorblock Entegresi (95%) | 🔴 Arkaplanda Oynatma (0%) | 🔴 Canlı Sohbet (0%) |
 🟠 Otomatik Güncelleme (50%) | 🔴 Resim içinde Resim (0%) | 🔴 Trend İçerikler (0%)
 🟠 Kanal Sayfası (50%) |  🔴 Altyazılar (0%) | 🔴 Etkileşim (0%) |
