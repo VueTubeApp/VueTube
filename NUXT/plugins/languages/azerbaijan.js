@@ -1,3 +1,4 @@
+
 module.exports = {
   name: "Azerbaijan",
 
@@ -7,8 +8,29 @@ module.exports = {
     library: "Kitabxana",
     restart: "Yenidən başladın",
     later: "Daha sonra",
-    settingRestart: "Bu seçimin dəyişdirilməsi, dəyişikliklərin tətbiq edilməsi üçün tətbiqin yenidən başladılmasını tələb edir."
-  }, 
+    settingRestart:
+      "Bu seçimin dəyişdirilməsi dəyişikliklərin tətbiq edilməsi üçün tətbiqin yenidən başladılmasını tələb edir.",
+    okay: "Oldu",
+  },
+
+  pages: {
+    index: "",
+    home: "Ev",
+    library: "Kitabxana",
+    search: "Axtarın",
+    settings: "Tənzimləmələr",
+    subscriptions: "Abunəliklər",
+    watch: "İzlə",
+    about: "Haqqında",
+    developer: "İnkişaf Etdirici",
+    general: "Ümumi",
+    player: "Oynadıcı",
+    plugins: "Əlavələr",
+    startup: "Başlat",
+    theme: "Mövzu",
+    tweaks: "tənzimləmələr",
+    updates: "Yeniləmələr"
+  },
 
   index: {
     connecting: "Qoşulur",
@@ -32,6 +54,9 @@ module.exports = {
   mods: {
     general: {
       language: "Dil",
+      backup: "Backup",
+      backupinfo: "Backup or restore your application settings",
+      restore: "Restore"
     },
     theme: {
       normal: "Normal",
@@ -40,7 +65,7 @@ module.exports = {
       dark: "Qaranlıq",
       black: "Qara",
       darkmode: "Qaranlıq rejim",
-      darkmodetagline: "Bravo, Qaranlıqdır." ,
+      darkmodetagline: "Bravo, Qaralma gedir.",
     },
     tweaks: {
       fullscreen: "Tam ekran",
@@ -54,10 +79,24 @@ module.exports = {
       defaultpage: "Defolt Səhifə",
     },
     updates: {
-      install: "Quraşdırın",
-      view: "Baxın",
-      latest: "Ən son",
-      installed: "Quraşdırılıb",
+      updating: "Yeniləmə endirilir",
+      checking: "Yeniləmələr yoxlanılır",
+      available: "Yeniləmə mövcuddur",
+      noupdate: "Heç bir yeniləmə yoxdur",
+      noupdatemessage:
+        "VueTube-un ən son versiyasından istifadə edirsiniz. Yeniləmələr üçün daha sonra yoxlayın.",
+
+      installed: "Quraşdırılmış Versiya",
+      latest: "Son Versiya",
+
+      published: "Dərc edilmişdir",
+      users: "İstifadəçilər",
+      size: "Ölçüsünü yeniləyin",
+
+      okay: "Oldu",
+      refresh: "yenilə",
+      update: "Yeniləyin",
+      later: "Daha sonra",
     },
     logs: {
       more: "Daha çox",
@@ -67,27 +106,41 @@ module.exports = {
       appversion: "Tətbiq Versiyası",
       deviceinformation: "Cihaz Məlumatı",
       platform: "Platforma",
-      os: "Əməliyyat Sistemi",
+      os: "Əməliyyat sistemi",
       model: "Model",
       manufacturer: "İstehsalçı",
       emulator: "Emulator",
       github: "GitHub",
       discord: "Discord",
     },
+    developer: {
+      registryeditor: "Reyestr redaktoru",
+      registrywarning: "GİRİŞLƏRİN DƏYİŞİLMƏSİ TƏTBİQİNİZİN SINMASINA SƏBƏB OLA BİLƏR!",
+      createentry: "Giriş yaradın",
+      createentryfull: "Reyestr girişi yaradın",
+      cancel: "İmtina",
+      create: "Yaradın",
+      key: "Açar",
+      value: "Dəyər",
+      confirmdelete: "Silməni təsdiqləyin",
+      areyousure: "Silmək istədiyinizə əminsiniz",
+      delete: "Sil",
+      change: "Dəyiş",
+    },
   },
 
   events: {
-    welcome: "VueTube-a Xoş Gəlmisiniz",
-    tagline: "Video yayımının gələcəyi",
+    welcome: "VueTube-a xoş gəlmisiniz",
+    tagline: "Video axınının gələcəyi",
     next: "Növbəti",
-    updated: "VueTube Yeniləndi!",
-    awesome: "Möhtəşəm!",
+    updated: "VueTube yeniləndi",
+    awesome: "Möhtəşəm",
     langsetup: "Gəlin Dil Seçək!",
     featuresetup: "Bəzi Xüsusiyyətləri Seçək!",
-    enableryd: "Return YouTube Dislike'ı Aktivləşdirin",
-    enablespb: "SponsorBlok'u Aktivləşdirin",
+    enableryd: "Return YouTube Dislike'ı Aktivləşdir",
+    enablespb: "SponsorBlock'u aktivləşdir",
     thanks: "VueTube istifadə etdiyiniz üçün təşəkkür edirik",
     enjoy: "Ümid edirik ki, gözəl təcrübəniz olacaq",
-    packageinstaller: "Endirmək Üçün Paket Seçin"
+    packageinstaller: "Endirmək üçün paket seçin",
   },
 };

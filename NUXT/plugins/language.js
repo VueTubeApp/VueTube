@@ -16,6 +16,7 @@ const packs = {
   hungarian: require("./languages/hungarian"),
   indonesian: require("./languages/indonesian"),
   italian: require("./languages/italian"),
+  japanese: require("./languages/japanese"),
   korean: require("./languages/korean"),
   macedonian: require("./languages/macedonian"),
   malay: require("./languages/malay"),
