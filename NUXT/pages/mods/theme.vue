@@ -170,7 +170,7 @@
 export default {
   data() {
     return {
-      primaryLight: ["#E57373", "#8b5f37", "#016a49", "#34495E"],
+      primaryLight: ["#6b0406","#E57373", "#34495E", "#6e0ba3","#016a49", "#8b5f37"],
       primaryDark: [
         "#dc2626",
         "#FFBBFF",
