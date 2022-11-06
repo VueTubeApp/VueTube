@@ -54,7 +54,7 @@ module.exports = {
     general: {
       language: "Dil",
       backup: "Nüsxələ",
-      backupinfo: "Tətbiq tənzimləmələrinizin ehtiyat nüsxələyin və ya bərpa edin",
+      backupinfo: "Tətbiq tənzimləmələrinizi nüsxələyin və ya bərpa edin",
       restore: "Bərpa et"
     },
     theme: {
