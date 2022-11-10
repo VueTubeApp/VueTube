@@ -66,27 +66,27 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
 
 <h3 align="left">
 <sub>
-<img  src="resources/readme_icon_android.png"
+<img  src="/resources/readme_icon_android.png"
       height="20"
       width="20">
 </sub>
 Android
 </h3>
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=/resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=/resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                            | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                   | Belum tersedia lagi                                                                             |
 
 <h3 align="left">
 <sub>
-<img  src="resources/readme_icon_ios.png"
+<img  src="/resources/readme_icon_ios.png"
       height="20"
       width="20">
 </sub>
 iOS
 </h3>
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=/resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=/resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                        | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                                                                     | Belum tersedia lagi                                                                             |
 
@@ -117,7 +117,7 @@ Anda boleh mencadangkan fungsi baru dengan membuka isu fungsi baru dalam reposit
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_screenshots.png"
+<img  src="/resources/readme_icon_screenshots.png"
       height="30"
       width="30">
 </sub>
@@ -138,7 +138,7 @@ Tangkapan skrin
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_community.png"
+<img  src="/resources/readme_icon_community.png"
       height="30"
       width="30">
 </sub>
@@ -153,7 +153,7 @@ Kami menggunakan beberapa platform yang berbeza untuk berhubung dengan komuniti 
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_progress.png"
+<img  src="/resources/readme_icon_progress.png"
       height="30"
       width="30">
 </sub>
@@ -207,7 +207,7 @@ Sekiranya anda mahu menterjemahkan aplikasi ini, [klik di sini](/NUXT/plugins/la
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_github.png"
+<img  src="/resources/readme_icon_github.png"
       height="30"
       width="30">
 </sub>
@@ -222,7 +222,7 @@ Penyumbang-penyumbang GitHub
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_acknowledgements.png"
+<img  src="/resources/readme_icon_acknowledgements.png"
       height="30"
       width="30">
 </sub>
@@ -236,7 +236,7 @@ Penghargaan
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_donate.png"
+<img  src="/resources/readme_icon_donate.png"
       height="30"
       width="30">
 </sub>
@@ -251,7 +251,7 @@ VueTube adalah dan sentiasa akan percuma dan sumber terbuka, tetapi anda boleh m
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_disclaimer.png"
+<img  src="/resources/readme_icon_disclaimer.png"
       height="30"
       width="30">
 </sub>
@@ -264,7 +264,7 @@ Sebarang tanda dagangan, tanda perkhidmatan, nama dagangan atau hak harta intele
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_otherrepos.png"
+<img  src="/resources/readme_icon_otherrepos.png"
       height="30"
       width="30">
 </sub>
