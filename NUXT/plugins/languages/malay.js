@@ -7,14 +7,34 @@ module.exports = {
     library: "Pustaka",
     restart: "Mulakan semula",
     later: "Kemudian",
-    settingRestart: "Mengubah tetapan ini memerlukan apl untuk dimulakan semula untuk menerapkan tetapan.",
-   okay: "OK",
+    settingRestart:
+      "Mengubah tetapan ini memerlukan apl untuk dimulakan semula untuk menerapkan tetapan.",
+    okay: "OK",
+  },
+
+  pages: {
+    index: "",
+    home: "Laman Utama",
+    library: "Pustaka",
+    search: "Cari",
+    settings: "Tetapan",
+    subscriptions: "Langganan",
+    watch: "Tonton",
+    about: "Tentang",
+    developer: "Pembangun",
+    general: "Umum",
+    player: "Pemain",
+    plugins: "Pemalam",
+    startup: "Permulaan",
+    theme: "Tema",
+    tweaks: "Pelarasan",
+    updates: "Kemaskini"
   },
 
   index: {
     connecting: "Menyambung",
     plugins: "Memuatkan Pemalam",
-    launching: "Memulakan",
+    launching: "Melancarkan",
   },
 
   settings: {
@@ -33,6 +53,9 @@ module.exports = {
   mods: {
     general: {
       language: "Bahasa",
+      backup: "Sandaran",
+      backupinfo: "Sandarkan atau pulihkan semula tetapan aplikasi anda",
+      restore: "Pulihkan semula"
     },
     theme: {
       normal: "Normal",
@@ -55,10 +78,12 @@ module.exports = {
       defaultpage: "Halaman Lalai",
     },
     updates: {
+      updating: "Memuat turun kemaskini",
       checking: "Menyemak kemaskini",
-      available: "Kemaskini Tersedia",
+      available: "Kemaskini tersedia",
       noupdate: "Tiada kemaskini tersedia",
-      noupdatemessage: "Anda sedang menggunakan versi terkini VueTube. Sila periksa kemudian untuk kemaskini.",
+      noupdatemessage:
+        "Anda sedang menggunakan versi terkini VueTube. Sila periksa kemudian untuk kemaskini.",
 
       installed: "Versi Dipasang",
       latest: "Versi Terkini",
@@ -87,13 +112,27 @@ module.exports = {
       github: "GitHub",
       discord: "Discord",
     },
+    developer: {
+      registryeditor: "Editor Daftaran",
+      registrywarning: "MENGUBAH SEBARANG ENTRI MUNGKIN MENYEBABKAN APLIKASI ANDA ROSAK!",
+      createentry: "Cipta entri",
+      createentryfull: "Cipta entri daftaran",
+      cancel: "Batal",
+      create: "Cipta",
+      key: "Kunci",
+      value: "Nilai",
+      confirmdelete: "Sahkan pemadaman",
+      areyousure: "Adakah anda pasti untuk memadamkannya?",
+      delete: "Padam",
+      change: "Ubah",
+    },
   },
 
   events: {
     welcome: "Selamat Datang ke VueTube",
     tagline: "Masa hadapan penstriman video",
     next: "Seterusnya",
-    updated: "VueTube telah dikemaskini!",
+    updated: "VueTube telah dikemaskini",
     awesome: "Hebat",
     langsetup: "Sila pilih bahasa anda",
     featuresetup: "Sila pilih beberapa ciri",
@@ -101,6 +140,6 @@ module.exports = {
     enablespb: "Dayakan SponsorBlock",
     thanks: "Terima Kasih kerana Menggunakan VueTube",
     enjoy: "Kami harap anda mempunyai pengalaman yang menakjubkan",
-    packageinstaller: "Pilih salah satu pakej untuk dimuat turun"
+    packageinstaller: "Pilih salah satu pakej untuk dimuat turun",
   },
 };

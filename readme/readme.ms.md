@@ -6,8 +6,8 @@
   <details>
   <summary>Tunjukkan kredit Readme</summary>
   
-   <sub>Logo oleh <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
-  <sub>Penyumbang-penyumbang Readme Bahasa Melayu: <a href="https://github.com/AdamIskandarAI">@AdamIskandarAI</a></sub>
+<sub>Logo oleh <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
+<sub>Penyumbang-penyumbang Readme Bahasa Melayu: <a href="https://github.com/AdamIskandarAI">@AdamIskandarAI</a></sub>
 </details>
 
 <p align="center">
@@ -25,7 +25,7 @@ Disebut View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-Baca ini dalam bahasa lain: [English,](../readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська,](/readme/readme.ua.md) [Türkçe](/readme/readme.tr.md/)
+Baca ini dalam bahasa lain: **Read this page in other languages**: [English,](readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська](/readme/readme.ua.md), [Türkçe](/readme/readme.tr.md/)
 
 <h2 align="left">
 <sub>
@@ -64,17 +64,33 @@ Untuk memasang aplikasi VueTube, sila lawati www.vuetube.app/install
   <summary> 🖱️Klik di sini untuk menunjukkan semua versi </summary>
 <br />
 
-### Android
+<h3 align="left">
+<sub>
+<img  src="/resources/readme_icon_android.png"
+      height="20"
+      width="20">
+</sub>
+Android
+</h3>
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=/resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=/resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                            | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                   | Belum tersedia lagi                                                                             |
 
-### iOS
+<h3 align="left">
+<sub>
+<img  src="/resources/readme_icon_ios.png"
+      height="20"
+      width="20">
+</sub>
+iOS
+</h3>
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=/resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=/resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Agak tidak stabil, tetapi anda boleh mendapat akses awal kepada ciri-ciri baharu                                                        | Kurang pepijat daripada tidak stabil sementara mempunyai lebih banyak ciri daripada stabil                                                                                     | Belum tersedia lagi                                                                             |
+
+(Apple tidak menyokong _sideloading_, iaitu pemasangan aplikasi dengan hanya menggunakan fail tanpa ia dimuat naik ke Apple App Store. Ia adalah perlu untuk menggunakan kaedah lanjutan untuk memasang VueTube pada peranti iPhone / iPad)
 
 </details>
 
@@ -101,7 +117,7 @@ Anda boleh mencadangkan fungsi baru dengan membuka isu fungsi baru dalam reposit
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_screenshots.png"
+<img  src="/resources/readme_icon_screenshots.png"
       height="30"
       width="30">
 </sub>
@@ -122,7 +138,7 @@ Tangkapan skrin
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_community.png"
+<img  src="/resources/readme_icon_community.png"
       height="30"
       width="30">
 </sub>
@@ -137,7 +153,7 @@ Kami menggunakan beberapa platform yang berbeza untuk berhubung dengan komuniti 
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_progress.png"
+<img  src="/resources/readme_icon_progress.png"
       height="30"
       width="30">
 </sub>
@@ -156,7 +172,7 @@ Kemajuan
 🟢 Laman Utama (100%) | 🟠 Seekbar / Scrubber (80%) | 🟢 Carian (100%)
 🟢 Pengintegrasian RYD (100%) | 🟠 Skrin Penuh (80%) | 🟠 Maklumat Video (60%) |
 🟢 Tema (100%) | 🟠 Pemilih Resolusi (720p, HD) (50%) | 🔴 Saluran (0%) |
-🟢 Halaman Tonton (100%) | 🔴 Mini-pemain (0%) | 🔴 Komen (0%) |
+🟢 Halaman Tonton (100%) | 🔴 Pemain Mini (0%) | 🔴 Komen (0%) |
 🟠 Pengintegrasian SponsorBlock (95%) | 🔴 Main video di latar belakang (0%) | 🔴 Sembang Langsung (0%) |
 🟠 Auto Kemaskini (50%) | 🔴 Picture in Picture (0%) | 🔴 Kandungan Trending (0%)
 🟠 Halaman Saluran (50%) |  🔴 Kapsyen / Sarikata (0%) | 🔴 Interaksi (0%) |
@@ -191,7 +207,7 @@ Sekiranya anda mahu menterjemahkan aplikasi ini, [klik di sini](/NUXT/plugins/la
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_github.png"
+<img  src="/resources/readme_icon_github.png"
       height="30"
       width="30">
 </sub>
@@ -206,7 +222,7 @@ Penyumbang-penyumbang GitHub
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_acknowledgements.png"
+<img  src="/resources/readme_icon_acknowledgements.png"
       height="30"
       width="30">
 </sub>
@@ -220,7 +236,7 @@ Penghargaan
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_donate.png"
+<img  src="/resources/readme_icon_donate.png"
       height="30"
       width="30">
 </sub>
@@ -235,7 +251,7 @@ VueTube adalah dan sentiasa akan percuma dan sumber terbuka, tetapi anda boleh m
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_disclaimer.png"
+<img  src="/resources/readme_icon_disclaimer.png"
       height="30"
       width="30">
 </sub>
@@ -248,7 +264,7 @@ Sebarang tanda dagangan, tanda perkhidmatan, nama dagangan atau hak harta intele
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_otherrepos.png"
+<img  src="/resources/readme_icon_otherrepos.png"
       height="30"
       width="30">
 </sub>
