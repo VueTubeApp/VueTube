@@ -91,14 +91,30 @@ const innertubeModule = {
   async getVid(id) {
     try {
       return await InnertubeAPI.VidInfoAsync(id);
-    } catch (error) {}
+    } catch (error) {
+    }
+  },
+
+  getThumbnail(id, resolution, backupThumbnail) {
+    if (resolution == "max") {
+      const url = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+      let img = new Image();
+      img.src = url;
+      img.onload = function () {
+        if (img.height !== 120) return url;
+      };
+    }
+    if (backupThumbnail[backupThumbnail.length - 1])
+      return backupThumbnail[backupThumbnail.length - 1].url;
+    else return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
   },
 
   async getChannel(url) {
     try {
       const response = await InnertubeAPI.getChannelAsync(url);
       return response.data;
-    } catch (error) {}
+    } catch (error) {
+    }
   },
 
   // It just works™
@@ -161,7 +177,8 @@ const innertubeModule = {
     try {
       const response = await InnertubeAPI.getSearchAsync(query);
       return response.contents.sectionListRenderer;
-    } catch (err) {}
+    } catch (err) {
+    }
   },
 
   async saveApiStats(query, url) {
