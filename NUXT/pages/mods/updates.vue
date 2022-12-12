@@ -1,6 +1,6 @@
 <template>
-  <div style="padding: 2em">
-    <v-icon x-large color="primary" style="padding-bottom: 0.25em">
+  <div style="padding: 2rem; padding-bottom: 4rem">
+    <v-icon x-large color="primary" style="padding-bottom: 0.25rem">
       mdi-cellphone-arrow-down
     </v-icon>
 
@@ -48,7 +48,11 @@
       </div>
       <div>{{ lang.latest }}: {{ latestVersion.tag_name }}</div>
 
-      <div style="margin-top: 1em; color: #999">
+      <div
+        style="margin-top: 1em"
+        class="background--text"
+        :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+      >
         <div>
           {{ lang.published }}:
           {{ new Date(update.created_at).toLocaleString() }}
@@ -60,8 +64,18 @@
         <div>{{ lang.users }}: {{ update.download_count }}</div>
       </div>
 
-      <div style="margin-top: 1em; color: #999"><b>Changelog</b></div>
-      <p style="white-space: pre-line; color: #999">
+      <div
+        style="margin-top: 1em"
+        class="background--text"
+        :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+      >
+        <b>Changelog</b>
+      </div>
+      <p
+        style="white-space: pre-line"
+        class="background--text"
+        :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+      >
         {{ latestVersion.body.trim() }}
       </p>
 

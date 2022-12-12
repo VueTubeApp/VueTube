@@ -1,22 +1,23 @@
 <template>
   <div>
-    <center class="container" ref="stage0">
+    <center ref="stage0" class="container">
       <v-img
         src="/icon.svg"
         width="10rem"
         height="10rem"
         :class="$vuetify.theme.dark ? '' : 'invert'"
       />
+      <div style="height: 3rem" />
       <h1>{{ lang.welcome }}</h1>
-      <p>{{ lang.tagline }}</p>
+      <div>{{ lang.tagline }}</div>
     </center>
 
-    <center class="container hidden" ref="stage1">
-      <h1>{{ lang.langsetup }}</h1>
+    <center ref="stage1" class="container hidden">
+      <h2 class="mb-8">{{ lang.langsetup }}</h2>
       <language style="width: 80%" />
     </center>
 
-<!--
+    <!--
     <center class="container hidden" ref="stage2">
       <v-autocomplete
       label="API"
@@ -29,50 +30,47 @@
     </center>
 -->
 
-    <center class="container hidden" ref="stage2">
-      <h1>{{ lang.featuresetup }}</h1>
-      <v-checkbox disabled v-model="ryd" :label="lang.enableryd" />
-      <v-checkbox disabled v-model="sponsorBlock" :label="lang.enablespb" />
+    <center ref="stage2" class="container hidden">
+      <h2 class="mb-2">{{ lang.featuresetup }}</h2>
+      <v-checkbox
+        v-model="ryd"
+        :label="lang.enableryd"
+        style="width: 80%"
+        disabled
+      />
+      <v-checkbox
+        v-model="sponsorBlock"
+        :label="lang.enablespb"
+        style="width: 80%"
+        disabled
+      />
     </center>
-    <center class="container hidden" ref="stage3">
-      <h1>{{ lang.thanks }}</h1>
-      <h3>{{ lang.enjoy }}</h3>
+    <center ref="stage3" class="container hidden" style="width: 80%">
+      <h2 class="mb-2">💕</h2>
+      <h2 class="mb-2">
+        {{ lang.thanks }}
+      </h2>
+      <h4>{{ lang.enjoy }}</h4>
     </center>
 
-    <v-btn @click="next()" class="rounded-xl primary nextButton"
-      >{{ lang.next }}
-      <v-icon style="margin-left: 0.5em">mdi-arrow-right</v-icon></v-btn
+    <v-btn
+      class="primary nextButton"
+      style="border-radius: 0.75rem"
+      @click="next()"
     >
+      {{ lang.next }}
+      <v-icon style="margin-left: 0.5em">mdi-arrow-right</v-icon>
+    </v-btn>
   </div>
 </template>
-
-<style scoped>
-.nextButton {
-  position: absolute;
-  bottom: 1em;
-  right: 2em;
-}
-
-.hidden {
-  display: none;
-}
-
-.fullWidth {
-  width: 100%;
-}
-
-.container {
-  width: 100%;
-}
-</style>
 
 <script>
 import language from "~/components/Settings/language.vue";
 export default {
-  layout: "empty",
   components: {
     language,
   },
+  layout: "empty",
   data() {
     return {
       lang: {},
@@ -80,7 +78,7 @@ export default {
 
       ryd: true,
       sponsorBlock: true,
-      apis: ["youtube.com", "twitch.tv", "odysee.com"]
+      apis: ["youtube.com", "twitch.tv", "odysee.com"],
     };
   },
   mounted() {
@@ -102,3 +100,24 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.nextButton {
+  padding-right: 0.5rem !important;
+  position: absolute;
+  bottom: 1rem;
+  right: 10%;
+}
+
+.hidden {
+  display: none;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+}
+</style>
