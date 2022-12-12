@@ -14,6 +14,7 @@
     </v-card>
 
     <!--   Backup   -->
+    <!--
     <v-card
       flat
       class="pb-5 background"
@@ -29,6 +30,7 @@
         <v-btn rounded @click="registryRestore">{{ lang.restore }}</v-btn>
       </v-card-actions>
     </v-card>
+    -->
 
 
   </div>
