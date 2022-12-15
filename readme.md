@@ -313,16 +313,61 @@ Other VueTube repos
 
 <br>
 
-[![VueTube Extractor](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Extractor)](https://github.com/VueTubeApp/VueTube-Extractor)
+<a href="https://github.com/VueTubeApp/VueTube-Extractor">
+    <picture>
+      <source 
+        srcset="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Extractor&theme=dark"
+        media="(prefers-color-scheme: dark)"
+      />
+      <source 
+        srcset="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Extractor&theme=highcontrast"
+        media="(prefers-color-scheme: dark_colorblind)"
+      />
+      <img 
+        src="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Extractor" 
+        alt="VueTube Extractor"
+       />
+    </picture>
+</a>
 
 **VueTube Extractor** is a library designed to extract data from streaming services, designed for use in VueTube App.
 
-[![VueTube Translator](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Translator)](https://github.com/VueTubeApp/VueTube-Translator)
+<a href="https://github.com/VueTubeApp/VueTube-Translator">
+    <picture>
+      <source 
+        srcset="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Translator&theme=dark"
+        media="(prefers-color-scheme: dark)"
+      />
+      <source 
+        srcset="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Translator&theme=highcontrast"
+        media="(prefers-color-scheme: dark_colorblind)"
+      />
+      <img 
+        src="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Translator" 
+        alt="VueTube Extractor"
+       />
+    </picture>
+</a>
 
 **VueTube Translator** is a tool for translating fields of GitHub files like JSON or JS and export the result with the
 correct structure. It was created to help VueTube translators, but it can be used for any other purpose.
 
-[![VueTube HTTP](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=vuetube-http)](https://github.com/VueTubeApp/vuetube-http)
+<a href="https://github.com/VueTubeApp/vuetube-http">
+    <picture>
+      <source 
+        srcset="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=vuetube-http&theme=dark"
+        media="(prefers-color-scheme: dark)"
+      />
+      <source 
+        srcset="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=vuetube-http&theme=highcontrast"
+        media="(prefers-color-scheme: dark_colorblind)"
+      />
+      <img 
+        src="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=vuetube-http" 
+        alt="VueTube Extractor"
+       />
+    </picture>
+</a>
 
 **VueTube HTTP** is a plugin for native HTTP requests, file download/uploads, and cookie management. It's a fork of
 the [original HTTP project](https://github.com/capacitor-community/http) from Capacitor Community, with additions by the
