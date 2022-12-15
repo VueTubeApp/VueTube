@@ -282,9 +282,9 @@ maintain the project and develop new features. Every kind of help is welcome! Th
 Disclaimer
 </h2>
 
-The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated
-with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found
-at [youtube.com](https://www.youtube.com).
+The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way associated
+with YouTube, Google LLC or any of its affiliates and subsidiaries. The official YouTube website can be found
+at [www.youtube.com](https://www.youtube.com).
 
 Any trademark, service mark, trade name, or other intellectual property rights used in the VueTube project are owned by
 the respective owners.
