@@ -1,6 +1,16 @@
 <p align="center">
-  <a href="https://vuetube.app/">
-    <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
+    <a href="https://vuetube.app/">
+    <picture>
+      <source 
+        srcset="https://raw.githubusercontent.com/VueTubeApp/.github/main/readme_assets/dark/VueTube.svg"
+        media="(prefers-color-scheme: dark)"
+      />
+      <img 
+        src="https://raw.githubusercontent.com/VueTubeApp/.github/main/readme_assets/light/VueTube.svg" 
+        alt="VueTube icon"
+        width="500"
+       />
+    </picture>
   </a>
   </br>
   <sub>Logo oleh <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
