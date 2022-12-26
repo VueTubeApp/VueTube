@@ -13,11 +13,9 @@ export const mutations = {
         (JSON.parse(localStorage.getItem("watchTelemetry")) === false)
       );
       // JSON.parse(localStorage.getItem("watchTelemetry")) === true; // defaults to false
-      console.warn("initTelemetryPreference", state.watchTelemetry);
     }
   },
   setTelemetryPreference(state, payload) {
-    console.warn("setTelemetryPreference", payload);
     state.watchTelemetry = payload;
     localStorage.setItem("watchTelemetry", payload);
   },

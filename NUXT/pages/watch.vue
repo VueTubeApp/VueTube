@@ -358,7 +358,6 @@ export default {
         console.log("recommendations:", this.recommends);
 
         //---   API WatchTime call   ---//
-        console.warn("WatchTime:", this.$store.state.watchTelemetry);
         if (this.$store.state.watchTelemetry) {
           this.playbackTracking = result.playbackTracking;
           this.st = 0;

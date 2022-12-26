@@ -129,7 +129,6 @@ export default {
         return this.$store.state.watchTelemetry;
       },
       set(value) {
-        console.warn("Setting watchTelemetry to " + value);
         this.$store.commit("setTelemetryPreference", value);
       },
     },
