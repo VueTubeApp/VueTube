@@ -33,16 +33,28 @@
     <center ref="stage2" class="container hidden">
       <h2 class="mb-2">{{ lang.featuresetup }}</h2>
       <v-checkbox
+        v-model="watchTelemetry"
+        :label="`Personalized Recommendations: ${
+          watchTelemetry ? 'Enabled' : 'Disabled'
+        }`"
+        style="width: 80%"
+        dense
+      />
+      <!-- TODO: translate -->
+      <!-- :label="`${lang.enabletelem} ${watchTelemetry ? ..." -->
+      <v-checkbox
         v-model="ryd"
         :label="lang.enableryd"
         style="width: 80%"
         disabled
+        dense
       />
       <v-checkbox
         v-model="sponsorBlock"
         :label="lang.enablespb"
         style="width: 80%"
         disabled
+        dense
       />
     </center>
     <center ref="stage3" class="container hidden" style="width: 80%">
@@ -80,6 +92,16 @@ export default {
       sponsorBlock: true,
       apis: ["youtube.com", "twitch.tv", "odysee.com"],
     };
+  },
+  computed: {
+    watchTelemetry: {
+      get() {
+        return this.$store.state.watchTelemetry;
+      },
+      set(value) {
+        this.$store.commit("setTelemetryPreference", value);
+      },
+    },
   },
   mounted() {
     this.lang = this.$lang("events");

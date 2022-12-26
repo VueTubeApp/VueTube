@@ -358,13 +358,15 @@ export default {
         console.log("recommendations:", this.recommends);
 
         //---   API WatchTime call   ---//
-        this.playbackTracking = result.playbackTracking;
-        this.st = 0;
-        this.cpn = getCpn();
-        this.initWatchTime().then(() => {
-          this.sendWatchTime();
-          this.interval = setInterval(this.sendWatchTime, 60000);
-        });
+        if (this.$store.state.watchTelemetry) {
+          this.playbackTracking = result.playbackTracking;
+          this.st = 0;
+          this.cpn = getCpn();
+          this.initWatchTime().then(() => {
+            this.sendWatchTime();
+            this.interval = setInterval(this.sendWatchTime, 60000);
+          });
+        }
       });
 
       this.$youtube.getReturnYoutubeDislike(this.$route.query.v, (data) => {

@@ -156,6 +156,142 @@
         </template>
       </v-slider>
     </v-card>
+
+    <v-divider v-if="!$store.state.tweaks.roundTweak" />
+
+    <!-- TODO: translate below -->
+
+    <h3 class="ml-8 mt-8">
+      <!-- <v-img
+        src="/icon.svg"
+        width="1rem"
+        height="1rem"
+        style="display: inline-block; margin-right: 0.5rem"
+        :class="$vuetify.theme.dark ? '' : 'invert'"
+      /> -->
+      Launch Screen
+    </h3>
+
+    <v-card
+      flat
+      class="mx-4 mt-2 mb-6 background d-flex flex-row"
+      style="overflow: hidden"
+      :style="{
+        borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
+      }"
+    >
+      <v-card
+        flat
+        class="mr-1 pa-4 pt-6 d-flex flex-column align-center justify-space-between"
+        style="width: calc(100% / 3) !important"
+        :class="
+          $store.state.tweaks.roundTweak > 0
+            ? $vuetify.theme.dark
+              ? launchIconTheme
+                ? 'primary darken-4'
+                : 'background lighten-1'
+              : launchIconTheme
+              ? 'primary lighten-4'
+              : 'background darken-1'
+            : 'background'
+        "
+        :style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 12}rem`,
+        }"
+        @click="launchIconTheme = !launchIconTheme"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1.5rem"
+          height="1.5rem"
+          xml:space="preserve"
+          viewBox="0 0 512 512"
+          class="iconsvgstuff"
+          style="transition: scale 0.25s"
+          :style="{
+            scale: launchIconTheme ? 1.25 : 1,
+            color: launchIconTheme ? $vuetify.theme.currentTheme.primary : '',
+          }"
+        >
+          <g>
+            <path
+              d="M157.768,142.391C168.454,136.236 168.454,120.814 157.766,114.66L157.761,114.658L121.527,93.811L161.399,75.218L175.714,83.453L175.736,83.466L216.392,106.857C233.102,116.471 233.102,140.582 216.392,150.196L175.743,173.582L175.714,173.599L158.778,183.343L118.905,164.75L157.761,142.395L157.768,142.391ZM36,163.605L36,184.79C36.005,197.092 49.314,204.788 59.979,198.652L82.89,185.471L122.763,204.063L77.932,229.856L77.903,229.873L37.467,253.137C20.801,262.726 0,250.695 0,231.467L0,146.818L36,163.605ZM125.384,54.497L85.512,73.09L59.979,58.4L59.964,58.392C49.3,52.27 36,59.968 36,72.269L36,96.178L0,112.965L0,25.585C0,6.357 20.801,-5.673 37.467,3.916L77.917,27.187L77.932,27.196L125.384,54.497Z"
+              transform="matrix(1.99234,0,0,1.99234,52.4337,-0.543689)"
+              style="fill: currentColor"
+            />
+          </g>
+        </svg>
+        <span class="mt-3 text-center" style="font-size: 0.8rem">
+          Themed Icon
+        </span>
+      </v-card>
+      <v-card
+        flat
+        class="mr-1 pa-4 d-flex flex-column align-center justify-space-between"
+        style="width: calc(100% / 3) !important"
+        :class="
+          $store.state.tweaks.roundTweak > 0
+            ? $vuetify.theme.dark
+              ? launchTheme === 0
+                ? 'primary darken-4'
+                : 'background lighten-1'
+              : launchTheme === 0
+              ? 'primary lighten-4'
+              : 'background darken-1'
+            : 'background'
+        "
+        :style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 12}rem`,
+        }"
+        @click="launchTheme = 0"
+      >
+        <v-icon
+          style="transition: transform 0.25s; width: 3rem; height: 3rem"
+          :style="{
+            transform: launchTheme === 0 ? 'scale(1.5)' : '',
+            color: launchTheme === 0 ? $vuetify.theme.currentTheme.primary : '',
+          }"
+        >
+          mdi-align-horizontal-center
+        </v-icon>
+        <span class="mt-3 text-center" style="font-size: 0.8rem">
+          Centered Layout
+        </span>
+      </v-card>
+      <v-card
+        flat
+        class="mr-1 pa-4 d-flex flex-column align-center justify-space-between"
+        style="width: calc(100% / 3) !important"
+        :class="
+          $store.state.tweaks.roundTweak > 0
+            ? $vuetify.theme.dark
+              ? launchTheme === 1
+                ? 'primary darken-4'
+                : 'background lighten-1'
+              : launchTheme === 1
+              ? 'primary lighten-4'
+              : 'background darken-1'
+            : 'background'
+        "
+        :style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 12}rem`,
+        }"
+        @click="launchTheme = 1"
+      >
+        <v-icon
+          style="transition: transform 0.25s; width: 3rem; height: 3rem"
+          :style="{
+            transform: launchTheme === 1 ? 'scale(1.5)' : '',
+            color: launchTheme === 1 ? $vuetify.theme.currentTheme.primary : '',
+          }"
+        >
+          mdi-align-vertical-distribute
+        </v-icon>
+        <span class="mt-3 text-center" style="font-size: 0.8rem">
+          Fullscreen Layout
+        </span>
+      </v-card>
+    </v-card>
   </div>
 </template>
 
@@ -189,6 +325,22 @@ export default {
       },
       set(value) {
         this.$store.commit("tweaks/setRoundWatch", value);
+      },
+    },
+    launchTheme: {
+      get() {
+        return this.$store.state.tweaks.launchTheme;
+      },
+      set(value) {
+        this.$store.commit("tweaks/setLaunchTheme", value);
+      },
+    },
+    launchIconTheme: {
+      get() {
+        return this.$store.state.tweaks.launchIconTheme;
+      },
+      set(value) {
+        this.$store.commit("tweaks/setLaunchIconTheme", value);
       },
     },
   },
