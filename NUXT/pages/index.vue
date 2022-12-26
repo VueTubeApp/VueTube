@@ -26,6 +26,7 @@ export default {
     this.$store.commit("initTelemetryPreference");
     this.$store.commit("tweaks/initTweaks");
     this.$store.commit("player/initPlayer");
+    await this.$vuetube.launchBackHandling();
 
     //---   Load Theming   ---//
     await this.theming();
@@ -39,7 +40,6 @@ export default {
 
     //---   Start Innertube Connection   ---//
     await this.$youtube.getAPI();
-    await this.$vuetube.launchBackHandling();
     this.progressMsg = this.$lang("index").launching;
 
     if (localStorage.getItem("firstTimeSetupComplete")) {
