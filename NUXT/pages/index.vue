@@ -23,6 +23,7 @@ export default {
   async mounted() {
     //---   Init Stuff   ---//
     this.progressMsg = this.$lang("index").connecting;
+    this.$store.commit("initTelemetryPreference");
     this.$store.commit("tweaks/initTweaks");
     this.$store.commit("player/initPlayer");
 
@@ -30,7 +31,11 @@ export default {
     await this.theming();
 
     //---   Update Screen   ---//
-    if ( (localStorage.getItem("lastRunVersion") != null) && (localStorage.getItem("lastRunVersion") != process.env.version) ) return this.$router.replace("/activities/update");
+    if (
+      localStorage.getItem("lastRunVersion") != null &&
+      localStorage.getItem("lastRunVersion") != process.env.version
+    )
+      return this.$router.replace("/activities/update");
 
     //---   Start Innertube Connection   ---//
     await this.$youtube.getAPI();
