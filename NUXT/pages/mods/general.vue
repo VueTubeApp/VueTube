@@ -20,7 +20,7 @@
     <v-card
       flat
       class="d-flex flex-row mx-4 mb-4 pr-4 background"
-      style="overflow: hidden"
+      style="overflow: hidden; position: relative"
       :class="
         $store.state.tweaks.roundTweak > 0
           ? $vuetify.theme.dark
@@ -38,21 +38,35 @@
           $vuetube.haptics.hapticsImpactLight(1)
       "
     >
+      <div
+        v-if="roundTweak > 0"
+        class="circle"
+        :class="watchTelemetry ? '' : 'moved'"
+        style="width: 11rem; height: 11rem"
+      ></div>
+      <div
+        v-if="roundTweak > 0"
+        class="circle"
+        :class="watchTelemetry ? '' : 'moved'"
+        style="width: 7rem; height: 7rem"
+      ></div>
       <v-icon
-        class="pr-8 pl-4"
-        style="border-radius: 0rem !important"
-        :class="
-          $store.state.tweaks.roundTweak > 0
-            ? $vuetify.theme.dark
-              ? 'background lighten-2'
-              : 'background darken-2'
-            : ''
-        "
+        class="pr-8 pl-4 py-12"
+        style="border-radius: 0rem !important; transition: all 0.2s ease"
         :style="{
+          translate:
+            watchTelemetry && $store.state.tweaks.roundTweak > 0
+              ? '0 1.75rem'
+              : '0 -1.5rem',
+          scale: watchTelemetry ? '1.1' : '1',
           color: watchTelemetry ? 'var(--v-primary-base)' : '',
         }"
       >
-        mdi-account-card-outline
+        {{
+          watchTelemetry
+            ? "mdi-account-card-outline"
+            : "mdi-account-lock-outline"
+        }}
       </v-icon>
       <div
         class="my-auto pa-4 ml-n4 background"
@@ -82,11 +96,10 @@
           time telemetry.
         </div>
       </div>
-      <v-spacer />
       <v-switch
         v-model="watchTelemetry"
-        style="pointer-events: none"
         class="mt-4"
+        style="pointer-events: none"
         inset
       />
     </v-card>
@@ -190,5 +203,18 @@ export default {
 
 section {
   padding: 0 1em 1em 1em;
+}
+.circle {
+  left: -2rem;
+  bottom: -2rem;
+  opacity: 0.25;
+  position: absolute;
+  border-radius: 50%;
+  background: var(--v-primary-base);
+  transition: all 0.25s ease;
+}
+.moved {
+  bottom: -8rem;
+  left: -16rem;
 }
 </style>
