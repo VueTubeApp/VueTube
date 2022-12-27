@@ -486,6 +486,7 @@ export default {
 
     // Toggle this.showComments to true or false. If it is true, then add the dismiss function to backStack.
     toggleComment() {
+      document.getElementById("content-container").scrollTo(0, 0);
       this.showComments = !this.showComments;
       if (this.showComments) {
         const dismissComment = new backType(
@@ -508,8 +509,8 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 2;
   opacity: 0;
+  z-index: 2;
   height: 100%;
   max-height: 100%;
   position: absolute;
