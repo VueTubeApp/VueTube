@@ -18,10 +18,9 @@ Vue.directive("emoji", {
 let backActions;
 
 const module = {
-
   //---   Open External / Open In Browser   ---//
   openExternal(url) {
-    window.open(url, '_blank');
+    window.open(url, "_blank");
   },
 
   //---   Get GitHub Commits   ---//
@@ -130,10 +129,13 @@ const module = {
       Math.floor((((seconds % 31536000) % 86400) % 3600) / 60), //Minutes
       Math.floor((((seconds % 31536000) % 86400) % 3600) % 60), //Seconds
     ];
-    levels = levels.filter((level, levelIndex) => level !== null || (levelIndex > 0 && levels[levelIndex - 1]));
+    levels = levels.filter(
+      (level, levelIndex) =>
+        level !== null || (levelIndex > 0 && levels[levelIndex - 1])
+    );
 
     for (let i = 1; i < levels.length; i++) {
-      if (!levels[i]) levels[i] = 0
+      if (!levels[i]) levels[i] = 0;
       levels[i] = levels[i].toString().padStart(2, "0");
     }
     // join the array into a string with : as a sepatrator
@@ -142,7 +144,6 @@ const module = {
     return returntext;
   },
   //---   End Convert Time To Human Readable String   ---//
-
 };
 
 //---   Start   ---//
