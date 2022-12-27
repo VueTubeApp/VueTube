@@ -513,11 +513,13 @@ export default {
   height: 100%;
   max-height: 100%;
   position: absolute;
+  pointer-events: none;
   transform: translateY(100%);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 .comments-open {
   transform: translatey(0);
+  pointer-events: auto;
   opacity: 1;
 }
 #watch-body {
