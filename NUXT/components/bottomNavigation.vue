@@ -42,9 +42,10 @@
             v-if="$store.state.tweaks.navigationIcons === 1"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            viewBox="0 0 52 52"
+            viewBox="0 0 50 50"
             height="1.5rem"
             width="1.5rem"
+            class="mt-1"
           >
             <use :href="`/${item.svg}.svg#main`" />
           </svg>
@@ -52,9 +53,10 @@
             v-if="$store.state.tweaks.navigationIcons === 2"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            viewBox="0 0 22 22"
+            viewBox="0 0 20 20"
             height="1.5rem"
             width="1.5rem"
+            class="mt-1"
           >
             <use :href="`/${item.svg2}.svg#main`" />
           </svg>
@@ -62,9 +64,10 @@
             v-if="$store.state.tweaks.navigationIcons === 3"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            viewBox="0 0 34 34"
+            viewBox="0 0 32 32"
             height="1.5rem"
             width="1.5rem"
+            class="mt-1"
           >
             <use :href="`/${item.svg3}.svg#main`" />
           </svg>
