@@ -165,7 +165,7 @@
                 :class="
                   $vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'
                 "
-                v-text="video.channelSubs"
+                v-text="video.channelSubs + ' subscribers'"
               />
             </div>
           </div>

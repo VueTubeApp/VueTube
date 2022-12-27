@@ -90,10 +90,7 @@
           (roundThumb = !roundThumb), $vuetube.haptics.hapticsImpactLight(1)
         "
       >
-        <div
-          class="my-auto background--text"
-          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-        >
+        <div class="my-auto" :class="roundThumb ? 'primary--text' : ''">
           {{ lang.roundthumbnails }}
         </div>
         <v-spacer />
@@ -118,10 +115,7 @@
           (roundWatch = !roundWatch), $vuetube.haptics.hapticsImpactLight(1)
         "
       >
-        <div
-          class="my-auto background--text"
-          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
-        >
+        <div class="my-auto" :class="roundThumb ? 'primary--text' : ''">
           {{ lang.roundwatchpagecomponents }}
         </div>
         <v-spacer />
@@ -137,7 +131,6 @@
         v-model="roundTweak"
         class="pr-8 pl-4 pt-3 pb-0 background"
         :max="4"
-        :label="lang.radius"
         step=".25"
         thumb-size="64"
         :class="
@@ -148,6 +141,12 @@
         }"
         @input="$vuetube.haptics.hapticsImpactLight(0)"
       >
+        <template #label>
+          <div :class="roundTweak > 0 ? 'primary--text' : ''">
+            {{ lang.radius }}
+          </div>
+        </template>
+
         <template #thumb-label="{ value }">
           <div
             class="pa-4 background"
@@ -161,16 +160,7 @@
 
     <!-- TODO: translate below -->
 
-    <h3 class="ml-8 mt-8">
-      <!-- <v-img
-        src="/icon.svg"
-        width="1rem"
-        height="1rem"
-        style="display: inline-block; margin-right: 0.5rem"
-        :class="$vuetify.theme.dark ? '' : 'invert'"
-      /> -->
-      Launch Screen
-    </h3>
+    <h3 class="ml-8 mt-8">Launch Screen</h3>
 
     <v-card
       flat
@@ -180,51 +170,6 @@
         borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
       }"
     >
-      <v-card
-        flat
-        class="mr-1 pa-4 pt-6 d-flex flex-column align-center justify-space-between"
-        style="width: calc(100% / 3) !important"
-        :class="
-          $store.state.tweaks.roundTweak > 0
-            ? $vuetify.theme.dark
-              ? launchIconTheme
-                ? 'primary darken-4'
-                : 'background lighten-1'
-              : launchIconTheme
-              ? 'primary lighten-4'
-              : 'background darken-1'
-            : 'background'
-        "
-        :style="{
-          borderRadius: `${$store.state.tweaks.roundTweak / 12}rem`,
-        }"
-        @click="launchIconTheme = !launchIconTheme"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1.5rem"
-          height="1.5rem"
-          xml:space="preserve"
-          viewBox="0 0 512 512"
-          class="iconsvgstuff"
-          style="transition: scale 0.25s"
-          :style="{
-            scale: launchIconTheme ? 1.25 : 1,
-            color: launchIconTheme ? $vuetify.theme.currentTheme.primary : '',
-          }"
-        >
-          <g>
-            <path
-              d="M157.768,142.391C168.454,136.236 168.454,120.814 157.766,114.66L157.761,114.658L121.527,93.811L161.399,75.218L175.714,83.453L175.736,83.466L216.392,106.857C233.102,116.471 233.102,140.582 216.392,150.196L175.743,173.582L175.714,173.599L158.778,183.343L118.905,164.75L157.761,142.395L157.768,142.391ZM36,163.605L36,184.79C36.005,197.092 49.314,204.788 59.979,198.652L82.89,185.471L122.763,204.063L77.932,229.856L77.903,229.873L37.467,253.137C20.801,262.726 0,250.695 0,231.467L0,146.818L36,163.605ZM125.384,54.497L85.512,73.09L59.979,58.4L59.964,58.392C49.3,52.27 36,59.968 36,72.269L36,96.178L0,112.965L0,25.585C0,6.357 20.801,-5.673 37.467,3.916L77.917,27.187L77.932,27.196L125.384,54.497Z"
-              transform="matrix(1.99234,0,0,1.99234,52.4337,-0.543689)"
-              style="fill: currentColor"
-            />
-          </g>
-        </svg>
-        <span class="mt-3 text-center" style="font-size: 0.8rem">
-          Themed Icon
-        </span>
-      </v-card>
       <v-card
         flat
         class="mr-1 pa-4 d-flex flex-column align-center justify-space-between"
@@ -274,7 +219,11 @@
             : 'background'
         "
         :style="{
-          borderRadius: `${$store.state.tweaks.roundTweak / 12}rem`,
+          borderRadius: `${$store.state.tweaks.roundTweak / 12}rem ${
+            $store.state.tweaks.roundTweak / 2
+          }rem ${$store.state.tweaks.roundTweak / 2}rem  ${
+            $store.state.tweaks.roundTweak / 12
+          }rem `,
         }"
         @click="launchTheme = 1"
       >
@@ -291,6 +240,322 @@
           Fullscreen Layout
         </span>
       </v-card>
+      <v-card
+        flat
+        class="ml-4 pa-4 pt-6 d-flex flex-column align-center justify-space-between"
+        style="width: calc(100% / 3) !important"
+        :class="
+          $store.state.tweaks.roundTweak > 0
+            ? $vuetify.theme.dark
+              ? launchIconTheme
+                ? 'primary darken-4'
+                : 'background lighten-1'
+              : launchIconTheme
+              ? 'primary lighten-4'
+              : 'background darken-1'
+            : 'background'
+        "
+        :style="{
+          borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
+        }"
+        @click="launchIconTheme = !launchIconTheme"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1.5rem"
+          height="1.5rem"
+          xml:space="preserve"
+          viewBox="0 0 512 512"
+          class="iconsvgstuff"
+          style="transition: scale 0.25s; border-radius: 0 !important"
+          :style="{
+            scale: launchIconTheme ? 1.25 : 1,
+            color: launchIconTheme ? $vuetify.theme.currentTheme.primary : '',
+          }"
+        >
+          <g>
+            <path
+              d="M157.768,142.391C168.454,136.236 168.454,120.814 157.766,114.66L157.761,114.658L121.527,93.811L161.399,75.218L175.714,83.453L175.736,83.466L216.392,106.857C233.102,116.471 233.102,140.582 216.392,150.196L175.743,173.582L175.714,173.599L158.778,183.343L118.905,164.75L157.761,142.395L157.768,142.391ZM36,163.605L36,184.79C36.005,197.092 49.314,204.788 59.979,198.652L82.89,185.471L122.763,204.063L77.932,229.856L77.903,229.873L37.467,253.137C20.801,262.726 0,250.695 0,231.467L0,146.818L36,163.605ZM125.384,54.497L85.512,73.09L59.979,58.4L59.964,58.392C49.3,52.27 36,59.968 36,72.269L36,96.178L0,112.965L0,25.585C0,6.357 20.801,-5.673 37.467,3.916L77.917,27.187L77.932,27.196L125.384,54.497Z"
+              transform="matrix(1.99234,0,0,1.99234,52.4337,-0.543689)"
+              style="fill: currentColor"
+            />
+          </g>
+        </svg>
+        <span class="mt-3 text-center" style="font-size: 0.8rem">
+          Themed Icon
+        </span>
+      </v-card>
+    </v-card>
+
+    <v-divider v-if="!$store.state.tweaks.roundTweak" />
+
+    <!-- TODO: translate below -->
+
+    <h3 class="ml-8 mt-8">Bottom Navigation</h3>
+    <v-card
+      flat
+      class="mx-4 mt-2 mb-6 background d-flex flex-column"
+      style="overflow: hidden"
+      :style="{
+        borderRadius: `${$store.state.tweaks.roundTweak / 2}rem`,
+      }"
+    >
+      <v-card
+        flat
+        class="mb-1 px-4 py-2 d-flex flex-row background"
+        :class="
+          roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
+        "
+        :style="{
+          borderRadius: `${roundTweak / 12}rem`,
+        }"
+        @click="
+          navigationIcons < 1 ? (navigationShift = !navigationShift) : '',
+            $vuetube.haptics.hapticsImpactLight(1)
+        "
+      >
+        <div class="my-auto" :class="navigationShift ? 'primary--text' : ''">
+          Shift
+        </div>
+        <v-spacer />
+        <v-switch
+          v-model="navigationShift"
+          style="pointer-events: none"
+          persistent-hint
+          class="mt-2"
+          inset
+        />
+      </v-card>
+      <v-card
+        flat
+        class="mb-1 px-4 py-2 d-flex flex-row background"
+        :class="
+          roundTweak > 0 ? ($vuetify.theme.dark ? 'lighten-1' : 'darken-1') : ''
+        "
+        :style="{
+          borderRadius: `${roundTweak / 12}rem`,
+        }"
+        @click="
+          (navigationText = !navigationText),
+            $vuetube.haptics.hapticsImpactLight(1)
+        "
+      >
+        <div class="my-auto" :class="navigationText ? 'primary--text' : ''">
+          Show Labels
+        </div>
+        <v-spacer />
+        <v-switch
+          v-model="navigationText"
+          style="pointer-events: none"
+          persistent-hint
+          class="mt-2"
+          inset
+        />
+      </v-card>
+      <div class="mb-1 d-flex flex-row">
+        <v-card
+          flat
+          class="mr-1 pa-4 d-flex flex-row align-center background"
+          :class="
+            roundTweak > 0
+              ? $vuetify.theme.dark
+                ? 'lighten-1'
+                : 'darken-1'
+              : ''
+          "
+          style="width: 100%"
+          :style="{
+            color: navigationIcons === 0 ? 'var(--v-primary-base)' : '',
+            borderRadius: `${roundTweak / 12}rem`,
+          }"
+          @click="(navigationIcons = 0), $vuetube.haptics.hapticsImpactLight(1)"
+        >
+          <div>MDI</div>
+          <v-spacer></v-spacer>
+          <v-icon
+            :class="navigationIcons === 0 ? 'primary--text' : ''"
+            class="ma-1"
+          >
+            mdi-home
+          </v-icon>
+          <v-icon
+            :class="navigationIcons === 0 ? 'primary--text' : ''"
+            class="ma-1"
+          >
+            mdi-youtube-subscription
+          </v-icon>
+          <v-icon
+            :class="navigationIcons === 0 ? 'primary--text' : ''"
+            class="ma-1"
+          >
+            mdi-view-list
+          </v-icon>
+        </v-card>
+        <v-card
+          flat
+          class="pa-4 d-flex flex-row align-center background"
+          :class="
+            roundTweak > 0
+              ? $vuetify.theme.dark
+                ? 'lighten-1'
+                : 'darken-1'
+              : ''
+          "
+          style="width: 100%"
+          :style="{
+            color: navigationIcons === 1 ? 'var(--v-primary-base)' : '',
+            borderRadius: `${roundTweak / 12}rem`,
+          }"
+          @click="
+            (navigationIcons = 1),
+              (navigationShift = false),
+              $vuetube.haptics.hapticsImpactLight(1)
+          "
+        >
+          <div>Material Symbols</div>
+          <v-spacer></v-spacer>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 48 48"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/home.svg#main" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 48 48"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/subs.svg#main" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 48 48"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/list.svg#main" />
+          </svg>
+        </v-card>
+      </div>
+      <div class="d-flex flex-row">
+        <v-card
+          flat
+          class="mr-1 pa-4 d-flex flex-row align-center background"
+          :class="
+            roundTweak > 0
+              ? $vuetify.theme.dark
+                ? 'lighten-1'
+                : 'darken-1'
+              : ''
+          "
+          style="width: 100%"
+          :style="{
+            color: navigationIcons === 2 ? 'var(--v-primary-base)' : '',
+            borderRadius: `${roundTweak / 12}rem`,
+          }"
+          @click="
+            (navigationIcons = 2),
+              (navigationShift = false),
+              $vuetube.haptics.hapticsImpactLight(1)
+          "
+        >
+          <div>FluentUI Icons</div>
+          <v-spacer></v-spacer>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/fhome.svg#main" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/fsubs.svg#main" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/flist.svg#main" />
+          </svg>
+        </v-card>
+        <v-card
+          flat
+          class="pa-4 d-flex flex-row align-center background"
+          :class="
+            roundTweak > 0
+              ? $vuetify.theme.dark
+                ? 'lighten-1'
+                : 'darken-1'
+              : ''
+          "
+          style="width: 100%"
+          :style="{
+            color: navigationIcons === 3 ? 'var(--v-primary-base)' : '',
+            borderRadius: `${roundTweak / 12}rem`,
+          }"
+          @click="
+            (navigationIcons = 3),
+              (navigationShift = false),
+              $vuetube.haptics.hapticsImpactLight(1)
+          "
+        >
+          <div>IBM Carbon Icons</div>
+          <v-spacer></v-spacer>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 32 32"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/chome.svg#main" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 32 32"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/csubs.svg#main" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 32 32"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/clist.svg#main" />
+          </svg>
+        </v-card>
+      </div>
     </v-card>
   </div>
 </template>
@@ -341,6 +606,30 @@ export default {
       },
       set(value) {
         this.$store.commit("tweaks/setLaunchIconTheme", value);
+      },
+    },
+    navigationText: {
+      get() {
+        return this.$store.state.tweaks.navigationText;
+      },
+      set(value) {
+        this.$store.commit("tweaks/setNavigationText", value);
+      },
+    },
+    navigationShift: {
+      get() {
+        return this.$store.state.tweaks.navigationShift;
+      },
+      set(value) {
+        this.$store.commit("tweaks/setNavigationShift", value);
+      },
+    },
+    navigationIcons: {
+      get() {
+        return this.$store.state.tweaks.navigationIcons;
+      },
+      set(value) {
+        this.$store.commit("tweaks/setNavigationIcons", value);
       },
     },
   },

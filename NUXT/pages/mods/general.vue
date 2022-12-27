@@ -104,9 +104,70 @@
       />
     </v-card>
 
+    <!-- Clear Watch History -->
+    <!-- <v-dialog v-model="dialog" class="ma-0">
+      <template #activator="{ on, attrs }">
+        <v-btn
+          class="mx-4"
+          color="background"
+          :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+          style="text-transform: none !important; width: calc(100% - 2rem)"
+          :style="{
+            borderRadius: `${roundTweak / 4}rem`,
+          }"
+          v-bind="attrs"
+          v-on="on"
+        >
+          Reset Recommendations
+        </v-btn>
+      </template>
+
+      <v-card
+        class="ma-0 no-shadow"
+        :style="{
+          borderRadius: `${roundTweak / 2}rem`,
+        }"
+      >
+        <v-card-title class="primary background--text"> Warning </v-card-title>
+        <v-card-text
+          class="background--text pt-6"
+          :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
+        >
+          This will erase your watch history and reset personalized
+          recommendations.
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions class="pa-none">
+          <v-btn
+            text
+            color="primary"
+            :style="{
+              borderRadius: `${roundTweak / 4}rem`,
+            }"
+            @click="dialog = false"
+            >Cancel</v-btn
+          >
+          <v-spacer></v-spacer>
+          <v-btn
+            text
+            :color="
+              $vuetify.theme.dark
+                ? 'background lighten-4'
+                : 'background darken-4'
+            "
+            :style="{
+              borderRadius: `${roundTweak / 4}rem`,
+            }"
+            @click="(dialog = false), clearHistory()"
+          >
+            Proceed
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog> -->
+
     <!--   Backup   -->
-    <!--
-    <v-card
+    <!-- <v-card
       flat
       class="pb-5 background"
       :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
@@ -117,11 +178,17 @@
         <p>{{ lang.backupinfo }}</p>
       </v-card-text>
       <v-card-actions>
-        <v-btn rounded depressed class="background--text ml-2" color="primary" @click="registryBackup">{{ lang.backup }}</v-btn>
+        <v-btn
+          rounded
+          depressed
+          class="background--text ml-2"
+          color="primary"
+          @click="registryBackup"
+          >{{ lang.backup }}</v-btn
+        >
         <v-btn rounded @click="registryRestore">{{ lang.restore }}</v-btn>
       </v-card-actions>
-    </v-card>
-    -->
+    </v-card> -->
   </div>
 </template>
 
@@ -133,6 +200,7 @@ export default {
   },
   data() {
     return {
+      dialog: false,
       lang: {},
     };
   },
@@ -154,6 +222,16 @@ export default {
     this.lang = lang.mods.general;
   },
   methods: {
+    clearHistory() {
+      const cookies = document.cookie.split(";");
+
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const eqPos = cookie.indexOf("=");
+        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      }
+    },
     download(filename, text) {
       var element = document.createElement("a");
       element.setAttribute(

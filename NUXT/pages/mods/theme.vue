@@ -69,6 +69,7 @@
               : backgroundsLight"
             :key="background.color"
             class="text-center"
+            style="font-size: 0.75rem"
           >
             <v-radio
               color="primary"
@@ -84,7 +85,7 @@
             />
             {{ background.name }}
           </div>
-          <div class="text-center">
+          <div class="text-center" style="font-size: 0.75rem">
             <v-radio
               color="primary"
               active-class="px-6 border-primary primary"
@@ -103,7 +104,7 @@
             />
             {{ lang.adaptive }}
           </div>
-          <div class="text-center">
+          <div class="text-center" style="font-size: 0.75rem">
             <!-- Custom Background -->
             <v-btn
               icon
@@ -170,7 +171,14 @@
 export default {
   data() {
     return {
-      primaryLight: ["#6b0406","#E57373", "#34495E", "#6e0ba3","#016a49", "#8b5f37"],
+      primaryLight: [
+        "#6b0406",
+        "#E57373",
+        "#34495E",
+        "#6e0ba3",
+        "#016a49",
+        "#8b5f37",
+      ],
       primaryDark: [
         "#dc2626",
         "#FFBBFF",
@@ -180,12 +188,12 @@ export default {
         "#FEC89B",
       ],
       backgroundsDark: [
-        { name: "Dark", color: "#181818" },
+        { name: this.$lang("mods").theme.dark, color: "#181818" },
         { name: "Warm", color: "#1c1917" },
-        { name: "Black", color: "#000000" },
+        { name: this.$lang("mods").theme.black, color: "#000000" },
       ],
       backgroundsLight: [
-        { name: "Normal", color: "#ffffff" },
+        { name: this.$lang("mods").theme.normal, color: "#ffffff" },
         { name: "Cold", color: "#e2e8f0" },
         { name: "Warm", color: "#e7e5e4" },
       ],
@@ -236,10 +244,11 @@ export default {
   },
   mounted() {
     this.lang = this.$lang("mods").theme;
-    // TODO: loop, and fill the missing colors, otherwise it breaks
-    // this.backgroundsLight[0].name = this.lang.normal;
-    // this.backgroundsDark[0].name = this.lang.dark;
-    // this.backgroundsDark[1].name = this.lang.black;
+    if (this.lang.cold) this.backgroundsLight[1].name = this.lang.cold;
+    if (this.lang.warm) {
+      this.backgroundsDark[1].name = this.lang.warm;
+      this.backgroundsLight[2].name = this.lang.warm;
+    }
   },
   beforeMount() {
     this.adapt();

@@ -1,11 +1,14 @@
 <template>
-  <div class="bottomNav background" v-if="!$route.path.includes('/mods')">
+  <div
+    v-if="!$route.path.includes('/mods') || $route.path.includes('/tweaks')"
+    class="bottomNav background"
+  >
     <v-divider v-if="!$store.state.tweaks.roundTweak" />
     <v-bottom-navigation
       v-model="tabSelection"
       style="padding: 0 !important; box-shadow: none !important"
       class="transparent"
-      shift
+      :shift="$store.state.tweaks.navigationShift"
     >
       <v-btn
         v-for="(item, i) in tabs"
@@ -15,8 +18,62 @@
         :to="item.link"
         plain
       >
-        <span v-text="item.name" />
+        <span v-if="$store.state.tweaks.navigationText" v-text="item.name" />
+        <div
+          v-if="$store.state.tweaks.navigationIcons !== 0"
+          class="px-3"
+          :style="{
+            color:
+              tabSelection == i
+                ? 'var(--v-primary-base)'
+                : $vuetify.theme.dark
+                ? 'var(--v-background-lighten4)'
+                : 'var(--v-background-darken4)',
+          }"
+          :class="
+            tabSelection == i
+              ? $vuetify.theme.dark
+                ? 'tab primary darken-4'
+                : 'tab primary lighten-4'
+              : ''
+          "
+        >
+          <svg
+            v-if="$store.state.tweaks.navigationIcons === 1"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 50 50"
+            height="1.5rem"
+            width="1.5rem"
+            class="mt-1"
+          >
+            <use :href="`/${item.svg}.svg#main`" />
+          </svg>
+          <svg
+            v-if="$store.state.tweaks.navigationIcons === 2"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            height="1.5rem"
+            width="1.5rem"
+            class="mt-1"
+          >
+            <use :href="`/${item.svg2}.svg#main`" />
+          </svg>
+          <svg
+            v-if="$store.state.tweaks.navigationIcons === 3"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 32 32"
+            height="1.5rem"
+            width="1.5rem"
+            class="mt-1"
+          >
+            <use :href="`/${item.svg3}.svg#main`" />
+          </svg>
+        </div>
         <v-icon
+          v-if="$store.state.tweaks.navigationIcons === 0"
           :color="
             tabSelection == i
               ? 'primary'
@@ -33,28 +90,7 @@
           "
           v-text="item.icon"
         />
-        <!-- 
-      <span v-text="item.name" />
-      <v-icon
-        :color="
-          tabSelection == i
-            ? 'primary'
-            : $vuetify.theme.dark
-            ? 'background lighten-4'
-            : 'background darken-4'
-        "
-        :class="
-          tabSelection == i
-            ? $vuetify.theme.dark
-              ? 'tab primary darken-4'
-              : 'tab primary lighten-4'
-            : ''
-        "
-        v-text="item.icon"
-      /> -->
-        <!-- Add the following to 'v-text- above to make the icons outlined unless active
-        + (tabSelection == i ? '' : '-outline')
-       -->
+        <!-- + (tabSelection == i ? '' : '-outline') -->
       </v-btn>
       <!-- <v-btn
         text
@@ -74,15 +110,32 @@ export default {
       tabSelection: 0,
       tabs: [
         // TODO: pull from Vuex & localStorage for customizations
-        { name: "", icon: "mdi-home", link: "/home" },
-        //{ name: "Shorts", icon: "mdi-lightning-bolt", link: "/shorts" },
-        //{ name: "Upload", icon: "mdi-plus", link: "/upload" },
+        {
+          name: "",
+          icon: "mdi-home",
+          svg: "home",
+          svg2: "fhome",
+          svg3: "chome",
+          link: "/home",
+        },
+        // { name: "Shorts", icon: "mdi-lightning-bolt", link: "/shorts" },
+        // { name: "Upload", icon: "mdi-plus", link: "/upload" },
         {
           name: "",
           icon: "mdi-youtube-subscription",
+          svg: "subs",
+          svg2: "fsubs",
+          svg3: "csubs",
           link: "/subscriptions",
         },
-        { name: "", icon: "mdi-view-list", link: "/library" },
+        {
+          name: "",
+          icon: "mdi-view-list",
+          svg: "list",
+          svg2: "flist",
+          svg3: "clist",
+          link: "/library",
+        },
         // { name: "Settings", icon: "mdi-menu", link: "/settings" },
       ],
     };
@@ -114,6 +167,6 @@ export default {
 }
 .tab {
   padding: 0.1em 0.5em 0.1em 0.5em;
-  border-radius: 1em;
+  border-radius: 2rem;
 }
 </style>

@@ -28,7 +28,7 @@ module.exports = {
     startup: "Startup",
     theme: "Theme",
     tweaks: "Tweaks",
-    updates: "Updates"
+    updates: "Updates",
   },
 
   index: {
@@ -55,7 +55,7 @@ module.exports = {
       language: "Language",
       backup: "Backup",
       backupinfo: "Backup or restore your application settings",
-      restore: "Restore"
+      restore: "Restore",
     },
     theme: {
       normal: "Normal",
