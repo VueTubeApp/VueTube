@@ -7,7 +7,8 @@ module.exports = {
     library: "Librería",
     restart: "Reiniciar",
     later: "Más tarde",
-    settingRestart: "Al modificar este ajuste, la app debe ser reiniciada para que los cambios se apliquen.",
+    settingRestart:
+      "Al modificar este ajuste, la app debe ser reiniciada para que los cambios se apliquen.",
     okay: "OK"
   },
 
@@ -81,7 +82,8 @@ pages: {
       checking: "Buscando actualizaciones",
       available: "Actualización disponible",
       noupdate: "No hay nuevas actualizaciones",
-      noupdatemessage: "Estás usando la versión más reciente de VueTube. Vuelve más tarde para buscar actualizaciones.",
+      noupdatemessage:
+        "Estás usando la versión más reciente de VueTube. Vuelve más tarde para buscar actualizaciones.",
 
       installed: "Versión instalada",
       latest: "Última versión",
