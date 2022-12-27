@@ -28,7 +28,7 @@ module.exports = {
     startup: "Permulaan",
     theme: "Tema",
     tweaks: "Pelarasan",
-    updates: "Kemaskini"
+    updates: "Kemaskini",
   },
 
   index: {
@@ -55,7 +55,7 @@ module.exports = {
       language: "Bahasa",
       backup: "Sandaran",
       backupinfo: "Sandarkan atau pulihkan semula tetapan aplikasi anda",
-      restore: "Pulihkan semula"
+      restore: "Pulihkan semula",
     },
     theme: {
       normal: "Normal",
