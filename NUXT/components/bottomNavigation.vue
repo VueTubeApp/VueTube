@@ -19,8 +19,58 @@
         plain
       >
         <span v-if="$store.state.tweaks.navigationText" v-text="item.name" />
-        <!-- v-if="$store.state.tweaks.navigationIcons === 0" -->
+        <div
+          v-if="$store.state.tweaks.navigationIcons !== 0"
+          class="px-3"
+          :style="{
+            color:
+              tabSelection == i
+                ? 'var(--v-primary-base)'
+                : $vuetify.theme.dark
+                ? 'var(--v-background-lighten4)'
+                : 'var(--v-background-darken4)',
+          }"
+          :class="
+            tabSelection == i
+              ? $vuetify.theme.dark
+                ? 'tab primary darken-4'
+                : 'tab primary lighten-4'
+              : ''
+          "
+        >
+          <svg
+            v-if="$store.state.tweaks.navigationIcons === 1"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 52 52"
+            height="1.5rem"
+            width="1.5rem"
+          >
+            <use :href="`/${item.svg}.svg#main`" />
+          </svg>
+          <svg
+            v-if="$store.state.tweaks.navigationIcons === 2"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 22 22"
+            height="1.5rem"
+            width="1.5rem"
+          >
+            <use :href="`/${item.svg2}.svg#main`" />
+          </svg>
+          <svg
+            v-if="$store.state.tweaks.navigationIcons === 3"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 34 34"
+            height="1.5rem"
+            width="1.5rem"
+          >
+            <use :href="`/${item.svg3}.svg#main`" />
+          </svg>
+        </div>
         <v-icon
+          v-if="$store.state.tweaks.navigationIcons === 0"
           :color="
             tabSelection == i
               ? 'primary'
@@ -38,12 +88,6 @@
           v-text="item.icon"
         />
         <!-- + (tabSelection == i ? '' : '-outline') -->
-        <!-- <v-img
-          v-if="$store.state.tweaks.navigationIcons === 1"
-          :src="`/${item.img}.svg`"
-          :height="24"
-          :width="24"
-        /> -->
       </v-btn>
       <!-- <v-btn
         text
@@ -66,7 +110,9 @@ export default {
         {
           name: "",
           icon: "mdi-home",
-          img: "home",
+          svg: "home",
+          svg2: "fhome",
+          svg3: "chome",
           link: "/home",
         },
         // { name: "Shorts", icon: "mdi-lightning-bolt", link: "/shorts" },
@@ -74,13 +120,17 @@ export default {
         {
           name: "",
           icon: "mdi-youtube-subscription",
-          img: "subs",
+          svg: "subs",
+          svg2: "fsubs",
+          svg3: "csubs",
           link: "/subscriptions",
         },
         {
           name: "",
           icon: "mdi-view-list",
-          img: "list",
+          svg: "list",
+          svg2: "flist",
+          svg3: "clist",
           link: "/library",
         },
         // { name: "Settings", icon: "mdi-menu", link: "/settings" },
@@ -114,6 +164,6 @@ export default {
 }
 .tab {
   padding: 0.1em 0.5em 0.1em 0.5em;
-  border-radius: 1em;
+  border-radius: 2rem;
 }
 </style>

@@ -131,7 +131,6 @@
         v-model="roundTweak"
         class="pr-8 pl-4 pt-3 pb-0 background"
         :max="4"
-        :label="lang.radius"
         step=".25"
         thumb-size="64"
         :class="
@@ -142,6 +141,12 @@
         }"
         @input="$vuetube.haptics.hapticsImpactLight(0)"
       >
+        <template #label>
+          <div :class="roundTweak > 0 ? 'primary--text' : ''">
+            {{ lang.radius }}
+          </div>
+        </template>
+
         <template #thumb-label="{ value }">
           <div
             class="pa-4 background"
@@ -305,7 +310,7 @@
           borderRadius: `${roundTweak / 12}rem`,
         }"
         @click="
-          (navigationShift = !navigationShift),
+          navigationIcons < 1 ? (navigationShift = !navigationShift) : '',
             $vuetube.haptics.hapticsImpactLight(1)
         "
       >
@@ -347,14 +352,99 @@
           inset
         />
       </v-card>
-      <div
-        style="width: 100%; font-weight: bold"
-        class="primary my-1 background--text text-center"
-        :style="{
-          borderRadius: `${roundTweak / 12}rem`,
-        }"
-      >
-        icon sets coming soon
+      <div class="mb-1 d-flex flex-row">
+        <v-card
+          flat
+          class="mr-1 pa-4 d-flex flex-row align-center background"
+          :class="
+            roundTweak > 0
+              ? $vuetify.theme.dark
+                ? 'lighten-1'
+                : 'darken-1'
+              : ''
+          "
+          style="width: 100%"
+          :style="{
+            color: navigationIcons === 0 ? 'var(--v-primary-base)' : '',
+            borderRadius: `${roundTweak / 12}rem`,
+          }"
+          @click="(navigationIcons = 0), $vuetube.haptics.hapticsImpactLight(1)"
+        >
+          <div>MDI</div>
+          <v-spacer></v-spacer>
+          <v-icon
+            :class="navigationIcons === 0 ? 'primary--text' : ''"
+            class="ma-1"
+          >
+            mdi-home
+          </v-icon>
+          <v-icon
+            :class="navigationIcons === 0 ? 'primary--text' : ''"
+            class="ma-1"
+          >
+            mdi-youtube-subscription
+          </v-icon>
+          <v-icon
+            :class="navigationIcons === 0 ? 'primary--text' : ''"
+            class="ma-1"
+          >
+            mdi-view-list
+          </v-icon>
+        </v-card>
+        <v-card
+          flat
+          class="pa-4 d-flex flex-row align-center background"
+          :class="
+            roundTweak > 0
+              ? $vuetify.theme.dark
+                ? 'lighten-1'
+                : 'darken-1'
+              : ''
+          "
+          style="width: 100%"
+          :style="{
+            color: navigationIcons === 1 ? 'var(--v-primary-base)' : '',
+            borderRadius: `${roundTweak / 12}rem`,
+          }"
+          @click="
+            (navigationIcons = 1),
+              (navigationShift = false),
+              $vuetube.haptics.hapticsImpactLight(1)
+          "
+        >
+          <div>Material Symbols</div>
+          <v-spacer></v-spacer>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 48 48"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/home.svg#main" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 48 48"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/subs.svg#main" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 48 48"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/list.svg#main" />
+          </svg>
+        </v-card>
       </div>
       <div class="d-flex flex-row">
         <v-card
@@ -363,22 +453,53 @@
           :class="
             roundTweak > 0
               ? $vuetify.theme.dark
-                ? 'lighten-2'
-                : 'darken-2'
+                ? 'lighten-1'
+                : 'darken-1'
               : ''
           "
           style="width: 100%"
           :style="{
-            color: navigationIcons === 0 ? 'var(--v-primary-base)' : '',
+            color: navigationIcons === 2 ? 'var(--v-primary-base)' : '',
             borderRadius: `${roundTweak / 12}rem`,
           }"
+          @click="
+            (navigationIcons = 2),
+              (navigationShift = false),
+              $vuetube.haptics.hapticsImpactLight(1)
+          "
         >
-          <!-- @click="(navigationIcons = 0), $vuetube.haptics.hapticsImpactLight(1)" -->
-          <div>MDI</div>
-          <v-spacer />
-          <v-icon class="ma-2">mdi-home</v-icon>
-          <v-icon class="ma-2">mdi-youtube-subscription</v-icon>
-          <v-icon class="ma-2">mdi-view-list</v-icon>
+          <div>FluentUI Icons</div>
+          <v-spacer></v-spacer>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/fhome.svg#main" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/fsubs.svg#main" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/flist.svg#main" />
+          </svg>
         </v-card>
         <v-card
           flat
@@ -386,40 +507,53 @@
           :class="
             roundTweak > 0
               ? $vuetify.theme.dark
-                ? 'lighten-2'
-                : 'darken-2'
+                ? 'lighten-1'
+                : 'darken-1'
               : ''
           "
           style="width: 100%"
           :style="{
-            color: navigationIcons === 1 ? 'var(--v-primary-base)' : '',
+            color: navigationIcons === 3 ? 'var(--v-primary-base)' : '',
             borderRadius: `${roundTweak / 12}rem`,
           }"
+          @click="
+            (navigationIcons = 3),
+              (navigationShift = false),
+              $vuetube.haptics.hapticsImpactLight(1)
+          "
         >
-          <!-- @click="(navigationIcons = 1), $vuetube.haptics.hapticsImpactLight(1)" -->
-          <div>Material Symbols</div>
-          <v-spacer />
-          <v-img
-            :class="$vuetify.theme.dark ? 'invert' : ''"
-            class="ma-2"
-            src="/home.svg"
-            height="22"
-            width="22"
-          />
-          <v-img
-            :class="$vuetify.theme.dark ? 'invert' : ''"
-            class="ma-2"
-            src="/subs.svg"
-            height="22"
-            width="22"
-          />
-          <v-img
-            :class="$vuetify.theme.dark ? 'invert' : ''"
-            class="ma-2"
-            src="/list.svg"
-            height="22"
-            width="22"
-          />
+          <div>IBM Carbon Icons</div>
+          <v-spacer></v-spacer>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 32 32"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/chome.svg#main" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 32 32"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/csubs.svg#main" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 32 32"
+            height="2rem"
+            width="2rem"
+            class="ma-1"
+          >
+            <use href="/clist.svg#main" />
+          </svg>
         </v-card>
       </div>
     </v-card>
