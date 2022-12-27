@@ -63,6 +63,8 @@ import commentsHeaderRenderer from "~/components/Comments/commentsHeaderRenderer
 import mainCommentReplyRenderer from "~/components/Comments/mainCommentReplyRenderer.vue";
 import continuationItemRenderer from "~/components/observer.vue";
 
+import backType from "~/plugins/classes/backType";
+
 export default {
   components: {
     dialogBase,
@@ -144,6 +146,18 @@ export default {
 
     openReply(event) {
       this.showReply = true;
+      if (this.showReply) {
+        const dismissReply = new backType(
+          () => {
+            this.showReply = false;
+          },
+          () => {
+            return this.showReply;
+          }
+        );
+        this.$vuetube.addBackAction(dismissReply);
+      }
+
       this.replyData = { parent: event, replyContinuation: null };
     },
   },
