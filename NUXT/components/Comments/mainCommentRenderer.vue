@@ -32,7 +32,7 @@
       <v-divider v-if="getComponents()[Object.keys(comment)[0]]"></v-divider>
     </div>
 
-    <div class="loading" v-if="loading">
+    <div v-if="loading" class="loading">
       <v-sheet
         v-for="i in comments.length <= 0 ? 5 : 1"
         :key="i"
@@ -50,6 +50,7 @@
         :defaultContinuation="replyData.replyContinuation"
         class="transition-fast-in-fast-out v-card--reveal"
         style="height: 100%"
+        @closeComments="$emit('changeState', false)"
       ></main-comment-reply-renderer>
     </template>
   </dialog-base>
@@ -57,26 +58,24 @@
 
 <script>
 import dialogBase from "~/components/dialogBase.vue";
-import commentsHeaderRenderer from "~/components/Comments/commentsHeaderRenderer.vue";
 import commentThreadRenderer from "~/components/Comments/commentThreadRenderer.vue";
-import continuationItemRenderer from "~/components/observer.vue";
+import commentsHeaderRenderer from "~/components/Comments/commentsHeaderRenderer.vue";
 import mainCommentReplyRenderer from "~/components/Comments/mainCommentReplyRenderer.vue";
+import continuationItemRenderer from "~/components/observer.vue";
 
 export default {
-  props: ["defaultContinuation", "commentData", "showComments"],
-
+  components: {
+    dialogBase,
+    commentThreadRenderer,
+    commentsHeaderRenderer,
+    mainCommentReplyRenderer,
+    continuationItemRenderer,
+  },
   model: {
     prop: "showComments",
     event: "changeState",
   },
-
-  components: {
-    dialogBase,
-    commentsHeaderRenderer,
-    commentThreadRenderer,
-    continuationItemRenderer,
-    mainCommentReplyRenderer,
-  },
+  props: ["defaultContinuation", "commentData", "showComments"],
 
   data: () => ({
     loading: true,

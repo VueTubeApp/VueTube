@@ -241,21 +241,17 @@
         "
       />
 
-      <swipeable-bottom-sheet
+      <div
         v-if="loaded && video.commentData"
-        v-model="showComments"
-        hide-overlay
-        persistent
-        no-click-animation
-        style="z-index: 2 !important"
-        attach="#content-container"
+        :class="showComments ? 'comments-open' : ''"
+        class="scroll-y comments"
       >
         <mainCommentRenderer
           v-model="showComments"
           :comment-data="video.commentData"
           :default-continuation="video.commentContinuation"
         ></mainCommentRenderer>
-      </swipeable-bottom-sheet>
+      </div>
 
       <!-- <swipeable-bottom-sheet
       :v-model="showComments"
@@ -281,14 +277,12 @@
 </template>
 
 <script>
-import player from "~/components/Player/index.vue";
 import { Share } from "@capacitor/share";
 import { getCpn } from "~/plugins/utils";
-import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
+import player from "~/components/Player/index.vue";
 import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
 import mainCommentRenderer from "~/components/Comments/mainCommentRenderer.vue";
-import SwipeableBottomSheet from "~/components/ExtendedComponents/swipeableBottomSheet";
 import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
 
 import backType from "~/plugins/classes/backType";
@@ -296,11 +290,9 @@ import backType from "~/plugins/classes/backType";
 export default {
   components: {
     player,
-    ShelfRenderer,
     VidLoadRenderer,
     ItemSectionRenderer,
     mainCommentRenderer,
-    SwipeableBottomSheet,
     SlimVideoDescriptionRenderer,
   },
   layout: "empty",
@@ -512,6 +504,22 @@ export default {
 </script>
 
 <style>
+.comments {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  opacity: 0;
+  height: 100%;
+  max-height: 100%;
+  position: absolute;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.comments-open {
+  transform: translatey(0);
+  opacity: 1;
+}
 #watch-body {
   height: 100%;
   max-height: 100vh;
