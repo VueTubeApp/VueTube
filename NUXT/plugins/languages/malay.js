@@ -8,7 +8,7 @@ module.exports = {
     restart: "Mulakan semula",
     later: "Kemudian",
     settingRestart:
-      "Mengubah tetapan ini memerlukan apl untuk dimulakan semula untuk menerapkan tetapan.",
+      "Mengubah tetapan ini memerlukan apl dimulakan semula untuk menerapkan tetapan.",
     okay: "OK",
   },
 
@@ -27,8 +27,8 @@ module.exports = {
     plugins: "Pemalam",
     startup: "Permulaan",
     theme: "Tema",
-    tweaks: "Pelarasan",
-    updates: "Kemaskini"
+    tweaks: "Pengubahsuaian",
+    updates: "Kemaskini",
   },
 
   index: {
@@ -41,7 +41,7 @@ module.exports = {
     general: "Umum",
     theme: "Tema",
     player: "Pemain",
-    uitweaker: "Pelarasan UI",
+    uitweaker: "Pengubahsuaian UI",
     startupoptions: "Pilihan Permulaan",
     plugins: "Pemalam",
     updates: "Kemaskini",
@@ -55,7 +55,7 @@ module.exports = {
       language: "Bahasa",
       backup: "Sandaran",
       backupinfo: "Sandarkan atau pulihkan semula tetapan aplikasi anda",
-      restore: "Pulihkan semula"
+      restore: "Pulihkan semula",
     },
     theme: {
       normal: "Normal",
@@ -69,9 +69,9 @@ module.exports = {
     tweaks: {
       fullscreen: "Skrin Penuh",
       navbarblur: "Bar Navigasi Kabur",
-      roundedcorners: "Sudut Bulat",
-      roundthumbnails: "Lakaran Kecil Bulat",
-      roundwatchpagecomponents: "Komponen Halaman Tonton Bulat",
+      roundedcorners: "Sudut Berbucu Bulat",
+      roundthumbnails: "Lakaran Kecil Berbucu Bulat",
+      roundwatchpagecomponents: "Komponen Halaman Tonton Berbucu Bulat",
       radius: "Radius",
     },
     startup: {
