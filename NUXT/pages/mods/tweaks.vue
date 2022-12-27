@@ -309,7 +309,7 @@
             $vuetube.haptics.hapticsImpactLight(1)
         "
       >
-        <div class="my-auto" :class="navigationText ? 'primary--text' : ''">
+        <div class="my-auto" :class="navigationShift ? 'primary--text' : ''">
           Shift
         </div>
         <v-spacer />
