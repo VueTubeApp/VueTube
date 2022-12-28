@@ -160,7 +160,7 @@
 
     <!-- TODO: translate below -->
 
-    <h3 class="ml-8 mt-8">Launch Screen</h3>
+    <h3 class="ml-8 mt-8">{{ lang.launchscreen }}</h3>
 
     <v-card
       flat
@@ -200,7 +200,7 @@
           mdi-align-horizontal-center
         </v-icon>
         <span class="mt-3 text-center" style="font-size: 0.8rem">
-          Centered Layout
+          {{ lang.centeredlayout }}
         </span>
       </v-card>
       <v-card
@@ -237,7 +237,7 @@
           mdi-align-vertical-distribute
         </v-icon>
         <span class="mt-3 text-center" style="font-size: 0.8rem">
-          Fullscreen Layout
+          {{ lang.fullscreenlayout }}
         </span>
       </v-card>
       <v-card
@@ -282,7 +282,7 @@
           </g>
         </svg>
         <span class="mt-3 text-center" style="font-size: 0.8rem">
-          Themed Icon
+          {{ lang.themedicon }}
         </span>
       </v-card>
     </v-card>
@@ -291,7 +291,7 @@
 
     <!-- TODO: translate below -->
 
-    <h3 class="ml-8 mt-8">Bottom Navigation</h3>
+    <h3 class="ml-8 mt-8">{{ lang.bottomnavigation }}</h3>
     <v-card
       flat
       class="mx-4 mt-2 mb-6 background d-flex flex-column"
@@ -315,7 +315,7 @@
         "
       >
         <div class="my-auto" :class="navigationShift ? 'primary--text' : ''">
-          Shift
+          {{ lang.shift }}
         </div>
         <v-spacer />
         <v-switch
@@ -341,7 +341,7 @@
         "
       >
         <div class="my-auto" :class="navigationText ? 'primary--text' : ''">
-          Show Labels
+          {{ lang.showlabels }}
         </div>
         <v-spacer />
         <v-switch
@@ -370,7 +370,7 @@
           }"
           @click="(navigationIcons = 0), $vuetube.haptics.hapticsImpactLight(1)"
         >
-          <div>MDI</div>
+          <div>{{ lang.mdi }}</div>
           <v-spacer></v-spacer>
           <v-icon
             :class="navigationIcons === 0 ? 'primary--text' : ''"
@@ -412,7 +412,7 @@
               $vuetube.haptics.hapticsImpactLight(1)
           "
         >
-          <div>Material Symbols</div>
+          <div>{{ lang.materialsymbols }}</div>
           <v-spacer></v-spacer>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -468,7 +468,7 @@
               $vuetube.haptics.hapticsImpactLight(1)
           "
         >
-          <div>FluentUI Icons</div>
+          <div>{{ lang.fluentuiicons }}</div>
           <v-spacer></v-spacer>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -522,7 +522,7 @@
               $vuetube.haptics.hapticsImpactLight(1)
           "
         >
-          <div>IBM Carbon Icons</div>
+          <div>{{ lang.ibmcarbonicons }}</div>
           <v-spacer></v-spacer>
           <svg
             xmlns="http://www.w3.org/2000/svg"
