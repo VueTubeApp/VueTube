@@ -31,18 +31,16 @@ import commentThreadRenderer from "~/components/Comments/commentThreadRenderer.v
 import continuationItemRenderer from "~/components/observer.vue";
 
 export default {
-  props: ["defaultContinuation", "parentComment", "showReplies"],
-
-  model: {
-    prop: "showReplies",
-    event: "changeState",
-  },
-
   components: {
     dialogBase,
     commentsHeaderRenderer,
     commentThreadRenderer,
     continuationItemRenderer,
   },
+  model: {
+    prop: "showReplies",
+    event: "changeState",
+  },
+  props: ["defaultContinuation", "parentComment", "showReplies"],
 };
 </script>
