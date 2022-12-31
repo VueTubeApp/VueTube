@@ -12,7 +12,7 @@ module.exports = {
 
   index: {
     connecting: "Verbinden",
-    plugins: "Loading Plugins",
+    plugins: "Plugins werden geladen",
     launching: "Starten",
   },
 
@@ -20,13 +20,13 @@ module.exports = {
     general: "Allgemein",
     theme: "Theme",
     player: "Videoplayer",
-    uitweaker: "UI Optimierer",
+    uitweaker: "UI Tweaker",
     startupoptions: "Startoptionen",
     plugins: "Plugins",
     updates: "Updates",
     logs: "Logs",
     about: "Über",
-    devmode: "Registrierungseditor",
+    devmode: "Entwicklermodus",
   },
 
   mods: {
@@ -79,7 +79,7 @@ module.exports = {
   events: {
     welcome: "Wilkommen bei VueTube",
     tagline: "Die Zukunft des Videostreamings",
-    next: "Nächste",
+    next: "Weiter",
     updated: "VueTube wurde aktualisiert!",
     awesome: "Cool!",
     langsetup: "Lass uns eine Sprache aussuchen!",
