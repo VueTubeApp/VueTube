@@ -7,7 +7,8 @@ module.exports = {
     library: "Librería",
     restart: "Reiniciar",
     later: "Más tarde",
-    settingRestart: "Al modificar este ajuste, la app debe ser reiniciada para que los cambios se apliquen.",
+    settingRestart:
+      "Al modificar este ajuste, la app debe ser reiniciada para que los cambios se apliquen.",
     okay: "OK"
   },
 
@@ -54,7 +55,9 @@ pages: {
       language: "Idioma",
       backup: "Copia de seguridad",
       backupinfo: "Haz una copia de seguridad de tus ajustes o restáuralos",
-      restore: "Restaurar"
+      restore: "Restaurar",
+      personalizedrecommendations: "Recomendaciones personalizadas",
+      personalizedrecommendationsinfo: "Recibe recomendaciones personalizadas a cambio de enviar datos de tu tiempo de reproducción.",
     },
     theme: {
       normal: "Normal",
@@ -72,6 +75,17 @@ pages: {
       roundthumbnails: "Redondear miniaturas",
       roundwatchpagecomponents: "Redondear componentes del vídeo",
       radius: "Radio",
+      launchscreen: "Pantalla de carga",
+      centeredlayout: "Interfaz centrada",
+      fullscreenlayout: "Interfaz a pantalla completa",
+      themedicon: "Icono dinámico",
+      bottomnavigation: "Navegación inferior",
+      shift: "Movimiento",
+      showlabels: "Mostrar etiquetas",
+      mdi: "MDI",
+      materialsymbols: "Material Symbols",
+      fluentuiicons: "Iconos de FluentUI",
+      ibmcarbonicons: "Iconos de IBM Carbon",
     },
     startup: {
       defaultpage: "Pagina predeterminada",
@@ -81,7 +95,8 @@ pages: {
       checking: "Buscando actualizaciones",
       available: "Actualización disponible",
       noupdate: "No hay nuevas actualizaciones",
-      noupdatemessage: "Estás usando la versión más reciente de VueTube. Vuelve más tarde para buscar actualizaciones.",
+      noupdatemessage:
+        "Estás usando la versión más reciente de VueTube. Vuelve más tarde para buscar actualizaciones.",
 
       installed: "Versión instalada",
       latest: "Última versión",
