@@ -92,6 +92,7 @@ const innertubeModule = {
     try {
       return await InnertubeAPI.VidInfoAsync(id);
     } catch (error) {
+      console.error(error);
     }
   },
 
@@ -113,8 +114,7 @@ const innertubeModule = {
     try {
       const response = await InnertubeAPI.getChannelAsync(url);
       return response.data;
-    } catch (error) {
-    }
+    } catch (error) {}
   },
 
   // It just works™
@@ -177,8 +177,7 @@ const innertubeModule = {
     try {
       const response = await InnertubeAPI.getSearchAsync(query);
       return response.contents.sectionListRenderer;
-    } catch (err) {
-    }
+    } catch (err) {}
   },
 
   async saveApiStats(query, url) {

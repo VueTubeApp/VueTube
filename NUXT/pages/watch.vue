@@ -343,8 +343,9 @@ export default {
         this.video = result;
 
         //---   Content Stuff   ---//
-        this.likes = result.metadata.likes.toLocaleString();
-        this.interactions[0].value = result.metadata.likes.toLocaleString();
+        // NOTE: extractor likes are broken, using RYD likes instead
+        // this.likes = result.metadata.likes.toLocaleString();
+        // this.interactions[0].value = result.metadata.likes.toLocaleString();
         this.loaded = true;
         this.recommends = result.renderedData.recommendations;
         console.log("recommendations:", this.recommends);
@@ -362,7 +363,9 @@ export default {
       });
 
       this.$youtube.getReturnYoutubeDislike(this.$route.query.v, (data) => {
+        this.likes = data.likes.toLocaleString();
         this.dislikes = data.dislikes.toLocaleString();
+        this.interactions[0].value = data.likes.toLocaleString();
         this.interactions[1].value = data.dislikes.toLocaleString();
       });
     },

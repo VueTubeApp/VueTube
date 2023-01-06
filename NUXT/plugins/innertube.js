@@ -352,17 +352,19 @@ class Innertube {
         isPrivate: details.isPrivate,
         viewCount: details.viewCount,
         lengthSeconds: details.lengthSeconds,
-        likes: parseInt(
-          vidMetadata.contents
-            .find((content) => content.slimVideoActionBarRenderer)
-            .slimVideoActionBarRenderer.buttons.find(
-              (button) => button.slimMetadataToggleButtonRenderer.isLike
-            )
-            .slimMetadataToggleButtonRenderer.button.toggleButtonRenderer.defaultText.accessibility.accessibilityData.label.replace(
-              /\D/g,
-              ""
-            )
-        ), // Yes. I know.
+        // likes: parseInt(
+        //   vidMetadata.contents
+        //     .find((content) => content.slimVideoActionBarRenderer)
+        //     .slimVideoActionBarRenderer.buttons.find(
+        //       (button) => button.slimMetadataToggleButtonRenderer.isLike
+        //     )
+        //     .slimMetadataToggleButtonRenderer.button.toggleButtonRenderer.defaultText.accessibility.accessibilityData.label.replace(
+        //       /\D/g,
+        //       ""
+        //     )
+        // ), // Yes. I know.
+        likes: "broken",
+        // NOTE: likes are pulled from RYD for now untill extractor is fixed
       },
       renderedData: {
         description: responseNext.engagementPanels
