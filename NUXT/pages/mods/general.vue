@@ -86,14 +86,13 @@
           borderRadius: `${$store.state.tweaks.roundTweak / 4}rem`,
         }"
       >
-        <div class="mb-4">Personalized Recommendations</div>
+        <div class="mb-4">{{ lang.personalizedrecommendations }}</div>
         <div
           class="background--text"
           :class="$vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'"
           style="font-size: 0.75rem; margin-top: -0.25rem !important"
         >
-          Receive personalized recommendations in exchange for sending watch
-          time telemetry.
+          {{ lang.personalizedrecommendationsinfo }}
         </div>
       </div>
       <v-switch
