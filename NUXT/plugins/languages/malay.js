@@ -57,7 +57,7 @@ module.exports = {
       backupinfo: "Sandarkan atau pulihkan semula tetapan aplikasi anda",
       restore: "Pulihkan semula",
       personalizedrecommendations: "Cadangan diperibadikan",
-      personalizedrecommendationsinfo: "Terima cadangan diperibadikan sebagai pertukaran untuk menghantar telemtri masa menonton.",
+      personalizedrecommendationsinfo: "Terima cadangan diperibadikan sebagai pertukaran untuk menghantar telemetri masa menonton.",
     },
     theme: {
       normal: "Normal",
