@@ -24,6 +24,7 @@ const packs = {
   romanian: require("./languages/romanian"),
   russian: require("./languages/russian"),
   serbian: require("./languages/serbian"),
+  slovenian: require("./languages/slovenian"),
   spanish: require("./languages/spanish"),
   tamil: require("./languages/tamil"),
   turkish: require("./languages/turkish"),
