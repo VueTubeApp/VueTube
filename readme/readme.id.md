@@ -355,5 +355,5 @@ Tim VueTube.
 <hr>
 
 <p align="center">
-<img src="/resources/bottom_banner_readme.png" width="800">
+<img src="../resources/readme-id/bottom_banner_readme.png" width="800">
 </p>
