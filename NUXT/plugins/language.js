@@ -1,6 +1,7 @@
 const packs = {
   arabic: require("./languages/arabic"),
   azerbaijan: require("./languages/azerbaijan"),
+  bengali: require("./languages/bengali"),
   "brazilian-portuguese": require("./languages/brazilian-portuguese"),
   bulgarian: require("./languages/bulgarian"),
   "chinese-simplified": require("./languages/chinese-simplified"),
