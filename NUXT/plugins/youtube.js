@@ -1,3 +1,7 @@
+//⚠️🚧 WARNING: PARTS OF THIS FILE IS IN MAINTENANCE MODE 🚧⚠️
+// PARTS OF THIS FILE WILL BE REPLACED WITH A SEPARATE LIBRARY
+// contribute to the library here: https://github.com/VueTubeApp/Vuetube-Extractor
+
 //---   Modules/Imports   ---//
 import { Http } from "@capacitor-community/http";
 import Innertube from "./innertube";
