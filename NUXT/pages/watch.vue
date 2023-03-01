@@ -379,7 +379,12 @@ export default {
       await Share.share({
         title: this.video.title,
         text: this.video.title,
-        url: "https://youtu.be/" + this.$route.query.v,
+        url:
+          "https://youtu.be/" +
+          this.$route.query.v +
+          "?t=" +
+          Math.round(this.$refs.player.getPlayer().currentTime) +
+          "s",
         dialogTitle: "Share video",
       });
     },
