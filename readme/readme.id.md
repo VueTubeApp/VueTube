@@ -14,7 +14,7 @@
   </a>
   </br>
   <sub>Logo oleh <a href="https://github.com/afnzmn">@afnzmn</a></sub></br>
-  <sub>Terjemahan oleh <a href="https://github.com/QuickValve">@QuickValve</a></sub>
+  <sub>Terjemahan oleh <a href="https://github.com/QuickValve">@QuickValve</a> ,<a href="https://github.com/fdciabdul">@fdciabdul</a></sub>
   </br>
   </br>
 <strong>Sebuah klien streaming video sederhana dengan sumber terbuka yang bertujuan untuk membuat ulang SEMUA fitur dari aplikasi yang terhubung (dan masih banyak lagi!)</strong>
@@ -355,5 +355,5 @@ Tim VueTube.
 <hr>
 
 <p align="center">
-<img src="/resources/bottom_banner_readme.png" width="800">
+<img src="../resources/readme-id/bottom_banner_readme_id.png">
 </p>
