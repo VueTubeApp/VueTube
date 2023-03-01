@@ -54,7 +54,7 @@
               }rem 0rem 0rem !important`
             : '0',
       }"
-      :poster="$youtube.getThumbnail($route.query.v, 'max', [])"
+      :poster="getThumbnail($route.query.v)"
       @loadedmetadata="checkDimensions()"
       @click="controlsHandler()"
     />
@@ -202,12 +202,7 @@
           :video="$refs.player"
           :buffering="bufferingDetected"
           @play="$refs.player.play(), $refs.audio.play()"
-          @pause="
-            $refs.player.pause(),
-              $refs.audio.pause(),
-              clearTimeout(bufferingDetected),
-              (bufferingDetected = false)
-          "
+          @pause="pauseHandler"
         />
         <v-btn
           v-if="!verticalFullscreen"
@@ -331,8 +326,8 @@
         left: 50%;
         top: 50%;
       "
-      :value="buffered"
       color="primary"
+      :value="buffered"
       :rotate="-90"
       :size="64"
     >
@@ -357,6 +352,7 @@ import progressbar from "~/components/Player/progressbar.vue";
 import sponsorblock from "~/components/Player/sponsorblock.vue";
 
 import backType from "~/plugins/classes/backType";
+import Thumbnail from "~/plugins/thumbnail";
 
 export default {
   components: {
@@ -385,6 +381,9 @@ export default {
     },
     recommends: {
       type: Array,
+      default: () => {
+        return [];
+      },
     },
   },
   data() {
@@ -407,12 +406,13 @@ export default {
       isVerticalVideo: false, // maybe rename(refactor everywhere used) to isShort
       bufferingDetected: false,
       isMusic: false,
+      vid: null,
     };
   },
   mounted() {
     console.log("sources", this.sources);
     console.log("recommends", this.recommends);
-    let vid = this.$refs.player;
+    this.vid = this.$refs.player;
 
     // TODO: this.$store.state.player.quality, check if exists and select the closest one
     if (this.$store.state.player.preload) this.prebuffer(this.sources[5].url);
@@ -437,7 +437,18 @@ export default {
 
     // TODO: detect this.isMusic from the video or channel metadata instead of just SB segments
 
-    this.$refs.player.addEventListener("loadeddata", (e) => {
+    this.$refs.player.addEventListener("loadeddata", this.loadedDataEvent);
+  },
+  created() {
+    screen.orientation.addEventListener("change", () =>
+      this.fullscreenHandler(false)
+    );
+  },
+  beforeDestroy() {
+    this.cleanup();
+  },
+  methods: {
+    loadedDataEvent() {
       // console.log(e);
       // if (vid.networkState === vid.NETWORK_LOADING) {
       //   // The user agent is actively trying to download data.
@@ -446,10 +457,10 @@ export default {
       // if (vid.readyState < vid.HAVE_FUTURE_DATA) {
       //   // There is not enough data to keep playing from this point
       // }
-      if (vid.readyState >= 3) {
+      if (this.vid.readyState >= 3) {
         this.$refs.audio.play();
         this.bufferingDetected = false;
-        this.$refs.audio.currentTime = vid.currentTime;
+        this.$refs.audio.currentTime = this.vid.currentTime;
 
         if (!this.isMusic) {
           this.$refs.audio.playbackRate = this.$store.state.player.speed;
@@ -461,81 +472,71 @@ export default {
 
         this.$refs.player.loop = this.$store.state.player.loop;
         this.$refs.audio.loop = this.$store.state.player.loop;
-        this.$refs.player.addEventListener("timeupdate", () => {
-          if (!this.seeking) this.progress = vid.currentTime; // for seekbar
-
-          // console.log("sb check", this.blocks);
-          // iterate over data.segments array
-          // for sponsorblock
-          if (this.blocks.length > 0)
-            this.blocks.forEach((sponsor) => {
-              let vidTime = vid.currentTime;
-
-              if (
-                vidTime >= sponsor.segment[0] &&
-                vidTime <= sponsor.segment[1]
-              ) {
-                console.log("Skipping the sponsor");
-                this.$youtube.showToast("Skipped sponsor");
-                this.$refs.player.currentTime = sponsor.segment[1] + 1;
-                this.$refs.audio.currentTime = this.$refs.player.currentTime;
-              }
-            });
-        });
+        this.$refs.player.addEventListener("timeupdate", this.timeUpdateEvent);
         // TODO: handle video ending with a "replay" button instead of <playpause /> if not on loop
         // TODO: split buffering into multiple sections as it should be for back/forth scrubbing
-        this.$refs.player.addEventListener("progress", () => {
-          if (this.bufferingDetected) {
-            this.$refs.audio.currentTime = vid.currentTime;
-            clearTimeout(this.bufferingDetected);
-            this.bufferingDetected = false;
-          }
-          if (this.$refs.audio.paused && !this.$refs.player.paused) this.$refs.audio.play();
-          this.buffered = (vid.buffered.end(0) / vid.duration) * 100;
-        });
-
-        // buffering detection & sync
-        let threshold = 250; //ms after which user perceives buffering
-
-        this.$refs.player.addEventListener("waiting", () => {
-          if (!this.$refs.player.paused) {
-            this.bufferingDetected = setTimeout(() => {
-              this.bufferingDetected = true;
-              this.$refs.audio.pause();
-              //show buffering
-            }, threshold);
-          }
-        });
-        this.$refs.player.addEventListener("playing", () => {
-          if (this.bufferingDetected != false) {
-            clearTimeout(this.bufferingDetected);
-            this.$refs.audio.currentTime = vid.currentTime;
-            this.bufferingDetected = false;
-            this.$refs.audio.play();
-          }
-        });
+        this.$refs.player.addEventListener("progress", this.progressEvent);
+        this.$refs.player.addEventListener("waiting", this.waitingEvent);
+        this.$refs.player.addEventListener("playing", this.playingEvent);
       }
-    });
-  },
-  created() {
-    screen.orientation.addEventListener("change", () =>
-      this.fullscreenHandler(false)
-    );
-  },
-  beforeDestroy() {
-    this.cleanup();
-  },
-  methods: {
+    },
+    timeUpdateEvent() {
+      if (!this.seeking) this.progress = this.vid.currentTime; // for seekbar
+
+      // console.log("sb check", this.blocks);
+      // iterate over data.segments array
+      // for sponsorblock
+      if (this.blocks.length > 0)
+        this.blocks.forEach((sponsor) => {
+          let vidTime = this.vid.currentTime;
+
+          if (vidTime >= sponsor.segment[0] && vidTime <= sponsor.segment[1]) {
+            console.log("Skipping the sponsor");
+            this.$youtube.showToast("Skipped sponsor");
+            this.$refs.player.currentTime = sponsor.segment[1] + 1;
+            this.$refs.audio.currentTime = this.$refs.player.currentTime;
+          }
+        });
+    },
+    progressEvent() {
+      if (this.bufferingDetected) {
+        this.$refs.audio.currentTime = this.vid.currentTime;
+        clearTimeout(this.bufferingDetected);
+        this.bufferingDetected = false;
+      }
+      if (this.$refs.audio.paused && !this.$refs.player.paused)
+        this.$refs.audio.play();
+      this.buffered = (this.vid.buffered.end(0) / this.vid.duration) * 100;
+    },
+    waitingEvent() {
+      // buffering detection & sync
+      let threshold = 250; //ms after which user perceives buffering
+      if (!this.$refs.player.paused) {
+        this.bufferingDetected = setTimeout(() => {
+          this.bufferingDetected = true;
+          this.$refs.audio.pause();
+          //show buffering
+        }, threshold);
+      }
+    },
+    playingEvent() {
+      if (this.bufferingDetected != false) {
+        clearTimeout(this.bufferingDetected);
+        this.$refs.audio.currentTime = this.vid.currentTime;
+        this.bufferingDetected = false;
+        this.$refs.audio.play();
+      }
+    },
     cleanup() {
       if (this.xhr) this.xhr.abort();
       if (this.isFullscreen) this.exitFullscreen();
       if (this.bufferingDetected) clearTimeout(this.bufferingDetected);
       screen.orientation.removeEventListener("change");
-      //! this.$refs.player.removeEventListener("loadeddata"); // NOTE: needs a function to be passed as the 2nd argument, but breaks if called with vue method as the 2nd argument in mounted()
-      // this.$refs.player.removeEventListener("timeupdate");
-      this.$refs.player.removeEventListener("progress", () => {});
-      this.$refs.player.removeEventListener("waiting", () => {});
-      this.$refs.player.removeEventListener("playing", () => {});
+      this.$refs.player.removeEventListener("loadeddata", this.loadedDataEvent);
+      this.$refs.player.removeEventListener("timeupdate", this.timeUpdateEvent);
+      this.$refs.player.removeEventListener("progress", this.progressEvent);
+      this.$refs.player.removeEventListener("waiting", this.waitingEvent);
+      this.$refs.player.removeEventListener("playing", this.playingEvent);
     },
     prebuffer(url) {
       this.xhr = new XMLHttpRequest();
@@ -623,6 +624,11 @@ export default {
       this.$refs.player.playbackRate = speed;
       this.$refs.audio.playbackRate = speed;
     },
+    getThumbnail(query) {
+      const thumbnail = new Thumbnail();
+
+      return thumbnail.getThumbnail(query, "max", []);
+    },
     checkDimensions() {
       if (this.$refs.player.videoHeight > this.$refs.player.videoWidth) {
         this.isVerticalVideo = true;
@@ -689,14 +695,25 @@ export default {
       this.isFullscreen = true;
 
       //---   Fix pressing back button in fullscreen exiting the watch page   ---//
-      this.$vuetube.addBackAction(new backType(
-        () => { this.exitFullscreen(true); },
-        () => { return this.isFullscreen; }
-      ));
-
+      this.$vuetube.addBackAction(
+        new backType(
+          () => {
+            this.exitFullscreen(true);
+          },
+          () => {
+            return this.isFullscreen;
+          }
+        )
+      );
     },
     getPlayer() {
       return this.$refs.player;
+    },
+    pauseHandler() {
+      this.$refs.player.pause();
+      this.$refs.audio.pause();
+      clearTimeout(this.bufferingDetected);
+      this.bufferingDetected = false;
     },
   },
 };

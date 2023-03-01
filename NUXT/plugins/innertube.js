@@ -266,20 +266,6 @@ class Innertube {
     });
   }
 
-  // Static methods
-
-  static getThumbnail(id, resolution) {
-    if (resolution == "max") {
-      const url = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
-      let img = new Image();
-      img.src = url;
-      img.onload = function () {
-        if (img.height !== 120) return url;
-      };
-    }
-    return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
-  }
-
   // Simple Wrappers
   async getRecommendationsAsync() {
     const rec = await this.browseAsync("recommendations");

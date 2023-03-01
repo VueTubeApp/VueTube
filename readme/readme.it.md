@@ -20,7 +20,7 @@ Pronunciato View Tube (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-**Leggi questa pagina in altre lingue**: [English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [Magyar,](readme.hu.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
+**Leggi questa pagina in altre lingue**: [English,](../readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська,](/readme/readme.ua.md) [Türkçe](/readme/readme.tr.md/)
 
 ## Features
 
@@ -33,6 +33,7 @@ Pronunciato View Tube (<code>/ˈvjuːˌtjuːb/</code>)
 - 📺 **Video player personalizzato:** Un player integrato nell'applicazione con tutto quello che ti serve per essere felice, ad esempio velocità 16x.
 - 👎 **Utilizza l'API di Return YouTube Dislike per mostrare il conteggio dei non mi piace** - [_Più info_](https://returnyoutubedislike.com)
 - 💰 **SponsorBlock** - [_Più info_](https://sponsor.ajay.app)
+
 ## Installa
 
 <img src="../resources/readme-it/Install.it.svg" alt="VueTube icon" height="100"/>
@@ -46,14 +47,14 @@ Per installare visita www.vuetube.app/install
 ### Android
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
-| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Molti bug, ma accesso anticipato alle funzionalità                                                                                          | Meno bug della versione instabile, leggermente più funzionalità della stabile                                                                                   | Non disponibile fino a quando l'app non sarà più sviluppata                                     |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Molti bug, ma accesso anticipato alle funzionalità                                                                                           | Meno bug della versione instabile, leggermente più funzionalità della stabile                                                                                    | Non disponibile fino a quando l'app non sarà più sviluppata                                      |
 
 ### iOS
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
-| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| Molti bug, ma accesso anticipato alle funzionalità                                                                                      | Meno bug della versione instabile, leggermente più funzionalità della stabile                                                                                                  | Non disponibile fino a quando l'app non sarà più sviluppata                                     |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Molti bug, ma accesso anticipato alle funzionalità                                                                                       | Meno bug della versione instabile, leggermente più funzionalità della stabile                                                                                                   | Non disponibile fino a quando l'app non sarà più sviluppata                                      |
 
 </details>
 

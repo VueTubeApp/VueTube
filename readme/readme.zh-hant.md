@@ -6,8 +6,9 @@
   <details>
   <summary>顯示 Readme 貢獻名單</summary>
 
-   <sub>標誌：<a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
-  <sub>繁體中文 Readme 貢獻者：<a href="https://github.com/404-Program-not-found">@404-Program-not-found</a> 和 <a href="https://github.com/nokanol45">@nokanol45</a></sub>
+<sub>標誌：<a href="https://github.com/afnzmn">@afnzmn</a></sub> </br>
+<sub>繁體中文 Readme 貢獻者：<a href="https://github.com/404-Program-not-found">@404-Program-not-found</a> 和 <a href="https://github.com/nokanol45">@nokanol45</a></sub>
+
   </details>
 
 <p align="center">
@@ -25,7 +26,7 @@
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-其他語言版本：[English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [Magyar,](readme.hu.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
+其他語言版本：[English,](../readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська,](/readme/readme.ua.md) [Türkçe](/readme/readme.tr.md/)
 
 <h2 align="left">
 <sub>
@@ -67,14 +68,14 @@
 ### Android
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
-| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| 有最新的功能，並且經常有更新，但 bug 也最常見。                                                                                             | bug 比 unstable 較少，功能也比 stable 稍新。                                                                                                                    | 暫時未有 Stable 版本可用。                                             |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 有最新的功能，並且經常有更新，但 bug 也最常見。                                                                                              | bug 比 unstable 較少，功能也比 stable 稍新。                                                                                  | 暫時未有 Stable 版本可用。                                                                       |
 
 ### iOS
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
-| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| 有最新的功能，並且經常有更新，但 bug 也最常見。                                                                                         | bug 比 unstable 較少，功能也比 stable 稍新。                                                                                                                                   | 暫時未有 Stable 版本可用。                                             |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 有最新的功能，並且經常有更新，但 bug 也最常見。                                                                                          | bug 比 unstable 較少，功能也比 stable 稍新。                                                                                                                                    | 暫時未有 Stable 版本可用。                                                                       |
 
 </details>
 
@@ -247,6 +248,7 @@ VueTube 永遠是自由和開源的，但您仍可捐款以支持我們的開發
 本項目中使用的任何商標、服務標誌、商品名稱或其他知識產權均歸各自所有者所有。
 
 如本文與英文版本有任何差異，以英文版本為準。
+
 <h2 align="left">
 <sub>
 <img  src="../resources/readme_icon_otherrepos.png"

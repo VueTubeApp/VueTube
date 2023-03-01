@@ -12,6 +12,7 @@
 , <a href="https://github.com/ThatOneCalculator">@ThatOneCalculator</a>, <a href="https://github.com/afnzmn">@afnzmn</a>
 , <a href="https://github.com/tired6488">@tired6488</a>, <a href="https://github.com/DARKDRAGON532">@DARKDRAGON532</a>
 , <a href="https://github.com/PickleNik">@PickleNik</a> and <a href="https://github.com/Zyborg777">@Zyborg777</a></sub>
+
 </details>
 
   <p align="center">
@@ -29,8 +30,7 @@
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-**Read this page in other
-languages**: [English,](readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română](/readme/readme.ro.md)
+**Read this page in other languages**: [English,](readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська](/readme/readme.ua.md), [Türkçe](/readme/readme.tr.md/)
 
 <h2 align="left">
 <sub>
@@ -78,17 +78,33 @@ available:
   <summary>🖱️ Click to display versions </summary>
 <br />
 
-### Android
+<h3 align="left">
+<sub>
+<img  src="resources/readme_icon_android.png"
+      height="20"
+      width="20">
+</sub>
+Android
+</h3>
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
-|---------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Pretty unstable, but you get early access to new features.                                                                                  | Less bugs than unstable while having more features than stable.                                                              | Not available yet.                                                                              |
 
-### iOS
+<h3 align="left">
+<sub>
+<img  src="resources/readme_icon_ios.png"
+      height="20"
+      width="20">
+</sub>
+iOS
+</h3>
 
 | <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
-|-----------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Pretty unstable, but you get early access to new features.                                                                              | Less bugs than unstable while having more features than stable.                                                                                                                | Not available yet.                                                                              |
+
+(Apple does not officially support sideloading, i.e. the installation of applications with just the file without them being uploaded to the company's official shop. It is necessary to use advanced methods to install VueTube on iPhone / iPad devices)
 
 </details>
 
@@ -165,29 +181,29 @@ Progress
 
  <br>
 
-**General** | **Player** | [**Extractor**](https://github.com/VueTubeApp/VueTube-Extractor) |
-:-: | :-: | :-: |
-🟢 Comments (100%) | 🟢 Play / Pause (100%) | 🟢 Search Autocomplete (100%) |
-🟢 Description (100%) | 🟢 Tap to show / hide controls (100%) | 🟢 Home page (100%) |
-🟢 Home Page (100%) | 🟠 Seekbar / Scrubber (80%) | 🟢 Search (100%)
-🟢 RYD Integration (100%) | 🟠 Fullscreen (80%) | 🟠 Video Information (60%) |
-🟢 Themes (100%) | 🟠 Resolution Picker (50%) | 🔴 Channels (0%) |
-🟢 Watch Page (100%) | 🔴 Miniplayer (0%) | 🔴 Comments (0%) |
-🟠 Sponsorblock Integration (95%) | 🔴 Background Play (0%) | 🔴 Live Chat (0%) |
-🟠 Auto Update (50%) | 🔴 Picture in Picture (0%) | 🔴 Trending content (0%)
-🟠 Channel Page (50%) | 🔴 Captions (0%) | 🔴 Interactions (0%) |
-🟠 Community Posts (10%) | 🔴 Cards (0%) | 🔴 Playlists (0%) |
-🟠 Customizable Shorts UI (10%) | | 🔴 Notifications (0%)
-🟠 Customizable YT Music UI (10%) | | 🔴 Login (0%)
-🟠 Customizable UI (30%) | | |
-🟠 Libraries Page (10%) | | |
-🟠 Replies (50%) | | |
-🟠 Third Party Plugins (40%) | | |
-🟠 VueTube Player (See progress to the right) | | |
-🟠 VueTube Extractor (See progress to the right) | | |
-🔴 Local Watch History (0%) | | |
-🔴 Subscriptions Page (0%) | | |
-🔴 Other Platform Support (0%) | | |
+|                   **General**                    |              **Player**               | [**Extractor**](https://github.com/VueTubeApp/VueTube-Extractor) |
+| :----------------------------------------------: | :-----------------------------------: | :--------------------------------------------------------------: |
+|                🟢 Comments (100%)                |        🟢 Play / Pause (100%)         |                  🟢 Search Autocomplete (100%)                   |
+|              🟢 Description (100%)               | 🟢 Tap to show / hide controls (100%) |                       🟢 Home page (100%)                        |
+|               🟢 Home Page (100%)                |      🟠 Seekbar / Scrubber (80%)      |                         🟢 Search (100%)                         |
+|            🟢 RYD Integration (100%)             |          🟠 Fullscreen (80%)          |                    🟠 Video Information (60%)                    |
+|                 🟢 Themes (100%)                 |      🟠 Resolution Picker (50%)       |                         🔴 Channels (0%)                         |
+|               🟢 Watch Page (100%)               |          🔴 Miniplayer (0%)           |                         🔴 Comments (0%)                         |
+|        🟠 Sponsorblock Integration (95%)         |        🔴 Background Play (0%)        |                        🔴 Live Chat (0%)                         |
+|               🟠 Auto Update (50%)               |      🔴 Picture in Picture (0%)       |                     🔴 Trending content (0%)                     |
+|              🟠 Channel Page (50%)               |           🔴 Captions (0%)            |                       🔴 Interactions (0%)                       |
+|             🟠 Community Posts (10%)             |             🔴 Cards (0%)             |                        🔴 Playlists (0%)                         |
+|         🟠 Customizable Shorts UI (10%)          |                                       |                      🔴 Notifications (0%)                       |
+|        🟠 Customizable YT Music UI (10%)         |                                       |                          🔴 Login (0%)                           |
+|             🟠 Customizable UI (30%)             |                                       |                                                                  |
+|             🟠 Libraries Page (10%)              |                                       |                                                                  |
+|                 🟠 Replies (50%)                 |                                       |                                                                  |
+|           🟠 Third Party Plugins (40%)           |                                       |                                                                  |
+|  🟠 VueTube Player (See progress to the right)   |                                       |                                                                  |
+| 🟠 VueTube Extractor (See progress to the right) |                                       |                                                                  |
+|           🔴 Local Watch History (0%)            |                                       |                                                                  |
+|            🔴 Subscriptions Page (0%)            |                                       |                                                                  |
+|          🔴 Other Platform Support (0%)          |                                       |                                                                  |
 
 </details>
 

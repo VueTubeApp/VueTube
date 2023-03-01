@@ -25,11 +25,11 @@ Se pronuncia Viu Tuf (<code>/ˈvjuːˌtjuːb/</code>)
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-**Leer en otros idiomas:** [English,](/readme.md) [Español,](readme.es.md) [简体中文,](readme.zh-hans.md) [繁體中文,](readme.zh-hant.md) [日本語,](readme.ja.md) [עִברִית,](readme.he.md) [Nederlands,](readme.nl.md) [தமிழ்,](readme.ta.md) [Bahasa Melayu,](readme.ms.md) [Македонски,](readme.mk.md) [Français,](readme.fr.md) [Português Brasileiro,](readme.pt-br.md) [Bahasa Indonesia,](readme.id.md) [Polski,](readme.pl.md) [Български,](readme.bg.md) [Italiano,](readme.it.md) [Magyar,](readme.hu.md) [한국어,](readme.kr.md) [Tiếng Việt,](readme.vi.md) [Română](readme.ro.md)
+**Leer en otros idiomas:** [English,](../readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська,](/readme/readme.ua.md) [Türkçe](/readme/readme.tr.md/)
 
 <h2 align="left">
 <sub>
-<img  src="/resources/readme_icon_features.png"
+<img  src="../resources/readme_icon_features.png"
       height="30"
       width="30">
 </sub>
@@ -49,7 +49,7 @@ Características
 
 <h2 align="left">
 <sub>
-<img  src="/resources/readme_icon_install.png"
+<img  src="../resources/readme_icon_install.png"
       height="30"
       width="30">
 </sub>
@@ -66,21 +66,21 @@ Para instalar, por favor, visita www.vuetube.app/install o mira todas las versio
 
 ### Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a>  | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Un montón de bugs, pero acceso anticipado a funciones | Menos bugs que la inestable, aún así más funciones que la estable | No disponible hasta que la app este más desarrollada |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/download/0.2/VueTube-Canary-June-15-2022.apk><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Un montón de bugs, pero acceso anticipado a funciones                                                                                        | Menos bugs que la inestable, aún así más funciones que la estable                                                                                                | No disponible hasta que la app este más desarrollada                                             |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a>  | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a>  |
-| ------------- | ------------- |  ------------- |
-| Un montón de bugs, pero acceso anticipado a funciones | Menos bugs que la inestable, aún así más funciones que la estable | No disponible hasta que la app este más desarrollada |
-  
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Un montón de bugs, pero acceso anticipado a funciones                                                                                    | Menos bugs que la inestable, aún así más funciones que la estable                                                                                                               | No disponible hasta que la app este más desarrollada                                             |
+
 </details>
 
 <h2 align="left">
 <sub>
-<img  src="/resources/readme_icon_plans.png"
+<img  src="../resources/readme_icon_plans.png"
       height="30"
       width="30">
 </sub>
@@ -99,7 +99,7 @@ Planes
 
 <h2 align="left">
 <sub>
-<img  src="/resources/readme_icon_screenshots.png"
+<img  src="../resources/readme_icon_screenshots.png"
       height="30"
       width="30">
 </sub>
@@ -120,7 +120,7 @@ Capturas de pantalla
 
 <h2 align="left">
 <sub>
-<img  src="/resources/readme_icon_community.png"
+<img  src="../resources/readme_icon_community.png"
       height="30"
       width="30">
 </sub>
@@ -135,7 +135,7 @@ Usamos diferentes plataformas para comunicarnos con nuestra comunidad. Puedes pa
 
 <h2 align="left">
 <sub>
-<img  src="/resources/readme_icon_progress.png"
+<img  src="../resources/readme_icon_progress.png"
       height="30"
       width="30">
 </sub>
@@ -189,7 +189,7 @@ Si quieres traducir la app, [haz clic aquí](/NUXT/plugins/languages) y lee las 
 
 <h2 align="left">
 <sub>
-<img  src="/resources/readme_icon_github.png"
+<img  src="../resources/readme_icon_github.png"
       height="30"
       width="30">
 </sub>
@@ -204,7 +204,7 @@ Colaboradores de GitHub
 
 <h2 align="left">
 <sub>
-<img  src="/resources/readme_icon_acknowledgements.png"
+<img  src="../resources/readme_icon_acknowledgements.png"
       height="30"
       width="30">
 </sub>
@@ -218,7 +218,7 @@ Agradecimientos
 
 <h2 align="left">
 <sub>
-<img  src="/resources/readme_icon_donate.png"
+<img  src="../resources/readme_icon_donate.png"
       height="30"
       width="30">
 </sub>
@@ -233,7 +233,7 @@ VueTube es y siempre será gratuito y de código abierto, pero puedes apoyar a n
 
 <h2 align="left">
 <sub>
-<img  src="/resources/readme_icon_disclaimer.png"
+<img  src="../resources/readme_icon_disclaimer.png"
       height="30"
       width="30">
 </sub>
@@ -248,7 +248,7 @@ En caso de conflicto entre las traducciones del aviso legal, tiene preferencia l
 
 <h2 align="left">
 <sub>
-<img  src="/resources/readme_icon_otherrepos.png"
+<img  src="../resources/readme_icon_otherrepos.png"
       height="30"
       width="30">
 </sub>
@@ -271,10 +271,11 @@ Otros repositorios de VueTube
 [![VueTube HTTP](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=vuetube-http)](https://github.com/VueTubeApp/vuetube-http)
 
 **VueTube HTTP** es un plugin para peticiones nativas de HTTP, descargas y subidas de archivos y la administración de cookies. Es una reinvención del [proyecto original de HTTP](https://github.com/capacitor-community/http) de Capacitor Community, con adiciones por el equipo de VueTube.
+
 </details>
 
 <hr>
 
 <p align="center">
-<sub>VueTube, haciendo a la gente feliz e iluminando sus corazones desde 2022.</sub>
+<img src="../resources/readme-es/bottom_banner_readme.png" width="800">
 </p>
