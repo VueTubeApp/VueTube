@@ -1,3 +1,7 @@
+//⚠️🚧 WARNING: THIS FILE IS IN MAINTENANCE MODE 🚧⚠️
+// DO NOT ADD NEW FEATURES TO THIS FILE. INNERTUBE.JS IS NOW A SEPARATE LIBRARY
+// contribute to the library here: https://github.com/VueTubeApp/Vuetube-Extractor
+
 // Code specific to working with the innertube API
 // https://www.youtube.com/youtubei/v1
 
