@@ -3,7 +3,7 @@ module.exports = {
 
   global: {
     home: "Beranda",
-    subscriptions: "Subscription",
+    subscriptions: "Langganan",
     library: "Koleksi",
     restart: "Mulai ulang",
     later: "Nanti",

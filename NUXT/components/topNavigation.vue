@@ -64,15 +64,17 @@
       icon
       tile
       class="ml-4 mr-2 my-auto fill-height rounded-xl"
-      :style="$route.name !== 'settings' ? '' : 'transform: rotate(180deg)'"
+      :style="$route.name == 'settings' ? 'transform: rotate(180deg)' : ''"
       @click="
-        $route.path.includes('settings') || $route.path.includes('/tweaks')
-          ? $router.go(-1)
-          : $router.push('/settings')
+        $route.name == 'settings' ? closeSettings() : $router.push('/settings')
       "
     >
       <v-icon>{{
-        $route.name !== "settings" ? "mdi-cog-outline" : "mdi-close"
+        $route.name == "settings"
+          ? "mdi-close"
+          : $route.name.includes("mods")
+          ? "mdi-arrow-left"
+          : "mdi-cog-outline"
       }}</v-icon>
     </v-btn>
   </v-card>
@@ -93,8 +95,25 @@ export default {
   events: ["searchBtn", "textChanged", "closeSearch", "scrollToTop"],
   data: () => ({
     text: "",
+    presettings: false,
   }),
+  watch: {
+    $route(next, prev) {
+      if (this.$route.path == "/settings" && !prev.name.includes("mods")) {
+        this.presettings = prev.path;
+      }
+      if (this.$route.path == "/search") {
+        this.text = this.$route.query.q;
+      }
+    },
+  },
   methods: {
+    closeSettings() {
+      this.presettings
+        ? this.$router.push(this.presettings)
+        : this.$router.go(-1);
+      this.presettings = false;
+    },
     refreshRecommendations() {
       this.$emit("scroll-to-top");
 
@@ -113,18 +132,11 @@ export default {
           console.log(result);
           if (result) this.$store.commit("updateRecommendedVideos", [result]);
         })
-        .catch(error => {});
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
-
-  watch: {
-    $route() {
-      if (this.$route.path == "/search") {
-        this.text = this.$route.query.q;
-      }
-    },
-  },
-
 };
 </script>
 

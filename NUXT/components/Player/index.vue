@@ -54,7 +54,7 @@
               }rem 0rem 0rem !important`
             : '0',
       }"
-      :poster="getThumbnail($route.query.v)"
+      :poster="$youtube.getThumbnail($route.query.v, 'max', [])"
       @loadedmetadata="checkDimensions()"
       @click="controlsHandler()"
     />
@@ -352,7 +352,6 @@ import progressbar from "~/components/Player/progressbar.vue";
 import sponsorblock from "~/components/Player/sponsorblock.vue";
 
 import backType from "~/plugins/classes/backType";
-import Thumbnail from "~/plugins/thumbnail";
 
 export default {
   components: {
@@ -623,11 +622,6 @@ export default {
       this.$refs.player.currentTime = time;
       this.$refs.player.playbackRate = speed;
       this.$refs.audio.playbackRate = speed;
-    },
-    getThumbnail(query) {
-      const thumbnail = new Thumbnail();
-
-      return thumbnail.getThumbnail(query, "max", []);
     },
     checkDimensions() {
       if (this.$refs.player.videoHeight > this.$refs.player.videoWidth) {

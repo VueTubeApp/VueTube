@@ -1,6 +1,16 @@
 <p align="center">
-  <a href="https://vuetube.app/">
-    <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
+    <a href="https://vuetube.app/">
+    <picture>
+      <source 
+        srcset="https://raw.githubusercontent.com/VueTubeApp/.github/main/readme_assets/dark/VueTube.svg"
+        media="(prefers-color-scheme: dark)"
+      />
+      <img 
+        src="https://raw.githubusercontent.com/VueTubeApp/.github/main/readme_assets/light/VueTube.svg" 
+        alt="VueTube icon"
+        width="500"
+       />
+    </picture>
   </a>
   </br>
   <details>
@@ -66,15 +76,17 @@ Az alkalmazás telepítéséhez látogasson el erre az oldalra [vuetube.app/inst
 
 ### Android
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.5><img id="im" width="200" src=https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Eléggé unstabil, de előre megkapod a legújabb funkciókat.                                                                                                                                           | Kevesebb hiba van benne mint a Unstable-ben, de mégis több a funkció benne mint a Stable-ben.                                                                                        | Még nem elérhető.                                                                                                                                       |
 
 ### iOS
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.3><img id="im" width="200" src=https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=https://raw.githubusercontent.com/VueTubeApp/VueTube/main/resources/getstable.png></a> |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Eléggé unstabil, de előre megkapod a legújabb funkciókat.                                                                                                                                       | Kevesebb hiba van benne mint a Unstable-ben, de mégis több a funkció benne mint a Stable-ben.                                                                                                                                          | Még nem elérhető.                                                                                                                                       |
+
+(Az Apple hivatalosan nem támogatja a sideloading-ot, vagyis nem lehet az alkalmazások telepítését csak a fájllal tenni anélkül, hogy azokat feltöltenék a cég hivatalos boltjába. A VueTube iPhone / iPad eszközökre történő telepítéséhez speciális módszereket kell használod)
 
 </details>
 

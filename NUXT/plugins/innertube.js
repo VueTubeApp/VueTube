@@ -266,6 +266,20 @@ class Innertube {
     });
   }
 
+  // Static methods
+
+  static getThumbnail(id, resolution) {
+    if (resolution == "max") {
+      const url = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+      let img = new Image();
+      img.src = url;
+      img.onload = function () {
+        if (img.height !== 120) return url;
+      };
+    }
+    return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
+  }
+
   // Simple Wrappers
   async getRecommendationsAsync() {
     const rec = await this.browseAsync("recommendations");
@@ -342,17 +356,19 @@ class Innertube {
         isPrivate: details.isPrivate,
         viewCount: details.viewCount,
         lengthSeconds: details.lengthSeconds,
-        likes: parseInt(
-          vidMetadata.contents
-            .find((content) => content.slimVideoActionBarRenderer)
-            .slimVideoActionBarRenderer.buttons.find(
-              (button) => button.slimMetadataToggleButtonRenderer.isLike
-            )
-            .slimMetadataToggleButtonRenderer.button.toggleButtonRenderer.defaultText.accessibility.accessibilityData.label.replace(
-              /\D/g,
-              ""
-            )
-        ), // Yes. I know.
+        // likes: parseInt(
+        //   vidMetadata.contents
+        //     .find((content) => content.slimVideoActionBarRenderer)
+        //     .slimVideoActionBarRenderer.buttons.find(
+        //       (button) => button.slimMetadataToggleButtonRenderer.isLike
+        //     )
+        //     .slimMetadataToggleButtonRenderer.button.toggleButtonRenderer.defaultText.accessibility.accessibilityData.label.replace(
+        //       /\D/g,
+        //       ""
+        //     )
+        // ), // Yes. I know.
+        likes: "broken",
+        // NOTE: likes are pulled from RYD for now untill extractor is fixed
       },
       renderedData: {
         description: responseNext.engagementPanels

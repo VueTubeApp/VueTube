@@ -165,7 +165,7 @@
                 :class="
                   $vuetify.theme.dark ? 'text--lighten-4' : 'text--darken-4'
                 "
-                v-text="video.channelSubs"
+                v-text="video.channelSubs + ' subscribers'"
               />
             </div>
           </div>
@@ -241,21 +241,17 @@
         "
       />
 
-      <swipeable-bottom-sheet
+      <div
         v-if="loaded && video.commentData"
-        v-model="showComments"
-        hide-overlay
-        persistent
-        no-click-animation
-        style="z-index: 2 !important"
-        attach="#content-container"
+        :class="showComments ? 'comments-open' : ''"
+        class="scroll-y comments"
       >
         <mainCommentRenderer
           v-model="showComments"
           :comment-data="video.commentData"
           :default-continuation="video.commentContinuation"
         ></mainCommentRenderer>
-      </swipeable-bottom-sheet>
+      </div>
 
       <!-- <swipeable-bottom-sheet
       :v-model="showComments"
@@ -281,14 +277,12 @@
 </template>
 
 <script>
-import player from "~/components/Player/index.vue";
 import { Share } from "@capacitor/share";
 import { getCpn } from "~/plugins/utils";
-import ShelfRenderer from "~/components/SectionRenderers/shelfRenderer.vue";
+import player from "~/components/Player/index.vue";
 import VidLoadRenderer from "~/components/vidLoadRenderer.vue";
 import ItemSectionRenderer from "~/components/SectionRenderers/itemSectionRenderer.vue";
 import mainCommentRenderer from "~/components/Comments/mainCommentRenderer.vue";
-import SwipeableBottomSheet from "~/components/ExtendedComponents/swipeableBottomSheet";
 import SlimVideoDescriptionRenderer from "~/components/UtilRenderers/slimVideoDescriptionRenderer.vue";
 
 import backType from "~/plugins/classes/backType";
@@ -296,11 +290,9 @@ import backType from "~/plugins/classes/backType";
 export default {
   components: {
     player,
-    ShelfRenderer,
     VidLoadRenderer,
     ItemSectionRenderer,
     mainCommentRenderer,
-    SwipeableBottomSheet,
     SlimVideoDescriptionRenderer,
   },
   layout: "empty",
@@ -351,24 +343,29 @@ export default {
         this.video = result;
 
         //---   Content Stuff   ---//
-        this.likes = result.metadata.likes.toLocaleString();
-        this.interactions[0].value = result.metadata.likes.toLocaleString();
+        // NOTE: extractor likes are broken, using RYD likes instead
+        // this.likes = result.metadata.likes.toLocaleString();
+        // this.interactions[0].value = result.metadata.likes.toLocaleString();
         this.loaded = true;
         this.recommends = result.renderedData.recommendations;
         console.log("recommendations:", this.recommends);
 
         //---   API WatchTime call   ---//
-        this.playbackTracking = result.playbackTracking;
-        this.st = 0;
-        this.cpn = getCpn();
-        this.initWatchTime().then(() => {
-          this.sendWatchTime();
-          this.interval = setInterval(this.sendWatchTime, 60000);
-        });
+        if (this.$store.state.watchTelemetry) {
+          this.playbackTracking = result.playbackTracking;
+          this.st = 0;
+          this.cpn = getCpn();
+          this.initWatchTime().then(() => {
+            this.sendWatchTime();
+            this.interval = setInterval(this.sendWatchTime, 60000);
+          });
+        }
       });
 
       this.$youtube.getReturnYoutubeDislike(this.$route.query.v, (data) => {
+        this.likes = data.likes.toLocaleString();
         this.dislikes = data.dislikes.toLocaleString();
+        this.interactions[0].value = data.likes.toLocaleString();
         this.interactions[1].value = data.dislikes.toLocaleString();
       });
     },
@@ -382,7 +379,12 @@ export default {
       await Share.share({
         title: this.video.title,
         text: this.video.title,
-        url: "https://youtu.be/" + this.$route.query.v,
+        url:
+          "https://youtu.be/" +
+          this.$route.query.v +
+          "?t=" +
+          Math.round(this.$refs.player.getPlayer().currentTime) +
+          "s",
         dialogTitle: "Share video",
       });
     },
@@ -492,6 +494,7 @@ export default {
 
     // Toggle this.showComments to true or false. If it is true, then add the dismiss function to backStack.
     toggleComment() {
+      document.getElementById("content-container").scrollTo(0, 0);
       this.showComments = !this.showComments;
       if (this.showComments) {
         const dismissComment = new backType(
@@ -510,6 +513,24 @@ export default {
 </script>
 
 <style>
+.comments {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 2;
+  height: 100%;
+  max-height: 100%;
+  position: absolute;
+  pointer-events: none;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.comments-open {
+  transform: translatey(0);
+  pointer-events: auto;
+  opacity: 1;
+}
 #watch-body {
   height: 100%;
   max-height: 100vh;

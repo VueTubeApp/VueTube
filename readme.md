@@ -1,6 +1,16 @@
 <p align="center">
-  <a href="https://vuetube.app/">
-    <img src="https://cdn.discordapp.com/attachments/751596360108605500/980418672331988992/VueTube_Dark.svg" alt="VueTube icon" width="500"/>
+    <a href="https://vuetube.app/">
+    <picture>
+      <source 
+        srcset="https://raw.githubusercontent.com/VueTubeApp/.github/main/readme_assets/dark/VueTube.svg"
+        media="(prefers-color-scheme: dark)"
+      />
+      <img 
+        src="https://raw.githubusercontent.com/VueTubeApp/.github/main/readme_assets/light/VueTube.svg" 
+        alt="VueTube icon"
+        width="500"
+       />
+    </picture>
   </a>
   </br>
   <details>
@@ -25,7 +35,7 @@
   <a href="https://github.com/VueTubeApp/VueTube/blob/main/LICENSE" alt="License"><img src="https://img.shields.io/github/license/VueTubeApp/VueTube"></img></a>
   <a href="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml" alt="CI"><img src="https://github.com/VueTubeApp/VueTube/actions/workflows/ci.yml/badge.svg"></img></a>
   <a href="https://reddit.com/r/vuetube" alt="Reddit"><img src="https://img.shields.io/reddit/subreddit-subscribers/vuetube?label=r%2FVuetube&logo=reddit&logoColor=white"></img></a>
-  <a href="https://t.me/VueTube" alt="Telegram"><img src="https://img.shields.io/endpoint?label=VueTube&url=https%3A%2F%2Ftelegram-badge-4mbpu8e0fit4.runkit.sh%2F%3Furl%3Dhttps%3A%2F%2Ft.me%2FVuetube"></img></a>
+  <a href="https://t.me/VueTube" alt="Telegram"><img src="https://img.shields.io/endpoint?label=VueTube&url=https://tg.sumanjay.workers.dev/VueTube"></img></a>
   <a href="https://discord.gg/7P8KJrdd5W" alt="Discord"><img src="https://img.shields.io/discord/946587366242533377?label=Discord&style=flat&logo=discord&logoColor=white"></img></a>
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
@@ -87,7 +97,7 @@ available:
 Android
 </h3>
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.4.2><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.5><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Pretty unstable, but you get early access to new features.                                                                                  | Less bugs than unstable while having more features than stable.                                                              | Not available yet.                                                                              |
 
@@ -100,7 +110,7 @@ Android
 iOS
 </h3>
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://cdn.discordapp.com/attachments/949908267855921163/972164558930198528/VueTube-Canary-May-6-2022.ipa><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.3><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Pretty unstable, but you get early access to new features.                                                                              | Less bugs than unstable while having more features than stable.                                                                                                                | Not available yet.                                                                              |
 
@@ -282,9 +292,9 @@ maintain the project and develop new features. Every kind of help is welcome! Th
 Disclaimer
 </h2>
 
-The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way accociated
-with YouTube, Google LLC or any of its affiliates and subsidaries. The official YouTube website can be found
-at [youtube.com](https://www.youtube.com).
+The VueTube project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way associated
+with YouTube, Google LLC or any of its affiliates and subsidiaries. The official YouTube website can be found
+at [www.youtube.com](https://www.youtube.com).
 
 Any trademark, service mark, trade name, or other intellectual property rights used in the VueTube project are owned by
 the respective owners.
@@ -303,16 +313,61 @@ Other VueTube repos
 
 <br>
 
-[![VueTube Extractor](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Extractor)](https://github.com/VueTubeApp/VueTube-Extractor)
+<a href="https://github.com/VueTubeApp/VueTube-Extractor">
+    <picture>
+      <source 
+        srcset="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Extractor&theme=dark"
+        media="(prefers-color-scheme: dark)"
+      />
+      <source 
+        srcset="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Extractor&theme=highcontrast"
+        media="(prefers-color-scheme: dark_colorblind)"
+      />
+      <img 
+        src="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Extractor" 
+        alt="VueTube Extractor"
+       />
+    </picture>
+</a>
 
 **VueTube Extractor** is a library designed to extract data from streaming services, designed for use in VueTube App.
 
-[![VueTube Translator](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Translator)](https://github.com/VueTubeApp/VueTube-Translator)
+<a href="https://github.com/VueTubeApp/VueTube-Translator">
+    <picture>
+      <source 
+        srcset="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Translator&theme=dark"
+        media="(prefers-color-scheme: dark)"
+      />
+      <source 
+        srcset="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Translator&theme=highcontrast"
+        media="(prefers-color-scheme: dark_colorblind)"
+      />
+      <img 
+        src="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=VueTube-Translator" 
+        alt="VueTube Extractor"
+       />
+    </picture>
+</a>
 
 **VueTube Translator** is a tool for translating fields of GitHub files like JSON or JS and export the result with the
 correct structure. It was created to help VueTube translators, but it can be used for any other purpose.
 
-[![VueTube HTTP](https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=vuetube-http)](https://github.com/VueTubeApp/vuetube-http)
+<a href="https://github.com/VueTubeApp/vuetube-http">
+    <picture>
+      <source 
+        srcset="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=vuetube-http&theme=dark"
+        media="(prefers-color-scheme: dark)"
+      />
+      <source 
+        srcset="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=vuetube-http&theme=highcontrast"
+        media="(prefers-color-scheme: dark_colorblind)"
+      />
+      <img 
+        src="https://github-readme-stats.vercel.app/api/pin/?username=VueTubeApp&repo=vuetube-http" 
+        alt="VueTube Extractor"
+       />
+    </picture>
+</a>
 
 **VueTube HTTP** is a plugin for native HTTP requests, file download/uploads, and cookie management. It's a fork of
 the [original HTTP project](https://github.com/capacitor-community/http) from Capacitor Community, with additions by the

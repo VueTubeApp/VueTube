@@ -188,7 +188,7 @@
       </v-card>
     </v-card>
 
-    <!-- <v-divider v-if="!$store.state.tweaks.roundTweak" />
+    <v-divider v-if="!$store.state.tweaks.roundTweak" />
 
     <h3 class="ml-8 mt-8">
       <v-icon class="mb-1 mr-1">mdi-play-network-outline</v-icon>
@@ -284,7 +284,7 @@
           </div>
         </div>
       </v-card>
-    </v-card> -->
+    </v-card>
 
     <v-divider v-if="!$store.state.tweaks.roundTweak" />
 
@@ -312,7 +312,7 @@
             ? $vuetify.theme.dark
               ? 'lighten-1'
               : 'darken-1'
-            : ''
+            : 'background'
         "
         :style="{
           borderRadius: `${$store.state.tweaks.roundTweak / 12}rem`,
@@ -342,7 +342,7 @@
               : loop
               ? 'primary lighten-4'
               : 'background darken-1'
-            : ''
+            : 'background'
         "
         :style="{
           borderRadius: `${$store.state.tweaks.roundTweak / 12}rem`,

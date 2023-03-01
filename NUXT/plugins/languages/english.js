@@ -28,7 +28,7 @@ module.exports = {
     startup: "Startup",
     theme: "Theme",
     tweaks: "Tweaks",
-    updates: "Updates"
+    updates: "Updates",
   },
 
   index: {
@@ -55,7 +55,9 @@ module.exports = {
       language: "Language",
       backup: "Backup",
       backupinfo: "Backup or restore your application settings",
-      restore: "Restore"
+      restore: "Restore",
+      personalizedrecommendations: "Personalized recommendations",
+      personalizedrecommendationsinfo: "Receive personalized recommendations in exchange for sending watch time telemetry.",
     },
     theme: {
       normal: "Normal",
@@ -73,6 +75,17 @@ module.exports = {
       roundthumbnails: "Round Thumbnails",
       roundwatchpagecomponents: "Round Watch Page Components",
       radius: "Radius",
+      launchscreen: "Launch Screen",
+      centeredlayout: "Centered Layout",
+      fullscreenlayout: "Fullscreen Layout",
+      themedicon: "Themed Icon",
+      bottomnavigation: "Bottom Navigation",
+      shift: "Shift",
+      showlabels: "Show labels",
+      mdi: "MDI",
+      materialsymbols: "Material Symbols",
+      fluentuiicons: "FluentUI Icons",
+      ibmcarbonicons: "IBM Carbon Icons",
     },
     startup: {
       defaultpage: "Default Page",
@@ -122,7 +135,7 @@ module.exports = {
       key: "Key",
       value: "Value",
       confirmdelete: "Confirm delete",
-      areyousure: "Are you sure that you want to delete",
+      areyousure: "Are you sure that you want to delete?",
       delete: "Delete",
       change: "Change",
     },

@@ -1,4 +1,3 @@
-
 module.exports = {
   name: "Azerbaijan",
 
@@ -6,7 +5,7 @@ module.exports = {
     home: "Ev",
     subscriptions: "Abunəliklər",
     library: "Kitabxana",
-    restart: "Yenidən başladın",
+    restart: "Yenidən başlat",
     later: "Daha sonra",
     settingRestart:
       "Bu seçimin dəyişdirilməsi dəyişikliklərin tətbiq edilməsi üçün tətbiqin yenidən başladılmasını tələb edir.",
@@ -17,7 +16,7 @@ module.exports = {
     index: "",
     home: "Ev",
     library: "Kitabxana",
-    search: "Axtarın",
+    search: "Axtar",
     settings: "Tənzimləmələr",
     subscriptions: "Abunəliklər",
     watch: "İzlə",
@@ -54,9 +53,9 @@ module.exports = {
   mods: {
     general: {
       language: "Dil",
-      backup: "Backup",
-      backupinfo: "Backup or restore your application settings",
-      restore: "Restore"
+      backup: "Nüsxələ",
+      backupinfo: "Tətbiq tənzimləmələrinizi nüsxələyin və ya bərpa edin",
+      restore: "Bərpa et"
     },
     theme: {
       normal: "Normal",
@@ -91,11 +90,11 @@ module.exports = {
 
       published: "Dərc edilmişdir",
       users: "İstifadəçilər",
-      size: "Ölçüsünü yeniləyin",
+      size: "Ölçüsünü yenilə",
 
       okay: "Oldu",
       refresh: "yenilə",
-      update: "Yeniləyin",
+      update: "Yenilə",
       later: "Daha sonra",
     },
     logs: {
@@ -116,14 +115,14 @@ module.exports = {
     developer: {
       registryeditor: "Reyestr redaktoru",
       registrywarning: "GİRİŞLƏRİN DƏYİŞİLMƏSİ TƏTBİQİNİZİN SINMASINA SƏBƏB OLA BİLƏR!",
-      createentry: "Giriş yaradın",
-      createentryfull: "Reyestr girişi yaradın",
+      createentry: "Giriş yarat",
+      createentryfull: "Reyestr girişi yarat",
       cancel: "İmtina",
-      create: "Yaradın",
+      create: "Yarat",
       key: "Açar",
       value: "Dəyər",
-      confirmdelete: "Silməni təsdiqləyin",
-      areyousure: "Silmək istədiyinizə əminsiniz",
+      confirmdelete: "Silməni təsdiqlə",
+      areyousure: "Silmək istədiyinizə əminsiniz?",
       delete: "Sil",
       change: "Dəyiş",
     },
