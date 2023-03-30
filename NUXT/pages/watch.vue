@@ -1,5 +1,5 @@
 <template>
-  <div class="background" id="watch-body">
+  <div id="watch-body" class="background">
     <div id="player-container">
       <!-- // TODO: move component to default.vue -->
       <!-- // TODO: pass sources through vuex instead of props -->
@@ -158,7 +158,7 @@
             <div class="avatar-link mr-3">
               <v-img class="avatar-thumbnail" :src="video.channelImg" />
             </div>
-            <div class="channel-byline" v-emoji>
+            <div v-emoji class="channel-byline">
               <div class="channel-name" v-text="video.channelName" />
               <div
                 class="caption background--text"
@@ -350,6 +350,12 @@ export default {
         this.recommends = result.renderedData.recommendations;
         console.log("recommendations:", this.recommends);
 
+        // Store To History
+        this.$store.commit("history/addHistory", {
+          id: this.video.id,
+          title: this.video.title,
+          channel: this.video.channelName,
+        });
         //---   API WatchTime call   ---//
         if (this.$store.state.watchTelemetry) {
           this.playbackTracking = result.playbackTracking;
