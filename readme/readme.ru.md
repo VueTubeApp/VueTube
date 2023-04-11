@@ -44,7 +44,7 @@
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_features.png"
+<img  src="../resources/readme_icon_features.png"
       height="30"
       width="30">
 </sub>
@@ -64,7 +64,7 @@
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_install.png"
+<img  src="../resources/readme_icon_install.png"
       height="30"
       width="30">
 </sub>
@@ -81,27 +81,27 @@
 
 <h3 align="left">
 <sub>
-<img  src="resources/readme_icon_android.png"
+<img  src="../resources/readme_icon_android.png"
       height="20"
       width="20">
 </sub>
 Android
 </h3>
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.5><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.5><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Нестабильная, но имеет ранний доступ к новым возможностям.                                                                                  | Меньше ошибок, чем в Unstable, но больше возможностей чем в Stable.                                                              | Пока не доступна.                                                                              |
 
 <h3 align="left">
 <sub>
-<img  src="resources/readme_icon_ios.png"
+<img  src="../resources/readme_icon_ios.png"
       height="20"
       width="20">
 </sub>
 iOS
 </h3>
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.3><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.3><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Нестабильная, но имеет ранний доступ к новым возможностям.                                                                              | Меньше ошибок, чем в Unstable, но больше возможностей чем в Stable.                                                                                                            | Пока не доступна.                                                                             |
 
@@ -111,7 +111,7 @@ iOS
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_plans.png"
+<img  src="../resources/readme_icon_plans.png"
       height="30"
       width="30">
 </sub>
@@ -132,7 +132,7 @@ iOS
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_screenshots.png"
+<img  src="../resources/readme_icon_screenshots.png"
       height="30"
       width="30">
 </sub>
@@ -153,7 +153,7 @@ iOS
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_community.png"
+<img  src="../resources/readme_icon_community.png"
       height="30"
       width="30">
 </sub>
@@ -169,7 +169,7 @@ VueTube или просто быть в курсе всех новостей, п
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_progress.png"
+<img  src="../resources/readme_icon_progress.png"
       height="30"
       width="30">
 </sub>
@@ -186,7 +186,7 @@ VueTube или просто быть в курсе всех новостей, п
 |             🟢 Комментарии (100%)                |        🟢 Возобновить / Пауза (100%)   |                🟢 Автозаполнение поиска (100%)                   |
 |              🟢 Описание (100%)               | 🟢 Показать / спрятать эл. управления (100%) |                       🟢 Начальная страница (100%)                        |
 |               🟢 Начальная страница (100%)                |      🟠 Seekbar / Scrubber (80%)      |                         🟢 Поиск (100%)                         |
-|            🟢 Интеграция с RYD (100%)             |          🟠 Полноэкранный режим (80%)          |                    🟠 Информация о видео(60%)                    |
+|            🟢 Интеграция с RYD (100%)             |          🟠 Полноэкранный режим (80%)          |                    🟠 Информация о видео (60%)                    |
 |                 🟢 Темы (100%)                 |      🟠 Выбор разрешения (50%)       |                         🔴 Каналы (0%)                         |
 |               🟢 Страница просмотра (100%)               |          🔴 Мини проигрыватель (0%)           |                         🔴 Комментарии (0%)                         |
 |        🟠 Интеграция Sponsorblock (95%)         |        🔴 Фоновое воспроиведение (0%)        |                        🔴 Live чат (0%)                         |
@@ -224,7 +224,7 @@ VueTube был создан с целью предоставить беспла�
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_github.png"
+<img  src="../resources/readme_icon_github.png"
       height="30"
       width="30">
 </sub>
@@ -239,7 +239,7 @@ VueTube был создан с целью предоставить беспла�
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_acknowledgements.png"
+<img  src="../resources/readme_icon_acknowledgements.png"
       height="30"
       width="30">
 </sub>
@@ -253,7 +253,7 @@ VueTube был создан с целью предоставить беспла�
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_donate.png"
+<img  src="../resources/readme_icon_donate.png"
       height="30"
       width="30">
 </sub>
@@ -268,7 +268,7 @@ VueTube всегда будет бесплатным проектом с отк�
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_disclaimer.png"
+<img  src="../resources/readme_icon_disclaimer.png"
       height="30"
       width="30">
 </sub>
@@ -281,7 +281,7 @@ VueTube всегда будет бесплатным проектом с отк�
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_otherrepos.png"
+<img  src="../resources/readme_icon_otherrepos.png"
       height="30"
       width="30">
 </sub>
@@ -356,5 +356,5 @@ VueTube всегда будет бесплатным проектом с отк�
 <hr>
 
 <p align="center">
-<img src="resources/bottom_banner_readme.png" width="800">
+<img src="../resources/bottom_banner_readme.png" width="800">
 </p>
