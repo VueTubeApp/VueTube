@@ -40,7 +40,7 @@
   <a href="https://twitter.com/VueTubeApp" alt="Twitter"><img src="https://img.shields.io/twitter/follow/VueTubeApp?label=Follow&style=flat&logo=twitter"></img></a>
 </p>
 
-**Доступные языки**: [English,](readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська](/readme/readme.ua.md), [Türkçe](/readme/readme.tr.md/)
+**Доступные языки**: [English,](readme.md) [Español,](/readme/readme.es.md) [简体中文,](/readme/readme.zh-hans.md) [繁體中文,](/readme/readme.zh-hant.md) [日本語,](/readme/readme.ja.md) [עִברִית,](/readme/readme.he.md) [Nederlands,](/readme/readme.nl.md) [தமிழ்,](/readme/readme.ta.md) [Bahasa Melayu,](/readme/readme.ms.md) [Македонски,](/readme/readme.mk.md) [Français,](/readme/readme.fr.md) [Português Brasileiro,](/readme/readme.pt-br.md) [Bahasa Indonesia,](/readme/readme.id.md) [Polski,](/readme/readme.pl.md) [Български,](/readme/readme.bg.md) [Italiano,](/readme/readme.it.md) [Magyar,](/readme/readme.hu.md) [한국어,](/readme/readme.kr.md) [Tiếng Việt,](/readme/readme.vi.md) [Română,](/readme/readme.ro.md) [Українська](/readme/readme.ua.md), [Türkçe](/readme/readme.tr.md/), [Русский](/readme/readme.ru.md/)
 
 <h2 align="left">
 <sub>
@@ -51,7 +51,7 @@
 Особенности
 </h2>
 
-<img src="./resources/Features.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ru/Features.ru.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 **Темы:** Светлая, темная, OLED и все цвета радуги! Настраивайте главные цвета и цвет заднего фона в соответствии с вашими предпочтениями.
 - 🖌️ **Настройка UI:** Настраивайте кнопки, углы и отключайте части интерфейса, которые вы не используете, для комфортного использования.
@@ -71,7 +71,7 @@
 Установка
 </h2>
 
-<img src="./resources/Install.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ru/Install.ru.svg" alt="VueTube icon" height="100"/>
 
 Для установки перейдите на [vuetube.app/install](https://www.vuetube.app/install) или просмотрите ниже список доступных версий:
 
@@ -118,7 +118,7 @@ iOS
 Планы
 </h2>
 
-<img src="./resources/Plans.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/readme-ru/Plans.ru.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 **Продвинутый поиск:** Сортируйте результаты по дате, длительности, лайках или по любому другому параметру.
 - 🗞️ **Локальная история просмотров:** Получите доступ к истории просмотров без необходимости авторизации в аккаунт.
