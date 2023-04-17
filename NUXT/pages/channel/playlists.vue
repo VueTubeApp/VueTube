@@ -1,14 +1,7 @@
 <template>
-  <div>
-    <playlist-card />
-  </div>
+  <div></div>
 </template>
 
 <script>
-import playlistCard from "../../components/playlistCard.vue";
-export default {
-  components: {
-    playlistCard,
-  },
-};
+export default {};
 </script>
