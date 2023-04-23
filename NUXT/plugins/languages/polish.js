@@ -65,7 +65,7 @@ module.exports = {
       dark: "Ciemny",
       black: "Czarny",
       darkmode: "Tryb ciemny",
-      darkmodetagline: "Brawo Six, Going Dark.",
+      darkmodetagline: "Bravo Six, Going Dark.",
     },
     tweaks: {
       fullscreen: "Pełny Ekran",
