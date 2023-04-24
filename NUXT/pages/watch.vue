@@ -1,5 +1,5 @@
 <template>
-  <div class="background" id="watch-body">
+  <div id="watch-body" class="background">
     <div id="player-container">
       <!-- // TODO: move component to default.vue -->
       <!-- // TODO: pass sources through vuex instead of props -->
@@ -9,6 +9,7 @@
         :video="video"
         :sources="sources"
         :recommends="recommends"
+        :disabled="saveDialog"
       />
     </div>
 
@@ -158,7 +159,7 @@
             <div class="avatar-link mr-3">
               <v-img class="avatar-thumbnail" :src="video.channelImg" />
             </div>
-            <div class="channel-byline" v-emoji>
+            <div v-emoji class="channel-byline">
               <div class="channel-name" v-text="video.channelName" />
               <div
                 class="caption background--text"
@@ -273,6 +274,30 @@
         }"
       />
     </div>
+    <v-dialog v-model="saveDialog" width="500">
+      <v-card
+        class="rounded-lg"
+        :class="
+          $vuetify.theme.dark ? 'background lighten-1' : 'background darken-1'
+        "
+      >
+        <v-card-title class="text-h5">Save To Playlist</v-card-title>
+        <v-spacer></v-spacer>
+        <v-checkbox
+          v-for="(playlist, index) in playlists"
+          :key="index"
+          v-model="playlistsCheckbox[index]"
+          class="mx-5"
+          :label="playlist.name"
+          @change="updatePlaylist($event, index)"
+        />
+        <v-divider />
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" text @click="saveDialog = false"> Done </v-btn>
+        </v-card-actions>
+      </v-card></v-dialog
+    >
   </div>
 </template>
 
@@ -303,6 +328,12 @@ export default {
   // },
   data: function () {
     return this.initializeState();
+  },
+
+  computed: {
+    playlists() {
+      return this.$store.state.playlist.playlists;
+    },
   },
   watch: {
     // Watch for change in the route query string (in this case, ?v=xxxxxxxx to ?v=yyyyyyyy)
@@ -349,6 +380,20 @@ export default {
         this.loaded = true;
         this.recommends = result.renderedData.recommendations;
         console.log("recommendations:", this.recommends);
+
+        // Store To History
+        this.$store.commit("history/addHistory", {
+          id: this.video.id,
+          title: this.video.title,
+          channel: this.video.channelName,
+        });
+
+        this.playlistsCheckbox = this.playlists.map(
+          (playlist) =>
+            playlist.videos.findIndex(
+              (playlistVideo) => playlistVideo.id === this.video.id
+            ) !== -1
+        );
 
         //---   API WatchTime call   ---//
         if (this.$store.state.watchTelemetry) {
@@ -453,8 +498,9 @@ export default {
           {
             name: "Save",
             icon: "mdi-plus-box-multiple-outline",
-            actionName: "enqueue",
-            disabled: true,
+            // action: this.save()
+            actionName: "save",
+            disabled: false,
           },
           // {
           //   name: "Quality",
@@ -478,13 +524,14 @@ export default {
         interval: null,
         video: null,
         backHierarchy: [],
+        saveDialog: false,
+        playlistsCheckbox: [],
       };
     },
 
     mountedInit() {
       this.startTime = Math.floor(Date.now() / 1000);
       this.getVideo();
-
       //  Reset vertical scrolling
       const scrollableList = document.querySelectorAll(".overflow-y-auto");
       scrollableList.forEach((scrollable) => {
@@ -506,6 +553,28 @@ export default {
           }
         );
         this.$vuetube.addBackAction(dismissComment);
+      }
+    },
+
+    save() {
+      this.saveDialog = true;
+    },
+
+    updatePlaylist(event, index) {
+      if (event) {
+        this.$store.commit("playlist/addToPlaylist", {
+          video: {
+            id: this.video.id,
+            title: this.video.title,
+            channel: this.video.channelName,
+          },
+          index,
+        });
+      } else {
+        this.$store.commit("playlist/removeFromPlaylist", {
+          video: this.video,
+          playlistIndex: index,
+        });
       }
     },
   },

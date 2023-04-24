@@ -13,6 +13,7 @@
       hide-details
       height="2"
       dense
+      :disabled="disabled"
       color="transparent"
       thumb-color="primary"
       track-color="transparent"
@@ -84,6 +85,10 @@ export default {
     seeking: {
       type: Boolean,
       required: true,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   emits: ["scrub", "seeking"],

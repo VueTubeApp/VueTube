@@ -6,7 +6,11 @@
       v-show="!search"
       class="my-auto ml-4"
       v-text="
-        $route.path.includes('channel') ? $store.state.channel.title : page
+        $route.path.includes('channel')
+          ? $store.state.channel.title
+          : $route.path.includes('playlist')
+          ? $store.state.playlist.currentPlaylist.name
+          : page
       "
     />
 

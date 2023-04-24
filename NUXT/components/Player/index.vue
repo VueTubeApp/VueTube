@@ -312,6 +312,7 @@
       :controls="controls"
       :sources="sources"
       :seeking="seeking"
+      :disabled="disabled"
       @seeking="seeking = !seeking"
       @scrub="
         ($refs.player.currentTime = $event), ($refs.audio.currentTime = $event)
@@ -383,6 +384,10 @@ export default {
       default: () => {
         return [];
       },
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
