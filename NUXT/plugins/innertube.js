@@ -32,7 +32,7 @@ class Innertube {
         this.ErrorCallback(html.message, true);
       try {
         const data = JSON.parse(
-          getBetweenStrings(html.data, "ytcfg.set(", ");")
+          "{" + getBetweenStrings(html.data, "ytcfg.set({", ");")
         );
         if (data.INNERTUBE_CONTEXT) {
           this.key = data.INNERTUBE_API_KEY;
@@ -81,7 +81,11 @@ class Innertube {
   //--- API Calls ---//
 
   async browseAsync(action_type, args = {}) {
-    let data = { context: this.context };
+    let data = {
+      context: {
+        client: constants.INNERTUBE_CLIENT(this.context.client),
+      },
+    };
 
     switch (action_type) {
       case "recommendations":
@@ -160,7 +164,12 @@ class Innertube {
   }
 
   async getVidAsync(id) {
-    let data = { context: this.context, videoId: id };
+    let data = {
+      context: {
+        client: constants.INNERTUBE_VIDEO(this.context.client),
+      },
+      videoId: id,
+    };
     const responseNext = await Http.post({
       url: `${constants.URLS.YT_BASE_API}/next?key=${this.key}`,
       data: {
@@ -179,8 +188,33 @@ class Innertube {
 
     const response = await Http.post({
       url: `${constants.URLS.YT_BASE_API}/player?key=${this.key}`,
-      data: data,
-      headers: constants.INNERTUBE_HEADER(this.context.client),
+      data: {
+        ...data,
+        ...{
+          contentCheckOk: false,
+          mwebCapabilities: {
+            mobileClientSupportsLivestream: true,
+          },
+          playbackContext: {
+            contentPlaybackContext: {
+              currentUrl: "/watch?v=" + id,
+              vis: 0,
+              splay: false,
+              autoCaptionsDefaultOn: false,
+              autonavState: "STATE_NONE",
+              html5Preference: "HTML5_PREF_WANTS",
+              signatureTimestamp: 19473,
+              referer: "https://m.youtube.com/",
+              lactMilliseconds: "-1",
+              watchAmbientModeContext: {
+                watchAmbientModeEnabled: true,
+              },
+            },
+          },
+        },
+      },
+      // headers: constants.INNERTUBE_HEADER(this.context.client),
+      headers: constants.INNERTUBE_NEW_HEADER(this.context.client),
     }).catch((error) => error);
 
     if (response.error)
@@ -336,7 +370,6 @@ class Innertube {
     const ownerData = vidMetadata.contents.find(
       (content) => content.slimOwnerRenderer
     )?.slimOwnerRenderer;
-
     const vidData = {
       id: details.videoId,
       title: details.title,

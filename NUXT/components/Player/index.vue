@@ -380,7 +380,7 @@ export default {
       required: true,
     },
     recommends: {
-      type: Array,
+      type: Object,
       default: () => {
         return [];
       },
@@ -416,6 +416,7 @@ export default {
   mounted() {
     console.log("sources", this.sources);
     console.log("recommends", this.recommends);
+    console.log("video", this.video);
     this.vid = this.$refs.player;
 
     // TODO: this.$store.state.player.quality, check if exists and select the closest one
@@ -535,7 +536,7 @@ export default {
       if (this.xhr) this.xhr.abort();
       if (this.isFullscreen) this.exitFullscreen();
       if (this.bufferingDetected) clearTimeout(this.bufferingDetected);
-      screen.orientation.removeEventListener("change");
+      // screen.orientation.removeEventListener("change");
       this.$refs.player.removeEventListener("loadeddata", this.loadedDataEvent);
       this.$refs.player.removeEventListener("timeupdate", this.timeUpdateEvent);
       this.$refs.player.removeEventListener("progress", this.progressEvent);

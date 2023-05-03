@@ -40,6 +40,19 @@ module.exports = {
     return headers;
   },
 
+  INNERTUBE_NEW_HEADER: (info) => {
+    let headers = {
+      accept: "*/*",
+      "user-agent": info.userAgent,
+      "accept-language": `${info.hl}-${info.gl},${info.hl};q=0.9`,
+      "content-type": "application/json",
+      "x-goog-authuser": 0,
+      "x-goog-visitor-id": info.visitorData || "",
+      "x-youtube-client-name": "2",
+      "x-youtube-client-version": "2.20230502.01.00",
+    };
+    return headers;
+  },
   INNERTUBE_CLIENT: (info) => {
     let client = {
       gl: info.gl,
@@ -56,6 +69,45 @@ module.exports = {
       configInfo: info.configInfo,
       remoteHost: info.remoteHost,
       visitorData: info.visitorData,
+    };
+    return client;
+  },
+  INNERTUBE_VIDEO: (info) => {
+    let client = {
+      gl: info.gl,
+      hl: info.hl,
+      deviceMake: info.deviceMake,
+      deviceModel: info.deviceModel,
+      userAgent: info.userAgent,
+      clientName: "MWEB",
+      clientVersion: "2.20230502.01.00",
+      osName: info.osName,
+      osVersion: info.osVersion,
+      platform: "MOBILE",
+      playerType: "UNIPLAYER",
+      screenPixelDensity: "3",
+      originalUrl: info.originalUrl,
+      configInfo: info.configInfo,
+      remoteHost: info.remoteHost,
+      visitorData: info.visitorData,
+      clientFormFactor: "SMALL_FORM_FACTOR",
+      screenDensityFloat: "1",
+      timeZone: info.timeZone,
+      browserName: info.browserName,
+      browserVersion: info.browserVersion,
+      acceptHeader:
+        "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+      deviceExperimentId: info.deviceExperimentId,
+      screenWidthPoints: info.screenWidthPoints,
+      screenHeightPoints: info.screenHeightPoints,
+      utcOffsetMinutes: info.utcOffsetMinutes,
+      userInterfaceTheme: "USER_INTERFACE_THEME_LIGHT",
+      memoryTotalKbytes: "8000000",
+      clientScreen: "WATCH",
+      mainAppWebInfo: {
+        webDisplayMode: "WEB_DISPLAY_MODE_BROWSER",
+        isWebNativeShareAvailable: true,
+      },
     };
     return client;
   },

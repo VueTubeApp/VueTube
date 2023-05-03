@@ -55,13 +55,19 @@
       >
         <div>
           {{ lang.published }}:
-          {{ new Date(update.created_at).toLocaleString() }}
+          {{ new Date(latestVersion.assets[0].created_at).toLocaleString() }}
         </div>
         <div>
           {{ lang.size }}:
-          {{ require("~/plugins/utils").humanFileSize(update.size) }}
+          {{
+            require("~/plugins/utils").humanFileSize(
+              latestVersion.assets[0].size
+            )
+          }}
         </div>
-        <div>{{ lang.users }}: {{ update.download_count }}</div>
+        <div>
+          {{ lang.users }}: {{ latestVersion.assets[0].download_count }}
+        </div>
       </div>
 
       <div
@@ -123,7 +129,9 @@ export default {
       latestVersion: "",
       lang: {},
       status: "checking",
-      update: {},
+      update: {
+        created_at: "",
+      },
       downloading: false,
     };
   },
@@ -185,7 +193,7 @@ export default {
 
     async install() {
       this.downloading = true;
-      await this.$update(this.update.browser_download_url).catch(() => {
+      await this.$update(this.latestVersion.assets[0].url).catch(() => {
         this.downloading = false;
       });
       //window.open(this.update.browser_download_url, '_blank');
