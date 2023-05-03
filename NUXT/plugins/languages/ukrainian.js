@@ -32,6 +32,26 @@ module.exports = {
   mods: {
     general: {
       language: "Мова",
+      backup: "Backup",
+      backupinfo: "Backup or restore your application settings",
+      restore: "Restore",
+      personalizedrecommendations: "Персоналізовані рекомендації",
+      personalizedrecommendationsinfo:
+        "Отримуйте персоналізовані рекомендації в обмін на надсилання телеметричних даних про час перегляду.",
+    },
+    developer: {
+      registryeditor: "Registry editor",
+      registrywarning: "CHANGING ENTRIES MAY CAUSE YOUR APP TO BREAK!",
+      createentry: "Create entry",
+      createentryfull: "Create registry entry",
+      cancel: "Cancel",
+      create: "Create",
+      key: "Key",
+      value: "Value",
+      confirmdelete: "Confirm delete",
+      areyousure: "Are you sure that you want to delete?",
+      delete: "Delete",
+      change: "Change",
     },
     theme: {
       normal: "Звичайна",
@@ -58,6 +78,14 @@ module.exports = {
       view: "Переглянути",
       latest: "Остання",
       installed: "Встановлена",
+      size: "Розмір",
+      users: "Завантажень",
+      published: "Опубліковано",
+
+      okay: "ОК",
+      refresh: "Оновити",
+      update: "Завантажити",
+      later: "Пізніше",
     },
     logs: {
       more: "Більше",
