@@ -420,10 +420,16 @@ export default {
     this.vid = this.$refs.player;
 
     // TODO: this.$store.state.player.quality, check if exists and select the closest one
-    if (this.$store.state.player.preload) this.prebuffer(this.sources[5].url);
+
+    if (this.$store.state.player.preload) this.prebuffer(this.sources[0].url);
     else {
-      this.audSrc = this.sources[this.sources.length - 1].url;
-      this.vidSrc = this.sources[5].url;
+      this.prebuffer(this.sources[0].url);
+      this.sources.forEach((source) => {
+        if (source.mimeType.indexOf("audio") > -1) {
+          this.audSrc = source.url;
+          this.vidSrc = this.sources[0].url;
+        }
+      });
     }
 
     this.$youtube.getSponsorBlock(this.video.id, (data) => {
@@ -463,9 +469,9 @@ export default {
       //   // There is not enough data to keep playing from this point
       // }
       if (this.vid.readyState >= 3) {
-        this.$refs.audio.play();
         this.bufferingDetected = false;
         this.$refs.audio.currentTime = this.vid.currentTime;
+        this.$refs.audio.play();
 
         if (!this.isMusic) {
           this.$refs.audio.playbackRate = this.$store.state.player.speed;
