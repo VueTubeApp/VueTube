@@ -58,14 +58,8 @@
 <script>
 export default {
   props: {
-    video: {
-      type: Object,
-      required: true,
-    },
-    controls: {
-      type: Boolean,
-      required: true,
-    },
+    video: {},
+    controls: {},
     fullscreen: {
       type: Boolean,
       required: true,
@@ -74,10 +68,7 @@ export default {
       type: Array,
       required: true,
     },
-    currentTime: {
-      type: Number,
-      required: true,
-    },
+    currentTime: {},
     duration: {
       type: Number,
       required: true,
