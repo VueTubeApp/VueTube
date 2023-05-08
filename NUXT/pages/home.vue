@@ -75,3 +75,8 @@ export default {
   },
 };
 </script>
+<style>
+a {
+  -webkit-user-drag: none;
+}
+</style>

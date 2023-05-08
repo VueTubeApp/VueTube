@@ -1,9 +1,20 @@
 <template>
-  <div class="description" v-if="render.descriptionBodyText">
-    <yt-text-formatter :textRuns="render.descriptionBodyText.runs">
+  <div v-if="render.attributedDescriptionBodyText.content" class="description">
+    <yt-text-formatter :text-runs="render.attributedDescriptionBodyText">
     </yt-text-formatter>
   </div>
 </template>
+
+<script>
+import YtTextFormatter from "~/components/UtilRenderers/YtTextFormatterNew.vue";
+
+export default {
+  components: {
+    YtTextFormatter,
+  },
+  props: ["render"],
+};
+</script>
 
 <style scoped>
 .description {
@@ -11,15 +22,3 @@
   font-size: 0.9rem;
 }
 </style>
-
-<script>
-import YtTextFormatter from "~/components/UtilRenderers/YtTextFormatter.vue";
-
-export default {
-  props: ["render"],
-
-  components: {
-    YtTextFormatter,
-  },
-};
-</script>

@@ -12,14 +12,8 @@ export default {
       type: Number,
       required: true,
     },
-    currentTime: {
-      type: Number,
-      required: true,
-    },
-    controls: {
-      type: Boolean,
-      required: true,
-    },
+    currentTime: {},
+    controls: {},
   },
   computed: {
     humanDuration() {

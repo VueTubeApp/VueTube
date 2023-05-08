@@ -16,6 +16,7 @@ class Innertube {
   constructor(ErrorCallback) {
     this.ErrorCallback = ErrorCallback || undefined;
     this.retry_count = 0;
+    this.playerParams = "";
   }
 
   checkErrorCallback() {
@@ -191,13 +192,14 @@ class Innertube {
       data: {
         ...data,
         ...{
+          playerParams: this.playerParams,
           contentCheckOk: false,
           mwebCapabilities: {
             mobileClientSupportsLivestream: true,
           },
           playbackContext: {
             contentPlaybackContext: {
-              currentUrl: "/watch?v=" + id,
+              currentUrl: "/watch?v=" + id + "&pp=" + this.playerParams,
               vis: 0,
               splay: false,
               autoCaptionsDefaultOn: false,
@@ -370,6 +372,12 @@ class Innertube {
     const ownerData = vidMetadata.contents.find(
       (content) => content.slimOwnerRenderer
     )?.slimOwnerRenderer;
+
+    try {
+      console.log(vidMetadata.contents);
+      this.playerParams =
+        ownerData.navigationEndpoint.watchEndpoint.playerParams;
+    } catch (e) {}
     const vidData = {
       id: details.videoId,
       title: details.title,
