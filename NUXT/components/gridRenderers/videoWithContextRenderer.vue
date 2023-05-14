@@ -30,12 +30,20 @@ export default {
 
   computed: {
     thumbnailOverlayText() {
-      return this.video.thumbnailOverlays[0].thumbnailOverlayTimeStatusRenderer
-        .text.runs[0].text;
+      this.video.thumbnailOverlays.forEach((thumbnail) => {
+        if (thumbnail.thumbnailOverlayTimeStatusRenderer) {
+          return thumbnail.thumbnailOverlayTimeStatusRenderer.text.runs[0].text;
+        }
+      });
+      return "";
     },
     thumbnailOverlayStyle() {
-      return this.video.thumbnailOverlays[0].thumbnailOverlayTimeStatusRenderer
-        .style;
+      this.video.thumbnailOverlays.forEach((thumbnail) => {
+        if (thumbnail.thumbnailOverlayTimeStatusRenderer) {
+          return thumbnail.thumbnailOverlayTimeStatusRenderer.style;
+        }
+      });
+      return "DEFAULT";
     },
   },
 

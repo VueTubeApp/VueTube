@@ -8,7 +8,7 @@
 import { Http } from "@capacitor-community/http";
 import { getBetweenStrings, delay } from "./utils";
 import rendererUtils from "./renderers";
-import constants from "./constants";
+import constants, { YT_API_VALUES } from "./constants";
 
 class Innertube {
   //--- Initiation ---//
@@ -17,6 +17,7 @@ class Innertube {
     this.ErrorCallback = ErrorCallback || undefined;
     this.retry_count = 0;
     this.playerParams = "";
+    this.signatureTimestamp = 0;
   }
 
   checkErrorCallback() {
@@ -28,9 +29,82 @@ class Innertube {
       url: constants.URLS.YT_URL,
       params: { hl: "en" },
     }).catch((error) => error);
+    // Get url of base.js file
+    const baseJsUrl =
+      constants.URLS.YT_URL +
+      getBetweenStrings(html.data, '"jsUrl":"', '","cssUrl"');
+
     try {
       if (html instanceof Error && this.checkErrorCallback)
         this.ErrorCallback(html.message, true);
+      // Get base.js content
+      const baseJs = await Http.get({
+        url: baseJsUrl,
+      }).catch((error) => error);
+      // Example:
+      //;var IF={k4:function(a,b){var c=a[0];a[0]=a[b%a.length];a[b%a.length]=c},
+      // VN:function(a){a.reverse()},
+      // DW:function(a,b){a.splice(0,b)}};
+      let isMatch;
+      if (
+        /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z]+:function\(a\)\{[^}]*\},\n[A-Za-z]+:function\([^)]*\)\{[^}]*\}\};/.exec(
+          baseJs.data
+        )
+      ) {
+        isMatch =
+          /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z]+:function\(a\)\{[^}]*\},\n[A-Za-z]+:function\([^)]*\)\{[^}]*\}\};/.exec(
+            baseJs.data
+          );
+      } else if (
+        /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z]+:function\([A-Za-z],[A-Za-z]\)\{[^}]*\},\n[A-Za-z]+:function\([^)]*\)\{[^}]*\}\};/.exec(
+          baseJs.data
+        )
+      ) {
+        isMatch =
+          /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z]+:function\([A-Za-z],[A-Za-z]\)\{[^}]*\},\n[A-Za-z]+:function\([^)]*\)\{[^}]*\}\};/.exec(
+            baseJs.data
+          );
+      }
+
+      if (isMatch) {
+        console.log("The input string matches the regex pattern.");
+      } else {
+        console.log("The input string does not match the regex pattern.");
+      }
+      // Get first part of decipher function
+      const firstPart = isMatch[0].substring(1);
+
+      if (
+        /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return [A-Za-z]\.join\(""\)\};/.exec(
+          baseJs.data
+        )
+      ) {
+        isMatch =
+          /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return [A-Za-z]\.join\(""\)\};/.exec(
+            baseJs.data
+          );
+      } else if (
+        /{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
+          baseJs.data
+        )
+      ) {
+        isMatch =
+          /{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
+            baseJs.data
+          );
+      }
+      // Example:
+      // {a=a.split("");IF.k4(a,4);IF.VN(a,68);IF.DW(a,2);IF.VN(a,66);IF.k4(a,19);IF.DW(a,2);IF.VN(a,36);IF.DW(a,2);IF.k4(a,41);return a.join("")};
+
+      // Get second part of decipher function
+      const secondPart =
+        "var decodeUrl=function(a)" + isMatch[0] + "return decodeUrl;";
+      let decodeFunction = firstPart + secondPart;
+      let decodeUrlFunction = new Function(decodeFunction);
+      this.decodeUrl = decodeUrlFunction();
+      let signatureIntValue = /.sts="[0-9]+";/.exec(baseJs.data);
+      // Get signature timestamp
+      this.signatureTimestamp = signatureIntValue[0].replace(/\D/g, "");
       try {
         const data = JSON.parse(
           "{" + getBetweenStrings(html.data, "ytcfg.set({", ");")
@@ -205,7 +279,7 @@ class Innertube {
               autoCaptionsDefaultOn: false,
               autonavState: "STATE_NONE",
               html5Preference: "HTML5_PREF_WANTS",
-              signatureTimestamp: 19473,
+              signatureTimestamp: this.signatureTimestamp,
               referer: "https://m.youtube.com/",
               lactMilliseconds: "-1",
               watchAmbientModeContext: {
@@ -355,6 +429,7 @@ class Innertube {
     const responseInfo = response.data.output;
     const responseNext = response.data.outputNext;
     const details = responseInfo.videoDetails;
+    const publishDate = responseInfo.microformat.playerMicroformatRenderer.publishDate;
     // const columnUI =
     //   responseInfo[3].response?.contents.singleColumnWatchNextResults?.results
     //     ?.results;
@@ -378,6 +453,28 @@ class Innertube {
       this.playerParams =
         ownerData.navigationEndpoint.watchEndpoint.playerParams;
     } catch (e) {}
+    // Deciphering urls
+    resolutions.formats
+      .concat(resolutions.adaptiveFormats)
+      .forEach((source) => {
+        if (source.signatureCipher) {
+          const params = new Proxy(
+            new URLSearchParams(source.signatureCipher),
+            {
+              get: (searchParams, prop) => searchParams.get(prop),
+            }
+          );
+          if (params.s) {
+            let cipher = decodeURIComponent(params.s);
+            let decipheredValue = this.decodeUrl(cipher);
+            // console.log("decipheredValue", decipheredValue);
+            source["url"] = (params.url + "&sig=" + decipheredValue).replace(
+              /&amp;/g,
+              "&"
+            );
+          }
+        }
+      });
     const vidData = {
       id: details.videoId,
       title: details.title,
@@ -391,6 +488,7 @@ class Innertube {
       availableResolutions: resolutions?.formats,
       availableResolutionsAdaptive: resolutions?.adaptiveFormats,
       metadata: {
+        publishDate: publishDate,
         contents: vidMetadata.contents,
         description: details.shortDescription,
         thumbnails: details.thumbnails?.thumbnails,
