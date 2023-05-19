@@ -55,7 +55,9 @@ module.exports = {
         language: "言語",
         backup: "バックアップ",
         backupinfo: "アプリの設定をバックアップ、または復元する。",
-        restore: "復元"
+        restore: "復元",
+        personalizedrecommendations: "Personalized recommendations",
+        personalizedrecommendationsinfo: "Receive personalized recommendations in exchange for sending watch time telemetry.",
       },
       theme: {
         normal: "通常",
@@ -73,6 +75,17 @@ module.exports = {
         roundthumbnails: "丸みを帯びたサムネイル",
         roundwatchpagecomponents: "視聴画面のコンポーネントを丸く",
         radius: "半径",
+        launchscreen: "起動画面",
+        centeredlayout: "中央揃えのレイアウト",
+        fullscreenlayout: "全画面レイアウト",
+        themedicon: "テーマアイコン",
+        bottomnavigation: "下部のナビゲーション",
+        shift: "シフト",
+        showlabels: "ラベルを表示する",
+        mdi: "MDI",
+        materialsymbols: "マテリアルシンボル",
+        fluentuiicons: "FluentUI アイコン",
+        ibmcarbonicons: "IBM カーボン アイコン",
       },
       startup: {
         defaultpage: "起動時のページ",
