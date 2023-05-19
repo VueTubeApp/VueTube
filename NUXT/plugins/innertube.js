@@ -92,6 +92,11 @@ class Innertube {
           /{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
             baseJs.data
           );
+      } else {
+        isMatch =
+          /\{a=a\.split\(""\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);return a\.join\(""\)\};/.exec(
+            baseJs.data
+          );
       }
       // Example:
       // {a=a.split("");IF.k4(a,4);IF.VN(a,68);IF.DW(a,2);IF.VN(a,66);IF.k4(a,19);IF.DW(a,2);IF.VN(a,36);IF.DW(a,2);IF.k4(a,41);return a.join("")};
@@ -429,7 +434,8 @@ class Innertube {
     const responseInfo = response.data.output;
     const responseNext = response.data.outputNext;
     const details = responseInfo.videoDetails;
-    const publishDate = responseInfo.microformat.playerMicroformatRenderer.publishDate;
+    const publishDate =
+      responseInfo.microformat.playerMicroformatRenderer.publishDate;
     // const columnUI =
     //   responseInfo[3].response?.contents.singleColumnWatchNextResults?.results
     //     ?.results;
