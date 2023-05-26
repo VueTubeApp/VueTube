@@ -24,79 +24,81 @@ class Innertube {
     return typeof this.ErrorCallback === "function";
   }
 
-  async initAsync() {
-    const html = await Http.get({
-      url: constants.URLS.YT_URL,
-      params: { hl: "en" },
-    }).catch((error) => error);
+  async makeDecipherFunction(html) {
     // Get url of base.js file
     const baseJsUrl =
       constants.URLS.YT_URL +
       getBetweenStrings(html.data, '"jsUrl":"', '","cssUrl"');
-
-    try {
-      if (html instanceof Error && this.checkErrorCallback)
-        this.ErrorCallback(html.message, true);
-      // Get base.js content
-      const baseJs = await Http.get({
-        url: baseJsUrl,
-      }).catch((error) => error);
-      // Example:
-      //;var IF={k4:function(a,b){var c=a[0];a[0]=a[b%a.length];a[b%a.length]=c},
-      // VN:function(a){a.reverse()},
-      // DW:function(a,b){a.splice(0,b)}};
-      let isMatch;
-      if (
-        /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z]+:function\(a\)\{[^}]*\},\n[A-Za-z]+:function\([^)]*\)\{[^}]*\}\};/.exec(
+    // Get base.js content
+    const baseJs = await Http.get({
+      url: baseJsUrl,
+    }).catch((error) => error);
+    // Example:
+    //;var IF={k4:function(a,b){var c=a[0];a[0]=a[b%a.length];a[b%a.length]=c},
+    // VN:function(a){a.reverse()},
+    // DW:function(a,b){a.splice(0,b)}};
+    let isMatch;
+    if (
+      /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z0-9]+:function\(a\)\{[^}]*\},\n[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\}\};/.exec(
+        baseJs.data
+      )
+    ) {
+      isMatch =
+        /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z0-9]+:function\(a\)\{[^}]*\},\n[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\}\};/.exec(
           baseJs.data
-        )
-      ) {
-        isMatch =
-          /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z]+:function\(a\)\{[^}]*\},\n[A-Za-z]+:function\([^)]*\)\{[^}]*\}\};/.exec(
-            baseJs.data
-          );
-      } else if (
-        /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z]+:function\([A-Za-z],[A-Za-z]\)\{[^}]*\},\n[A-Za-z]+:function\([^)]*\)\{[^}]*\}\};/.exec(
+        );
+    } else if (
+      /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z0-9]+:function\([A-Za-z],[A-Za-z]\)\{[^}]*\},\n[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\}\};/.exec(
+        baseJs.data
+      )
+    ) {
+      isMatch =
+        /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z0-9]+:function\([A-Za-z],[A-Za-z]\)\{[^}]*\},\n[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\}\};/.exec(
           baseJs.data
-        )
-      ) {
-        isMatch =
-          /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z]+:function\([A-Za-z],[A-Za-z]\)\{[^}]*\},\n[A-Za-z]+:function\([^)]*\)\{[^}]*\}\};/.exec(
-            baseJs.data
-          );
-      }
+        );
+    }
 
-      if (isMatch) {
-        console.log("The input string matches the regex pattern.");
-      } else {
-        console.log("The input string does not match the regex pattern.");
-      }
-      // Get first part of decipher function
+    if (isMatch) {
+      console.log("The input string matches the regex pattern.");
       const firstPart = isMatch[0].substring(1);
 
       if (
-        /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return [A-Za-z]\.join\(""\)\};/.exec(
+        /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return [A-Za-z]\.join\(""\)\};/.exec(
           baseJs.data
         )
       ) {
         isMatch =
-          /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return [A-Za-z]\.join\(""\)\};/.exec(
+          /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return [A-Za-z]\.join\(""\)\};/.exec(
             baseJs.data
           );
       } else if (
-        /{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
+        /{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
           baseJs.data
         )
       ) {
         isMatch =
-          /{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
+          /{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
+            baseJs.data
+          );
+      } else if (
+        /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
+          baseJs.data
+        )
+      ) {
+        isMatch =
+          /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
             baseJs.data
           );
       } else {
         isMatch =
-          /\{a=a\.split\(""\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);[A-Za-z]+\.[A-Za-z]+\([^)]*\);return a\.join\(""\)\};/.exec(
+          /\{a=a\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return a\.join\(""\)\};/.exec(
             baseJs.data
           );
+      }
+      if (!isMatch) {
+        console.warn(
+          "The second part of decipher string does not match the regex pattern."
+        );
       }
       // Example:
       // {a=a.split("");IF.k4(a,4);IF.VN(a,68);IF.DW(a,2);IF.VN(a,66);IF.k4(a,19);IF.DW(a,2);IF.VN(a,36);IF.DW(a,2);IF.k4(a,41);return a.join("")};
@@ -110,6 +112,23 @@ class Innertube {
       let signatureIntValue = /.sts="[0-9]+";/.exec(baseJs.data);
       // Get signature timestamp
       this.signatureTimestamp = signatureIntValue[0].replace(/\D/g, "");
+    } else {
+      console.warn(
+        "The first part of decipher string does not match the regex pattern."
+      );
+    }
+  }
+  async initAsync() {
+    const html = await Http.get({
+      url: constants.URLS.YT_URL,
+      params: { hl: "en" },
+    }).catch((error) => error);
+
+    await this.makeDecipherFunction(html);
+    try {
+      if (html instanceof Error && this.checkErrorCallback)
+        this.ErrorCallback(html.message, true);
+
       try {
         const data = JSON.parse(
           "{" + getBetweenStrings(html.data, "ytcfg.set({", ");")
@@ -385,7 +404,7 @@ class Innertube {
 
   static getThumbnail(id, resolution) {
     if (resolution == "max") {
-      const url = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+      const url = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
       let img = new Image();
       img.src = url;
       img.onload = function () {

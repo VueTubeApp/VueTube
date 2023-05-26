@@ -6,7 +6,7 @@ const getDefaultState = () => {
     banner: null,
     title: null,
     subscribe: null,
-    subscribeAlt: null,
+    subscribeAlt: "",
     descriptionPreview: null,
     subscribers: null,
     videosCount: null,
@@ -22,12 +22,18 @@ export const actions = {
     Object.assign(state, getDefaultState());
     state.loading = true;
     console.log(channelUrl);
-    const channelRequest =
+    let channelRequest = "";
+    console.warn(channelUrl);
+    if (
       channelUrl.includes("/c/") ||
       channelUrl.includes("/user/") ||
-      channelUrl.includes("/channel/")
-        ? `https://youtube.com/${channelUrl}`
-        : `https://youtube.com/channel/${channelUrl}`;
+      channelUrl.includes("/channel/") ||
+      channelUrl.includes("/@")
+    ) {
+      channelRequest = `https://youtube.com/${channelUrl}`;
+    } else {
+      channelRequest = `https://youtube.com/channel/${channelUrl}`;
+    }
     this.$youtube
       .getChannel(channelRequest)
       .then((channel) => {

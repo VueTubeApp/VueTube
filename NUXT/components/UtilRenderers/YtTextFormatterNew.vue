@@ -89,18 +89,18 @@ export default {
             text[1].indexOf("/channel/") > -1 ||
             text[1].indexOf("youtube.com/c/") > -1
           ) {
-            let nameOfUrl = text[0].replace(/   /, " ");
-            // let newUrl =
-            //   "<a" + ' onclick=openInternal("' + text[1] + '") style="background-color: rgba(0,0,0,0.051); border-radius: 8px; white-space: nowrap;">' + img + nameOfUrl + "</a>";
+            let nameOfUrl = text[0].replace(/   /, " ").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-            // Temporary
             let newUrl =
               "<a" +
               ' onclick=openInternal("channel") style="background-color: rgba(0,0,0,0.051); border-radius: 8px; white-space: nowrap;">' +
               img +
               nameOfUrl +
               "</a>";
-            tempContent = tempContent.replaceAll(text[0], newUrl);
+            tempContent = tempContent.replaceAll(
+              new RegExp(`\\b${text[0]}\\b`, "g"),
+              newUrl
+            );
           } else {
             let params = new Proxy(new URLSearchParams(text[1]), {
               get: (searchParams, prop) => searchParams.get(prop),

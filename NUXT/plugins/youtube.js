@@ -102,7 +102,7 @@ const innertubeModule = {
 
   getThumbnail(id, resolution, backupThumbnail) {
     if (resolution == "max") {
-      const url = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+      const url = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
       let img = new Image();
       img.src = url;
       img.onload = function () {
