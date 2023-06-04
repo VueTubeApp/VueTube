@@ -68,8 +68,15 @@ export default {
         .then((result) => {
           if (result) this.recommends = [result];
         })
-        .catch(error => {});
+        .catch((error) => {
+          console.error(error);
+        });
     }
   },
 };
 </script>
+<style>
+a {
+  -webkit-user-drag: none;
+}
+</style>

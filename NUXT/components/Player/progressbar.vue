@@ -38,10 +38,7 @@ export default {
       type: Number,
       required: true,
     },
-    controls: {
-      type: Boolean,
-      required: true,
-    },
+    controls: {},
     buffered: {
       type: Number,
       required: true,

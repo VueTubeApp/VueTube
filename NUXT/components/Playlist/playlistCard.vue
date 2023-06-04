@@ -84,10 +84,10 @@ export default {
       try {
         const videoId =
           this.playlist.videos.length === 0 ? "" : this.playlist.videos[0].id;
-        return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+        return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
       } catch (e) {
         alert(e.message);
-        return `https://img.youtube.com/vi//maxresdefault.jpg`;
+        return `https://img.youtube.com/vi//hqdefault.jpg`;
       }
     },
   },

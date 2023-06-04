@@ -7,7 +7,7 @@ module.exports = {
     library: "Knihovna",
     restart: "Restartovat",
     later: "Později",
-    settingRestart: "Úprava tohoto nastavení vyžaduje restart aplikace pro provedení změn."
+    settingRestart: "Úprava tohoto nastavení vyžaduje restartování aplikace pro provedení změn."
   },
 
   index: {
@@ -31,7 +31,7 @@ module.exports = {
 
   mods: {
     general: {
-      language: "Jatyk",
+      language: "Jazyk",
     },
     theme: {
       normal: "Normální",
@@ -63,7 +63,7 @@ module.exports = {
       more: "Více",
     },
     about: {
-      appinformation: "Informace o aplikace",
+      appinformation: "Informace o aplikaci",
       appversion: "Verze aplikace",
       deviceinformation: "Informace o zařízení",
       platform: "Platforma",

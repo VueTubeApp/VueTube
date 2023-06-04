@@ -89,7 +89,7 @@ export default {
   props: { video: { type: Object, required: true } },
   computed: {
     thumbnail() {
-      return `https://img.youtube.com/vi/${this.video.id}/maxresdefault.jpg`;
+      return `https://img.youtube.com/vi/${this.video.id}/hqdefault.jpg`;
     },
   },
   methods: {

@@ -11,24 +11,24 @@
   },
   "dependencies": {
     "@capacitor/splash-screen": "^1.2.2",
-    "@capacitor/status-bar": "^1.0.8",
+    "@capacitor/status-bar": "^5.0.2",
     "core-js": "^3.25.0",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.5.2",
     "uuid": "^9.0.0",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10",
     "vuetify": "^2.6.9",
-    "webpack": "^4.46.0"
+    "webpack": "^5.84.1"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.12.3",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^8.2.0",
+    "eslint-plugin-vue": "^9.14.1",
     "prettier": "^2.5.1"
   }
 }

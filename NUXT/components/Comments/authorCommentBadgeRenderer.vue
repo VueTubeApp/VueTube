@@ -1,7 +1,7 @@
 <template>
   <div
     class="author-comment-badge-renderer"
-    v-if="metadata && iconTypeMap.hasOwnProperty(metadata.icon.iconType)"
+    v-if="metadata && iconTypeMap.hasOwnProperty(metadata.icon)"
   >
     <v-tooltip top>
       <template v-slot:activator="{ on, attrs }">

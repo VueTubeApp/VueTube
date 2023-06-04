@@ -18,10 +18,7 @@
 <script>
 export default {
   props: {
-    video: {
-      type: Object,
-      required: true,
-    },
+    video: {},
     buffering: {
       type: Boolean,
       required: false,

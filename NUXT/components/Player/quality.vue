@@ -7,7 +7,14 @@
       scrollable
     >
       <template #activator="{ on, attrs }">
-        <v-btn fab text small color="white" v-bind="attrs" v-on="on">
+        <v-btn
+          fab
+          text
+          small
+          color="white"
+          v-bind="attrs"
+          v-on="on"
+        >
           {{
             sources.find((src) => src.url == currentSource.src).qualityLabel
               ? sources.find((src) => src.url == currentSource.src).qualityLabel
@@ -29,7 +36,7 @@
         </v-subheader>
         <v-divider />
         <v-card-text
-          style="max-height: 50vh"
+          style="max-height: 50vh; flex-direction: column !important"
           class="pa-0 d-flex flex-column-reverse"
         >
           <v-list-item
@@ -58,7 +65,7 @@
               <v-list-item-title>
                 {{ src.qualityLabel ? src.qualityLabel : "" }} ({{
                   src.quality
-                }}) {{ src.bitrate }}bps
+                }}) {{ (src.bitrate / 1000000).toFixed(2) }}Mbps
               </v-list-item-title>
               <v-list-item-subtitle>
                 {{ src.mimeType }} {{ src.averageBitrate }}
@@ -72,12 +79,10 @@
 </template>
 
 <script>
+
 export default {
   props: {
-    currentSource: {
-      type: String,
-      required: true,
-    },
+    currentSource: {},
     sources: {
       type: Array,
       required: true,

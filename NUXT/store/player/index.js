@@ -14,7 +14,10 @@ export const state = () => ({
 export const mutations = {
   initPlayer(state) {
     if (process.client) {
-      state.loop = JSON.parse(localStorage.getItem("loop")) === true; // defaults to false
+      state.loop =
+        localStorage.getItem("loop") !== "undefined"
+          ? JSON.parse(localStorage.getItem("loop"))
+          : true; // defaults to false
       state.speed = JSON.parse(localStorage.getItem("speed")) || 1; // defaults to 1
       state.speedAutosave = !(
         // false if false, defaults to true

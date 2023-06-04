@@ -8,7 +8,7 @@
 import { Http } from "@capacitor-community/http";
 import { getBetweenStrings, delay } from "./utils";
 import rendererUtils from "./renderers";
-import constants from "./constants";
+import constants, { YT_API_VALUES } from "./constants";
 
 class Innertube {
   //--- Initiation ---//
@@ -16,23 +16,122 @@ class Innertube {
   constructor(ErrorCallback) {
     this.ErrorCallback = ErrorCallback || undefined;
     this.retry_count = 0;
+    this.playerParams = "";
+    this.signatureTimestamp = 0;
   }
 
   checkErrorCallback() {
     return typeof this.ErrorCallback === "function";
   }
 
+  async makeDecipherFunction(html) {
+    // Get url of base.js file
+    const baseJsUrl =
+      constants.URLS.YT_URL +
+      getBetweenStrings(html.data, '"jsUrl":"', '","cssUrl"');
+    // Get base.js content
+    const baseJs = await Http.get({
+      url: baseJsUrl,
+    }).catch((error) => error);
+    // Example:
+    //;var IF={k4:function(a,b){var c=a[0];a[0]=a[b%a.length];a[b%a.length]=c},
+    // VN:function(a){a.reverse()},
+    // DW:function(a,b){a.splice(0,b)}};
+    let isMatch;
+    if (
+      /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z0-9]+:function\(a\)\{[^}]*\},\n[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\}\};/.exec(
+        baseJs.data
+      )
+    ) {
+      isMatch =
+        /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z0-9]+:function\(a\)\{[^}]*\},\n[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\}\};/.exec(
+          baseJs.data
+        );
+    } else if (
+      /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z0-9]+:function\([A-Za-z],[A-Za-z]\)\{[^}]*\},\n[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\}\};/.exec(
+        baseJs.data
+      )
+    ) {
+      isMatch =
+        /;var [A-Za-z]+=\{[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\},\n[A-Za-z0-9]+:function\([A-Za-z],[A-Za-z]\)\{[^}]*\},\n[A-Za-z0-9]+:function\([^)]*\)\{[^}]*\}\};/.exec(
+          baseJs.data
+        );
+    }
+
+    if (isMatch) {
+      console.log("The input string matches the regex pattern.");
+      const firstPart = isMatch[0].substring(1);
+
+      if (
+        /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return [A-Za-z]\.join\(""\)\};/.exec(
+          baseJs.data
+        )
+      ) {
+        isMatch =
+          /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return [A-Za-z]\.join\(""\)\};/.exec(
+            baseJs.data
+          );
+      } else if (
+        /{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
+          baseJs.data
+        )
+      ) {
+        isMatch =
+          /{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
+            baseJs.data
+          );
+      } else if (
+        /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
+          baseJs.data
+        )
+      ) {
+        isMatch =
+          /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
+            baseJs.data
+          );
+      } else {
+        isMatch =
+          /\{a=a\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return a\.join\(""\)\};/.exec(
+            baseJs.data
+          );
+      }
+      if (!isMatch) {
+        console.warn(
+          "The second part of decipher string does not match the regex pattern."
+        );
+      }
+      // Example:
+      // {a=a.split("");IF.k4(a,4);IF.VN(a,68);IF.DW(a,2);IF.VN(a,66);IF.k4(a,19);IF.DW(a,2);IF.VN(a,36);IF.DW(a,2);IF.k4(a,41);return a.join("")};
+
+      // Get second part of decipher function
+      const secondPart =
+        "var decodeUrl=function(a)" + isMatch[0] + "return decodeUrl;";
+      let decodeFunction = firstPart + secondPart;
+      let decodeUrlFunction = new Function(decodeFunction);
+      this.decodeUrl = decodeUrlFunction();
+      let signatureIntValue = /.sts="[0-9]+";/.exec(baseJs.data);
+      // Get signature timestamp
+      this.signatureTimestamp = signatureIntValue[0].replace(/\D/g, "");
+    } else {
+      console.warn(
+        "The first part of decipher string does not match the regex pattern."
+      );
+    }
+  }
   async initAsync() {
     const html = await Http.get({
       url: constants.URLS.YT_URL,
       params: { hl: "en" },
     }).catch((error) => error);
+
+    await this.makeDecipherFunction(html);
     try {
       if (html instanceof Error && this.checkErrorCallback)
         this.ErrorCallback(html.message, true);
+
       try {
         const data = JSON.parse(
-          getBetweenStrings(html.data, "ytcfg.set(", ");")
+          "{" + getBetweenStrings(html.data, "ytcfg.set({", ");")
         );
         if (data.INNERTUBE_CONTEXT) {
           this.key = data.INNERTUBE_API_KEY;
@@ -81,7 +180,11 @@ class Innertube {
   //--- API Calls ---//
 
   async browseAsync(action_type, args = {}) {
-    let data = { context: this.context };
+    let data = {
+      context: {
+        client: constants.INNERTUBE_CLIENT(this.context.client),
+      },
+    };
 
     switch (action_type) {
       case "recommendations":
@@ -160,7 +263,12 @@ class Innertube {
   }
 
   async getVidAsync(id) {
-    let data = { context: this.context, videoId: id };
+    let data = {
+      context: {
+        client: constants.INNERTUBE_VIDEO(this.context.client),
+      },
+      videoId: id,
+    };
     const responseNext = await Http.post({
       url: `${constants.URLS.YT_BASE_API}/next?key=${this.key}`,
       data: {
@@ -179,8 +287,34 @@ class Innertube {
 
     const response = await Http.post({
       url: `${constants.URLS.YT_BASE_API}/player?key=${this.key}`,
-      data: data,
-      headers: constants.INNERTUBE_HEADER(this.context.client),
+      data: {
+        ...data,
+        ...{
+          playerParams: this.playerParams,
+          contentCheckOk: false,
+          mwebCapabilities: {
+            mobileClientSupportsLivestream: true,
+          },
+          playbackContext: {
+            contentPlaybackContext: {
+              currentUrl: "/watch?v=" + id + "&pp=" + this.playerParams,
+              vis: 0,
+              splay: false,
+              autoCaptionsDefaultOn: false,
+              autonavState: "STATE_NONE",
+              html5Preference: "HTML5_PREF_WANTS",
+              signatureTimestamp: this.signatureTimestamp,
+              referer: "https://m.youtube.com/",
+              lactMilliseconds: "-1",
+              watchAmbientModeContext: {
+                watchAmbientModeEnabled: true,
+              },
+            },
+          },
+        },
+      },
+      // headers: constants.INNERTUBE_HEADER(this.context.client),
+      headers: constants.INNERTUBE_NEW_HEADER(this.context.client),
     }).catch((error) => error);
 
     if (response.error)
@@ -270,7 +404,7 @@ class Innertube {
 
   static getThumbnail(id, resolution) {
     if (resolution == "max") {
-      const url = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+      const url = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
       let img = new Image();
       img.src = url;
       img.onload = function () {
@@ -319,6 +453,8 @@ class Innertube {
     const responseInfo = response.data.output;
     const responseNext = response.data.outputNext;
     const details = responseInfo.videoDetails;
+    const publishDate =
+      responseInfo.microformat.playerMicroformatRenderer.publishDate;
     // const columnUI =
     //   responseInfo[3].response?.contents.singleColumnWatchNextResults?.results
     //     ?.results;
@@ -337,6 +473,33 @@ class Innertube {
       (content) => content.slimOwnerRenderer
     )?.slimOwnerRenderer;
 
+    try {
+      console.log(vidMetadata.contents);
+      this.playerParams =
+        ownerData.navigationEndpoint.watchEndpoint.playerParams;
+    } catch (e) {}
+    // Deciphering urls
+    resolutions.formats
+      .concat(resolutions.adaptiveFormats)
+      .forEach((source) => {
+        if (source.signatureCipher) {
+          const params = new Proxy(
+            new URLSearchParams(source.signatureCipher),
+            {
+              get: (searchParams, prop) => searchParams.get(prop),
+            }
+          );
+          if (params.s) {
+            let cipher = decodeURIComponent(params.s);
+            let decipheredValue = this.decodeUrl(cipher);
+            // console.log("decipheredValue", decipheredValue);
+            source["url"] = (params.url + "&sig=" + decipheredValue).replace(
+              /&amp;/g,
+              "&"
+            );
+          }
+        }
+      });
     const vidData = {
       id: details.videoId,
       title: details.title,
@@ -350,6 +513,7 @@ class Innertube {
       availableResolutions: resolutions?.formats,
       availableResolutionsAdaptive: resolutions?.adaptiveFormats,
       metadata: {
+        publishDate: publishDate,
         contents: vidMetadata.contents,
         description: details.shortDescription,
         thumbnails: details.thumbnails?.thumbnails,
