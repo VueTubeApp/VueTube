@@ -4,7 +4,7 @@
     "@capacitor/android": "^3.7.0",
     "@capacitor/app": "^1.1.1",
     "@capacitor/cli": "^5.0.4",
-    "@capacitor/core": "^3.7.0",
+    "@capacitor/core": "^5.0.4",
     "@capacitor/device": "^1.1.2",
     "@capacitor/filesystem": "^1.1.0",
     "@capacitor/haptics": "^1.1.4",
