@@ -5,10 +5,10 @@ module.exports = {
     home: "Główna",
     subscriptions: "Subskrypcje",
     library: "Biblioteka",
-    restart: "Uruchomić Ponownie?",
+    restart: "Uruchom ponownie",
     later: "Później",
-    settingRestart: "Aby zastosować zmianę tego ustawienia uruchom ponownie aplikację.",
-    okay: "Ok"
+    settingRestart: "Zmiana tego ustawienia wymaga uruchomienia ponownego aplikacji, aby zastosować zmiany.",
+    okay: "Okej"
   },
   
   pages: {
@@ -26,7 +26,7 @@ module.exports = {
     plugins: "Rozszerzenia",
     startup: "Uruchamianie",
     theme: "Motyw",
-    tweaks: "Dostosowania",
+    tweaks: "Poprawki",
     updates: "Aktualizacje",
   },
 
@@ -40,13 +40,13 @@ module.exports = {
     general: "Ogólne",
     theme: "Motyw",
     player: "Odtwarzacz",
-    uitweaker: "Interfejs",
-    startupoptions: "Uruchamianie",
+    uitweaker: "Dostosuj interfejs",
+    startupoptions: "Opcje uruchamiania",
     plugins: "Rozszerzenia",
     updates: "Aktualizacje",
     logs: "Logi",
-    about: "Informacje",
-    devmode: "Opcje programisty",
+    about: "O aplikacji",
+    devmode: "Tryb programisty",
   },
 
   mods: {
@@ -56,7 +56,7 @@ module.exports = {
       backupinfo: "Wykonaj lub przywróć kopię zapasową ustawień aplikacji",
       restore: "Przywróć",
       personalizedrecommendations: "Spersonalizowane rekomendacje",
-      personalizedrecommendationsinfo: "Otrzymuj spersonalizowane rekomnedacje w zamian za przesyłanie telemetrii o czasie oglądania.",
+      personalizedrecommendationsinfo: "Otrzymuj spersonalizowane rekomnedacje w zamian za przesyłanie danych o czasie oglądania.",
     },
     theme: {
       normal: "Normalny",
@@ -70,15 +70,15 @@ module.exports = {
     tweaks: {
       fullscreen: "Pełny Ekran",
       navbarblur: "Rozmycie paska nawigacji",
-      roundedcorners: "Zaokrąglenie narożników",
-      roundthumbnails: "Zaokrąglenie miniaturek",
-      roundwatchpagecomponents: "Zaokrąglenie interfejsu",
+      roundedcorners: "Zaokrąglone narożniki",
+      roundthumbnails: "Zaokrąglone miniaturki",
+      roundwatchpagecomponents: "Zaokrąglone elementy interfejsu",
       radius: "Promień zaokrąglenia",
       launchscreen: "Ekran startowy",
       centeredlayout: "Układ wyśrodkowany",
       fullscreenlayout: "Układ pełnoekranowy",
       themedicon: "Ikona tematyczna",
-      bottomnavigation: "Dolna nawigacja",
+      bottomnavigation: "Dolny pasek nawigacji",
       shift: "Zmiana",
       showlabels: "Pokaż etykiety",
       mdi: "Ikony Material Design (MDI)",
@@ -91,8 +91,8 @@ module.exports = {
     },
     updates: {
       updating: "Pobieranie aktualizacji",
-      checking: "Sprawdzam dostępność aktualizacji",
-      available: "Dostępne aktualizacje",
+      checking: "Szukanie aktualizacji",
+      available: "Dostępna aktualizacja",
       noupdate: "Brak dostępnych aktualizacji",
       noupdatemessage: "Korzystasz z najnowszej wersji VueTube. Spróbuj ponownie później.",
 
@@ -103,7 +103,7 @@ module.exports = {
       users: "Użytkownicy",
       size: "Rozmiar Aktualizacji",
       
-      okay: "Ok",
+      okay: "Okej",
       refresh: "Odśwież",
       update: "Zaktualizuj",
       later: "Później",
@@ -144,13 +144,13 @@ module.exports = {
     tagline: "Przyszłość Streamingu Wideo",
     next: "Dalej",
     updated: "VueTube został zaktualizowany",
-    awesome: "Świetnie!",
+    awesome: "Świetnie",
     langsetup: "Wybierzmy język!",
-    featuresetup: "Wybierzmy jakieś funkcje!",
+    featuresetup: "Wybierzmy funkcje!",
     enableryd: "Włącz Return YouTube Dislike",
     enablespb: "Włącz SponsorBlocka",
     thanks: "Dziękujemy za korzystanie z VueTube",
-    enjoy: "Mamy nadzieję że korzystanie z Aplikacji będzie przyjemne",
+    enjoy: "Mamy nadzieję, że korzystanie z Aplikacji będzie przyjemne",
     packageinstaller: "Wybierz zawartość do pobrania"
   },
 };
