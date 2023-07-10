@@ -89,6 +89,16 @@ class Innertube {
           /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
             baseJs.data
           );
+      } else if (
+        /\{a=a\.split\(""[^"]*""\)\};/i.exec(
+          baseJs.data
+        )
+      ) {
+        // 10.07.2023
+        isMatch =
+          /\{a=a\.split\(""[^"]*""\)\};/i.exec(
+            baseJs.data
+          );
       } else {
         isMatch =
           /\{a=a\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return a\.join\(""\)\};/.exec(
