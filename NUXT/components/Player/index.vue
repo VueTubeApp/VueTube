@@ -155,7 +155,7 @@
       >
         <minimize />
         <div v-if="isFullscreen" class="pt-2" @click.self="controlsHandler()">
-          <h4>{{ video.title }}</h4>
+          <h4 style="color: #ffffff">{{ video.title }}</h4>
           <div style="color: #aaa; font-size: 0.75rem">
             {{ video.channelName }}
           </div>
