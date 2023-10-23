@@ -277,7 +277,7 @@ Donate
 </h2>
 
 VueTube is and always will be free and open source, but you can support our devs with a donation that will help to
-maintain the project and develop new features. Every kind of help is welcome! These are the donating options avaiable:
+maintain the project and develop new features. Every kind of help is welcome! These are the donating options available:
 
 [Donate on Ko-Fi.com](https://ko-fi.com/vuetube) (Official)
 
