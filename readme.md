@@ -1,3 +1,4 @@
+<div id="top"></div>
 <p align="center">
     <a href="https://vuetube.app/">
     <picture>
@@ -380,3 +381,4 @@ VueTube Team.
 <p align="center">
 <img src="resources/bottom_banner_readme.png" width="800">
 </p>
+<p align="right">(<a href="#top">🔼 Back to top</a>)</p>
