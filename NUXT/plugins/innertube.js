@@ -18,21 +18,14 @@ class Innertube {
     this.retry_count = 0;
     this.playerParams = "";
     this.signatureTimestamp = 0;
+    this.nfunction = "";
   }
 
   checkErrorCallback() {
     return typeof this.ErrorCallback === "function";
   }
 
-  async makeDecipherFunction(html) {
-    // Get url of base.js file
-    const baseJsUrl =
-      constants.URLS.YT_URL +
-      getBetweenStrings(html.data, '"jsUrl":"', '","cssUrl"');
-    // Get base.js content
-    const baseJs = await Http.get({
-      url: baseJsUrl,
-    }).catch((error) => error);
+  async makeDecipherFunction(baseJs) {
     // Example:
     //;var IF={k4:function(a,b){var c=a[0];a[0]=a[b%a.length];a[b%a.length]=c},
     // VN:function(a){a.reverse()},
@@ -89,16 +82,9 @@ class Innertube {
           /\{[A-Za-z]=[A-Za-z]\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return +[A-Za-z]\.join\(""\)};/.exec(
             baseJs.data
           );
-      } else if (
-        /\{a=a\.split\(""[^"]*""\)\};/i.exec(
-          baseJs.data
-        )
-      ) {
+      } else if (/\{a=a\.split\(""[^"]*""\)\};/i.exec(baseJs.data)) {
         // 10.07.2023
-        isMatch =
-          /\{a=a\.split\(""[^"]*""\)\};/i.exec(
-            baseJs.data
-          );
+        isMatch = /\{a=a\.split\(""[^"]*""\)\};/i.exec(baseJs.data);
       } else {
         isMatch =
           /\{a=a\.split\(""\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);[A-Za-z]+\.[A-Za-z0-9]+\([^)]*\);return a\.join\(""\)\};/.exec(
@@ -121,20 +107,48 @@ class Innertube {
       this.decodeUrl = decodeUrlFunction();
       let signatureIntValue = /.sts="[0-9]+";/.exec(baseJs.data);
       // Get signature timestamp
-      this.signatureTimestamp = signatureIntValue[0].replace(/\D/g, "");
+      this.signatureTimestamp = parseInt(
+        signatureIntValue[0].replace(/\D/g, "")
+      );
     } else {
       console.warn(
         "The first part of decipher string does not match the regex pattern."
       );
     }
   }
+  async getNFunction(baseJs) {
+    let challenge_name =
+      /\.get\("n"\)\)&&\(b=([a-zA-Z0-9$]+)(?:\[(\d+)\])?\([a-zA-Z0-9]\)/.exec(
+        baseJs.data
+      )[1];
+    //.get("n"))&&(b=fG[0](b),a.set("n",b),fG.length||kq(""))}}
+    // fG;
+    challenge_name = new RegExp(
+      `var ${challenge_name}\\s*=\\s*\\[(.+?)\\]\\s*[,;]`
+    ).exec(baseJs.data)[1];
+    challenge_name = new RegExp(
+      `${challenge_name}\\s*=\\s*function\\s*\\(([\\w$]+)\\)\\s*{(.+?}\\s*return\\ [\\w$]+.join\\(""\\))};`,
+      "s"
+    ).exec(baseJs.data)[2];
+    const fullCode = "var getN=function(a){" + challenge_name + "}; return getN;";
+    let getN = new Function(fullCode);
+    this.nfunction = getN();
+  }
   async initAsync() {
     const html = await Http.get({
-      url: constants.URLS.YT_URL,
+      url: constants.URLS.YT_MOBILE,
       params: { hl: "en" },
     }).catch((error) => error);
-
-    await this.makeDecipherFunction(html);
+    // Get url of base.js file
+    const baseJsUrl =
+      constants.URLS.YT_MOBILE +
+      getBetweenStrings(html.data, '"jsUrl":"', '","');
+    // Get base.js content
+    const baseJs = await Http.get({
+      url: baseJsUrl,
+    }).catch((error) => error);
+    await this.makeDecipherFunction(baseJs);
+    await this.getNFunction(baseJs);
     try {
       if (html instanceof Error && this.checkErrorCallback)
         this.ErrorCallback(html.message, true);
@@ -509,6 +523,16 @@ class Innertube {
             );
           }
         }
+
+        var searchParams = new URLSearchParams(source.url);
+
+        //Iterate the search parameters.
+        let n = searchParams.get("n");
+        searchParams.delete("n");
+
+        // For some reasons, searchParams.delete not removes &n in music videos
+        source["url"] = source["url"].replace(/&n=[^&]*/g, "");
+        source["url"] = source["url"] + "&n=" + this.nfunction(n);
       });
     const vidData = {
       id: details.videoId,
