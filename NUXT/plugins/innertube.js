@@ -52,7 +52,6 @@ class Innertube {
     }
 
     if (isMatch) {
-      console.log("The input string matches the regex pattern.");
       const firstPart = isMatch[0].substring(1);
 
       if (
@@ -124,13 +123,14 @@ class Innertube {
     //.get("n"))&&(b=fG[0](b),a.set("n",b),fG.length||kq(""))}}
     // fG;
     challenge_name = new RegExp(
-      `var ${challenge_name}\\s*=\\s*\\[(.+?)\\]\\s*[,;]`
+      `var ${challenge_name.replace("$", "\\$")}\\s*=\\s*\\[(.+?)\\]\\s*[,;]`
     ).exec(baseJs.data)[1];
     challenge_name = new RegExp(
       `${challenge_name}\\s*=\\s*function\\s*\\(([\\w$]+)\\)\\s*{(.+?}\\s*return\\ [\\w$]+.join\\(""\\))};`,
       "s"
     ).exec(baseJs.data)[2];
-    const fullCode = "var getN=function(a){" + challenge_name + "}; return getN;";
+    const fullCode =
+      "var getN=function(a){" + challenge_name + "}; return getN;";
     let getN = new Function(fullCode);
     this.nfunction = getN();
   }
@@ -143,6 +143,8 @@ class Innertube {
     const baseJsUrl =
       constants.URLS.YT_MOBILE +
       getBetweenStrings(html.data, '"jsUrl":"', '","');
+    // const baseJsUrl =
+    //   "https://m.youtube.com//s//player//5bdfe6d5//player-plasma-ias-tablet-ru_RU.vflset//base.js";
     // Get base.js content
     const baseJs = await Http.get({
       url: baseJsUrl,
