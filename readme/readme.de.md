@@ -40,14 +40,14 @@
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_features.png"
+<img  src="../resources/readme_icon_features.png"
       height="30"
       width="30">
 </sub>
 Features
 </h2>
 
-<img src="./resources/Features.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/Features.svg" alt="VueTube icon" height="100"/>
 
 - 🎨 **Themes:** Hell, Dunkel, OLED und alle Farben von einem Regenbogen! Stellen sie die Akzent und Hintergrundfarben nach ihren
   Wünchen ein.
@@ -67,14 +67,14 @@ Features
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_install.png"
+<img  src="../resources/readme_icon_install.png"
       height="30"
       width="30">
 </sub>
 Installation
 </h2>
 
-<img src="./resources/Install.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/Install.svg" alt="VueTube icon" height="100"/>
 
 Um die App zu installieren, besuche bitte [vuetube.app/install](https://www.vuetube.app/install) oder sehe dir unten alle Versionen an.
 Verfügbar:
@@ -85,27 +85,27 @@ Verfügbar:
 
 <h3 align="left">
 <sub>
-<img  src="resources/readme_icon_android.png"
+<img  src="../resources/readme_icon_android.png"
       height="20"
       width="20">
 </sub>
 Android
 </h3>
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.5><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/android.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.5><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Ziemlich instabil, aber du erhälst frühzeitig Zugriff auf neue Funktionen.                                                                  | Weniger bugs als "Unstable" und mehr Funktionen als "Stable"                                                                 | Noch nicht verfügbar.                                                                           |
 
 <h3 align="left">
 <sub>
-<img  src="resources/readme_icon_ios.png"
+<img  src="../resources/readme_icon_ios.png"
       height="20"
       width="20">
 </sub>
 iOS
 </h3>
 
-| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=./resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.3><img id="im" width="200" src=./resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=./resources/getstable.png></a> |
+| <a href=https://nightly.link/VueTubeApp/VueTube/workflows/ci/main/iOS.zip><img id="im" width="200" src=../resources/getunstable.png></a> | <a href=https://github.com/VueTubeApp/VueTube/releases/tag/0.3><img id="im" width="200" src=../resources/getcanary.png></a> | <a href=https://vuetube.app/install><img id="im" width="200" src=../resources/getstable.png></a> |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | Ziemlich instabil, aber du erhälst frühzeitig Zugriff auf neue Funktionen.                                                              | Weniger bugs als "Unstable" und mehr Funktionen als "Stable"                                                                                                                   | Noch nicht verfügbar.                                                                           |
 
@@ -115,14 +115,14 @@ iOS
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_plans.png"
+<img  src="../resources/readme_icon_plans.png"
       height="30"
       width="30">
 </sub>
 Pläne
 </h2>
 
-<img src="./resources/Plans.svg" alt="VueTube icon" height="100"/>
+<img src="../resources/Plans.svg" alt="VueTube icon" height="100"/>
 
 - 🔍 **Erweiterte Suche:** Sortiere die Ergebnisse nach Datum, Dauer, Likes oder einem anderen Faktor.
 - 🗞️ **Lokaler Verlauf:** Sieh deine zuletzt angesehenen Videos, ohne dich anzumelden.
@@ -137,7 +137,7 @@ Du kannst dein eigenes Feature vorschlagen, indem du in diesem Repository ein Fe
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_screenshots.png"
+<img  src="../resources/readme_icon_screenshots.png"
       height="30"
       width="30">
 </sub>
@@ -158,7 +158,7 @@ Screenshots
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_community.png"
+<img  src="../resources/readme_icon_community.png"
       height="30"
       width="30">
 </sub>
@@ -174,7 +174,7 @@ oder einfach über alle Neuigkeiten auf dem Laufenden bleiben, indem du diese Gr
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_progress.png"
+<img  src="../resources/readme_icon_progress.png"
       height="30"
       width="30">
 </sub>
@@ -229,7 +229,7 @@ Wenn du die App übersetzen möchtest, [Klicke hier](/NUXT/plugins/languages) un
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_github.png"
+<img  src="../resources/readme_icon_github.png"
       height="30"
       width="30">
 </sub>
@@ -244,7 +244,7 @@ GitHub Mitwirkende
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_acknowledgements.png"
+<img  src="../resources/readme_icon_acknowledgements.png"
       height="30"
       width="30">
 </sub>
@@ -260,7 +260,7 @@ Danksagungen
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_donate.png"
+<img  src=../resources/readme_icon_donate.png"
       height="30"
       width="30">
 </sub>
@@ -275,7 +275,7 @@ Das VueTube Projekt ist und bleibt kostenlos und Open Source, aber du kannst uns
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_disclaimer.png"
+<img  src="../resources/readme_icon_disclaimer.png"
       height="30"
       width="30">
 </sub>
@@ -288,7 +288,7 @@ Alle im VueTube Projekt verwendeten Marken, Dienstleistungsmarken, Handelsnamen 
 
 <h2 align="left">
 <sub>
-<img  src="resources/readme_icon_otherrepos.png"
+<img  src="../resources/readme_icon_otherrepos.png"
       height="30"
       width="30">
 </sub>
@@ -362,5 +362,5 @@ Andere VueTube Repos
 <hr>
 
 <p align="center">
-<img src="resources/bottom_banner_readme.png" width="800">
+<img src="../resources/bottom_banner_readme.png" width="800">
 </p>
