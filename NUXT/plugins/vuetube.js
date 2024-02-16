@@ -1,4 +1,4 @@
-//---   Modules/Imports   ---//
+//---   Modules/Imports  ---//
 import { Http } from "@capacitor-community/http";
 import { StatusBar, Style } from "@capacitor/status-bar";
 import { NavigationBar } from "@hugotomazi/capacitor-navigation-bar";
